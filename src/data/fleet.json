@@ -1,0 +1,47 @@
+[
+  {
+    "id": "premium-suv",
+    "name": "Toyota Fortuner",
+    "description": "The ultimate luxury SUV for a powerful and comfortable journey across any terrain in Nepal.",
+    "capacity": "7 Passengers",
+    "features": ["Luxury Leather Interior", "Climate Control", "Professional Driver", "Spacious Boot Space"],
+    "image": "/images/fleet/fortuner-new.jpg",
+    "category": "Premium SUV"
+  },
+  {
+    "id": "premium-ev",
+    "name": "Electric Vehicles (BYD Atto 3)",
+    "description": "Experience the future of travel with our premium electric SUV. Silent, eco-friendly, and ultra-modern.",
+    "capacity": "5 Passengers",
+    "features": ["Zero Emissions", "Panoramic Sunroof", "Advanced Safety", "Ultra-Quiet Cabin"],
+    "image": "/images/fleet/byd-atto3.jpg",
+    "category": "Electric Premium"
+  },
+  {
+    "id": "compact-suv",
+    "name": "Suzuki Brezza / Tata Nexon",
+    "description": "Compact yet powerful SUVs perfect for small families and smooth city or highway travel.",
+    "capacity": "5 Passengers",
+    "features": ["High Ground Clearance", "Air Conditioned", "Excellent Fuel Efficiency", "Modern Infotainment"],
+    "image": "/images/fleet/suzuki-brezza.jpg",
+    "category": "Comfort SUV"
+  },
+  {
+    "id": "hiace",
+    "name": "Toyota Hiace (Super GL)",
+    "description": "Our fleet of silver Toyota Hiace is the gold standard for group travel in Nepal. Reliable and spacious.",
+    "capacity": "14 Passengers",
+    "features": ["High Roof", "Luxury Reclining Seats", "Dual AC", "Well-Trained Driver"],
+    "image": "/images/fleet/hiace-fleet.jpg",
+    "category": "Group Travel"
+  },
+  {
+    "id": "tourist-bus",
+    "name": "Sutlej / Tourist Bus",
+    "description": "Large, luxury buses equipped with modern amenities for corporate groups and large family tours.",
+    "capacity": "35-40 Passengers",
+    "features": ["Air Suspension", "Panoramic Windows", "LED Entertainment", "On-board Washroom (Optional)"],
+    "image": "/images/fleet/tourist-bus.jpg",
+    "category": "Large Groups"
+  }
+]

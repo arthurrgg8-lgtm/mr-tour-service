@@ -1,0 +1,117 @@
+[
+  {
+    "id": "car-rent",
+    "title": "Car Rent",
+    "description": "Premium sedan and luxury car rentals for city tours, airport transfers, and business travel.",
+    "icon": "Car",
+    "images": [
+      "/images/services/car/1.jpg",
+      "/images/services/car/2.jpg",
+      "/images/services/car/3.jpg",
+      "/images/services/car/4.jpg"
+    ],
+    "featured": true,
+    "details": "We offer a wide range of well-maintained cars including luxury sedans and budget-friendly options. All rentals come with professional, well-trained drivers to ensure your comfort and safety.",
+    "subServices": ["Airport Pick-up & Drop", "City Sightseeing", "Corporate Travel", "Wedding Services"]
+  },
+  {
+    "id": "jeep-rent",
+    "title": "Jeep Rent",
+    "description": "Powerful 4x4 Jeep rentals for off-road adventures and navigating the diverse terrains of Nepal.",
+    "icon": "Mountain",
+    "images": [
+      "/images/services/jeep/1.jpg",
+      "/images/services/jeep/2.jpg",
+      "/images/services/jeep/3.jpg"
+    ],
+    "featured": true,
+    "details": "Our 4WD Jeeps like Scorpio and Land Cruisers are perfect for rough roads, mountain trips, and remote village explorations. Experience power and stability on any trail.",
+    "subServices": ["Off-road Expeditions", "Mustang/Manang Trips", "Wildlife Safari", "Remote Area Transport"]
+  },
+  {
+    "id": "suv-rent",
+    "title": "SUV Rent",
+    "description": "Comfortable and spacious SUV rentals for family trips and long-distance highway travel.",
+    "icon": "ShieldCheck",
+    "images": [
+      "/images/services/suv/1.jpg",
+      "/images/services/suv/2.jpg",
+      "/images/services/suv/3.jpg",
+      "/images/services/suv/4.jpg",
+      "/images/services/suv/5.jpg",
+      "/images/services/suv/6.jpg"
+    ],
+    "featured": true,
+    "details": "Choose from our premium SUVs like Toyota Fortuner or Suzuki Brezza for a balanced mix of luxury and performance. Ideal for small groups looking for extra comfort.",
+    "subServices": ["Family Vacations", "Inter-city Travel", "Luxury Tours", "Highway Cruising"]
+  },
+  {
+    "id": "hiace-rent",
+    "title": "Hiace Rent",
+    "description": "Reliable Toyota Hiace rentals for medium-sized groups and tourist operations.",
+    "icon": "Users",
+    "images": [
+      "/images/services/hiace/1.jpg"
+    ],
+    "featured": true,
+    "details": "Our Hiace fleet is the gold standard for tourist groups. Spacious seating, dual AC, and high-roof models ensure everyone travels in comfort.",
+    "subServices": ["Group Sightseeing", "Hotel Transfers", "Pilgrimage Tours", "Staff Transport"]
+  },
+  {
+    "id": "bus-rent",
+    "title": "Bus & Mini Bus Rent",
+    "description": "Large luxury buses and mini buses for corporate groups, schools, and large family gatherings.",
+    "icon": "Bus",
+    "images": [
+      "/images/services/bus/1.jpg",
+      "/images/services/bus/2.jpg",
+      "/images/services/bus/3.jpg",
+      "/images/services/bus/4.jpg",
+      "/images/services/bus/5.jpg",
+      "/images/services/bus/6.jpg",
+      "/images/services/bus/7.jpg"
+    ],
+    "featured": true,
+    "details": "From 25-seater Mini Buses to 40-seater luxury Sutlej buses, we handle large group logistics with ease and professionalism.",
+    "subServices": ["Corporate Events", "School/College Trips", "Large Group Tours", "Special Event Logistics"]
+  },
+  {
+    "id": "tour-packages",
+    "title": "Tour Packages",
+    "description": "Curated travel experiences across the most iconic regions of Nepal and Tibet.",
+    "icon": "Map",
+    "images": [
+      "/images/services/tour/1.jpg",
+      "/images/services/tour/2.jpg",
+      "/images/services/tour/3.jpg",
+      "/images/services/tour/4.jpg"
+    ],
+    "featured": true,
+    "details": "We design personalized itineraries focusing on the rich cultural and religious heritage of Nepal.",
+    "subServices": ["Cultural Tour", "Religious Tour", "Heritage Site Visits", "Custom Itineraries"]
+  },
+  {
+    "id": "trekking",
+    "title": "Trekking",
+    "description": "Expert-led trekking adventures to the base camps and high passes of the Himalayas.",
+    "icon": "Mountain",
+    "images": [
+      "/images/services/trekking/1.jpg",
+      "/images/services/trekking/2.jpg",
+      "/images/services/trekking/3.jpg",
+      "/images/services/trekking/4.jpg"
+    ],
+    "featured": false,
+    "details": "Our trekking packages include experienced guides, porters, and all necessary permits for a safe and memorable adventure.",
+    "regions": [
+      "Everest Region",
+      "Annapurna Region",
+      "Langtang Region",
+      "Kailash Mansarovar",
+      "Kanchanjunga Region",
+      "Manaslu Region",
+      "Manang Mustang Region",
+      "Rara Region"
+    ]
+  }
+]

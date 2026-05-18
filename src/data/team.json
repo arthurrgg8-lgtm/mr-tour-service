@@ -1,0 +1,17 @@
+[
+  {
+    "name": "Bishnu Bahadur Karki",
+    "role": "Owner",
+    "image": "/images/team/owner.jpeg"
+  },
+  {
+    "name": "Pritak Karki",
+    "role": "Managing Director",
+    "image": "/images/team/md.jpeg"
+  },
+  {
+    "name": "Anish Khadka",
+    "role": "Manager",
+    "image": "/images/team/manager.jpeg"
+  }
+]

@@ -1,0 +1,31 @@
+{
+  "name": "MR Tour Service",
+  "slogan": "Fuel your freedom",
+  "tagline": "A complete Travel Service Provider",
+  "registrations": [
+    "Office of Company Register",
+    "Tourism Office Kathmandu",
+    "Nepal Travel Vehicle Association"
+  ],
+  "contact": {
+    "phone": "+977-9702134274",
+    "whatsapp": "+9779702134274",
+    "email": "manoranjanramjhamtourandtravel@gmail.com",
+    "location": "Kalopul, Kathmandu, Nepal",
+    "workingHours": "24/7 Available"
+  },
+  "socials": {
+    "facebook": "#",
+    "instagram": "#",
+    "tiktok": "#",
+    "googleMaps": "#"
+  },
+  "usp": [
+    "Fully owned fleet (No outsourcing)",
+    "Safety, quality, and cleanliness",
+    "Well-trained and licensed drivers",
+    "Competitive and flexible pricing",
+    "24/7 customer support"
+  ],
+  "specialOffer": "One complementary Kathmandu cultural tour as a unique experience"
+}
