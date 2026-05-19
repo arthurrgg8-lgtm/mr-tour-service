@@ -104,11 +104,28 @@ export default function ServicesPage() {
                           )}
 
                           {(service as any).regions && (
-                            <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
-                              {(service as any).regions.map((region: string, idx: number) => (
-                                <div key={idx} className="flex flex-col gap-3 p-6 rounded-2xl bg-white border border-slate-100 hover:bg-primary hover:text-white transition-all duration-300 group/item">
-                                  <MapIcon className="h-5 w-5 text-primary group-hover/item:text-white transition-colors" />
-                                  <span className="font-bold">{region}</span>
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                              {(service as any).regions.map((region: any, idx: number) => (
+                                <div 
+                                  key={idx} 
+                                  className="relative group/item h-40 rounded-2xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-2xl transition-all duration-500"
+                                >
+                                  {region.image && (
+                                    <Image 
+                                      src={region.image} 
+                                      alt={region.name}
+                                      fill
+                                      className="object-cover group-hover/item:scale-110 transition-transform duration-700"
+                                    />
+                                  )}
+                                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                                  <div className="absolute inset-0 p-5 flex flex-col justify-end">
+                                    <div className="flex items-center gap-2 mb-1">
+                                      <MapIcon className="h-4 w-4 text-primary" />
+                                      <span className="text-[10px] font-bold text-primary uppercase tracking-wider">Trek Route</span>
+                                    </div>
+                                    <span className="font-bold text-white text-base md:text-lg leading-tight group-hover/item:text-primary transition-colors">{region.name}</span>
+                                  </div>
                                 </div>
                               ))}
                             </div>

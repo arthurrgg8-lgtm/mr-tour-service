@@ -104,20 +104,20 @@
     "featured": false,
     "details": "Our trekking packages include experienced guides, porters, and all necessary permits for a safe and memorable adventure.",
     "regions": [
-      "Everest Region",
-      "Annapurna Region",
-      "Langtang Region",
-      "Buddhist Pilgrimage Trekking",
-      "Dhaulagiri Trek",
-      "Trek to Far Western Nepal",
-      "Trek to Upper & Lower Dolpo",
-      "Trek to Makalu",
-      "GHT TRAIL",
-      "Trek to Upper Mustang",
-      "Trek to Manaslu and Tsum Valley",
-      "Kailash Mansarovar",
-      "Kanchanjunga Region",
-      "Rara Region"
+      { "name": "Everest Region", "image": "/images/trekking/everest.jpeg" },
+      { "name": "Annapurna Region", "image": "/images/trekking/annapurna.jpeg" },
+      { "name": "Langtang Region", "image": "/images/trekking/langtang.jpeg" },
+      { "name": "Buddhist Pilgrimage Trekking", "image": "/images/trekking/buddhist-pilgrimage.jpeg" },
+      { "name": "Dhaulagiri Trek", "image": "/images/trekking/dhaulagiri.jpeg" },
+      { "name": "Trek to Far Western Nepal", "image": "/images/trekking/far-western-nepal.jpeg" },
+      { "name": "Trek to Upper & Lower Dolpo", "image": "/images/trekking/dolpo.jpeg" },
+      { "name": "Trek to Makalu", "image": "/images/trekking/makalu.jpeg" },
+      { "name": "GHT TRAIL", "image": "/images/trekking/ght-trail.jpeg" },
+      { "name": "Trek to Upper Mustang", "image": "/images/trekking/upper-mustang.jpeg" },
+      { "name": "Trek to Manaslu and Tsum Valley", "image": "/images/trekking/manaslu-tsum-valley.jpeg" },
+      { "name": "Kailash Mansarovar", "image": "/images/trekking/kailash.png" },
+      { "name": "Kanchanjunga Region", "image": "/images/trekking/kanchanjunga.jpeg" },
+      { "name": "Rara Region", "image": "/images/trekking/rara.png" }
     ]
   }
 ]
