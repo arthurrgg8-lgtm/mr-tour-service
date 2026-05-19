@@ -37,10 +37,16 @@ export default function Navbar() {
     { name: "EVEREST REGION", href: "/services#trekking" },
     { name: "ANNAPURNA REGION", href: "/services#trekking" },
     { name: "LANGTANG REGION", href: "/services#trekking" },
+    { name: "BUDDHIST PILGRIMAGE TREKKING", href: "/services#trekking" },
+    { name: "DHAULAGIRI TREK", href: "/services#trekking" },
+    { name: "FAR WESTERN NEPAL", href: "/services#trekking" },
+    { name: "UPPER & LOWER DOLPO", href: "/services#trekking" },
+    { name: "MAKALU", href: "/services#trekking" },
+    { name: "GHT TRAIL", href: "/services#trekking" },
+    { name: "UPPER MUSTANG", href: "/services#trekking" },
+    { name: "MANASLU & TSUM VALLEY", href: "/services#trekking" },
     { name: "KAILASH MANSAROVAR", href: "/services#trekking" },
     { name: "KANCHANJUNGA", href: "/services#trekking" },
-    { name: "MANASLU", href: "/services#trekking" },
-    { name: "MANANG MUSTANG REGION", href: "/services#trekking" },
     { name: "RARA", href: "/services#trekking" },
   ]
 
