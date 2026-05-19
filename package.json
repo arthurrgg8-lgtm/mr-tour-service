@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "pages:build": "NPM_CONFIG_LEGACY_PEER_DEPS=true npx @cloudflare/next-on-pages"
+    "pages:build": "next build && npx @cloudflare/next-on-pages --skip-build"
   },
   "dependencies": {
     "clsx": "^2.1.1",
