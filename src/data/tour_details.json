@@ -229,6 +229,110 @@
     ]
   },
   {
+    "id": "trek-annapurna",
+    "title": "Trek to Annapurna",
+    "image": "/images/trekking/annapurna.jpeg",
+    "tagline": "Annapurna Conservation Area - A Sanctuary of Natural & Cultural Wonders",
+    "highlights": [
+      "Thorong-la Pass: Legendary high-altitude pass (5,416m)",
+      "Kali Gandaki Gorge: The deepest gorge in the world",
+      "Muktinath Temple: Sacred pilgrimage site for Hindus & Buddhists",
+      "Tilicho Lake: One of the highest lakes in the world (4,919m)",
+      "Mosaic of Gurung, Magar, and Manangi communities",
+      "Gateway through Pokhara: The beautiful 'City of Lakes'"
+    ],
+    "description": "The Annapurna region of western Nepal is a world-renowned trekking destination, protected under the Annapurna Conservation Area Project (ACAP). Dominated by peaks like Annapurna I-IV, Dhaulagiri, and Machhapuchhre, the region features extreme elevational diversity—from sub-tropical lowland forests of oak and rhododendron to high alpine meadows and windswept desert plateaus bordering Tibet. Culturally, it is a treasure trove of Himalayan Buddhism and Hinduism, home to ancient monasteries and traditional festivals like Yartung.",
+    "subPackages": [
+      {
+        "name": "ANNAPURNA CIRCUIT WITH TILICHO LAKE",
+        "duration": "18 DAYS",
+        "image": "/images/trekking/annapurna/circuit-tilicho.png",
+        "details": "A comprehensive journey circling the entire Annapurna massif, including a challenging detour to the turquoise waters of Tilicho Lake."
+      },
+      {
+        "name": "ANNAPURNA BASE CAMP VIA GHOREPANI",
+        "duration": "14 DAYS",
+        "image": "/images/trekking/annapurna/abc-ghorepani.png",
+        "details": "A classic trek combining the famous sunrise views from Poon Hill with a deep trek into the Annapurna Sanctuary's natural amphitheater."
+      },
+      {
+        "name": "MARDI HIMAL TREK",
+        "duration": "9 DAYS",
+        "image": "/images/trekking/annapurna/mardi-himal.png",
+        "details": "A popular 'eco-trek' following a ridgeline toward the base of Machhapuchhre, offering some of the closest mountain views available."
+      },
+      {
+        "name": "KHOPRA RIDGE TREK",
+        "duration": "12 DAYS",
+        "image": "/images/trekking/annapurna/khopra-ridge.png",
+        "details": "An excellent alternative to busier trails, offering incredible panoramic views of Dhaulagiri and a visit to the sacred Khayer Lake."
+      },
+      {
+        "name": "ANNAPURNA BASE CAMP - SHORT TRIP",
+        "duration": "8 DAYS",
+        "image": "/images/trekking/annapurna/abc-short.png",
+        "details": "A fast-paced version of the sanctuary trek, ideal for those with limited time who still wish to stand at the foot of the world's 10th highest peak."
+      }
+    ]
+  },
+  {
+    "id": "trek-annapurna-abc",
+    "title": "ANNAPURNA BASE CAMP VIA GHOREPANI",
+    "image": "/images/trekking/annapurna/abc-ghorepani.png",
+    "tagline": "A Journey into the Heart of the Annapurna Sanctuary",
+    "highlights": [
+      "Poon Hill Sunrise: Iconic views of Dhaulagiri and Annapurna massifs",
+      "Annapurna Sanctuary: Natural amphitheater surrounded by 7000m+ peaks",
+      "Standing at the foot of Annapurna I (8,091m) and Machhapuchhre",
+      "Jhinu Danda: Relaxing in natural riverside hot springs",
+      "Walk through dense rhododendron and oak forests",
+      "Traditional Gurung culture in Chhomrong village"
+    ],
+    "description": "The Annapurna Base Camp (ABC) trek is one of Nepal's most iconic journeys. A 14-day itinerary allows for a steady pace and includes the famous Poon Hill sunrise viewpoint. The trek takes you deep into the Annapurna Sanctuary, a high-altitude glacial basin surrounded by a ring of some of the world's highest mountains, offering a unique 360-degree Himalayan experience.\n\nStats:\n- Max Altitude: 4,130 m\n- Difficulty: Moderate\n- Duration: 14 Days",
+    "itinerary": [
+      { "day": "01", "title": "Arrival in Kathmandu", "desc": "Transfer to hotel, briefing and gear preparation." },
+      { "day": "02", "title": "Kathmandu to Pokhara", "desc": "Scenic drive along the Trishuli River or short flight." },
+      { "day": "03", "title": "Drive to Nayapul, Trek to Ulleri (1,960m)", "desc": "The famous 3,200+ stone steps of Ulleri village." },
+      { "day": "04", "title": "Trek to Ghorepani (2,860m)", "desc": "Walking through dense rhododendron and oak forests." },
+      { "day": "05", "title": "Poon Hill Sunrise, Trek to Tadapani (3,210m)", "desc": "Panoramic sunrise views, then trek through lush forest." },
+      { "day": "06", "title": "Trek to Chhomrong (2,170m)", "desc": "Visit a beautiful Gurung village with close views of Annapurna South." },
+      { "day": "07", "title": "Trek to Dovan (2,600m)", "desc": "Descend to Chhomrong Khola and ascend through bamboo forests." },
+      { "day": "08", "title": "Trek to MBC (3,700m)", "desc": "Machhapuchhre Base Camp: entering the sacred Sanctuary." },
+      { "day": "09", "title": "Trek to ABC (4,130m)", "desc": "Reaching Annapurna Base Camp with 360-degree mountain views." },
+      { "day": "10", "title": "Trek back to Bamboo (2,310m)", "desc": "Long descent out of the high-altitude zone." },
+      { "day": "11", "title": "Trek to Jhinu Danda (1,780m)", "desc": "Enjoy natural riverside hot springs to soothe tired muscles." },
+      { "day": "12", "title": "Trek to Nayapul, Drive to Pokhara", "desc": "Final walk through terraced fields and return to Lakeside." },
+      { "day": "13", "title": "Return to Kathmandu", "desc": "Drive or fly back for a farewell dinner." },
+      { "day": "14", "title": "Final Departure", "desc": "Transfer to Tribhuvan International Airport." }
+    ]
+  },
+  {
+    "id": "trek-mardi-himal",
+    "title": "MARDI HIMAL TREK",
+    "image": "/images/trekking/annapurna/mardi-himal.png",
+    "tagline": "An Off-the-Beaten-Path Ridge Adventure",
+    "highlights": [
+      "Spectacular 'birds-eye' views of the Annapurna Sanctuary",
+      "Standing directly at the foot of the iconic Machhapuchhre (Fishtail)",
+      "Trek along narrow ridgelines with 360-degree panoramas",
+      "Quiet, pristine forests away from the main trekking crowds",
+      "Traditional Brahmin and Gurung culture in Siding village",
+      "Australian Camp: Famous viewpoint for the Annapurna range"
+    ],
+    "description": "The Mardi Himal Trek is a relatively new and 'off-the-beaten-path' route. It follows a narrow ridgeline toward the base of Mardi Himal and Machhapuchhre, offering some of the closest and most spectacular mountain views in Nepal. It is perfect for those seeking a quieter experience without sacrificing the grandeur of the Himalayas.\n\nStats:\n- Max Altitude: 4,500 m (Base Camp)\n- Difficulty: Moderate\n- Duration: 9 Days",
+    "itinerary": [
+      { "day": "01", "title": "Arrival in Kathmandu", "desc": "Transfer to hotel, trek briefing and gear prep." },
+      { "day": "02", "title": "Kathmandu to Pokhara", "desc": "Scenic drive or flight; evening relax by Phewa Lake." },
+      { "day": "03", "title": "Pokhara to Deurali (2,100m)", "desc": "Drive to Kande, trek via Australian Camp and Pothana." },
+      { "day": "04", "title": "Trek to Forest Camp (2,520m)", "desc": "Peaceful walk through dense rhododendron and oak forests." },
+      { "day": "05", "title": "Trek to Low Camp (2,970m)", "desc": "Gradual climb with emerging views of Mt. Machhapuchhre." },
+      { "day": "06", "title": "Trek to High Camp (3,580m)", "desc": "Trek along the ridge; landscape changes to alpine shrubs." },
+      { "day": "07", "title": "Mardi Himal Base Camp (4,500m)", "desc": "Sunrise at Base Camp; spectacular close-up mountain views." },
+      { "day": "08", "title": "Descent to Siding & Drive to Pokhara", "desc": "Trek to traditional Siding village and return to Pokhara." },
+      { "day": "09", "title": "Return to Kathmandu", "desc": "Return drive or flight; final evening in the capital." }
+    ]
+  },
+  {
     "id": "trek-amadablam",
     "title": "AMADABLAM BASE CAMP",
     "image": "/images/trekking/everest/amadablam.png",
