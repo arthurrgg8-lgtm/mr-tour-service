@@ -1,69 +1,5 @@
 [
   {
-    "id": "tour-packages",
-    "title": "Tour Packages",
-    "description": "Curated travel experiences across the most iconic regions of Nepal and Tibet.",
-    "icon": "Map",
-    "images": [
-      "/images/services/tour/1.jpg",
-      "/images/services/tour/2.jpg",
-      "/images/services/tour/3.jpg",
-      "/images/services/tour/4.jpg"
-    ],
-    "featured": true,
-    "details": "We design personalized itineraries focusing on the rich cultural and religious heritage of Nepal.",
-    "subServices": [
-      { "name": "KATHMANDU COUNTRYSIDE HIKE", "duration": "5 DAYS", "image": "/images/tours/tour-1.png" },
-      { "name": "FAMILY HOLIDAY", "duration": "12 DAYS", "image": "/images/tours/tour-2.png" },
-      { "name": "LUMBINI TOUR", "duration": "3 DAYS", "image": "/images/tours/tour-3.png" },
-      { "name": "CHITWAN JUNGLE SAFARI", "duration": "3 DAYS", "image": "/images/tours/tour-4.png" },
-      { "name": "GORKHA-BANDIPUR-POKHARA TOUR", "duration": "13 DAYS", "image": "/images/tours/tour-5.png" },
-      { "name": "BADIMALIKA TOUR", "duration": "16 DAYS", "image": "/images/tours/tour-6.png" },
-      { "name": "JEEP TOUR TO RARA", "duration": "6 DAYS", "image": "/images/tours/tour-7.png" },
-      { "name": "KATHMANDU CITY TOUR", "duration": "1 DAY", "image": "/images/tours/tour-8.png" }
-    ]
-  },
-  {
-    "id": "trekking",
-    "title": "Trekking",
-    "description": "Expert-led trekking adventures to the base camps and high passes of the Himalayas.",
-    "icon": "Mountain",
-    "images": [
-      "/images/services/trekking/1.jpg",
-      "/images/services/trekking/2.jpg",
-      "/images/services/trekking/3.jpg",
-      "/images/services/trekking/4.jpg"
-    ],
-    "featured": false,
-    "details": "Our trekking packages include experienced guides, porters, and all necessary permits for a safe and memorable adventure.",
-    "regions": [
-      { 
-        "name": "Everest Region", 
-        "image": "/images/trekking/everest.jpeg",
-        "subPackages": [
-          { "name": "AMADABLAM BASE CAMP", "duration": "12 DAYS", "image": "/images/trekking/everest/amadablam.png" },
-          { "name": "EVERENT BASE CAMP AND KALA PATHHAR", "duration": "14 DAYS", "image": "/images/trekking/everest/ebc-kala-pathar.png", "startingPrice": "$1,200" },
-          { "name": "EVEREST PIKEY PEAK", "duration": "8 DAYS", "image": "/images/trekking/everest/pikey-peak.png" },
-          { "name": "EVEREST (3 HIGH PASSES)", "duration": "19 DAYS", "image": "/images/trekking/everest/three-passes.png" },
-          { "name": "TREK TO PHAPLU EVEREST BASE CAMP", "duration": "20 DAYS", "image": "/images/trekking/everest/phaplu-ebc.png" }
-        ]
-      },
-      { "name": "Annapurna Region", "image": "/images/trekking/annapurna.jpeg" },
-      { "name": "Langtang Region", "image": "/images/trekking/langtang.jpeg" },
-      { "name": "Buddhist Pilgrimage Trekking", "image": "/images/trekking/buddhist-pilgrimage.jpeg" },
-      { "name": "Dhaulagiri Trek", "image": "/images/trekking/dhaulagiri.jpeg" },
-      { "name": "Trek to Far Western Nepal", "image": "/images/trekking/far-western-nepal.jpeg" },
-      { "name": "Trek to Upper & Lower Dolpo", "image": "/images/trekking/dolpo.jpeg" },
-      { "name": "Trek to Makalu", "image": "/images/trekking/makalu.jpeg" },
-      { "name": "GHT TRAIL", "image": "/images/trekking/ght-trail.jpeg" },
-      { "name": "Trek to Upper Mustang", "image": "/images/trekking/upper-mustang.jpeg" },
-      { "name": "Trek to Manaslu and Tsum Valley", "image": "/images/trekking/manaslu-tsum-valley.jpeg" },
-      { "name": "Kailash Mansarovar", "image": "/images/trekking/kailash.png" },
-      { "name": "Kanchanjunga Region", "image": "/images/trekking/kanchanjunga.jpeg" },
-      { "name": "Rara Region", "image": "/images/trekking/rara.png" }
-    ]
-  },
-  {
     "id": "premium-fleet",
     "title": "Premium Fleet",
     "description": "Our most exclusive selection of high-end vehicles, including luxury SUVs and executive buses.",
@@ -175,5 +111,69 @@
     "featured": true,
     "details": "For groups of 35-41 people, our luxury tourist buses (including Sutlej models) provide maximum comfort with reclining seats, wide windows, and advanced suspension systems.",
     "subServices": ["Long Distance Travel", "Large Pilgrimage Groups", "College Expeditions", "Grand Event Logistics"]
+  },
+  {
+    "id": "tour-packages",
+    "title": "Tour Packages",
+    "description": "Curated travel experiences across the most iconic regions of Nepal and Tibet.",
+    "icon": "Map",
+    "images": [
+      "/images/services/tour/1.jpg",
+      "/images/services/tour/2.jpg",
+      "/images/services/tour/3.jpg",
+      "/images/services/tour/4.jpg"
+    ],
+    "featured": true,
+    "details": "We design personalized itineraries focusing on the rich cultural and religious heritage of Nepal.",
+    "subServices": [
+      { "name": "KATHMANDU COUNTRYSIDE HIKE", "duration": "5 DAYS", "image": "/images/tours/tour-1.png" },
+      { "name": "FAMILY HOLIDAY", "duration": "12 DAYS", "image": "/images/tours/tour-2.png" },
+      { "name": "LUMBINI TOUR", "duration": "3 DAYS", "image": "/images/tours/tour-3.png" },
+      { "name": "CHITWAN JUNGLE SAFARI", "duration": "3 DAYS", "image": "/images/tours/tour-4.png" },
+      { "name": "GORKHA-BANDIPUR-POKHARA TOUR", "duration": "13 DAYS", "image": "/images/tours/tour-5.png" },
+      { "name": "BADIMALIKA TOUR", "duration": "16 DAYS", "image": "/images/tours/tour-6.png" },
+      { "name": "JEEP TOUR TO RARA", "duration": "6 DAYS", "image": "/images/tours/tour-7.png" },
+      { "name": "KATHMANDU CITY TOUR", "duration": "1 DAY", "image": "/images/tours/tour-8.png" }
+    ]
+  },
+  {
+    "id": "trekking",
+    "title": "Trekking",
+    "description": "Expert-led trekking adventures to the base camps and high passes of the Himalayas.",
+    "icon": "Mountain",
+    "images": [
+      "/images/services/trekking/1.jpg",
+      "/images/services/trekking/2.jpg",
+      "/images/services/trekking/3.jpg",
+      "/images/services/trekking/4.jpg"
+    ],
+    "featured": false,
+    "details": "Our trekking packages include experienced guides, porters, and all necessary permits for a safe and memorable adventure.",
+    "regions": [
+      { 
+        "name": "Everest Region", 
+        "image": "/images/trekking/everest.jpeg",
+        "subPackages": [
+          { "name": "AMADABLAM BASE CAMP", "duration": "12 DAYS", "image": "/images/trekking/everest/amadablam.png" },
+          { "name": "EVERENT BASE CAMP AND KALA PATHHAR", "duration": "14 DAYS", "image": "/images/trekking/everest/ebc-kala-pathar.png", "startingPrice": "$1,200" },
+          { "name": "EVEREST PIKEY PEAK", "duration": "8 DAYS", "image": "/images/trekking/everest/pikey-peak.png" },
+          { "name": "EVEREST (3 HIGH PASSES)", "duration": "19 DAYS", "image": "/images/trekking/everest/three-passes.png" },
+          { "name": "TREK TO PHAPLU EVEREST BASE CAMP", "duration": "20 DAYS", "image": "/images/trekking/everest/phaplu-ebc.png" }
+        ]
+      },
+      { "name": "Annapurna Region", "image": "/images/trekking/annapurna.jpeg" },
+      { "name": "Langtang Region", "image": "/images/trekking/langtang.jpeg" },
+      { "name": "Buddhist Pilgrimage Trekking", "image": "/images/trekking/buddhist-pilgrimage.jpeg" },
+      { "name": "Dhaulagiri Trek", "image": "/images/trekking/dhaulagiri.jpeg" },
+      { "name": "Trek to Far Western Nepal", "image": "/images/trekking/far-western-nepal.jpeg" },
+      { "name": "Trek to Upper & Lower Dolpo", "image": "/images/trekking/dolpo.jpeg" },
+      { "name": "Trek to Makalu", "image": "/images/trekking/makalu.jpeg" },
+      { "name": "GHT TRAIL", "image": "/images/trekking/ght-trail.jpeg" },
+      { "name": "Trek to Upper Mustang", "image": "/images/trekking/upper-mustang.jpeg" },
+      { "name": "Trek to Manaslu and Tsum Valley", "image": "/images/trekking/manaslu-tsum-valley.jpeg" },
+      { "name": "Kailash Mansarovar", "image": "/images/trekking/kailash.png" },
+      { "name": "Kanchanjunga Region", "image": "/images/trekking/kanchanjunga.jpeg" },
+      { "name": "Rara Region", "image": "/images/trekking/rara.png" }
+    ]
   }
 ]
