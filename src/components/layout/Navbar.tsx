@@ -31,14 +31,14 @@ export default function Navbar() {
   ]
 
   const tourServices = [
-    { name: "KTM COUNTRYSIDE HIKE", href: "/tours" },
-    { name: "FAMILY HOLIDAY", href: "/tours" },
-    { name: "LUMBINI TOUR", href: "/tours" },
-    { name: "CHITWAN JUNGLE SAFARI", href: "/tours" },
-    { name: "GORKHA-BANDIPUR-PKR", href: "/tours" },
-    { name: "BADIMALIKA TOUR", href: "/tours" },
-    { name: "JEEP TOUR TO RARA", href: "/tours" },
-    { name: "KTM CITY TOUR (1 DAY)", href: "/tours" },
+    { name: "KTM COUNTRYSIDE HIKE", href: "/tours#ktm" },
+    { name: "FAMILY HOLIDAY", href: "/tours#family" },
+    { name: "LUMBINI TOUR", href: "/tours#lumbini" },
+    { name: "CHITWAN JUNGLE SAFARI", href: "/tours#chitwan" },
+    { name: "GORKHA-BANDIPUR-PKR", href: "/tours#gorkha" },
+    { name: "BADIMALIKA TOUR", href: "/tours#badimalika" },
+    { name: "JEEP TOUR TO RARA", href: "/tours#jeep" },
+    { name: "KTM CITY TOUR (1 DAY)", href: "/tours#ktm" },
   ]
 
   const trekkingRegions = [
@@ -46,19 +46,19 @@ export default function Navbar() {
     { name: "• EBC & KALA PATHHAR", href: "/trekking#everest" },
     { name: "• AMADABLAM BASE CAMP", href: "/trekking#everest" },
     { name: "• EVEREST 3 PASSES", href: "/trekking#everest" },
-    { name: "ANNAPURNA REGION", href: "/trekking" },
-    { name: "LANGTANG REGION", href: "/trekking" },
-    { name: "BUDDHIST PILGRIMAGE TREKKING", href: "/trekking" },
-    { name: "DHAULAGIRI TREK", href: "/trekking" },
-    { name: "FAR WESTERN NEPAL", href: "/trekking" },
-    { name: "UPPER & LOWER DOLPO", href: "/trekking" },
-    { name: "MAKALU", href: "/trekking" },
-    { name: "GHT TRAIL", href: "/trekking" },
-    { name: "UPPER MUSTANG", href: "/trekking" },
-    { name: "MANASLU & TSUM VALLEY", href: "/trekking" },
-    { name: "KAILASH MANSAROVAR", href: "/trekking" },
-    { name: "KANCHANJUNGA", href: "/trekking" },
-    { name: "RARA", href: "/trekking" },
+    { name: "ANNAPURNA REGION", href: "/trekking#annapurna" },
+    { name: "LANGTANG REGION", href: "/trekking#langtang" },
+    { name: "BUDDHIST PILGRIMAGE TREKKING", href: "/trekking#buddhist" },
+    { name: "DHAULAGIRI TREK", href: "/trekking#dhaulagiri" },
+    { name: "FAR WESTERN NEPAL", href: "/trekking#far" },
+    { name: "UPPER & LOWER DOLPO", href: "/trekking#upper" },
+    { name: "MAKALU", href: "/trekking#makalu" },
+    { name: "GHT TRAIL", href: "/trekking#ght" },
+    { name: "UPPER MUSTANG", href: "/trekking#upper" },
+    { name: "MANASLU & TSUM VALLEY", href: "/trekking#manaslu" },
+    { name: "KAILASH MANSAROVAR", href: "/trekking#kailash" },
+    { name: "KANCHANJUNGA", href: "/trekking#kanchanjunga" },
+    { name: "RARA", href: "/trekking#rara" },
   ]
 
   const dropdowns = [

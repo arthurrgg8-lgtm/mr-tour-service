@@ -35,9 +35,16 @@ export default function TrekkingPage() {
 
   useEffect(() => {
     const handleHash = () => {
-      const hash = window.location.hash.toLowerCase()
-      if (hash === '#everest' || hash === '#everest-region') {
-        handleTourClick('Everest Region')
+      const hash = decodeURIComponent(window.location.hash.substring(1).toLowerCase())
+      if (hash) {
+        // Try to find a region that matches the hash
+        const detail = tourDetails.find(d => 
+          d.title.toLowerCase().includes(hash) || 
+          d.id.toLowerCase().includes(hash)
+        )
+        if (detail) {
+          setSelectedTour(detail)
+        }
       }
     }
     
@@ -106,7 +113,8 @@ export default function TrekkingPage() {
             {trekkingService.regions?.map((region, idx) => (
               <div 
                 key={idx}
-                className="group relative h-[400px] rounded-[2.5rem] overflow-hidden border border-slate-100 shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer"
+                id={region.name.toLowerCase().split(' ')[0]}
+                className="group relative h-[400px] rounded-[2.5rem] overflow-hidden border border-slate-100 shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer scroll-mt-32"
                 onClick={() => handleTourClick(region.name)}
               >
                 <Image 

@@ -8,7 +8,7 @@ import Image from "next/image"
 import ServiceInquiryForm from "@/components/sections/ServiceInquiryForm"
 import EnquireButton from "@/components/ui/EnquireButton"
 import TourModal from "@/components/ui/TourModal"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 interface SubService {
   name: string;
@@ -34,6 +34,26 @@ const tourService = (services as Service[]).find(s => s.id === 'tour-packages')
 
 export default function ToursPage() {
   const [selectedTour, setSelectedTour] = useState<typeof tourDetails[0] | null>(null)
+
+  useEffect(() => {
+    const handleHash = () => {
+      const hash = decodeURIComponent(window.location.hash.substring(1).toLowerCase())
+      if (hash) {
+        // Try to find a tour that matches the hash
+        const detail = tourDetails.find(d => 
+          d.title.toLowerCase().includes(hash) || 
+          d.id.toLowerCase() === hash
+        )
+        if (detail) {
+          setSelectedTour(detail)
+        }
+      }
+    }
+    
+    handleHash()
+    window.addEventListener('hashchange', handleHash)
+    return () => window.removeEventListener('hashchange', handleHash)
+  }, [])
 
   const handleTourClick = (tourName: string) => {
     const detail = tourDetails.find(d => d.title === tourName)
@@ -88,7 +108,8 @@ export default function ToursPage() {
             {tourService.subServices?.map((tour, idx) => (
               <div 
                 key={idx}
-                className="group flex flex-col bg-white rounded-[2rem] border border-slate-100 shadow-sm hover:shadow-2xl transition-all duration-500 overflow-hidden"
+                id={tour.name.toLowerCase().split(' ')[0]} 
+                className="group flex flex-col bg-white rounded-[2rem] border border-slate-100 shadow-sm hover:shadow-2xl transition-all duration-500 overflow-hidden scroll-mt-32"
               >
                 <div 
                   className="relative h-64 overflow-hidden cursor-pointer"

@@ -87,7 +87,7 @@ export default function ServicesPage() {
                 <div 
                   key={service.id}
                   id={service.id}
-                  className="group flex flex-col gap-6 p-6 md:p-8 rounded-[2.5rem] border border-slate-100 bg-slate-50/50 hover:bg-white hover:shadow-2xl hover:-translate-y-2 transition-all duration-500"
+                  className="group flex flex-col gap-6 p-6 md:p-8 rounded-[2.5rem] border border-slate-100 bg-slate-50/50 hover:bg-white hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 scroll-mt-32"
                 >
                   {/* Header Info */}
                   <div className="flex items-start justify-between">
