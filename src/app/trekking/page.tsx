@@ -45,6 +45,8 @@ export default function TrekkingPage() {
         if (detail) {
           setSelectedTour(detail)
         }
+      } else {
+        setSelectedTour(null)
       }
     }
     

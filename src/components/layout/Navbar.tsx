@@ -43,9 +43,6 @@ export default function Navbar() {
 
   const trekkingRegions = [
     { name: "EVEREST REGION", href: "/trekking#everest" },
-    { name: "• EBC & KALA PATHHAR", href: "/trekking#everest" },
-    { name: "• AMADABLAM BASE CAMP", href: "/trekking#everest" },
-    { name: "• EVEREST 3 PASSES", href: "/trekking#everest" },
     { name: "ANNAPURNA REGION", href: "/trekking#annapurna" },
     { name: "LANGTANG REGION", href: "/trekking#langtang" },
     { name: "BUDDHIST PILGRIMAGE TREKKING", href: "/trekking#buddhist" },
@@ -54,7 +51,7 @@ export default function Navbar() {
     { name: "UPPER & LOWER DOLPO", href: "/trekking#upper" },
     { name: "MAKALU", href: "/trekking#makalu" },
     { name: "GHT TRAIL", href: "/trekking#ght" },
-    { name: "UPPER MUSTANG", href: "/trekking#upper" },
+    { name: "UPPER MUSTANG", href: "/trekking#mustang" },
     { name: "MANASLU & TSUM VALLEY", href: "/trekking#manaslu" },
     { name: "KAILASH MANSAROVAR", href: "/trekking#kailash" },
     { name: "KANCHANJUNGA", href: "/trekking#kanchanjunga" },
@@ -86,50 +83,53 @@ export default function Navbar() {
             })
 
             // Add glow animation
+            element.classList.remove('animate-section-glow')
+            void element.offsetWidth // trigger reflow
             element.classList.add('animate-section-glow')
-            setTimeout(() => {
-              element.classList.remove('animate-section-glow')
-            }, 2500)
-          }, 300) // Slightly longer delay to ensure page is fully rendered
+          }, 300) 
         }
       }
     }
 
     handleScrollToHash()
+    window.addEventListener('hashchange', handleScrollToHash)
+    return () => window.removeEventListener('hashchange', handleScrollToHash)
   }, [pathname])
 
   const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    setIsOpen(false)
+    setActiveDropdown(null)
+    
     if (href.includes("#")) {
       const [path, hash] = href.split("#")
       
-      // If we're already on the target page, scroll smoothly without navigation
+      // If we're already on the target page
       if (pathname === path) {
-        e.preventDefault()
-        const element = document.getElementById(hash)
-        if (element) {
-          const offset = 100
-          const bodyRect = document.body.getBoundingClientRect().top
-          const elementRect = element.getBoundingClientRect().top
-          const elementPosition = elementRect - bodyRect
-          const offsetPosition = elementPosition - offset
+        // Update hash without full reload if it's different, 
+        // but still allow it to trigger hashchange or manual effect
+        if (window.location.hash !== `#${hash}`) {
+          // Standard navigation handles this
+        } else {
+          // If hash is same, manually trigger scroll/glow
+          const element = document.getElementById(hash)
+          if (element) {
+            e.preventDefault()
+            const offset = 100
+            const bodyRect = document.body.getBoundingClientRect().top
+            const elementRect = element.getBoundingClientRect().top
+            const elementPosition = elementRect - bodyRect
+            const offsetPosition = elementPosition - offset
 
-          window.scrollTo({
-            top: offsetPosition,
-            behavior: "smooth"
-          })
+            window.scrollTo({
+              top: offsetPosition,
+              behavior: "smooth"
+            })
 
-          // Add glow animation
-          element.classList.add('animate-section-glow')
-          setTimeout(() => {
             element.classList.remove('animate-section-glow')
-          }, 2500)
+            void element.offsetWidth
+            element.classList.add('animate-section-glow')
+          }
         }
-        setIsOpen(false)
-        setActiveDropdown(null)
-      } else {
-        // If we're going to a different page, just close the mobile menu
-        setIsOpen(false)
-        setActiveDropdown(null)
       }
     }
   }

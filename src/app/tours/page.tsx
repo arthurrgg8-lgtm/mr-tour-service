@@ -42,11 +42,14 @@ export default function ToursPage() {
         // Try to find a tour that matches the hash
         const detail = tourDetails.find(d => 
           d.title.toLowerCase().includes(hash) || 
-          d.id.toLowerCase() === hash
+          d.id.toLowerCase() === hash ||
+          d.id.toLowerCase().includes(hash)
         )
         if (detail) {
           setSelectedTour(detail)
         }
+      } else {
+        setSelectedTour(null)
       }
     }
     
