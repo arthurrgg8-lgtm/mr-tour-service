@@ -133,13 +133,41 @@ export default function AboutPage() {
       {/* Registration Proof */}
       <section className="py-24 bg-white border-t">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-2xl font-bold mb-10">Officially Registered & Recognized</h2>
-          <div className="flex flex-wrap justify-center gap-8">
-            {business.registrations.map((reg, idx) => (
-              <div key={idx} className="px-6 py-3 rounded-full bg-slate-50 border text-sm font-medium text-muted-foreground">
-                {reg}
+          <h2 className="text-3xl font-bold mb-12">Officially Registered & Recognized</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 items-center">
+            <div className="flex flex-col items-center gap-4">
+              <div className="relative h-64 w-full rounded-2xl overflow-hidden border shadow-lg bg-slate-50">
+                <Image 
+                  src="/images/about/officeregister.jpg" 
+                  alt="Office of Company Registrar Certificate"
+                  fill
+                  className="object-contain p-4"
+                />
               </div>
-            ))}
+              <p className="font-bold text-slate-700">Office of Company Registrar</p>
+            </div>
+            <div className="flex flex-col items-center gap-4">
+              <div className="relative h-64 w-full rounded-2xl overflow-hidden border shadow-lg bg-slate-50">
+                <Image 
+                  src="/images/about/tourism-office.png" 
+                  alt="Tourism Office Kathmandu Certificate"
+                  fill
+                  className="object-contain p-4"
+                />
+              </div>
+              <p className="font-bold text-slate-700">Tourism Office Kathmandu</p>
+            </div>
+            <div className="flex flex-col items-center gap-4">
+              <div className="relative h-64 w-full rounded-2xl overflow-hidden border shadow-lg bg-slate-50">
+                <Image 
+                  src="/images/about/ntva.jpeg" 
+                  alt="Nepal Tourist Vehicle Association Logo"
+                  fill
+                  className="object-contain p-8"
+                />
+              </div>
+              <p className="font-bold text-slate-700">Nepal Tourist Vehicle Association (NTVA)</p>
+            </div>
           </div>
         </div>
       </section>
