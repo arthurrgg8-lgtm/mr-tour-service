@@ -38,7 +38,7 @@ interface Service {
   regions?: Region[];
 }
 
-const typedServices = services as Service[];
+const typedServices = (services as Service[]).filter(s => s.id !== 'tour-packages' && s.id !== 'trekking');
 
 const iconMap: { [key: string]: React.ComponentType<{ className?: string }> } = {
   Car,
@@ -50,31 +50,14 @@ const iconMap: { [key: string]: React.ComponentType<{ className?: string }> } = 
 }
 
 export default function ServicesPage() {
-  const [selectedTour, setSelectedTour] = useState<typeof tourDetails[0] | null>(null)
-
-  const handleTourClick = (tourName: string) => {
-    const detail = tourDetails.find(d => d.title === tourName || (d.id === 'trek-everest' && tourName === 'Everest Region'))
-    if (detail) {
-      setSelectedTour(detail)
-    }
-  }
-
   return (
     <div className="pt-20 pb-24">
-      {/* Tour Detail Modal */}
-      <TourModal 
-        tour={selectedTour} 
-        onClose={() => setSelectedTour(null)} 
-        onSelectSubPackage={handleTourClick}
-        onBack={selectedTour?.id.startsWith('trek-') && selectedTour.id !== 'trek-everest' ? () => handleTourClick('Everest Region') : undefined}
-      />
-
       {/* Header */}
       <section className="relative bg-slate-900 py-32 text-white overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image 
             src="/images/hero/services-bg.jpg" 
-            alt="Services Background"
+            alt="Vehicle Fleet Background"
             fill
             className="object-cover"
             priority
@@ -83,10 +66,11 @@ export default function ServicesPage() {
         </div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">Our Services</h1>
+            <h1 className="text-4xl md:text-6xl font-bold mb-6">Our Premium Fleet</h1>
             <p className="text-xl text-slate-300 leading-relaxed">
-              From the highest peaks of the Himalayas to the bustling streets of Kathmandu, 
-              we provide complete travel solutions to make your visit to Nepal unforgettable.
+              Experience comfort and safety with our 100% owned vehicle fleet. 
+              From luxury SUVs for mountain adventures to comfortable buses for group travel, 
+              we have the perfect ride for your journey in Nepal.
             </p>
           </div>
         </div>
@@ -130,53 +114,8 @@ export default function ServicesPage() {
                   </div>
 
                   {/* Visual Container */}
-                  <div className={`w-full relative ${(service.id === 'trekking' || service.id === 'tour-packages') ? 'h-auto' : 'h-[280px] md:h-[320px]'}`}>
-                    {(service.id === 'trekking' || service.id === 'tour-packages') ? (
-                      <div className="bg-white rounded-3xl border border-slate-100 p-4 h-full flex flex-col">
-                        <div className="flex-grow">
-                          <div className="grid grid-cols-2 gap-3">
-                            {(service.id === 'trekking' ? service.regions : service.subServices)?.map((item, idx: number) => (
-                              <div 
-                                key={idx} 
-                                onClick={() => (service.id === 'tour-packages' || item.name === 'Everest Region') && handleTourClick((item as SubService | Region).name)}
-                                className={`relative group/item ${service.id === 'tour-packages' ? 'h-28 md:h-32' : 'h-24 md:h-28'} rounded-xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-lg transition-all duration-500 ${(service.id === 'tour-packages' || item.name === 'Everest Region') ? 'cursor-pointer' : ''}`}
-                              >
-                                {item.image && (
-                                  <Image 
-                                    src={item.image} 
-                                    alt={(item as SubService | Region).name}
-                                    fill
-                                    className="object-cover group-hover/item:scale-110 transition-transform duration-700"
-                                  />
-                                )}
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-                                <div className="absolute inset-0 p-3 flex flex-col justify-end">
-                                  <span className="font-bold text-white text-[11px] md:text-xs leading-tight group-hover/item:text-primary transition-colors">{(item as SubService | Region).name}</span>
-                                </div>
-                              </div>
-                            ))}
-
-                            {/* Special Offer Card for Tours to fill space */}
-                            {service.id === 'tour-packages' && (
-                              <div className="col-span-2 p-5 rounded-2xl bg-primary/5 border border-primary/20 flex flex-col justify-center gap-3 mt-2">
-                                <div className="flex items-center gap-3">
-                                  <div className="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0">
-                                    <Award className="h-5 w-5" />
-                                  </div>
-                                  <p className="text-sm font-bold text-primary">Exclusive Offer</p>
-                                </div>
-                                <p className="text-xs md:text-sm text-slate-600 font-medium leading-relaxed italic">
-                                  &quot;{business.specialOffer}&quot;
-                                </p>
-                                <p className="text-[10px] font-bold text-muted-foreground uppercase tracking-widest">Available on all bookings</p>
-                              </div>
-                            )}
-                          </div>
-                        </div>
-                      </div>
-                    ) : (
-                      <ImageSlideshow images={service.images || []} />
-                    )}
+                  <div className="w-full relative h-[280px] md:h-[320px]">
+                    <ImageSlideshow images={service.images || []} />
                   </div>
 
                   {/* Description & CTA */}
@@ -198,6 +137,10 @@ export default function ServicesPage() {
       {/* Inquiry Form Section */}
       <section id="inquiry-form" className="py-24 bg-slate-50 border-t">
         <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-5xl font-bold mb-4">Request a Vehicle</h2>
+            <p className="text-muted-foreground text-lg">Tell us your requirements and we will provide the best vehicle for your trip.</p>
+          </div>
           <ServiceInquiryForm />
         </div>
       </section>

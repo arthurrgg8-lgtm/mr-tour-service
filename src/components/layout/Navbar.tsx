@@ -14,6 +14,7 @@ export default function Navbar() {
   const pathname = usePathname()
 
   const navLinks = [
+    { name: "HOME", href: "/" },
     { name: "GALLERY", href: "/gallery" },
     { name: "ABOUT", href: "/about" },
     { name: "CONTACT", href: "/contact" },
@@ -30,31 +31,31 @@ export default function Navbar() {
   ]
 
   const tourServices = [
-    { name: "KTM COUNTRYSIDE HIKE", href: "/services#tour-packages" },
-    { name: "FAMILY HOLIDAY", href: "/services#tour-packages" },
-    { name: "LUMBINI TOUR", href: "/services#tour-packages" },
-    { name: "CHITWAN JUNGLE SAFARI", href: "/services#tour-packages" },
-    { name: "GORKHA-BANDIPUR-PKR", href: "/services#tour-packages" },
-    { name: "BADIMALIKA TOUR", href: "/services#tour-packages" },
-    { name: "JEEP TOUR TO RARA", href: "/services#tour-packages" },
-    { name: "KTM CITY TOUR (1 DAY)", href: "/services#tour-packages" },
+    { name: "KTM COUNTRYSIDE HIKE", href: "/tours" },
+    { name: "FAMILY HOLIDAY", href: "/tours" },
+    { name: "LUMBINI TOUR", href: "/tours" },
+    { name: "CHITWAN JUNGLE SAFARI", href: "/tours" },
+    { name: "GORKHA-BANDIPUR-PKR", href: "/tours" },
+    { name: "BADIMALIKA TOUR", href: "/tours" },
+    { name: "JEEP TOUR TO RARA", href: "/tours" },
+    { name: "KTM CITY TOUR (1 DAY)", href: "/tours" },
   ]
 
   const trekkingRegions = [
-    { name: "EVEREST REGION", href: "/services#trekking" },
-    { name: "ANNAPURNA REGION", href: "/services#trekking" },
-    { name: "LANGTANG REGION", href: "/services#trekking" },
-    { name: "BUDDHIST PILGRIMAGE TREKKING", href: "/services#trekking" },
-    { name: "DHAULAGIRI TREK", href: "/services#trekking" },
-    { name: "FAR WESTERN NEPAL", href: "/services#trekking" },
-    { name: "UPPER & LOWER DOLPO", href: "/services#trekking" },
-    { name: "MAKALU", href: "/services#trekking" },
-    { name: "GHT TRAIL", href: "/services#trekking" },
-    { name: "UPPER MUSTANG", href: "/services#trekking" },
-    { name: "MANASLU & TSUM VALLEY", href: "/services#trekking" },
-    { name: "KAILASH MANSAROVAR", href: "/services#trekking" },
-    { name: "KANCHANJUNGA", href: "/services#trekking" },
-    { name: "RARA", href: "/services#trekking" },
+    { name: "EVEREST REGION", href: "/trekking" },
+    { name: "ANNAPURNA REGION", href: "/trekking" },
+    { name: "LANGTANG REGION", href: "/trekking" },
+    { name: "BUDDHIST PILGRIMAGE TREKKING", href: "/trekking" },
+    { name: "DHAULAGIRI TREK", href: "/trekking" },
+    { name: "FAR WESTERN NEPAL", href: "/trekking" },
+    { name: "UPPER & LOWER DOLPO", href: "/trekking" },
+    { name: "MAKALU", href: "/trekking" },
+    { name: "GHT TRAIL", href: "/trekking" },
+    { name: "UPPER MUSTANG", href: "/trekking" },
+    { name: "MANASLU & TSUM VALLEY", href: "/trekking" },
+    { name: "KAILASH MANSAROVAR", href: "/trekking" },
+    { name: "KANCHANJUNGA", href: "/trekking" },
+    { name: "RARA", href: "/trekking" },
   ]
 
   const dropdowns = [

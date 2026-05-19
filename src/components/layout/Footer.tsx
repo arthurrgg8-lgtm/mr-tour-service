@@ -39,13 +39,26 @@ export default function Footer() {
           <div>
             <h3 className="font-bold mb-4">Our Services</h3>
             <ul className="space-y-2">
-              {services.map((service) => (
-                <li key={service.id}>
-                  <Link href={`/services#${service.id}`} className="text-sm text-muted-foreground hover:text-primary transition-colors">
-                    {service.title}
-                  </Link>
-                </li>
-              ))}
+              <li>
+                <Link href="/services" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                  Vehicle Rentals
+                </Link>
+              </li>
+              <li>
+                <Link href="/tours" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                  Tour Packages
+                </Link>
+              </li>
+              <li>
+                <Link href="/trekking" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                  Himalayan Trekking
+                </Link>
+              </li>
+              <li>
+                <Link href="/services#premium-fleet" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                  Premium Fleet
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -53,12 +66,17 @@ export default function Footer() {
             <h3 className="font-bold mb-4">Quick Links</h3>
             <ul className="space-y-2">
               <li>
+                <Link href="/" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                  Home
+                </Link>
+              </li>
+              <li>
                 <Link href="/about" className="text-sm text-muted-foreground hover:text-primary transition-colors">
                   About Us
                 </Link>
               </li>
               <li>
-                <Link href="/fleet" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                <Link href="/services" className="text-sm text-muted-foreground hover:text-primary transition-colors">
                   Our Fleet
                 </Link>
               </li>
@@ -70,11 +88,6 @@ export default function Footer() {
               <li>
                 <Link href="/contact" className="text-sm text-muted-foreground hover:text-primary transition-colors">
                   Contact
-                </Link>
-              </li>
-              <li>
-                <Link href="/privacy-policy" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-                  Privacy Policy
                 </Link>
               </li>
             </ul>
