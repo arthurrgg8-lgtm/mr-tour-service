@@ -13,5 +13,10 @@
     "name": "Anish Khadka",
     "role": "Manager",
     "image": "/images/team/manager.jpeg"
+  },
+  {
+    "name": "Anudit Khatri",
+    "role": "DEVELOPER [TECHNICAL SUPPORT]",
+    "image": "/images/team/anuditk.jpeg"
   }
 ]

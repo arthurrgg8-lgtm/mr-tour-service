@@ -21,7 +21,7 @@ export default function Gallery() {
             <ScrollAnimation key={idx} delay={idx * 0.05}>
               <div className="group relative aspect-square overflow-hidden rounded-2xl bg-slate-100 border cursor-zoom-in">
                 <Image
-                  src={`/images/gallery/${img}`}
+                  src={`/images/gallery/${encodeURIComponent(img)}`}
                   alt={`Gallery image ${idx + 1}`}
                   fill
                   className="object-cover transition-all duration-500 group-hover:scale-110 group-hover:brightness-110"
