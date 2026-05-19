@@ -1,4 +1,5 @@
 import Hero from "@/components/sections/Hero"
+import WhyChooseSummary from "@/components/sections/WhyChooseSummary"
 import FeaturedServices from "@/components/sections/FeaturedServices"
 import WhyChooseUs from "@/components/sections/WhyChooseUs"
 import ScrollAnimation from "@/components/ui/ScrollAnimation"
@@ -10,6 +11,9 @@ export default function Home() {
   return (
     <>
       <Hero />
+      <ScrollAnimation>
+        <WhyChooseSummary />
+      </ScrollAnimation>
       <ScrollAnimation>
         <FeaturedServices />
       </ScrollAnimation>
