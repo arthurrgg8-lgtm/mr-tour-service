@@ -134,49 +134,31 @@ export default function AboutPage() {
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-5xl font-bold mb-16">Officially Registered & Recognized</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="flex flex-col gap-6">
-              <div className="relative aspect-[4/5] w-full rounded-3xl overflow-hidden border-2 border-slate-100 shadow-2xl group cursor-zoom-in">
-                <Image 
-                  src="/images/about/officeregister.jpg" 
-                  alt="Office of Company Registrar Certificate"
-                  fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors" />
+            <div className="flex flex-col gap-6 group">
+              <div className="h-48 w-full rounded-3xl bg-slate-50 border-2 border-slate-100 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all duration-500 shadow-xl group-hover:shadow-primary/20">
+                <ShieldCheck className="h-20 w-20" />
               </div>
-              <div className="p-4 rounded-2xl bg-slate-50 border border-slate-100">
+              <div className="p-6 rounded-2xl bg-white border border-slate-100 shadow-sm">
                 <p className="font-bold text-lg text-slate-800">Office of Company Registrar</p>
                 <p className="text-sm text-muted-foreground">Government of Nepal</p>
               </div>
             </div>
             
-            <div className="flex flex-col gap-6">
-              <div className="relative aspect-[4/5] w-full rounded-3xl overflow-hidden border-2 border-slate-100 shadow-2xl group cursor-zoom-in">
-                <Image 
-                  src="/images/about/tourism-office.png" 
-                  alt="Tourism Office Kathmandu Certificate"
-                  fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors" />
+            <div className="flex flex-col gap-6 group">
+              <div className="h-48 w-full rounded-3xl bg-slate-50 border-2 border-slate-100 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all duration-500 shadow-xl group-hover:shadow-primary/20">
+                <MapIcon className="h-20 w-20" />
               </div>
-              <div className="p-4 rounded-2xl bg-slate-50 border border-slate-100">
+              <div className="p-6 rounded-2xl bg-white border border-slate-100 shadow-sm">
                 <p className="font-bold text-lg text-slate-800">Tourism Office Kathmandu</p>
                 <p className="text-sm text-muted-foreground">Ministry of Culture, Tourism & Civil Aviation</p>
               </div>
             </div>
 
-            <div className="flex flex-col gap-6">
-              <div className="relative aspect-[4/5] w-full rounded-3xl overflow-hidden border-2 border-slate-100 shadow-2xl group cursor-zoom-in">
-                <Image 
-                  src="/images/about/ntva.jpeg" 
-                  alt="Nepal Tourist Vehicle Association Logo"
-                  fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors" />
+            <div className="flex flex-col gap-6 group">
+              <div className="h-48 w-full rounded-3xl bg-slate-50 border-2 border-slate-100 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all duration-500 shadow-xl group-hover:shadow-primary/20">
+                <Award className="h-20 w-20" />
               </div>
-              <div className="p-4 rounded-2xl bg-slate-50 border border-slate-100">
+              <div className="p-6 rounded-2xl bg-white border border-slate-100 shadow-sm">
                 <p className="font-bold text-lg text-slate-800">Nepal Tourist Vehicle Association</p>
                 <p className="text-sm text-muted-foreground">Active Member Since 2003</p>
               </div>
