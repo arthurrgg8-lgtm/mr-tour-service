@@ -92,9 +92,9 @@ export default function ServicesPage() {
       </section>
 
       {/* Services List */}
-      <section className="py-24 bg-white">
+      <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
-          <div className="space-y-32">
+          <div className="space-y-16">
             {typedServices.map((service, index) => {
               const Icon = iconMap[service.icon] || MapIcon
               const isEven = index % 2 === 0
@@ -106,54 +106,54 @@ export default function ServicesPage() {
                   id={service.id}
                   className="group relative"
                 >
-                  <div className={`flex flex-col ${isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-16 items-center`}>
+                  <div className={`flex flex-col ${isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-8 lg:gap-16 items-center`}>
                     {/* Text Side */}
-                    <div className="lg:w-2/5 space-y-8">
+                    <div className="lg:w-2/5 space-y-4 md:space-y-6">
                       <div className="flex items-center gap-4">
-                        <div className="h-16 w-16 rounded-2xl bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all duration-500 shadow-lg shadow-primary/5">
-                          <Icon className="h-8 w-8" />
+                        <div className="h-12 w-12 md:h-16 md:w-16 rounded-2xl bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all duration-500 shadow-lg shadow-primary/5">
+                          <Icon className="h-6 w-6 md:h-8 md:w-8" />
                         </div>
                         {service.startingPrice && (
                           <div className="flex flex-col">
-                            <span className="text-xs font-bold uppercase tracking-widest text-primary">Starting From</span>
-                            <span className="text-2xl font-bold text-slate-900">{service.startingPrice} <span className="text-sm font-medium text-muted-foreground">{service.id.includes('rent') ? '/ per day' : ''}</span></span>
+                            <span className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-primary">Starting From</span>
+                            <span className="text-xl md:text-2xl font-bold text-slate-900">{service.startingPrice} <span className="text-xs md:text-sm font-medium text-muted-foreground">{service.id.includes('rent') ? '/ per day' : ''}</span></span>
                           </div>
                         )}
                       </div>
                       <div>
-                        <h2 className="text-4xl md:text-5xl font-bold mb-4 tracking-tight">{service.title}</h2>
+                        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-2 md:mb-4 tracking-tight">{service.title}</h2>
                         {service.capacity && (
-                          <div className="flex items-center gap-2 mb-6">
-                            <Users className="h-5 w-5 text-primary" />
-                            <span className="font-bold text-slate-700">Capacity: {service.capacity}</span>
+                          <div className="flex items-center gap-2 mb-3 md:mb-6">
+                            <Users className="h-4 w-4 md:h-5 md:w-5 text-primary" />
+                            <span className="font-bold text-sm md:text-base text-slate-700">Capacity: {service.capacity}</span>
                           </div>
                         )}
-                        <p className="text-xl text-muted-foreground leading-relaxed">
+                        <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
                           {service.details || service.description}
                         </p>
                       </div>
                       
-                      <div className="pt-4">
+                      <div className="pt-2">
                          <EnquireButton>Enquire for {service.title}</EnquireButton>
                       </div>
                     </div>
 
                     {/* Visual Side */}
-                    <div className="lg:w-3/5 w-full h-[500px] md:h-[600px]">
+                    <div className="lg:w-3/5 w-full h-[350px] md:h-[450px]">
                       {/* For Trekking and Tours: Restore the full container and specialized cards */}
                       {(service.id === 'trekking' || service.id === 'tour-packages') ? (
-                        <div className={`p-8 md:p-12 rounded-[2.5rem] ${isEven ? 'bg-slate-50' : 'bg-primary/5'} border border-slate-100 relative overflow-hidden h-full flex flex-col`}>
+                        <div className={`p-4 md:p-8 rounded-[2rem] ${isEven ? 'bg-slate-50' : 'bg-primary/5'} border border-slate-100 relative overflow-hidden h-full flex flex-col`}>
                            {/* Background Decoration */}
                            <div className="absolute top-0 right-0 -mr-16 -mt-16 w-64 h-64 bg-primary/5 rounded-full blur-3xl opacity-20" />
                            
                            <div className="relative z-10 flex flex-col h-full">
-                              <div className="flex-grow overflow-y-auto pr-4 mb-8 custom-scrollbar">
-                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                              <div className="flex-grow overflow-y-auto pr-2 mb-4 custom-scrollbar">
+                                <div className="grid grid-cols-2 gap-3 md:gap-4">
                                   {(service.id === 'trekking' ? service.regions : service.subServices)?.map((item, idx: number) => (
                                     <div 
                                       key={idx} 
                                       onClick={() => (service.id === 'tour-packages' || item.name === 'Everest Region') && handleTourClick((item as any).name)}
-                                      className={`relative group/item h-40 rounded-2xl md:rounded-3xl overflow-hidden border border-slate-100 shadow-md hover:shadow-2xl transition-all duration-500 ${(service.id === 'tour-packages' || item.name === 'Everest Region') ? 'cursor-pointer' : ''}`}
+                                      className={`relative group/item h-28 md:h-36 rounded-xl md:rounded-2xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-500 ${(service.id === 'tour-packages' || item.name === 'Everest Region') ? 'cursor-pointer' : ''}`}
                                     >
                                       {item.image && (
                                         <Image 
@@ -163,32 +163,27 @@ export default function ServicesPage() {
                                           className="object-cover group-hover/item:scale-110 transition-transform duration-700"
                                         />
                                       )}
-                                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+                                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
                                       
                                       {/* Info Overlay for Tours and Everest Trek */}
                                       {(service.id === 'tour-packages' || item.name === 'Everest Region') && (
-                                        <div className="absolute top-4 right-4 h-8 w-8 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center opacity-0 group-hover/item:opacity-100 transition-opacity">
-                                           <Info className="h-4 w-4 text-white" />
+                                        <div className="absolute top-2 right-2 h-6 w-6 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center opacity-0 group-hover/item:opacity-100 transition-opacity">
+                                           <Info className="h-3 w-3 text-white" />
                                         </div>
                                       )}
 
-                                      <div className="absolute inset-0 p-5 flex flex-col justify-end">
+                                      <div className="absolute inset-0 p-3 md:p-4 flex flex-col justify-end">
                                         {service.id !== 'trekking' && (
-                                          <div className="flex items-center justify-between mb-1">
-                                            <div className="flex items-center gap-2">
-                                              <MapIcon className="h-4 w-4 text-primary" />
-                                              <span className="text-[10px] font-bold text-primary uppercase tracking-wider">
+                                          <div className="flex items-center justify-between mb-0.5">
+                                            <div className="flex items-center gap-1.5">
+                                              <MapIcon className="h-3 w-3 text-primary" />
+                                              <span className="text-[8px] md:text-[9px] font-bold text-primary uppercase tracking-wider">
                                                 {(item as SubService).duration || 'Tour Package'}
                                               </span>
                                             </div>
-                                            {(item as SubService).startingPrice && (
-                                              <span className="text-xs font-bold text-white bg-primary px-2 py-0.5 rounded">
-                                                {(item as SubService).startingPrice}
-                                              </span>
-                                            )}
                                           </div>
                                         )}
-                                        <span className="font-bold text-white text-base md:text-lg leading-tight group-hover/item:text-primary transition-colors">{(item as SubService | Region).name}</span>
+                                        <span className="font-bold text-white text-sm md:text-base leading-tight group-hover/item:text-primary transition-colors">{(item as SubService | Region).name}</span>
                                       </div>
                                     </div>
                                   ))}
