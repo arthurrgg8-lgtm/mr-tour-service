@@ -32,9 +32,10 @@ interface TourDetail {
 interface TourModalProps {
   tour: TourDetail | null;
   onClose: () => void;
+  onSelectSubPackage?: (packageName: string) => void;
 }
 
-export default function TourModal({ tour, onClose }: TourModalProps) {
+export default function TourModal({ tour, onClose, onSelectSubPackage }: TourModalProps) {
   if (!tour) return null;
 
   return (
@@ -171,7 +172,11 @@ export default function TourModal({ tour, onClose }: TourModalProps) {
                       </h3>
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         {tour.subPackages.map((pkg, i) => (
-                          <div key={i} className="group/pkg relative overflow-hidden rounded-2xl border border-slate-100 bg-slate-50 shadow-sm hover:shadow-xl transition-all duration-500">
+                          <div 
+                            key={i} 
+                            onClick={() => onSelectSubPackage?.(pkg.name)}
+                            className={`group/pkg relative overflow-hidden rounded-2xl border border-slate-100 bg-slate-50 shadow-sm hover:shadow-xl transition-all duration-500 ${onSelectSubPackage ? 'cursor-pointer' : ''}`}
+                          >
                              <div className="aspect-[16/9] relative overflow-hidden">
                                <Image 
                                  src={pkg.image} 

@@ -59,6 +59,7 @@ export default function ServicesPage() {
       <TourModal 
         tour={selectedTour} 
         onClose={() => setSelectedTour(null)} 
+        onSelectSubPackage={handleTourClick}
       />
 
       {/* Header */}
