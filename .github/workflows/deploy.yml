@@ -30,6 +30,8 @@ jobs:
 
       - name: Build project
         run: npm run pages:build
+        env:
+          NPM_CONFIG_LEGACY_PEER_DEPS: true
 
       - name: Deploy to Cloudflare Pages
         uses: cloudflare/pages-action@v1
