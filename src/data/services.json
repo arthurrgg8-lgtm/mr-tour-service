@@ -88,7 +88,21 @@
     ],
     "featured": true,
     "details": "We design personalized itineraries focusing on the rich cultural and religious heritage of Nepal.",
-    "subServices": ["Cultural Tour", "Religious Tour", "Heritage Site Visits", "Custom Itineraries"]
+    "subServices": [
+      { "name": "Kathmandu Countryside Tour", "image": "/images/tours/kathmandu-countryside.jpeg" },
+      { "name": "Family holidays", "image": "/images/tours/family-holidays.jpeg" },
+      { "name": "Lumbini tour", "image": "/images/tours/lumbini.jpeg" },
+      { "name": "Chitwan safari", "image": "/images/tours/chitwan-safari.jpeg" },
+      { "name": "Gorkha-Bandipur- Pokhara tour", "image": "/images/tours/gorkha-bandipur-pokhara.jpeg" },
+      { "name": "Pokhara- Kusma Adventure tour", "image": "/images/tours/pokhara-kusma-adventure.jpeg" },
+      { "name": "Badimalika Jeep tour", "image": "/images/tours/badimalika-jeep.jpeg" },
+      { "name": "Rara Jeep tour", "image": "/images/tours/rara-jeep.jpeg" },
+      { "name": "Kathmandu - Chitwan - Pokhara- Nagarkot round tour", "image": "/images/tours/round-tour.jpeg" },
+      { "name": "Kalinchowk Tour", "image": "/images/tours/kalinchowk.jpeg" },
+      { "name": "Dhampus tour", "image": "/images/tours/dhampus.jpeg" },
+      { "name": "Kathmandu hiking", "image": "/images/tours/kathmandu-hiking.jpeg" },
+      { "name": "Adventure tour / activities", "image": "/images/tours/adventure-activities.jpeg" }
+    ]
   },
   {
     "id": "trekking",

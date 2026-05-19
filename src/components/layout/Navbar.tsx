@@ -29,8 +29,19 @@ export default function Navbar() {
   ]
 
   const tourServices = [
-    { name: "CULTURAL TOUR", href: "/services#tour-packages" },
-    { name: "RELIGIOUS TOUR", href: "/services#tour-packages" },
+    { name: "KATHMANDU COUNTRYSIDE", href: "/services#tour-packages" },
+    { name: "FAMILY HOLIDAYS", href: "/services#tour-packages" },
+    { name: "LUMBINI TOUR", href: "/services#tour-packages" },
+    { name: "CHITWAN SAFARI", href: "/services#tour-packages" },
+    { name: "GORKHA-BANDIPUR-POKHARA", href: "/services#tour-packages" },
+    { name: "POKHARA ADVENTURE", href: "/services#tour-packages" },
+    { name: "BADIMALIKA JEEP TOUR", href: "/services#tour-packages" },
+    { name: "RARA JEEP TOUR", href: "/services#tour-packages" },
+    { name: "ROUND TOUR (KTM-CHITWAN-PKR)", href: "/services#tour-packages" },
+    { name: "KALINCHOWK TOUR", href: "/services#tour-packages" },
+    { name: "DHAMPUS TOUR", href: "/services#tour-packages" },
+    { name: "KATHMANDU HIKING", href: "/services#tour-packages" },
+    { name: "ADVENTURE ACTIVITIES", href: "/services#tour-packages" },
   ]
 
   const trekkingRegions = [

@@ -94,11 +94,29 @@ export default function ServicesPage() {
                         <div className="relative z-10">
                           {(service as any).subServices && (
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                              {(service as any).subServices.map((sub: string, idx: number) => (
-                                <div key={idx} className="flex items-center gap-4 p-5 rounded-2xl bg-white border border-slate-100 hover:border-primary/20 hover:shadow-lg transition-all duration-300">
-                                  <CheckCircle2 className="h-6 w-6 text-primary shrink-0" />
-                                  <span className="font-bold text-slate-800">{sub}</span>
-                                </div>
+                              {(service as any).subServices.map((sub: any, idx: number) => (
+                                typeof sub === 'string' ? (
+                                  <div key={idx} className="flex items-center gap-4 p-5 rounded-2xl bg-white border border-slate-100 hover:border-primary/20 hover:shadow-lg transition-all duration-300">
+                                    <CheckCircle2 className="h-6 w-6 text-primary shrink-0" />
+                                    <span className="font-bold text-slate-800">{sub}</span>
+                                  </div>
+                                ) : (
+                                  <div 
+                                    key={idx} 
+                                    className="relative group/sub h-32 rounded-2xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-500"
+                                  >
+                                    <Image 
+                                      src={sub.image} 
+                                      alt={sub.name}
+                                      fill
+                                      className="object-cover group-hover/sub:scale-110 transition-transform duration-700"
+                                    />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                                    <div className="absolute inset-0 p-4 flex flex-col justify-end">
+                                      <span className="font-bold text-white text-sm md:text-base leading-tight group-hover/sub:text-primary transition-colors">{sub.name}</span>
+                                    </div>
+                                  </div>
+                                )
                               ))}
                             </div>
                           )}
