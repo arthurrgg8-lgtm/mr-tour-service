@@ -5,7 +5,7 @@
     "description": "Premium sedan and luxury car rentals for city tours, airport transfers, and business travel.",
     "icon": "Car",
     "capacity": "4 Seater",
-    "startingPrice": "NPR 5,000",
+    "startingPrice": "NPR 5,000 / $37",
     "recommendedFor": "City Tours & Airport Transfers",
     "images": [
       "/images/services/car/1.jpg",
@@ -28,7 +28,7 @@
     "description": "Comfortable and spacious SUV rentals for family trips and long-distance highway travel.",
     "icon": "ShieldCheck",
     "capacity": "4 Seater",
-    "startingPrice": "NPR 6,000",
+    "startingPrice": "NPR 6,000 / $44",
     "recommendedFor": "Family Vacations & Highway Travel",
     "images": [
       "/images/services/suv/1.jpg",
@@ -53,7 +53,7 @@
     "description": "Powerful 4x4 Jeep rentals for off-road adventures and navigating the diverse terrains of Nepal.",
     "icon": "Mountain",
     "capacity": "7 Seater",
-    "startingPrice": "NPR 7,000",
+    "startingPrice": "NPR 7,000 / $52",
     "recommendedFor": "Off-road & Mountain Expeditions",
     "images": [
       "/images/services/jeep/1.jpg",
@@ -75,7 +75,7 @@
     "description": "Reliable Toyota Hiace rentals for medium-sized groups and tourist operations.",
     "icon": "Users",
     "capacity": "10-14 Seater",
-    "startingPrice": "NPR 8,000",
+    "startingPrice": "NPR 8,000 / $59",
     "recommendedFor": "Tourist Groups & Pilgrimage",
     "images": [
       "/images/services/hiace/1.jpg"
@@ -95,7 +95,7 @@
     "description": "Comfortable 18-25 seater mini buses for medium-sized groups and corporate outings.",
     "icon": "Bus",
     "capacity": "18-25 Seater",
-    "startingPrice": "NPR 11,000",
+    "startingPrice": "NPR 11,000 / $81",
     "recommendedFor": "Corporate Groups & School Trips",
     "images": [
       "/images/services/minibus/MINIBU2.jpeg",
@@ -116,7 +116,7 @@
     "description": "Spacious 35-41 seater luxury Sutlej and tourist buses for large groups and long-distance travel.",
     "icon": "Bus",
     "capacity": "35-41 Seater",
-    "startingPrice": "NPR 14,000",
+    "startingPrice": "NPR 14,000 / $104",
     "recommendedFor": "Large Delegations & Grand Events",
     "images": [
       "/images/services/bus/BUSSS.jpeg",
@@ -138,7 +138,7 @@
     "description": "Our most exclusive selection of high-end vehicles, including luxury SUVs and executive buses.",
     "icon": "ShieldCheck",
     "capacity": "4, 7, 30 Seater",
-    "startingPrice": "NPR 15,000",
+    "startingPrice": "NPR 15,000 / $111",
     "recommendedFor": "VIP Delegations & High-End Events",
     "images": [
       "/images/fleet/fortuner-new.jpg",
@@ -237,7 +237,7 @@
             "name": "EVEREST BASE CAMP AND KALA PATHHAR",
             "duration": "14 DAYS",
             "image": "/images/trekking/everest/ebc-kala-pathar.png",
-            "startingPrice": "$1,200",
+            "startingPrice": "NPR 162,000 / $1,200",
             "maxAltitude": "5,545m",
             "difficulty": "Moderate-Hard"
           },

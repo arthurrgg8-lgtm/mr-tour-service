@@ -1,7 +1,7 @@
 "use client"
 
 import { motion, AnimatePresence } from "framer-motion"
-import { X, Calendar, MapPin, CheckCircle2, Phone, MessageCircle, ArrowLeft, Clock, Mountain, Award, DollarSign, Backpack, Tent, Info, Car } from "lucide-react"
+import { X, Calendar, MapPin, CheckCircle2, Phone, MessageCircle, ArrowLeft, Clock, Mountain, Award, Banknote, Backpack, Tent, Info, Car } from "lucide-react"
 import business from "@/data/business.json"
 import fleet from "@/data/fleet.json"
 import Image from "next/image"
@@ -160,7 +160,7 @@ export default function TourModal({ tour, onClose, onSelectSubPackage, onBack }:
                        <div className="flex flex-col ml-auto">
                          <span className="text-[10px] uppercase tracking-widest text-slate-400 font-bold mb-1 text-right">Estimate</span>
                          <div className="flex items-center gap-2">
-                           <DollarSign className="h-4 w-4 text-primary" />
+                           <Banknote className="h-4 w-4 text-primary" />
                            <span className="text-lg font-bold">From {tour.startingPrice}</span>
                          </div>
                        </div>

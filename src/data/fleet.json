@@ -4,10 +4,15 @@
     "name": "Toyota Fortuner",
     "description": "The ultimate luxury SUV for a powerful and comfortable journey across any terrain in Nepal.",
     "capacity": "7 Passengers",
-    "features": ["Luxury Leather Interior", "Climate Control", "Professional Driver", "Spacious Boot Space"],
+    "features": [
+      "Luxury Leather Interior",
+      "Climate Control",
+      "Professional Driver",
+      "Spacious Boot Space"
+    ],
     "image": "/images/fleet/fortuner-new.jpg",
     "category": "Premium SUV",
-    "startingPrice": "NPR 8,000",
+    "startingPrice": "NPR 8,000 / $59",
     "recommendedFor": "Mountain Expeditions & VIP Travel"
   },
   {
@@ -15,10 +20,15 @@
     "name": "Electric Vehicles (BYD Atto 3)",
     "description": "Experience the future of travel with our premium electric SUV. Silent, eco-friendly, and ultra-modern.",
     "capacity": "5 Passengers",
-    "features": ["Zero Emissions", "Panoramic Sunroof", "Advanced Safety", "Ultra-Quiet Cabin"],
+    "features": [
+      "Zero Emissions",
+      "Panoramic Sunroof",
+      "Advanced Safety",
+      "Ultra-Quiet Cabin"
+    ],
     "image": "/images/fleet/byd-atto3.jpg",
     "category": "Electric Premium",
-    "startingPrice": "NPR 7,000",
+    "startingPrice": "NPR 7,000 / $52",
     "recommendedFor": "Eco-Friendly City & Highway Tours"
   },
   {
@@ -26,10 +36,15 @@
     "name": "Suzuki Brezza / Tata Nexon",
     "description": "Compact yet powerful SUVs perfect for small families and smooth city or highway travel.",
     "capacity": "5 Passengers",
-    "features": ["High Ground Clearance", "Air Conditioned", "Excellent Fuel Efficiency", "Modern Infotainment"],
+    "features": [
+      "High Ground Clearance",
+      "Air Conditioned",
+      "Excellent Fuel Efficiency",
+      "Modern Infotainment"
+    ],
     "image": "/images/fleet/suzuki-brezza.jpg",
     "category": "Comfort SUV",
-    "startingPrice": "NPR 6,000",
+    "startingPrice": "NPR 6,000 / $44",
     "recommendedFor": "Family Trips & Long Highway Drives"
   },
   {
@@ -37,10 +52,15 @@
     "name": "Toyota Hiace (Super GL)",
     "description": "Our fleet of silver Toyota Hiace is the gold standard for group travel in Nepal. Reliable and spacious.",
     "capacity": "14 Passengers",
-    "features": ["High Roof", "Luxury Reclining Seats", "Dual AC", "Well-Trained Driver"],
+    "features": [
+      "High Roof",
+      "Luxury Reclining Seats",
+      "Dual AC",
+      "Well-Trained Driver"
+    ],
     "image": "/images/fleet/hiace-fleet.jpg",
     "category": "Group Travel",
-    "startingPrice": "NPR 8,000",
+    "startingPrice": "NPR 8,000 / $59",
     "recommendedFor": "Tourist Groups & Pilgrimage Tours"
   },
   {
@@ -48,10 +68,15 @@
     "name": "Luxury Mini Bus",
     "description": "Perfect for medium-sized groups, our mini buses offer great comfort and agility on mountain roads.",
     "capacity": "18-25 Passengers",
-    "features": ["Comfortable Seating", "Air Conditioned", "Agile Maneuverability", "Expert Driver"],
+    "features": [
+      "Comfortable Seating",
+      "Air Conditioned",
+      "Agile Maneuverability",
+      "Expert Driver"
+    ],
     "image": "/images/services/minibus/MINIBUS.jpeg",
     "category": "Medium Groups",
-    "startingPrice": "NPR 11,000",
+    "startingPrice": "NPR 11,000 / $81",
     "recommendedFor": "Corporate Outings & Medium Groups"
   },
   {
@@ -59,10 +84,15 @@
     "name": "Sutlej / Tourist Bus",
     "description": "Large, luxury buses equipped with modern amenities for corporate groups and large family tours.",
     "capacity": "35-41 Passengers",
-    "features": ["Air Suspension", "Panoramic Windows", "LED Entertainment", "On-board Washroom (Optional)"],
+    "features": [
+      "Air Suspension",
+      "Panoramic Windows",
+      "LED Entertainment",
+      "On-board Washroom (Optional)"
+    ],
     "image": "/images/services/bus/BUSSS.jpeg",
     "category": "Large Groups",
-    "startingPrice": "NPR 14,000",
+    "startingPrice": "NPR 14,000 / $104",
     "recommendedFor": "Large Delegations & Grand Event Logistics"
   }
 ]
