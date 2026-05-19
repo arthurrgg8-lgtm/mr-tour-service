@@ -39,18 +39,18 @@
     "id": "minibus",
     "name": "Luxury Mini Bus",
     "description": "Perfect for medium-sized groups, our mini buses offer great comfort and agility on mountain roads.",
-    "capacity": "25-30 Passengers",
+    "capacity": "18-25 Passengers",
     "features": ["Comfortable Seating", "Air Conditioned", "Agile Maneuverability", "Expert Driver"],
-    "image": "/images/services/bus/1.jpg",
+    "image": "/images/services/minibus/MINIBUS.jpeg",
     "category": "Medium Groups"
   },
   {
     "id": "tourist-bus",
     "name": "Sutlej / Tourist Bus",
     "description": "Large, luxury buses equipped with modern amenities for corporate groups and large family tours.",
-    "capacity": "35-40 Passengers",
+    "capacity": "35-41 Passengers",
     "features": ["Air Suspension", "Panoramic Windows", "LED Entertainment", "On-board Washroom (Optional)"],
-    "image": "/images/fleet/tourist-bus.jpg",
+    "image": "/images/services/bus/BUSSS.jpeg",
     "category": "Large Groups"
   }
 ]

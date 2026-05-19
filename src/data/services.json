@@ -73,10 +73,8 @@
     "capacity": "18-25 Seater",
     "startingPrice": "NPR 11,000",
     "images": [
-      "/images/services/bus/1.jpg",
-      "/images/services/bus/2.jpg",
-      "/images/services/bus/3.jpg",
-      "/images/services/bus/4.jpg"
+      "/images/services/minibus/MINIBU2.jpeg",
+      "/images/services/minibus/MINIBUS.jpeg"
     ],
     "featured": true,
     "details": "Our mini buses are perfect for 18-25 passengers. They offer a balance of maneuverability and group comfort, making them ideal for narrow valley roads and city tours.",
@@ -90,9 +88,9 @@
     "capacity": "35-41 Seater",
     "startingPrice": "NPR 14,000",
     "images": [
-      "/images/services/bus/5.jpg",
-      "/images/services/bus/6.jpg",
-      "/images/services/bus/7.jpg"
+      "/images/services/bus/BUSSS.jpeg",
+      "/images/services/bus/BUS8.jpeg",
+      "/images/services/bus/BUS1.jpeg"
     ],
     "featured": true,
     "details": "For groups of 35-41 people, our luxury tourist buses (including Sutlej models) provide maximum comfort with reclining seats, wide windows, and advanced suspension systems.",
