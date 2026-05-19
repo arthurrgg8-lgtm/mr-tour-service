@@ -92,112 +92,83 @@ export default function ServicesPage() {
       </section>
 
       {/* Services List */}
-      <section className="py-16 bg-white">
+      <section className="py-24 bg-white">
         <div className="container mx-auto px-4">
-          <div className="space-y-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
             {typedServices.map((service, index) => {
               const Icon = iconMap[service.icon] || MapIcon
-              const isEven = index % 2 === 0
-              const displayImages = service.images?.slice(0, 4) || []
               
               return (
                 <div 
                   key={service.id}
                   id={service.id}
-                  className="group relative"
+                  className="group flex flex-col gap-6 p-8 rounded-[2.5rem] border border-slate-100 bg-slate-50/50 hover:bg-white hover:shadow-2xl hover:-translate-y-2 transition-all duration-500"
                 >
-                  <div className={`flex flex-col ${isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-8 lg:gap-16 items-center`}>
-                    {/* Text Side */}
-                    <div className="lg:w-2/5 space-y-4 md:space-y-6">
-                      <div className="flex items-center gap-4">
-                        <div className="h-12 w-12 md:h-16 md:w-16 rounded-2xl bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all duration-500 shadow-lg shadow-primary/5">
-                          <Icon className="h-6 w-6 md:h-8 md:w-8" />
-                        </div>
-                        {service.startingPrice && (
-                          <div className="flex flex-col">
-                            <span className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-primary">Starting From</span>
-                            <span className="text-xl md:text-2xl font-bold text-slate-900">{service.startingPrice} <span className="text-xs md:text-sm font-medium text-muted-foreground">{service.id.includes('rent') ? '/ per day' : ''}</span></span>
-                          </div>
-                        )}
+                  {/* Header Info */}
+                  <div className="flex items-start justify-between">
+                    <div className="flex items-center gap-4">
+                      <div className="h-14 w-14 rounded-2xl bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all duration-500 shadow-lg shadow-primary/5">
+                        <Icon className="h-7 w-7" />
                       </div>
                       <div>
-                        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-2 md:mb-4 tracking-tight">{service.title}</h2>
+                        <h2 className="text-2xl font-bold tracking-tight">{service.title}</h2>
                         {service.capacity && (
-                          <div className="flex items-center gap-2 mb-3 md:mb-6">
-                            <Users className="h-4 w-4 md:h-5 md:w-5 text-primary" />
-                            <span className="font-bold text-sm md:text-base text-slate-700">Capacity: {service.capacity}</span>
+                          <div className="flex items-center gap-1.5 mt-0.5">
+                            <Users className="h-3.5 w-3.5 text-primary" />
+                            <span className="font-bold text-xs text-slate-600">Capacity: {service.capacity}</span>
                           </div>
                         )}
-                        <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
-                          {service.details || service.description}
-                        </p>
-                      </div>
-                      
-                      <div className="pt-2">
-                         <EnquireButton>Enquire for {service.title}</EnquireButton>
                       </div>
                     </div>
+                    {service.startingPrice && (
+                      <div className="text-right">
+                        <span className="text-[10px] font-bold uppercase tracking-widest text-primary block">Starting From</span>
+                        <span className="text-xl font-bold text-slate-900">{service.startingPrice}</span>
+                      </div>
+                    )}
+                  </div>
 
-                    {/* Visual Side */}
-                    <div className="lg:w-3/5 w-full h-[350px] md:h-[450px]">
-                      {/* For Trekking and Tours: Restore the full container and specialized cards */}
-                      {(service.id === 'trekking' || service.id === 'tour-packages') ? (
-                        <div className={`p-4 md:p-8 rounded-[2rem] ${isEven ? 'bg-slate-50' : 'bg-primary/5'} border border-slate-100 relative overflow-hidden h-full flex flex-col`}>
-                           {/* Background Decoration */}
-                           <div className="absolute top-0 right-0 -mr-16 -mt-16 w-64 h-64 bg-primary/5 rounded-full blur-3xl opacity-20" />
-                           
-                           <div className="relative z-10 flex flex-col h-full">
-                              <div className="flex-grow overflow-y-auto pr-2 mb-4 custom-scrollbar">
-                                <div className="grid grid-cols-2 gap-3 md:gap-4">
-                                  {(service.id === 'trekking' ? service.regions : service.subServices)?.map((item, idx: number) => (
-                                    <div 
-                                      key={idx} 
-                                      onClick={() => (service.id === 'tour-packages' || item.name === 'Everest Region') && handleTourClick((item as any).name)}
-                                      className={`relative group/item h-28 md:h-36 rounded-xl md:rounded-2xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-500 ${(service.id === 'tour-packages' || item.name === 'Everest Region') ? 'cursor-pointer' : ''}`}
-                                    >
-                                      {item.image && (
-                                        <Image 
-                                          src={item.image} 
-                                          alt={(item as SubService | Region).name}
-                                          fill
-                                          className="object-cover group-hover/item:scale-110 transition-transform duration-700"
-                                        />
-                                      )}
-                                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-                                      
-                                      {/* Info Overlay for Tours and Everest Trek */}
-                                      {(service.id === 'tour-packages' || item.name === 'Everest Region') && (
-                                        <div className="absolute top-2 right-2 h-6 w-6 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center opacity-0 group-hover/item:opacity-100 transition-opacity">
-                                           <Info className="h-3 w-3 text-white" />
-                                        </div>
-                                      )}
-
-                                      <div className="absolute inset-0 p-3 md:p-4 flex flex-col justify-end">
-                                        {service.id !== 'trekking' && (
-                                          <div className="flex items-center justify-between mb-0.5">
-                                            <div className="flex items-center gap-1.5">
-                                              <MapIcon className="h-3 w-3 text-primary" />
-                                              <span className="text-[8px] md:text-[9px] font-bold text-primary uppercase tracking-wider">
-                                                {(item as SubService).duration || 'Tour Package'}
-                                              </span>
-                                            </div>
-                                          </div>
-                                        )}
-                                        <span className="font-bold text-white text-sm md:text-base leading-tight group-hover/item:text-primary transition-colors">{(item as SubService | Region).name}</span>
-                                      </div>
-                                    </div>
-                                  ))}
+                  {/* Visual Container */}
+                  <div className="w-full h-[350px] relative">
+                    {(service.id === 'trekking' || service.id === 'tour-packages') ? (
+                      <div className="bg-white rounded-3xl border border-slate-100 p-4 h-full flex flex-col">
+                        <div className="flex-grow overflow-y-auto pr-2 custom-scrollbar">
+                          <div className="grid grid-cols-2 gap-3">
+                            {(service.id === 'trekking' ? service.regions : service.subServices)?.map((item, idx: number) => (
+                              <div 
+                                key={idx} 
+                                onClick={() => (service.id === 'tour-packages' || item.name === 'Everest Region') && handleTourClick((item as any).name)}
+                                className={`relative group/item h-28 rounded-xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-lg transition-all duration-500 ${(service.id === 'tour-packages' || item.name === 'Everest Region') ? 'cursor-pointer' : ''}`}
+                              >
+                                {item.image && (
+                                  <Image 
+                                    src={item.image} 
+                                    alt={(item as SubService | Region).name}
+                                    fill
+                                    className="object-cover group-hover/item:scale-110 transition-transform duration-700"
+                                  />
+                                )}
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                                <div className="absolute inset-0 p-3 flex flex-col justify-end">
+                                  <span className="font-bold text-white text-xs leading-tight group-hover/item:text-primary transition-colors">{(item as SubService | Region).name}</span>
                                 </div>
                               </div>
-                              <div className="shrink-0 pt-2 border-t border-slate-100">
-                                <EnquireButton variant="full" />
-                              </div>
-                           </div>
+                            ))}
+                          </div>
                         </div>
-                      ) : (
-                        /* For Vehicles: Show the Image Slideshow */
-                        <ImageSlideshow images={service.images || []} />
-                      )}
+                      </div>
+                    ) : (
+                      <ImageSlideshow images={service.images || []} />
+                    )}
+                  </div>
+
+                  {/* Description & CTA */}
+                  <div className="space-y-6">
+                    <p className="text-slate-600 leading-relaxed line-clamp-3">
+                      {service.details || service.description}
+                    </p>
+                    <div className="flex items-center gap-4">
+                      <EnquireButton>Book {service.title}</EnquireButton>
                     </div>
                   </div>
                 </div>
