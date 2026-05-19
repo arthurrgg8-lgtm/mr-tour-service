@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { Send, User, Phone, Mail, Globe, Users, Car, Calendar, MapPin, Plus } from "lucide-react"
+import { Send, User, Phone, Mail, Globe, Users, Car, Calendar, MapPin, Plus, FileText, Mountain, Map as MapIcon } from "lucide-react"
 import business from "@/data/business.json"
 import fleet from "@/data/fleet.json"
 
@@ -12,6 +12,7 @@ export default function ServiceInquiryForm() {
     email: "",
     nationality: "",
     numPeople: "",
+    inquiryType: "Rental",
     vehicleType: "Toyota Fortuner",
     pickupDate: "",
     dropDate: "",
@@ -28,37 +29,48 @@ export default function ServiceInquiryForm() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
 
-    // Validation Logic
-    const today = new Date().toISOString().split('T')[0]
-    if (formData.pickupDate < today) {
-      alert("Pickup date cannot be in the past.")
-      return
+    // Validation Logic for Rental
+    if (formData.inquiryType === "Rental") {
+      const today = new Date().toISOString().split('T')[0]
+      if (formData.pickupDate && formData.pickupDate < today) {
+        alert("Pickup date cannot be in the past.")
+        return
+      }
+
+      if (formData.pickupDate && formData.dropDate && formData.dropDate < formData.pickupDate) {
+        alert("Drop date cannot be earlier than the pickup date.")
+        return
+      }
     }
 
-    if (formData.dropDate < formData.pickupDate) {
-      alert("Drop date cannot be earlier than the pickup date.")
-      return
-    }
-
-    const subject = `Service Inquiry - ${formData.name}`
-    const body = `New Service Inquiry Details:
-----------------------------------
-Name: ${formData.name}
-Phone: ${formData.phone}
-Email: ${formData.email}
-Nationality: ${formData.nationality}
-Number of People: ${formData.numPeople}
+    const subject = `${formData.inquiryType} Inquiry - ${formData.name}`
+    
+    let rentalDetails = ""
+    if (formData.inquiryType === "Rental") {
+      rentalDetails = `
 Vehicle Type: ${formData.vehicleType}
 Pickup Date: ${formData.pickupDate}
 Drop Date: ${formData.dropDate}
 Pickup Location: ${formData.pickupLocation}
-Drop Location: ${formData.dropLocation}
-Add Destination: ${formData.destination}
+Drop Location: ${formData.dropLocation}`
+    }
+
+    const body = `New ${formData.inquiryType} Inquiry Details:
+----------------------------------
+Inquiry Type: ${formData.inquiryType}
+Name: ${formData.name}
+Phone: ${formData.phone}
+Email: ${formData.email}
+Nationality: ${formData.nationality}
+Number of People: ${formData.numPeople}${rentalDetails}
+Destination/Requests: ${formData.destination}
 ----------------------------------`
 
     const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${business.contact.email}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
     window.open(gmailUrl, "_blank")
   }
+
+  const isRental = formData.inquiryType === "Rental"
 
   return (
     <div className="max-w-4xl mx-auto bg-white p-8 md:p-12 rounded-[2.5rem] border border-slate-200 shadow-2xl relative overflow-hidden">
@@ -73,6 +85,32 @@ Add Destination: ${formData.destination}
 
         <form onSubmit={handleSubmit} className="space-y-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* Inquiry Type Selection */}
+            <div className="space-y-2 md:col-span-2">
+              <label className="text-xs font-bold uppercase tracking-widest text-muted-foreground flex items-center gap-2">
+                <FileText className="h-3 w-3" /> Inquiry For
+              </label>
+              <div className="grid grid-cols-3 gap-4">
+                {["Rental", "Tour", "Trek"].map((type) => (
+                  <button
+                    key={type}
+                    type="button"
+                    onClick={() => setFormData(prev => ({ ...prev, inquiryType: type }))}
+                    className={`h-12 rounded-xl border-2 font-bold transition-all flex items-center justify-center gap-2 ${
+                      formData.inquiryType === type 
+                        ? "border-primary bg-primary/5 text-primary" 
+                        : "border-slate-100 bg-slate-50 text-slate-500 hover:border-slate-200"
+                    }`}
+                  >
+                    {type === "Rental" && <Car className="h-4 w-4" />}
+                    {type === "Tour" && <MapIcon className="h-4 w-4" />}
+                    {type === "Trek" && <Mountain className="h-4 w-4" />}
+                    {type}
+                  </button>
+                ))}
+              </div>
+            </div>
+
             {/* Personal Details */}
             <div className="space-y-2">
               <label className="text-xs font-bold uppercase tracking-widest text-muted-foreground flex items-center gap-2">
@@ -126,68 +164,74 @@ Add Destination: ${formData.destination}
                 className="w-full h-12 px-4 rounded-xl border bg-slate-50 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
               />
             </div>
-            <div className="space-y-2">
-              <label className="text-xs font-bold uppercase tracking-widest text-muted-foreground flex items-center gap-2">
-                <Car className="h-3 w-3" /> Vehicle Type
-              </label>
-              <select 
-                name="vehicleType" value={formData.vehicleType} onChange={handleChange}
-                className="w-full h-12 px-4 rounded-xl border bg-slate-50 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all appearance-none"
-              >
-                {fleet.map(v => <option key={v.id} value={v.name}>{v.name}</option>)}
-                <option value="Other">Other / Custom</option>
-              </select>
-            </div>
 
-            <div className="space-y-2">
-              <label className="text-xs font-bold uppercase tracking-widest text-muted-foreground flex items-center gap-2">
-                <Calendar className="h-3 w-3" /> Pickup Date
-              </label>
-              <input 
-                type="date" name="pickupDate" required value={formData.pickupDate} onChange={handleChange}
-                className="w-full h-12 px-4 rounded-xl border bg-slate-50 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
-              />
-            </div>
-            <div className="space-y-2">
-              <label className="text-xs font-bold uppercase tracking-widest text-muted-foreground flex items-center gap-2">
-                <Calendar className="h-3 w-3" /> Drop Date
-              </label>
-              <input 
-                type="date" name="dropDate" required value={formData.dropDate} onChange={handleChange}
-                className="w-full h-12 px-4 rounded-xl border bg-slate-50 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
-              />
-            </div>
+            {/* Rental Specific Fields */}
+            {isRental && (
+              <>
+                <div className="space-y-2">
+                  <label className="text-xs font-bold uppercase tracking-widest text-muted-foreground flex items-center gap-2">
+                    <Car className="h-3 w-3" /> Vehicle Type
+                  </label>
+                  <select 
+                    name="vehicleType" value={formData.vehicleType} onChange={handleChange}
+                    className="w-full h-12 px-4 rounded-xl border bg-slate-50 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all appearance-none"
+                  >
+                    {fleet.map(v => <option key={v.id} value={v.name}>{v.name}</option>)}
+                    <option value="Other">Other / Custom</option>
+                  </select>
+                </div>
 
-            <div className="space-y-2">
-              <label className="text-xs font-bold uppercase tracking-widest text-muted-foreground flex items-center gap-2">
-                <MapPin className="h-3 w-3" /> Pickup Location
-              </label>
-              <input 
-                type="text" name="pickupLocation" required value={formData.pickupLocation} onChange={handleChange}
-                placeholder="Location"
-                className="w-full h-12 px-4 rounded-xl border bg-slate-50 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
-              />
-            </div>
-            <div className="space-y-2">
-              <label className="text-xs font-bold uppercase tracking-widest text-muted-foreground flex items-center gap-2">
-                <MapPin className="h-3 w-3" /> Drop Location
-              </label>
-              <input 
-                type="text" name="dropLocation" required value={formData.dropLocation} onChange={handleChange}
-                placeholder="Location"
-                className="w-full h-12 px-4 rounded-xl border bg-slate-50 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
-              />
-            </div>
+                <div className="space-y-2">
+                  <label className="text-xs font-bold uppercase tracking-widest text-muted-foreground flex items-center gap-2">
+                    <Calendar className="h-3 w-3" /> Pickup Date
+                  </label>
+                  <input 
+                    type="date" name="pickupDate" required={isRental} value={formData.pickupDate} onChange={handleChange}
+                    className="w-full h-12 px-4 rounded-xl border bg-slate-50 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
+                  />
+                </div>
+                <div className="space-y-2">
+                  <label className="text-xs font-bold uppercase tracking-widest text-muted-foreground flex items-center gap-2">
+                    <Calendar className="h-3 w-3" /> Drop Date
+                  </label>
+                  <input 
+                    type="date" name="dropDate" required={isRental} value={formData.dropDate} onChange={handleChange}
+                    className="w-full h-12 px-4 rounded-xl border bg-slate-50 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
+                  />
+                </div>
+
+                <div className="space-y-2">
+                  <label className="text-xs font-bold uppercase tracking-widest text-muted-foreground flex items-center gap-2">
+                    <MapPin className="h-3 w-3" /> Pickup Location
+                  </label>
+                  <input 
+                    type="text" name="pickupLocation" required={isRental} value={formData.pickupLocation} onChange={handleChange}
+                    placeholder="Location"
+                    className="w-full h-12 px-4 rounded-xl border bg-slate-50 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
+                  />
+                </div>
+                <div className="space-y-2">
+                  <label className="text-xs font-bold uppercase tracking-widest text-muted-foreground flex items-center gap-2">
+                    <MapPin className="h-3 w-3" /> Drop Location
+                  </label>
+                  <input 
+                    type="text" name="dropLocation" required={isRental} value={formData.dropLocation} onChange={handleChange}
+                    placeholder="Location"
+                    className="w-full h-12 px-4 rounded-xl border bg-slate-50 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
+                  />
+                </div>
+              </>
+            )}
           </div>
 
           <div className="space-y-2">
             <label className="text-xs font-bold uppercase tracking-widest text-muted-foreground flex items-center gap-2">
-              <Plus className="h-3 w-3" /> Add Destination
+              <Plus className="h-3 w-3" /> {isRental ? "Add Destination" : "Trek/Tour Destination & Requests"}
             </label>
             <textarea 
               name="destination" value={formData.destination} onChange={handleChange}
               rows={3}
-              placeholder="List specific destinations or extra requests..."
+              placeholder={isRental ? "List specific destinations or extra requests..." : "Specify which trek or tour you are interested in, and any special requests..."}
               className="w-full p-4 rounded-xl border bg-slate-50 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all resize-none"
             ></textarea>
           </div>
