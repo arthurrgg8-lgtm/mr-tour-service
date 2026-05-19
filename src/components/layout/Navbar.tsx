@@ -42,7 +42,10 @@ export default function Navbar() {
   ]
 
   const trekkingRegions = [
-    { name: "EVEREST REGION", href: "/trekking" },
+    { name: "EVEREST REGION", href: "/trekking#everest" },
+    { name: "• EBC & KALA PATHHAR", href: "/trekking#everest" },
+    { name: "• AMADABLAM BASE CAMP", href: "/trekking#everest" },
+    { name: "• EVEREST 3 PASSES", href: "/trekking#everest" },
     { name: "ANNAPURNA REGION", href: "/trekking" },
     { name: "LANGTANG REGION", href: "/trekking" },
     { name: "BUDDHIST PILGRIMAGE TREKKING", href: "/trekking" },
@@ -155,6 +158,13 @@ export default function Navbar() {
         
         {/* Desktop Links */}
         <div className="hidden md:flex items-center gap-6">
+          <Link 
+            href="/" 
+            className="text-sm font-bold hover:text-primary transition-colors uppercase"
+          >
+            HOME
+          </Link>
+
           {dropdowns.map((dropdown) => (
             <div 
               key={dropdown.id}
@@ -191,7 +201,7 @@ export default function Navbar() {
             </div>
           ))}
 
-          {navLinks.map((link) => (
+          {navLinks.filter(link => link.name !== "HOME").map((link) => (
             <Link 
               key={link.name} 
               href={link.href} 
@@ -239,6 +249,14 @@ export default function Navbar() {
             className="md:hidden bg-white border-b overflow-hidden"
           >
             <div className="flex flex-col p-4 gap-4 max-h-[80vh] overflow-y-auto">
+              <Link 
+                href="/" 
+                onClick={() => setIsOpen(false)}
+                className="text-sm font-bold text-slate-700 hover:text-primary border-b border-slate-50 pb-2 uppercase tracking-widest pt-2"
+              >
+                HOME
+              </Link>
+
               {dropdowns.map((dropdown) => (
                 <div key={dropdown.id} className="flex flex-col gap-2">
                   <p className="text-[10px] font-bold text-muted-foreground uppercase tracking-widest mb-1 border-b pb-1">
@@ -262,7 +280,7 @@ export default function Navbar() {
                 </div>
               ))}
 
-              {navLinks.map((link) => (
+              {navLinks.filter(link => link.name !== "HOME").map((link) => (
                 <Link 
                   key={link.name} 
                   href={link.href} 

@@ -7,7 +7,8 @@ import { Mountain, Award, ShieldCheck, Users, Clock, Compass } from "lucide-reac
 import Image from "next/image"
 import ServiceInquiryForm from "@/components/sections/ServiceInquiryForm"
 import TourModal from "@/components/ui/TourModal"
-import { useState } from "react"
+import { useState, useEffect } from "react"
+import { useSearchParams } from "next/navigation"
 
 interface Region {
   name: string;
@@ -32,8 +33,26 @@ const trekkingService = (services as Service[]).find(s => s.id === 'trekking')
 export default function TrekkingPage() {
   const [selectedTour, setSelectedTour] = useState<typeof tourDetails[0] | null>(null)
 
+  useEffect(() => {
+    const handleHash = () => {
+      const hash = window.location.hash.toLowerCase()
+      if (hash === '#everest' || hash === '#everest-region') {
+        handleTourClick('Everest Region')
+      }
+    }
+    
+    handleHash()
+    window.addEventListener('hashchange', handleHash)
+    return () => window.removeEventListener('hashchange', handleHash)
+  }, [])
+
   const handleTourClick = (tourName: string) => {
-    const detail = tourDetails.find(d => d.title === tourName || (d.id === 'trek-everest' && tourName === 'Everest Region'))
+    // Normalize names to handle minor variations
+    const normalizedName = tourName.toLowerCase()
+    const detail = tourDetails.find(d => 
+      d.title.toLowerCase() === normalizedName || 
+      (d.id === 'trek-everest' && (normalizedName === 'everest region' || normalizedName === 'everest'))
+    )
     if (detail) {
       setSelectedTour(detail)
     }

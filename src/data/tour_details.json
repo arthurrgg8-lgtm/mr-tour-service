@@ -203,7 +203,7 @@
         "details": "A stunning trek to the base of one of the world's most beautiful mountains. Experience Sherpa hospitality and iconic Himalayan vistas."
       },
       {
-        "name": "EVERENT BASE CAMP AND KALA PATHHAR",
+        "name": "EVEREST BASE CAMP AND KALA PATHHAR",
         "duration": "14 DAYS",
         "image": "/images/trekking/everest/ebc-kala-pathar.png",
         "details": "The classic journey to the foot of Everest. Reach Kala Patthar for the most famous view of the world's highest peak."
@@ -258,7 +258,7 @@
   },
   {
     "id": "trek-ebc-kala-pathar",
-    "title": "EVERENT BASE CAMP AND KALA PATHHAR",
+    "title": "EVEREST BASE CAMP AND KALA PATHHAR",
     "image": "/images/trekking/everest/ebc-kala-pathar.png",
     "tagline": "An exciting Trekking experience",
     "highlights": [
