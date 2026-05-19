@@ -81,6 +81,12 @@ export default function Navbar() {
               top: offsetPosition,
               behavior: "smooth"
             })
+
+            // Add glow animation
+            element.classList.add('animate-section-glow')
+            setTimeout(() => {
+              element.classList.remove('animate-section-glow')
+            }, 2500)
           }, 300) // Slightly longer delay to ensure page is fully rendered
         }
       }
@@ -108,6 +114,12 @@ export default function Navbar() {
             top: offsetPosition,
             behavior: "smooth"
           })
+
+          // Add glow animation
+          element.classList.add('animate-section-glow')
+          setTimeout(() => {
+            element.classList.remove('animate-section-glow')
+          }, 2500)
         }
         setIsOpen(false)
         setActiveDropdown(null)

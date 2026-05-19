@@ -104,4 +104,15 @@
   .custom-scrollbar::-webkit-scrollbar-thumb:hover {
     background: var(--primary);
   }
+
+  @keyframes section-glow {
+    0% { outline: 2px solid transparent; outline-offset: 4px; }
+    50% { outline: 4px solid var(--primary); outline-offset: 8px; filter: brightness(1.05); }
+    100% { outline: 2px solid transparent; outline-offset: 4px; }
+  }
+
+  .animate-section-glow {
+    animation: section-glow 2s ease-in-out;
+    border-radius: 2rem;
+  }
 }
