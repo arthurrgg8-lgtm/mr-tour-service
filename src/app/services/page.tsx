@@ -55,10 +55,11 @@ export default function ServicesPage() {
       {/* Services List */}
       <section className="py-24 bg-white">
         <div className="container mx-auto px-4">
-          <div className="space-y-24">
+          <div className="space-y-32">
             {services.map((service, index) => {
               const Icon = iconMap[service.icon]
               const isEven = index % 2 === 0
+              const displayImages = (service as any).images?.slice(0, 4) || []
               
               return (
                 <div 
@@ -66,27 +67,81 @@ export default function ServicesPage() {
                   id={service.id}
                   className="group relative"
                 >
-                  <div className={`flex flex-col ${isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-12 items-center`}>
-                    <div className="lg:w-2/5">
-                      <div className="h-16 w-16 rounded-2xl bg-primary/10 flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-white transition-all duration-500 shadow-lg shadow-primary/5">
+                  <div className={`flex flex-col ${isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-16 items-center`}>
+                    {/* Text Side */}
+                    <div className="lg:w-2/5 space-y-8">
+                      <div className="h-16 w-16 rounded-2xl bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all duration-500 shadow-lg shadow-primary/5">
                         <Icon className="h-8 w-8" />
                       </div>
-                      <h2 className="text-3xl md:text-5xl font-bold mb-6 tracking-tight">{service.title}</h2>
+                      <div>
+                        <h2 className="text-4xl md:text-5xl font-bold mb-6 tracking-tight">{service.title}</h2>
+                        <p className="text-xl text-muted-foreground leading-relaxed">
+                          {service.details || service.description}
+                        </p>
+                      </div>
                       
-                      <p className="text-xl text-muted-foreground leading-relaxed mb-8">
-                        {service.details || service.description}
-                      </p>
-                      
-                      <EnquireButton>Enquire Now</EnquireButton>
+                      <div className="pt-4">
+                         <EnquireButton>Enquire for {service.title}</EnquireButton>
+                      </div>
                     </div>
 
+                    {/* Visual Side */}
                     <div className="lg:w-3/5 w-full">
-                      <div className="rounded-[2.5rem] overflow-hidden shadow-2xl border border-slate-100 relative group/slider aspect-[16/10]">
-                        <ImageSlider 
-                          images={(service as any).images || [(service as any).image]} 
-                          alt={service.title} 
-                        />
-                      </div>
+                      {/* For Trekking and Tours: Restore the full container and specialized cards */}
+                      {(service.id === 'trekking' || service.id === 'tour-packages') ? (
+                        <div className={`p-8 md:p-12 rounded-[2.5rem] ${isEven ? 'bg-slate-50' : 'bg-primary/5'} border border-slate-100 relative overflow-hidden`}>
+                           {/* Background Decoration */}
+                           <div className="absolute top-0 right-0 -mr-16 -mt-16 w-64 h-64 bg-primary/5 rounded-full blur-3xl opacity-20" />
+                           
+                           <div className="relative z-10">
+                              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
+                                {(service.id === 'trekking' ? (service as any).regions : (service as any).subServices)?.map((item: any, idx: number) => (
+                                  <div 
+                                    key={idx} 
+                                    className="relative group/item h-40 rounded-2xl md:rounded-3xl overflow-hidden border border-slate-100 shadow-md hover:shadow-2xl transition-all duration-500"
+                                  >
+                                    {item.image && (
+                                      <Image 
+                                        src={item.image} 
+                                        alt={item.name}
+                                        fill
+                                        className="object-cover group-hover/item:scale-110 transition-transform duration-700"
+                                      />
+                                    )}
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+                                    <div className="absolute inset-0 p-5 flex flex-col justify-end">
+                                      <div className="flex items-center gap-2 mb-1">
+                                        <MapIcon className="h-4 w-4 text-primary" />
+                                        <span className="text-[10px] font-bold text-primary uppercase tracking-wider">
+                                          {service.id === 'trekking' ? 'Trek Route' : 'Tour Itinerary'}
+                                        </span>
+                                      </div>
+                                      <span className="font-bold text-white text-base md:text-lg leading-tight group-hover/item:text-primary transition-colors">{item.name}</span>
+                                    </div>
+                                  </div>
+                                ))}
+                              </div>
+                              <EnquireButton variant="full" />
+                           </div>
+                        </div>
+                      ) : (
+                        /* For Vehicles: Show the clean 2x2 Category Grid */
+                        <div className="grid grid-cols-2 gap-4">
+                          {displayImages.map((img: string, idx: number) => (
+                            <div 
+                              key={idx} 
+                              className={`relative aspect-square rounded-2xl md:rounded-3xl overflow-hidden border border-slate-100 shadow-md hover:shadow-2xl transition-all duration-700 hover:-translate-y-1 ${idx === 1 || idx === 2 ? 'mt-4 md:mt-8' : ''}`}
+                            >
+                              <Image 
+                                src={img} 
+                                alt={`${service.title} ${idx + 1}`}
+                                fill
+                                className="object-cover"
+                              />
+                            </div>
+                          ))}
+                        </div>
+                      )}
                     </div>
                   </div>
                 </div>
@@ -94,7 +149,7 @@ export default function ServicesPage() {
             })}
           </div>
         </div>
-        </section>
+      </section>
 
         {/* Inquiry Form Section */}
         <section id="inquiry-form" className="py-24 bg-slate-50 border-t">
