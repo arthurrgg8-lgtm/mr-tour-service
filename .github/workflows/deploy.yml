@@ -22,16 +22,21 @@ jobs:
       - name: Install Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
           cache: 'npm'
 
       - name: Install dependencies
         run: npm install
+        env:
+          NPM_CONFIG_LEGACY_PEER_DEPS: true
 
       - name: Build project
         run: npm run pages:build
         env:
           NPM_CONFIG_LEGACY_PEER_DEPS: true
+
+      - name: Check build output
+        run: ls -R .vercel/output/static
 
       - name: Deploy to Cloudflare Pages
         uses: cloudflare/pages-action@v1
