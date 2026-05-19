@@ -83,6 +83,8 @@ export default function Hero() {
               fill
               className="object-cover"
               priority={currentImage === 0}
+              loading={currentImage === 0 ? "eager" : "lazy"}
+              sizes="100vw"
             />
           </motion.div>
         </AnimatePresence>

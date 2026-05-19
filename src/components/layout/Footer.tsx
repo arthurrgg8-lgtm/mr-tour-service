@@ -102,6 +102,7 @@ export default function Footer() {
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="flex items-start gap-3 group"
+                  aria-label="View our office location on Google Maps"
                 >
                   <MapPin className="h-5 w-5 text-primary shrink-0 group-hover:scale-110 transition-transform" />
                   <span className="text-sm text-muted-foreground group-hover:text-primary transition-colors leading-relaxed">
@@ -110,7 +111,11 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href={`tel:${business.contact.phone}`} className="flex items-center gap-3 group">
+                <a 
+                  href={`tel:${business.contact.phone}`} 
+                  className="flex items-center gap-3 group"
+                  aria-label={`Call us at ${business.contact.phone}`}
+                >
                   <Phone className="h-5 w-5 text-primary shrink-0 group-hover:scale-110 transition-transform" />
                   <span className="text-sm text-muted-foreground group-hover:text-primary transition-colors">
                     {business.contact.phone}
@@ -123,6 +128,7 @@ export default function Footer() {
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 group"
+                  aria-label={`Send an email to ${business.contact.email}`}
                 >
                   <Mail className="h-5 w-5 text-primary shrink-0 group-hover:scale-110 transition-transform" />
                   <span className="text-sm text-muted-foreground group-hover:text-primary transition-colors break-all">
@@ -135,6 +141,7 @@ export default function Footer() {
                   href={`https://wa.me/${business.contact.whatsapp}`}
                   target="_blank"
                   className="flex items-center gap-3 group"
+                  aria-label="Chat with us on WhatsApp"
                 >
                   <MessageCircle className="h-5 w-5 text-green-600 shrink-0 group-hover:scale-110 transition-transform" />
                   <span className="text-sm text-muted-foreground group-hover:text-primary transition-colors">

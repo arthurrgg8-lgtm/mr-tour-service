@@ -24,9 +24,20 @@ export const metadata: Metadata = {
     default: `${business.name} | Premium Vehicle Rental & Tours in Nepal`,
     template: `%s | ${business.name}`
   },
-  description: `${business.name} is a leading travel service provider in Kathmandu, Nepal. We offer premium car rentals, 4x4 Jeep hire, luxury bus services, and customized tour & trekking packages. Fully owned fleet with professional licensed drivers.`,
-  keywords: ["car rental Nepal", "Kathmandu vehicle hire", "Jeep rental for Mustang", "luxury tour packages Nepal", "Everest base camp trekking", "Toyota Hiace rental Nepal", "premium travel service Kathmandu"],
+  description: `${business.name} is Nepal's premier travel service provider. We offer a 100% self-owned fleet of premium cars, 4x4 Jeeps, and luxury buses, alongside expert-led trekking and tour packages. Experience safe, reliable, and professional travel in Kathmandu and beyond.`,
+  keywords: ["car rental Nepal", "Kathmandu vehicle hire", "Jeep rental for Mustang", "luxury tour packages Nepal", "Everest base camp trekking", "Toyota Hiace rental Nepal", "premium travel service Kathmandu", "best tour operator Nepal"],
   authors: [{ name: "Anudit Khatri" }],
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
   openGraph: {
     type: "website",
     locale: "en_NP",
@@ -36,17 +47,30 @@ export const metadata: Metadata = {
     description: business.tagline,
     images: [
       {
-        url: "/images/hero/hero.jpg",
-        width: 1200,
-        height: 630,
+        url: "/logo.jpg",
+        width: 800,
+        height: 800,
         alt: business.name,
       },
     ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: business.name,
+    description: business.tagline,
+    images: ["/logo.jpg"],
   },
   icons: {
     icon: "/logo.jpg",
     apple: "/logo.jpg",
   },
+  category: 'travel',
+}
+
+export const viewport = {
+  themeColor: '#0f172a',
+  width: 'device-width',
+  initialScale: 1,
 }
 
 export default function RootLayout({
