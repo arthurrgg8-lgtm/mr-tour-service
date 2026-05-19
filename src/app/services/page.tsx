@@ -1,5 +1,3 @@
-"use client"
-
 import services from "@/data/services.json"
 import business from "@/data/business.json"
 import { Car, Map as MapIcon, Mountain, Hotel, Calendar, Plane, Heart, ChevronRight, MessageCircle, Bus, Users, ShieldCheck, CheckCircle2 } from "lucide-react"
@@ -7,6 +5,13 @@ import Link from "next/link"
 import Image from "next/image"
 import ImageSlider from "@/components/ui/ImageSlider"
 import ServiceInquiryForm from "@/components/sections/ServiceInquiryForm"
+import EnquireButton from "@/components/ui/EnquireButton"
+import { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Our Services",
+  description: "Explore our premium travel services in Nepal: Car and SUV rentals, 4x4 Jeep expeditions, luxury bus hire, cultural tours, and Himalayan trekking.",
+}
 
 const iconMap: { [key: string]: any } = {
   Car,
@@ -70,22 +75,15 @@ export default function ServicesPage() {
                       
                       {/* Service Image Slider */}
                       <ImageSlider 
-                        images={(service as any).images || [service.image]} 
+                        images={(service as any).images || [(service as any).image]} 
                         alt={service.title} 
                       />
 
                       <p className="text-xl text-muted-foreground leading-relaxed mb-8">
                         {service.details || service.description}
                       </p>
-                      <button 
-                        onClick={() => {
-                          const element = document.getElementById('inquiry-form');
-                          element?.scrollIntoView({ behavior: 'smooth' });
-                        }}
-                        className="inline-flex h-14 items-center justify-center rounded-2xl bg-primary px-10 text-lg font-bold text-white hover:bg-primary/90 transition-all shadow-xl shadow-primary/20"
-                      >
-                        Enquire Now
-                      </button>
+                      
+                      <EnquireButton>Enquire Now</EnquireButton>
                     </div>
 
                     <div className="lg:w-3/5 w-full">
@@ -126,16 +124,7 @@ export default function ServicesPage() {
                           )}
 
                           {/* Price/Details Note */}
-                          <button 
-                            onClick={() => {
-                              const element = document.getElementById('inquiry-form');
-                              element?.scrollIntoView({ behavior: 'smooth' });
-                            }}
-                            className="w-full mt-8 flex items-center justify-center lg:justify-start gap-3 text-primary bg-primary/5 p-4 rounded-2xl border border-primary/10 hover:bg-primary/10 transition-colors group/btn"
-                          >
-                            <MessageCircle className="h-5 w-5 group-hover/btn:scale-110 transition-transform" />
-                            <p className="font-bold text-sm tracking-wide uppercase">Contact for more details and prices OR ENQUIRE NOW</p>
-                          </button>
+                          <EnquireButton variant="full" />
                         </div>
                       </div>
                     </div>

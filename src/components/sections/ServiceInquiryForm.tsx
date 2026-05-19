@@ -28,6 +28,18 @@ export default function ServiceInquiryForm() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
 
+    // Validation Logic
+    const today = new Date().toISOString().split('T')[0]
+    if (formData.pickupDate < today) {
+      alert("Pickup date cannot be in the past.")
+      return
+    }
+
+    if (formData.dropDate < formData.pickupDate) {
+      alert("Drop date cannot be earlier than the pickup date.")
+      return
+    }
+
     const subject = `Service Inquiry - ${formData.name}`
     const body = `New Service Inquiry Details:
 ----------------------------------
