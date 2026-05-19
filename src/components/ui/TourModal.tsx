@@ -1,7 +1,7 @@
 "use client"
 
 import { motion, AnimatePresence } from "framer-motion"
-import { X, Calendar, MapPin, CheckCircle2, Phone, MessageCircle, ArrowLeft } from "lucide-react"
+import { X, Calendar, MapPin, CheckCircle2, Phone, MessageCircle, ArrowLeft, Clock, Mountain, Award, DollarSign } from "lucide-react"
 import business from "@/data/business.json"
 import Image from "next/image"
 
@@ -16,6 +16,9 @@ interface SubPackage {
   duration: string;
   image: string;
   details: string;
+  startingPrice?: string;
+  maxAltitude?: string;
+  difficulty?: string;
 }
 
 interface TourDetail {
@@ -25,6 +28,10 @@ interface TourDetail {
   tagline: string;
   highlights: string[];
   description: string;
+  duration?: string;
+  startingPrice?: string;
+  maxAltitude?: string;
+  difficulty?: string;
   itinerary?: ItineraryItem[];
   subPackages?: SubPackage[];
 }
@@ -90,11 +97,43 @@ export default function TourModal({ tour, onClose, onSelectSubPackage, onBack }:
                 >
                   <X className="h-6 w-6 text-white" />
                 </button>
-                <div className="max-w-3xl">
+                <div className="max-w-3xl mb-4">
                   <span className="text-primary font-bold uppercase tracking-[0.2em] text-sm mb-2 block drop-shadow-md">{tour.tagline}</span>
                   <h2 className="text-3xl md:text-5xl font-bold tracking-tight drop-shadow-lg">{tour.title}</h2>
                 </div>
              </div>
+
+             {/* Quick Info Bar */}
+             {(tour.duration || tour.startingPrice || tour.maxAltitude || tour.difficulty) && (
+               <div className="absolute bottom-0 left-0 w-full bg-black/40 backdrop-blur-md border-t border-white/10 py-3 z-20">
+                 <div className="container mx-auto px-12 flex flex-wrap gap-6 md:gap-12">
+                   {tour.duration && (
+                     <div className="flex items-center gap-2">
+                       <Clock className="h-4 w-4 text-primary" />
+                       <span className="text-xs font-bold uppercase tracking-wider">{tour.duration}</span>
+                     </div>
+                   )}
+                   {tour.maxAltitude && (
+                     <div className="flex items-center gap-2">
+                       <Mountain className="h-4 w-4 text-primary" />
+                       <span className="text-xs font-bold uppercase tracking-wider">{tour.maxAltitude}</span>
+                     </div>
+                   )}
+                   {tour.difficulty && (
+                     <div className="flex items-center gap-2">
+                       <Award className="h-4 w-4 text-primary" />
+                       <span className="text-xs font-bold uppercase tracking-wider">{tour.difficulty}</span>
+                     </div>
+                   )}
+                   {tour.startingPrice && (
+                     <div className="flex items-center gap-2">
+                       <DollarSign className="h-4 w-4 text-primary" />
+                       <span className="text-xs font-bold uppercase tracking-wider">From {tour.startingPrice}</span>
+                     </div>
+                   )}
+                 </div>
+               </div>
+             )}
           </div>
 
           {/* Scrollable Body */}
@@ -195,6 +234,20 @@ export default function TourModal({ tour, onClose, onSelectSubPackage, onBack }:
                                />
                                <div className="absolute top-3 right-3 px-3 py-1 rounded-full bg-primary text-white text-[10px] font-bold tracking-wider shadow-lg">
                                  {pkg.duration}
+                               </div>
+                               
+                               {/* Quick Info Overlay for SubPackages */}
+                               <div className="absolute bottom-0 left-0 w-full bg-black/60 backdrop-blur-md p-2 flex gap-3">
+                                  {pkg.maxAltitude && (
+                                    <div className="flex items-center gap-1 text-[9px] font-bold text-white uppercase">
+                                      <Mountain className="h-3 w-3 text-primary" /> {pkg.maxAltitude}
+                                    </div>
+                                  )}
+                                  {pkg.difficulty && (
+                                    <div className="flex items-center gap-1 text-[9px] font-bold text-white uppercase">
+                                      <Award className="h-3 w-3 text-primary" /> {pkg.difficulty}
+                                    </div>
+                                  )}
                                </div>
                              </div>
                              <div className="p-5">

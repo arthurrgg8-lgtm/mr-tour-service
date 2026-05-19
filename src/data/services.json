@@ -6,6 +6,7 @@
     "icon": "Car",
     "capacity": "4 Seater",
     "startingPrice": "NPR 5,000",
+    "recommendedFor": "City Tours & Airport Transfers",
     "images": [
       "/images/services/car/1.jpg",
       "/images/services/car/2.jpg",
@@ -28,6 +29,7 @@
     "icon": "ShieldCheck",
     "capacity": "4 Seater",
     "startingPrice": "NPR 6,000",
+    "recommendedFor": "Family Vacations & Highway Travel",
     "images": [
       "/images/services/suv/1.jpg",
       "/images/services/suv/2.jpg",
@@ -52,6 +54,7 @@
     "icon": "Mountain",
     "capacity": "7 Seater",
     "startingPrice": "NPR 7,000",
+    "recommendedFor": "Off-road & Mountain Expeditions",
     "images": [
       "/images/services/jeep/1.jpg",
       "/images/services/jeep/2.jpg",
@@ -73,6 +76,7 @@
     "icon": "Users",
     "capacity": "10-14 Seater",
     "startingPrice": "NPR 8,000",
+    "recommendedFor": "Tourist Groups & Pilgrimage",
     "images": [
       "/images/services/hiace/1.jpg"
     ],
@@ -92,6 +96,7 @@
     "icon": "Bus",
     "capacity": "18-25 Seater",
     "startingPrice": "NPR 11,000",
+    "recommendedFor": "Corporate Groups & School Trips",
     "images": [
       "/images/services/minibus/MINIBU2.jpeg",
       "/images/services/minibus/MINIBUS.jpeg"
@@ -112,6 +117,7 @@
     "icon": "Bus",
     "capacity": "35-41 Seater",
     "startingPrice": "NPR 14,000",
+    "recommendedFor": "Large Delegations & Grand Events",
     "images": [
       "/images/services/bus/BUSSS.jpeg",
       "/images/services/bus/BUS8.jpeg",
@@ -133,6 +139,7 @@
     "icon": "ShieldCheck",
     "capacity": "4, 7, 30 Seater",
     "startingPrice": "NPR 15,000",
+    "recommendedFor": "VIP Delegations & High-End Events",
     "images": [
       "/images/fleet/fortuner-new.jpg",
       "/images/fleet/byd-atto3.jpg",
@@ -230,7 +237,9 @@
             "name": "EVEREST BASE CAMP AND KALA PATHHAR",
             "duration": "14 DAYS",
             "image": "/images/trekking/everest/ebc-kala-pathar.png",
-            "startingPrice": "$1,200"
+            "startingPrice": "$1,200",
+            "maxAltitude": "5,545m",
+            "difficulty": "Moderate-Hard"
           },
           {
             "name": "EVEREST PIKEY PEAK",

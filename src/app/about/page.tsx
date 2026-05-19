@@ -104,10 +104,10 @@ export default function AboutPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
             {team.map((member, idx) => (
               <div key={idx} className="group flex flex-col items-center text-center">
-                <div className="h-64 w-64 rounded-full bg-slate-200 mb-6 overflow-hidden border-4 border-white shadow-lg group-hover:scale-105 transition-transform duration-300 relative">
+                <div className="h-56 w-56 rounded-full bg-slate-200 mb-6 overflow-hidden border-4 border-white shadow-lg group-hover:scale-105 transition-transform duration-500 relative">
                   {member.image ? (
                     <Image 
                       src={member.image} 
@@ -121,8 +121,8 @@ export default function AboutPage() {
                     </div>
                   )}
                 </div>
-                <h3 className="text-2xl font-bold">{member.name}</h3>
-                <p className="text-primary font-semibold uppercase tracking-wider text-sm">{member.role}</p>
+                <h3 className="text-xl font-bold mb-1">{member.name}</h3>
+                <p className="text-primary font-bold uppercase tracking-wider text-xs">{member.role}</p>
               </div>
             ))}
           </div>

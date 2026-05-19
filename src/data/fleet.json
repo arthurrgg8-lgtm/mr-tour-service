@@ -6,7 +6,9 @@
     "capacity": "7 Passengers",
     "features": ["Luxury Leather Interior", "Climate Control", "Professional Driver", "Spacious Boot Space"],
     "image": "/images/fleet/fortuner-new.jpg",
-    "category": "Premium SUV"
+    "category": "Premium SUV",
+    "startingPrice": "NPR 8,000",
+    "recommendedFor": "Mountain Expeditions & VIP Travel"
   },
   {
     "id": "premium-ev",
@@ -15,7 +17,9 @@
     "capacity": "5 Passengers",
     "features": ["Zero Emissions", "Panoramic Sunroof", "Advanced Safety", "Ultra-Quiet Cabin"],
     "image": "/images/fleet/byd-atto3.jpg",
-    "category": "Electric Premium"
+    "category": "Electric Premium",
+    "startingPrice": "NPR 7,000",
+    "recommendedFor": "Eco-Friendly City & Highway Tours"
   },
   {
     "id": "compact-suv",
@@ -24,7 +28,9 @@
     "capacity": "5 Passengers",
     "features": ["High Ground Clearance", "Air Conditioned", "Excellent Fuel Efficiency", "Modern Infotainment"],
     "image": "/images/fleet/suzuki-brezza.jpg",
-    "category": "Comfort SUV"
+    "category": "Comfort SUV",
+    "startingPrice": "NPR 6,000",
+    "recommendedFor": "Family Trips & Long Highway Drives"
   },
   {
     "id": "hiace",
@@ -33,7 +39,9 @@
     "capacity": "14 Passengers",
     "features": ["High Roof", "Luxury Reclining Seats", "Dual AC", "Well-Trained Driver"],
     "image": "/images/fleet/hiace-fleet.jpg",
-    "category": "Group Travel"
+    "category": "Group Travel",
+    "startingPrice": "NPR 8,000",
+    "recommendedFor": "Tourist Groups & Pilgrimage Tours"
   },
   {
     "id": "minibus",
@@ -42,7 +50,9 @@
     "capacity": "18-25 Passengers",
     "features": ["Comfortable Seating", "Air Conditioned", "Agile Maneuverability", "Expert Driver"],
     "image": "/images/services/minibus/MINIBUS.jpeg",
-    "category": "Medium Groups"
+    "category": "Medium Groups",
+    "startingPrice": "NPR 11,000",
+    "recommendedFor": "Corporate Outings & Medium Groups"
   },
   {
     "id": "tourist-bus",
@@ -51,6 +61,8 @@
     "capacity": "35-41 Passengers",
     "features": ["Air Suspension", "Panoramic Windows", "LED Entertainment", "On-board Washroom (Optional)"],
     "image": "/images/services/bus/BUSSS.jpeg",
-    "category": "Large Groups"
+    "category": "Large Groups",
+    "startingPrice": "NPR 14,000",
+    "recommendedFor": "Large Delegations & Grand Event Logistics"
   }
 ]

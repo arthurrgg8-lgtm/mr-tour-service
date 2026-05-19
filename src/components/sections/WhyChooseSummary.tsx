@@ -1,5 +1,4 @@
 import { ShieldCheck, Zap, Users, Trophy } from "lucide-react"
-import business from "@/data/business.json"
 
 export default function WhyChooseSummary() {
   const summaryFeatures = [

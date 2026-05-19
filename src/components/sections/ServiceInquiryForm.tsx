@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { Send, User, Phone, Mail, Globe, Users, Car, Calendar, MapPin, Plus, FileText, Mountain, Map as MapIcon, Copy, Check } from "lucide-react"
+import { User, Phone, Mail, Globe, Users, Car, Calendar, MapPin, Plus, FileText, Mountain, Map as MapIcon, Copy, Check, MessageCircle } from "lucide-react"
 import business from "@/data/business.json"
 import fleet from "@/data/fleet.json"
 
@@ -69,6 +69,31 @@ Destination/Requests: ${formData.destination}
 
     const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${business.contact.email}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
     window.open(gmailUrl, "_blank")
+  }
+
+  const handleWhatsApp = () => {
+    let rentalDetails = ""
+    if (formData.inquiryType === "Rental") {
+      rentalDetails = `
+*Vehicle Type:* ${formData.vehicleType}
+*Pickup Date:* ${formData.pickupDate}
+*Drop Date:* ${formData.dropDate}
+*Pickup Location:* ${formData.pickupLocation}
+*Drop Location:* ${formData.dropLocation}`
+    }
+
+    const text = `*New ${formData.inquiryType} Inquiry*
+----------------------------------
+*Name:* ${formData.name}
+*Phone:* ${formData.phone}
+*Email:* ${formData.email}
+*Nationality:* ${formData.nationality}
+*Number of People:* ${formData.numPeople}${rentalDetails}
+*Destination/Requests:* ${formData.destination}
+----------------------------------`
+
+    const waUrl = `https://wa.me/${business.contact.whatsapp.replace('+', '')}?text=${encodeURIComponent(text)}`
+    window.open(waUrl, "_blank")
   }
 
   const handleCopy = () => {
@@ -264,28 +289,35 @@ Destination/Requests: ${formData.destination}
             ></textarea>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-8">
             <button 
               type="submit"
-              className="h-16 rounded-2xl bg-primary text-white font-bold text-xl hover:bg-primary/90 transition-all shadow-xl shadow-primary/20 flex items-center justify-center gap-3"
+              className="h-16 rounded-2xl bg-primary text-white font-bold text-lg hover:bg-primary/90 transition-all shadow-xl shadow-primary/20 flex items-center justify-center gap-2"
             >
-              Enquire Now <Send className="h-6 w-6" />
+              <Mail className="h-5 w-5" /> Gmail Inquiry
+            </button>
+            <button 
+              type="button"
+              onClick={handleWhatsApp}
+              className="h-16 rounded-2xl bg-[#25D366] text-white font-bold text-lg hover:bg-[#20ba5a] transition-all shadow-xl shadow-green-500/20 flex items-center justify-center gap-2"
+            >
+              <MessageCircle className="h-6 w-6" /> WhatsApp
             </button>
             <button 
               type="button"
               onClick={handleCopy}
-              className="h-16 rounded-2xl bg-slate-100 text-slate-700 font-bold text-lg hover:bg-slate-200 transition-all flex items-center justify-center gap-3 border border-slate-200"
+              className="h-16 rounded-2xl bg-slate-100 text-slate-700 font-bold text-lg hover:bg-slate-200 transition-all flex items-center justify-center gap-2 border border-slate-200 sm:col-span-2 lg:col-span-1"
             >
               {copied ? (
-                <>Copied! <Check className="h-6 w-6 text-green-600" /></>
+                <>Copied! <Check className="h-5 w-5 text-green-600" /></>
               ) : (
-                <>Copy Details <Copy className="h-6 w-6" /></>
+                <>Copy Details <Copy className="h-5 w-5" /></>
               )}
             </button>
           </div>
           
           <p className="text-center text-xs text-muted-foreground italic mt-4">
-            &quot;Enquire Now&quot; opens Gmail. Use &quot;Copy Details&quot; if you want to paste manually.
+            Pick your preferred way to send the inquiry. We are available 24/7.
           </p>
         </form>
       </div>

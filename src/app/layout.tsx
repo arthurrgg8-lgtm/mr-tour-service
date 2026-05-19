@@ -78,8 +78,52 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "TravelAgency",
+    "name": business.name,
+    "alternateName": "Manoranjan Ramjham Travel and Tour",
+    "description": "Nepal's premier travel service provider offering 100% self-owned fleet of premium cars, 4x4 Jeeps, and luxury buses.",
+    "url": "https://mrtourservice.com.np",
+    "logo": "https://mrtourservice.com.np/logo.jpg",
+    "image": "https://mrtourservice.com.np/images/hero/services-bg.jpg",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Kalopul",
+      "addressLocality": "Kathmandu",
+      "addressRegion": "Bagmati",
+      "postalCode": "44600",
+      "addressCountry": "NP"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 27.7118,
+      "longitude": 85.3353
+    },
+    "telephone": business.contact.phone,
+    "email": business.contact.email,
+    "priceRange": "$$",
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"
+      ],
+      "opens": "00:00",
+      "closes": "23:59"
+    },
+    "sameAs": [
+      `https://wa.me/${business.contact.whatsapp.replace('+', '')}`
+    ]
+  }
+
   return (
     <html lang="en" className="scroll-smooth">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body
         className={`${montserrat.variable} ${lora.variable} antialiased`}
       >

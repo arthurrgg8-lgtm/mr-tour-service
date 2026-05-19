@@ -4,6 +4,10 @@
     "title": "KATHMANDU COUNTRYSIDE HIKE",
     "image": "/images/tours/tour-1.png",
     "tagline": "An exciting countryside experience",
+    "duration": "5 Days",
+    "startingPrice": "$450",
+    "maxAltitude": "2,175m",
+    "difficulty": "Easy",
     "highlights": [
       "Short and easy trekking near Kathmandu valley",
       "Spectacular mountainous view",
@@ -186,6 +190,10 @@
     "title": "Trek to Mount Everest",
     "image": "/images/trekking/everest.jpeg",
     "tagline": "Sagarmatha National Park - A World Heritage Experience",
+    "duration": "12-20 Days",
+    "startingPrice": "$1,200",
+    "maxAltitude": "5,545m",
+    "difficulty": "Moderate-Hard",
     "highlights": [
       "UNESCO World Heritage Site since 1979",
       "Home to the top of the world - Sagarmatha (8,848m)",

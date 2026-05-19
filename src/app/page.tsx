@@ -2,9 +2,10 @@ import Hero from "@/components/sections/Hero"
 import WhyChooseSummary from "@/components/sections/WhyChooseSummary"
 import FeaturedServices from "@/components/sections/FeaturedServices"
 import WhyChooseUs from "@/components/sections/WhyChooseUs"
+import Testimonials from "@/components/sections/Testimonials"
 import ScrollAnimation from "@/components/ui/ScrollAnimation"
 import Link from "next/link"
-import { Map as MapIcon, MessageCircle, Phone } from "lucide-react"
+import { Map as MapIcon, Phone, MessageCircle } from "lucide-react"
 import business from "@/data/business.json"
 
 export default function Home() {
@@ -19,6 +20,10 @@ export default function Home() {
       </ScrollAnimation>
       <ScrollAnimation>
         <WhyChooseUs />
+      </ScrollAnimation>
+      
+      <ScrollAnimation>
+        <Testimonials />
       </ScrollAnimation>
       
       {/* Gallery Teaser Section */}

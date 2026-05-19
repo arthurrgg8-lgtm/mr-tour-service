@@ -5,8 +5,8 @@ import { Car, Map as MapIcon, Mountain, Bus, Users, ShieldCheck } from "lucide-r
 import Image from "next/image"
 import ServiceInquiryForm from "@/components/sections/ServiceInquiryForm"
 import EnquireButton from "@/components/ui/EnquireButton"
-
 import ImageSlideshow from "@/components/ui/ImageSlideshow"
+import { motion } from "framer-motion"
 
 interface SubService {
   name: string;
@@ -30,6 +30,7 @@ interface Service {
   details: string;
   capacity?: string;
   startingPrice?: string;
+  recommendedFor?: string;
   subServices?: SubService[];
   regions?: Region[];
 }
@@ -93,12 +94,19 @@ export default function ServicesPage() {
                       </div>
                       <div>
                         <h2 className="text-xl md:text-2xl font-bold tracking-tight">{service.title}</h2>
-                        {service.capacity && (
-                          <div className="flex items-center gap-1.5 mt-0.5">
-                            <Users className="h-3.5 w-3.5 text-primary" />
-                            <span className="font-bold text-xs text-slate-600">Capacity: {service.capacity}</span>
-                          </div>
-                        )}
+                        <div className="flex flex-wrap items-center gap-3 mt-1.5">
+                          {service.capacity && (
+                            <div className="flex items-center gap-1.5">
+                              <Users className="h-3.5 w-3.5 text-primary" />
+                              <span className="font-bold text-[10px] md:text-xs text-slate-600 uppercase tracking-wider">{service.capacity}</span>
+                            </div>
+                          )}
+                          {service.recommendedFor && (
+                            <div className="flex items-center gap-1.5 px-2 py-0.5 rounded-md bg-primary/10 text-primary border border-primary/20">
+                              <span className="font-bold text-[9px] md:text-[10px] uppercase tracking-widest">{service.recommendedFor}</span>
+                            </div>
+                          )}
+                        </div>
                       </div>
                     </div>
                     {service.startingPrice && (
@@ -169,12 +177,17 @@ export default function ServicesPage() {
           
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
             {["Kathmandu", "Chitwan", "Pokhara", "Lumbini", "Everest Region", "Annapurna", "Manaslu", "Langtang", "Upper Mustang", "Rara Lake"].map((dest, idx) => (
-              <div 
+              <motion.div 
                 key={idx}
-                className="group p-6 rounded-3xl bg-white/5 border border-white/10 hover:bg-primary hover:border-primary transition-all duration-500 text-center"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: idx * 0.05 }}
+                whileHover={{ scale: 1.05, y: -5 }}
+                className="group p-6 rounded-3xl bg-white/5 border border-white/10 hover:bg-primary hover:border-primary transition-all duration-500 text-center cursor-default"
               >
                 <p className="text-lg font-bold group-hover:scale-110 transition-transform duration-500">{dest}</p>
-              </div>
+              </motion.div>
             ))}
           </div>
 
