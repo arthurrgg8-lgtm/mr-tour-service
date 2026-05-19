@@ -92,9 +92,9 @@ export default function ServicesPage() {
       </section>
 
       {/* Services List */}
-      <section className="py-24 bg-white">
+      <section className="py-12 bg-white">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {typedServices.map((service, index) => {
               const Icon = iconMap[service.icon] || MapIcon
               
@@ -102,43 +102,43 @@ export default function ServicesPage() {
                 <div 
                   key={service.id}
                   id={service.id}
-                  className="group flex flex-col gap-6 p-8 rounded-[2.5rem] border border-slate-100 bg-slate-50/50 hover:bg-white hover:shadow-2xl hover:-translate-y-2 transition-all duration-500"
+                  className="group flex flex-col gap-4 p-5 rounded-[2rem] border border-slate-100 bg-slate-50/50 hover:bg-white hover:shadow-2xl hover:-translate-y-1 transition-all duration-500"
                 >
                   {/* Header Info */}
-                  <div className="flex items-start justify-between">
-                    <div className="flex items-center gap-4">
-                      <div className="h-14 w-14 rounded-2xl bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all duration-500 shadow-lg shadow-primary/5">
-                        <Icon className="h-7 w-7" />
+                  <div className="flex items-start justify-between gap-2">
+                    <div className="flex items-center gap-3">
+                      <div className="h-10 w-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all duration-500 shadow-sm">
+                        <Icon className="h-5 w-5" />
                       </div>
                       <div>
-                        <h2 className="text-2xl font-bold tracking-tight">{service.title}</h2>
+                        <h2 className="text-lg font-bold tracking-tight leading-tight">{service.title}</h2>
                         {service.capacity && (
-                          <div className="flex items-center gap-1.5 mt-0.5">
-                            <Users className="h-3.5 w-3.5 text-primary" />
-                            <span className="font-bold text-xs text-slate-600">Capacity: {service.capacity}</span>
+                          <div className="flex items-center gap-1 mt-0.5">
+                            <Users className="h-3 w-3 text-primary" />
+                            <span className="font-bold text-[10px] text-slate-600 uppercase tracking-tighter">{service.capacity}</span>
                           </div>
                         )}
                       </div>
                     </div>
                     {service.startingPrice && (
-                      <div className="text-right">
-                        <span className="text-[10px] font-bold uppercase tracking-widest text-primary block">Starting From</span>
-                        <span className="text-xl font-bold text-slate-900">{service.startingPrice}</span>
+                      <div className="text-right shrink-0">
+                        <span className="text-[8px] font-bold uppercase tracking-widest text-primary block">From</span>
+                        <span className="text-sm font-bold text-slate-900">{service.startingPrice}</span>
                       </div>
                     )}
                   </div>
 
                   {/* Visual Container */}
-                  <div className="w-full h-[350px] relative">
+                  <div className="w-full h-[220px] relative">
                     {(service.id === 'trekking' || service.id === 'tour-packages') ? (
-                      <div className="bg-white rounded-3xl border border-slate-100 p-4 h-full flex flex-col">
-                        <div className="flex-grow overflow-y-auto pr-2 custom-scrollbar">
-                          <div className="grid grid-cols-2 gap-3">
+                      <div className="bg-white rounded-2xl border border-slate-100 p-3 h-full flex flex-col">
+                        <div className="flex-grow overflow-y-auto pr-1 custom-scrollbar">
+                          <div className="grid grid-cols-2 gap-2">
                             {(service.id === 'trekking' ? service.regions : service.subServices)?.map((item, idx: number) => (
                               <div 
                                 key={idx} 
                                 onClick={() => (service.id === 'tour-packages' || item.name === 'Everest Region') && handleTourClick((item as any).name)}
-                                className={`relative group/item h-28 rounded-xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-lg transition-all duration-500 ${(service.id === 'tour-packages' || item.name === 'Everest Region') ? 'cursor-pointer' : ''}`}
+                                className={`relative group/item h-20 rounded-lg overflow-hidden border border-slate-100 shadow-sm hover:shadow-lg transition-all duration-500 ${(service.id === 'tour-packages' || item.name === 'Everest Region') ? 'cursor-pointer' : ''}`}
                               >
                                 {item.image && (
                                   <Image 
@@ -148,9 +148,9 @@ export default function ServicesPage() {
                                     className="object-cover group-hover/item:scale-110 transition-transform duration-700"
                                   />
                                 )}
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-                                <div className="absolute inset-0 p-3 flex flex-col justify-end">
-                                  <span className="font-bold text-white text-xs leading-tight group-hover/item:text-primary transition-colors">{(item as SubService | Region).name}</span>
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                                <div className="absolute inset-0 p-2 flex flex-col justify-end">
+                                  <span className="font-bold text-white text-[10px] leading-tight group-hover/item:text-primary transition-colors line-clamp-2">{(item as SubService | Region).name}</span>
                                 </div>
                               </div>
                             ))}
@@ -158,17 +158,41 @@ export default function ServicesPage() {
                         </div>
                       </div>
                     ) : (
-                      <ImageSlideshow images={service.images || []} />
+                      <div className="grid grid-cols-2 grid-rows-2 gap-2 h-full">
+                        {(service.images && service.images.length > 0) ? (
+                          service.images.slice(0, 4).map((img, idx) => (
+                            <div 
+                              key={idx} 
+                              className={`relative overflow-hidden rounded-xl border border-slate-100 ${
+                                service.images?.length === 1 ? "col-span-2 row-span-2" : 
+                                service.images?.length === 2 ? "col-span-1 row-span-2" :
+                                service.images?.length === 3 && idx === 0 ? "col-span-2 row-span-1" : "col-span-1 row-span-1"
+                              }`}
+                            >
+                              <Image 
+                                src={img} 
+                                alt={`${service.title} ${idx + 1}`}
+                                fill
+                                className="object-cover group-hover:scale-110 transition-transform duration-700"
+                              />
+                            </div>
+                          ))
+                        ) : (
+                          <div className="col-span-2 row-span-2 bg-slate-100 rounded-xl flex items-center justify-center text-slate-400">
+                             <Icon className="h-10 w-10 opacity-20" />
+                          </div>
+                        )}
+                      </div>
                     )}
                   </div>
 
                   {/* Description & CTA */}
-                  <div className="space-y-6">
-                    <p className="text-slate-600 leading-relaxed line-clamp-3">
+                  <div className="space-y-4">
+                    <p className="text-[13px] text-slate-600 leading-relaxed line-clamp-3 min-h-[3.5em]">
                       {service.details || service.description}
                     </p>
-                    <div className="flex items-center gap-4">
-                      <EnquireButton>Book {service.title}</EnquireButton>
+                    <div className="flex items-center gap-2">
+                      <EnquireButton variant="full">Book {service.title.split(' ')[0]}</EnquireButton>
                     </div>
                   </div>
                 </div>
