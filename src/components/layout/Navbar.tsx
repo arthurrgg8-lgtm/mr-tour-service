@@ -29,19 +29,14 @@ export default function Navbar() {
   ]
 
   const tourServices = [
-    { name: "KATHMANDU COUNTRYSIDE", href: "/services#tour-packages" },
-    { name: "FAMILY HOLIDAYS", href: "/services#tour-packages" },
+    { name: "KTM COUNTRYSIDE HIKE", href: "/services#tour-packages" },
+    { name: "FAMILY HOLIDAY", href: "/services#tour-packages" },
     { name: "LUMBINI TOUR", href: "/services#tour-packages" },
-    { name: "CHITWAN SAFARI", href: "/services#tour-packages" },
-    { name: "GORKHA-BANDIPUR-POKHARA", href: "/services#tour-packages" },
-    { name: "POKHARA ADVENTURE", href: "/services#tour-packages" },
-    { name: "BADIMALIKA JEEP TOUR", href: "/services#tour-packages" },
-    { name: "RARA JEEP TOUR", href: "/services#tour-packages" },
-    { name: "ROUND TOUR (KTM-CHITWAN-PKR)", href: "/services#tour-packages" },
-    { name: "KALINCHOWK TOUR", href: "/services#tour-packages" },
-    { name: "DHAMPUS TOUR", href: "/services#tour-packages" },
-    { name: "KATHMANDU HIKING", href: "/services#tour-packages" },
-    { name: "ADVENTURE ACTIVITIES", href: "/services#tour-packages" },
+    { name: "CHITWAN JUNGLE SAFARI", href: "/services#tour-packages" },
+    { name: "GORKHA-BANDIPUR-PKR", href: "/services#tour-packages" },
+    { name: "BADIMALIKA TOUR", href: "/services#tour-packages" },
+    { name: "JEEP TOUR TO RARA", href: "/services#tour-packages" },
+    { name: "KTM CITY TOUR (1 DAY)", href: "/services#tour-packages" },
   ]
 
   const trekkingRegions = [

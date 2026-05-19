@@ -1,0 +1,45 @@
+MR TOUR SERVICE - PROJECT PROGRESS ARCHIVE
+Date: May 19, 2026
+------------------------------------------
+
+1. INFRASTRUCTURE & DEPLOYMENT
+- Prepared Next.js 16.2.6 project for Cloudflare Pages.
+- Resolved Next.js 16 version conflicts using 'legacy-peer-deps'.
+- Created 'wrangler.toml' with 'nodejs_compat' flag.
+- Configured GitHub Actions workflow for automatic deployment.
+- Integrated Cloudflare API Token and Account ID for secure CI/CD.
+- Finalized production URL at: https://mr-tour-service.pages.dev
+
+2. BRANDING & TYPOGRAPHY
+- Set company 'logo.jpg' as the browser favicon.
+- Implemented premium font pairing:
+  * Montserrat (Headings) for a modern, bold look.
+  * Lora (Body) for an elegant, trustworthy serif feel.
+- Updated Global CSS for smooth scrolling and scroll-padding.
+
+3. HOMEPAGE IMPROVEMENTS
+- Implemented Deep-Linking: Core services on homepage link directly to specific sections on the Services page.
+- Optimized Hero Section: Set background opacity to 100% and reduced gradient intensity for maximum image clarity.
+
+4. SERVICES PAGE REDESIGN
+- Refactored Layout: Switched from cluttered lists to a side-by-side view.
+- Vehicle Sections: Implemented 2x2 Image Grids for all vehicle categories (Car, SUV, Jeep, etc.).
+- Tour & Trek Sections: Restored specialized visual cards with background photos and detailed durations.
+- Image Clarity: Removed all blue/colored overlays from service images across the site.
+
+5. CONTENT EXPANSION
+- Trekking: Added specific routes including Buddhist Pilgrimage, Dhaulagiri, Dolpo, GHT Trail, and more.
+- Tours: Streamlined to 8 core packages with exact durations:
+  * Kathmandu Countryside Hike (5 Days)
+  * Family Holiday (4 Days)
+  * Lumbini Tour (3 Days)
+  * Chitwan Jungle Safari (3 Days)
+  * Gorkha-Bandipur-Pokhara Tour (13 Days)
+  * Badimalika Tour (16 Days)
+  * Jeep Tour to Rara (6 Days)
+  * Kathmandu City Tour (1 Day)
+- Navigation: Updated Navbar dropdowns to match expanded Trekking and Tour options.
+
+------------------------------------------
+Status: PRODUCTION READY & AUTOMATED
+------------------------------------------
