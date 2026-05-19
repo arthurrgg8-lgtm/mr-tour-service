@@ -1,7 +1,7 @@
 "use client"
 
 import { motion, AnimatePresence } from "framer-motion"
-import { X, Calendar, MapPin, CheckCircle2, Phone, MessageCircle } from "lucide-react"
+import { X, Calendar, MapPin, CheckCircle2, Phone, MessageCircle, ArrowLeft } from "lucide-react"
 import business from "@/data/business.json"
 import Image from "next/image"
 
@@ -33,9 +33,10 @@ interface TourModalProps {
   tour: TourDetail | null;
   onClose: () => void;
   onSelectSubPackage?: (packageName: string) => void;
+  onBack?: () => void;
 }
 
-export default function TourModal({ tour, onClose, onSelectSubPackage }: TourModalProps) {
+export default function TourModal({ tour, onClose, onSelectSubPackage, onBack }: TourModalProps) {
   if (!tour) return null;
 
   return (
@@ -75,6 +76,14 @@ export default function TourModal({ tour, onClose, onSelectSubPackage }: TourMod
              <div className="absolute inset-0 bg-black/20" />
              
              <div className="absolute inset-0 p-8 md:p-12 flex flex-col justify-end z-10">
+                {onBack && (
+                  <button 
+                    onClick={onBack}
+                    className="absolute top-6 left-6 h-10 px-4 rounded-full bg-white/20 hover:bg-white/40 backdrop-blur-md flex items-center justify-center gap-2 transition-colors border border-white/20 text-white font-bold text-sm"
+                  >
+                    <ArrowLeft className="h-4 w-4" /> Back to Packages
+                  </button>
+                )}
                 <button 
                   onClick={onClose}
                   className="absolute top-6 right-6 h-10 w-10 rounded-full bg-white/20 hover:bg-white/40 backdrop-blur-md flex items-center justify-center transition-colors border border-white/20"

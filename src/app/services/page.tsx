@@ -60,6 +60,7 @@ export default function ServicesPage() {
         tour={selectedTour} 
         onClose={() => setSelectedTour(null)} 
         onSelectSubPackage={handleTourClick}
+        onBack={selectedTour?.id.startsWith('trek-') && selectedTour.id !== 'trek-everest' ? () => handleTourClick('Everest Region') : undefined}
       />
 
       {/* Header */}
