@@ -111,7 +111,7 @@ export default function ServicesPage() {
                                       fill
                                       className="object-cover group-hover/sub:scale-110 transition-transform duration-700"
                                     />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
                                     <div className="absolute inset-0 p-4 flex flex-col justify-end">
                                       <span className="font-bold text-white text-sm md:text-base leading-tight group-hover/sub:text-primary transition-colors">{sub.name}</span>
                                     </div>
@@ -136,7 +136,7 @@ export default function ServicesPage() {
                                       className="object-cover group-hover/item:scale-110 transition-transform duration-700"
                                     />
                                   )}
-                                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
                                   <div className="absolute inset-0 p-5 flex flex-col justify-end">
                                     <div className="flex items-center gap-2 mb-1">
                                       <MapIcon className="h-4 w-4 text-primary" />
