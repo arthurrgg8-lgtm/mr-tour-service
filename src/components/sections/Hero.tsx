@@ -10,10 +10,11 @@ import { motion, AnimatePresence } from "framer-motion"
 
 const heroImages = [
   "/images/hero/hero-nepal.jpeg",
-  "/images/hero/hero-namche.jpeg",
+  "/images/hero/hero-trek.jpeg",
+  "/images/hero/hero-triple-tour.jpeg",
+  "/images/hero/hero-pashupati.webp",
   "/images/hero/hero-tibet.jpeg",
   "/images/hero/hero-1.jpg",
-  "/images/hero/hero-2.jpg",
 ]
 
 export default function Hero() {
