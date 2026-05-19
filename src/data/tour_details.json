@@ -246,39 +246,128 @@
       {
         "name": "ANNAPURNA CIRCUIT WITH TILICHO LAKE",
         "duration": "18 DAYS",
-        "image": "/images/trekking/annapurna/circuit-tilicho.png",
+        "image": "/images/trekking/annapurna.jpeg",
         "details": "A comprehensive journey circling the entire Annapurna massif, including a challenging detour to the turquoise waters of Tilicho Lake."
       },
       {
         "name": "ANNAPURNA BASE CAMP VIA GHOREPANI",
         "duration": "14 DAYS",
-        "image": "/images/trekking/annapurna/abc-ghorepani.png",
+        "image": "/images/trekking/annapurna.jpeg",
         "details": "A classic trek combining the famous sunrise views from Poon Hill with a deep trek into the Annapurna Sanctuary's natural amphitheater."
       },
       {
         "name": "MARDI HIMAL TREK",
         "duration": "9 DAYS",
-        "image": "/images/trekking/annapurna/mardi-himal.png",
+        "image": "/images/trekking/annapurna.jpeg",
         "details": "A popular 'eco-trek' following a ridgeline toward the base of Machhapuchhre, offering some of the closest mountain views available."
       },
       {
         "name": "KHOPRA RIDGE TREK",
         "duration": "12 DAYS",
-        "image": "/images/trekking/annapurna/khopra-ridge.png",
+        "image": "/images/trekking/annapurna.jpeg",
         "details": "An excellent alternative to busier trails, offering incredible panoramic views of Dhaulagiri and a visit to the sacred Khayer Lake."
       },
       {
         "name": "ANNAPURNA BASE CAMP - SHORT TRIP",
         "duration": "8 DAYS",
-        "image": "/images/trekking/annapurna/abc-short.png",
+        "image": "/images/trekking/annapurna.jpeg",
         "details": "A fast-paced version of the sanctuary trek, ideal for those with limited time who still wish to stand at the foot of the world's 10th highest peak."
       }
     ]
   },
   {
+    "id": "trek-annapurna-circuit",
+    "title": "ANNAPURNA CIRCUIT WITH TILICHO LAKE",
+    "image": "/images/trekking/annapurna.jpeg",
+    "tagline": "The Ultimate Himalayan Circuit Challenge",
+    "highlights": [
+      "Thorong La Pass: The highest trekking pass in the world (5,416m)",
+      "Tilicho Lake: Visit one of the highest glacial lakes in the world (4,919m)",
+      "Muktinath: Sacred pilgrimage site for Hindus and Buddhists",
+      "Poon Hill: Iconic sunrise views of Annapurna and Dhaulagiri ranges",
+      "Kali Gandaki Gorge: Deepest gorge in the world",
+      "Manang Village: Cultural heart of the high-altitude desert"
+    ],
+    "description": "The Annapurna Circuit with Tilicho Lake is a legendary 18-day trek that combines the high-altitude challenge of the Thorong La Pass with a visit to the breathtaking Tilicho Lake. The route transitions from lush subtropical valleys to high-altitude desert plateaus, offering a complete cross-section of Nepal's natural and cultural diversity.\n\nStats:\n- Max Altitude: 5,416 m\n- Difficulty: Strenuous\n- Duration: 18 Days",
+    "itinerary": [
+      { "day": "01", "title": "Arrival in Kathmandu", "desc": "Transfer to hotel and trek briefing." },
+      { "day": "02", "title": "Drive to Jagat (1,300m)", "desc": "Scenic 8-9 hour drive into the mountains." },
+      { "day": "03", "title": "Trek to Dharapani (1,860m)", "desc": "Follow the Marshyangdi River into Manang district." },
+      { "day": "04", "title": "Trek to Chame (2,670m)", "desc": "Climb through pine forests with views of Annapurna II." },
+      { "day": "05", "title": "Trek to Upper Pisang (3,300m)", "desc": "Walk through apple orchards and high alpine landscape." },
+      { "day": "06", "title": "Trek to Manang (3,540m)", "desc": "High route via Ngawal for better views and acclimatization." },
+      { "day": "07", "title": "Acclimatization in Manang", "desc": "Rest day; optional hike to Ice Lake (4,600m)." },
+      { "day": "08", "title": "Trek to Siri Kharka (4,060m)", "desc": "Head toward the remote Tilicho region." },
+      { "day": "09", "title": "Trek to Tilicho Base Camp (4,150m)", "desc": "Navigate the rugged landslide area to the base camp." },
+      { "day": "10", "title": "Visit Tilicho Lake (4,919m)", "desc": "Early morning hike to the turquoise lake, then back to Siri Kharka." },
+      { "day": "11", "title": "Trek to Yak Kharka (4,010m)", "desc": "Rejoin the main Annapurna Circuit trail." },
+      { "day": "12", "title": "Trek to Thorong Phedi (4,450m)", "desc": "Prepare for the high pass crossing tomorrow." },
+      { "day": "13", "title": "Thorong La Pass (5,416m) to Muktinath", "desc": "Cross the world's highest pass and descend to the sacred temple." },
+      { "day": "14", "title": "Drive to Tatopani (1,190m)", "desc": "Drive through the deepest gorge to natural hot springs." },
+      { "day": "15", "title": "Trek to Ghorepani (2,860m)", "desc": "Steep ascent through rhododendron forests." },
+      { "day": "16", "title": "Poon Hill & Drive to Pokhara", "desc": "Sunrise views, trek to Nayapul, and return to Pokhara." },
+      { "day": "17", "title": "Return to Kathmandu", "desc": "Drive or fly back to the capital." },
+      { "day": "18", "title": "Departure", "desc": "Transfer to airport for final departure." }
+    ]
+  },
+  {
+    "id": "trek-khopra-ridge",
+    "title": "KHOPRA RIDGE TREK",
+    "image": "/images/trekking/annapurna.jpeg",
+    "tagline": "An Off-the-Beaten-Path Community Adventure",
+    "highlights": [
+      "Khayer Lake: A sacred high-altitude glacial lake (4,660m)",
+      "Mulde Peak: Panoramic views rivaling Poon Hill",
+      "Front-row views of Mt. Dhaulagiri and Annapurna South",
+      "Community Lodges: Supporting local schools and health posts",
+      "Quiet, pristine trails through rhododendron forests",
+      "Stay in traditional Magar and Gurung villages"
+    ],
+    "description": "The Khopra Ridge Trek is a stunning alternative to the busier trails in the Annapurna region. It features incredible ridge-top walking with constant mountain views and a visit to the sacred Khayer Lake. Staying in community-managed lodges, you directly contribute to local development.\n\nStats:\n- Max Altitude: 4,660 m (Khayer Lake)\n- Difficulty: Moderate-Strenuous\n- Duration: 12 Days",
+    "itinerary": [
+      { "day": "01", "title": "Arrival in Kathmandu", "desc": "Airport transfer and trip briefing." },
+      { "day": "02", "title": "Return to Pokhara", "desc": "Scenic 6-7 hour drive or flight to the lake city." },
+      { "day": "03", "title": "Pokhara to Ghandruk (1,940m)", "desc": "Drive to Nayapul and trek to the Gurung heritage village." },
+      { "day": "04", "title": "Trek to Tadapani (2,630m)", "desc": "Walk through rhododendron forests with views of Fishtail." },
+      { "day": "05", "title": "Trek to Dobato (3,420m)", "desc": "Head up to the remote ridges for panoramic vistas." },
+      { "day": "06", "title": "Mulde Peak & Chistibung", "desc": "Sunrise at Mulde Peak (3,637m), then descend to Chistibung." },
+      { "day": "07", "title": "Trek to Khopra Ridge (3,660m)", "desc": "Climb above the tree line to reach the scenic ridge." },
+      { "day": "08", "title": "Day Trip to Khayer Lake (4,660m)", "desc": "Sacred glacial lake at the foot of Annapurna South." },
+      { "day": "09", "title": "Trek to Swanta Village (2,215m)", "desc": "Descend to a traditional Magar farming village." },
+      { "day": "10", "title": "Trek to Ghorepani (2,860m)", "desc": "Rejoin the classic trail through local farmlands." },
+      { "day": "11", "title": "Poon Hill & Return to Pokhara", "desc": "Sunrise views, then trek to Nayapul and drive to Pokhara." },
+      { "day": "12", "title": "Return to Kathmandu", "desc": "Final drive or flight back to the capital." }
+    ]
+  },
+  {
+    "id": "trek-abc-short",
+    "title": "ANNAPURNA BASE CAMP - SHORT TRIP",
+    "image": "/images/trekking/annapurna.jpeg",
+    "tagline": "The Essential Sanctuary Experience",
+    "highlights": [
+      "Reach Annapurna Base Camp (4,130m) in record time",
+      "Stunning 360-degree mountain views within the Sanctuary",
+      "Pass through the sacred Machhapuchhre Base Camp",
+      "Experience local Gurung teahouse hospitality",
+      "Relax in natural hot springs at Jhinu Danda",
+      "Perfect for travelers with limited time"
+    ],
+    "description": "This 8-day short trip is designed for those who want the full Annapurna Sanctuary experience but have limited time. By focusing on the essential route and utilizing scenic road access, we maximize your time in the high mountains without compromising on safety or scenery.\n\nStats:\n- Max Altitude: 4,130 m\n- Difficulty: Moderate\n- Duration: 8 Days",
+    "itinerary": [
+      { "day": "01", "title": "Pokhara to Ghandruk (1,940m)", "desc": "Drive to Nayapul and trek to the Gurung capital." },
+      { "day": "02", "title": "Trek to Chhomrong (2,170m)", "desc": "Cross the Kimrong Khola and ascend to Chhomrong." },
+      { "day": "03", "title": "Trek to Dovan (2,600m)", "desc": "Walk through bamboo forests along the Modi Khola." },
+      { "day": "04", "title": "Trek to Deurali (3,230m)", "desc": "Pass Hinku Cave and ascend toward the high mountains." },
+      { "day": "05", "title": "Reaching ABC (4,130m)", "desc": "Pass Machhapuchhre Base Camp into the heart of the Sanctuary." },
+      { "day": "06", "title": "Trek back to Bamboo (2,310m)", "desc": "Sunrise at ABC then a long descent back down the valley." },
+      { "day": "07", "title": "Trek to Jhinu Danda (1,780m)", "desc": "Relax in riverside natural hot springs." },
+      { "day": "08", "title": "Return to Pokhara", "desc": "Final trek to Nayapul and drive back to Pokhara." }
+    ]
+  },
+  {
     "id": "trek-annapurna-abc",
     "title": "ANNAPURNA BASE CAMP VIA GHOREPANI",
-    "image": "/images/trekking/annapurna/abc-ghorepani.png",
+    "image": "/images/trekking/annapurna.jpeg",
     "tagline": "A Journey into the Heart of the Annapurna Sanctuary",
     "highlights": [
       "Poon Hill Sunrise: Iconic views of Dhaulagiri and Annapurna massifs",
@@ -309,7 +398,7 @@
   {
     "id": "trek-mardi-himal",
     "title": "MARDI HIMAL TREK",
-    "image": "/images/trekking/annapurna/mardi-himal.png",
+    "image": "/images/trekking/annapurna.jpeg",
     "tagline": "An Off-the-Beaten-Path Ridge Adventure",
     "highlights": [
       "Spectacular 'birds-eye' views of the Annapurna Sanctuary",
