@@ -250,16 +250,16 @@
         "details": "A comprehensive journey circling the entire Annapurna massif, including a challenging detour to the turquoise waters of Tilicho Lake."
       },
       {
-        "name": "ANNAPURNA BASE CAMP VIA GHOREPANI",
-        "duration": "14 DAYS",
+        "name": "TREK TO ANNAPURNA WITH NAMUN LA PASS",
+        "duration": "15 DAYS",
         "image": "/images/trekking/annapurna.jpeg",
-        "details": "A classic trek combining the famous sunrise views from Poon Hill with a deep trek into the Annapurna Sanctuary's natural amphitheater."
+        "details": "A challenging off-the-beaten-path trek over the Namun La Pass (5,560m), connecting the Lamjung and Manang regions."
       },
       {
-        "name": "MARDI HIMAL TREK",
-        "duration": "9 DAYS",
+        "name": "LAMJUNG HIMAL TREK",
+        "duration": "13 DAYS",
         "image": "/images/trekking/annapurna.jpeg",
-        "details": "A popular 'eco-trek' following a ridgeline toward the base of Machhapuchhre, offering some of the closest mountain views available."
+        "details": "A quieter camping adventure offering unobstructed views of Manaslu and the Annapurna range through pristine Gurung villages."
       },
       {
         "name": "KHOPRA RIDGE TREK",
@@ -268,11 +268,149 @@
         "details": "An excellent alternative to busier trails, offering incredible panoramic views of Dhaulagiri and a visit to the sacred Khayer Lake."
       },
       {
+        "name": "MARDI HIMAL TREK",
+        "duration": "9 DAYS",
+        "image": "/images/trekking/annapurna.jpeg",
+        "details": "A popular 'eco-trek' following a ridgeline toward the base of Machhapuchhre, offering some of the closest mountain views available."
+      },
+      {
         "name": "ANNAPURNA BASE CAMP - SHORT TRIP",
         "duration": "8 DAYS",
         "image": "/images/trekking/annapurna.jpeg",
         "details": "A fast-paced version of the sanctuary trek, ideal for those with limited time who still wish to stand at the foot of the world's 10th highest peak."
+      },
+      {
+        "name": "ANNAPURNA CIRCUIT WITH NAR-PHU VALLEY",
+        "duration": "26 DAYS",
+        "image": "/images/trekking/annapurna.jpeg",
+        "details": "An epic odyssey into the restricted Nar-Phu valleys, crossing Kang La and Thorong La for a complete Himalayan immersion."
+      },
+      {
+        "name": "ANNAPURNA BASE CAMP VIA GHOREPANI",
+        "duration": "14 DAYS",
+        "image": "/images/trekking/annapurna.jpeg",
+        "details": "A classic trek combining the famous sunrise views from Poon Hill with a deep trek into the Annapurna Sanctuary's natural amphitheater."
+      },
+      {
+        "name": "ANNAPURNA SEVEN PASSES TREK",
+        "duration": "23 DAYS",
+        "image": "/images/trekking/annapurna.jpeg",
+        "details": "The ultimate challenge crossing seven high-altitude passes, bypassing road-heavy sections for a true wilderness experience."
       }
+    ]
+  },
+  {
+    "id": "trek-namun-la",
+    "title": "TREK TO ANNAPURNA WITH NAMUN LA PASS",
+    "image": "/images/trekking/annapurna.jpeg",
+    "tagline": "An Ancient Trade Route Adventure",
+    "highlights": [
+      "Namun La Pass (5,560m): High pass with 360-degree Himalayan views",
+      "Dudh Pokhari: Sacred glacial 'Milk Lake' at 4,650m",
+      "Sikles: One of Nepal's largest and best-preserved Gurung villages",
+      "True Wilderness: Off-the-beaten-path camping experience",
+      "Connects Lamjung and Manang regions via an ancient trade route",
+      "Panoramic vistas of Annapurna II and Lamjung Himal"
+    ],
+    "description": "The Namun La Pass trek is a challenging, high-altitude journey that follows an ancient Gurung trade route. Connecting the lush Lamjung hills with the high-altitude desert of Manang, this trek offers a true wilderness experience. It is ideal for experienced trekkers looking to avoid the crowds and experience authentic Himalayan cultures and untouched natural beauty.\n\nStats:\n- Max Altitude: 5,560 m\n- Difficulty: Challenging (Camping required)\n- Duration: 15 Days",
+    "itinerary": [
+      { "day": "01", "title": "Arrival in Kathmandu", "desc": "Transfer to hotel and trip briefing." },
+      { "day": "02", "title": "Kathmandu to Pokhara", "desc": "Scenic drive or short flight to the lakeside city." },
+      { "day": "03", "title": "Pokhara to Sikles (1,980m)", "desc": "Drive to one of Nepal's most beautiful Gurung villages." },
+      { "day": "04", "title": "Trek to Hugu Goth (2,100m)", "desc": "Walk through rhododendron forests along the Madi River." },
+      { "day": "05", "title": "Trek to Kori Danda (3,800m)", "desc": "Steep ascent to a high pasture with iconic mountain views." },
+      { "day": "06", "title": "Trek to Thulo Lekh (4,100m)", "desc": "Ridge-top walking with spectacular Himalayan panoramas." },
+      { "day": "07", "title": "Trek to Thurju (4,080m)", "desc": "Trek towards the base of the pass through high ridges." },
+      { "day": "08", "title": "Dudh Pokhari Hike (4,650m)", "desc": "Acclimatization hike to the sacred 'Milk Lake'." },
+      { "day": "09", "title": "Cross Namun La (5,560m)", "desc": "Challenging crossing of the high pass to Danfe Kharka." },
+      { "day": "10", "title": "Trek to Timang (2,750m)", "desc": "Descend to join the main Annapurna Circuit trail." },
+      { "day": "11", "title": "Trek to Chame (2,670m)", "desc": "Short trek to the Manang district headquarters." },
+      { "day": "12", "title": "Trek to Pisang (3,300m)", "desc": "Walk through orchards with views of the 'Great Wall' of Pisang." },
+      { "day": "13", "title": "Trek to Manang (3,540m)", "desc": "Explore the high-altitude desert and ancient monasteries." },
+      { "day": "14", "title": "Manang to Besisahar", "desc": "Jeep drive out of the mountains along the Marsyangdi River." },
+      { "day": "15", "title": "Return to Kathmandu", "desc": "Final drive back to the capital." }
+    ]
+  },
+  {
+    "id": "trek-lamjung-himal",
+    "title": "LAMJUNG HIMAL TREK",
+    "image": "/images/trekking/annapurna.jpeg",
+    "tagline": "Pristine Wilderness & Gurung Heritage",
+    "highlights": [
+      "Lamjung Himal Base Camp: Reaching 4,500m in the heart of the range",
+      "Ghalegaun: Famous honey-hunting village and Gurung cultural hub",
+      "Unobstructed views of Manaslu, Annapurna, and Machapuchare",
+      "Traditional camping experience away from tourist crowds",
+      "Dense rhododendron and oak forests with rich wildlife",
+      "Authentic rural life in one of Nepal's largest Gurung settlements"
+    ],
+    "description": "The Lamjung Himal Trek is a hidden gem in the Annapurna region. This 13-day camping adventure takes you through traditional Gurung villages and pristine forests to the foot of Lamjung Himal. It offers a unique combination of cultural immersion and high-altitude wilderness, with some of the best unobstructed mountain views available in Nepal.\n\nStats:\n- Max Altitude: 4,500 m\n- Difficulty: Moderate-Strenuous\n- Duration: 13 Days",
+    "itinerary": [
+      { "day": "01", "title": "Arrival in Kathmandu", "desc": "Transfer to hotel and trip orientation." },
+      { "day": "02", "title": "Kathmandu Sightseeing", "desc": "Visit UNESCO heritage sites and final prep." },
+      { "day": "03", "title": "Drive to Besisahar (760m)", "desc": "Scenic 6-7 hour drive to the trek starting point." },
+      { "day": "04", "title": "Trek to Ghalegaun (2,100m)", "desc": "Ascend to the famous Gurung cultural village." },
+      { "day": "05", "title": "Trek to Maidu (2,877m)", "desc": "Walk through beautiful rhododendron and oak forests." },
+      { "day": "06", "title": "Trek to Kyubara (3,470m)", "desc": "Steep ascent into the high alpine zone." },
+      { "day": "07", "title": "Trek to Furju Deurali (4,385m)", "desc": "Climb towards the high pass with expansive views." },
+      { "day": "08", "title": "Lamjung Base Camp (4,500m)", "desc": "Reach the highest point of the trek at the foot of the peaks." },
+      { "day": "09", "title": "Trek to Singaligoth (2,900m)", "desc": "Descend back into the lush forest zone." },
+      { "day": "10", "title": "Trek to Sikles (1,980m)", "desc": "Reach one of the largest Gurung villages in the region." },
+      { "day": "11", "title": "Drive to Pokhara", "desc": "Jeep drive to the lakeside city for relaxation." },
+      { "day": "12", "title": "Return to Kathmandu", "desc": "Fly or drive back to the capital." },
+      { "day": "13", "title": "Final Departure", "desc": "Transfer to international airport." }
+    ]
+  },
+  {
+    "id": "trek-nar-phu",
+    "title": "ANNAPURNA CIRCUIT WITH NAR-PHU VALLEY",
+    "image": "/images/trekking/annapurna.jpeg",
+    "tagline": "The Forbidden Valleys & High Passes Odyssey",
+    "highlights": [
+      "Kang La Pass (5,322m) & Thorong La Pass (5,416m)",
+      "Restricted Nar & Phu Valleys: Authentic Tibetan-style villages",
+      "Ancient Tashi Lhakhang Monastery in Phu village",
+      "Tilicho Lake (4,919m): One of the highest lakes in the world",
+      "Diverse landscape: From deep canyons to high alpine deserts",
+      "Unique cultural contrast between Manang and Mustang"
+    ],
+    "description": "This epic 26-day odyssey combines the classic Annapurna Circuit with the remote, restricted valleys of Nar and Phu. Crossing two major high passes and visiting the turquoise Tilicho Lake, it is one of the most comprehensive and rewarding treks in the Himalayas. Experience the ancient stone villages, hidden monasteries, and the sheer scale of the Annapurna and Manaslu ranges.\n\nStats:\n- Max Altitude: 5,416 m\n- Difficulty: Strenuous\n- Duration: 26 Days",
+    "itinerary": [
+      { "day": "01-02", "title": "Arrival & Preparation", "desc": "Kathmandu arrival, briefing, and permit processing." },
+      { "day": "03-05", "title": "The Approach to Nar-Phu", "desc": "Drive to Koto and enter the restricted canyon trails." },
+      { "day": "06-10", "title": "Nar & Phu Valleys", "desc": "Explore the ancient villages of Phu and Nar (4,250m)." },
+      { "day": "11-13", "title": "Kang La Pass to Manang", "desc": "Cross Kang La (5,322m) and join the main circuit." },
+      { "day": "14-17", "title": "Tilicho Lake Side Trip", "desc": "Trek to the high glacial lake (4,919m) and return to the trail." },
+      { "day": "18-20", "title": "The High Pass: Thorong La", "desc": "Cross Thorong La (5,416m) and descend to Muktinath temple." },
+      { "day": "21-24", "title": "Mustang & Kali Gandaki", "desc": "Trek through Jomsom, Marpha, and Kalopani to Tatopani." },
+      { "day": "25-26", "title": "Return to Kathmandu", "desc": "Drive to Pokhara and return to the capital for departure." }
+    ]
+  },
+  {
+    "id": "trek-seven-passes",
+    "title": "ANNAPURNA SEVEN PASSES TREK",
+    "image": "/images/trekking/annapurna.jpeg",
+    "tagline": "The Ultimate Wilderness & High Pass Challenge",
+    "highlights": [
+      "Cross Seven High Passes including Thorong La and Kang La",
+      "Explore the restricted Nar & Phu valleys and hidden Manang",
+      "Complete bypass of road-heavy sections of the traditional circuit",
+      "Panoramic views of Annapurna I-IV, Manaslu, and Tilicho Peak",
+      "Mix of teahouse comfort and authentic camping in the wild",
+      "High-altitude wilderness at its most rugged and beautiful"
+    ],
+    "description": "The Seven Passes Trek is the ultimate adventure for those seeking to experience the Annapurna region in its most raw and uncompromised form. By crossing seven distinct high-altitude passes, this 23-day journey bypasses the modern roads to take you through hidden valleys and over ancient trails. It is a grueling but immensely rewarding test of physical and mental endurance.\n\nStats:\n- Max Altitude: 5,416 m\n- Difficulty: Very Strenuous\n- Duration: 23 Days",
+    "itinerary": [
+      { "day": "01-02", "title": "Arrival & Briefing", "desc": "Kathmandu arrival and preparation for the long journey." },
+      { "day": "03-05", "title": "Drive to Tal & Trek to Tachai", "desc": "Scenic drive and trek through lush Gurung forests." },
+      { "day": "06-07", "title": "Ascent to Kuchumro Phedi", "desc": "Climb into the high wilderness (4,525m)." },
+      { "day": "08-09", "title": "First Three Passes", "desc": "Cross Kuchumro, Yarcha, and Meta passes to reach Meta village." },
+      { "day": "10-11", "title": "Phu Village Exploration", "desc": "Discover the ancient Tibetan-style village of Phu (4,080m)." },
+      { "day": "12-13", "title": "Phu & Nar Passes", "desc": "Cross Phu Pass (5,043m) and Nar Pass (5,400m) to Nar village." },
+      { "day": "14-16", "title": "Kang La to Ngawal", "desc": "Cross the sixth pass (5,320m) for iconic mountain views." },
+      { "day": "17-19", "title": "Circuit & Thorong Phedi", "desc": "Rejoin the circuit through Manang and prepare for the final pass." },
+      { "day": "20", "title": "Seventh Pass: Thorong La", "desc": "Cross the world's highest trekking pass (5,416m) to Muktinath." },
+      { "day": "21-23", "title": "Jomsom to Kathmandu", "desc": "Descent through Mustang, fly to Pokhara, and return to the capital." }
     ]
   },
   {

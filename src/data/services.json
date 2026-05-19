@@ -259,13 +259,13 @@
             "image": "/images/trekking/annapurna.jpeg"
           },
           {
-            "name": "ANNAPURNA BASE CAMP VIA GHOREPANI",
-            "duration": "14 DAYS",
+            "name": "TREK TO ANNAPURNA WITH NAMUN LA PASS",
+            "duration": "15 DAYS",
             "image": "/images/trekking/annapurna.jpeg"
           },
           {
-            "name": "MARDI HIMAL TREK",
-            "duration": "9 DAYS",
+            "name": "LAMJUNG HIMAL TREK",
+            "duration": "13 DAYS",
             "image": "/images/trekking/annapurna.jpeg"
           },
           {
@@ -274,8 +274,28 @@
             "image": "/images/trekking/annapurna.jpeg"
           },
           {
+            "name": "MARDI HIMAL TREK",
+            "duration": "9 DAYS",
+            "image": "/images/trekking/annapurna.jpeg"
+          },
+          {
             "name": "ANNAPURNA BASE CAMP - SHORT TRIP",
             "duration": "8 DAYS",
+            "image": "/images/trekking/annapurna.jpeg"
+          },
+          {
+            "name": "ANNAPURNA CIRCUIT WITH NAR-PHU VALLEY",
+            "duration": "26 DAYS",
+            "image": "/images/trekking/annapurna.jpeg"
+          },
+          {
+            "name": "ANNAPURNA BASE CAMP VIA GHOREPANI",
+            "duration": "14 DAYS",
+            "image": "/images/trekking/annapurna.jpeg"
+          },
+          {
+            "name": "ANNAPURNA SEVEN PASSES TREK",
+            "duration": "23 DAYS",
             "image": "/images/trekking/annapurna.jpeg"
           }
         ]
