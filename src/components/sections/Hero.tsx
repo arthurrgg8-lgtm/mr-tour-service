@@ -90,8 +90,8 @@ export default function Hero() {
           </motion.div>
         </AnimatePresence>
         
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/80 to-transparent" />
-        <div className="absolute top-[-10%] right-[-10%] w-[50%] h-[50%] rounded-full bg-primary/20 blur-[120px]" />
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-900/50 via-slate-900/20 to-transparent" />
+        {/* <div className="absolute top-[-10%] right-[-10%] w-[50%] h-[50%] rounded-full bg-primary/20 blur-[120px]" /> */}
         
         {/* Slider Indicators */}
         <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 flex gap-2">
