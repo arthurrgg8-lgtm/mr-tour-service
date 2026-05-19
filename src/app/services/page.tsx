@@ -128,12 +128,14 @@ export default function ServicesPage() {
                                     )}
                                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
                                     <div className="absolute inset-0 p-5 flex flex-col justify-end">
-                                      <div className="flex items-center gap-2 mb-1">
-                                        <MapIcon className="h-4 w-4 text-primary" />
-                                        <span className="text-[10px] font-bold text-primary uppercase tracking-wider">
-                                          {service.id === 'trekking' ? 'Trek Route' : (item.duration || 'Tour Package')}
-                                        </span>
-                                      </div>
+                                      {service.id !== 'trekking' && (
+                                        <div className="flex items-center gap-2 mb-1">
+                                          <MapIcon className="h-4 w-4 text-primary" />
+                                          <span className="text-[10px] font-bold text-primary uppercase tracking-wider">
+                                            {item.duration || 'Tour Package'}
+                                          </span>
+                                        </div>
+                                      )}
                                       <span className="font-bold text-white text-base md:text-lg leading-tight group-hover/item:text-primary transition-colors">{item.name}</span>
                                     </div>
                                   </div>
