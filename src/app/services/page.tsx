@@ -2,7 +2,8 @@
 
 import services from "@/data/services.json"
 import tourDetails from "@/data/tour_details.json"
-import { Car, Map as MapIcon, Mountain, Bus, Users, ShieldCheck, Info } from "lucide-react"
+import business from "@/data/business.json"
+import { Car, Map as MapIcon, Mountain, Bus, Users, ShieldCheck, Info, Award } from "lucide-react"
 import Image from "next/image"
 import ServiceInquiryForm from "@/components/sections/ServiceInquiryForm"
 import EnquireButton from "@/components/ui/EnquireButton"
