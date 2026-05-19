@@ -37,11 +37,18 @@ export default function TrekkingPage() {
     const handleHash = () => {
       const hash = decodeURIComponent(window.location.hash.substring(1).toLowerCase())
       if (hash) {
-        // Try to find a region that matches the hash
-        const detail = tourDetails.find(d => 
-          d.title.toLowerCase().includes(hash) || 
-          d.id.toLowerCase().includes(hash)
-        )
+        // Try to find a region that matches the hash with priority
+        const searchHash = hash.replace(/-/g, ' ')
+        const firstWord = hash.split('-')[0]
+
+        const detail = tourDetails.find(d => {
+          const title = d.title.toLowerCase()
+          const id = d.id.toLowerCase()
+          return id === hash ||
+                 id.includes(hash) ||
+                 title.includes(searchHash) ||
+                 (firstWord.length > 3 && title.includes(firstWord))
+        })
         if (detail) {
           setSelectedTour(detail)
         }
@@ -64,7 +71,29 @@ export default function TrekkingPage() {
     )
     if (detail) {
       setSelectedTour(detail)
+      // Update hash for deep linking when clicking manually
+      const hash = getRegionId(tourName)
+      window.history.pushState(null, "", `#${hash}`)
     }
+  }
+
+  const getRegionId = (name: string) => {
+    const n = name.toLowerCase();
+    if (n.includes('everest')) return 'everest-region';
+    if (n.includes('annapurna')) return 'annapurna-region';
+    if (n.includes('langtang')) return 'langtang-region';
+    if (n.includes('buddhist')) return 'buddhist-trekking';
+    if (n.includes('dhaulagiri')) return 'dhaulagiri-trek';
+    if (n.includes('far western')) return 'far-western';
+    if (n.includes('dolpo')) return 'dolpo-trek';
+    if (n.includes('makalu')) return 'makalu-trek';
+    if (n.includes('ght')) return 'ght-trail';
+    if (n.includes('mustang')) return 'upper-mustang';
+    if (n.includes('manaslu')) return 'manaslu-trek';
+    if (n.includes('kailash')) return 'kailash-trek';
+    if (n.includes('kanchanjunga')) return 'kanchanjunga-trek';
+    if (n.includes('rara')) return 'rara-trek';
+    return n.split(' ')[0];
   }
 
   if (!trekkingService) return null
@@ -73,7 +102,11 @@ export default function TrekkingPage() {
     <div className="pt-20 pb-24">
       <TourModal 
         tour={selectedTour} 
-        onClose={() => setSelectedTour(null)} 
+        onClose={() => {
+          setSelectedTour(null)
+          // Clear hash on close to allow re-opening same tour from navbar
+          window.history.pushState(null, "", window.location.pathname + window.location.search)
+        }} 
         onSelectSubPackage={handleTourClick}
         onBack={selectedTour?.id.startsWith('trek-') && selectedTour.id !== 'trek-everest' ? () => handleTourClick('Everest Region') : undefined}
       />
@@ -115,7 +148,7 @@ export default function TrekkingPage() {
             {trekkingService.regions?.map((region, idx) => (
               <div 
                 key={idx}
-                id={region.name.toLowerCase().split(' ')[0]}
+                id={getRegionId(region.name)}
                 className="group relative h-[400px] rounded-[2.5rem] overflow-hidden border border-slate-100 shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer scroll-mt-32"
                 onClick={() => handleTourClick(region.name)}
               >

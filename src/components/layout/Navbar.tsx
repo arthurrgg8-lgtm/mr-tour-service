@@ -31,31 +31,31 @@ export default function Navbar() {
   ]
 
   const tourServices = [
-    { name: "KTM COUNTRYSIDE HIKE", href: "/tours#ktm" },
-    { name: "FAMILY HOLIDAY", href: "/tours#family" },
-    { name: "LUMBINI TOUR", href: "/tours#lumbini" },
-    { name: "CHITWAN JUNGLE SAFARI", href: "/tours#chitwan" },
-    { name: "GORKHA-BANDIPUR-PKR", href: "/tours#gorkha" },
-    { name: "BADIMALIKA TOUR", href: "/tours#badimalika" },
-    { name: "JEEP TOUR TO RARA", href: "/tours#jeep" },
-    { name: "KTM CITY TOUR (1 DAY)", href: "/tours#ktm" },
+    { name: "KTM COUNTRYSIDE HIKE", href: "/tours#countryside-hike" },
+    { name: "FAMILY HOLIDAY", href: "/tours#family-holiday" },
+    { name: "LUMBINI TOUR", href: "/tours#lumbini-tour" },
+    { name: "CHITWAN JUNGLE SAFARI", href: "/tours#chitwan-safari" },
+    { name: "GORKHA-BANDIPUR-PKR", href: "/tours#gorkha-bandipur" },
+    { name: "BADIMALIKA TOUR", href: "/tours#badimalika-tour" },
+    { name: "JEEP TOUR TO RARA", href: "/tours#rara-jeep" },
+    { name: "KTM CITY TOUR (1 DAY)", href: "/tours#kathmandu-city" },
   ]
 
   const trekkingRegions = [
-    { name: "EVEREST REGION", href: "/trekking#everest" },
-    { name: "ANNAPURNA REGION", href: "/trekking#annapurna" },
-    { name: "LANGTANG REGION", href: "/trekking#langtang" },
-    { name: "BUDDHIST PILGRIMAGE TREKKING", href: "/trekking#buddhist" },
-    { name: "DHAULAGIRI TREK", href: "/trekking#dhaulagiri" },
-    { name: "FAR WESTERN NEPAL", href: "/trekking#far" },
-    { name: "UPPER & LOWER DOLPO", href: "/trekking#upper" },
-    { name: "MAKALU", href: "/trekking#makalu" },
-    { name: "GHT TRAIL", href: "/trekking#ght" },
-    { name: "UPPER MUSTANG", href: "/trekking#mustang" },
-    { name: "MANASLU & TSUM VALLEY", href: "/trekking#manaslu" },
-    { name: "KAILASH MANSAROVAR", href: "/trekking#kailash" },
-    { name: "KANCHANJUNGA", href: "/trekking#kanchanjunga" },
-    { name: "RARA", href: "/trekking#rara" },
+    { name: "EVEREST REGION", href: "/trekking#everest-region" },
+    { name: "ANNAPURNA REGION", href: "/trekking#annapurna-region" },
+    { name: "LANGTANG REGION", href: "/trekking#langtang-region" },
+    { name: "BUDDHIST PILGRIMAGE TREKKING", href: "/trekking#buddhist-trekking" },
+    { name: "DHAULAGIRI TREK", href: "/trekking#dhaulagiri-trek" },
+    { name: "FAR WESTERN NEPAL", href: "/trekking#far-western" },
+    { name: "UPPER & LOWER DOLPO", href: "/trekking#dolpo-trek" },
+    { name: "MAKALU", href: "/trekking#makalu-trek" },
+    { name: "GHT TRAIL", href: "/trekking#ght-trail" },
+    { name: "UPPER MUSTANG", href: "/trekking#upper-mustang" },
+    { name: "MANASLU & TSUM VALLEY", href: "/trekking#manaslu-trek" },
+    { name: "KAILASH MANSAROVAR", href: "/trekking#kailash-trek" },
+    { name: "KANCHANJUNGA", href: "/trekking#kanchanjunga-trek" },
+    { name: "RARA", href: "/trekking#rara-trek" },
   ]
 
   const dropdowns = [
@@ -65,13 +65,13 @@ export default function Navbar() {
   ]
 
   useEffect(() => {
-    const handleScrollToHash = () => {
+    const handleScrollToHash = (retryCount = 0) => {
       const hash = window.location.hash.substring(1)
       if (hash) {
         const element = document.getElementById(hash)
         if (element) {
           setTimeout(() => {
-            const offset = 100 // Increased offset for better visibility
+            const offset = 100 
             const bodyRect = document.body.getBoundingClientRect().top
             const elementRect = element.getBoundingClientRect().top
             const elementPosition = elementRect - bodyRect
@@ -87,13 +87,16 @@ export default function Navbar() {
             void element.offsetWidth // trigger reflow
             element.classList.add('animate-section-glow')
           }, 300) 
+        } else if (retryCount < 5) {
+          // Retry if element not found yet (e.g. during page load)
+          setTimeout(() => handleScrollToHash(retryCount + 1), 200)
         }
       }
     }
 
     handleScrollToHash()
-    window.addEventListener('hashchange', handleScrollToHash)
-    return () => window.removeEventListener('hashchange', handleScrollToHash)
+    window.addEventListener('hashchange', () => handleScrollToHash())
+    return () => window.removeEventListener('hashchange', () => handleScrollToHash())
   }, [pathname])
 
   const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
@@ -105,30 +108,32 @@ export default function Navbar() {
       
       // If we're already on the target page
       if (pathname === path) {
-        // Update hash without full reload if it's different, 
-        // but still allow it to trigger hashchange or manual effect
-        if (window.location.hash !== `#${hash}`) {
-          // Standard navigation handles this
-        } else {
-          // If hash is same, manually trigger scroll/glow
-          const element = document.getElementById(hash)
-          if (element) {
-            e.preventDefault()
-            const offset = 100
-            const bodyRect = document.body.getBoundingClientRect().top
-            const elementRect = element.getBoundingClientRect().top
-            const elementPosition = elementRect - bodyRect
-            const offsetPosition = elementPosition - offset
+        // Always handle scroll manually for same-page hash links
+        // This ensures it works even if hashchange doesn't fire or if clicking same hash
+        e.preventDefault()
+        
+        // Update URL hash without full reload
+        window.history.pushState(null, "", href)
+        
+        const element = document.getElementById(hash)
+        if (element) {
+          const offset = 100
+          const bodyRect = document.body.getBoundingClientRect().top
+          const elementRect = element.getBoundingClientRect().top
+          const elementPosition = elementRect - bodyRect
+          const offsetPosition = elementPosition - offset
 
-            window.scrollTo({
-              top: offsetPosition,
-              behavior: "smooth"
-            })
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth"
+          })
 
-            element.classList.remove('animate-section-glow')
-            void element.offsetWidth
-            element.classList.add('animate-section-glow')
-          }
+          element.classList.remove('animate-section-glow')
+          void element.offsetWidth
+          element.classList.add('animate-section-glow')
+          
+          // Manually trigger hashchange event for other components (like ToursPage modal)
+          window.dispatchEvent(new HashChangeEvent('hashchange'))
         }
       }
     }

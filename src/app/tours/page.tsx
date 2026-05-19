@@ -39,12 +39,18 @@ export default function ToursPage() {
     const handleHash = () => {
       const hash = decodeURIComponent(window.location.hash.substring(1).toLowerCase())
       if (hash) {
-        // Try to find a tour that matches the hash
-        const detail = tourDetails.find(d => 
-          d.title.toLowerCase().includes(hash) || 
-          d.id.toLowerCase() === hash ||
-          d.id.toLowerCase().includes(hash)
-        )
+        // Try to find a tour that matches the hash with high precision
+        const searchHash = hash.replace(/-/g, ' ')
+        const firstWord = hash.split('-')[0]
+        
+        const detail = tourDetails.find(d => {
+          const title = d.title.toLowerCase()
+          const id = d.id.toLowerCase()
+          return id === hash || 
+                 title.includes(searchHash) || 
+                 (firstWord.length > 3 && title.includes(firstWord)) ||
+                 id.includes(hash)
+        })
         if (detail) {
           setSelectedTour(detail)
         }
@@ -62,7 +68,23 @@ export default function ToursPage() {
     const detail = tourDetails.find(d => d.title === tourName)
     if (detail) {
       setSelectedTour(detail)
+      // Update hash for deep linking when clicking manually
+      const hash = getTourId(tourName)
+      window.history.pushState(null, "", `#${hash}`)
     }
+  }
+
+  const getTourId = (name: string) => {
+    const n = name.toLowerCase();
+    if (n.includes('countryside')) return 'countryside-hike';
+    if (n.includes('family')) return 'family-holiday';
+    if (n.includes('lumbini')) return 'lumbini-tour';
+    if (n.includes('chitwan')) return 'chitwan-safari';
+    if (n.includes('gorkha')) return 'gorkha-bandipur';
+    if (n.includes('badimalika')) return 'badimalika-tour';
+    if (n.includes('rara')) return 'rara-jeep';
+    if (n.includes('city tour')) return 'kathmandu-city';
+    return n.split(' ')[0];
   }
 
   if (!tourService) return null
@@ -71,7 +93,11 @@ export default function ToursPage() {
     <div className="pt-20 pb-24">
       <TourModal 
         tour={selectedTour} 
-        onClose={() => setSelectedTour(null)} 
+        onClose={() => {
+          setSelectedTour(null)
+          // Clear hash on close to allow re-opening same tour from navbar
+          window.history.pushState(null, "", window.location.pathname + window.location.search)
+        }} 
         onSelectSubPackage={handleTourClick}
       />
 
@@ -111,7 +137,7 @@ export default function ToursPage() {
             {tourService.subServices?.map((tour, idx) => (
               <div 
                 key={idx}
-                id={tour.name.toLowerCase().split(' ')[0]} 
+                id={getTourId(tour.name)} 
                 className="group flex flex-col bg-white rounded-[2rem] border border-slate-100 shadow-sm hover:shadow-2xl transition-all duration-500 overflow-hidden scroll-mt-32"
               >
                 <div 
