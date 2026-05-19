@@ -1,14 +1,13 @@
+"use client"
+
 import services from "@/data/services.json"
-import { Car, Map as MapIcon, Mountain, Bus, Users, ShieldCheck } from "lucide-react"
+import tourDetails from "@/data/tour_details.json"
+import { Car, Map as MapIcon, Mountain, Bus, Users, ShieldCheck, Info } from "lucide-react"
 import Image from "next/image"
 import ServiceInquiryForm from "@/components/sections/ServiceInquiryForm"
 import EnquireButton from "@/components/ui/EnquireButton"
-import { Metadata } from "next"
-
-export const metadata: Metadata = {
-  title: "Our Services",
-  description: "Explore our premium travel services in Nepal: Car and SUV rentals, 4x4 Jeep expeditions, luxury bus hire, cultural tours, and Himalayan trekking.",
-}
+import TourModal from "@/components/ui/TourModal"
+import { useState } from "react"
 
 interface SubService {
   name: string;
@@ -45,8 +44,23 @@ const iconMap: { [key: string]: React.ComponentType<{ className?: string }> } = 
 }
 
 export default function ServicesPage() {
+  const [selectedTour, setSelectedTour] = useState<any>(null)
+
+  const handleTourClick = (tourName: string) => {
+    const detail = tourDetails.find(d => d.title === tourName)
+    if (detail) {
+      setSelectedTour(detail)
+    }
+  }
+
   return (
     <div className="pt-20 pb-24">
+      {/* Tour Detail Modal */}
+      <TourModal 
+        tour={selectedTour} 
+        onClose={() => setSelectedTour(null)} 
+      />
+
       {/* Header */}
       <section className="relative bg-slate-900 py-32 text-white overflow-hidden">
         <div className="absolute inset-0 z-0">
@@ -116,7 +130,8 @@ export default function ServicesPage() {
                                 {(service.id === 'trekking' ? service.regions : service.subServices)?.map((item: any, idx: number) => (
                                   <div 
                                     key={idx} 
-                                    className="relative group/item h-40 rounded-2xl md:rounded-3xl overflow-hidden border border-slate-100 shadow-md hover:shadow-2xl transition-all duration-500"
+                                    onClick={() => service.id === 'tour-packages' && handleTourClick(item.name)}
+                                    className={`relative group/item h-40 rounded-2xl md:rounded-3xl overflow-hidden border border-slate-100 shadow-md hover:shadow-2xl transition-all duration-500 ${service.id === 'tour-packages' ? 'cursor-pointer' : ''}`}
                                   >
                                     {item.image && (
                                       <Image 
@@ -127,6 +142,14 @@ export default function ServicesPage() {
                                       />
                                     )}
                                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+                                    
+                                    {/* Info Overlay for Tours */}
+                                    {service.id === 'tour-packages' && (
+                                      <div className="absolute top-4 right-4 h-8 w-8 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center opacity-0 group-hover/item:opacity-100 transition-opacity">
+                                         <Info className="h-4 w-4 text-white" />
+                                      </div>
+                                    )}
+
                                     <div className="absolute inset-0 p-5 flex flex-col justify-end">
                                       {service.id !== 'trekking' && (
                                         <div className="flex items-center gap-2 mb-1">

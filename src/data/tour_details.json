@@ -1,0 +1,176 @@
+[
+  {
+    "id": "tour-1",
+    "title": "KATHMANDU COUNTRYSIDE HIKE",
+    "tagline": "An exciting countryside experience",
+    "highlights": [
+      "Short and easy trekking near Kathmandu valley",
+      "Spectacular mountainous view",
+      "Insightful and architectural Namo Buddha monastery",
+      "Traditional life style of local people & culture",
+      "Buddhist norms, meditation and yoga activities",
+      "Mixture lifestyle of Aryan, Tibetan & Newari culture"
+    ],
+    "description": "Chisapani-Nagarkot-Dhulikhel-Namo Buddha- Kathmandu trek is one of the easier trekking trail in Nepal designed to explore nature and culture of Nepal’s countryside and the amazing mountain views. This trek is also known as Around Kathmandu Valley Trek. It is an excellent trek for those who wish to avoid a long, strenuous trek or have time only for a short and easy trek and fit for all age group and for all seasons.",
+    "itinerary": [
+      { "day": "01", "title": "Drive to Sundarijal & trek to Chisapani (2160m)", "desc": "Take a short drive from Kathmandu to Sundarijal and start our trekking to Chisapani where you will be enjoying the real beauty of nature with the Himalayan view." },
+      { "day": "02", "title": "Chisopani – Nagarkot (2175m)", "desc": "Today we hike towards Nagarkot. It is the famous panoramic hillside from where we can get picturesque view of sunrise and sunset." },
+      { "day": "03", "title": "Nagarkot – Dhulikhel (1550m)", "desc": "Our journey continues to Dhulikhel from Nagarkot. Dhulikhel is the trade hub for the surrounding places and ancient Nepal- Tibet trade point where we can see the Newari and Nepali lifestyle." },
+      { "day": "04", "title": "Dhulikhel – Namo Buddha (1810m)", "desc": "The trail proceeds through unspoiled villages. Eventually, after 5/6 hrs treks bring you to a Tibetan Buddhist village Namobuddha with beautiful chorten and monastery." },
+      { "day": "05", "title": "Namo Buddha – Panauti – Kathmandu", "desc": "Trek to legendary village Panauti and explore ancient temples. After lunch drive to historical heritage site Bhaktapur and then back to Kathmandu." }
+    ]
+  },
+  {
+    "id": "tour-2",
+    "title": "FAMILY HOLIDAY",
+    "tagline": "An exciting Tour with Kids",
+    "highlights": [
+      "UNESCO world heritage sites in Kathmandu",
+      "Chandragiri Hill Cable Car Tour",
+      "Trishuli River Rafting experience",
+      "Wildlife Safari in Chitwan National Park",
+      "4 days trekking to Ghorepani Poonhill",
+      "Lake city Pokhara exploration"
+    ],
+    "description": "This is an outstanding tour package to spend a quality holiday with your family around the Himalaya. The holiday with your family and kids in Nepal starts from the capital city of Kathmandu, traveling through scenic Pokhara, wild Chitwan, and completing with a beautiful trek to Poonhill.",
+    "itinerary": [
+      { "day": "01", "title": "Arrival in Kathmandu", "desc": "Arrival at Tribhuvan International Airport, transfer to hotel." },
+      { "day": "02", "title": "Kathmandu Sightseeing", "desc": "Visit Boudhanath Stupa, Swayambhunath, Bhaktapur Durbar Square, and Patan Durbar Square." },
+      { "day": "03", "title": "Chandragiri Hill Cable Car Tour", "desc": "Drive towards Thankot for a cable car tour with panoramic views of Kathmandu valley and Himalayan ranges." },
+      { "day": "04", "title": "Trishuli Rafting - Drive to Chitwan", "desc": "Fun filled rafting from Fishling to Kurintar, then drive towards Chitwan National Park." },
+      { "day": "05", "title": "Chitwan Jungle Activities", "desc": "Elephant ride, canoe ride, bird watching, elephant bathing, and village tour." },
+      { "day": "06", "title": "Chitwan - Pokhara Drive", "desc": "Short bird watching at Chitwan, drive to Pokhara, and boating tour at Fewa Lake." },
+      { "day": "07", "title": "Drive to Naya Pul and trek to Ulleri", "desc": "Start the trekking portion of the trip with an amazing view on the trail." },
+      { "day": "08", "title": "Trek from Ulleri to Ghorepani", "desc": "Walk through lush forests with exclusive mountain views of Annapurna South." },
+      { "day": "09", "title": "Sunrise at Poon Hill & trek to Ghandruk", "desc": "45 minutes upward hike to Poon Hill for a mighty Himalayan sunrise view." },
+      { "day": "10", "title": "Trek from Ghandruk back to Pokhara", "desc": "Head back to Naya Pul through green forests and drive back to Pokhara." },
+      { "day": "11", "title": "Pokhara Sightseeing & fly to Kathmandu", "desc": "Sunrise at Sarangkot, city tour (Davis Fall, Gupteswor Cave), and short flight back to Kathmandu." },
+      { "day": "12", "title": "Final Departure", "desc": "Transfer to the airport for final departure." }
+    ]
+  },
+  {
+    "id": "tour-3",
+    "title": "LUMBINI TOUR",
+    "tagline": "An exciting heritage experience",
+    "highlights": [
+      "UNESCO world heritage site",
+      "Birth place of Gautam Buddha",
+      "Central attraction for Buddhist pilgrimage",
+      "Mayadevi temple from 3rd century",
+      "Ashoka pillar from 249 B.C",
+      "International Buddhist monasteries"
+    ],
+    "description": "Lumbini is one of the popular tourist destinations of Nepal. It is the birthplace of Gautam Buddha, famously known as the capital of Buddhism, situated in the Southern Terai at an altitude of 600 ft.",
+    "itinerary": [
+      { "day": "01", "title": "Drive Kathmandu to Lumbini", "desc": "Scenic 7-8 hours drive to Lumbini. Stroll around the local market in the evening." },
+      { "day": "02", "title": "Explore Lumbini", "desc": "Visit Lumbini Garden, Maya Devi Temple, Pushkarni Pool, and various international monasteries (Thai, Sri Lankan, Chinese, etc.)." },
+      { "day": "03", "title": "Drive back to Kathmandu", "desc": "7-8 hours scenic drive back to Kathmandu with views of Himalayas, rivers, and jungles." }
+    ]
+  },
+  {
+    "id": "tour-4",
+    "title": "CHITWAN JUNGLE SAFARI",
+    "tagline": "An exciting Jungle Safari",
+    "highlights": [
+      "Elephant Safari and Jeep Drive",
+      "Canoe ride along the Rapti River",
+      "Tharu Cultural Program and Village Tour",
+      "Bird Watching and Elephant Breeding Center",
+      "Chance to see Rhino, Tiger, and Crocodile"
+    ],
+    "description": "Chitwan is one of the most adventurous and exciting places in Nepal. The major activities during the safari are focused on being part of the wild nature while staying in luxury accommodations.",
+    "itinerary": [
+      { "day": "01", "title": "Arrival & Tharu Village Tour", "desc": "Village tour, National Park Visitor's center, sunset view, and Tharu cultural dance." },
+      { "day": "02", "title": "Canoe Ride & Elephant Safari", "desc": "Morning canoe ride, bird watching, crocodile spotting, and afternoon elephant safari to see rhinos and other wildlife." },
+      { "day": "03", "title": "Elephant Breeding Center & Departure", "desc": "Visit the Government Elephant Breeding Centre before departure." }
+    ]
+  },
+  {
+    "id": "tour-5",
+    "title": "GORKHA-BANDIPUR-POKHARA TOUR",
+    "tagline": "An Authentic Cultural & Scenic Himalayan Journey",
+    "highlights": [
+      "Historic Gorkha Durbar (Palace)",
+      "Preserved Newari culture of Bandipur",
+      "Sarangkot Sunrise over Annapurna range",
+      "Boat ride on Phewa Lake",
+      "Siddha Cave exploration",
+      "Relaxed pace suitable for all ages"
+    ],
+    "description": "This tour is a perfect blend of history, culture, nature, and relaxation. It takes you through Nepal's mid-hill countryside, offering deep insight into traditional lifestyles and ancient heritage.",
+    "itinerary": [
+      { "day": "01", "title": "Arrival in Kathmandu", "desc": "Transfer to hotel and trip briefing." },
+      { "day": "02", "title": "Kathmandu Sightseeing", "desc": "Explore Swayambhunath, Pashupatinath, Boudhanath, and Kathmandu Durbar Square." },
+      { "day": "03", "title": "Drive to Gorkha", "desc": "Scenic drive to the historical town of Gorkha." },
+      { "day": "04", "title": "Explore Gorkha", "desc": "Visit Gorkha Durbar, Gorakhnath Temple, and enjoy views of the Manaslu range." },
+      { "day": "05", "title": "Drive to Bandipur", "desc": "Travel to the charming hilltop settlement of Bandipur." },
+      { "day": "06", "title": "Explore Bandipur", "desc": "Visit Siddha Cave, walk through Newari streets, and enjoy Himalayan views." },
+      { "day": "07", "title": "Bandipur to Pokhara", "desc": "Short scenic drive to Nepal's most scenic lake city." },
+      { "day": "08", "title": "Pokhara Sightseeing", "desc": "Visit Davis Falls, Gupteshwor Cave, and International Mountain Museum." },
+      { "day": "09", "title": "Sarangkot Sunrise", "desc": "Early morning drive for sunrise over the Annapurna range." },
+      { "day": "10", "title": "Leisure Day in Pokhara", "desc": "Boating on Phewa Lake or optional adventure activities." },
+      { "day": "11", "title": "Drive back to Kathmandu", "desc": "Return journey along the Prithvi Highway." },
+      { "day": "12", "title": "Free Day in Kathmandu", "desc": "Shopping or rest." },
+      { "day": "13", "title": "Departure", "desc": "Transfer to airport." }
+    ]
+  },
+  {
+    "id": "tour-6",
+    "title": "BADIMALIKA TOUR",
+    "tagline": "An exciting Village experience",
+    "highlights": [
+      "Sacred Badimalika Temple (4214m)",
+      "Khaptad National Park exploration",
+      "Remote Far-Western Nepal immersion",
+      "Unique religious significance (Tribeni)",
+      "High-altitude grasslands and forests"
+    ],
+    "description": "A deep spiritual and natural journey to the remote Far-Western region of Nepal, exploring high-altitude temples and the biodiverse Khaptad National Park.",
+    "itinerary": [
+      { "day": "01-03", "title": "Kathmandu to Dadeldhura", "desc": "Flight to Nepalgunj, then Dhangadhi, and drive to the hills of Dadeldhura." },
+      { "day": "04-06", "title": "Approach to the Temple", "desc": "Drive to Jadanga, trek through Budha Krodh and rhododendron forests to Bhitachhina." },
+      { "day": "07-08", "title": "Tribeni & Badimalika Temple", "desc": "Religious bathe at Tribeni and climb to the sacred Badimalika temple at 4214m." },
+      { "day": "09-11", "title": "Descent through Grasslands", "desc": "Trek via Dhalpuri Pokhari, Bhansainkharka, and Laskechaur." },
+      { "day": "12-13", "title": "Khaptad National Park", "desc": "Explore Khaptad Danda, Baba's Ashram, and the unique flora and fauna of the park." },
+      { "day": "14-16", "title": "Return to Kathmandu", "desc": "Trek to Silgadhi, fly back to Kathmandu, and departure." }
+    ]
+  },
+  {
+    "id": "tour-7",
+    "title": "JEEP TOUR TO RARA",
+    "tagline": "An exciting Lake experience",
+    "highlights": [
+      "Rara Lake (2990m) - Biggest lake in Nepal",
+      "4WD Off-road Jeep adventure",
+      "Exotic Karnali region exploration",
+      "Sinja Valley historical site",
+      "Stunning Alpine scenery"
+    ],
+    "description": "Rara Lake Tour is one of the best destinations for wild travelers. The 4WD Jeep tour is a fascinating adventure overland journey to the exotic and stunning natural beauty of the biggest lake in Nepal.",
+    "itinerary": [
+      { "day": "01", "title": "Kathmandu to Surkhet", "desc": "Long drive through rivers and Terai region to reach Surkhet." },
+      { "day": "02", "title": "Surkhet to Kalikot", "desc": "Drive through subtropical vegetation and green valleys to Kalikot." },
+      { "day": "03", "title": "Kalikot to Rara Lake", "desc": "Drive along the Karnali river, through Sinja Valley to reach Rara Lake." },
+      { "day": "04", "title": "Excursion in Rara Lake", "desc": "Boating in the blue water, hiking for best views, and visiting the National Park." },
+      { "day": "05", "title": "Drive back to Kalikot", "desc": "Return journey through the rugged terrain." },
+      { "day": "06", "title": "Return to Kathmandu", "desc": "Final long drive back to the capital." }
+    ]
+  },
+  {
+    "id": "tour-8",
+    "title": "KATHMANDU CITY TOUR",
+    "tagline": "An exciting Kathmandu City Experience",
+    "highlights": [
+      "Pashupatinath Temple (Holy Hindu Site)",
+      "Boudhanath Stupa (Massive Buddhist Site)",
+      "Swayambhunath (Monkey Temple)",
+      "Patan Durbar Square (Art & Architecture)",
+      "UNESCO World Heritage Site exploration"
+    ],
+    "description": "Kathmandu is the capital city of Nepal with a glorious history of two thousand years. This tour shows you the medieval gems, golden era architecture, and rich Newar culture.",
+    "itinerary": [
+      { "day": "Morning", "title": "Pashupatinath & Boudhanath", "desc": "Visit the holiest Hindu temple on the Bagmati bank and the largest stupa in Nepal." },
+      { "day": "Afternoon", "title": "Swayambhunath & Patan", "desc": "Panoramic views from the hill-top temple and explore the artistic palaces of Patan Durbar Square." }
+    ]
+  }
+]
