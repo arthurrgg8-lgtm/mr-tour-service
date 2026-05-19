@@ -8,9 +8,10 @@ import { ChevronLeft, ChevronRight } from "lucide-react"
 interface ImageSlideshowProps {
   images: string[]
   interval?: number
+  priority?: boolean
 }
 
-export default function ImageSlideshow({ images, interval = 5000 }: ImageSlideshowProps) {
+export default function ImageSlideshow({ images, interval = 5000, priority = false }: ImageSlideshowProps) {
   const [currentIndex, setCurrentIndex] = useState(0)
 
   useEffect(() => {
@@ -45,6 +46,7 @@ export default function ImageSlideshow({ images, interval = 5000 }: ImageSlidesh
             fill
             className="object-cover"
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            priority={priority && currentIndex === 0}
           />
         </motion.div>
       </AnimatePresence>

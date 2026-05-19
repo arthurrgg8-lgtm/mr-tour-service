@@ -7,6 +7,7 @@ import business from "@/data/business.json"
 import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { usePathname } from "next/navigation"
+import { scrollToId } from "@/lib/utils"
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
@@ -68,29 +69,12 @@ export default function Navbar() {
     const handleScrollToHash = (retryCount = 0) => {
       const hash = window.location.hash.substring(1)
       if (hash) {
-        const element = document.getElementById(hash)
-        if (element) {
-          setTimeout(() => {
-            const offset = 100 
-            const bodyRect = document.body.getBoundingClientRect().top
-            const elementRect = element.getBoundingClientRect().top
-            const elementPosition = elementRect - bodyRect
-            const offsetPosition = elementPosition - offset
-
-            window.scrollTo({
-              top: offsetPosition,
-              behavior: "smooth"
-            })
-
-            // Add glow animation
-            element.classList.remove('animate-section-glow')
-            void element.offsetWidth // trigger reflow
-            element.classList.add('animate-section-glow')
-          }, 300) 
-        } else if (retryCount < 5) {
-          // Retry if element not found yet (e.g. during page load)
-          setTimeout(() => handleScrollToHash(retryCount + 1), 200)
-        }
+        setTimeout(() => {
+          const success = scrollToId(hash, 100, true)
+          if (!success && retryCount < 5) {
+            handleScrollToHash(retryCount + 1)
+          }
+        }, 300)
       }
     }
 
@@ -108,33 +92,12 @@ export default function Navbar() {
       
       // If we're already on the target page
       if (pathname === path) {
-        // Always handle scroll manually for same-page hash links
-        // This ensures it works even if hashchange doesn't fire or if clicking same hash
         e.preventDefault()
-        
-        // Update URL hash without full reload
         window.history.pushState(null, "", href)
+        scrollToId(hash, 100, true)
         
-        const element = document.getElementById(hash)
-        if (element) {
-          const offset = 100
-          const bodyRect = document.body.getBoundingClientRect().top
-          const elementRect = element.getBoundingClientRect().top
-          const elementPosition = elementRect - bodyRect
-          const offsetPosition = elementPosition - offset
-
-          window.scrollTo({
-            top: offsetPosition,
-            behavior: "smooth"
-          })
-
-          element.classList.remove('animate-section-glow')
-          void element.offsetWidth
-          element.classList.add('animate-section-glow')
-          
-          // Manually trigger hashchange event for other components (like ToursPage modal)
-          window.dispatchEvent(new HashChangeEvent('hashchange'))
-        }
+        // Manually trigger hashchange event for other components (like ToursPage modal)
+        window.dispatchEvent(new HashChangeEvent('hashchange'))
       }
     }
   }

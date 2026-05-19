@@ -97,7 +97,7 @@ export default function Footer() {
             <ul className="space-y-4">
               <li>
                 <a 
-                  href="https://maps.app.goo.gl/YourMapLink" 
+                  href={business.socials.googleMaps} 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="flex items-start gap-3 group"

@@ -77,7 +77,7 @@ export default function ServicesPage() {
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16">
-            {typedServices.map((service) => {
+            {typedServices.map((service, idx) => {
               const Icon = iconMap[service.icon] || MapIcon
               
               return (
@@ -119,7 +119,10 @@ export default function ServicesPage() {
 
                   {/* Visual Container */}
                   <div className="w-full relative h-[280px] md:h-[320px]">
-                    <ImageSlideshow images={service.images || []} />
+                    <ImageSlideshow 
+                      images={service.images || []} 
+                      priority={idx < 2}
+                    />
                   </div>
 
                   {/* Description & CTA */}

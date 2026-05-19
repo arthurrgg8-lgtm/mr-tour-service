@@ -1,6 +1,7 @@
 "use client"
 
 import { MessageCircle } from "lucide-react"
+import { scrollToId } from "@/lib/utils"
 
 interface EnquireButtonProps {
   variant?: "full" | "inline"
@@ -9,19 +10,7 @@ interface EnquireButtonProps {
 
 export default function EnquireButton({ variant = "inline", children }: EnquireButtonProps) {
   const scrollToForm = () => {
-    const element = document.getElementById('inquiry-form')
-    if (element) {
-      const offset = 100
-      const bodyRect = document.body.getBoundingClientRect().top
-      const elementRect = element.getBoundingClientRect().top
-      const elementPosition = elementRect - bodyRect
-      const offsetPosition = elementPosition - offset
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth"
-      })
-    }
+    scrollToId('inquiry-form')
   }
 
   if (variant === "full") {

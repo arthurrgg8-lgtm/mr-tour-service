@@ -311,7 +311,24 @@
       },
       {
         "name": "LANGTANG REGION",
-        "image": "/images/trekking/langtang.jpeg"
+        "image": "/images/trekking/langtang.jpeg",
+        "subPackages": [
+          {
+            "name": "LANGTANG VALLEY TREK",
+            "duration": "8 DAYS",
+            "image": "/images/trekking/langtang.jpeg"
+          },
+          {
+            "name": "GOSAINKUNDA LAKE TREK",
+            "duration": "9 DAYS",
+            "image": "/images/trekking/langtang.jpeg"
+          },
+          {
+            "name": "TAMANG HERITAGE TRAIL",
+            "duration": "10 DAYS",
+            "image": "/images/trekking/langtang.jpeg"
+          }
+        ]
       },
       {
         "name": "BUDDHIST PILGRIMAGE TREKKING",
@@ -319,7 +336,14 @@
       },
       {
         "name": "DHAULAGIRI TREK",
-        "image": "/images/trekking/dhaulagiri.jpeg"
+        "image": "/images/trekking/dhaulagiri.jpeg",
+        "subPackages": [
+          {
+            "name": "DHAULAGIRI CIRCUIT TREK",
+            "duration": "20 DAYS",
+            "image": "/images/trekking/dhaulagiri.jpeg"
+          }
+        ]
       },
       {
         "name": "TREK TO FAR WESTERN NEPAL",

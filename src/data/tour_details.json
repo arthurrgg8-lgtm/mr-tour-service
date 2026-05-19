@@ -584,6 +584,32 @@
       "Stunning Alpine landscapes and high-altitude lakes (Gosainkunda)"
     ],
     "description": "Langtang Valley, located north of Kathmandu, is a hidden gem offering spectacular mountain views, ancient monasteries, and a deep look into Tamang culture. Despite the 2015 earthquake, the valley has rebuilt stronger than ever, offering a resilient and welcoming spirit.",
+    "subPackages": [
+      {
+        "name": "LANGTANG VALLEY TREK",
+        "duration": "8 DAYS",
+        "image": "/images/trekking/langtang.jpeg",
+        "maxAltitude": "4,984m",
+        "difficulty": "Moderate",
+        "details": "The classic journey to Kyanjin Gompa and Tserko Ri."
+      },
+      {
+        "name": "GOSAINKUNDA LAKE TREK",
+        "duration": "9 DAYS",
+        "image": "/images/trekking/langtang.jpeg",
+        "maxAltitude": "4,380m",
+        "difficulty": "Moderate-Hard",
+        "details": "A spiritual trek to the sacred alpine lakes of Gosainkunda."
+      },
+      {
+        "name": "TAMANG HERITAGE TRAIL",
+        "duration": "10 DAYS",
+        "image": "/images/trekking/langtang.jpeg",
+        "maxAltitude": "3,165m",
+        "difficulty": "Moderate",
+        "details": "A cultural journey through traditional Tamang villages."
+      }
+    ],
     "itinerary": [
       {
         "day": "01",
@@ -1034,6 +1060,16 @@
       "True Wilderness: Camping adventure away from all teahouses"
     ],
     "description": "The Dhaulagiri Circuit is a challenging camping trek that circles the massive White Mountain (Dhaulagiri). Glaciated passes and incredible isolation.",
+    "subPackages": [
+      {
+        "name": "DHAULAGIRI CIRCUIT TREK",
+        "duration": "20 DAYS",
+        "image": "/images/trekking/dhaulagiri.jpeg",
+        "maxAltitude": "5,360m",
+        "difficulty": "Very Strenuous",
+        "details": "The ultimate camping trek around the massive White Mountain."
+      }
+    ],
     "itinerary": [
       {
         "day": "01",
