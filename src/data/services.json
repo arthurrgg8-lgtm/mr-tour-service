@@ -89,14 +89,14 @@
     "featured": true,
     "details": "We design personalized itineraries focusing on the rich cultural and religious heritage of Nepal.",
     "subServices": [
-      { "name": "KATHMANDU COUNTRYSIDE HIKE (4 NIGHTS 5 DAYS)", "image": "/images/tours/tour-1.jpeg" },
-      { "name": "FAMILY HOLIDAY (4 DAYS)", "image": "/images/tours/tour-2.jpeg" },
-      { "name": "LUMBINI TOUR (3 DAYS)", "image": "/images/tours/tour-3.jpeg" },
-      { "name": "CHITWAN JUNGLE SAFARI (3 DAYS)", "image": "/images/tours/tour-4.jpeg" },
-      { "name": "GORKHA-BANDIPUR-POKHARA TOUR (13 DAYS)", "image": "/images/tours/tour-5.jpeg" },
-      { "name": "BADIMALIKA TOUR (16 DAYS)", "image": "/images/tours/tour-6.jpeg" },
-      { "name": "JEEP TOUR TO RARA (6 DAYS)", "image": "/images/tours/tour-7.jpeg" },
-      { "name": "KATHMANDU CITY TOUR (1 DAY)", "image": "/images/tours/tour-8.jpeg" }
+      { "name": "KATHMANDU COUNTRYSIDE HIKE", "duration": "5 DAYS", "image": "/images/tours/tour-1.png" },
+      { "name": "FAMILY HOLIDAY", "duration": "4 DAYS", "image": "/images/tours/tour-2.png" },
+      { "name": "LUMBINI TOUR", "duration": "3 DAYS", "image": "/images/tours/tour-3.png" },
+      { "name": "CHITWAN JUNGLE SAFARI", "duration": "3 DAYS", "image": "/images/tours/tour-4.png" },
+      { "name": "GORKHA-BANDIPUR-POKHARA TOUR", "duration": "13 DAYS", "image": "/images/tours/tour-5.png" },
+      { "name": "BADIMALIKA TOUR", "duration": "16 DAYS", "image": "/images/tours/tour-6.png" },
+      { "name": "JEEP TOUR TO RARA", "duration": "6 DAYS", "image": "/images/tours/tour-7.png" },
+      { "name": "KATHMANDU CITY TOUR", "duration": "1 DAY", "image": "/images/tours/tour-8.png" }
     ]
   },
   {

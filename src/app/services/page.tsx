@@ -13,6 +13,7 @@ export const metadata: Metadata = {
 interface SubService {
   name: string;
   image: string;
+  duration?: string;
 }
 
 interface Region {
@@ -28,7 +29,7 @@ interface Service {
   images?: string[];
   featured: boolean;
   details: string;
-  subServices?: (string | SubService)[];
+  subServices?: SubService[];
   regions?: Region[];
 }
 
@@ -112,7 +113,7 @@ export default function ServicesPage() {
                            
                            <div className="relative z-10">
                               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
-                                {(service.id === 'trekking' ? service.regions : service.subServices as SubService[])?.map((item, idx) => (
+                                {(service.id === 'trekking' ? service.regions : service.subServices)?.map((item: any, idx: number) => (
                                   <div 
                                     key={idx} 
                                     className="relative group/item h-40 rounded-2xl md:rounded-3xl overflow-hidden border border-slate-100 shadow-md hover:shadow-2xl transition-all duration-500"
@@ -130,7 +131,7 @@ export default function ServicesPage() {
                                       <div className="flex items-center gap-2 mb-1">
                                         <MapIcon className="h-4 w-4 text-primary" />
                                         <span className="text-[10px] font-bold text-primary uppercase tracking-wider">
-                                          {service.id === 'trekking' ? 'Trek Route' : 'Tour Itinerary'}
+                                          {service.id === 'trekking' ? 'Trek Route' : (item.duration || 'Tour Package')}
                                         </span>
                                       </div>
                                       <span className="font-bold text-white text-base md:text-lg leading-tight group-hover/item:text-primary transition-colors">{item.name}</span>
