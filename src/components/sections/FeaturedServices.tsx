@@ -50,7 +50,7 @@ export default function FeaturedServices() {
                   {service.description}
                 </p>
                 <Link 
-                  href="/services" 
+                  href={`/services#${service.id}`} 
                   className="text-primary font-bold inline-flex items-center gap-2 hover:gap-3 transition-all text-sm uppercase tracking-widest border-b-2 border-primary/20 hover:border-primary pb-1"
                 >
                   Explore Details <span aria-hidden="true">→</span>
