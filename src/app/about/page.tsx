@@ -57,8 +57,8 @@ export default function AboutPage() {
               
               <div className="grid grid-cols-2 gap-8">
                 <div className="flex flex-col gap-2">
-                  <span className="text-4xl font-extrabold text-primary">5+</span>
-                  <span className="text-sm font-bold uppercase tracking-wider text-muted-foreground">Years in Business</span>
+                  <span className="text-4xl font-extrabold text-primary">20+</span>
+                  <span className="text-sm font-bold uppercase tracking-wider text-muted-foreground">Years Experience</span>
                 </div>
                 <div className="flex flex-col gap-2">
                   <span className="text-4xl font-extrabold text-primary">100%</span>

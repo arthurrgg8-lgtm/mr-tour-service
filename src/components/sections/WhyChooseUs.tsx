@@ -37,7 +37,7 @@ export default function WhyChooseUs() {
                <div className="grid grid-cols-2 gap-4 p-8">
                  <div className="h-40 w-40 rounded-2xl bg-white shadow-xl flex items-center justify-center p-6 text-center">
                     <div>
-                      <p className="text-3xl font-bold text-primary">5+</p>
+                      <p className="text-3xl font-bold text-primary">20+</p>
                       <p className="text-xs font-medium text-muted-foreground uppercase">Years Experience</p>
                     </div>
                  </div>

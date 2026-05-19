@@ -158,7 +158,7 @@ export default function Footer() {
           </p>
           <div className="flex items-center gap-6">
             <span className="text-xs text-muted-foreground">
-              Developed by <Link href="https://anuditk.vercel.app" target="_blank" className="font-bold hover:text-primary transition-colors">Anudit Khatri</Link>
+              Developed by <Link href="https://anuditk.vercel.app" target="_blank" rel="noopener noreferrer" className="font-bold hover:text-primary transition-colors">Anudit Khatri</Link>
             </span>
           </div>
         </div>

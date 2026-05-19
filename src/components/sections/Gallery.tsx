@@ -18,7 +18,7 @@ export default function Gallery() {
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {galleryData.map((img, idx) => (
-            <ScrollAnimation key={idx} delay={idx * 0.05}>
+            <ScrollAnimation key={idx} delay={(idx % 12) * 0.05}>
               <div className="group relative aspect-square overflow-hidden rounded-2xl bg-slate-100 border cursor-zoom-in">
                 <Image
                   src={`/images/gallery/${encodeURIComponent(img)}`}
