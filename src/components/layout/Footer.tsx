@@ -2,7 +2,6 @@ import Link from "next/link"
 import Image from "next/image"
 import { Mail, MapPin, Phone, MessageCircle } from "lucide-react"
 import business from "@/data/business.json"
-import services from "@/data/services.json"
 
 export default function Footer() {
   return (

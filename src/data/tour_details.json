@@ -246,55 +246,55 @@
       {
         "name": "ANNAPURNA CIRCUIT WITH TILICHO LAKE",
         "duration": "18 DAYS",
-        "image": "/images/trekking/annapurna.jpeg",
+        "image": "/images/trekking/annapurna-circuit-tilicho.png",
         "details": "A comprehensive journey circling the entire Annapurna massif, including a challenging detour to the turquoise waters of Tilicho Lake."
       },
       {
         "name": "TREK TO ANNAPURNA WITH NAMUN LA PASS",
         "duration": "15 DAYS",
-        "image": "/images/trekking/annapurna.jpeg",
+        "image": "/images/trekking/annapurna-namun-la.png",
         "details": "A challenging off-the-beaten-path trek over the Namun La Pass (5,560m), connecting the Lamjung and Manang regions."
       },
       {
         "name": "LAMJUNG HIMAL TREK",
         "duration": "13 DAYS",
-        "image": "/images/trekking/annapurna.jpeg",
+        "image": "/images/trekking/lamjung-himal.png",
         "details": "A quieter camping adventure offering unobstructed views of Manaslu and the Annapurna range through pristine Gurung villages."
       },
       {
         "name": "KHOPRA RIDGE TREK",
         "duration": "12 DAYS",
-        "image": "/images/trekking/annapurna.jpeg",
+        "image": "/images/trekking/khopra-ridge.png",
         "details": "An excellent alternative to busier trails, offering incredible panoramic views of Dhaulagiri and a visit to the sacred Khayer Lake."
       },
       {
         "name": "MARDI HIMAL TREK",
         "duration": "9 DAYS",
-        "image": "/images/trekking/annapurna.jpeg",
+        "image": "/images/trekking/mardi-himal.png",
         "details": "A popular 'eco-trek' following a ridgeline toward the base of Machhapuchhre, offering some of the closest mountain views available."
       },
       {
         "name": "ANNAPURNA BASE CAMP - SHORT TRIP",
         "duration": "8 DAYS",
-        "image": "/images/trekking/annapurna.jpeg",
+        "image": "/images/trekking/abc-short.png",
         "details": "A fast-paced version of the sanctuary trek, ideal for those with limited time who still wish to stand at the foot of the world's 10th highest peak."
       },
       {
         "name": "ANNAPURNA CIRCUIT WITH NAR-PHU VALLEY",
         "duration": "26 DAYS",
-        "image": "/images/trekking/annapurna.jpeg",
+        "image": "/images/trekking/annapurna-nar-phu.png",
         "details": "An epic odyssey into the restricted Nar-Phu valleys, crossing Kang La and Thorong La for a complete Himalayan immersion."
       },
       {
         "name": "ANNAPURNA BASE CAMP VIA GHOREPANI",
         "duration": "14 DAYS",
-        "image": "/images/trekking/annapurna.jpeg",
+        "image": "/images/trekking/abc-ghorepani.png",
         "details": "A classic trek combining the famous sunrise views from Poon Hill with a deep trek into the Annapurna Sanctuary's natural amphitheater."
       },
       {
         "name": "ANNAPURNA SEVEN PASSES TREK",
         "duration": "23 DAYS",
-        "image": "/images/trekking/annapurna.jpeg",
+        "image": "/images/trekking/annapurna-seven-passes.png",
         "details": "The ultimate challenge crossing seven high-altitude passes, bypassing road-heavy sections for a true wilderness experience."
       }
     ]
@@ -302,7 +302,7 @@
   {
     "id": "trek-namun-la",
     "title": "TREK TO ANNAPURNA WITH NAMUN LA PASS",
-    "image": "/images/trekking/annapurna.jpeg",
+    "image": "/images/trekking/annapurna-namun-la.png",
     "tagline": "An Ancient Trade Route Adventure",
     "highlights": [
       "Namun La Pass (5,560m): High pass with 360-degree Himalayan views",
@@ -334,7 +334,7 @@
   {
     "id": "trek-lamjung-himal",
     "title": "LAMJUNG HIMAL TREK",
-    "image": "/images/trekking/annapurna.jpeg",
+    "image": "/images/trekking/lamjung-himal.png",
     "tagline": "Pristine Wilderness & Gurung Heritage",
     "highlights": [
       "Lamjung Himal Base Camp: Reaching 4,500m in the heart of the range",
@@ -364,7 +364,7 @@
   {
     "id": "trek-nar-phu",
     "title": "ANNAPURNA CIRCUIT WITH NAR-PHU VALLEY",
-    "image": "/images/trekking/annapurna.jpeg",
+    "image": "/images/trekking/annapurna-nar-phu.png",
     "tagline": "The Forbidden Valleys & High Passes Odyssey",
     "highlights": [
       "Kang La Pass (5,322m) & Thorong La Pass (5,416m)",
@@ -389,7 +389,7 @@
   {
     "id": "trek-seven-passes",
     "title": "ANNAPURNA SEVEN PASSES TREK",
-    "image": "/images/trekking/annapurna.jpeg",
+    "image": "/images/trekking/annapurna-seven-passes.png",
     "tagline": "The Ultimate Wilderness & High Pass Challenge",
     "highlights": [
       "Cross Seven High Passes including Thorong La and Kang La",
@@ -416,7 +416,7 @@
   {
     "id": "trek-annapurna-circuit",
     "title": "ANNAPURNA CIRCUIT WITH TILICHO LAKE",
-    "image": "/images/trekking/annapurna.jpeg",
+    "image": "/images/trekking/annapurna-circuit-tilicho.png",
     "tagline": "The Ultimate Himalayan Circuit Challenge",
     "highlights": [
       "Thorong La Pass: The highest trekking pass in the world (5,416m)",
@@ -451,7 +451,7 @@
   {
     "id": "trek-khopra-ridge",
     "title": "KHOPRA RIDGE TREK",
-    "image": "/images/trekking/annapurna.jpeg",
+    "image": "/images/trekking/khopra-ridge.png",
     "tagline": "An Off-the-Beaten-Path Community Adventure",
     "highlights": [
       "Khayer Lake: A sacred high-altitude glacial lake (4,660m)",
@@ -480,7 +480,7 @@
   {
     "id": "trek-abc-short",
     "title": "ANNAPURNA BASE CAMP - SHORT TRIP",
-    "image": "/images/trekking/annapurna.jpeg",
+    "image": "/images/trekking/abc-short.png",
     "tagline": "The Essential Sanctuary Experience",
     "highlights": [
       "Reach Annapurna Base Camp (4,130m) in record time",
@@ -505,7 +505,7 @@
   {
     "id": "trek-annapurna-abc",
     "title": "ANNAPURNA BASE CAMP VIA GHOREPANI",
-    "image": "/images/trekking/annapurna.jpeg",
+    "image": "/images/trekking/abc-ghorepani.png",
     "tagline": "A Journey into the Heart of the Annapurna Sanctuary",
     "highlights": [
       "Poon Hill Sunrise: Iconic views of Dhaulagiri and Annapurna massifs",
@@ -536,7 +536,7 @@
   {
     "id": "trek-mardi-himal",
     "title": "MARDI HIMAL TREK",
-    "image": "/images/trekking/annapurna.jpeg",
+    "image": "/images/trekking/mardi-himal.png",
     "tagline": "An Off-the-Beaten-Path Ridge Adventure",
     "highlights": [
       "Spectacular 'birds-eye' views of the Annapurna Sanctuary",

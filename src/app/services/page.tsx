@@ -1,14 +1,10 @@
 "use client"
 
 import services from "@/data/services.json"
-import tourDetails from "@/data/tour_details.json"
-import business from "@/data/business.json"
-import { Car, Map as MapIcon, Mountain, Bus, Users, ShieldCheck, Award } from "lucide-react"
+import { Car, Map as MapIcon, Mountain, Bus, Users, ShieldCheck } from "lucide-react"
 import Image from "next/image"
 import ServiceInquiryForm from "@/components/sections/ServiceInquiryForm"
 import EnquireButton from "@/components/ui/EnquireButton"
-import TourModal from "@/components/ui/TourModal"
-import { useState } from "react"
 
 import ImageSlideshow from "@/components/ui/ImageSlideshow"
 

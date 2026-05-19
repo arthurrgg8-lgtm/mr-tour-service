@@ -2,13 +2,11 @@
 
 import services from "@/data/services.json"
 import tourDetails from "@/data/tour_details.json"
-import business from "@/data/business.json"
-import { Mountain, Award, ShieldCheck, Users, Clock, Compass } from "lucide-react"
+import { Award, ShieldCheck, Users, Clock, Compass } from "lucide-react"
 import Image from "next/image"
 import ServiceInquiryForm from "@/components/sections/ServiceInquiryForm"
 import TourModal from "@/components/ui/TourModal"
 import { useState, useEffect } from "react"
-import { useSearchParams } from "next/navigation"
 
 interface Region {
   name: string;
