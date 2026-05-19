@@ -46,3 +46,4 @@ jobs:
           projectName: mrtourservice
           directory: .vercel/output/static
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+
