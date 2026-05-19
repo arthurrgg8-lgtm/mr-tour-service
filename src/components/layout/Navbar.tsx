@@ -6,12 +6,11 @@ import { Phone, MessageCircle, Menu, X, ChevronDown } from "lucide-react"
 import business from "@/data/business.json"
 import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { useRouter, usePathname } from "next/navigation"
+import { usePathname } from "next/navigation"
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
-  const router = useRouter()
   const pathname = usePathname()
 
   const navLinks = [

@@ -1,4 +1,4 @@
-import { CheckCircle2, ShieldCheck, Users, BadgeCheck, Clock } from "lucide-react"
+import { CheckCircle2 } from "lucide-react"
 import business from "@/data/business.json"
 
 export default function WhyChooseUs() {

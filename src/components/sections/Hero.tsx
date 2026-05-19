@@ -82,7 +82,7 @@ export default function Hero() {
               alt={`Slide ${currentImage + 1}`}
               fill
               className="object-cover"
-              priority
+              priority={currentImage === 0}
             />
           </motion.div>
         </AnimatePresence>

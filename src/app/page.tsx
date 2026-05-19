@@ -3,7 +3,6 @@ import FeaturedServices from "@/components/sections/FeaturedServices"
 import WhyChooseUs from "@/components/sections/WhyChooseUs"
 import ScrollAnimation from "@/components/ui/ScrollAnimation"
 import Link from "next/link"
-import Image from "next/image"
 import { Map as MapIcon, MessageCircle, Phone } from "lucide-react"
 import business from "@/data/business.json"
 

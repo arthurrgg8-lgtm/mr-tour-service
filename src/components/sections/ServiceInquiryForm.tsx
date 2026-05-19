@@ -1,11 +1,12 @@
 "use client"
 
 import { useState } from "react"
-import { Send, User, Phone, Mail, Globe, Users, Car, Calendar, MapPin, Plus, FileText, Mountain, Map as MapIcon } from "lucide-react"
+import { Send, User, Phone, Mail, Globe, Users, Car, Calendar, MapPin, Plus, FileText, Mountain, Map as MapIcon, Copy, Check } from "lucide-react"
 import business from "@/data/business.json"
 import fleet from "@/data/fleet.json"
 
 export default function ServiceInquiryForm() {
+  const [copied, setCopied] = useState(false)
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -68,6 +69,33 @@ Destination/Requests: ${formData.destination}
 
     const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${business.contact.email}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
     window.open(gmailUrl, "_blank")
+  }
+
+  const handleCopy = () => {
+    let rentalDetails = ""
+    if (formData.inquiryType === "Rental") {
+      rentalDetails = `
+Vehicle Type: ${formData.vehicleType}
+Pickup Date: ${formData.pickupDate}
+Drop Date: ${formData.dropDate}
+Pickup Location: ${formData.pickupLocation}
+Drop Location: ${formData.dropLocation}`
+    }
+
+    const body = `New ${formData.inquiryType} Inquiry Details:
+----------------------------------
+Inquiry Type: ${formData.inquiryType}
+Name: ${formData.name}
+Phone: ${formData.phone}
+Email: ${formData.email}
+Nationality: ${formData.nationality}
+Number of People: ${formData.numPeople}${rentalDetails}
+Destination/Requests: ${formData.destination}
+----------------------------------`
+
+    navigator.clipboard.writeText(body)
+    setCopied(true)
+    setTimeout(() => setCopied(false), 2000)
   }
 
   const isRental = formData.inquiryType === "Rental"
@@ -236,15 +264,28 @@ Destination/Requests: ${formData.destination}
             ></textarea>
           </div>
 
-          <button 
-            type="submit"
-            className="w-full h-16 rounded-2xl bg-primary text-white font-bold text-xl hover:bg-primary/90 transition-all shadow-xl shadow-primary/20 flex items-center justify-center gap-3 mt-8"
-          >
-            Enquire Now <Send className="h-6 w-6" />
-          </button>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8">
+            <button 
+              type="submit"
+              className="h-16 rounded-2xl bg-primary text-white font-bold text-xl hover:bg-primary/90 transition-all shadow-xl shadow-primary/20 flex items-center justify-center gap-3"
+            >
+              Enquire Now <Send className="h-6 w-6" />
+            </button>
+            <button 
+              type="button"
+              onClick={handleCopy}
+              className="h-16 rounded-2xl bg-slate-100 text-slate-700 font-bold text-lg hover:bg-slate-200 transition-all flex items-center justify-center gap-3 border border-slate-200"
+            >
+              {copied ? (
+                <>Copied! <Check className="h-6 w-6 text-green-600" /></>
+              ) : (
+                <>Copy Details <Copy className="h-6 w-6" /></>
+              )}
+            </button>
+          </div>
           
-          <p className="text-center text-xs text-muted-foreground italic">
-            This will open Gmail in your browser with your inquiry details pre-filled.
+          <p className="text-center text-xs text-muted-foreground italic mt-4">
+            &quot;Enquire Now&quot; opens Gmail. Use &quot;Copy Details&quot; if you want to paste manually.
           </p>
         </form>
       </div>

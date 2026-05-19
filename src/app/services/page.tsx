@@ -3,7 +3,7 @@
 import services from "@/data/services.json"
 import tourDetails from "@/data/tour_details.json"
 import business from "@/data/business.json"
-import { Car, Map as MapIcon, Mountain, Bus, Users, ShieldCheck, Info, Award } from "lucide-react"
+import { Car, Map as MapIcon, Mountain, Bus, Users, ShieldCheck, Award } from "lucide-react"
 import Image from "next/image"
 import ServiceInquiryForm from "@/components/sections/ServiceInquiryForm"
 import EnquireButton from "@/components/ui/EnquireButton"
@@ -96,7 +96,7 @@ export default function ServicesPage() {
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16">
-            {typedServices.map((service, index) => {
+            {typedServices.map((service) => {
               const Icon = iconMap[service.icon] || MapIcon
               
               return (
@@ -138,7 +138,7 @@ export default function ServicesPage() {
                             {(service.id === 'trekking' ? service.regions : service.subServices)?.map((item, idx: number) => (
                               <div 
                                 key={idx} 
-                                onClick={() => (service.id === 'tour-packages' || item.name === 'Everest Region') && handleTourClick((item as any).name)}
+                                onClick={() => (service.id === 'tour-packages' || item.name === 'Everest Region') && handleTourClick((item as SubService | Region).name)}
                                 className={`relative group/item ${service.id === 'tour-packages' ? 'h-28 md:h-32' : 'h-24 md:h-28'} rounded-xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-lg transition-all duration-500 ${(service.id === 'tour-packages' || item.name === 'Everest Region') ? 'cursor-pointer' : ''}`}
                               >
                                 {item.image && (

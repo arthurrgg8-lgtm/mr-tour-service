@@ -1,4 +1,3 @@
-import business from "@/data/business.json"
 import team from "@/data/team.json"
 import { Award, Users, ShieldCheck, Map as MapIcon } from "lucide-react"
 import Image from "next/image"
