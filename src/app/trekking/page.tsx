@@ -65,10 +65,18 @@ export default function TrekkingPage() {
   const handleTourClick = (tourName: string) => {
     // Normalize names to handle minor variations
     const normalizedName = tourName.toLowerCase()
-    const detail = tourDetails.find(d => 
-      d.title.toLowerCase() === normalizedName || 
-      (d.id === 'trek-everest' && (normalizedName === 'everest region' || normalizedName === 'everest'))
-    )
+    const firstWord = normalizedName.split(' ')[0]
+    
+    const detail = tourDetails.find(d => {
+      const title = d.title.toLowerCase()
+      const id = d.id.toLowerCase()
+      return title === normalizedName || 
+             id === normalizedName ||
+             (firstWord.length > 3 && title.includes(firstWord)) ||
+             (d.id === 'trek-everest' && (normalizedName === 'everest region' || normalizedName === 'everest')) ||
+             (d.id === 'trek-annapurna' && (normalizedName === 'annapurna region' || normalizedName === 'annapurna'))
+    })
+
     if (detail) {
       setSelectedTour(detail)
       // Update hash for deep linking when clicking manually
