@@ -129,10 +129,10 @@ export default function ServicesPage() {
                   </div>
 
                   {/* Visual Container */}
-                  <div className="w-full h-[280px] md:h-[320px] relative">
+                  <div className={`w-full relative ${(service.id === 'trekking' || service.id === 'tour-packages') ? 'h-auto' : 'h-[280px] md:h-[320px]'}`}>
                     {(service.id === 'trekking' || service.id === 'tour-packages') ? (
                       <div className="bg-white rounded-3xl border border-slate-100 p-4 h-full flex flex-col">
-                        <div className="flex-grow overflow-y-auto pr-2 custom-scrollbar">
+                        <div className="flex-grow">
                           <div className="grid grid-cols-2 gap-3">
                             {(service.id === 'trekking' ? service.regions : service.subServices)?.map((item, idx: number) => (
                               <div 
@@ -158,31 +158,7 @@ export default function ServicesPage() {
                         </div>
                       </div>
                     ) : (
-                      <div className="grid grid-cols-2 grid-rows-2 gap-3 h-full">
-                        {(service.images && service.images.length > 0) ? (
-                          service.images.slice(0, 4).map((img, idx) => (
-                            <div 
-                              key={idx} 
-                              className={`relative overflow-hidden rounded-2xl border border-slate-100 ${
-                                service.images?.length === 1 ? "col-span-2 row-span-2" : 
-                                service.images?.length === 2 ? "col-span-1 row-span-2" :
-                                service.images?.length === 3 && idx === 0 ? "col-span-2 row-span-1" : "col-span-1 row-span-1"
-                              }`}
-                            >
-                              <Image 
-                                src={img} 
-                                alt={`${service.title} ${idx + 1}`}
-                                fill
-                                className="object-cover group-hover:scale-110 transition-transform duration-700"
-                              />
-                            </div>
-                          ))
-                        ) : (
-                          <div className="col-span-2 row-span-2 bg-slate-100 rounded-2xl flex items-center justify-center text-slate-400">
-                             <Icon className="h-10 w-10 opacity-20" />
-                          </div>
-                        )}
-                      </div>
+                      <ImageSlideshow images={service.images || []} />
                     )}
                   </div>
 
