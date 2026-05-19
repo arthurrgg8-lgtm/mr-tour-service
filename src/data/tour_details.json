@@ -2,6 +2,7 @@
   {
     "id": "tour-1",
     "title": "KATHMANDU COUNTRYSIDE HIKE",
+    "image": "/images/tours/tour-1.png",
     "tagline": "An exciting countryside experience",
     "highlights": [
       "Short and easy trekking near Kathmandu valley",
@@ -23,6 +24,7 @@
   {
     "id": "tour-2",
     "title": "FAMILY HOLIDAY",
+    "image": "/images/tours/tour-2.png",
     "tagline": "An exciting Tour with Kids",
     "highlights": [
       "UNESCO world heritage sites in Kathmandu",
@@ -51,6 +53,7 @@
   {
     "id": "tour-3",
     "title": "LUMBINI TOUR",
+    "image": "/images/tours/tour-3.png",
     "tagline": "An exciting heritage experience",
     "highlights": [
       "UNESCO world heritage site",
@@ -70,6 +73,7 @@
   {
     "id": "tour-4",
     "title": "CHITWAN JUNGLE SAFARI",
+    "image": "/images/tours/tour-4.png",
     "tagline": "An exciting Jungle Safari",
     "highlights": [
       "Elephant Safari and Jeep Drive",
@@ -88,6 +92,7 @@
   {
     "id": "tour-5",
     "title": "GORKHA-BANDIPUR-POKHARA TOUR",
+    "image": "/images/tours/tour-5.png",
     "tagline": "An Authentic Cultural & Scenic Himalayan Journey",
     "highlights": [
       "Historic Gorkha Durbar (Palace)",
@@ -117,6 +122,7 @@
   {
     "id": "tour-6",
     "title": "BADIMALIKA TOUR",
+    "image": "/images/tours/tour-6.png",
     "tagline": "An exciting Village experience",
     "highlights": [
       "Sacred Badimalika Temple (4214m)",
@@ -138,6 +144,7 @@
   {
     "id": "tour-7",
     "title": "JEEP TOUR TO RARA",
+    "image": "/images/tours/tour-7.png",
     "tagline": "An exciting Lake experience",
     "highlights": [
       "Rara Lake (2990m) - Biggest lake in Nepal",
@@ -159,6 +166,7 @@
   {
     "id": "tour-8",
     "title": "KATHMANDU CITY TOUR",
+    "image": "/images/tours/tour-8.png",
     "tagline": "An exciting Kathmandu City Experience",
     "highlights": [
       "Pashupatinath Temple (Holy Hindu Site)",

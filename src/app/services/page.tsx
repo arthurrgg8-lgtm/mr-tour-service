@@ -44,7 +44,7 @@ const iconMap: { [key: string]: React.ComponentType<{ className?: string }> } = 
 }
 
 export default function ServicesPage() {
-  const [selectedTour, setSelectedTour] = useState<any>(null)
+  const [selectedTour, setSelectedTour] = useState<typeof tourDetails[0] | null>(null)
 
   const handleTourClick = (tourName: string) => {
     const detail = tourDetails.find(d => d.title === tourName)
@@ -127,16 +127,16 @@ export default function ServicesPage() {
                            
                            <div className="relative z-10">
                               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
-                                {(service.id === 'trekking' ? service.regions : service.subServices)?.map((item: any, idx: number) => (
+                                {(service.id === 'trekking' ? service.regions : service.subServices)?.map((item, idx: number) => (
                                   <div 
                                     key={idx} 
-                                    onClick={() => service.id === 'tour-packages' && handleTourClick(item.name)}
+                                    onClick={() => service.id === 'tour-packages' && handleTourClick((item as SubService).name)}
                                     className={`relative group/item h-40 rounded-2xl md:rounded-3xl overflow-hidden border border-slate-100 shadow-md hover:shadow-2xl transition-all duration-500 ${service.id === 'tour-packages' ? 'cursor-pointer' : ''}`}
                                   >
                                     {item.image && (
                                       <Image 
                                         src={item.image} 
-                                        alt={item.name}
+                                        alt={(item as SubService | Region).name}
                                         fill
                                         className="object-cover group-hover/item:scale-110 transition-transform duration-700"
                                       />
@@ -155,11 +155,11 @@ export default function ServicesPage() {
                                         <div className="flex items-center gap-2 mb-1">
                                           <MapIcon className="h-4 w-4 text-primary" />
                                           <span className="text-[10px] font-bold text-primary uppercase tracking-wider">
-                                            {item.duration || 'Tour Package'}
+                                            {(item as SubService).duration || 'Tour Package'}
                                           </span>
                                         </div>
                                       )}
-                                      <span className="font-bold text-white text-base md:text-lg leading-tight group-hover/item:text-primary transition-colors">{item.name}</span>
+                                      <span className="font-bold text-white text-base md:text-lg leading-tight group-hover/item:text-primary transition-colors">{(item as SubService | Region).name}</span>
                                     </div>
                                   </div>
                                 ))}

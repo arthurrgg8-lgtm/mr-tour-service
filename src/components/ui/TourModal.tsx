@@ -3,6 +3,7 @@
 import { motion, AnimatePresence } from "framer-motion"
 import { X, Calendar, MapPin, CheckCircle2, Phone, MessageCircle } from "lucide-react"
 import business from "@/data/business.json"
+import Image from "next/image"
 
 interface ItineraryItem {
   day: string;
@@ -13,6 +14,7 @@ interface ItineraryItem {
 interface TourDetail {
   id: string;
   title: string;
+  image?: string;
   tagline: string;
   highlights: string[];
   description: string;
@@ -46,21 +48,34 @@ export default function TourModal({ tour, onClose }: TourModalProps) {
           exit={{ opacity: 0, scale: 0.9, y: 20 }}
           className="relative w-full max-w-5xl max-h-[90vh] bg-white rounded-[2.5rem] shadow-2xl overflow-hidden flex flex-col"
         >
-          {/* Header */}
-          <div className="relative h-48 md:h-64 bg-slate-900 text-white shrink-0 overflow-hidden">
-             {/* Decorative Background */}
-             <div className="absolute inset-0 bg-gradient-to-r from-primary/40 to-blue-600/40 opacity-50" />
-             <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl -mr-32 -mt-32" />
+          {/* Header with Full Background Image */}
+          <div className="relative h-64 md:h-80 bg-slate-900 text-white shrink-0 overflow-hidden">
+             {/* Background Image */}
+             {tour.image && (
+               <Image 
+                 src={tour.image} 
+                 alt={tour.title}
+                 fill
+                 className="object-cover"
+                 priority
+               />
+             )}
+             
+             {/* Overlays for Readability */}
+             <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-transparent" />
+             <div className="absolute inset-0 bg-black/20" />
              
              <div className="absolute inset-0 p-8 md:p-12 flex flex-col justify-end z-10">
                 <button 
                   onClick={onClose}
-                  className="absolute top-6 right-6 h-10 w-10 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-md flex items-center justify-center transition-colors"
+                  className="absolute top-6 right-6 h-10 w-10 rounded-full bg-white/20 hover:bg-white/40 backdrop-blur-md flex items-center justify-center transition-colors border border-white/20"
                 >
-                  <X className="h-6 w-6" />
+                  <X className="h-6 w-6 text-white" />
                 </button>
-                <span className="text-primary font-bold uppercase tracking-[0.2em] text-sm mb-2">{tour.tagline}</span>
-                <h2 className="text-3xl md:text-5xl font-bold tracking-tight">{tour.title}</h2>
+                <div className="max-w-3xl">
+                  <span className="text-primary font-bold uppercase tracking-[0.2em] text-sm mb-2 block drop-shadow-md">{tour.tagline}</span>
+                  <h2 className="text-3xl md:text-5xl font-bold tracking-tight drop-shadow-lg">{tour.title}</h2>
+                </div>
              </div>
           </div>
 
@@ -100,13 +115,13 @@ export default function TourModal({ tour, onClose }: TourModalProps) {
                      <div className="space-y-3">
                         <a 
                           href={`https://wa.me/${business.contact.whatsapp}`}
-                          className="flex items-center gap-3 p-3 rounded-xl bg-green-500 text-white font-bold hover:bg-green-600 transition-all text-sm"
+                          className="flex items-center gap-3 p-3 rounded-xl bg-green-500 text-white font-bold hover:bg-green-600 transition-all text-sm shadow-md"
                         >
                           <MessageCircle className="h-5 w-5" /> WhatsApp Us
                         </a>
                         <a 
                           href={`tel:${business.contact.phone}`}
-                          className="flex items-center gap-3 p-3 rounded-xl bg-slate-900 text-white font-bold hover:bg-slate-800 transition-all text-sm"
+                          className="flex items-center gap-3 p-3 rounded-xl bg-slate-900 text-white font-bold hover:bg-slate-800 transition-all text-sm shadow-md"
                         >
                           <Phone className="h-5 w-5" /> Call Directly
                         </a>

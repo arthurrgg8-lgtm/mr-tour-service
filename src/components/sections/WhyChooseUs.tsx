@@ -15,7 +15,7 @@ export default function WhyChooseUs() {
             </h2>
             <p className="text-lg text-muted-foreground mb-10">
               We started with a simple goal: to provide the most reliable transportation 
-              service in Nepal. Today, we've grown into a complete travel provider, 
+              service in Nepal. Today, we&apos;ve grown into a complete travel provider, 
               maintaining the same commitment to quality that started it all.
             </p>
             
