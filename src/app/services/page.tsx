@@ -139,60 +139,64 @@ export default function ServicesPage() {
                     </div>
 
                     {/* Visual Side */}
-                    <div className="lg:w-3/5 w-full h-[400px] md:h-[500px]">
+                    <div className="lg:w-3/5 w-full h-[500px] md:h-[600px]">
                       {/* For Trekking and Tours: Restore the full container and specialized cards */}
                       {(service.id === 'trekking' || service.id === 'tour-packages') ? (
-                        <div className={`p-8 md:p-12 rounded-[2.5rem] ${isEven ? 'bg-slate-50' : 'bg-primary/5'} border border-slate-100 relative overflow-hidden h-full`}>
+                        <div className={`p-8 md:p-12 rounded-[2.5rem] ${isEven ? 'bg-slate-50' : 'bg-primary/5'} border border-slate-100 relative overflow-hidden h-full flex flex-col`}>
                            {/* Background Decoration */}
                            <div className="absolute top-0 right-0 -mr-16 -mt-16 w-64 h-64 bg-primary/5 rounded-full blur-3xl opacity-20" />
                            
-                           <div className="relative z-10">
-                              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
-                                {(service.id === 'trekking' ? service.regions : service.subServices)?.map((item, idx: number) => (
-                                  <div 
-                                    key={idx} 
-                                    onClick={() => (service.id === 'tour-packages' || item.name === 'Everest Region') && handleTourClick((item as any).name)}
-                                    className={`relative group/item h-40 rounded-2xl md:rounded-3xl overflow-hidden border border-slate-100 shadow-md hover:shadow-2xl transition-all duration-500 ${(service.id === 'tour-packages' || item.name === 'Everest Region') ? 'cursor-pointer' : ''}`}
-                                  >
-                                    {item.image && (
-                                      <Image 
-                                        src={item.image} 
-                                        alt={(item as SubService | Region).name}
-                                        fill
-                                        className="object-cover group-hover/item:scale-110 transition-transform duration-700"
-                                      />
-                                    )}
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
-                                    
-                                    {/* Info Overlay for Tours and Everest Trek */}
-                                    {(service.id === 'tour-packages' || item.name === 'Everest Region') && (
-                                      <div className="absolute top-4 right-4 h-8 w-8 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center opacity-0 group-hover/item:opacity-100 transition-opacity">
-                                         <Info className="h-4 w-4 text-white" />
-                                      </div>
-                                    )}
-
-                                    <div className="absolute inset-0 p-5 flex flex-col justify-end">
-                                      {service.id !== 'trekking' && (
-                                        <div className="flex items-center justify-between mb-1">
-                                          <div className="flex items-center gap-2">
-                                            <MapIcon className="h-4 w-4 text-primary" />
-                                            <span className="text-[10px] font-bold text-primary uppercase tracking-wider">
-                                              {(item as SubService).duration || 'Tour Package'}
-                                            </span>
-                                          </div>
-                                          {(item as SubService).startingPrice && (
-                                            <span className="text-xs font-bold text-white bg-primary px-2 py-0.5 rounded">
-                                              {(item as SubService).startingPrice}
-                                            </span>
-                                          )}
+                           <div className="relative z-10 flex flex-col h-full">
+                              <div className="flex-grow overflow-y-auto pr-4 mb-8 custom-scrollbar">
+                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                  {(service.id === 'trekking' ? service.regions : service.subServices)?.map((item, idx: number) => (
+                                    <div 
+                                      key={idx} 
+                                      onClick={() => (service.id === 'tour-packages' || item.name === 'Everest Region') && handleTourClick((item as any).name)}
+                                      className={`relative group/item h-40 rounded-2xl md:rounded-3xl overflow-hidden border border-slate-100 shadow-md hover:shadow-2xl transition-all duration-500 ${(service.id === 'tour-packages' || item.name === 'Everest Region') ? 'cursor-pointer' : ''}`}
+                                    >
+                                      {item.image && (
+                                        <Image 
+                                          src={item.image} 
+                                          alt={(item as SubService | Region).name}
+                                          fill
+                                          className="object-cover group-hover/item:scale-110 transition-transform duration-700"
+                                        />
+                                      )}
+                                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+                                      
+                                      {/* Info Overlay for Tours and Everest Trek */}
+                                      {(service.id === 'tour-packages' || item.name === 'Everest Region') && (
+                                        <div className="absolute top-4 right-4 h-8 w-8 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center opacity-0 group-hover/item:opacity-100 transition-opacity">
+                                           <Info className="h-4 w-4 text-white" />
                                         </div>
                                       )}
-                                      <span className="font-bold text-white text-base md:text-lg leading-tight group-hover/item:text-primary transition-colors">{(item as SubService | Region).name}</span>
+
+                                      <div className="absolute inset-0 p-5 flex flex-col justify-end">
+                                        {service.id !== 'trekking' && (
+                                          <div className="flex items-center justify-between mb-1">
+                                            <div className="flex items-center gap-2">
+                                              <MapIcon className="h-4 w-4 text-primary" />
+                                              <span className="text-[10px] font-bold text-primary uppercase tracking-wider">
+                                                {(item as SubService).duration || 'Tour Package'}
+                                              </span>
+                                            </div>
+                                            {(item as SubService).startingPrice && (
+                                              <span className="text-xs font-bold text-white bg-primary px-2 py-0.5 rounded">
+                                                {(item as SubService).startingPrice}
+                                              </span>
+                                            )}
+                                          </div>
+                                        )}
+                                        <span className="font-bold text-white text-base md:text-lg leading-tight group-hover/item:text-primary transition-colors">{(item as SubService | Region).name}</span>
+                                      </div>
                                     </div>
-                                  </div>
-                                ))}
+                                  ))}
+                                </div>
                               </div>
-                              <EnquireButton variant="full" />
+                              <div className="shrink-0 pt-2 border-t border-slate-100">
+                                <EnquireButton variant="full" />
+                              </div>
                            </div>
                         </div>
                       ) : (
