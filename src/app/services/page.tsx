@@ -9,10 +9,13 @@ import EnquireButton from "@/components/ui/EnquireButton"
 import TourModal from "@/components/ui/TourModal"
 import { useState } from "react"
 
+import ImageSlideshow from "@/components/ui/ImageSlideshow"
+
 interface SubService {
   name: string;
   image: string;
   duration?: string;
+  startingPrice?: string;
 }
 
 interface Region {
@@ -28,6 +31,8 @@ interface Service {
   images?: string[];
   featured: boolean;
   details: string;
+  capacity?: string;
+  startingPrice?: string;
   subServices?: SubService[];
   regions?: Region[];
 }
@@ -104,11 +109,25 @@ export default function ServicesPage() {
                   <div className={`flex flex-col ${isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-16 items-center`}>
                     {/* Text Side */}
                     <div className="lg:w-2/5 space-y-8">
-                      <div className="h-16 w-16 rounded-2xl bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all duration-500 shadow-lg shadow-primary/5">
-                        <Icon className="h-8 w-8" />
+                      <div className="flex items-center gap-4">
+                        <div className="h-16 w-16 rounded-2xl bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all duration-500 shadow-lg shadow-primary/5">
+                          <Icon className="h-8 w-8" />
+                        </div>
+                        {service.startingPrice && (
+                          <div className="flex flex-col">
+                            <span className="text-xs font-bold uppercase tracking-widest text-primary">Starting From</span>
+                            <span className="text-2xl font-bold text-slate-900">{service.startingPrice} <span className="text-sm font-medium text-muted-foreground">{service.id.includes('rent') ? '/ per day' : ''}</span></span>
+                          </div>
+                        )}
                       </div>
                       <div>
-                        <h2 className="text-4xl md:text-5xl font-bold mb-6 tracking-tight">{service.title}</h2>
+                        <h2 className="text-4xl md:text-5xl font-bold mb-4 tracking-tight">{service.title}</h2>
+                        {service.capacity && (
+                          <div className="flex items-center gap-2 mb-6">
+                            <Users className="h-5 w-5 text-primary" />
+                            <span className="font-bold text-slate-700">Capacity: {service.capacity}</span>
+                          </div>
+                        )}
                         <p className="text-xl text-muted-foreground leading-relaxed">
                           {service.details || service.description}
                         </p>
@@ -120,10 +139,10 @@ export default function ServicesPage() {
                     </div>
 
                     {/* Visual Side */}
-                    <div className="lg:w-3/5 w-full">
+                    <div className="lg:w-3/5 w-full h-[400px] md:h-[500px]">
                       {/* For Trekking and Tours: Restore the full container and specialized cards */}
                       {(service.id === 'trekking' || service.id === 'tour-packages') ? (
-                        <div className={`p-8 md:p-12 rounded-[2.5rem] ${isEven ? 'bg-slate-50' : 'bg-primary/5'} border border-slate-100 relative overflow-hidden`}>
+                        <div className={`p-8 md:p-12 rounded-[2.5rem] ${isEven ? 'bg-slate-50' : 'bg-primary/5'} border border-slate-100 relative overflow-hidden h-full`}>
                            {/* Background Decoration */}
                            <div className="absolute top-0 right-0 -mr-16 -mt-16 w-64 h-64 bg-primary/5 rounded-full blur-3xl opacity-20" />
                            
@@ -154,11 +173,18 @@ export default function ServicesPage() {
 
                                     <div className="absolute inset-0 p-5 flex flex-col justify-end">
                                       {service.id !== 'trekking' && (
-                                        <div className="flex items-center gap-2 mb-1">
-                                          <MapIcon className="h-4 w-4 text-primary" />
-                                          <span className="text-[10px] font-bold text-primary uppercase tracking-wider">
-                                            {(item as SubService).duration || 'Tour Package'}
-                                          </span>
+                                        <div className="flex items-center justify-between mb-1">
+                                          <div className="flex items-center gap-2">
+                                            <MapIcon className="h-4 w-4 text-primary" />
+                                            <span className="text-[10px] font-bold text-primary uppercase tracking-wider">
+                                              {(item as SubService).duration || 'Tour Package'}
+                                            </span>
+                                          </div>
+                                          {(item as SubService).startingPrice && (
+                                            <span className="text-xs font-bold text-white bg-primary px-2 py-0.5 rounded">
+                                              {(item as SubService).startingPrice}
+                                            </span>
+                                          )}
                                         </div>
                                       )}
                                       <span className="font-bold text-white text-base md:text-lg leading-tight group-hover/item:text-primary transition-colors">{(item as SubService | Region).name}</span>
@@ -170,22 +196,8 @@ export default function ServicesPage() {
                            </div>
                         </div>
                       ) : (
-                        /* For Vehicles: Show the clean 2x2 Category Grid */
-                        <div className="grid grid-cols-2 gap-4">
-                          {displayImages.map((img, idx) => (
-                            <div 
-                              key={idx} 
-                              className={`relative aspect-square rounded-2xl md:rounded-3xl overflow-hidden border border-slate-100 shadow-md hover:shadow-2xl transition-all duration-700 hover:-translate-y-1 ${idx === 1 || idx === 2 ? 'mt-4 md:mt-8' : ''}`}
-                            >
-                              <Image 
-                                src={img} 
-                                alt={`${service.title} ${idx + 1}`}
-                                fill
-                                className="object-cover"
-                              />
-                            </div>
-                          ))}
-                        </div>
+                        /* For Vehicles: Show the Image Slideshow */
+                        <ImageSlideshow images={service.images || []} />
                       )}
                     </div>
                   </div>

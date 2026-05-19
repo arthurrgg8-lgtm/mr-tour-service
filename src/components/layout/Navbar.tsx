@@ -27,6 +27,7 @@ export default function Navbar() {
     { name: "HIACE RENT", href: "/services#hiace-rent" },
     { name: "MINIBUS RENT", href: "/services#minibus-rent" },
     { name: "LARGE BUS RENT", href: "/services#bus-rent" },
+    { name: "PREMIUM FLEET", href: "/services#premium-fleet" },
   ]
 
   const tourServices = [
