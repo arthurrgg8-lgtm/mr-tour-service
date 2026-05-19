@@ -180,5 +180,52 @@
       { "day": "Morning", "title": "Pashupatinath & Boudhanath", "desc": "Visit the holiest Hindu temple on the Bagmati bank and the largest stupa in Nepal." },
       { "day": "Afternoon", "title": "Swayambhunath & Patan", "desc": "Panoramic views from the hill-top temple and explore the artistic palaces of Patan Durbar Square." }
     ]
+  },
+  {
+    "id": "trek-everest",
+    "title": "Trek to Mount Everest",
+    "image": "/images/trekking/everest.jpeg",
+    "tagline": "Sagarmatha National Park - A World Heritage Experience",
+    "highlights": [
+      "UNESCO World Heritage Site since 1979",
+      "Home to the top of the world - Sagarmatha (8,848m)",
+      "Explore famed Sherpa culture and Tengboche monastery",
+      "Rich Flora: Pine, Hemlock, Juniper, and Rhododendron",
+      "Diverse Fauna: Snow Leopard, Red Panda, and Musk Deer",
+      "Views of Lhotse, Cho Oyu, and Amadablam"
+    ],
+    "description": "Sagarmatha (Mt. Everest) National Park, established in 1976, covers 1,148 sq. km of the Himalayan ecological zone in the Khumbu region of Nepal. Ranging from 2,845m at Monjo to 8,848m at the summit of Everest, the park features rugged terrain, deep gorges, and some of the world's highest peaks. The famed Sherpa people live here, their lives deeply interwoven with Buddhism, centered around historic monasteries like Tengboche, Thame, and Pangboche. The park is home to the red panda, snow leopard, musk deer, Himalayan tahr, and over 118 species of birds including the Impeyan pheasant.",
+    "subPackages": [
+      {
+        "name": "AMADABLAM BASE CAMP",
+        "duration": "12 DAYS",
+        "image": "/images/trekking/everest/amadablam.png",
+        "details": "A stunning trek to the base of one of the world's most beautiful mountains. Experience Sherpa hospitality and iconic Himalayan vistas."
+      },
+      {
+        "name": "EVERENT BASE CAMP AND KALA PATHHAR",
+        "duration": "14 DAYS",
+        "image": "/images/trekking/everest/ebc-kala-pathar.png",
+        "details": "The classic journey to the foot of Everest. Reach Kala Patthar for the most famous view of the world's highest peak."
+      },
+      {
+        "name": "EVEREST PIKEY PEAK",
+        "duration": "8 DAYS",
+        "image": "/images/trekking/everest/pikey-peak.png",
+        "details": "A shorter trek offering one of the best panoramic views of Everest and the surrounding ranges from a lower altitude."
+      },
+      {
+        "name": "EVEREST (3 HIGH PASSES)",
+        "duration": "19 DAYS",
+        "image": "/images/trekking/everest/three-passes.png",
+        "details": "The ultimate Everest challenge. Crossing Kongma La, Cho La, and Renjo La for a complete Khumbu circuit."
+      },
+      {
+        "name": "TREK TO PHAPLU EVEREST BASE CAMP",
+        "duration": "20 DAYS",
+        "image": "/images/trekking/everest/phaplu-ebc.png",
+        "details": "A traditional approach to EBC, following the old trail used by early expeditions before the Lukla airport was built."
+      }
+    ]
   }
 ]

@@ -47,7 +47,7 @@ export default function ServicesPage() {
   const [selectedTour, setSelectedTour] = useState<typeof tourDetails[0] | null>(null)
 
   const handleTourClick = (tourName: string) => {
-    const detail = tourDetails.find(d => d.title === tourName)
+    const detail = tourDetails.find(d => d.title === tourName || (d.id === 'trek-everest' && tourName === 'Everest Region'))
     if (detail) {
       setSelectedTour(detail)
     }
@@ -130,8 +130,8 @@ export default function ServicesPage() {
                                 {(service.id === 'trekking' ? service.regions : service.subServices)?.map((item, idx: number) => (
                                   <div 
                                     key={idx} 
-                                    onClick={() => service.id === 'tour-packages' && handleTourClick((item as SubService).name)}
-                                    className={`relative group/item h-40 rounded-2xl md:rounded-3xl overflow-hidden border border-slate-100 shadow-md hover:shadow-2xl transition-all duration-500 ${service.id === 'tour-packages' ? 'cursor-pointer' : ''}`}
+                                    onClick={() => (service.id === 'tour-packages' || item.name === 'Everest Region') && handleTourClick((item as any).name)}
+                                    className={`relative group/item h-40 rounded-2xl md:rounded-3xl overflow-hidden border border-slate-100 shadow-md hover:shadow-2xl transition-all duration-500 ${(service.id === 'tour-packages' || item.name === 'Everest Region') ? 'cursor-pointer' : ''}`}
                                   >
                                     {item.image && (
                                       <Image 
@@ -143,8 +143,8 @@ export default function ServicesPage() {
                                     )}
                                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
                                     
-                                    {/* Info Overlay for Tours */}
-                                    {service.id === 'tour-packages' && (
+                                    {/* Info Overlay for Tours and Everest Trek */}
+                                    {(service.id === 'tour-packages' || item.name === 'Everest Region') && (
                                       <div className="absolute top-4 right-4 h-8 w-8 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center opacity-0 group-hover/item:opacity-100 transition-opacity">
                                          <Info className="h-4 w-4 text-white" />
                                       </div>

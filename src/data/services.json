@@ -113,7 +113,17 @@
     "featured": false,
     "details": "Our trekking packages include experienced guides, porters, and all necessary permits for a safe and memorable adventure.",
     "regions": [
-      { "name": "Everest Region", "image": "/images/trekking/everest.jpeg" },
+      { 
+        "name": "Everest Region", 
+        "image": "/images/trekking/everest.jpeg",
+        "subPackages": [
+          { "name": "AMADABLAM BASE CAMP", "duration": "12 DAYS", "image": "/images/trekking/everest/amadablam.png" },
+          { "name": "EVERENT BASE CAMP AND KALA PATHHAR", "duration": "14 DAYS", "image": "/images/trekking/everest/ebc-kala-pathar.png" },
+          { "name": "EVEREST PIKEY PEAK", "duration": "8 DAYS", "image": "/images/trekking/everest/pikey-peak.png" },
+          { "name": "EVEREST (3 HIGH PASSES)", "duration": "19 DAYS", "image": "/images/trekking/everest/three-passes.png" },
+          { "name": "TREK TO PHAPLU EVEREST BASE CAMP", "duration": "20 DAYS", "image": "/images/trekking/everest/phaplu-ebc.png" }
+        ]
+      },
       { "name": "Annapurna Region", "image": "/images/trekking/annapurna.jpeg" },
       { "name": "Langtang Region", "image": "/images/trekking/langtang.jpeg" },
       { "name": "Buddhist Pilgrimage Trekking", "image": "/images/trekking/buddhist-pilgrimage.jpeg" },

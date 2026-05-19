@@ -11,6 +11,13 @@ interface ItineraryItem {
   desc: string;
 }
 
+interface SubPackage {
+  name: string;
+  duration: string;
+  image: string;
+  details: string;
+}
+
 interface TourDetail {
   id: string;
   title: string;
@@ -18,7 +25,8 @@ interface TourDetail {
   tagline: string;
   highlights: string[];
   description: string;
-  itinerary: ItineraryItem[];
+  itinerary?: ItineraryItem[];
+  subPackages?: SubPackage[];
 }
 
 interface TourModalProps {
@@ -129,30 +137,63 @@ export default function TourModal({ tour, onClose }: TourModalProps) {
                   </div>
                </div>
 
-               {/* Right Side: Detailed Itinerary */}
+               {/* Right Side: Detailed Itinerary or Sub-Packages */}
                <div className="lg:col-span-2">
-                  <h3 className="text-xl font-bold mb-8 flex items-center gap-2">
-                    <Calendar className="h-5 w-5 text-primary" /> Detailed Itinerary
-                  </h3>
-                  <div className="space-y-8 relative">
-                    {/* Vertical Line */}
-                    <div className="absolute left-6 top-2 bottom-2 w-0.5 bg-slate-100" />
-                    
-                    {tour.itinerary.map((step, i) => (
-                      <div key={i} className="relative pl-16 group">
-                         {/* Circle Indicator */}
-                         <div className="absolute left-[1.125rem] top-1 h-3 w-3 rounded-full border-2 border-primary bg-white z-10 group-hover:bg-primary transition-colors" />
-                         
-                         <div className="space-y-2">
-                            <span className="text-xs font-bold text-primary uppercase tracking-widest">Day {step.day}</span>
-                            <h4 className="text-lg font-bold leading-tight text-slate-900 group-hover:text-primary transition-colors">{step.title}</h4>
-                            <p className="text-muted-foreground text-sm leading-relaxed">
-                               {step.desc}
-                            </p>
-                         </div>
+                  {tour.itinerary ? (
+                    <>
+                      <h3 className="text-xl font-bold mb-8 flex items-center gap-2">
+                        <Calendar className="h-5 w-5 text-primary" /> Detailed Itinerary
+                      </h3>
+                      <div className="space-y-8 relative">
+                        {/* Vertical Line */}
+                        <div className="absolute left-6 top-2 bottom-2 w-0.5 bg-slate-100" />
+                        
+                        {tour.itinerary.map((step, i) => (
+                          <div key={i} className="relative pl-16 group">
+                            {/* Circle Indicator */}
+                            <div className="absolute left-[1.125rem] top-1 h-3 w-3 rounded-full border-2 border-primary bg-white z-10 group-hover:bg-primary transition-colors" />
+                            
+                            <div className="space-y-2">
+                                <span className="text-xs font-bold text-primary uppercase tracking-widest">Day {step.day}</span>
+                                <h4 className="text-lg font-bold leading-tight text-slate-900 group-hover:text-primary transition-colors">{step.title}</h4>
+                                <p className="text-muted-foreground text-sm leading-relaxed">
+                                  {step.desc}
+                                </p>
+                            </div>
+                          </div>
+                        ))}
                       </div>
-                    ))}
-                  </div>
+                    </>
+                  ) : tour.subPackages ? (
+                    <>
+                      <h3 className="text-xl font-bold mb-8 flex items-center gap-2">
+                        <MapPin className="h-5 w-5 text-primary" /> Trekking Packages
+                      </h3>
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        {tour.subPackages.map((pkg, i) => (
+                          <div key={i} className="group/pkg relative overflow-hidden rounded-2xl border border-slate-100 bg-slate-50 shadow-sm hover:shadow-xl transition-all duration-500">
+                             <div className="aspect-[16/9] relative overflow-hidden">
+                               <Image 
+                                 src={pkg.image} 
+                                 alt={pkg.name}
+                                 fill
+                                 className="object-cover group-hover/pkg:scale-110 transition-transform duration-700"
+                               />
+                               <div className="absolute top-3 right-3 px-3 py-1 rounded-full bg-primary text-white text-[10px] font-bold tracking-wider shadow-lg">
+                                 {pkg.duration}
+                               </div>
+                             </div>
+                             <div className="p-5">
+                                <h4 className="font-bold text-slate-900 mb-2 group-hover/pkg:text-primary transition-colors">{pkg.name}</h4>
+                                <p className="text-xs text-muted-foreground leading-relaxed line-clamp-2">
+                                  {pkg.details}
+                                </p>
+                             </div>
+                          </div>
+                        ))}
+                      </div>
+                    </>
+                  ) : null}
                </div>
             </div>
           </div>
