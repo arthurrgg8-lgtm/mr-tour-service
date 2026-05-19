@@ -1,26 +1,5 @@
 [
   {
-    "id": "premium-fleet",
-    "title": "Premium Fleet",
-    "description": "Our most exclusive selection of high-end vehicles, including luxury SUVs and executive buses.",
-    "icon": "ShieldCheck",
-    "capacity": "4, 7, 30 Seater",
-    "startingPrice": "NPR 15,000",
-    "images": [
-      "/images/fleet/fortuner-new.jpg",
-      "/images/fleet/byd-atto3.jpg",
-      "/images/services/bus/1.jpg"
-    ],
-    "featured": true,
-    "details": "For those who demand the best. Our premium fleet features the latest models with superior comfort, advanced safety features, and elite styling for VIP travel.",
-    "subServices": [
-      "VIP Delegations",
-      "High-End Corporate Travel",
-      "Luxury Wedding Fleet",
-      "Exclusive Private Tours"
-    ]
-  },
-  {
     "id": "car-rent",
     "title": "Car Rent",
     "description": "Premium sedan and luxury car rentals for city tours, airport transfers, and business travel.",
@@ -145,6 +124,27 @@
       "Large Pilgrimage Groups",
       "College Expeditions",
       "Grand Event Logistics"
+    ]
+  },
+  {
+    "id": "premium-fleet",
+    "title": "Premium Fleet",
+    "description": "Our most exclusive selection of high-end vehicles, including luxury SUVs and executive buses.",
+    "icon": "ShieldCheck",
+    "capacity": "4, 7, 30 Seater",
+    "startingPrice": "NPR 15,000",
+    "images": [
+      "/images/fleet/fortuner-new.jpg",
+      "/images/fleet/byd-atto3.jpg",
+      "/images/services/bus/1.jpg"
+    ],
+    "featured": true,
+    "details": "For those who demand the best. Our premium fleet features the latest models with superior comfort, advanced safety features, and elite styling for VIP travel.",
+    "subServices": [
+      "VIP Delegations",
+      "High-End Corporate Travel",
+      "Luxury Wedding Fleet",
+      "Exclusive Private Tours"
     ]
   },
   {
