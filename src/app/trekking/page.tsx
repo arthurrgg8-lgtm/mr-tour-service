@@ -37,18 +37,28 @@ export default function TrekkingPage() {
     const handleHash = () => {
       const hash = decodeURIComponent(window.location.hash.substring(1).toLowerCase())
       if (hash) {
-        // Try to find a region that matches the hash with priority
-        const searchHash = hash.replace(/-/g, ' ')
-        const firstWord = hash.split('-')[0]
+        // Try to find an exact ID match first (highest priority)
+        let detail = tourDetails.find(d => d.id.toLowerCase() === hash)
+        
+        if (!detail) {
+          // If not exact ID, try region overrides
+          if (hash === 'everest-region') {
+            detail = tourDetails.find(d => d.id === 'trek-everest')
+          } else if (hash === 'annapurna-region') {
+            detail = tourDetails.find(d => d.id === 'trek-annapurna')
+          }
+        }
 
-        const detail = tourDetails.find(d => {
-          const title = d.title.toLowerCase()
-          const id = d.id.toLowerCase()
-          return id === hash ||
-                 id.includes(hash) ||
-                 title.includes(searchHash) ||
-                 (firstWord.length > 3 && title.includes(firstWord))
-        })
+        if (!detail) {
+          // Fallback to fuzzy matching if needed
+          const searchHash = hash.replace(/-/g, ' ')
+          detail = tourDetails.find(d => {
+            const title = d.title.toLowerCase()
+            const id = d.id.toLowerCase()
+            return id.includes(hash) || title.includes(searchHash)
+          })
+        }
+
         if (detail) {
           setSelectedTour(detail)
         }
@@ -65,16 +75,20 @@ export default function TrekkingPage() {
   const handleTourClick = (tourName: string) => {
     // Normalize names to handle minor variations
     const normalizedName = tourName.toLowerCase()
-    const firstWord = normalizedName.split(' ')[0]
     
     const detail = tourDetails.find(d => {
       const title = d.title.toLowerCase()
       const id = d.id.toLowerCase()
-      return title === normalizedName || 
-             id === normalizedName ||
-             (firstWord.length > 3 && title.includes(firstWord)) ||
-             (d.id === 'trek-everest' && (normalizedName === 'everest region' || normalizedName === 'everest')) ||
-             (d.id === 'trek-annapurna' && (normalizedName === 'annapurna region' || normalizedName === 'annapurna'))
+      
+      // Exact ID match is highest priority
+      if (id === normalizedName) return true
+      
+      // Specific hardcoded overrides for region matching
+      if (d.id === 'trek-everest' && (normalizedName === 'everest region' || normalizedName === 'everest')) return true
+      if (d.id === 'trek-annapurna' && (normalizedName === 'annapurna region' || normalizedName === 'annapurna')) return true
+      
+      // Generic title match
+      return title === normalizedName
     })
 
     if (detail) {
@@ -87,6 +101,23 @@ export default function TrekkingPage() {
 
   const getRegionId = (name: string) => {
     const n = name.toLowerCase();
+    
+    // Explicitly handle all Annapurna sub-packages to have unique hashes
+    if (n.includes('circuit with tilicho')) return 'trek-annapurna-circuit';
+    if (n.includes('namun la')) return 'trek-namun-la';
+    if (n.includes('lamjung himal')) return 'trek-lamjung-himal';
+    if (n.includes('khopra ridge')) return 'trek-khopra-ridge';
+    if (n.includes('mardi himal')) return 'trek-mardi-himal';
+    if (n.includes('short trip') || (n.includes('abc') && n.includes('short'))) return 'trek-abc-short';
+    if (n.includes('nar-phu')) return 'trek-nar-phu';
+    if (n.includes('seven passes')) return 'trek-seven-passes';
+    if (n.includes('abc via ghorepani') || (n.includes('annapurna base camp') && n.includes('ghorepani'))) return 'trek-annapurna-abc';
+    
+    // Regions
+    if (n === 'everest region' || n === 'everest') return 'everest-region';
+    if (n === 'annapurna region' || n === 'annapurna') return 'annapurna-region';
+    
+    // Fallback logic
     if (n.includes('everest')) return 'everest-region';
     if (n.includes('annapurna')) return 'annapurna-region';
     if (n.includes('langtang')) return 'langtang-region';
@@ -101,7 +132,27 @@ export default function TrekkingPage() {
     if (n.includes('kailash')) return 'kailash-trek';
     if (n.includes('kanchanjunga')) return 'kanchanjunga-trek';
     if (n.includes('rara')) return 'rara-trek';
+    
     return n.split(' ')[0];
+  }
+
+  const getBackHandler = () => {
+    if (!selectedTour) return undefined;
+    
+    // If it's an Annapurna sub-package, go back to Annapurna Region
+    const annapurnaIds = ['trek-annapurna-abc', 'trek-annapurna-circuit', 'trek-khopra-ridge', 'trek-mardi-himal', 'trek-namun-la', 'trek-lamjung-himal', 'trek-nar-phu', 'trek-seven-passes', 'trek-abc-short'];
+    if (selectedTour.id.startsWith('trek-annapurna-') || annapurnaIds.includes(selectedTour.id)) {
+      return () => handleTourClick('Annapurna Region');
+    }
+    
+    // If it's an Everest sub-package (not the main one), go back to Everest Region
+    if (selectedTour.id.startsWith('trek-') && 
+        selectedTour.id !== 'trek-everest' && 
+        selectedTour.id !== 'trek-annapurna') {
+      return () => handleTourClick('Everest Region');
+    }
+    
+    return undefined;
   }
 
   if (!trekkingService) return null
@@ -116,7 +167,7 @@ export default function TrekkingPage() {
           window.history.pushState(null, "", window.location.pathname + window.location.search)
         }} 
         onSelectSubPackage={handleTourClick}
-        onBack={selectedTour?.id.startsWith('trek-') && selectedTour.id !== 'trek-everest' ? () => handleTourClick('Everest Region') : undefined}
+        onBack={getBackHandler()}
       />
 
       {/* Header */}
