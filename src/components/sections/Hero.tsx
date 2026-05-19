@@ -9,15 +9,11 @@ import Image from "next/image"
 import { motion, AnimatePresence } from "framer-motion"
 
 const heroImages = [
-  "/images/hero/hero.jpg",
-  "/images/hero/award-1.png",
-  "/images/hero/award-2.png",
-  "/images/hero/4.jpeg",
-  "/images/hero/hero-trekking.jpg",
-  "/images/hero/about-bg.jpg",
-  "/images/hero/fleet-bg.jpg",
-  "/images/hero/services-bg.jpg",
-  "/images/hero/contact-bg.jpg",
+  "/images/hero/hero-nepal.jpeg",
+  "/images/hero/hero-namche.jpeg",
+  "/images/hero/hero-tibet.jpeg",
+  "/images/hero/hero-1.jpg",
+  "/images/hero/hero-2.jpg",
 ]
 
 export default function Hero() {
