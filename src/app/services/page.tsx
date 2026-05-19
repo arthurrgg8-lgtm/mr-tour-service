@@ -1,9 +1,6 @@
 import services from "@/data/services.json"
-import business from "@/data/business.json"
-import { Car, Map as MapIcon, Mountain, Hotel, Calendar, Plane, Heart, ChevronRight, MessageCircle, Bus, Users, ShieldCheck, CheckCircle2 } from "lucide-react"
-import Link from "next/link"
+import { Car, Map as MapIcon, Mountain, Bus, Users, ShieldCheck } from "lucide-react"
 import Image from "next/image"
-import ImageSlider from "@/components/ui/ImageSlider"
 import ServiceInquiryForm from "@/components/sections/ServiceInquiryForm"
 import EnquireButton from "@/components/ui/EnquireButton"
 import { Metadata } from "next"
@@ -13,14 +10,34 @@ export const metadata: Metadata = {
   description: "Explore our premium travel services in Nepal: Car and SUV rentals, 4x4 Jeep expeditions, luxury bus hire, cultural tours, and Himalayan trekking.",
 }
 
-const iconMap: { [key: string]: any } = {
+interface SubService {
+  name: string;
+  image: string;
+}
+
+interface Region {
+  name: string;
+  image: string;
+}
+
+interface Service {
+  id: string;
+  title: string;
+  description: string;
+  icon: string;
+  images?: string[];
+  featured: boolean;
+  details: string;
+  subServices?: (string | SubService)[];
+  regions?: Region[];
+}
+
+const typedServices = services as Service[];
+
+const iconMap: { [key: string]: React.ComponentType<{ className?: string }> } = {
   Car,
   Map: MapIcon,
   Mountain,
-  Hotel,
-  Calendar,
-  Plane,
-  Heart,
   Bus,
   Users,
   ShieldCheck
@@ -56,10 +73,10 @@ export default function ServicesPage() {
       <section className="py-24 bg-white">
         <div className="container mx-auto px-4">
           <div className="space-y-32">
-            {services.map((service, index) => {
-              const Icon = iconMap[service.icon]
+            {typedServices.map((service, index) => {
+              const Icon = iconMap[service.icon] || MapIcon
               const isEven = index % 2 === 0
-              const displayImages = (service as any).images?.slice(0, 4) || []
+              const displayImages = service.images?.slice(0, 4) || []
               
               return (
                 <div 
@@ -95,7 +112,7 @@ export default function ServicesPage() {
                            
                            <div className="relative z-10">
                               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
-                                {(service.id === 'trekking' ? (service as any).regions : (service as any).subServices)?.map((item: any, idx: number) => (
+                                {(service.id === 'trekking' ? service.regions : service.subServices as SubService[])?.map((item, idx) => (
                                   <div 
                                     key={idx} 
                                     className="relative group/item h-40 rounded-2xl md:rounded-3xl overflow-hidden border border-slate-100 shadow-md hover:shadow-2xl transition-all duration-500"
@@ -127,7 +144,7 @@ export default function ServicesPage() {
                       ) : (
                         /* For Vehicles: Show the clean 2x2 Category Grid */
                         <div className="grid grid-cols-2 gap-4">
-                          {displayImages.map((img: string, idx: number) => (
+                          {displayImages.map((img, idx) => (
                             <div 
                               key={idx} 
                               className={`relative aspect-square rounded-2xl md:rounded-3xl overflow-hidden border border-slate-100 shadow-md hover:shadow-2xl transition-all duration-700 hover:-translate-y-1 ${idx === 1 || idx === 2 ? 'mt-4 md:mt-8' : ''}`}
@@ -151,14 +168,14 @@ export default function ServicesPage() {
         </div>
       </section>
 
-        {/* Inquiry Form Section */}
-        <section id="inquiry-form" className="py-24 bg-slate-50 border-t">
+      {/* Inquiry Form Section */}
+      <section id="inquiry-form" className="py-24 bg-slate-50 border-t">
         <div className="container mx-auto px-4">
           <ServiceInquiryForm />
         </div>
-        </section>
+      </section>
 
-        {/* Destinations Section */}
+      {/* Destinations Section */}
       <section className="py-32 bg-slate-900 text-white overflow-hidden relative">
         {/* Background Map with Overlay */}
         <div className="absolute inset-0 z-0">

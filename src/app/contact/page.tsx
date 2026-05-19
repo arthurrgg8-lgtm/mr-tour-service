@@ -73,7 +73,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="text-xl font-bold mb-2">Call or WhatsApp</h3>
-                    <p className="text-muted-foreground mb-4">Feel free to call or message us anytime. We're on WhatsApp!</p>
+                    <p className="text-muted-foreground mb-4">Feel free to call or message us anytime. We&apos;re on WhatsApp!</p>
                     <div className="flex flex-col gap-2">
                       <a href={`tel:${business.contact.phone}`} className="text-lg font-bold hover:text-primary transition-colors">
                         {business.contact.phone}

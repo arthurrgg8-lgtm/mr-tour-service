@@ -1,7 +1,6 @@
 import Hero from "@/components/sections/Hero"
 import FeaturedServices from "@/components/sections/FeaturedServices"
 import WhyChooseUs from "@/components/sections/WhyChooseUs"
-import Gallery from "@/components/sections/Gallery"
 import ScrollAnimation from "@/components/ui/ScrollAnimation"
 import Link from "next/link"
 import Image from "next/image"
@@ -136,7 +135,7 @@ export default function Home() {
                      </div>
                    </div>
                    <div className="p-6 rounded-2xl bg-slate-50 border border-slate-100">
-                     <p className="text-sm font-medium text-slate-600 italic">"We are available 24/7 at our office and online to assist with your travel needs across Nepal."</p>
+                     <p className="text-sm font-medium text-slate-600 italic">&quot;We are available 24/7 at our office and online to assist with your travel needs across Nepal.&quot;</p>
                    </div>
                 </div>
               </div>

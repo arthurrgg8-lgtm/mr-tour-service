@@ -2,8 +2,6 @@ import { CheckCircle2, ShieldCheck, Users, BadgeCheck, Clock } from "lucide-reac
 import business from "@/data/business.json"
 
 export default function WhyChooseUs() {
-  const icons = [BadgeCheck, ShieldCheck, Users, BadgeCheck, Clock]
-
   return (
     <section className="py-24 bg-slate-50">
       <div className="container mx-auto px-4">

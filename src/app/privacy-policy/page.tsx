@@ -5,7 +5,7 @@ export default function PrivacyPolicy() {
         <h1 className="text-4xl font-bold mb-8">Privacy Policy</h1>
         <div className="prose prose-slate lg:prose-lg max-w-none bg-white p-8 md:p-12 rounded-[2rem] border shadow-sm">
           <p className="text-xl leading-relaxed text-slate-700">
-            This Privacy Policy explains how My Tour Services ("we," "our") collects and uses your data when you visit our platform. 
+            This Privacy Policy explains how My Tour Services (&quot;we,&quot; &quot;our&quot;) collects and uses your data when you visit our platform. 
             We only collect personal information that you voluntarily provide to us—such as your name, contact details, and booking preferences 
             when you inquire about or book our travel packages—alongside standard data automatically collected by our servers, 
             including your IP address, browser type, and page usage patterns via basic cookies.

@@ -44,15 +44,15 @@ export default function AboutPage() {
               </p>
               
               <div className="relative p-8 rounded-3xl bg-primary/5 border border-primary/10 mb-8 italic text-lg text-primary font-medium">
-                <span className="absolute -top-4 -left-2 text-6xl opacity-20">"</span>
+                <span className="absolute -top-4 -left-2 text-6xl opacity-20">&quot;</span>
                 No one, my failure is my inspiration.
-                <span className="block mt-2 text-sm font-bold not-italic text-muted-foreground">— Bishnu Bahadur Karki, Founder</span>
+                <span className="block mt-2 text-sm font-bold not-italic text-muted-foreground">&mdash; Bishnu Bahadur Karki, Founder</span>
               </div>
 
               <p className="text-muted-foreground mb-10 leading-relaxed">
                 Today, we take pride in owning our entire fleet, which allows us to 
                 maintain strict quality controls and offer the best pricing without 
-                outsourcing. Whether it's a family trip to Pokhara, a corporate event in 
+                outsourcing. Whether it&apos;s a family trip to Pokhara, a corporate event in 
                 Kathmandu, or a trekking expedition in the Himalayas, we are here to fuel your freedom.
               </p>
               
@@ -77,7 +77,7 @@ export default function AboutPage() {
               <div className="p-8 rounded-2xl bg-slate-50 border flex flex-col gap-4">
                 <Award className="h-10 w-10 text-primary" />
                 <h3 className="font-bold text-xl">Premium Quality</h3>
-                <p className="text-sm text-muted-foreground">We don't compromise on comfort. Our vehicles are clean, modern, and well-maintained.</p>
+                <p className="text-sm text-muted-foreground">We don&apos;t compromise on comfort. Our vehicles are clean, modern, and well-maintained.</p>
               </div>
               <div className="p-8 rounded-2xl bg-slate-50 border flex flex-col gap-4">
                 <MapIcon className="h-10 w-10 text-primary" />

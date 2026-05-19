@@ -1,17 +1,13 @@
 "use client"
 
-import { Car, Map as MapIcon, Mountain, Hotel, Calendar, Plane, Heart, Bus, ShieldCheck, Users } from "lucide-react"
+import { Car, Map as MapIcon, Mountain, Bus, ShieldCheck, Users } from "lucide-react"
 import services from "@/data/services.json"
 import Link from "next/link"
 
-const iconMap: { [key: string]: any } = {
+const iconMap: { [key: string]: React.ComponentType<{ className?: string }> } = {
   Car,
   Map: MapIcon,
   Mountain,
-  Hotel,
-  Calendar,
-  Plane,
-  Heart,
   Bus,
   ShieldCheck,
   Users
