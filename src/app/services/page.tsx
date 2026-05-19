@@ -138,7 +138,7 @@ export default function ServicesPage() {
                               <div 
                                 key={idx} 
                                 onClick={() => (service.id === 'tour-packages' || item.name === 'Everest Region') && handleTourClick((item as any).name)}
-                                className={`relative group/item h-24 md:h-28 rounded-xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-lg transition-all duration-500 ${(service.id === 'tour-packages' || item.name === 'Everest Region') ? 'cursor-pointer' : ''}`}
+                                className={`relative group/item ${service.id === 'tour-packages' ? 'h-28 md:h-32' : 'h-24 md:h-28'} rounded-xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-lg transition-all duration-500 ${(service.id === 'tour-packages' || item.name === 'Everest Region') ? 'cursor-pointer' : ''}`}
                               >
                                 {item.image && (
                                   <Image 
@@ -154,6 +154,22 @@ export default function ServicesPage() {
                                 </div>
                               </div>
                             ))}
+
+                            {/* Special Offer Card for Tours to fill space */}
+                            {service.id === 'tour-packages' && (
+                              <div className="col-span-2 p-5 rounded-2xl bg-primary/5 border border-primary/20 flex flex-col justify-center gap-3 mt-2">
+                                <div className="flex items-center gap-3">
+                                  <div className="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0">
+                                    <Award className="h-5 w-5" />
+                                  </div>
+                                  <p className="text-sm font-bold text-primary">Exclusive Offer</p>
+                                </div>
+                                <p className="text-xs md:text-sm text-slate-600 font-medium leading-relaxed italic">
+                                  &quot;{business.specialOffer}&quot;
+                                </p>
+                                <p className="text-[10px] font-bold text-muted-foreground uppercase tracking-widest">Available on all bookings</p>
+                              </div>
+                            )}
                           </div>
                         </div>
                       </div>
