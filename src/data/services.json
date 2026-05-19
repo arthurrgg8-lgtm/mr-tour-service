@@ -58,22 +58,33 @@
     "subServices": ["Group Sightseeing", "Hotel Transfers", "Pilgrimage Tours", "Staff Transport"]
   },
   {
-    "id": "bus-rent",
-    "title": "Bus & Mini Bus Rent",
-    "description": "Large luxury buses and mini buses for corporate groups, schools, and large family gatherings.",
+    "id": "minibus-rent",
+    "title": "Mini Bus Rent",
+    "description": "Comfortable 25-30 seater mini buses for medium-sized groups and corporate outings.",
     "icon": "Bus",
     "images": [
       "/images/services/bus/1.jpg",
       "/images/services/bus/2.jpg",
       "/images/services/bus/3.jpg",
-      "/images/services/bus/4.jpg",
+      "/images/services/bus/4.jpg"
+    ],
+    "featured": true,
+    "details": "Our mini buses are perfect for 25-30 passengers. They offer a balance of maneuverability and group comfort, making them ideal for narrow valley roads and city tours.",
+    "subServices": ["Corporate Outings", "School Trips", "Medium Group Tours", "Staff Transport"]
+  },
+  {
+    "id": "bus-rent",
+    "title": "Large Bus Rent",
+    "description": "Spacious 35-40 seater luxury Sutlej and tourist buses for large groups and long-distance travel.",
+    "icon": "Bus",
+    "images": [
       "/images/services/bus/5.jpg",
       "/images/services/bus/6.jpg",
       "/images/services/bus/7.jpg"
     ],
     "featured": true,
-    "details": "From 25-seater Mini Buses to 40-seater luxury Sutlej buses, we handle large group logistics with ease and professionalism.",
-    "subServices": ["Corporate Events", "School/College Trips", "Large Group Tours", "Special Event Logistics"]
+    "details": "For groups of 35-40 people, our luxury tourist buses (including Sutlej models) provide maximum comfort with reclining seats, wide windows, and advanced suspension systems.",
+    "subServices": ["Long Distance Travel", "Large Pilgrimage Groups", "College Expeditions", "Grand Event Logistics"]
   },
   {
     "id": "tour-packages",

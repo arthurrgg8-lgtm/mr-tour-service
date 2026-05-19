@@ -24,8 +24,9 @@ export default function Navbar() {
     { name: "CAR RENT", href: "/services#car-rent" },
     { name: "SUV RENT", href: "/services#suv-rent" },
     { name: "JEEP RENT", href: "/services#jeep-rent" },
-    { name: "BUS OR MINIBUS RENT", href: "/services#bus-rent" },
     { name: "HIACE RENT", href: "/services#hiace-rent" },
+    { name: "MINIBUS RENT", href: "/services#minibus-rent" },
+    { name: "LARGE BUS RENT", href: "/services#bus-rent" },
   ]
 
   const tourServices = [
