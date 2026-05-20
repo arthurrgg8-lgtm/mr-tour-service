@@ -221,7 +221,7 @@
       "/images/services/trekking/3.jpg",
       "/images/services/trekking/4.jpg"
     ],
-    "featured": false,
+    "featured": true,
     "details": "Our trekking packages include experienced guides, porters, and all necessary permits for a safe and memorable adventure.",
     "regions": [
       {

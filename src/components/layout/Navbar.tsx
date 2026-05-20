@@ -140,10 +140,14 @@ export default function Navbar() {
               onMouseEnter={() => setActiveDropdown(dropdown.id)}
               onMouseLeave={() => setActiveDropdown(null)}
             >
-              <button className="flex items-center gap-1 text-sm font-bold hover:text-primary transition-colors cursor-pointer uppercase">
+              <Link
+                href={dropdown.id === 'vehicle' ? '/services' : dropdown.id === 'tour' ? '/tours' : '/trekking'}
+                onClick={(e) => handleLinkClick(e, dropdown.id === 'vehicle' ? '/services' : dropdown.id === 'tour' ? '/tours' : '/trekking')}
+                className="flex items-center gap-1 text-sm font-bold hover:text-primary transition-colors cursor-pointer uppercase"
+              >
                 {dropdown.name}
                 <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${activeDropdown === dropdown.id ? 'rotate-180' : ''}`} />
-              </button>
+              </Link>
               
               <AnimatePresence>
                 {activeDropdown === dropdown.id && (
@@ -232,9 +236,17 @@ export default function Navbar() {
 
               {dropdowns.map((dropdown) => (
                 <div key={dropdown.id} className="flex flex-col gap-2">
-                  <p className="text-[10px] font-bold text-muted-foreground uppercase tracking-widest mb-1 border-b pb-1">
-                    {dropdown.name}
-                  </p>
+                  <Link
+                    href={dropdown.id === 'vehicle' ? '/services' : dropdown.id === 'tour' ? '/tours' : '/trekking'}
+                    onClick={(e) => {
+                      handleLinkClick(e, dropdown.id === 'vehicle' ? '/services' : dropdown.id === 'tour' ? '/tours' : '/trekking')
+                      setIsOpen(false)
+                    }}
+                    className="text-[10px] font-bold text-muted-foreground hover:text-primary uppercase tracking-widest mb-1 border-b pb-1 flex justify-between items-center transition-colors"
+                  >
+                    <span>{dropdown.name}</span>
+                    <span className="text-[9px] font-semibold text-primary">VIEW ALL →</span>
+                  </Link>
                   <div className="grid grid-cols-1 gap-1 pl-2">
                     {dropdown.items.map((item) => (
                       <Link 
