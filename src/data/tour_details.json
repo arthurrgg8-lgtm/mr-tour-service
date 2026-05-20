@@ -2857,5 +2857,38 @@
         "desc": "Transfer to airport before 3 hours of your flight."
       }
     ]
+  },
+  {
+    "id": "tour-28",
+    "title": "POKHARA TOUR",
+    "image": "/images/tours/tour-28.png",
+    "tagline": "Discover the scenic lake city and close up Himalayan panoramas",
+    "duration": "3 Days",
+    "startingPrice": "NPR 33,750 / $250",
+    "maxAltitude": "1,592m",
+    "difficulty": "Easy",
+    "highlights": [
+      "Sunrise and panoramic view of Annapurna and Machhapuchhre from Sarangkot",
+      "Scenic boating on Phewa Lake and visit to Tal Barahi Temple",
+      "Visit local Pokhara attractions: Davis Falls, Gupteshwor Cave, and World Peace Pagoda"
+    ],
+    "description": "A quick, beautiful getaway to Lakeside Pokhara, featuring spectacular Himalayan sunrises from Sarangkot, boating on Phewa Lake, and local city tours.",
+    "itinerary": [
+      {
+        "day": "01",
+        "title": "Arrival in Pokhara and Lakeside Exploration",
+        "desc": "Arrive in Pokhara by flight or drive. Boating on Phewa Lake, visit Tal Barahi temple, and lakeside walk."
+      },
+      {
+        "day": "02",
+        "title": "Pokhara Sightseeing",
+        "desc": "Sarangkot sunrise. Visit Davis Falls, Gupteshwor Cave, Seti Gorge, Mountain Museum, and Peace Pagoda."
+      },
+      {
+        "day": "03",
+        "title": "Departure",
+        "desc": "Transfer to Pokhara Airport or Tourist Bus Park for your onward journey."
+      }
+    ]
   }
 ]
