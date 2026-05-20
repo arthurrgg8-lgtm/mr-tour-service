@@ -117,10 +117,25 @@ export default function TrekkingPage() {
     if (n.includes('pikey peak')) return 'trek-pikey-peak';
     if (n.includes('three passes')) return 'trek-three-passes';
     if (n.includes('phaplu')) return 'trek-phaplu-ebc';
+
+    // Langtang Sub-packages
+    if (n.includes('langtang valley trek')) return 'trek-langtang-valley';
+    if (n.includes('gosainkunda')) return 'trek-gosainkunda';
+    if (n.includes('tamang heritage')) return 'trek-tamang-heritage';
+
+    // Manaslu Sub-packages
+    if (n.includes('manaslu circuit')) return 'trek-manaslu-circuit';
+    if (n.includes('tsum valley')) return 'trek-tsum-valley';
+
+    // Dhaulagiri Sub-packages
+    if (n.includes('dhaulagiri circuit')) return 'trek-dhaulagiri-circuit';
     
     // Regions
     if (n === 'everest region' || n === 'everest') return 'everest-region';
     if (n === 'annapurna region' || n === 'annapurna') return 'annapurna-region';
+    if (n === 'langtang region' || n === 'langtang') return 'langtang-region';
+    if (n === 'manaslu & tsum valley' || n === 'manaslu region' || n === 'manaslu') return 'manaslu-trek';
+    if (n === 'dhaulagiri trek' || n === 'dhaulagiri') return 'dhaulagiri-trek';
     
     // Fallback logic
     if (n.includes('everest')) return 'everest-region';
@@ -155,6 +170,23 @@ export default function TrekkingPage() {
     if (selectedTour.id.startsWith('trek-everest-') || everestIds.includes(selectedTour.id)) {
       return () => handleTourClick('Everest Region');
     }
+
+    // Langtang Sub-packages
+    const langtangIds = ['trek-langtang-valley', 'trek-gosainkunda', 'trek-tamang-heritage'];
+    if (langtangIds.includes(selectedTour.id)) {
+      return () => handleTourClick('Langtang Region');
+    }
+
+    // Manaslu Sub-packages
+    const manasluIds = ['trek-manaslu-circuit', 'trek-tsum-valley'];
+    if (manasluIds.includes(selectedTour.id)) {
+      return () => handleTourClick('Manaslu Region');
+    }
+
+    // Dhaulagiri Sub-packages
+    if (selectedTour.id === 'trek-dhaulagiri-circuit') {
+      return () => handleTourClick('Dhaulagiri Trek');
+    }
     
     // Fallback for any other trek- starting ID that isn't a main region
     if (selectedTour.id.startsWith('trek-') && 
@@ -163,6 +195,9 @@ export default function TrekkingPage() {
       // Try to determine region from ID
       if (selectedTour.id.includes('annapurna')) return () => handleTourClick('Annapurna Region');
       if (selectedTour.id.includes('everest')) return () => handleTourClick('Everest Region');
+      if (selectedTour.id.includes('langtang')) return () => handleTourClick('Langtang Region');
+      if (selectedTour.id.includes('manaslu')) return () => handleTourClick('Manaslu Region');
+      if (selectedTour.id.includes('dhaulagiri')) return () => handleTourClick('Dhaulagiri Trek');
     }
     
     return undefined;

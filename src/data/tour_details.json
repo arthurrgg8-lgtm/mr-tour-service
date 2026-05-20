@@ -919,6 +919,158 @@
     ]
   },
   {
+    "id": "trek-langtang-valley",
+    "title": "LANGTANG VALLEY TREK",
+    "image": "/images/trekking/langtang.jpeg",
+    "tagline": "The Valley of Glaciers & Tamang Culture",
+    "duration": "8 Days",
+    "startingPrice": "NPR 94,500 / $700",
+    "maxAltitude": "4,984m",
+    "difficulty": "Moderate",
+    "highlights": [
+      "Kyanjin Gompa: Famous Buddhist monastery at 3,870m",
+      "Tserko Ri (4,984m): Incredible panoramic views of Langtang Lirung",
+      "Authentic Tamang Culture and hospitality",
+      "Red Panda Habitat: Exploring the dense forests of the National Park"
+    ],
+    "description": "The Langtang Valley trek is the classic journey to the heart of the valley. It offers spectacular mountain views, ancient monasteries, and a deep look into the Tamang culture of the region.",
+    "itinerary": [
+      {
+        "day": "01",
+        "title": "Drive Kathmandu to Syabrubesi (1,550m)",
+        "desc": "Scenic drive through hills and rivers."
+      },
+      {
+        "day": "02",
+        "title": "Trek to Lama Hotel (2,470m)",
+        "desc": "Walk through forests along the Langtang Khola."
+      },
+      {
+        "day": "03",
+        "title": "Trek to Langtang Village (3,430m)",
+        "desc": "Ascend through meadows with views of Langtang Lirung."
+      },
+      {
+        "day": "04",
+        "title": "Trek to Kyanjin Gompa (3,870m)",
+        "desc": "Reach the cultural and spiritual heart of the valley."
+      },
+      {
+        "day": "05",
+        "title": "Explore Tserko Ri (4,984m)",
+        "desc": "Acclimatization hike for the best views in the region."
+      },
+      {
+        "day": "06",
+        "title": "Trek back to Lama Hotel",
+        "desc": "Long descent through familiar trails."
+      },
+      {
+        "day": "07",
+        "title": "Return to Syabrubesi",
+        "desc": "Final day of trekking back to the trailhead."
+      },
+      {
+        "day": "08",
+        "title": "Drive back to Kathmandu",
+        "desc": "Scenic return drive to the capital."
+      }
+    ]
+  },
+  {
+    "id": "trek-gosainkunda",
+    "title": "GOSAINKUNDA LAKE TREK",
+    "image": "/images/trekking/langtang.jpeg",
+    "tagline": "A Spiritual Journey to Sacred Alpine Lakes",
+    "duration": "9 Days",
+    "startingPrice": "NPR 101,250 / $750",
+    "maxAltitude": "4,380m",
+    "difficulty": "Moderate-Hard",
+    "highlights": [
+      "Sacred Lakes of Gosainkunda: A major pilgrimage site",
+      "Lauribina Pass (4,610m): Panoramic views of Manaslu and Langtang",
+      "High altitude alpine landscapes and rugged terrain",
+      "Deep spiritual atmosphere and ancient legends"
+    ],
+    "description": "The Gosainkunda trek is a spiritual and scenic journey to a cluster of sacred alpine lakes. Located at an altitude of 4,380m, these lakes are revered by both Hindus and Buddhists.",
+    "itinerary": [
+      {
+        "day": "01",
+        "title": "Drive Kathmandu to Syabrubesi",
+        "desc": "Start the journey with a scenic drive to the Langtang gateway."
+      },
+      {
+        "day": "02",
+        "title": "Trek to Thulo Syabru (2,210m)",
+        "desc": "Walk through beautiful forests and traditional Tamang villages."
+      },
+      {
+        "day": "03",
+        "title": "Trek to Lauribina (3,910m)",
+        "desc": "A steep ascent offering incredible views of the Ganesh Himal range."
+      },
+      {
+        "day": "04",
+        "title": "Trek to Gosainkunda Lake (4,380m)",
+        "desc": "Reach the sacred lakes and explore the serene environment."
+      },
+      {
+        "day": "05",
+        "title": "Explore & Cross Lauribina Pass (4,610m)",
+        "desc": "Cross the high pass for a stunning Himalayan panorama."
+      },
+      {
+        "day": "06-09",
+        "title": "Descent to Kathmandu",
+        "desc": "Return via Gopte and Kutumsang, following the Helambu ridge back to the city."
+      }
+    ]
+  },
+  {
+    "id": "trek-tamang-heritage",
+    "title": "TAMANG HERITAGE TRAIL",
+    "image": "/images/trekking/langtang.jpeg",
+    "tagline": "A Cultural Journey Through the Heart of the Tamang People",
+    "duration": "10 Days",
+    "startingPrice": "NPR 94,500 / $700",
+    "maxAltitude": "3,165m",
+    "difficulty": "Moderate",
+    "highlights": [
+      "Authentic Tamang Culture: Visit traditional villages like Gatlang and Tatopani",
+      "Natural Hot Springs: Relax in the healing waters of Tatopani",
+      "Stunning views of Langtang Lirung and Ganesh Himal",
+      "Deep cultural immersion and local community homestays"
+    ],
+    "description": "The Tamang Heritage Trail is a community-based trekking route that showcases the unique culture and traditions of the Tamang people. It offers a perfect blend of natural beauty and cultural heritage.",
+    "itinerary": [
+      {
+        "day": "01",
+        "title": "Drive Kathmandu to Syabrubesi",
+        "desc": "Scenic drive to the starting point of the trek."
+      },
+      {
+        "day": "02",
+        "title": "Trek to Gatlang (2,238m)",
+        "desc": "Explore the large and traditional Tamang village of Gatlang."
+      },
+      {
+        "day": "03",
+        "title": "Trek to Tatopani (2,607m)",
+        "desc": "Visit the natural hot springs and enjoy the local hospitality."
+      },
+      {
+        "day": "04",
+        "title": "Trek to Thuman (2,338m)",
+        "desc": "Cross the ridge with incredible mountain views."
+      },
+      {
+        "day": "05-10",
+        "title": "Village Circuit & Return",
+        "desc": "Continue through Timure and Briddim villages before returning to Kathmandu."
+      }
+    ]
+  },
+  {
     "id": "upper-mustang",
     "title": "Trek to Upper Mustang",
     "image": "/images/trekking/upper-mustang.jpeg",
@@ -1029,6 +1181,89 @@
     ]
   },
   {
+    "id": "trek-manaslu-circuit",
+    "title": "MANASLU CIRCUIT TREK",
+    "image": "/images/trekking/manaslu-tsum-valley.jpeg",
+    "tagline": "The Ultimate Alternative Circuit",
+    "duration": "14 Days",
+    "startingPrice": "NPR 162,000 / $1,200",
+    "maxAltitude": "5,106m",
+    "difficulty": "Strenuous",
+    "highlights": [
+      "Larkya La Pass (5,106m): Challenging glaciated pass",
+      "Incredible views of Mt. Manaslu (8,163m)",
+      "Remote Tibetan-style villages and culture",
+      "Pristine landscapes away from the crowds"
+    ],
+    "description": "The Manaslu Circuit is one of the most popular restricted area treks in Nepal. It offers a perfect blend of high-altitude adventure and cultural immersion.",
+    "itinerary": [
+      {
+        "day": "01",
+        "title": "Drive Kathmandu to Machha Khola",
+        "desc": "Full day drive into the mountains."
+      },
+      {
+        "day": "02-05",
+        "title": "Ascent to Namrung",
+        "desc": "Follow the Buri Gandaki river through sub-tropical forests."
+      },
+      {
+        "day": "06-08",
+        "title": "Sama Gaon & Samdo",
+        "desc": "Acclimatize in high-altitude Tibetan villages with views of Manaslu."
+      },
+      {
+        "day": "09-10",
+        "title": "Cross Larkya La (5,106m)",
+        "desc": "Ascend to high camp and cross the legendary pass."
+      },
+      {
+        "day": "11-14",
+        "title": "Return to Kathmandu",
+        "desc": "Descend to the Marsyangdi valley and return to the capital."
+      }
+    ]
+  },
+  {
+    "id": "trek-tsum-valley",
+    "title": "TSUM VALLEY TREK",
+    "image": "/images/trekking/manaslu-tsum-valley.jpeg",
+    "tagline": "The Hidden Valley of Happiness",
+    "duration": "18 Days",
+    "startingPrice": "NPR 175,500 / $1,300",
+    "maxAltitude": "3,700m",
+    "difficulty": "Moderate-Hard",
+    "highlights": [
+      "Sacred Tsum Valley: A 'Beyul' or hidden land of Buddhism",
+      "Mu Gompa: Remote and ancient monastery at 3,700m",
+      "Unique polyandry culture and untouched traditions",
+      "Surrounded by the Ganesh Himal and Sringi Himal ranges"
+    ],
+    "description": "The Tsum Valley is a sacred Himalayan pilgrimage valley situated in northern Gorkha. It is one of the few places in the world where the ancient Tibetan culture remains completely untouched.",
+    "itinerary": [
+      {
+        "day": "01",
+        "title": "Drive Kathmandu to Machha Khola",
+        "desc": "Start the journey into the remote Gorkha district."
+      },
+      {
+        "day": "02-05",
+        "title": "Enter the Valley",
+        "desc": "Trek via Jagat and Lokpa to enter the hidden Tsum Valley."
+      },
+      {
+        "day": "06-10",
+        "title": "Explore Upper Tsum",
+        "desc": "Visit Chhekampar, Nile, and the remote Mu Gompa monastery."
+      },
+      {
+        "day": "11-18",
+        "title": "Return via Gorkha",
+        "desc": "Retrace steps through the valley and return to Kathmandu."
+      }
+    ]
+  },
+  {
     "id": "kailash-trek",
     "title": "Kailash Mansarovar",
     "image": "/images/trekking/kailash.png",
@@ -1065,6 +1300,50 @@
         "day": "11-14",
         "title": "Return to Kathmandu",
         "desc": "Journey back through the border for departure."
+      }
+    ]
+  },
+  {
+    "id": "trek-dhaulagiri-circuit",
+    "title": "DHAULAGIRI CIRCUIT TREK",
+    "image": "/images/trekking/dhaulagiri.jpeg",
+    "tagline": "The Ultimate High-Altitude Camping Odyssey",
+    "duration": "20 Days",
+    "startingPrice": "NPR 229,500 / $1,700",
+    "maxAltitude": "5,360m",
+    "difficulty": "Very Strenuous",
+    "highlights": [
+      "Dhaulagiri Base Camp: Sleep on the massive Chonbardan Glacier",
+      "French Pass (5,360m): Cross a glaciated pass into the Hidden Valley",
+      "Dhampus Pass (5,250m): Panoramic views of the Annapurna range",
+      "True Wilderness: A complete camping trek away from all teahouses"
+    ],
+    "description": "The Dhaulagiri Circuit is one of the most challenging and isolated treks in Nepal. It circles the world's 7th highest mountain, crossing glaciated passes and hidden valleys.",
+    "itinerary": [
+      {
+        "day": "01",
+        "title": "Drive Kathmandu to Darbang",
+        "desc": "Full day drive to the trailhead in Myagdi."
+      },
+      {
+        "day": "02-08",
+        "title": "Ascent to Italian Base Camp",
+        "desc": "Trek through remote forests and high alpine meadows."
+      },
+      {
+        "day": "09-12",
+        "title": "Glacier Camp & Dhaulagiri Base Camp",
+        "desc": "Walk on the glacier and reach the foot of the massive peak (4,740m)."
+      },
+      {
+        "day": "13",
+        "title": "Cross French Pass (5,360m)",
+        "desc": "Reach the highest point and enter the mystical Hidden Valley."
+      },
+      {
+        "day": "14-20",
+        "title": "Hidden Valley & Return",
+        "desc": "Cross Dhampus Pass, descend to Jomsom, and fly back via Pokhara."
       }
     ]
   },
@@ -1294,22 +1573,42 @@
       "Meditation and prayer sessions in authentic settings",
       "Stunning views of Everest and Annapurna ranges"
     ],
-    "description": "This specialized trek is designed for those seeking spiritual enlightenment alongside physical adventure. Sacred sites and monasteries across the Himalayas.",
+    "description": "This specialized trek is designed for those seeking spiritual enlightenment alongside physical adventure. Follow the footsteps of great masters through sacred sites and ancient monasteries across the Himalayas, combining meditation with breathtaking mountain vistas.",
     "itinerary": [
       {
         "day": "01",
-        "title": "Kathmandu Monastery Tour",
-        "desc": "Visit Swayambhunath and Boudhanath."
+        "title": "Arrival & Kathmandu Monastery Tour",
+        "desc": "Welcome and visit the sacred Swayambhunath (Monkey Temple) and Boudhanath Stupa."
       },
       {
-        "day": "02-12",
-        "title": "Himalayan Pilgrimage",
-        "desc": "Customized route focusing on major monasteries (Tengboche or Kyanjin)."
+        "day": "02",
+        "title": "Fly to Lukla & Trek to Phakding",
+        "desc": "Start the spiritual journey into the Everest region."
       },
       {
-        "day": "13-15",
-        "title": "Lumbini Extension",
-        "desc": "Final visit to the birth place of Buddha in the plains."
+        "day": "03-04",
+        "title": "Trek to Namche & Khumjung",
+        "desc": "Visit the Khumjung Monastery, home to the 'Yeti Scalp', and explore Sherpa culture."
+      },
+      {
+        "day": "05",
+        "title": "Tengboche Monastery (3,860m)",
+        "desc": "Participate in evening prayers at the largest and most famous monastery in Khumbu."
+      },
+      {
+        "day": "06-08",
+        "title": "Pangboche & Return",
+        "desc": "Visit the ancient Pangboche Monastery before descending back toward Lukla."
+      },
+      {
+        "day": "09-10",
+        "title": "Fly to Kathmandu & Drive to Namobuddha",
+        "desc": "Visit the sacred site where Buddha offered his body to a starving tigress."
+      },
+      {
+        "day": "11-12",
+        "title": "Kapan Monastery & Meditation",
+        "desc": "Participate in meditation sessions at the renowned Kapan Monastery overlooking Kathmandu."
       }
     ]
   },
@@ -1384,27 +1683,37 @@
       "Rara Lake Extension: Visiting Nepal's blue gem",
       "Absolute Isolation: Trails with zero tourist crowds"
     ],
-    "description": "Far Western Nepal remains the least explored part of the country. Grasslands of Khaptad to the rugged peaks of Saipal Himal.",
+    "description": "Far Western Nepal remains the least explored and most authentic frontier of the country. From the unique high-altitude moorlands of Khaptad to the rugged peaks of Saipal Himal, this trek offers absolute isolation and a deep dive into the unique Deuda culture.",
     "itinerary": [
       {
         "day": "01",
         "title": "Flight to Dhangadhi",
-        "desc": "Start from the western plains."
+        "desc": "Travel from the capital to the warm plains of the Far-West."
       },
       {
-        "day": "02-10",
-        "title": "Khaptad Exploration",
-        "desc": "Trek through the unique National Park and grasslands."
+        "day": "02-04",
+        "title": "Drive to Silgadhi & Trek to Khaptad",
+        "desc": "Ascend from the plains into the high plateau of Khaptad National Park."
       },
       {
-        "day": "11-20",
-        "title": "Saipal Himal / Humla",
-        "desc": "Continue north toward the high Himalayan border regions."
+        "day": "05-07",
+        "title": "Explore Khaptad Plateau",
+        "desc": "Visit the Khaptad Baba Ashram and walk through the unique high-altitude grasslands."
       },
       {
-        "day": "21-22",
-        "title": "Return via Surkhet",
-        "desc": "Return drive and flight to Kathmandu."
+        "day": "08-12",
+        "title": "Trek to Chainpur & Saipal Base Camp",
+        "desc": "Journey north toward the magnificent Saipal Himal (7,031m)."
+      },
+      {
+        "day": "13-15",
+        "title": "Base Camp Excursion",
+        "desc": "Reach the foot of the massif and enjoy the views of the unexplored western peaks."
+      },
+      {
+        "day": "16-22",
+        "title": "Return via Bajhang & Dhangadhi",
+        "desc": "Trek back through remote villages and return to Dhangadhi for the flight home."
       }
     ]
   },
