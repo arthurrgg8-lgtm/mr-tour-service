@@ -7,6 +7,7 @@ export function cn(...inputs: ClassValue[]) {
 
 export function scrollToId(id: string, offset = 100, addGlow = false) {
   const element = document.getElementById(id)
+  
   if (element) {
     const bodyRect = document.body.getBoundingClientRect().top
     const elementRect = element.getBoundingClientRect().top
