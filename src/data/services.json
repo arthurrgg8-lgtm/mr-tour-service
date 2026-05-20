@@ -1,311 +1,5 @@
 [
   {
-    "id": "car-rent",
-    "title": "Car Rent",
-    "description": "Premium sedan and luxury car rentals for city tours, airport transfers, and business travel.",
-    "icon": "Car",
-    "capacity": "4 Seater",
-    "startingPrice": "NPR 5,000 / $37",
-    "recommendedFor": "City Tours & Airport Transfers",
-    "images": [
-      "/images/services/car/1.jpg",
-      "/images/services/car/2.jpg",
-      "/images/services/car/3.jpg",
-      "/images/services/car/4.jpg"
-    ],
-    "featured": true,
-    "details": "We offer a wide range of well-maintained cars including luxury sedans and budget-friendly options. All rentals come with professional, well-trained drivers to ensure your comfort and safety.",
-    "subServices": [
-      "Airport Pick-up & Drop",
-      "City Sightseeing",
-      "Corporate Travel",
-      "Wedding Services"
-    ]
-  },
-  {
-    "id": "suv-rent",
-    "title": "SUV Rent",
-    "description": "Comfortable and spacious SUV rentals for family trips and long-distance highway travel.",
-    "icon": "ShieldCheck",
-    "capacity": "4 Seater",
-    "startingPrice": "NPR 6,000 / $44",
-    "recommendedFor": "Family Vacations & Highway Travel",
-    "images": [
-      "/images/services/suv/1.jpg",
-      "/images/services/suv/2.jpg",
-      "/images/services/suv/3.jpg",
-      "/images/services/suv/4.jpg",
-      "/images/services/suv/5.jpg",
-      "/images/services/suv/6.jpg"
-    ],
-    "featured": true,
-    "details": "Choose from our premium SUVs like Toyota Fortuner or Suzuki Brezza for a balanced mix of luxury and performance. Ideal for small groups looking for extra comfort.",
-    "subServices": [
-      "Family Vacations",
-      "Inter-city Travel",
-      "Luxury Tours",
-      "Highway Cruising"
-    ]
-  },
-  {
-    "id": "jeep-rent",
-    "title": "Jeep Rent",
-    "description": "Powerful 4x4 Jeep rentals for off-road adventures and navigating the diverse terrains of Nepal.",
-    "icon": "Mountain",
-    "capacity": "7 Seater",
-    "startingPrice": "NPR 7,000 / $52",
-    "recommendedFor": "Off-road & Mountain Expeditions",
-    "images": [
-      "/images/services/jeep/1.jpg",
-      "/images/services/jeep/2.jpg",
-      "/images/services/jeep/3.jpg"
-    ],
-    "featured": true,
-    "details": "Our 4WD Jeeps like Scorpio and Land Cruisers are perfect for rough roads, mountain trips, and remote village explorations. Experience power and stability on any trail.",
-    "subServices": [
-      "Off-road Expeditions",
-      "Mustang/Manang Trips",
-      "Wildlife Safari",
-      "Remote Area Transport"
-    ]
-  },
-  {
-    "id": "hiace-rent",
-    "title": "Hiace Rent",
-    "description": "Reliable Toyota Hiace rentals for medium-sized groups and tourist operations.",
-    "icon": "Users",
-    "capacity": "10-14 Seater",
-    "startingPrice": "NPR 8,000 / $59",
-    "recommendedFor": "Tourist Groups & Pilgrimage",
-    "images": [
-      "/images/services/hiace/1.jpg"
-    ],
-    "featured": true,
-    "details": "Our Hiace fleet is the gold standard for tourist groups. Spacious seating, dual AC, and high-roof models ensure everyone travels in comfort.",
-    "subServices": [
-      "Group Sightseeing",
-      "Hotel Transfers",
-      "Pilgrimage Tours",
-      "Staff Transport"
-    ]
-  },
-  {
-    "id": "minibus-rent",
-    "title": "Mini Bus Rent",
-    "description": "Comfortable 18-25 seater mini buses for medium-sized groups and corporate outings.",
-    "icon": "Bus",
-    "capacity": "18-25 Seater",
-    "startingPrice": "NPR 11,000 / $81",
-    "recommendedFor": "Corporate Groups & School Trips",
-    "images": [
-      "/images/services/minibus/MINIBU2.jpeg",
-      "/images/services/minibus/MINIBUS.jpeg"
-    ],
-    "featured": true,
-    "details": "Our mini buses are perfect for 18-25 passengers. They offer a balance of maneuverability and group comfort, making them ideal for narrow valley roads and city tours.",
-    "subServices": [
-      "Corporate Outings",
-      "School Trips",
-      "Medium Group Tours",
-      "Staff Transport"
-    ]
-  },
-  {
-    "id": "bus-rent",
-    "title": "SUTLEJ BUS",
-    "description": "Spacious 35-41 seater luxury Sutlej and tourist buses for large groups and long-distance travel.",
-    "icon": "Bus",
-    "capacity": "35-41 Seater",
-    "startingPrice": "NPR 14,000 / $104",
-    "recommendedFor": "Large Delegations & Grand Events",
-    "images": [
-      "/images/services/bus/BUSSS.jpeg",
-      "/images/services/bus/BUS8.jpeg",
-      "/images/services/bus/BUS1.jpeg"
-    ],
-    "featured": true,
-    "details": "For groups of 35-41 people, our luxury tourist buses (including Sutlej models) provide maximum comfort with reclining seats, wide windows, and advanced suspension systems.",
-    "subServices": [
-      "Long Distance Travel",
-      "Large Pilgrimage Groups",
-      "College Expeditions",
-      "Grand Event Logistics"
-    ]
-  },
-  {
-    "id": "premium-fleet",
-    "title": "Premium Fleet",
-    "description": "Our most exclusive selection of high-end vehicles, including luxury SUVs and executive buses.",
-    "icon": "ShieldCheck",
-    "capacity": "4, 7, 30 Seater",
-    "startingPrice": "NPR 15,000 / $111",
-    "recommendedFor": "VIP Delegations & High-End Events",
-    "images": [
-      "/images/fleet/fortuner-new.jpg",
-      "/images/fleet/byd-atto3.jpg",
-      "/images/services/bus/1.jpg"
-    ],
-    "featured": true,
-    "details": "For those who demand the best. Our premium fleet features the latest models with superior comfort, advanced safety features, and elite styling for VIP travel.",
-    "subServices": [
-      "VIP Delegations",
-      "High-End Corporate Travel",
-      "Luxury Wedding Fleet",
-      "Exclusive Private Tours"
-    ]
-  },
-  {
-    "id": "tour-packages",
-    "title": "Tour Packages",
-    "description": "Curated travel experiences across the most iconic regions of Nepal and Tibet.",
-    "icon": "Map",
-    "images": [
-      "/images/services/tour/1.jpg",
-      "/images/services/tour/2.jpg",
-      "/images/services/tour/3.jpg",
-      "/images/services/tour/4.jpg"
-    ],
-    "featured": true,
-    "details": "We design personalized itineraries focusing on the rich cultural and religious heritage of Nepal.",
-    "subServices": [
-      {
-        "name": "KATHMANDU COUNTRYSIDE HIKE",
-        "duration": "5 DAYS",
-        "image": "/images/tours/tour-1.png"
-      },
-      {
-        "name": "FAMILY HOLIDAY",
-        "duration": "12 DAYS",
-        "image": "/images/tours/tour-2.png"
-      },
-      {
-        "name": "LUMBINI TOUR",
-        "duration": "3 DAYS",
-        "image": "/images/tours/tour-3.png"
-      },
-      {
-        "name": "CHITWAN JUNGLE SAFARI",
-        "duration": "3 DAYS",
-        "image": "/images/tours/tour-4.png"
-      },
-      {
-        "name": "GORKHA-BANDIPUR-POKHARA TOUR",
-        "duration": "13 DAYS",
-        "image": "/images/tours/tour-5.png"
-      },
-      {
-        "name": "BADIMALIKA TOUR",
-        "duration": "16 DAYS",
-        "image": "/images/tours/tour-6.png"
-      },
-      {
-        "name": "JEEP TOUR TO RARA",
-        "duration": "6 DAYS",
-        "image": "/images/tours/tour-7.png"
-      },
-      {
-        "name": "KATHMANDU CITY TOUR",
-        "duration": "1 DAY",
-        "image": "/images/tours/tour-8.png"
-      },
-      {
-        "name": "KATHMANDU LOCAL TOUR",
-        "duration": "4 DAYS",
-        "image": "/images/tours/tour-9.png"
-      },
-      {
-        "name": "KATHMANDU – POKHARA – CHITWAN TOUR",
-        "duration": "8 DAYS",
-        "image": "/images/tours/tour-10.png"
-      },
-      {
-        "name": "KATHMANDU – POKHARA – CHITWAN – LUMBINI TOUR",
-        "duration": "10 DAYS",
-        "image": "/images/tours/tour-11.png"
-      },
-      {
-        "name": "KATHMANDU – POKHARA – GHANDRUK – CHITWAN TOUR",
-        "duration": "9 DAYS",
-        "image": "/images/tours/tour-12.png"
-      },
-      {
-        "name": "KATHMANDU – POKHARA – GHANDRUK TOUR",
-        "duration": "7 DAYS",
-        "image": "/images/tours/tour-13.png"
-      },
-      {
-        "name": "KATHMANDU – NAGARKOT TOUR",
-        "duration": "5 DAYS",
-        "image": "/images/tours/tour-14.png"
-      },
-      {
-        "name": "YOGA AND MEDITATION TOUR",
-        "duration": "9 DAYS",
-        "image": "/images/tours/tour-15.png"
-      },
-      {
-        "name": "NEPAL CULTURAL TOUR",
-        "duration": "7 DAYS",
-        "image": "/images/tours/tour-16.png"
-      },
-      {
-        "name": "NEPAL SPIRITUAL TOUR",
-        "duration": "7 DAYS",
-        "image": "/images/tours/tour-17.png"
-      },
-      {
-        "name": "MUKTINATH SPIRITUAL TOUR",
-        "duration": "7 DAYS",
-        "image": "/images/tours/tour-18.png"
-      },
-      {
-        "name": "JEEP TOUR TO RARA (8 DAYS)",
-        "duration": "8 DAYS",
-        "image": "/images/tours/tour-19.png"
-      },
-      {
-        "name": "BHOTEKOSHI RIVER RAFTING",
-        "duration": "2 DAYS",
-        "image": "/images/tours/tour-20.png"
-      },
-      {
-        "name": "TRISHULI RIVER RAFTING",
-        "duration": "2 DAYS",
-        "image": "/images/tours/tour-21.png"
-      },
-      {
-        "name": "BUNGEE JUMPING",
-        "duration": "1 DAY",
-        "image": "/images/tours/tour-22.png"
-      },
-      {
-        "name": "BUDDHIST PILGRIMAGE TOUR",
-        "duration": "8 DAYS",
-        "image": "/images/tours/tour-23.png"
-      },
-      {
-        "name": "ANNAPURNA CHITWAN HOLIDAYS",
-        "duration": "12 DAYS",
-        "image": "/images/tours/tour-24.png"
-      },
-      {
-        "name": "UPPER MUSTANG TOUR",
-        "duration": "9 DAYS",
-        "image": "/images/tours/tour-25.png"
-      },
-      {
-        "name": "FAMILY HOLIDAYS IN NEPAL",
-        "duration": "12 DAYS",
-        "image": "/images/tours/tour-26.png"
-      },
-      {
-        "name": "UNESCO WORLD HERITAGE TOUR",
-        "duration": "8 DAYS",
-        "image": "/images/tours/tour-27.png"
-      }
-    ]
-  },
-  {
     "id": "trekking",
     "title": "Trekking",
     "description": "Expert-led trekking adventures to the base camps and high passes of the Himalayas.",
@@ -475,6 +169,312 @@
       {
         "name": "RARA REGION",
         "image": "/images/trekking/rara.png"
+      }
+    ]
+  },
+  {
+    "id": "car-rent",
+    "title": "Car Rent",
+    "description": "Premium sedan and luxury car rentals for city tours, airport transfers, and business travel.",
+    "icon": "Car",
+    "capacity": "4 Seater",
+    "startingPrice": "NPR 5,000 / $37",
+    "recommendedFor": "City Tours & Airport Transfers",
+    "images": [
+      "/images/services/car/1.jpg",
+      "/images/services/car/2.jpg",
+      "/images/services/car/3.jpg",
+      "/images/services/car/4.jpg"
+    ],
+    "featured": true,
+    "details": "We offer a wide range of well-maintained cars including luxury sedans and budget-friendly options. All rentals come with professional, well-trained drivers to ensure your comfort and safety.",
+    "subServices": [
+      "Airport Pick-up & Drop",
+      "City Sightseeing",
+      "Corporate Travel",
+      "Wedding Services"
+    ]
+  },
+  {
+    "id": "suv-rent",
+    "title": "SUV Rent",
+    "description": "Comfortable and spacious SUV rentals for family trips and long-distance highway travel.",
+    "icon": "ShieldCheck",
+    "capacity": "4 Seater",
+    "startingPrice": "NPR 6,000 / $44",
+    "recommendedFor": "Family Vacations & Highway Travel",
+    "images": [
+      "/images/services/suv/1.jpg",
+      "/images/services/suv/2.jpg",
+      "/images/services/suv/3.jpg",
+      "/images/services/suv/4.jpg",
+      "/images/services/suv/5.jpg",
+      "/images/services/suv/6.jpg"
+    ],
+    "featured": true,
+    "details": "Choose from our premium SUVs like Toyota Fortuner or Suzuki Brezza for a balanced mix of luxury and performance. Ideal for small groups looking for extra comfort.",
+    "subServices": [
+      "Family Vacations",
+      "Inter-city Travel",
+      "Luxury Tours",
+      "Highway Cruising"
+    ]
+  },
+  {
+    "id": "jeep-rent",
+    "title": "Jeep Rent",
+    "description": "Powerful 4x4 Jeep rentals for off-road adventures and navigating the diverse terrains of Nepal.",
+    "icon": "Mountain",
+    "capacity": "7 Seater",
+    "startingPrice": "NPR 7,000 / $52",
+    "recommendedFor": "Off-road & Mountain Expeditions",
+    "images": [
+      "/images/services/jeep/1.jpg",
+      "/images/services/jeep/2.jpg",
+      "/images/services/jeep/3.jpg"
+    ],
+    "featured": true,
+    "details": "Our 4WD Jeeps like Scorpio and Land Cruisers are perfect for rough roads, mountain trips, and remote village explorations. Experience power and stability on any trail.",
+    "subServices": [
+      "Off-road Expeditions",
+      "Mustang/Manang Trips",
+      "Wildlife Safari",
+      "Remote Area Transport"
+    ]
+  },
+  {
+    "id": "hiace-rent",
+    "title": "Hiace Rent",
+    "description": "Reliable Toyota Hiace rentals for medium-sized groups and tourist operations.",
+    "icon": "Users",
+    "capacity": "10-14 Seater",
+    "startingPrice": "NPR 8,000 / $59",
+    "recommendedFor": "Tourist Groups & Pilgrimage",
+    "images": [
+      "/images/services/hiace/1.jpg"
+    ],
+    "featured": true,
+    "details": "Our Hiace fleet is the gold standard for tourist groups. Spacious seating, dual AC, and high-roof models ensure everyone travels in comfort.",
+    "subServices": [
+      "Group Sightseeing",
+      "Hotel Transfers",
+      "Pilgrimage Tours",
+      "Staff Transport"
+    ]
+  },
+  {
+    "id": "minibus-rent",
+    "title": "Mini Bus Rent",
+    "description": "Comfortable 18-25 seater mini buses for medium-sized groups and corporate outings.",
+    "icon": "Bus",
+    "capacity": "18-25 Seater",
+    "startingPrice": "NPR 11,000 / $81",
+    "recommendedFor": "Corporate Groups & School Trips",
+    "images": [
+      "/images/services/minibus/MINIBU2.jpeg",
+      "/images/services/minibus/MINIBUS.jpeg"
+    ],
+    "featured": true,
+    "details": "Our mini buses are perfect for 18-25 passengers. They offer a balance of maneuverability and group comfort, making them ideal for narrow valley roads and city tours.",
+    "subServices": [
+      "Corporate Outings",
+      "School Trips",
+      "Medium Group Tours",
+      "Staff Transport"
+    ]
+  },
+  {
+    "id": "bus-rent",
+    "title": "SUTLEJ BUS",
+    "description": "Spacious 35-41 seater luxury Sutlej and tourist buses for large groups and long-distance travel.",
+    "icon": "Bus",
+    "capacity": "35-41 Seater",
+    "startingPrice": "NPR 14,000 / $104",
+    "recommendedFor": "Large Delegations & Grand Events",
+    "images": [
+      "/images/services/bus/BUSSS.jpeg",
+      "/images/services/bus/BUS8.jpeg",
+      "/images/services/bus/BUS1.jpeg"
+    ],
+    "featured": true,
+    "details": "For groups of 35-41 people, our luxury tourist buses (including Sutlej models) provide maximum comfort with reclining seats, wide windows, and advanced suspension systems.",
+    "subServices": [
+      "Long Distance Travel",
+      "Large Pilgrimage Groups",
+      "College Expeditions",
+      "Grand Event Logistics"
+    ]
+  },
+  {
+    "id": "premium-fleet",
+    "title": "Premium Fleet",
+    "description": "Our most exclusive selection of high-end vehicles, including luxury SUVs and executive buses.",
+    "icon": "ShieldCheck",
+    "capacity": "4, 7, 30 Seater",
+    "startingPrice": "NPR 15,000 / $111",
+    "recommendedFor": "VIP Delegations & High-End Events",
+    "images": [
+      "/images/fleet/fortuner-new.jpg",
+      "/images/fleet/byd-atto3.jpg",
+      "/images/services/bus/1.jpg"
+    ],
+    "featured": true,
+    "details": "For those who demand the best. Our premium fleet features the latest models with superior comfort, advanced safety features, and elite styling for VIP travel.",
+    "subServices": [
+      "VIP Delegations",
+      "High-End Corporate Travel",
+      "Luxury Wedding Fleet",
+      "Exclusive Private Tours"
+    ]
+  },
+  {
+    "id": "tour-packages",
+    "title": "Tour Packages",
+    "description": "Curated travel experiences across the most iconic regions of Nepal and Tibet.",
+    "icon": "Map",
+    "images": [
+      "/images/services/tour/1.jpg",
+      "/images/services/tour/2.jpg",
+      "/images/services/tour/3.jpg",
+      "/images/services/tour/4.jpg"
+    ],
+    "featured": false,
+    "details": "We design personalized itineraries focusing on the rich cultural and religious heritage of Nepal.",
+    "subServices": [
+      {
+        "name": "KATHMANDU COUNTRYSIDE HIKE",
+        "duration": "5 DAYS",
+        "image": "/images/tours/tour-1.png"
+      },
+      {
+        "name": "FAMILY HOLIDAY",
+        "duration": "12 DAYS",
+        "image": "/images/tours/tour-2.png"
+      },
+      {
+        "name": "LUMBINI TOUR",
+        "duration": "3 DAYS",
+        "image": "/images/tours/tour-3.png"
+      },
+      {
+        "name": "CHITWAN JUNGLE SAFARI",
+        "duration": "3 DAYS",
+        "image": "/images/tours/tour-4.png"
+      },
+      {
+        "name": "GORKHA-BANDIPUR-POKHARA TOUR",
+        "duration": "13 DAYS",
+        "image": "/images/tours/tour-5.png"
+      },
+      {
+        "name": "BADIMALIKA TOUR",
+        "duration": "16 DAYS",
+        "image": "/images/tours/tour-6.png"
+      },
+      {
+        "name": "JEEP TOUR TO RARA",
+        "duration": "6 DAYS",
+        "image": "/images/tours/tour-7.png"
+      },
+      {
+        "name": "KATHMANDU CITY TOUR",
+        "duration": "1 DAY",
+        "image": "/images/tours/tour-8.png"
+      },
+      {
+        "name": "KATHMANDU LOCAL TOUR",
+        "duration": "4 DAYS",
+        "image": "/images/tours/tour-9.png"
+      },
+      {
+        "name": "KATHMANDU – POKHARA – CHITWAN TOUR",
+        "duration": "8 DAYS",
+        "image": "/images/tours/tour-10.png"
+      },
+      {
+        "name": "KATHMANDU – POKHARA – CHITWAN – LUMBINI TOUR",
+        "duration": "10 DAYS",
+        "image": "/images/tours/tour-11.png"
+      },
+      {
+        "name": "KATHMANDU – POKHARA – GHANDRUK – CHITWAN TOUR",
+        "duration": "9 DAYS",
+        "image": "/images/tours/tour-12.png"
+      },
+      {
+        "name": "KATHMANDU – POKHARA – GHANDRUK TOUR",
+        "duration": "7 DAYS",
+        "image": "/images/tours/tour-13.png"
+      },
+      {
+        "name": "KATHMANDU – NAGARKOT TOUR",
+        "duration": "5 DAYS",
+        "image": "/images/tours/tour-14.png"
+      },
+      {
+        "name": "YOGA AND MEDITATION TOUR",
+        "duration": "9 DAYS",
+        "image": "/images/tours/tour-15.png"
+      },
+      {
+        "name": "NEPAL CULTURAL TOUR",
+        "duration": "7 DAYS",
+        "image": "/images/tours/tour-16.png"
+      },
+      {
+        "name": "NEPAL SPIRITUAL TOUR",
+        "duration": "7 DAYS",
+        "image": "/images/tours/tour-17.png"
+      },
+      {
+        "name": "MUKTINATH SPIRITUAL TOUR",
+        "duration": "7 DAYS",
+        "image": "/images/tours/tour-18.png"
+      },
+      {
+        "name": "JEEP TOUR TO RARA (8 DAYS)",
+        "duration": "8 DAYS",
+        "image": "/images/tours/tour-19.png"
+      },
+      {
+        "name": "BHOTEKOSHI RIVER RAFTING",
+        "duration": "2 DAYS",
+        "image": "/images/tours/tour-20.png"
+      },
+      {
+        "name": "TRISHULI RIVER RAFTING",
+        "duration": "2 DAYS",
+        "image": "/images/tours/tour-21.png"
+      },
+      {
+        "name": "BUNGEE JUMPING",
+        "duration": "1 DAY",
+        "image": "/images/tours/tour-22.png"
+      },
+      {
+        "name": "BUDDHIST PILGRIMAGE TOUR",
+        "duration": "8 DAYS",
+        "image": "/images/tours/tour-23.png"
+      },
+      {
+        "name": "ANNAPURNA CHITWAN HOLIDAYS",
+        "duration": "12 DAYS",
+        "image": "/images/tours/tour-24.png"
+      },
+      {
+        "name": "UPPER MUSTANG TOUR",
+        "duration": "9 DAYS",
+        "image": "/images/tours/tour-25.png"
+      },
+      {
+        "name": "FAMILY HOLIDAYS IN NEPAL",
+        "duration": "12 DAYS",
+        "image": "/images/tours/tour-26.png"
+      },
+      {
+        "name": "UNESCO WORLD HERITAGE TOUR",
+        "duration": "8 DAYS",
+        "image": "/images/tours/tour-27.png"
       }
     ]
   }
