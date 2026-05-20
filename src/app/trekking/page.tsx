@@ -110,6 +110,13 @@ export default function TrekkingPage() {
     if (n.includes('nar-phu')) return 'trek-nar-phu';
     if (n.includes('seven passes')) return 'trek-seven-passes';
     if (n.includes('abc via ghorepani') || (n.includes('annapurna base camp') && n.includes('ghorepani'))) return 'trek-annapurna-abc';
+
+    // Everest Sub-packages
+    if (n.includes('amadablam')) return 'trek-amadablam';
+    if (n.includes('ebc') || n.includes('base camp and kala pathhar')) return 'trek-ebc-kala-pathar';
+    if (n.includes('pikey peak')) return 'trek-pikey-peak';
+    if (n.includes('three passes')) return 'trek-three-passes';
+    if (n.includes('phaplu')) return 'trek-phaplu-ebc';
     
     // Regions
     if (n === 'everest region' || n === 'everest') return 'everest-region';
@@ -144,10 +151,18 @@ export default function TrekkingPage() {
     }
     
     // If it's an Everest sub-package (not the main one), go back to Everest Region
+    const everestIds = ['trek-amadablam', 'trek-ebc-kala-pathar', 'trek-pikey-peak', 'trek-three-passes', 'trek-phaplu-ebc'];
+    if (selectedTour.id.startsWith('trek-everest-') || everestIds.includes(selectedTour.id)) {
+      return () => handleTourClick('Everest Region');
+    }
+    
+    // Fallback for any other trek- starting ID that isn't a main region
     if (selectedTour.id.startsWith('trek-') && 
         selectedTour.id !== 'trek-everest' && 
         selectedTour.id !== 'trek-annapurna') {
-      return () => handleTourClick('Everest Region');
+      // Try to determine region from ID
+      if (selectedTour.id.includes('annapurna')) return () => handleTourClick('Annapurna Region');
+      if (selectedTour.id.includes('everest')) return () => handleTourClick('Everest Region');
     }
     
     return undefined;

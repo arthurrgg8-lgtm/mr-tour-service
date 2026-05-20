@@ -475,6 +475,276 @@
     ]
   },
   {
+    "id": "trek-amadablam",
+    "title": "AMADABLAM BASE CAMP",
+    "image": "/images/trekking/everest/amadablam.png",
+    "tagline": "Trek to the Foot of the World's Most Beautiful Mountain",
+    "duration": "12 Days",
+    "startingPrice": "NPR 135,000 / $1,000",
+    "maxAltitude": "4,600m",
+    "difficulty": "Moderate",
+    "highlights": [
+      "Stunning views of Mt. Ama Dablam (6,812m)",
+      "Explore the spiritual heart of Khumbu at Tengboche Monastery",
+      "Authentic Sherpa culture in Khumjung and Pangboche villages",
+      "Pristine Himalayan landscapes and rhododendron forests"
+    ],
+    "description": "The Ama Dablam Base Camp trek is a visually stunning journey into the heart of the Everest region. Ama Dablam, often called the 'Matterhorn of the Himalayas', provides a constant, breathtaking backdrop. This trek offers a perfect mix of cultural immersion and high-altitude adventure without the extreme challenges of EBC.",
+    "itinerary": [
+      {
+        "day": "01",
+        "title": "Flight to Lukla & Trek to Phakding",
+        "desc": "Scenic mountain flight followed by an easy walk through Dudh Koshi valley."
+      },
+      {
+        "day": "02",
+        "title": "Trek to Namche Bazaar (3,440m)",
+        "desc": "Cross Hillary Suspension Bridge and make the steep ascent to the Sherpa capital."
+      },
+      {
+        "day": "03",
+        "title": "Acclimatization in Namche",
+        "desc": "Hike to Everest View Hotel for the first glimpse of Everest and Ama Dablam."
+      },
+      {
+        "day": "04",
+        "title": "Trek to Tengboche (3,860m)",
+        "desc": "Visit the largest monastery in the Khumbu region with iconic mountain views."
+      },
+      {
+        "day": "05",
+        "title": "Trek to Pangboche (3,930m)",
+        "desc": "A scenic walk higher into the valley to one of the oldest Sherpa settlements."
+      },
+      {
+        "day": "06",
+        "title": "Trek to Ama Dablam Base Camp (4,600m)",
+        "desc": "Reach the foot of the magnificent peak and enjoy a quiet, stunning landscape."
+      },
+      {
+        "day": "07",
+        "title": "Explore & Return to Pangboche",
+        "desc": "Enjoy the sunrise at base camp before descending back to the valley."
+      },
+      {
+        "day": "08-12",
+        "title": "Return via Namche & Lukla",
+        "desc": "Retrace steps through the Khumbu valley back to Lukla for the flight to Kathmandu."
+      }
+    ]
+  },
+  {
+    "id": "trek-ebc-kala-pathar",
+    "title": "EVEREST BASE CAMP AND KALA PATHHAR",
+    "image": "/images/trekking/everest/ebc-kala-pathar.png",
+    "tagline": "The Classic Journey to the Roof of the World",
+    "duration": "14 Days",
+    "startingPrice": "NPR 162,000 / $1,200",
+    "maxAltitude": "5,545m",
+    "difficulty": "Moderate-Hard",
+    "highlights": [
+      "Stand at the base of the world's highest peak - Mt. Everest (8,848m)",
+      "Sunrise from Kala Patthar (5,545m) with 360-degree Himalayan views",
+      "Witness the Khumbu Icefall and massive glaciers",
+      "Deep immersion in Sherpa culture and Buddhist traditions"
+    ],
+    "description": "The Everest Base Camp trek is the definitive Himalayan adventure. Following the footsteps of legendary mountaineers, you will journey through high-altitude Sherpa villages, ancient monasteries, and rugged mountain terrain to reach the foot of the world's highest peak.",
+    "itinerary": [
+      {
+        "day": "01",
+        "title": "Flight to Lukla & Trek to Phakding",
+        "desc": "Start the journey with a thrilling flight to the world's most famous mountain airport."
+      },
+      {
+        "day": "02-03",
+        "title": "Namche Bazaar & Acclimatization",
+        "desc": "Ascend to the Sherpa capital and spend a day adjusting to the altitude with local hikes."
+      },
+      {
+        "day": "04-05",
+        "title": "Tengboche to Dingboche",
+        "desc": "Visit the famous monastery and then trek through high alpine meadows to 4,410m."
+      },
+      {
+        "day": "06",
+        "title": "Acclimatization in Dingboche",
+        "desc": "Vital rest day with a hike to Nangkartshang Peak for stunning views of Lhotse and Makalu."
+      },
+      {
+        "day": "07-08",
+        "title": "Lobuche & Gorak Shep",
+        "desc": "Trek along the Khumbu Glacier to reach the last settlement before base camp."
+      },
+      {
+        "day": "09",
+        "title": "Everest Base Camp (5,364m)",
+        "desc": "The highlight of the trek. Walk onto the glacier and stand where history is made."
+      },
+      {
+        "day": "10",
+        "title": "Kala Patthar Sunrise (5,545m)",
+        "desc": "Early morning climb for the most iconic view of Everest's summit and Nuptse."
+      },
+      {
+        "day": "11-14",
+        "title": "Descent to Lukla & Flight",
+        "desc": "Rapid descent through Pheriche and Namche back to Lukla for the return flight."
+      }
+    ]
+  },
+  {
+    "id": "trek-pikey-peak",
+    "title": "EVEREST PIKEY PEAK",
+    "image": "/images/trekking/everest/pikey-peak.png",
+    "tagline": "The Best Panoramic Views of Everest Without the Crowds",
+    "duration": "8 Days",
+    "startingPrice": "NPR 94,500 / $700",
+    "maxAltitude": "4,065m",
+    "difficulty": "Easy-Moderate",
+    "highlights": [
+      "Edmund Hillary's favorite view of Everest",
+      "Stunning 360-degree panorama of 8000m peaks",
+      "Off-the-beaten-path experience through lower Solu region",
+      "Beautiful rhododendron forests and Sherpa heritage"
+    ],
+    "description": "Pikey Peak offers one of the most incredible panoramic views in all of Nepal. From its summit at 4,065m, you can see six of the world's 8,000m peaks, including Everest, Lhotse, and Kanchenjunga. This trek is ideal for those who want massive views with less physical strain.",
+    "itinerary": [
+      {
+        "day": "01",
+        "title": "Drive Kathmandu to Dhap",
+        "desc": "Scenic drive into the lower Solukhumbu region."
+      },
+      {
+        "day": "02",
+        "title": "Trek to Jhapre",
+        "desc": "Walk through rhododendron forests with views of the Himalayas."
+      },
+      {
+        "day": "03",
+        "title": "Trek to Pikey Peak Base",
+        "desc": "Ascend toward the ridge through quiet pastures and ancient Mani walls."
+      },
+      {
+        "day": "04",
+        "title": "Summit Pikey Peak & Trek to Loding",
+        "desc": "Sunrise at the summit (4,065m) for legendary views, then descend to Sherpa villages."
+      },
+      {
+        "day": "05",
+        "title": "Trek to Junbesi",
+        "desc": "Visit the 'cultural capital' of the Solu region and the ancient monastery."
+      },
+      {
+        "day": "06",
+        "title": "Trek to Phaplu",
+        "desc": "Final day of trekking through beautiful pine forests."
+      },
+      {
+        "day": "07-08",
+        "title": "Drive/Fly to Kathmandu",
+        "desc": "Return journey from Phaplu back to the capital."
+      }
+    ]
+  },
+  {
+    "id": "trek-three-passes",
+    "title": "EVEREST (3 HIGH PASSES)",
+    "image": "/images/trekking/everest/three-passes.png",
+    "tagline": "The Ultimate High-Altitude Everest Challenge",
+    "duration": "19 Days",
+    "startingPrice": "NPR 216,000 / $1,600",
+    "maxAltitude": "5,540m",
+    "difficulty": "Challenging",
+    "highlights": [
+      "Cross three 5,000m+ passes: Kongma La, Cho La, and Renjo La",
+      "Visit Everest Base Camp, Kala Patthar, and Gokyo Lakes",
+      "The most comprehensive and difficult trek in the Khumbu",
+      "Incredible turquoise waters of the Gokyo glacial lakes"
+    ],
+    "description": "The Three Passes trek is the ultimate Everest circuit. It connects the four main valleys of the Khumbu via high-altitude glaciated passes, offering unparalleled views and the most rigorous physical challenge in the region.",
+    "itinerary": [
+      {
+        "day": "01-08",
+        "title": "Lukla to Chhukung",
+        "desc": "Approach via Namche and Tengboche, preparing for the first pass."
+      },
+      {
+        "day": "09",
+        "title": "Cross Kongma La (5,535m)",
+        "desc": "The first and highest pass, leading into the Khumbu Glacier valley."
+      },
+      {
+        "day": "10-11",
+        "title": "EBC & Gorak Shep",
+        "desc": "Visit Base Camp and Kala Patthar before heading west."
+      },
+      {
+        "day": "12",
+        "title": "Cross Cho La (5,420m)",
+        "desc": "A challenging glaciated pass connecting Lobuche with Gokyo."
+      },
+      {
+        "day": "13-14",
+        "title": "Gokyo Lakes & Gokyo Ri",
+        "desc": "Explore the sacred lakes and climb Gokyo Ri for views of four 8,000m peaks."
+      },
+      {
+        "day": "15",
+        "title": "Cross Renjo La (5,360m)",
+        "desc": "The final pass offering the best view of Everest over the Gokyo lakes."
+      },
+      {
+        "day": "16-19",
+        "title": "Return via Thame & Lukla",
+        "desc": "Descend through the remote Bhote Koshi valley back to Lukla."
+      }
+    ]
+  },
+  {
+    "id": "trek-phaplu-ebc",
+    "title": "TREK TO PHAPLU EVEREST BASE CAMP",
+    "image": "/images/trekking/everest/phaplu-ebc.png",
+    "tagline": "The Traditional Footsteps of Pioneers",
+    "duration": "20 Days",
+    "startingPrice": "NPR 189,000 / $1,400",
+    "maxAltitude": "5,364m",
+    "difficulty": "Strenuous",
+    "highlights": [
+      "Follow the original trail used by Tenzing and Hillary",
+      "Avoid the Lukla flight and experience the lower Solu region",
+      "Slow, natural acclimatization through diverse landscapes",
+      "Visit historic monasteries and remote Sherpa villages"
+    ],
+    "description": "Before the Lukla airport was built, every Everest expedition started from the lower hills. This trek follows that traditional route, offering a deeper cultural experience and better acclimatization as you walk from the lush lower hills into the high Himalayas.",
+    "itinerary": [
+      {
+        "day": "01-02",
+        "title": "Drive to Phaplu",
+        "desc": "Travel from Kathmandu into the heart of Solukhumbu."
+      },
+      {
+        "day": "03-07",
+        "title": "Solu to Khumbu",
+        "desc": "Trek through Ringmo, Nunthala, and Bupsa, crossing the Lamjura La pass."
+      },
+      {
+        "day": "08",
+        "title": "Join the Main Trail",
+        "desc": "Reach Surke/Chauri Kharkha and join the classic EBC trail."
+      },
+      {
+        "day": "09-16",
+        "title": "Classic EBC Route",
+        "desc": "Follow the main trail to Base Camp and Kala Patthar."
+      },
+      {
+        "day": "17-20",
+        "title": "Return via Lukla",
+        "desc": "Fly back from Lukla to Kathmandu after a legendary journey."
+      }
+    ]
+  },
+  {
     "id": "trek-annapurna",
     "title": "Trek to Annapurna",
     "image": "/images/trekking/annapurna.jpeg",
