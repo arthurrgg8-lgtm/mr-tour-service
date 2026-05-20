@@ -203,10 +203,11 @@ export default function Navbar() {
           
           {/* Mobile Menu Toggle */}
           <button 
-            className="md:hidden p-2 text-slate-600 hover:text-primary transition-colors"
+            className="md:hidden p-2 text-slate-600 hover:text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary/20 rounded-lg"
             onClick={() => setIsOpen(!isOpen)}
             aria-expanded={isOpen}
-            aria-label={isOpen ? "Close menu" : "Open menu"}
+            aria-controls="mobile-menu"
+            aria-label={isOpen ? "Close main menu" : "Open main menu"}
           >
             {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
@@ -217,13 +218,13 @@ export default function Navbar() {
       <AnimatePresence>
         {isOpen && (
           <motion.div
+            id="mobile-menu"
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             className="md:hidden bg-white border-b overflow-hidden shadow-inner"
-            role="dialog"
-            aria-modal="true"
-            aria-label="Mobile navigation"
+            role="navigation"
+            aria-label="Mobile menu"
           >
             <div className="flex flex-col p-4 gap-4 max-h-[80vh] overflow-y-auto">
               <Link 

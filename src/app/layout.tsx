@@ -21,6 +21,9 @@ const lora = Lora({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://mrtourservice.com.np"),
+  alternates: {
+    canonical: "/",
+  },
   title: {
     default: `${business.name} | Premium Vehicle Rental & Tours in Nepal`,
     template: `%s | ${business.name}`
@@ -113,8 +116,11 @@ export default function RootLayout({
       "closes": "23:59"
     },
     "sameAs": [
-      `https://wa.me/${business.contact.whatsapp.replace('+', '')}`
-    ]
+      `https://wa.me/${business.contact.whatsapp.replace('+', '')}`,
+      business.socials.facebook !== "#" ? business.socials.facebook : undefined,
+      business.socials.instagram !== "#" ? business.socials.instagram : undefined,
+      business.socials.tiktok !== "#" ? business.socials.tiktok : undefined
+    ].filter(Boolean)
   }
 
   return (

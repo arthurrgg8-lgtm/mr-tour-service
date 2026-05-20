@@ -90,7 +90,8 @@ Destination/Requests: ${formData.destination}
 *Nationality:* ${formData.nationality}
 *Number of People:* ${formData.numPeople}${rentalDetails}
 *Destination/Requests:* ${formData.destination}
-----------------------------------`
+----------------------------------
+_Sent from MR Tour Service Website_`
 
     const waUrl = `https://wa.me/${business.contact.whatsapp.replace('+', '')}?text=${encodeURIComponent(text)}`
     window.open(waUrl, "_blank")
