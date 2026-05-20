@@ -16,7 +16,7 @@
       "Buddhist norms, meditation and yoga activities",
       "Mixture lifestyle of Aryan, Tibetan & Newari culture"
     ],
-    "description": "Chisapani-Nagarkot-Dhulikhel-Namo Buddha- Kathmandu trek is one of the easier trekking trail in Nepal designed to explore nature and culture of Nepal\u2019s countryside and the amazing mountain views. This trek is also known as Around Kathmandu Valley Trek. It is an excellent trek for those who wish to avoid a long, strenuous trek or have time only for a short and easy trek and fit for all age group and for all seasons.",
+    "description": "Chisapani-Nagarkot-Dhulikhel-Namo Buddha- Kathmandu trek is one of the easier trekking trail in Nepal designed to explore nature and culture of Nepal’s countryside and the amazing mountain views. This trek is also known as Around Kathmandu Valley Trek. It is an excellent trek for those who wish to avoid a long, strenuous trek or have time only for a short and easy trek and fit for all age group and for all seasons.",
     "itinerary": [
       {
         "day": "01",
@@ -25,22 +25,22 @@
       },
       {
         "day": "02",
-        "title": "Chisopani \u2013 Nagarkot (2175m)",
+        "title": "Chisopani – Nagarkot (2175m)",
         "desc": "Today we hike towards Nagarkot. It is the famous panoramic hillside from where we can get picturesque view of sunrise and sunset."
       },
       {
         "day": "03",
-        "title": "Nagarkot \u2013 Dhulikhel (1550m)",
+        "title": "Nagarkot – Dhulikhel (1550m)",
         "desc": "Our journey continues to Dhulikhel from Nagarkot. Dhulikhel is the trade hub for the surrounding places and ancient Nepal- Tibet trade point where we can see the Newari and Nepali lifestyle."
       },
       {
         "day": "04",
-        "title": "Dhulikhel \u2013 Namo Buddha (1810m)",
+        "title": "Dhulikhel – Namo Buddha (1810m)",
         "desc": "The trail proceeds through unspoiled villages. Eventually, after 5/6 hrs treks bring you to a Tibetan Buddhist village Namobuddha with beautiful chorten and monastery."
       },
       {
         "day": "05",
-        "title": "Namo Buddha \u2013 Panauti \u2013 Kathmandu",
+        "title": "Namo Buddha – Panauti – Kathmandu",
         "desc": "Trek to legendary village Panauti and explore ancient temples. After lunch drive to historical heritage site Bhaktapur and then back to Kathmandu."
       }
     ]
@@ -491,7 +491,7 @@
       "Mosaic of Gurung, Magar, and Manangi communities",
       "Gateway through Pokhara: The beautiful 'City of Lakes'"
     ],
-    "description": "The Annapurna region of western Nepal is a world-renowned trekking destination, protected under the Annapurna Conservation Area Project (ACAP). Dominated by peaks like Annapurna I-IV, Dhaulagiri, and Machhapuchhre, the region features extreme elevational diversity\u2014from sub-tropical lowland forests of oak and rhododendron to high alpine meadows and windswept desert plateaus bordering Tibet. Culturally, it is a treasure trove of Himalayan Buddhism and Hinduism, home to ancient monasteries and traditional festivals like Yartung.",
+    "description": "The Annapurna region of western Nepal is a world-renowned trekking destination, protected under the Annapurna Conservation Area Project (ACAP). Dominated by peaks like Annapurna I-IV, Dhaulagiri, and Machhapuchhre, the region features extreme elevational diversity—from sub-tropical lowland forests of oak and rhododendron to high alpine meadows and windswept desert plateaus bordering Tibet. Culturally, it is a treasure trove of Himalayan Buddhism and Hinduism, home to ancient monasteries and traditional festivals like Yartung.",
     "subPackages": [
       {
         "name": "ANNAPURNA CIRCUIT WITH TILICHO LAKE",
@@ -1287,7 +1287,7 @@
       "Explore the restricted Nar & Phu valleys and hidden Manang",
       "Complete bypass of road-heavy sections of the traditional circuit"
     ],
-    "description": " \u062a\u062c\u0631\u0628\u0647 raw and uncompromised form. Bypasses modern roads through hidden valleys and over ancient trails.",
+    "description": " تجربه raw and uncompromised form. Bypasses modern roads through hidden valleys and over ancient trails.",
     "itinerary": [
       {
         "day": "01-09",
@@ -1831,6 +1831,1063 @@
         "day": "01-22",
         "title": "West Frontier",
         "desc": "Exploration of Khaptad and Saipal Himal."
+      }
+    ]
+  },
+  {
+    "id": "tour-9",
+    "title": "KATHMANDU LOCAL TOUR",
+    "image": "/images/tours/tour-9.png",
+    "tagline": "Explore the historic and scenic landmarks of Kathmandu Valley",
+    "duration": "4 Days",
+    "startingPrice": "NPR 33,750 / $250",
+    "maxAltitude": "1,400m",
+    "difficulty": "Easy",
+    "highlights": [
+      "Full-day guided sightseeing around Kathmandu Valley UNESCO World Heritage Sites",
+      "Visit historic Bhaktapur Durbar Square and explore Newari culture",
+      "Scenic Chandragiri Cable Car Tour with panoramic Himalayan views"
+    ],
+    "description": "Explore the historic and cultural landmarks of Kathmandu Valley, including ancient UNESCO World Heritage Sites, the beautiful town of Bhaktapur, and the breathtaking views from Chandragiri Hills.",
+    "itinerary": [
+      {
+        "day": "01",
+        "title": "Arrival in Kathmandu",
+        "desc": "Welcome at airport and transfer to hotel. Enjoy a short walk around the tourist area and relax."
+      },
+      {
+        "day": "02",
+        "title": "Kathmandu Sightseeing",
+        "desc": "Enjoy a full day sightseeing tour covering Boudhanath Stupa, Swayambhunath Stupa, Pashupatinath Temple and Patan Durbar Square."
+      },
+      {
+        "day": "03",
+        "title": "Bhaktapur and Chandragiri Tour",
+        "desc": "Visit historic Bhaktapur Durbar Square. Later, drive to Thankot for Chandragiri Cable Car Tour and enjoy panoramic Himalayan and Kathmandu Valley views."
+      },
+      {
+        "day": "04",
+        "title": "Final Departure",
+        "desc": "Transfer to Tribhuvan International Airport for your final departure flight."
+      }
+    ]
+  },
+  {
+    "id": "tour-10",
+    "title": "KATHMANDU – POKHARA – CHITWAN TOUR",
+    "image": "/images/tours/tour-10.png",
+    "tagline": "A classic journey covering history, lakes, mountains, and wildlife",
+    "duration": "8 Days",
+    "startingPrice": "NPR 81,000 / $600",
+    "maxAltitude": "1,592m",
+    "difficulty": "Easy",
+    "highlights": [
+      "Guided sightseeing of historical heritage sites in Kathmandu",
+      "Scenic drive to lakeside city Pokhara and boating at Phewa Lake",
+      "Spectacular sunrise and Himalayan panorama from Sarangkot",
+      "Jungle safari, canoe ride, and Tharu cultural experience in Chitwan"
+    ],
+    "description": "A classic tour package combining the cultural heritage of Kathmandu, the majestic lakeside beauty and mountain views of Pokhara, and the wild jungle adventures of Chitwan National Park.",
+    "itinerary": [
+      {
+        "day": "01",
+        "title": "Arrival in Kathmandu",
+        "desc": "Upon arrival at the airport, welcome and transfer to the hotel. Evening free for relaxation."
+      },
+      {
+        "day": "02",
+        "title": "Kathmandu Sightseeing",
+        "desc": "Sightseeing around Kathmandu Valley covering Boudhanath, Swayambhunath, Pashupatinath and Patan Durbar Square."
+      },
+      {
+        "day": "03",
+        "title": "Drive to Pokhara (200 km / 6-7 hrs)",
+        "desc": "Drive to Pokhara through scenic rivers, hills, and countryside. Boating at Phewa Lake and visit Tal Barahi Temple."
+      },
+      {
+        "day": "04",
+        "title": "Pokhara Sightseeing",
+        "desc": "Early morning drive to Sarangkot for sunrise. Post-breakfast, visit Davis Falls, Gupteshwor Cave, Seti Gorge, and International Mountain Museum."
+      },
+      {
+        "day": "05",
+        "title": "Drive to Chitwan (160 km / 4-5 hrs)",
+        "desc": "Drive towards Chitwan National Park. Evening village walk and Tharu cultural dance show."
+      },
+      {
+        "day": "06",
+        "title": "Chitwan Jungle Activities",
+        "desc": "Enjoy jungle safari, canoe ride, bird watching, elephant breeding center visit, and Tharu cultural experience."
+      },
+      {
+        "day": "07",
+        "title": "Drive Back to Kathmandu",
+        "desc": "Drive back to Kathmandu. Free time for shopping and personal leisure in the evening."
+      },
+      {
+        "day": "08",
+        "title": "Final Departure",
+        "desc": "Transfer to Tribhuvan International Airport before 3 hours of your scheduled flight."
+      }
+    ]
+  },
+  {
+    "id": "tour-11",
+    "title": "KATHMANDU – POKHARA – CHITWAN – LUMBINI TOUR",
+    "image": "/images/tours/tour-11.png",
+    "tagline": "An extensive trip covering Nepal's top historical, natural and sacred sights",
+    "duration": "10 Days",
+    "startingPrice": "NPR 108,000 / $800",
+    "maxAltitude": "1,592m",
+    "difficulty": "Easy",
+    "highlights": [
+      "Explore historic temples and palaces of Kathmandu Valley",
+      "Boating on Phewa Lake and sunrise views from Sarangkot in Pokhara",
+      "Wildlife safaris and jungle activities in Chitwan National Park",
+      "Visit sacred Maya Devi Temple and international monasteries in Lumbini"
+    ],
+    "description": "An extensive 10-day tour covering Nepal's top destinations: cultural Kathmandu, scenic Pokhara, wild Chitwan, and the serene birthplace of Lord Buddha, Lumbini.",
+    "itinerary": [
+      {
+        "day": "01",
+        "title": "Arrival in Kathmandu",
+        "desc": "Welcome at Tribhuvan International Airport and transfer to hotel."
+      },
+      {
+        "day": "02",
+        "title": "Kathmandu Sightseeing",
+        "desc": "Guided sightseeing including Boudhanath, Swayambhunath, Pashupatinath and Bhaktapur Durbar Square."
+      },
+      {
+        "day": "03",
+        "title": "Drive to Pokhara",
+        "desc": "Drive to Pokhara. Boating on Phewa Lake and lakeside exploration in the evening."
+      },
+      {
+        "day": "04",
+        "title": "Pokhara Sightseeing",
+        "desc": "Sunrise tour to Sarangkot. Visit Davis Falls, Gupteshwor Mahadev Cave and Peace Pagoda."
+      },
+      {
+        "day": "05",
+        "title": "Drive to Chitwan",
+        "desc": "Drive towards Chitwan National Park. Evening cultural dance and village tour."
+      },
+      {
+        "day": "06",
+        "title": "Chitwan Jungle Activities",
+        "desc": "Full day jungle safari, canoe ride, bird watching, jeep safari, and Tharu cultural activities."
+      },
+      {
+        "day": "07",
+        "title": "Drive to Lumbini (150 km / 4-5 hrs)",
+        "desc": "Drive to Lumbini, the birthplace of Lord Buddha. Relax and explore surroundings."
+      },
+      {
+        "day": "08",
+        "title": "Lumbini Sightseeing",
+        "desc": "Visit Maya Devi Temple, Ashoka Pillar, Monastic Zone, and international monasteries."
+      },
+      {
+        "day": "09",
+        "title": "Fly/Drive Back to Kathmandu",
+        "desc": "Fly or drive back to Kathmandu. Evening free for shopping and leisure."
+      },
+      {
+        "day": "10",
+        "title": "Final Departure",
+        "desc": "Transfer to Tribhuvan International Airport before 3 hours of your flight."
+      }
+    ]
+  },
+  {
+    "id": "tour-12",
+    "title": "KATHMANDU – POKHARA – GHANDRUK – CHITWAN TOUR",
+    "image": "/images/tours/tour-12.png",
+    "tagline": "Sightseeing, a scenic village trek, and jungle wildlife safari combined",
+    "duration": "9 Days",
+    "startingPrice": "NPR 94,500 / $700",
+    "maxAltitude": "2,012m",
+    "difficulty": "Easy-Moderate",
+    "highlights": [
+      "Kathmandu Valley UNESCO World Heritage sightseeing",
+      "Scenic trek to the traditional Gurung village of Ghandruk",
+      "Annapurna mountain panorama and sunrise views",
+      "Chitwan National Park wildlife jungle safari"
+    ],
+    "description": "A perfect combination of sightseeing, a short scenic trek to the beautiful Gurung village of Ghandruk, and a jungle safari adventure in Chitwan.",
+    "itinerary": [
+      {
+        "day": "01",
+        "title": "Arrival in Kathmandu",
+        "desc": "Welcome at Tribhuvan International Airport and transfer to hotel. Enjoy a short walk and relax."
+      },
+      {
+        "day": "02",
+        "title": "Kathmandu Sightseeing",
+        "desc": "Full day sightseeing around Boudhanath Stupa, Swayambhunath Stupa, Pashupatinath Temple and Bhaktapur Durbar Square."
+      },
+      {
+        "day": "03",
+        "title": "Drive to Pokhara (200 km / 6-7 hrs)",
+        "desc": "Drive towards Pokhara with beautiful river views. Boating at Phewa Lake and visit Tal Barahi Temple."
+      },
+      {
+        "day": "04",
+        "title": "Drive to Nayapul and Trek to Ghandruk",
+        "desc": "Early morning drive to Nayapul and begin scenic trek to Ghandruk village passing beautiful forests and farmlands."
+      },
+      {
+        "day": "05",
+        "title": "Ghandruk Exploration and Return to Pokhara",
+        "desc": "Enjoy mountain sunrise views of Annapurna South, Hiunchuli and Machhapuchhre. Trek back to Nayapul and drive to Pokhara."
+      },
+      {
+        "day": "06",
+        "title": "Pokhara Sightseeing",
+        "desc": "Sunrise views from Sarangkot. Visit Davis Falls, Gupteshwor Cave, Seti Gorge, and Mountain Museum."
+      },
+      {
+        "day": "07",
+        "title": "Drive to Chitwan (160 km / 4-5 hrs)",
+        "desc": "Drive to Chitwan National Park. Evening Tharu cultural dance and village walk."
+      },
+      {
+        "day": "08",
+        "title": "Chitwan Jungle Activities & Drive back to Kathmandu",
+        "desc": "Jungle safari, canoe ride, and nature walk. Post-lunch, drive back to Kathmandu."
+      },
+      {
+        "day": "09",
+        "title": "Final Departure",
+        "desc": "Transfer to Tribhuvan International Airport before 3 hours of your flight."
+      }
+    ]
+  },
+  {
+    "id": "tour-13",
+    "title": "KATHMANDU – POKHARA – GHANDRUK TOUR",
+    "image": "/images/tours/tour-13.png",
+    "tagline": "Discover culture, beautiful lakes, and Gurung mountain heritage",
+    "duration": "7 Days",
+    "startingPrice": "NPR 74,250 / $550",
+    "maxAltitude": "2,012m",
+    "difficulty": "Easy-Moderate",
+    "highlights": [
+      "Sightseeing UNESCO Heritage sites in Kathmandu Valley",
+      "Trek to the traditional Himalayan village of Ghandruk",
+      "Sunrise and mountain views of the Annapurna range",
+      "Lake Phewa boating and Pokhara exploration"
+    ],
+    "description": "A condensed tour featuring cultural sightseeing in Kathmandu, lakeside beauty in Pokhara, and a short trek to the classic Gurung heritage village of Ghandruk.",
+    "itinerary": [
+      {
+        "day": "01",
+        "title": "Arrival in Kathmandu",
+        "desc": "Welcome at Tribhuvan International Airport and transfer to hotel. Short walk and relaxation."
+      },
+      {
+        "day": "02",
+        "title": "Kathmandu Sightseeing",
+        "desc": "Full day sightseeing around Boudhanath Stupa, Swayambhunath Stupa, Pashupatinath Temple and Bhaktapur Durbar Square."
+      },
+      {
+        "day": "03",
+        "title": "Drive to Pokhara (200 km / 6-7 hrs)",
+        "desc": "Drive to Pokhara. Check-in and evening boating at Phewa Lake with Tal Barahi Temple visit."
+      },
+      {
+        "day": "04",
+        "title": "Drive to Nayapul and Trek to Ghandruk",
+        "desc": "Drive to Nayapul and begin scenic trek to Ghandruk village. Explore Gurung village and Himalayan views."
+      },
+      {
+        "day": "05",
+        "title": "Trek Back to Nayapul and Drive to Pokhara",
+        "desc": "Sunrise views from Ghandruk. Trek back to Nayapul and drive back to Pokhara. Lakeside leisure."
+      },
+      {
+        "day": "06",
+        "title": "Pokhara Sightseeing and Fly/Drive Back to Kathmandu",
+        "desc": "Sunrise views from Sarangkot. Visit Davis Falls, Gupteshwor Cave, and Peace Pagoda. Fly/drive to Kathmandu."
+      },
+      {
+        "day": "07",
+        "title": "Final Departure",
+        "desc": "Transfer to Tribhuvan International Airport before 3 hours of your flight."
+      }
+    ]
+  },
+  {
+    "id": "tour-14",
+    "title": "KATHMANDU – NAGARKOT TOUR",
+    "image": "/images/tours/tour-14.png",
+    "tagline": "A historic cities tour and a panoramic mountain resort stay",
+    "duration": "5 Days",
+    "startingPrice": "NPR 47,250 / $350",
+    "maxAltitude": "2,175m",
+    "difficulty": "Easy",
+    "highlights": [
+      "Sightseeing major UNESCO Heritage sites in Kathmandu",
+      "Visit the historical and architectural Bhaktapur Durbar Square",
+      "Spectacular Himalayan sunrise and sunset views from Nagarkot"
+    ],
+    "description": "Enjoy the cultural wonders of Kathmandu Valley and a scenic retreat to Nagarkot, famous for its magnificent sunrise and panoramic Himalayan views.",
+    "itinerary": [
+      {
+        "day": "01",
+        "title": "Arrival in Kathmandu",
+        "desc": "Welcome at Tribhuvan International Airport and transfer to hotel."
+      },
+      {
+        "day": "02",
+        "title": "Kathmandu Sightseeing",
+        "desc": "Sightseeing covering Boudhanath Stupa, Pashupatinath Temple, Swayambhunath Stupa and Patan Durbar Square."
+      },
+      {
+        "day": "03",
+        "title": "Drive to Nagarkot via Bhaktapur",
+        "desc": "Visit historic Bhaktapur Durbar Square. Later, drive to Nagarkot hill station for sunset views."
+      },
+      {
+        "day": "04",
+        "title": "Nagarkot Sunrise and Return to Kathmandu",
+        "desc": "Early morning sunrise and Himalayan panorama views from Nagarkot. Drive back to Kathmandu. Shopping time."
+      },
+      {
+        "day": "05",
+        "title": "Final Departure",
+        "desc": "Transfer to airport before 3 hours of your departure flight."
+      }
+    ]
+  },
+  {
+    "id": "tour-15",
+    "title": "YOGA AND MEDITATION TOUR",
+    "image": "/images/tours/tour-15.png",
+    "tagline": "Rejuvenate your body and soul through guided yoga and meditations",
+    "duration": "9 Days",
+    "startingPrice": "NPR 114,750 / $850",
+    "maxAltitude": "1,650m",
+    "difficulty": "Easy-Moderate",
+    "highlights": [
+      "Yoga and meditation classes led by professional Gurus",
+      "Spiritual stays at the sacred Namobuddha Buddhist monastery",
+      "Sunrise yoga sessions at Sarangkot with Himalayan views",
+      "Scenic hiking and meditation in the peaceful village of Dhampus"
+    ],
+    "description": "Rejuvenate your mind, body, and soul with a dedicated yoga, meditation, and spiritual tour through Kapan Monastery, Namobuddha, Pokhara, and Dhampus.",
+    "itinerary": [
+      {
+        "day": "01",
+        "title": "Arrival",
+        "desc": "Airport arrival, welcome, and transfer to hotel."
+      },
+      {
+        "day": "02",
+        "title": "Yoga Class & Drive to Kapan, Boudha & Namoboudha",
+        "desc": "Morning Yoga session. Drive to Kapan Monastery, Boudhanath Stupa, and Namoboudha for meditation class."
+      },
+      {
+        "day": "03",
+        "title": "Yoga and Meditation in Namoboudha",
+        "desc": "Full day of Yoga, meditation, and spiritual classes by GURU in Namoboudha."
+      },
+      {
+        "day": "04",
+        "title": "Drive towards Pokhara",
+        "desc": "Morning Yoga class. Scenic drive to Pokhara with mountain views. Lunch near Trishuli River."
+      },
+      {
+        "day": "05",
+        "title": "Sarangkot Sunrise View and Yoga",
+        "desc": "Early morning drive to Sarangkot for sunrise yoga. Post-breakfast, visit Davis Falls, Gupteshwor Cave, and World Peace Stupa."
+      },
+      {
+        "day": "06",
+        "title": "Drive to Dhampus or Australian Camp",
+        "desc": "Yoga class in Pokhara, then drive to Dhampus. Enjoy snow-capped mountain views and green environment."
+      },
+      {
+        "day": "07",
+        "title": "Yoga and Meditation Class",
+        "desc": "Full day of Yoga and meditation in Dhampus coupled with short scenic hiking."
+      },
+      {
+        "day": "08",
+        "title": "Drive to Pokhara and Fly to Kathmandu",
+        "desc": "Breakfast, drive to Pokhara domestic airport and fly to Kathmandu. Transfer to hotel, shopping time."
+      },
+      {
+        "day": "09",
+        "title": "Departure",
+        "desc": "Transfer to Tribhuvan International Airport 3 hours prior to departure."
+      }
+    ]
+  },
+  {
+    "id": "tour-16",
+    "title": "NEPAL CULTURAL TOUR",
+    "image": "/images/tours/tour-16.png",
+    "tagline": "Discover ancient arts, Newari history, and mountain cultures",
+    "duration": "7 Days",
+    "startingPrice": "NPR 81,000 / $600",
+    "maxAltitude": "1,400m",
+    "difficulty": "Easy",
+    "highlights": [
+      "Cultural sightseeing around major UNESCO World Heritage Sites",
+      "Explore the traditional Newari settlement and old architecture of Bandipur",
+      "Experience lakeside culture, Gurung and Magar heritage in Pokhara"
+    ],
+    "description": "Immerse yourself in the rich culture, ancient history, traditional architectures, and local lifestyles of Kathmandu Valley, Bandipur, and Pokhara.",
+    "itinerary": [
+      {
+        "day": "01",
+        "title": "Arrival in Kathmandu",
+        "desc": "Arrival, welcome, and transfer to hotel. Walk around local market and experience Kathmandu's atmosphere."
+      },
+      {
+        "day": "02",
+        "title": "Kathmandu Cultural Sightseeing",
+        "desc": "Visit Kathmandu Durbar Square, Patan Durbar Square, Bhaktapur Durbar Square and Swayambhunath. Explore Newari culture."
+      },
+      {
+        "day": "03",
+        "title": "Drive to Bandipur",
+        "desc": "Drive to beautiful cultural town of Bandipur. Explore old architectures, temples, and local lifestyle."
+      },
+      {
+        "day": "04",
+        "title": "Drive to Pokhara",
+        "desc": "Drive to Pokhara. Boating at Phewa Lake, visit Tal Barahi Temple and walk around Lakeside."
+      },
+      {
+        "day": "05",
+        "title": "Pokhara Cultural and Village Tour",
+        "desc": "Visit International Mountain Museum and traditional Gurung/Magar villages. Enjoy cultural performances."
+      },
+      {
+        "day": "06",
+        "title": "Return to Kathmandu",
+        "desc": "Fly or drive back to Kathmandu. Shopping time. Farewell cultural dinner with traditional music."
+      },
+      {
+        "day": "07",
+        "title": "Final Departure",
+        "desc": "Transfer to airport before 3 hours of your flight for final departure."
+      }
+    ]
+  },
+  {
+    "id": "tour-17",
+    "title": "NEPAL SPIRITUAL TOUR",
+    "image": "/images/tours/tour-17.png",
+    "tagline": "Follow the path of peace across Hindus and Buddhist holylands",
+    "duration": "7 Days",
+    "startingPrice": "NPR 87,750 / $650",
+    "maxAltitude": "1,810m",
+    "difficulty": "Easy",
+    "highlights": [
+      "Experience Hindu and Buddhist traditions at sacred heritage sites",
+      "Spiritual reflection and overnight stay at Namobuddha pilgrimage site",
+      "Explore the birthplace of Lord Buddha at Maya Devi Temple in Lumbini"
+    ],
+    "description": "A deeply spiritual tour taking you to the most sacred Buddhist and Hindu pilgrimage sites in Nepal, including Pashupatinath, Boudhanath, Namobuddha, and Lumbini.",
+    "itinerary": [
+      {
+        "day": "01",
+        "title": "Arrival in Kathmandu",
+        "desc": "Welcome and transfer to hotel. Evening free to feel the spiritual atmosphere."
+      },
+      {
+        "day": "02",
+        "title": "Kathmandu Spiritual Sightseeing",
+        "desc": "Visit Pashupatinath, Boudhanath, Swayambhunath, and Budhanilkantha. Experience rituals and prayers."
+      },
+      {
+        "day": "03",
+        "title": "Drive to Namobuddha",
+        "desc": "Drive to Namobuddha, a sacred Buddhist site. Explore monastery, meditation areas. Stay overnight."
+      },
+      {
+        "day": "04",
+        "title": "Drive to Kathmandu via Bhaktapur",
+        "desc": "Drive back to Kathmandu via Bhaktapur Durbar Square. Explore ancient temples and cultural heritage."
+      },
+      {
+        "day": "05",
+        "title": "Fly/Drive to Lumbini",
+        "desc": "Travel to Lumbini, the birthplace of Lord Buddha. Relax and enjoy peaceful meditation surroundings."
+      },
+      {
+        "day": "06",
+        "title": "Lumbini Spiritual Exploration",
+        "desc": "Visit sacred Maya Devi Temple, Ashoka Pillar, monastic zones, and international temples."
+      },
+      {
+        "day": "07",
+        "title": "Return to Kathmandu and Final Departure",
+        "desc": "Fly/drive back to Kathmandu. Transfer to airport 3 hours prior to your flight."
+      }
+    ]
+  },
+  {
+    "id": "tour-18",
+    "title": "MUKTINATH SPIRITUAL TOUR",
+    "image": "/images/tours/tour-18.png",
+    "tagline": "Revered trans-Himalayan pilgrimage and holy-baths tour",
+    "duration": "7 Days",
+    "startingPrice": "NPR 94,500 / $700",
+    "maxAltitude": "3,800m",
+    "difficulty": "Moderate",
+    "highlights": [
+      "Pashupatinath Temple and Guheshwori Shakti Peetha Darshan",
+      "Adventurous Jeep drive to trans-Himalayan Jomsom and Muktinath",
+      "Take holy bath under 108 water spouts (Mukti Dhara) and 2 Mukti Kundas",
+      "Manakamana Goddess Temple visit via scenic Cable Car ride"
+    ],
+    "description": "A highly revered pilgrimage tour to the holy temple of Muktinath in the trans-Himalayan Jomsom region, visiting Pashupatinath and Manakamana along the way.",
+    "itinerary": [
+      {
+        "day": "01",
+        "title": "Kathmandu Arrival & Pashupatinath Darshan",
+        "desc": "Airport arrival, transfer to hotel. Evening visit to Guheshwori Shakti Peetha and Pashupatinath Temple."
+      },
+      {
+        "day": "02",
+        "title": "Drive Kathmandu to Pokhara",
+        "desc": "Drive to Pokhara by private jeep (206 km, 8-9 hrs). Enjoy scenic green hills, rivers and villages."
+      },
+      {
+        "day": "03",
+        "title": "Drive Pokhara to Muktinath & Stay at Jomsom",
+        "desc": "Drive to Muktinath (195 km, 8-9 hrs). Enjoy trans-Himalayan vistas. Perform rituals, take holy baths under 108 Dhara. Drive to Jomsom."
+      },
+      {
+        "day": "04",
+        "title": "Drive Jomsom to Pokhara",
+        "desc": "Drive back to Pokhara (7-8 hrs). Enroute visit Lete, Rupse Waterfall, hot spring, and Kushma suspension bridge."
+      },
+      {
+        "day": "05",
+        "title": "Pokhara Local Sightseeing",
+        "desc": "Explore Pokhara: Bindabasini Temple, Seti River, Devi's Fall, Gupteshwor Cave, and Pumdikot Mahadev."
+      },
+      {
+        "day": "06",
+        "title": "Manakamana Darshan and Drive back to Kathmandu",
+        "desc": "Drive back to Kathmandu. Enroute visit sacred Manakamana Temple via cable car. Transfer to hotel."
+      },
+      {
+        "day": "07",
+        "title": "Departure",
+        "desc": "Breakfast, hotel checkout, and transfer to airport 3 hours before flight."
+      }
+    ]
+  },
+  {
+    "id": "tour-19",
+    "title": "JEEP TOUR TO RARA (8 DAYS)",
+    "image": "/images/tours/tour-19.png",
+    "tagline": "Epic 4WD off-road journey to the blue gem of Mid-West Nepal",
+    "duration": "8 Days",
+    "startingPrice": "NPR 81,000 / $600",
+    "maxAltitude": "2,990m",
+    "difficulty": "Moderate-Hard",
+    "highlights": [
+      "Adventurous off-road driving through remote villages and valleys",
+      "Drive along the bank of the wild Karnali River",
+      "Enjoy spectacular views and boating in the crystal-clear Rara Lake"
+    ],
+    "description": "An adventurous 4WD off-road jeep tour through the remote landscapes of Mid-Western Nepal to the pristine and magnificent Rara Lake.",
+    "itinerary": [
+      {
+        "day": "01",
+        "title": "Arrival to Kathmandu",
+        "desc": "Welcome at airport and transfer to hotel."
+      },
+      {
+        "day": "02",
+        "title": "Drive to Surkhet (1400 M to 875 M)",
+        "desc": "Drive from Kathmandu to Surkhet passing Trishuli River, Terai plains, Chitwan and Butwal."
+      },
+      {
+        "day": "03",
+        "title": "Drive from Surkhet to Kalikot (2034 M)",
+        "desc": "Drive through dense subtropical forests and green valleys to reach Manma, Kalikot."
+      },
+      {
+        "day": "04",
+        "title": "Drive from Kalikot to Rara Lake (2990 M)",
+        "desc": "Drive along Karnali River to Talca Airport. Park jeep and walk 30 minutes to Rara Lake."
+      },
+      {
+        "day": "05",
+        "title": "Full-day Excursion in Rara Lake",
+        "desc": "Boating in Rara Lake, hiking to the ridge for panoramic views, and exploring national park."
+      },
+      {
+        "day": "06",
+        "title": "Drive back to Kalikot",
+        "desc": "Drive back to Manma, Kalikot. Evening village exploration."
+      },
+      {
+        "day": "07",
+        "title": "Drive back to Kathmandu",
+        "desc": "Drive back from Kalikot to Kathmandu through scenic highway."
+      },
+      {
+        "day": "08",
+        "title": "Departure",
+        "desc": "Transfer to airport for departure."
+      }
+    ]
+  },
+  {
+    "id": "tour-20",
+    "title": "BHOTEKOSHI RIVER RAFTING",
+    "image": "/images/tours/tour-20.png",
+    "tagline": "Adrenaline-fueled grade 4 white water river action",
+    "duration": "2 Days",
+    "startingPrice": "NPR 20,250 / $150",
+    "maxAltitude": "1,400m",
+    "difficulty": "Hard",
+    "highlights": [
+      "Thrilling grade 4 white water rapids and exciting flips",
+      "Rafting from Lomosangu through stunning canyon landscapes",
+      "Beachside camping and night stay beside the flowing river"
+    ],
+    "description": "Experience the thrill of white-water rafting in the wild Bhote Koshi River, one of the most exciting grade 4 rafting rivers in Nepal.",
+    "itinerary": [
+      {
+        "day": "01",
+        "title": "Kathmandu to Lomosangu",
+        "desc": "Drive to Lomosangu. Safety briefing, then raft through thrilling rapids. Camp and stay overnight at Barhabise."
+      },
+      {
+        "day": "02",
+        "title": "Full Day Rafting Adventure",
+        "desc": "Raft through great rapids for about 95 miles. Finish trip near Dolalghat and drive back to Kathmandu."
+      }
+    ]
+  },
+  {
+    "id": "tour-21",
+    "title": "TRISHULI RIVER RAFTING",
+    "image": "/images/tours/tour-21.png",
+    "tagline": "Scenic river canyon cruising and river beachside camping",
+    "duration": "2 Days",
+    "startingPrice": "NPR 13,500 / $100",
+    "maxAltitude": "800m",
+    "difficulty": "Easy-Moderate",
+    "highlights": [
+      "Enjoyable rapids and beautiful river-beach landscape",
+      "Overnight camping at Fishling village with music and campfires",
+      "Fascinating river action through forested canyons"
+    ],
+    "description": "A classic white-water rafting experience on the Trishuli River, perfect for beginners and families seeking a scenic river adventure.",
+    "itinerary": [
+      {
+        "day": "01",
+        "title": "Travel to Rafting Point Chaurandi",
+        "desc": "Drive to Chaurandi. Raft through canyons, rapids and reach Fishling village. Setup tents, dinner and campfire activities."
+      },
+      {
+        "day": "02",
+        "title": "Main Day Rafting",
+        "desc": "Raft 4-5 hours in water. Enjoy rapids, witness Marsyangdi-Trishuli confluence at Mugling, end at Gaighat, and return to Kathmandu."
+      }
+    ]
+  },
+  {
+    "id": "tour-22",
+    "title": "BUNGEE JUMPING",
+    "image": "/images/tours/tour-22.png",
+    "tagline": "The ultimate 160m free-fall over the wild Himalayan canyon",
+    "duration": "1 Day",
+    "startingPrice": "NPR 14,850 / $110",
+    "maxAltitude": "1,400m",
+    "difficulty": "Hard",
+    "highlights": [
+      "Ultimate 160m free fall over the raging Bhote Koshi River",
+      "Includes round-trip tourist bus transportation from Thamel",
+      "Full safety briefing and equipment check by professional crew"
+    ],
+    "description": "Take the ultimate leap of faith with a thrilling 160-meter bungee jump over the wild Bhote Koshi River canyon from a premium suspension bridge.",
+    "itinerary": [
+      {
+        "day": "01",
+        "title": "Bungee Jump Day Trip",
+        "desc": "Leave Thamel at 6:00 AM. Arrive at resort, weight check, safety briefing, and take the ultimate jump. Return to Kathmandu in the evening."
+      }
+    ]
+  },
+  {
+    "id": "tour-23",
+    "title": "BUDDHIST PILGRIMAGE TOUR",
+    "image": "/images/tours/tour-23.png",
+    "tagline": "Follow the path of enlightenment across Nepal's holiest Buddhist lands",
+    "duration": "8 Days",
+    "startingPrice": "NPR 94,500 / $700",
+    "maxAltitude": "1,810m",
+    "difficulty": "Easy",
+    "highlights": [
+      "Visit historic Swayambhunath Stupa (Monkey Temple) and Boudhanath Stupa",
+      "Explore Kopan Monastery and attend meditation courses",
+      "Visit Namobuddha monastery, where Buddha offered his body to a starving tigress",
+      "Journey to Lumbini (birthplace of Lord Buddha) and explore Tilaurakot palace"
+    ],
+    "description": "A spiritual journey trace the footsteps of Lord Buddha across the most holy Buddhist pilgrimage sites in Nepal, including Swayambhunath, Boudhanath, Kopan, Namobuddha, and Lumbini.",
+    "itinerary": [
+      {
+        "day": "01",
+        "title": "Arrival in Kathmandu",
+        "desc": "Warm greeting at airport and transfer to hotel in Thamel."
+      },
+      {
+        "day": "02",
+        "title": "Full Day Sightseeing of World Heritage Cultural Sites",
+        "desc": "Visit Swayambhunath Stupa, Boudhanath Stupa, and Kopan Monastery. Explore Buddhist art and architecture."
+      },
+      {
+        "day": "03",
+        "title": "Sightseeing Patan City and Namobuddha",
+        "desc": "Visit Patan City's Golden Temple, then drive to Namobuddha. Explore the monastery and stay overnight."
+      },
+      {
+        "day": "04",
+        "title": "Drive to Lumbini",
+        "desc": "Drive (or take a short flight) from Kathmandu to Bhairahawa/Lumbini. Transfer to hotel."
+      },
+      {
+        "day": "05",
+        "title": "Lumbini Sightseeing",
+        "desc": "Explore Lumbini: Maya Devi temple, Ashoka Pillar, sacred pond, and international monasteries."
+      },
+      {
+        "day": "06",
+        "title": "Day Tour to Tilaurakot",
+        "desc": "Visit Tilaurakot (where Buddha lived for 29 years). Visit Gotihawa brick stupa and Ashoka pillar. Return to Lumbini."
+      },
+      {
+        "day": "07",
+        "title": "Lumbini to Kathmandu & Pharping Monastery",
+        "desc": "Fly back to Kathmandu. Drive to Pharping Monastery and explore the sacred cave and village. Evening shopping in Thamel."
+      },
+      {
+        "day": "08",
+        "title": "Departure",
+        "desc": "Airport transfer according to flight schedule."
+      }
+    ]
+  },
+  {
+    "id": "tour-24",
+    "title": "ANNAPURNA CHITWAN HOLIDAYS",
+    "image": "/images/tours/tour-24.png",
+    "tagline": "Classic sightseeing, a 4-day Annapurna trek, and wild safaris combined",
+    "duration": "12 Days",
+    "startingPrice": "NPR 128,250 / $950",
+    "maxAltitude": "3,210m",
+    "difficulty": "Easy-Moderate",
+    "highlights": [
+      "Sunrise and mountain views of Annapurna, Dhaulagiri, and Fishtail from Poon Hill",
+      "Trek through beautiful Gurung villages like Ghandruk, Landruk and Dhampus",
+      "Jungle activities, jeep safari, and Tharu cultural experience in Chitwan"
+    ],
+    "description": "The ultimate 12-day vacation combining cultural sightseeing, a classic 4-day trek to Ghorepani Poon Hill, and a wildlife safari in Chitwan National Park.",
+    "itinerary": [
+      {
+        "day": "01",
+        "title": "Arrival in Kathmandu",
+        "desc": "Welcome at airport and transfer to hotel."
+      },
+      {
+        "day": "02",
+        "title": "Drive to Nagarkot & Bhaktapur Sightseeing",
+        "desc": "Drive to Nagarkot for panoramic Himalayan views. Visit historic Bhaktapur Durbar Square."
+      },
+      {
+        "day": "03",
+        "title": "Drive to Pokhara",
+        "desc": "Drive to Pokhara. Explore lakeside and enjoy Phewa lake boating."
+      },
+      {
+        "day": "04",
+        "title": "Drive to Nayapul and Trek to Tikhedhunga",
+        "desc": "Drive to Nayapul and begin scenic trek to Tikhedhunga passing Birethanti."
+      },
+      {
+        "day": "05",
+        "title": "Trek to Ghorepani",
+        "desc": "Trek to Ghorepani via Ulleri village. Enjoy spectacular mountain vistas."
+      },
+      {
+        "day": "06",
+        "title": "Trek to Tadapani",
+        "desc": "Sunrise hike to Poon Hill. Post-breakfast, trek through oak forests to Tadapani."
+      },
+      {
+        "day": "07",
+        "title": "Trek to Landruk",
+        "desc": "Trek down to Landruk village passing Annapurna conservation museum and Modi River."
+      },
+      {
+        "day": "08",
+        "title": "Trek to Dhampus and Drive Pokhara",
+        "desc": "Trek to Dhampus via Tolka. Drive to Pokhara."
+      },
+      {
+        "day": "09",
+        "title": "Drive Pokhara to Chitwan",
+        "desc": "Drive to Chitwan National Park. Evening Tharu cultural dance show."
+      },
+      {
+        "day": "10",
+        "title": "Chitwan Exploration Day",
+        "desc": "Jeep safari, jungle walk, and boating in Rapti River to see crocodiles and birds."
+      },
+      {
+        "day": "11",
+        "title": "Drive to Kathmandu",
+        "desc": "Drive back to Kathmandu. Evening free for shopping."
+      },
+      {
+        "day": "12",
+        "title": "Departure Day",
+        "desc": "Transfer to international airport for departure flight."
+      }
+    ]
+  },
+  {
+    "id": "tour-25",
+    "title": "UPPER MUSTANG TOUR",
+    "image": "/images/tours/tour-25.png",
+    "tagline": "Unveil the ancient forbidden walled city of Lo Manthang by 4WD",
+    "duration": "9 Days",
+    "startingPrice": "NPR 162,000 / $1,200",
+    "maxAltitude": "3,840m",
+    "difficulty": "Moderate",
+    "highlights": [
+      "Jeep drive along the deep Kali Gandaki gorge",
+      "Explore the walled city of Lo Manthang and the sky caves of Chhosar",
+      "Visit ancient monasteries like Namgyal Gompa and Jampa Gompa"
+    ],
+    "description": "An adventurous tour into the forbidden kingdom of Lo Manthang in Upper Mustang, exploring ancient sky caves, centuries-old Tibetan Buddhist monasteries, and spectacular dry deserts.",
+    "itinerary": [
+      {
+        "day": "01",
+        "title": "Drive Kathmandu to Pokhara",
+        "desc": "Drive to Pokhara with beautiful countryside views."
+      },
+      {
+        "day": "02",
+        "title": "Drive to Tatopani",
+        "desc": "Drive west to Tatopani passing Beni. Experience natural hot springs."
+      },
+      {
+        "day": "03",
+        "title": "Drive to Kagbeni & Muktinath",
+        "desc": "Drive to Kagbeni village and Muktinath Temple. Stay overnight at Kagbeni."
+      },
+      {
+        "day": "04",
+        "title": "Drive to Ghami Village",
+        "desc": "Permit check at Kagbeni, cross Kali Gandaki, and drive to Ghami via Samar and Syangboche."
+      },
+      {
+        "day": "05",
+        "title": "Drive to Lo-Mangthang",
+        "desc": "Visit Mustang Ghar Gompa, Charang monastery, and enter the walled city of Lo Manthang."
+      },
+      {
+        "day": "06",
+        "title": "Exploration in Lo-Manthang and Chhosar",
+        "desc": "Explore Namgyal Gompa, the 3,000-year-old sky caves of Chhoser. Return to Lo Manthang."
+      },
+      {
+        "day": "07",
+        "title": "Drive back to Jomsom",
+        "desc": "Drive back to Jomsom. Evening free to explore local Jomsom markets."
+      },
+      {
+        "day": "08",
+        "title": "Drive to Pokhara",
+        "desc": "Drive back to Pokhara. Afternoon local Pokhara sightseeing."
+      },
+      {
+        "day": "09",
+        "title": "Drive to Kathmandu",
+        "desc": "Drive back to Kathmandu (5 hours). Enjoy farewell dinner."
+      }
+    ]
+  },
+  {
+    "id": "tour-26",
+    "title": "FAMILY HOLIDAYS IN NEPAL",
+    "image": "/images/tours/tour-26.png",
+    "tagline": "Scenic, comfortable, and luxury family leisure trip with zero trekking",
+    "duration": "12 Days",
+    "startingPrice": "NPR 128,250 / $950",
+    "maxAltitude": "2,175m",
+    "difficulty": "Easy",
+    "highlights": [
+      "Perfect leisure vacation for families with kids and elderly members",
+      "Sunrise and mountain panoramas from Nagarkot and Sarangkot",
+      "Boating on Lake Phewa, jungle activities in Chitwan, and Newari culture in Bandipur"
+    ],
+    "description": "A premium, leisure family vacation across Kathmandu, Nagarkot, Pokhara, Chitwan, and the historic hilltop town of Bandipur, with absolutely no strenuous trekking required.",
+    "itinerary": [
+      {
+        "day": "01",
+        "title": "Arrival in Kathmandu",
+        "desc": "Arrival, welcome, and transfer to hotel."
+      },
+      {
+        "day": "02",
+        "title": "Kathmandu Sightseeing",
+        "desc": "Visit UNESCO sites: Boudhanath Stupa, Pashupatinath Temple, Swayambhunath and Bhaktapur."
+      },
+      {
+        "day": "03",
+        "title": "Chandragiri Hill Cable Car Tour",
+        "desc": "Cable car tour at Chandragiri Hills. Breathtaking Himalayan views."
+      },
+      {
+        "day": "04",
+        "title": "Drive to Pokhara",
+        "desc": "Drive to Pokhara. Boating on Phewa Lake and Lakeside walk."
+      },
+      {
+        "day": "05",
+        "title": "Pokhara Sightseeing",
+        "desc": "Sarangkot sunrise. Visit Davis Falls, Gupteshwor Cave, and International Mountain Museum."
+      },
+      {
+        "day": "06",
+        "title": "Leisure and Adventure in Pokhara",
+        "desc": "Free day. Optional adventure activities: paragliding, cycling, or lakeside relaxation."
+      },
+      {
+        "day": "07",
+        "title": "Drive to Chitwan",
+        "desc": "Drive to Chitwan National Park. Evening village walk and Tharu cultural show."
+      },
+      {
+        "day": "08",
+        "title": "Chitwan Jungle Activities",
+        "desc": "Jeep safari, canoe ride, bird watching, elephant breeding center visit, and nature walk."
+      },
+      {
+        "day": "09",
+        "title": "Drive to Bandipur",
+        "desc": "Drive to the historic hilltop Newari town of Bandipur. Sunset views."
+      },
+      {
+        "day": "10",
+        "title": "Drive Back to Kathmandu",
+        "desc": "Drive back to Kathmandu. Free time for shopping and leisure."
+      },
+      {
+        "day": "11",
+        "title": "Free Day in Kathmandu",
+        "desc": "Leisure day. Explore markets in Thamel, shopping, and relaxation with family."
+      },
+      {
+        "day": "12",
+        "title": "Final Departure",
+        "desc": "Transfer to international airport for departure flight."
+      }
+    ]
+  },
+  {
+    "id": "tour-27",
+    "title": "UNESCO WORLD HERITAGE TOUR",
+    "image": "/images/tours/tour-27.png",
+    "tagline": "Uncover Nepal's iconic UNESCO designated historical & natural treasures",
+    "duration": "8 Days",
+    "startingPrice": "NPR 87,750 / $650",
+    "maxAltitude": "1,400m",
+    "difficulty": "Easy",
+    "highlights": [
+      "Guided tours of seven historical UNESCO sites in Kathmandu Valley",
+      "Visit Chitwan National Park (UNESCO Natural World Heritage Site)",
+      "Journey to sacred Lumbini (UNESCO Cultural World Heritage Site)"
+    ],
+    "description": "Explore Nepal's rich historical, cultural, and natural heritage sites recognized by UNESCO, including major temples in Kathmandu, Chitwan National Park, and sacred Lumbini.",
+    "itinerary": [
+      {
+        "day": "01",
+        "title": "Arrival in Kathmandu",
+        "desc": "Arrival, welcome, and transfer to hotel."
+      },
+      {
+        "day": "02",
+        "title": "Kathmandu UNESCO Heritage Sightseeing",
+        "desc": "Visit Kathmandu Durbar Square, Swayambhunath, Pashupatinath, and Boudhanath."
+      },
+      {
+        "day": "03",
+        "title": "Patan and Bhaktapur Heritage Tour",
+        "desc": "Visit Patan Durbar Square and Bhaktapur Durbar Square. Explore ancient art and Newari architecture."
+      },
+      {
+        "day": "04",
+        "title": "Drive to Chitwan National Park",
+        "desc": "Drive to Chitwan. Evening Tharu cultural show and village walk."
+      },
+      {
+        "day": "05",
+        "title": "Chitwan Jungle Activities",
+        "desc": "Full day jungle safari, canoe ride, bird watching, and nature walk inside Chitwan."
+      },
+      {
+        "day": "06",
+        "title": "Drive/Fly to Lumbini",
+        "desc": "Drive or fly to Lumbini. Evening free for peaceful exploration."
+      },
+      {
+        "day": "07",
+        "title": "Lumbini Sightseeing and Return to Kathmandu",
+        "desc": "Visit sacred Maya Devi Temple, Ashoka Pillar, and monasteries. Fly or drive back to Kathmandu."
+      },
+      {
+        "day": "08",
+        "title": "Final Departure",
+        "desc": "Transfer to airport before 3 hours of your flight."
+      }
+    ]
+  },
+  {
+    "id": "tour-28",
+    "title": "POKHARA TOUR",
+    "image": "/images/tours/tour-28.png",
+    "tagline": "Discover the scenic lake city and close up Himalayan panoramas",
+    "duration": "3 Days",
+    "startingPrice": "NPR 33,750 / $250",
+    "maxAltitude": "1,592m",
+    "difficulty": "Easy",
+    "highlights": [
+      "Sunrise and panoramic view of Annapurna and Machhapuchhre from Sarangkot",
+      "Scenic boating on Phewa Lake and visit to Tal Barahi Temple",
+      "Visit local Pokhara attractions: Davis Falls, Gupteshwor Cave, and World Peace Pagoda"
+    ],
+    "description": "A quick, beautiful getaway to Lakeside Pokhara, featuring spectacular Himalayan sunrises from Sarangkot, boating on Phewa Lake, and local city tours.",
+    "itinerary": [
+      {
+        "day": "01",
+        "title": "Arrival in Pokhara and Lakeside Exploration",
+        "desc": "Arrive in Pokhara by flight or drive. Boating on Phewa Lake, visit Tal Barahi temple, and lakeside walk."
+      },
+      {
+        "day": "02",
+        "title": "Pokhara Sightseeing",
+        "desc": "Sarangkot sunrise. Visit Davis Falls, Gupteshwor Cave, Seti Gorge, Mountain Museum, and Peace Pagoda."
+      },
+      {
+        "day": "03",
+        "title": "Departure",
+        "desc": "Transfer to Pokhara Airport or Tourist Bus Park for your onward journey."
       }
     ]
   }

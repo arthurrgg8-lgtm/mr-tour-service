@@ -75,14 +75,19 @@ export default function ToursPage() {
   const getTourId = (name: string) => {
     const n = name.toLowerCase();
     if (n.includes('countryside')) return 'countryside-hike';
-    if (n.includes('family')) return 'family-holiday';
-    if (n.includes('lumbini')) return 'lumbini-tour';
-    if (n.includes('chitwan')) return 'chitwan-safari';
+    if (n.includes('family') && !n.includes('holidays in nepal')) return 'family-holiday';
+    if (n.includes('lumbini') && !n.includes('chitwan') && !n.includes('pilgrimage') && !n.includes('spiritual')) return 'lumbini-tour';
+    if (n.includes('chitwan') && !n.includes('lumbini') && !n.includes('ghandruk') && !n.includes('holidays')) return 'chitwan-safari';
     if (n.includes('gorkha')) return 'gorkha-bandipur';
     if (n.includes('badimalika')) return 'badimalika-tour';
-    if (n.includes('rara')) return 'rara-jeep';
+    if (n.includes('rara') && !n.includes('8 days')) return 'rara-jeep';
     if (n.includes('city tour')) return 'kathmandu-city';
-    return n.split(' ')[0];
+    
+    // Dynamic slug fallback for new tours
+    return n
+      .replace(/[^a-z0-9\s-]/g, '') // remove special chars
+      .trim()
+      .replace(/[\s-]+/g, '-');    // replace spaces/dashes with a single dash
   }
 
   if (!tourService) return null

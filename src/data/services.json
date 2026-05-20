@@ -207,6 +207,106 @@
         "name": "KATHMANDU CITY TOUR",
         "duration": "1 DAY",
         "image": "/images/tours/tour-8.png"
+      },
+      {
+        "name": "KATHMANDU LOCAL TOUR",
+        "duration": "4 DAYS",
+        "image": "/images/tours/tour-9.png"
+      },
+      {
+        "name": "KATHMANDU – POKHARA – CHITWAN TOUR",
+        "duration": "8 DAYS",
+        "image": "/images/tours/tour-10.png"
+      },
+      {
+        "name": "KATHMANDU – POKHARA – CHITWAN – LUMBINI TOUR",
+        "duration": "10 DAYS",
+        "image": "/images/tours/tour-11.png"
+      },
+      {
+        "name": "KATHMANDU – POKHARA – GHANDRUK – CHITWAN TOUR",
+        "duration": "9 DAYS",
+        "image": "/images/tours/tour-12.png"
+      },
+      {
+        "name": "KATHMANDU – POKHARA – GHANDRUK TOUR",
+        "duration": "7 DAYS",
+        "image": "/images/tours/tour-13.png"
+      },
+      {
+        "name": "KATHMANDU – NAGARKOT TOUR",
+        "duration": "5 DAYS",
+        "image": "/images/tours/tour-14.png"
+      },
+      {
+        "name": "YOGA AND MEDITATION TOUR",
+        "duration": "9 DAYS",
+        "image": "/images/tours/tour-15.png"
+      },
+      {
+        "name": "NEPAL CULTURAL TOUR",
+        "duration": "7 DAYS",
+        "image": "/images/tours/tour-16.png"
+      },
+      {
+        "name": "NEPAL SPIRITUAL TOUR",
+        "duration": "7 DAYS",
+        "image": "/images/tours/tour-17.png"
+      },
+      {
+        "name": "MUKTINATH SPIRITUAL TOUR",
+        "duration": "7 DAYS",
+        "image": "/images/tours/tour-18.png"
+      },
+      {
+        "name": "JEEP TOUR TO RARA (8 DAYS)",
+        "duration": "8 DAYS",
+        "image": "/images/tours/tour-19.png"
+      },
+      {
+        "name": "BHOTEKOSHI RIVER RAFTING",
+        "duration": "2 DAYS",
+        "image": "/images/tours/tour-20.png"
+      },
+      {
+        "name": "TRISHULI RIVER RAFTING",
+        "duration": "2 DAYS",
+        "image": "/images/tours/tour-21.png"
+      },
+      {
+        "name": "BUNGEE JUMPING",
+        "duration": "1 DAY",
+        "image": "/images/tours/tour-22.png"
+      },
+      {
+        "name": "BUDDHIST PILGRIMAGE TOUR",
+        "duration": "8 DAYS",
+        "image": "/images/tours/tour-23.png"
+      },
+      {
+        "name": "ANNAPURNA CHITWAN HOLIDAYS",
+        "duration": "12 DAYS",
+        "image": "/images/tours/tour-24.png"
+      },
+      {
+        "name": "UPPER MUSTANG TOUR",
+        "duration": "9 DAYS",
+        "image": "/images/tours/tour-25.png"
+      },
+      {
+        "name": "FAMILY HOLIDAYS IN NEPAL",
+        "duration": "12 DAYS",
+        "image": "/images/tours/tour-26.png"
+      },
+      {
+        "name": "UNESCO WORLD HERITAGE TOUR",
+        "duration": "8 DAYS",
+        "image": "/images/tours/tour-27.png"
+      },
+      {
+        "name": "POKHARA TOUR",
+        "duration": "3 DAYS",
+        "image": "/images/tours/tour-28.png"
       }
     ]
   },
