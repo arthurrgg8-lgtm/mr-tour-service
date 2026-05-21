@@ -129,17 +129,23 @@
         "image": "/images/tours/tour-23.png"
       },
       {
-        "name": "ANNAPURNA CHITWAN HOLIDAYS",
+        "name": "FAMILY HOLIDAY",
         "duration": "12 DAYS",
-        "image": "/images/tours/tour-24.png"
+        "image": "/images/tours/tour-2.png"
       },
+      {
+        "name": "POKHARA TOUR",
+        "duration": "3 DAYS",
+        "image": "/images/tours/pokhara-3d.png"
+      },
+      ...
       {
         "name": "UPPER MUSTANG TOUR",
         "duration": "9 DAYS",
         "image": "/images/tours/tour-25.png"
       },
       {
-        "name": "FAMILY HOLIDAYS IN NEPAL",
+        "name": "TOUR WITH KIDS",
         "duration": "12 DAYS",
         "image": "/images/tours/tour-26.png"
       },
@@ -148,7 +154,6 @@
         "duration": "8 DAYS",
         "image": "/images/tours/tour-27.png"
       }
-    ]
   },
   {
     "id": "trekking",

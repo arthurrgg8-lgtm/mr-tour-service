@@ -34,6 +34,7 @@ export default function Navbar() {
   const tourServices = [
     { name: "KTM COUNTRYSIDE HIKE", href: "/tours#countryside-hike" },
     { name: "FAMILY HOLIDAY", href: "/tours#family-holiday" },
+    { name: "POKHARA TOUR (3 DAYS)", href: "/tours#tour-pokhara-3d" },
     { name: "LUMBINI TOUR", href: "/tours#lumbini-tour" },
     { name: "CHITWAN JUNGLE SAFARI", href: "/tours#chitwan-safari" },
     { name: "GORKHA-BANDIPUR-PKR", href: "/tours#gorkha-bandipur" },

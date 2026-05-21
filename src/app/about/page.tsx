@@ -10,6 +10,13 @@ export const metadata: Metadata = {
   description: `Learn about the journey and mission of ${business.name}. Discover our 100% self-owned fleet, meet our leadership team including founder Bishnu Bahadur Karki, and see our government certifications.`,
 }
 
+interface TeamMember {
+  name: string;
+  role: string;
+  image: string;
+  website?: string;
+}
+
 export default function AboutPage() {
   return (
     <div className="pt-20 pb-24">
@@ -113,7 +120,7 @@ export default function AboutPage() {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
-            {team.map((member: any, idx) => (
+            {team.map((member: TeamMember, idx) => (
               <div key={idx} className="group flex flex-col items-center text-center">
                 <div className="relative">
                   {member.website ? (

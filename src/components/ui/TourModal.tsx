@@ -36,6 +36,8 @@ interface TourDetail {
   recommendedTransport?: string[];
   itinerary?: ItineraryItem[];
   subPackages?: SubPackage[];
+  inclusions?: string[];
+  exclusions?: string[];
 }
 
 interface TourModalProps {
@@ -58,6 +60,51 @@ export default function TourModal({ tour, onClose, onSelectSubPackage, onBack }:
 
   const difficultyScore = tour ? getDifficultyScore(tour.difficulty) : 0;
   const isTrek = tour ? (tour.id.startsWith('trek-') || tour.title.toLowerCase().includes('trek')) : false;
+
+  const handleGmailInquiry = () => {
+    if (!tour) return;
+    
+    const subject = `Inquiry for ${tour.title} - MR Tour Service`
+    const body = `Hello MR Tour Service Team,
+
+I am interested in booking the "${tour.title}" package (${tour.duration}).
+
+Please provide more details regarding:
+- Customizing the itinerary
+- Final pricing for my group
+- Availability for my preferred dates
+
+Looking forward to hearing from you.
+
+Kind regards,
+[My Name]
+[My Phone Number]`
+
+    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${business.contact.email}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
+    window.open(gmailUrl, "_blank")
+  }
+
+  // Standard Inclusions/Exclusions from PDF
+  const standardInclusions = [
+    "Airport Arrival & Departure transfer",
+    "All Ground transfer vehicle",
+    "All sightseeing entrance fees",
+    "Hotel with 3 meals plan",
+    "Full board Packages",
+    "English Speaking guide",
+    "Insurance and other expenses of guide and driver"
+  ]
+
+  const standardExclusions = [
+    "Nepal visa",
+    "All extra foods and drinks during tour",
+    "Travel insurance",
+    "Personal expenses",
+    "International tickets"
+  ]
+
+  const inclusions = tour?.inclusions || standardInclusions;
+  const exclusions = tour?.exclusions || standardExclusions;
 
   return (
     <AnimatePresence>
@@ -251,6 +298,34 @@ export default function TourModal({ tour, onClose, onSelectSubPackage, onBack }:
                         </div>
                       </div>
                     ) : null}
+
+                    {/* Inclusions & Exclusions */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-8 border-t border-slate-100">
+                      <div className="space-y-4">
+                        <h4 className="text-lg font-bold text-green-600 flex items-center gap-2">
+                          <CheckCircle2 className="h-5 w-5" /> Inclusions
+                        </h4>
+                        <ul className="space-y-2">
+                          {inclusions.map((item, i) => (
+                            <li key={i} className="text-sm text-slate-600 flex gap-2">
+                              <span className="text-green-500 font-bold">•</span> {item}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                      <div className="space-y-4">
+                        <h4 className="text-lg font-bold text-red-600 flex items-center gap-2">
+                          <X className="h-5 w-5" /> Exclusions
+                        </h4>
+                        <ul className="space-y-2">
+                          {exclusions.map((item, i) => (
+                            <li key={i} className="text-sm text-slate-600 flex gap-2">
+                              <span className="text-red-500 font-bold">•</span> {item}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
                  </div>
 
                  {/* Right Side: Essentials & Contact (5/12) */}
@@ -369,9 +444,16 @@ export default function TourModal({ tour, onClose, onSelectSubPackage, onBack }:
                        <h3 className="text-2xl font-bold">Ready to Explore?</h3>
                        <p className="text-white/80 font-medium">Get a personalized itinerary and custom quote within 24 hours.</p>
                        <div className="flex flex-col gap-3">
+                          <button 
+                            onClick={handleGmailInquiry}
+                            className="flex items-center justify-center gap-3 h-14 rounded-2xl bg-white text-primary font-bold hover:bg-slate-100 transition-all shadow-lg w-full"
+                          >
+                            <Mail className="h-6 w-6" /> Gmail Inquiry
+                          </button>
                           <a 
-                            href={`https://wa.me/${business.contact.whatsapp}`}
-                            className="flex items-center justify-center gap-3 h-14 rounded-2xl bg-white text-primary font-bold hover:bg-slate-100 transition-all shadow-lg"
+                            href={`https://wa.me/${business.contact.whatsapp.replace('+', '')}`}
+                            target="_blank"
+                            className="flex items-center justify-center gap-3 h-14 rounded-2xl bg-[#25D366] text-white font-bold hover:bg-[#20ba5a] transition-all shadow-lg"
                           >
                             <MessageCircle className="h-6 w-6" /> WhatsApp Inquiry
                           </a>

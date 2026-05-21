@@ -3303,7 +3303,7 @@
   },
   {
     "id": "tour-26",
-    "title": "FAMILY HOLIDAYS IN NEPAL",
+    "title": "TOUR WITH KIDS",
     "image": "/images/tours/tour-26.png",
     "tagline": "Scenic, comfortable, and luxury family leisure trip with zero trekking",
     "duration": "12 Days",
@@ -3434,6 +3434,40 @@
         "day": "08",
         "title": "Final Departure",
         "desc": "Transfer to airport before 3 hours of your flight."
+      }
+    ]
+  },
+  {
+    "id": "tour-pokhara-3d",
+    "title": "POKHARA TOUR",
+    "image": "/images/tours/pokhara-3d.png",
+    "tagline": "Discover the magical lakeside city and mountain panoramas",
+    "duration": "3 Days",
+    "startingPrice": "NPR 47,250 / $350",
+    "maxAltitude": "1,592m",
+    "difficulty": "Easy",
+    "highlights": [
+      "Peaceful boating tour at Phewa Lake and Tal Barahi Temple",
+      "Breathtaking sunrise and Himalayan views from Sarangkot",
+      "Explore Davis Falls, Gupteshwor Cave, and Seti Gorge",
+      "Visit World Peace Pagoda for panoramic city views"
+    ],
+    "description": "Pokhara is a world-famous lakeside city gifted by natural attractions. This 3-day tour covers the absolute best of Pokhara, from the tranquil waters of Phewa Lake to the spectacular sunrise views over the Annapurna and Machhapuchhre ranges.",
+    "itinerary": [
+      {
+        "day": "01",
+        "title": "Arrival in Pokhara and Lakeside Exploration",
+        "desc": "Transfer to hotel. Enjoy a peaceful boating tour at Phewa Lake and visit the beautiful Tal Barahi Temple. Evening relaxation around Lakeside."
+      },
+      {
+        "day": "02",
+        "title": "Pokhara Sightseeing",
+        "desc": "Early morning drive to Sarangkot for sunrise views. After breakfast, visit Davis Falls, Gupteshwor Mahadev Cave, Seti Gorge, International Mountain Museum, and World Peace Pagoda."
+      },
+      {
+        "day": "03",
+        "title": "Departure",
+        "desc": "Breakfast and transfer to Pokhara Airport or Tourist Bus Park for your onward journey."
       }
     ]
   }
