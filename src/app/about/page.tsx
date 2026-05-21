@@ -1,6 +1,7 @@
 import team from "@/data/team.json"
-import { Award, Users, ShieldCheck, Map as MapIcon } from "lucide-react"
+import { Award, Users, ShieldCheck, Map as MapIcon, ExternalLink } from "lucide-react"
 import Image from "next/image"
+import Link from "next/link"
 
 export default function AboutPage() {
   return (
@@ -105,19 +106,40 @@ export default function AboutPage() {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
-            {team.map((member, idx) => (
+            {team.map((member: any, idx) => (
               <div key={idx} className="group flex flex-col items-center text-center">
-                <div className="h-56 w-56 rounded-full bg-slate-200 mb-6 overflow-hidden border-4 border-white shadow-lg group-hover:scale-105 transition-transform duration-500 relative">
-                  {member.image ? (
-                    <Image 
-                      src={member.image} 
-                      alt={member.name}
-                      fill
-                      className="object-cover"
-                    />
+                <div className="relative">
+                  {member.website ? (
+                    <Link 
+                      href={member.website} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="block h-56 w-56 rounded-full bg-slate-200 mb-6 overflow-hidden border-4 border-white shadow-lg group-hover:scale-105 group-hover:border-primary/50 transition-all duration-500 relative cursor-pointer"
+                    >
+                      <Image 
+                        src={member.image} 
+                        alt={member.name}
+                        fill
+                        className="object-cover"
+                      />
+                      <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                        <ExternalLink className="text-white h-8 w-8 drop-shadow-lg" />
+                      </div>
+                    </Link>
                   ) : (
-                    <div className="h-full w-full bg-slate-300 flex items-center justify-center text-slate-400">
-                      <Users className="h-12 w-12" />
+                    <div className="h-56 w-56 rounded-full bg-slate-200 mb-6 overflow-hidden border-4 border-white shadow-lg group-hover:scale-105 transition-transform duration-500 relative">
+                      {member.image ? (
+                        <Image 
+                          src={member.image} 
+                          alt={member.name}
+                          fill
+                          className="object-cover"
+                        />
+                      ) : (
+                        <div className="h-full w-full bg-slate-300 flex items-center justify-center text-slate-400">
+                          <Users className="h-12 w-12" />
+                        </div>
+                      )}
                     </div>
                   )}
                 </div>
