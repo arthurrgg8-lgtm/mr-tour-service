@@ -1,7 +1,7 @@
 "use client"
 
 import { motion, AnimatePresence } from "framer-motion"
-import { X, Calendar, MapPin, CheckCircle2, Phone, MessageCircle, ArrowLeft, Clock, Mountain, Award, Banknote, Backpack, Tent, Info, Car } from "lucide-react"
+import { X, Calendar, MapPin, CheckCircle2, Phone, MessageCircle, ArrowLeft, Clock, Mountain, Award, Banknote, Backpack, Tent, Info, Car, Mail } from "lucide-react"
 import business from "@/data/business.json"
 import Image from "next/image"
 import Link from "next/link"

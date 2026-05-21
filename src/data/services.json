@@ -138,7 +138,6 @@
         "duration": "3 DAYS",
         "image": "/images/tours/pokhara-3d.png"
       },
-      ...
       {
         "name": "UPPER MUSTANG TOUR",
         "duration": "9 DAYS",
@@ -154,6 +153,7 @@
         "duration": "8 DAYS",
         "image": "/images/tours/tour-27.png"
       }
+    ]
   },
   {
     "id": "trekking",
