@@ -318,12 +318,12 @@
             "duration": "26 DAYS",
             "image": "/images/trekking/kanchanjunga/kbc.png"
           }
-          ]
-          },
-          {
-          "name": "MAKALU REGION",
-          "image": "/images/trekking/makalu.jpeg",
-          "subPackages": [
+        ]
+      },
+      {
+        "name": "MAKALU REGION",
+        "image": "/images/trekking/makalu.jpeg",
+        "subPackages": [
           {
             "name": "MAKALU BASE CAMP",
             "duration": "22 DAYS",
@@ -334,7 +334,6 @@
             "duration": "26 DAYS",
             "image": "/images/trekking/makalu/sherpani-col.png"
           }
-
         ]
       },
       {
@@ -413,6 +412,33 @@
             "name": "BUDDHIST PILGRIMAGE TREKKING",
             "duration": "19 DAYS",
             "image": "/images/trekking/buddhist-pilgrimage.jpeg"
+          }
+        ]
+      },
+      {
+        "name": "GREAT HIMALAYAN TRAIL",
+        "image": "/images/trekking/dhaulagiri.jpeg",
+        "subPackages": [
+          {
+            "name": "GREAT HIMALAYAN TRAIL",
+            "duration": "120 DAYS",
+            "image": "/images/trekking/dhaulagiri/dhaulagiri-circuit.png"
+          }
+        ]
+      },
+      {
+        "name": "KAILASH REGION",
+        "image": "/images/trekking/everest.jpeg",
+        "subPackages": [
+          {
+            "name": "KAILASH MANSAROVAR OVERLAND TOUR",
+            "duration": "14 DAYS",
+            "image": "/images/trekking/everest/ebc-kala-pathar.png"
+          },
+          {
+            "name": "WESTERN NEPAL TO KAILASH TIBET TREK",
+            "duration": "23 DAYS",
+            "image": "/images/trekking/everest/pikey-peak.png"
           }
         ]
       }

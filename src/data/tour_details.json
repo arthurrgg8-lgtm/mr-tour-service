@@ -5722,5 +5722,230 @@
     ],
     "maxAltitude": "3,500m",
     "difficulty": "Moderate"
+  },
+  {
+    "id": "trek-ght",
+    "title": "GREAT HIMALAYAN TRAIL",
+    "image": "/images/trekking/dhaulagiri/dhaulagiri-circuit.png",
+    "tagline": "The Ultimate Trans-Himalayan Traverse",
+    "duration": "120 Days",
+    "difficulty": "Strenuous",
+    "highlights": [
+      "Traverse the entire length of the Nepalese Himalayas",
+      "Cross numerous high-altitude passes above 5,000m",
+      "Experience diverse cultures, landscapes, and ecosystems",
+      "The ultimate mountaineering and trekking challenge"
+    ],
+    "description": "The Great Himalayan Trail is one of the longest and highest walking trails in the world. Winding through the tallest mountain ranges and most isolated communities, it offers an unparalleled adventure for the truly dedicated trekker.",
+    "itinerary": [
+      {
+        "day": "01-10",
+        "title": "Kathmandu to Kanchenjunga Base Camp",
+        "desc": "Kathmandu to Kanchenjunga Base Camp (KBC) at Pangpema."
+      },
+      {
+        "day": "11-18",
+        "title": "KBC to Hongon",
+        "desc": "KBC over the Nango La and Lumbha Sambha to Hongon."
+      },
+      {
+        "day": "19-26",
+        "title": "Hongon to Makalu Base Camp",
+        "desc": "Hongon to Makalu Base Camp (MBC) via some wilderness trails."
+      },
+      {
+        "day": "27-31",
+        "title": "MBC to Chhukung",
+        "desc": "From MBC cross the High Passes to Chhukung in the Everest region."
+      },
+      {
+        "day": "32-36",
+        "title": "Cross Everest Region",
+        "desc": "Cross the Everest Region via the Cho La and Renjo La."
+      },
+      {
+        "day": "37-43",
+        "title": "Thame to Simi",
+        "desc": "From Thame, cross the Tashi Labsta and descend to Simi."
+      },
+      {
+        "day": "44-48",
+        "title": "Rolwaling to The Last Resort",
+        "desc": "Head through the lower Rolwaling to The Last Resort."
+      },
+      {
+        "day": "49-60",
+        "title": "Tilman\u2019s Pass to Syabru Besi",
+        "desc": "Cross Tilman\u2019s Pass and descend through Langtang to Syabru Besi."
+      },
+      {
+        "day": "61-66",
+        "title": "Ruby Valley to Machhakhola",
+        "desc": "Trek through the Ruby Valley to Machhakhola."
+      },
+      {
+        "day": "67-75",
+        "title": "Manaslu Circuit to Dharapani",
+        "desc": "Head around the Manaslu Circuit to Dharapani."
+      },
+      {
+        "day": "76-82",
+        "title": "Annapurna Circuit to Kagbeni",
+        "desc": "Enjoy some easy trails on the Annapurna Circuit to Kagbeni."
+      },
+      {
+        "day": "83-93",
+        "title": "Upper Dolpo to Phoksumdo Lake",
+        "desc": "Enter Upper Dolpo and cross to Ringmo at Phoksumdo Lake."
+      },
+      {
+        "day": "94-103",
+        "title": "Upper Dolpo to Upper Mugu",
+        "desc": "The Upper Dolpo to Upper Mugu wild traverse."
+      },
+      {
+        "day": "104-117",
+        "title": "Mugu to Hilsa",
+        "desc": "Trek through Mugu and Humla to the border with Tibet at Hilsa."
+      },
+      {
+        "day": "118-120",
+        "title": "Return to Kathmandu",
+        "desc": "Return to Kathmandu."
+      }
+    ]
+  },
+  {
+    "id": "trek-western-nepal-kailash",
+    "title": "WESTERN NEPAL TO KAILASH TIBET TREK",
+    "image": "/images/trekking/everest/pikey-peak.png",
+    "tagline": "An Epic Journey from Limi Valley to the Sacred Mountain",
+    "duration": "23 Days",
+    "maxAltitude": "5,630m",
+    "difficulty": "Strenuous",
+    "highlights": [
+      "Trek through the remote and untouched Limi Valley in Western Nepal",
+      "Cross the Nepal-Tibet border at Hilsa on foot",
+      "Perform the ultimate Kailash Kora (circumambulation)",
+      "Explore the ancient cities of Lhasa, Shigatse, and Gyantse"
+    ],
+    "description": "A remarkable cross-border adventure that begins with a trek through the wild and remote trails of Western Nepal, crossing into Tibet to perform the sacred Kailash Kora, and culminating with a cultural tour of Lhasa.",
+    "itinerary": [
+      {
+        "day": "01",
+        "title": "Arrival in Kathmandu",
+        "desc": "Today upon your arrival we will come to pick up you on the airport and drop you to your booked Hotel."
+      },
+      {
+        "day": "02",
+        "title": "Kathmandu day tour and chinese Visa process",
+        "desc": "You will have sightseeing of world heritage sites in Kathmandu valley like Boudhanath, Pashupatinath and Swyambhunath. In the evening you will obtain the Chinese visa and make a preparation for your Trip."
+      },
+      {
+        "day": "03",
+        "title": "Fly to Nepalgunj",
+        "desc": "Today, afternoon, we will take a 55 minute flight to Nepalgunj. Overnight at Hotel."
+      },
+      {
+        "day": "04",
+        "title": "Fly to Simikot (2960m) and Trek to Dharapuri(2300m)",
+        "desc": "In the early morning after breakfast, we will fly for about 45 minutes to Simikot. After reaching Simikot we will have local tea at simikot sun valley Resort. Then we will start our trek to Dharapuri. Overnight at tented camp."
+      },
+      {
+        "day": "05",
+        "title": "Trek to Salli Khola (2700m)",
+        "desc": "We will follow the river to a waterfall near at Chachera. We then climb over a ridge and bypass the village of Kermi. After walking through a sparse pine forest we descend from the ridge to the Salli Khola and camp near the river."
+      },
+      {
+        "day": "06",
+        "title": "Trek to Muchu (2920m)",
+        "desc": "We cross the Karnali river and climb over a rocky ridge before descending to the waters of the Humla Karnali. After crossing another ridge we come to a sandy meadow. We finally reach Muchu where we have a camp night."
+      },
+      {
+        "day": "07",
+        "title": "Trek to Sipsip (4330m)",
+        "desc": "We follow the trail over a ridge to the Tumkot Khola and then walk along the rocky stream bed for a short distance before beginning a steep climb through a rock-filled gully. We pass through Palbang and its bright yellow mustard fields to the small settlement of Yari and beyond here the route climbs up the valley towards a pass, the Nara Lagna. We camp below the pass in a meadow known as Sipsip. Overnight at tented camp."
+      },
+      {
+        "day": "08",
+        "title": "Trek to Hilsa (3720m)",
+        "desc": "From Sipsip we ascend steeply to a rock cairn marking the top of the Nara Lagna (4580m). Descending from the pass, we have views of the Tibetan Plateau before arriving at the village of Ranipauwa. Beyond here, we slip and slide on a surface of loose pebbles down to the Humla Karnali. Overnight at tented camp."
+      },
+      {
+        "day": "09",
+        "title": "Drive to Taklakot (3930m) and rive to Manasarovar (4560m)",
+        "desc": "Shortly after crossing the Nepal/Tibet border, we will meet our transport and drive towards Manasarovar, the most venerated of Tibet's many lakes. Overnight at tented camp."
+      },
+      {
+        "day": "10",
+        "title": "At Manasarovar",
+        "desc": "Today we will take acclimatization day at Manasarovar. We will explore the fascinating place. We will visit the picturesque Chiu Monastery on the north-west shore of the lake with the imposing sight of Mt Kailash in the background. Overnight at tented camp."
+      },
+      {
+        "day": "11",
+        "title": "Drive to Tarboche (4750m)",
+        "desc": "We drive for about 35 km towards Mt Kailash and Tarboche. This is the starting point for our Kora, the 53 km trek around the mountain. Overnight at tented camp."
+      },
+      {
+        "day": "12",
+        "title": "Trek to Dirapuk (4900m)",
+        "desc": "From Tarboche, we walk up the Lha Chu Valley through beautiful green meadows and streams with Mt Kailash towering above us. We follow the river which enters a narrow canyon with high, steep cliffs and spectacular waterfalls. Continuing up the valley, the north face of Kailash comes into view before we reach the ancient monastery at Dirapuk. Overnight at tented camp."
+      },
+      {
+        "day": "13",
+        "title": "Trek to Zutulpuk (4790m)",
+        "desc": "We now leave the Lha Chu Valley and enter the Drolma Chu Valley, heading up towards a high pass, the Drolma La (5630m). It is a tough climb to the summit which is festooned with prayer flags but from there it is all downhill or flat to Zutul-puk, with views of one of the highest lakes in the world, Thukpe Dzingbu Lake, known as the Lake of Compassion. At Zutul-puk, there is a monastery and several meditation caves and a cave containing an image of Milarepa. Overnight at tented camp."
+      },
+      {
+        "day": "14",
+        "title": "Trek to Darchen (4560m)",
+        "desc": "On the final day of the Kora we cross several streams, and follow an impressive gorge. Along the way we are once again treated to magnificent views of Kailash. We then enter the Bharka plain and it is about an hour walk through this desert-like landscape to Darchen. Overnight at tented camp."
+      },
+      {
+        "day": "15",
+        "title": "Drive to Paryang (4750m)",
+        "desc": "Today we will drive to Paryang, crossing the Mayun-la and several river crossings. The scenery along this section is one of the most panoramic of the entire journey. Overnight at tented camp."
+      },
+      {
+        "day": "16",
+        "title": "Drive to Saga (4600m)",
+        "desc": "We continue driving towards Saga, passing through the Zhongba town. Overnight at tented camp near Bhramaputra River."
+      },
+      {
+        "day": "17",
+        "title": "Drive to Shigatse (3900m)",
+        "desc": "Leaving Saga, we pass the turn-off for the northern route and skirt around a lake, passing through a series of valleys. We continue on to Lhatse and follow it for the final 150km to Shigatse, the second largest city in Tibet. Overnight at hotel."
+      },
+      {
+        "day": "18",
+        "title": "Sightseeing and drive to Gyantse (3950m)",
+        "desc": "Early morning, we will have a tour around Tashilhunpo Monastery, one of the largest monasteries in Tibet and we will start our drive towards Gyantse. After reaching Gyantse, we began to explore the Pelkor Chode Monastery and the Gyantse Kumbum. Overnight at hotel."
+      },
+      {
+        "day": "19",
+        "title": "Sightseeing and drive to Lhasa (3650m)",
+        "desc": "We will have a scenic drive towards Lhasa. We can have an eye-catching view of huge glacier. On our drive we will cross Khamba La with a beautiful nature view and continue on to Lhasa. Overnight at hotel."
+      },
+      {
+        "day": "20",
+        "title": "Sightseeing in Lhasa",
+        "desc": "We will visit many monasteries in Lhasa. we will visit the Norbulingka, the summer palace of the Dalai Lama, as well as the Jokhang Temple. Overnight at hotel."
+      },
+      {
+        "day": "21",
+        "title": "Sightseeing in Lhasa",
+        "desc": "Today we will visit Potala Palace after Lunch and also visit Drepung Monastery. Overnight at hotel."
+      },
+      {
+        "day": "22",
+        "title": "Lhasa to Kathmandu",
+        "desc": "Today you will fly back to Kathmandu. You will drive to Gonggar airport in time to catch your flight. Overnight at Hotel."
+      },
+      {
+        "day": "23",
+        "title": "Departure",
+        "desc": "We will drop you to the Kathmandu Airport for your departure 3 hours before your flight."
+      }
+    ]
   }
 ]
