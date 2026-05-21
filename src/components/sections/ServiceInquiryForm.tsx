@@ -1,10 +1,10 @@
 "use client"
 
 import { useState } from "react"
-import { User, Phone, Mail, Globe, Users, Car, Calendar, MapPin, Plus, FileText, Mountain, Map as MapIcon } from "lucide-react"
+import { User, Phone, Mail, Globe, Users, Car, Calendar, MapPin, Plus, FileText, Mountain, Map as MapIcon, MessageCircle } from "lucide-react"
 import business from "@/data/business.json"
 import fleet from "@/data/fleet.json"
-import { buildMailtoUrl } from "@/lib/utils"
+import { buildMailtoUrl, buildWhatsAppUrl } from "@/lib/utils"
 
 export default function ServiceInquiryForm() {
   const [formData, setFormData] = useState({
@@ -27,7 +27,7 @@ export default function ServiceInquiryForm() {
     setFormData(prev => ({ ...prev, [name]: value }))
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent, channel: 'gmail' | 'whatsapp' = 'gmail') => {
     e.preventDefault()
 
     // Validation Logic for Rental
@@ -67,7 +67,11 @@ Number of People: ${formData.numPeople}${rentalDetails}
 Destination/Requests: ${formData.destination}
 ----------------------------------`
 
-    window.location.href = buildMailtoUrl(business.contact.email, subject, body)
+    if (channel === 'whatsapp') {
+      window.open(buildWhatsAppUrl(business.contact.whatsapp, body), '_blank')
+    } else {
+      window.location.href = buildMailtoUrl(business.contact.email, subject, body)
+    }
   }
 
   const isRental = formData.inquiryType === "Rental"
@@ -83,7 +87,7 @@ Destination/Requests: ${formData.destination}
           <p className="text-muted-foreground">Fill out the form below to get a customized quote for your travel plans.</p>
         </div>
 
-        <form onSubmit={handleSubmit} className="space-y-6">
+        <form className="space-y-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* Inquiry Type Selection */}
             <div className="space-y-2 md:col-span-2">
@@ -236,17 +240,25 @@ Destination/Requests: ${formData.destination}
             ></textarea>
           </div>
 
-          <div className="mt-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
             <button 
-              type="submit"
-              className="w-full h-20 rounded-2xl bg-primary text-white font-black text-xl hover:bg-primary/90 transition-all shadow-xl shadow-primary/20 flex items-center justify-center gap-3 uppercase tracking-wider"
+              type="button"
+              onClick={(e) => handleSubmit(e, 'gmail')}
+              className="h-20 rounded-2xl bg-slate-900 text-white font-black text-lg hover:bg-slate-800 transition-all shadow-xl flex items-center justify-center gap-3 uppercase tracking-wider"
             >
-              <Mail className="h-6 w-6" /> Submit Inquiry (via Gmail)
+              <Mail className="h-6 w-6" /> Gmail Inquiry
+            </button>
+            <button 
+              type="button"
+              onClick={(e) => handleSubmit(e, 'whatsapp')}
+              className="h-20 rounded-2xl bg-[#25D366] text-white font-black text-lg hover:bg-[#20ba5a] transition-all shadow-xl flex items-center justify-center gap-3 uppercase tracking-wider"
+            >
+              <MessageCircle className="h-6 w-6" /> WhatsApp Inquiry
             </button>
           </div>
           
           <p className="text-center text-xs text-muted-foreground italic mt-6">
-            Clicking submit will open a pre-filled Gmail window with your inquiry details. We typically respond within 24 hours.
+            Choose your preferred contact method. We typically respond within 24 hours.
           </p>
         </form>
       </div>

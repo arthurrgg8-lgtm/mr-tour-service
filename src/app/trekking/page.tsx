@@ -29,7 +29,7 @@ interface Service {
   capacity?: string;
   startingPrice?: string;
   regions?: Region[];
-  subServices?: any[];
+  subServices?: SubService[];
 }
 
 export const metadata: Metadata = {

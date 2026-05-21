@@ -311,29 +311,30 @@
           {
             "name": "LUMBA SUMBA PASS",
             "duration": "20 DAYS",
-            "image": "/images/trekking/kanchanjunga.jpeg"
+            "image": "/images/trekking/kanchanjunga/lumba-sumba.png"
           },
           {
             "name": "TREK TO KANCHENJUNGA BASE CAMP",
             "duration": "26 DAYS",
-            "image": "/images/trekking/kanchanjunga.jpeg"
+            "image": "/images/trekking/kanchanjunga/kbc.png"
           }
-        ]
-      },
-      {
-        "name": "MAKALU REGION",
-        "image": "/images/trekking/makalu.jpeg",
-        "subPackages": [
+          ]
+          },
+          {
+          "name": "MAKALU REGION",
+          "image": "/images/trekking/makalu.jpeg",
+          "subPackages": [
           {
             "name": "MAKALU BASE CAMP",
             "duration": "22 DAYS",
-            "image": "/images/trekking/makalu.jpeg"
+            "image": "/images/trekking/makalu/makalu-bc.png"
           },
           {
             "name": "SHERPANI COL HIGH PASS",
             "duration": "26 DAYS",
-            "image": "/images/trekking/makalu.jpeg"
+            "image": "/images/trekking/makalu/sherpani-col.png"
           }
+
         ]
       },
       {
@@ -343,22 +344,22 @@
           {
             "name": "UPPER MUSTANG",
             "duration": "16 DAYS",
-            "image": "/images/trekking/upper-mustang.jpeg"
+            "image": "/images/trekking/upper-mustang/upper-mustang-trek.png"
           },
           {
             "name": "NAR PHU VALLEY VIA TERI-LA PASS",
             "duration": "27 DAYS",
-            "image": "/images/trekking/upper-mustang.jpeg"
+            "image": "/images/trekking/upper-mustang/nar-phu-teri-la.png"
           },
           {
             "name": "UPPER MUSTANG (TIJI FESTIVAL)",
             "duration": "21 DAYS",
-            "image": "/images/trekking/upper-mustang.jpeg"
+            "image": "/images/trekking/upper-mustang/tiji-festival.png"
           },
           {
             "name": "DAMODAR KUNDA",
             "duration": "19 DAYS",
-            "image": "/images/trekking/upper-mustang.jpeg"
+            "image": "/images/trekking/upper-mustang/damodar-kunda.png"
           }
         ]
       },
@@ -374,7 +375,7 @@
           {
             "name": "API BASE CAMP",
             "duration": "15 DAYS",
-            "image": "/images/trekking/far-western-nepal.jpeg"
+            "image": "/images/trekking/far-western/api-base-camp.png"
           }
         ]
       },
@@ -385,22 +386,22 @@
           {
             "name": "DOLPO AND MUGU (GREAT HIMALAYAN TRAIL)",
             "duration": "33 DAYS",
-            "image": "/images/trekking/dolpo.jpeg"
+            "image": "/images/trekking/dolpo/ght-dolpo-mugu.png"
           },
           {
             "name": "LOWER DOLPA",
             "duration": "27 DAYS",
-            "image": "/images/trekking/dolpo.jpeg"
+            "image": "/images/trekking/dolpo/lower-dolpo.png"
           },
           {
             "name": "POKHARA & DOLPO",
             "duration": "25 DAYS",
-            "image": "/images/trekking/dolpo.jpeg"
+            "image": "/images/trekking/dolpo/pokhara-dolpo.png"
           },
           {
             "name": "DOLPO TO JOMSOM VIA GHT ROUTE",
             "duration": "25 DAYS",
-            "image": "/images/trekking/dolpo.jpeg"
+            "image": "/images/trekking/dolpo/dolpo-jomsom-ght.png"
           }
         ]
       },

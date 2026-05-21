@@ -2349,7 +2349,7 @@
   {
     "id": "trek-dolpo-mugu",
     "title": "DOLPO AND MUGU (GREAT HIMALAYAN TRAIL)",
-    "image": "/images/trekking/dolpo.jpeg",
+    "image": "/images/trekking/dolpo/ght-dolpo-mugu.png",
     "duration": "28 Days",
     "tagline": "The Wild West Traverse",
     "description": "This extraordinary 28-day journey follows a section of the Great Himalayan Trail, traversing from the remote region of Upper Dolpo to the pristine Rara Lake in Mugu. You will cross numerous high passes, visit ancient Bon and Buddhist monasteries like Shey Gompa, and experience the true isolation of the 'hidden land' of Dolpo. This is a trek for serious adventurers seeking to experience the most remote parts of Nepal.",
@@ -2499,7 +2499,7 @@
   {
     "id": "trek-lower-dolpa",
     "title": "LOWER DOLPA",
-    "image": "/images/trekking/dolpo.jpeg",
+    "image": "/images/trekking/dolpo/lower-dolpo.png",
     "duration": "27 Days",
     "tagline": "The Pristine Phoksundo Odyssey",
     "description": "Lower Dolpa trek is a relatively moderate adventure compared to the high-altitude crossings of Upper Dolpa, but it offers equally stunning natural beauty. The highlight of the trek is the deep turquoise Phoksundo Lake, the deepest lake in the world. You will pass through diverse landscapes, from subtropical forests to alpine meadows, and visit traditional villages of the Magar and Gurung people.",
@@ -2644,7 +2644,7 @@
   {
     "id": "trek-pokhara-dolpo",
     "title": "POKHARA & DOLPO",
-    "image": "/images/trekking/dolpo.jpeg",
+    "image": "/images/trekking/dolpo/pokhara-dolpo.png",
     "duration": "33 Days",
     "tagline": "The Grand Trans-Himalayan Traverse",
     "description": "This marathon 33-day trek is one of the most challenging and rewarding journeys in Nepal. Starting from Pokhara, it traverses through the Dhaulagiri and Dolpo regions, crossing multiple high passes and visiting the sacred Phoksundo Lake. You will experience a vast range of cultures, from Hindu hill villages to Tibetan Buddhist and Bon communities, all while witnessing some of the most dramatic mountain scenery on earth.",
@@ -2819,7 +2819,7 @@
   {
     "id": "trek-dolpo-jomsom-ght",
     "title": "DOLPO TO JOMSOM VIA GHT ROUTE",
-    "image": "/images/trekking/dolpo.jpeg",
+    "image": "/images/trekking/dolpo/dolpo-jomsom-ght.png",
     "duration": "25 Days",
     "tagline": "The Upper Dolpo Crossing",
     "description": "This high-altitude trek follows the Upper Dolpo section of the Great Himalayan Trail, crossing into the Mustang region at Jomsom. It visits the sacred Shey Gompa and the mystical Crystal Mountain, traversing high passes like Nangdala and Shey La. This is a journey through true Tibetan-style culture and some of the most rugged terrain in the world.",
@@ -2954,7 +2954,7 @@
   {
     "id": "trek-lumba-sumba",
     "title": "LUMBA SUMBA PASS",
-    "image": "/images/trekking/kanchanjunga.jpeg",
+    "image": "/images/trekking/kanchanjunga/lumba-sumba.png",
     "duration": "20 Days",
     "tagline": "A Remote Crossing Between Kanchenjunga and Makalu",
     "description": "Lumba Sumba Pass trek is one of the most adventurous trekking routes in Nepal, crossing the high Lumba Sumba Pass (5,200m). This trek links the two great Himalayan massifs of Kanchenjunga and Makalu. The journey takes you through complete wilderness, pristine forests, and remote villages, offering the chance to spot rare wildlife like the red panda and snow leopard.",
@@ -3064,7 +3064,7 @@
   {
     "id": "trek-kanchanjunga-bc",
     "title": "TREK TO KANCHENJUNGA BASE CAMP",
-    "image": "/images/trekking/kanchanjunga.jpeg",
+    "image": "/images/trekking/kanchanjunga/kbc.png",
     "duration": "26 Days",
     "tagline": "The Five Treasures of the Snow",
     "description": "The Kanchenjunga Base Camp trek is a legendary journey to the foot of the world's third highest mountain (8,586m). This remote trek in eastern Nepal takes you through diverse landscapes, from tropical lowlands to high alpine glaciers. You will visit both the North and South Base Camps, crossing challenging passes and experiencing the unique culture of the Limbu and Tibetan communities.",
@@ -3204,7 +3204,7 @@
   {
     "id": "trek-makalu-bc",
     "title": "MAKALU BASE CAMP",
-    "image": "/images/trekking/makalu.jpeg",
+    "image": "/images/trekking/makalu/makalu-bc.png",
     "duration": "22 Days",
     "tagline": "The Garden of the Great Black One",
     "description": "The trek to Makalu Base Camp is an outstanding journey into the heart of the Himalayas. Mount Makalu (8,485m) is the world's 5th highest mountain, and its base camp offers a breathtaking panorama of Everest, Lhotse, and Baruntse. The trek passes through the Makalu-Barun National Park, one of the world's richest biodiversity zones, and involves crossing high alpine passes like Shipton La (4,210m).",
@@ -3324,7 +3324,7 @@
   {
     "id": "trek-sherpani-col",
     "title": "SHERPANI COL HIGH PASS",
-    "image": "/images/trekking/makalu.jpeg",
+    "image": "/images/trekking/makalu/sherpani-col.png",
     "duration": "26 Days",
     "tagline": "The Most Challenging High-Pass Trek in Nepal",
     "description": "The Sherpani Col trek is arguably the most difficult and technical high-altitude trek in Nepal. It involves crossing three of the highest passes in the world: Sherpani Col (6,135m), West Col (6,143m), and Amphu Labsta (5,845m). This expedition-style trek links the Makalu and Everest regions, passing through remote valleys and over massive glaciers. It requires serious physical fitness and technical trekking skills.",
@@ -3464,7 +3464,7 @@
   {
     "id": "trek-upper-mustang",
     "title": "UPPER MUSTANG",
-    "image": "/images/trekking/upper-mustang.jpeg",
+    "image": "/images/trekking/upper-mustang/upper-mustang-trek.png",
     "duration": "16 Days",
     "tagline": "The Last Forbidden Kingdom",
     "description": "High-altitude desert region bordering Tibet. Ancient monasteries and medieval walled cities. The Upper Mustang trek offers a chance to explore the ancient walled capital of Lo Manthang, mysterious sky caves in cliff faces, and untouched Tibetan Buddhist culture.",
@@ -4189,7 +4189,7 @@
   {
     "id": "trek-api-bc",
     "title": "API BASE CAMP",
-    "image": "/images/trekking/far-western-nepal.jpeg",
+    "image": "/images/trekking/far-western/api-base-camp.png",
     "duration": "15 Days",
     "tagline": "The Jewel of the Far West",
     "description": "Api Base Camp trek is a rare adventure to the foot of Mt. Api (7,132m), the highest peak in the Yoka Pahar section of the Himalayas in Far Western Nepal. This trek offers an incredible mix of natural beauty, from the Mahakali and Chameliya river valleys to high alpine plateaus. You will experience the unique culture of the local communities and witness stunning views of Mt. Api, Mt. Nampa, and Mt. Bobaye.",
@@ -5114,7 +5114,7 @@
   {
     "id": "trek-nar-phu-terila",
     "title": "NAR PHU VALLEY VIA TERI-LA PASS",
-    "image": "/images/trekking/upper-mustang.jpeg",
+    "image": "/images/trekking/upper-mustang/nar-phu-teri-la.png",
     "duration": "27 Days",
     "tagline": "The Ultimate High-Pass Frontier",
     "description": "This epic 27-day journey is one of the most comprehensive wilderness treks in the Himalayas. It combines the restricted valleys of Nar and Phu with the challenging crossing of the Teri-La Pass (5,595m) into the high-altitude desert of Upper Mustang. This trek offers unparalleled isolation, ancient Tibetan culture, and some of the most dramatic mountain scenery in the world.",
@@ -5259,7 +5259,7 @@
   {
     "id": "trek-mustang-tiji",
     "title": "UPPER MUSTANG (TIJI FESTIVAL)",
-    "image": "/images/trekking/upper-mustang.jpeg",
+    "image": "/images/trekking/upper-mustang/tiji-festival.png",
     "duration": "21 Days",
     "tagline": "The Chasing of the Demons Festival",
     "description": "Experience the legendary Tiji Festival in the walled city of Lo Manthang. This 21-day journey takes you into the heart of the forbidden kingdom of Upper Mustang to witness a three-day ritual known as 'The Chasing of the Demons'. You will see masked dances by monks, colorful traditional costumes, and ancient rituals aimed at bringing peace and prosperity to the region, all set against the dramatic desert landscape of Mustang.",
@@ -5374,7 +5374,7 @@
   {
     "id": "trek-damodar-kunda",
     "title": "DAMODAR KUNDA",
-    "image": "/images/trekking/upper-mustang.jpeg",
+    "image": "/images/trekking/upper-mustang/damodar-kunda.png",
     "duration": "19 Days",
     "tagline": "Pilgrimage to the Sacred Glacial Lakes",
     "description": "The Damodar Kunda trek is a holy pilgrimage to the high-altitude sacred lakes situated in the remote Upper Mustang region. These lakes are of great religious significance to Hindus and Buddhists alike. The trek passes through the high-altitude desert of Mustang, crossing several high passes and offering spectacular views of the Damodar Himal and the surrounding peaks.",

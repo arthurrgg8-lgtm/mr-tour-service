@@ -26,6 +26,10 @@ export default function TrekkingGrid({ regions }: TrekkingGridProps) {
   const [selectedTour, setSelectedTour] = useState<typeof tourDetails[0] | null>(null)
   const [activeRegion, setActiveRegion] = useState<Region | null>(null)
 
+  const getRegionId = (name: string) => {
+    return name.toLowerCase().replace(/[^a-z0-9]/g, '-')
+  }
+
   useEffect(() => {
     const handleHash = () => {
       const hash = decodeURIComponent(window.location.hash.substring(1).toLowerCase())
@@ -95,10 +99,6 @@ export default function TrekkingGrid({ regions }: TrekkingGridProps) {
       setSelectedTour(detail)
       window.history.pushState(null, "", `#${detail.id}`)
     }
-  }
-
-  const getRegionId = (name: string) => {
-    return name.toLowerCase().replace(/[^a-z0-9]/g, '-')
   }
 
   const getBackHandler = () => {
