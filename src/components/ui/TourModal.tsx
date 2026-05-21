@@ -5,7 +5,7 @@ import { X, Calendar, MapPin, CheckCircle2, Phone, MessageCircle, ArrowLeft, Clo
 import business from "@/data/business.json"
 import Image from "next/image"
 import Link from "next/link"
-import { buildMailtoUrl, buildWhatsAppUrl, scrollToId } from "@/lib/utils"
+import { buildGmailUrl, buildWhatsAppUrl, scrollToId } from "@/lib/utils"
 
 interface ItineraryItem {
   day: string;
@@ -81,7 +81,7 @@ Kind regards,
 [My Name]
 [My Phone Number]`
 
-    window.location.href = buildMailtoUrl(business.contact.email, subject, body)
+    window.open(buildGmailUrl(business.contact.email, subject, body), '_blank')
   }
 
   const handleWhatsAppInquiry = () => {

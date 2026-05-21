@@ -1,12 +1,13 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useRef } from "react"
 import { User, Phone, Mail, Globe, Users, Car, Calendar, MapPin, Plus, FileText, Mountain, Map as MapIcon, MessageCircle } from "lucide-react"
 import business from "@/data/business.json"
 import fleet from "@/data/fleet.json"
-import { buildMailtoUrl, buildWhatsAppUrl } from "@/lib/utils"
+import { buildGmailUrl, buildWhatsAppUrl } from "@/lib/utils"
 
 export default function ServiceInquiryForm() {
+  const formRef = useRef<HTMLFormElement>(null)
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -29,6 +30,11 @@ export default function ServiceInquiryForm() {
 
   const handleSubmit = (e: React.FormEvent, channel: 'gmail' | 'whatsapp' = 'gmail') => {
     e.preventDefault()
+
+    // Trigger browser validation
+    if (formRef.current && !formRef.current.reportValidity()) {
+      return
+    }
 
     // Validation Logic for Rental
     if (formData.inquiryType === "Rental") {
@@ -70,7 +76,7 @@ Drop Location: ${formData.dropLocation}`
     if (channel === 'whatsapp') {
       window.open(buildWhatsAppUrl(business.contact.whatsapp, body), '_blank')
     } else {
-      window.location.href = buildMailtoUrl(business.contact.email, subject, body)
+      window.open(buildGmailUrl(business.contact.email, subject, body), '_blank')
     }
   }
 
@@ -87,7 +93,7 @@ Drop Location: ${formData.dropLocation}`
           <p className="text-muted-foreground">Fill out the form below to get a customized quote for your travel plans.</p>
         </div>
 
-        <form className="space-y-6">
+        <form ref={formRef} className="space-y-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* Inquiry Type Selection */}
             <div className="space-y-2 md:col-span-2">
@@ -244,21 +250,23 @@ Drop Location: ${formData.dropLocation}`
             <button 
               type="button"
               onClick={(e) => handleSubmit(e, 'gmail')}
-              className="h-20 rounded-2xl bg-slate-900 text-white font-black text-lg hover:bg-slate-800 transition-all shadow-xl flex items-center justify-center gap-3 uppercase tracking-wider"
+              className="h-20 rounded-2xl bg-slate-900 text-white font-black text-lg hover:bg-slate-800 transition-all shadow-xl flex items-center justify-center gap-3 uppercase tracking-wider group"
             >
-              <Mail className="h-6 w-6" /> Gmail Inquiry
+              <Mail className="h-6 w-6 group-hover:scale-110 transition-transform" /> 
+              <span>Submit via Gmail</span>
             </button>
             <button 
               type="button"
               onClick={(e) => handleSubmit(e, 'whatsapp')}
-              className="h-20 rounded-2xl bg-[#25D366] text-white font-black text-lg hover:bg-[#20ba5a] transition-all shadow-xl flex items-center justify-center gap-3 uppercase tracking-wider"
+              className="h-20 rounded-2xl bg-[#25D366] text-white font-black text-lg hover:bg-[#20ba5a] transition-all shadow-xl flex items-center justify-center gap-3 uppercase tracking-wider group"
             >
-              <MessageCircle className="h-6 w-6" /> WhatsApp Inquiry
+              <MessageCircle className="h-6 w-6 group-hover:scale-110 transition-transform" /> 
+              <span>Submit via WhatsApp</span>
             </button>
           </div>
           
           <p className="text-center text-xs text-muted-foreground italic mt-6">
-            Choose your preferred contact method. We typically respond within 24 hours.
+            Please fill in all required fields. We typically respond within 24 hours.
           </p>
         </form>
       </div>

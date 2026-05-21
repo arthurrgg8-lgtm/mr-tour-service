@@ -1,11 +1,12 @@
 "use client"
 
-import { useState } from "react"
-import { Send } from "lucide-react"
+import { useState, useRef } from "react"
+import { Send, Mail, MessageCircle } from "lucide-react"
 import business from "@/data/business.json"
-import { buildWhatsAppUrl } from "@/lib/utils"
+import { buildWhatsAppUrl, buildGmailUrl } from "@/lib/utils"
 
 export default function QuickInquiryForm() {
+  const formRef = useRef<HTMLFormElement>(null)
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -13,10 +14,14 @@ export default function QuickInquiryForm() {
     message: ""
   })
 
-  const handleSendMessage = (e: React.FormEvent) => {
+  const handleSendMessage = (e: React.FormEvent, channel: 'whatsapp' | 'gmail' = 'whatsapp') => {
     e.preventDefault()
+
+    if (formRef.current && !formRef.current.reportValidity()) {
+      return
+    }
     
-    // Format the message for WhatsApp
+    // Format the message
     const text = `*New Quick Inquiry from Website*
 ----------------------------------
 *Name:* ${formData.name}
@@ -25,9 +30,13 @@ export default function QuickInquiryForm() {
 *Message:* ${formData.message}
 ----------------------------------`
     
-    // Redirect to WhatsApp
-    const whatsappUrl = buildWhatsAppUrl(business.contact.whatsapp, text)
-    window.open(whatsappUrl, "_blank")
+    if (channel === 'whatsapp') {
+      const whatsappUrl = buildWhatsAppUrl(business.contact.whatsapp, text)
+      window.open(whatsappUrl, "_blank")
+    } else {
+      const gmailUrl = buildGmailUrl(business.contact.email, "Quick Inquiry - Website", text)
+      window.open(gmailUrl, "_blank")
+    }
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -38,7 +47,7 @@ export default function QuickInquiryForm() {
   return (
     <div className="bg-slate-50 p-10 rounded-3xl border border-slate-200 shadow-sm">
       <h3 className="text-2xl font-bold mb-8">Quick Inquiry</h3>
-      <form onSubmit={handleSendMessage} className="space-y-6">
+      <form ref={formRef} className="space-y-6">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           <div className="space-y-2">
             <label className="text-sm font-bold uppercase tracking-widest text-muted-foreground ml-1">Your Name</label>
@@ -95,14 +104,24 @@ export default function QuickInquiryForm() {
           ></textarea>
         </div>
 
-        <button 
-          type="submit"
-          className="w-full h-14 rounded-xl bg-primary text-white font-bold text-lg hover:bg-primary/90 transition-all shadow-lg shadow-primary/20 flex items-center justify-center gap-2"
-        >
-          Send Inquiry <Send className="h-5 w-5" />
-        </button>
+        <div className="flex flex-col sm:flex-row gap-4">
+          <button 
+            type="button"
+            onClick={(e) => handleSendMessage(e, 'whatsapp')}
+            className="flex-1 h-14 rounded-xl bg-[#25D366] text-white font-bold text-lg hover:bg-[#20ba5a] transition-all shadow-lg shadow-green-200/50 flex items-center justify-center gap-2"
+          >
+            WhatsApp <MessageCircle className="h-5 w-5" />
+          </button>
+          <button 
+            type="button"
+            onClick={(e) => handleSendMessage(e, 'gmail')}
+            className="flex-1 h-14 rounded-xl bg-slate-900 text-white font-bold text-lg hover:bg-slate-800 transition-all shadow-lg flex items-center justify-center gap-2"
+          >
+            Gmail <Mail className="h-5 w-5" />
+          </button>
+        </div>
         <p className="text-center text-xs text-muted-foreground mt-4">
-          This will open WhatsApp to send your details.
+          Choose your preferred method. Please fill required fields.
         </p>
       </form>
     </div>

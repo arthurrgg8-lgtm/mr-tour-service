@@ -29,6 +29,17 @@ export function buildMailtoUrl(email: string, subject?: string, body?: string) {
   return `mailto:${email}${query ? `?${query}` : ""}`
 }
 
+export function buildGmailUrl(email: string, subject?: string, body?: string) {
+  const params = new URLSearchParams()
+  params.set("view", "cm")
+  params.set("fs", "1")
+  params.set("to", email)
+  if (subject) params.set("su", subject)
+  if (body) params.set("body", body)
+  
+  return `https://mail.google.com/mail/?${params.toString()}`
+}
+
 export function scrollToId(id: string, offset = 100, addGlow = false) {
   const element = document.getElementById(id)
   
