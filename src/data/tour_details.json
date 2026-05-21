@@ -385,7 +385,7 @@
   },
   {
     "id": "tour-8",
-    "title": "KATHMANDU CITY TOUR",
+    "title": "ONE DAY KTM TOUR",
     "image": "/images/tours/tour-8.png",
     "tagline": "An exciting Kathmandu City Experience",
     "duration": "1 Day",
@@ -2966,7 +2966,7 @@
   },
   {
     "id": "tour-19",
-    "title": "JEEP TOUR TO RARA (8 DAYS)",
+    "title": "JEEP TOUR TO RARA",
     "image": "/images/tours/tour-19.png",
     "tagline": "Epic 4WD off-road journey to the blue gem of Mid-West Nepal",
     "duration": "8 Days",
@@ -3381,7 +3381,7 @@
   },
   {
     "id": "tour-27",
-    "title": "UNESCO WORLD HERITAGE TOUR",
+    "title": "NEPAL UNESCO TOUR",
     "image": "/images/tours/tour-27.png",
     "tagline": "Uncover Nepal's iconic UNESCO designated historical & natural treasures",
     "duration": "8 Days",
@@ -3468,6 +3468,40 @@
         "day": "03",
         "title": "Departure",
         "desc": "Breakfast and transfer to Pokhara Airport or Tourist Bus Park for your onward journey."
+      }
+    ]
+  },
+  {
+    "id": "tour-dhulikhel-3d",
+    "title": "KATHMANDU-DHULIKHEL-NAMOBUDDHA TOUR",
+    "image": "/images/tours/dhulikhel-namobuddha.png",
+    "tagline": "Spiritual hilltop retreat and scenic mountain panoramas",
+    "duration": "3 Days",
+    "startingPrice": "NPR 40,500 / $300",
+    "maxAltitude": "1,810m",
+    "difficulty": "Easy",
+    "highlights": [
+      "Visit the sacred Thrangu Tashi Yangtse Monastery in Namobuddha",
+      "Stunning Himalayan sunrise and sunset views from Dhulikhel",
+      "Explore the traditional Newari town and local culture",
+      "Peaceful atmosphere and panoramic mountain scenery"
+    ],
+    "description": "Experience the peaceful atmosphere and spiritual heritage of Dhulikhel and Namobuddha. This 3-day tour offers a perfect escape to the hilltop town of Dhulikhel, famous for its scenic mountain views and proximity to one of Nepal's holiest Buddhist sites.",
+    "itinerary": [
+      {
+        "day": "01",
+        "title": "Arrival in Kathmandu and Transfer to Dhulikhel",
+        "desc": "Warm welcome at the airport and transfer to Dhulikhel. Check-in and enjoy a short walk around the traditional Newari town and sunset views."
+      },
+      {
+        "day": "02",
+        "title": "Dhulikhel – Namobuddha Sightseeing Tour",
+        "desc": "Scenic excursion to Namobuddha. Visit Thrangu Tashi Yangtse Monastery. Explore spiritual surroundings and enjoy panoramic Himalayan scenery."
+      },
+      {
+        "day": "03",
+        "title": "Return to Kathmandu and Final Departure",
+        "desc": "Drive back to Kathmandu. Free time for shopping before transfer to the airport for your final departure."
       }
     ]
   }

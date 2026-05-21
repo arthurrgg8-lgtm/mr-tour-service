@@ -32,15 +32,34 @@ export default function Navbar() {
   ]
 
   const tourServices = [
-    { name: "KTM COUNTRYSIDE HIKE", href: "/tours#countryside-hike" },
-    { name: "FAMILY HOLIDAY", href: "/tours#family-holiday" },
-    { name: "POKHARA TOUR (3 DAYS)", href: "/tours#tour-pokhara-3d" },
-    { name: "LUMBINI TOUR", href: "/tours#lumbini-tour" },
-    { name: "CHITWAN JUNGLE SAFARI", href: "/tours#chitwan-safari" },
-    { name: "GORKHA-BANDIPUR-PKR", href: "/tours#gorkha-bandipur" },
-    { name: "BADIMALIKA TOUR", href: "/tours#badimalika-tour" },
-    { name: "JEEP TOUR TO RARA", href: "/tours#rara-jeep" },
-    { name: "KTM CITY TOUR (1 DAY)", href: "/tours#kathmandu-city" },
+    { name: "KTM LOCAL TOUR (4 DAYS)", href: "/tours#tour-9" },
+    { name: "KTM-PKR-CHITWAN (8 DAYS)", href: "/tours#tour-10" },
+    { name: "KTM-PKR-CHITWAN-LUMBINI (10D)", href: "/tours#tour-11" },
+    { name: "KTM-PKR-GHANDRUK-CHITWAN (9D)", href: "/tours#tour-12" },
+    { name: "KTM-PKR-GHANDRUK (7 DAYS)", href: "/tours#tour-13" },
+    { name: "KTM-NAGARKOT TOUR (5 DAYS)", href: "/tours#tour-14" },
+    { name: "KTM-DHULIKHEL-NAMOBUDDHA (3D)", href: "/tours#tour-dhulikhel-3d" },
+    { name: "KTM COUNTRYSIDE HIKE (5D)", href: "/tours#tour-1" },
+    { name: "NEPAL UNESCO TOUR (8 DAYS)", href: "/tours#tour-27" },
+    { name: "FAMILY HOLIDAY (12 DAYS)", href: "/tours#tour-2" },
+    { name: "TOUR WITH KIDS (12 DAYS)", href: "/tours#tour-26" },
+    { name: "ANNAPURNA-CHITWAN HOLIDAYS (12D)", href: "/tours#tour-24" },
+    { name: "GORKHA-BANDIPUR-POKHARA (13D)", href: "/tours#tour-5" },
+    { name: "NEPAL CULTURAL TOUR (7 DAYS)", href: "/tours#tour-16" },
+    { name: "NEPAL SPIRITUAL TOUR (7 DAYS)", href: "/tours#tour-17" },
+    { name: "YOGA AND MEDITATION TOUR (9D)", href: "/tours#tour-15" },
+    { name: "BUDDHIST PILGRIMAGE TOUR (8D)", href: "/tours#tour-23" },
+    { name: "MUKTINATH SPIRITUAL TOUR (7D)", href: "/tours#tour-18" },
+    { name: "UPPER MUSTANG TOUR (9 DAYS)", href: "/tours#tour-25" },
+    { name: "BADIMALIKA TOUR (16 DAYS)", href: "/tours#tour-6" },
+    { name: "JEEP TOUR TO RARA (8 DAYS)", href: "/tours#tour-19" },
+    { name: "CHITWAN JUNGLE SAFARI (3 DAYS)", href: "/tours#tour-4" },
+    { name: "LUMBINI TOUR (3 DAYS)", href: "/tours#tour-3" },
+    { name: "POKHARA ADVENTURE TOUR (3D)", href: "/tours#tour-pokhara-3d" },
+    { name: "ONE DAY KTM TOUR", href: "/tours#tour-8" },
+    { name: "BUNGEE JUMPING (1 DAY)", href: "/tours#tour-22" },
+    { name: "BHOTEKOSHI RAFTING (2 DAYS)", href: "/tours#tour-20" },
+    { name: "TRISHULI RAFTING (2 DAYS)", href: "/tours#tour-21" },
   ]
 
   const trekkingRegions = [
@@ -158,7 +177,7 @@ export default function Navbar() {
                     exit={{ opacity: 0, y: 10 }}
                     className="absolute left-0 mt-2 w-64 rounded-xl bg-white border shadow-xl py-2 z-50"
                   >
-                    {dropdown.items.map((item) => (
+                    {(dropdown.id === 'tour' ? dropdown.items.slice(0, 9) : dropdown.items).map((item) => (
                       <Link
                         key={item.name}
                         href={item.href}
@@ -168,6 +187,15 @@ export default function Navbar() {
                         {item.name}
                       </Link>
                     ))}
+                    {dropdown.id === 'tour' && dropdown.items.length > 9 && (
+                      <Link
+                        href="/tours"
+                        onClick={(e) => handleLinkClick(e, '/tours')}
+                        className="block px-4 py-2 text-[11px] font-black text-primary hover:bg-primary/5 transition-colors border-t border-slate-50 mt-1 uppercase"
+                      >
+                        SEE MORE TOURS →
+                      </Link>
+                    )}
                   </motion.div>
                 )}
               </AnimatePresence>
@@ -250,7 +278,7 @@ export default function Navbar() {
                     <span className="text-[9px] font-semibold text-primary">VIEW ALL →</span>
                   </Link>
                   <div className="grid grid-cols-1 gap-1 pl-2">
-                    {dropdown.items.map((item) => (
+                    {(dropdown.id === 'tour' ? dropdown.items.slice(0, 9) : dropdown.items).map((item) => (
                       <Link 
                         key={item.name} 
                         href={item.href} 
@@ -263,6 +291,18 @@ export default function Navbar() {
                         {item.name}
                       </Link>
                     ))}
+                    {dropdown.id === 'tour' && dropdown.items.length > 9 && (
+                      <Link 
+                        href="/tours" 
+                        onClick={(e) => {
+                          handleLinkClick(e, '/tours')
+                          setIsOpen(false)
+                        }}
+                        className="text-xs font-black text-primary py-2 border-t border-slate-50 mt-1 uppercase tracking-wider"
+                      >
+                        SEE MORE TOURS →
+                      </Link>
+                    )}
                   </div>
                 </div>
               ))}
