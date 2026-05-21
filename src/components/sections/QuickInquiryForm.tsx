@@ -17,11 +17,13 @@ export default function QuickInquiryForm() {
     e.preventDefault()
     
     // Format the message for WhatsApp
-    const text = `*New Inquiry from Website*\n\n` +
-      `*Name:* ${formData.name}\n` +
-      `*Email:* ${formData.email}\n` +
-      `*Service:* ${formData.service}\n` +
-      `*Message:* ${formData.message}`
+    const text = `*New Quick Inquiry from Website*
+----------------------------------
+*Name:* ${formData.name}
+*Email:* ${formData.email}
+*Service Required:* ${formData.service}
+*Message:* ${formData.message}
+----------------------------------`
     
     // Redirect to WhatsApp
     const whatsappUrl = buildWhatsAppUrl(business.contact.whatsapp, text)
