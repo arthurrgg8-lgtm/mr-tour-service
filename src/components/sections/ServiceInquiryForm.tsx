@@ -1,12 +1,11 @@
 "use client"
 
 import { useState } from "react"
-import { User, Phone, Mail, Globe, Users, Car, Calendar, MapPin, Plus, FileText, Mountain, Map as MapIcon, Copy, Check, MessageCircle } from "lucide-react"
+import { User, Phone, Mail, Globe, Users, Car, Calendar, MapPin, Plus, FileText, Mountain, Map as MapIcon } from "lucide-react"
 import business from "@/data/business.json"
 import fleet from "@/data/fleet.json"
 
 export default function ServiceInquiryForm() {
-  const [copied, setCopied] = useState(false)
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -69,59 +68,6 @@ Destination/Requests: ${formData.destination}
 
     const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${business.contact.email}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
     window.open(gmailUrl, "_blank")
-  }
-
-  const handleWhatsApp = () => {
-    let rentalDetails = ""
-    if (formData.inquiryType === "Rental") {
-      rentalDetails = `
-*Vehicle Type:* ${formData.vehicleType}
-*Pickup Date:* ${formData.pickupDate}
-*Drop Date:* ${formData.dropDate}
-*Pickup Location:* ${formData.pickupLocation}
-*Drop Location:* ${formData.dropLocation}`
-    }
-
-    const text = `*New ${formData.inquiryType} Inquiry*
-----------------------------------
-*Name:* ${formData.name}
-*Phone:* ${formData.phone}
-*Email:* ${formData.email}
-*Nationality:* ${formData.nationality}
-*Number of People:* ${formData.numPeople}${rentalDetails}
-*Destination/Requests:* ${formData.destination}
-----------------------------------
-_Sent from MR Tour Service Website_`
-
-    const waUrl = `https://wa.me/${business.contact.whatsapp.replace('+', '')}?text=${encodeURIComponent(text)}`
-    window.open(waUrl, "_blank")
-  }
-
-  const handleCopy = () => {
-    let rentalDetails = ""
-    if (formData.inquiryType === "Rental") {
-      rentalDetails = `
-Vehicle Type: ${formData.vehicleType}
-Pickup Date: ${formData.pickupDate}
-Drop Date: ${formData.dropDate}
-Pickup Location: ${formData.pickupLocation}
-Drop Location: ${formData.dropLocation}`
-    }
-
-    const body = `New ${formData.inquiryType} Inquiry Details:
-----------------------------------
-Inquiry Type: ${formData.inquiryType}
-Name: ${formData.name}
-Phone: ${formData.phone}
-Email: ${formData.email}
-Nationality: ${formData.nationality}
-Number of People: ${formData.numPeople}${rentalDetails}
-Destination/Requests: ${formData.destination}
-----------------------------------`
-
-    navigator.clipboard.writeText(body)
-    setCopied(true)
-    setTimeout(() => setCopied(false), 2000)
   }
 
   const isRental = formData.inquiryType === "Rental"
@@ -290,35 +236,17 @@ Destination/Requests: ${formData.destination}
             ></textarea>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-8">
+          <div className="mt-8">
             <button 
               type="submit"
-              className="h-16 rounded-2xl bg-primary text-white font-bold text-lg hover:bg-primary/90 transition-all shadow-xl shadow-primary/20 flex items-center justify-center gap-2"
+              className="w-full h-20 rounded-2xl bg-primary text-white font-black text-xl hover:bg-primary/90 transition-all shadow-xl shadow-primary/20 flex items-center justify-center gap-3 uppercase tracking-wider"
             >
-              <Mail className="h-5 w-5" /> Gmail Inquiry
-            </button>
-            <button 
-              type="button"
-              onClick={handleWhatsApp}
-              className="h-16 rounded-2xl bg-[#25D366] text-white font-bold text-lg hover:bg-[#20ba5a] transition-all shadow-xl shadow-green-500/20 flex items-center justify-center gap-2"
-            >
-              <MessageCircle className="h-6 w-6" /> WhatsApp
-            </button>
-            <button 
-              type="button"
-              onClick={handleCopy}
-              className="h-16 rounded-2xl bg-slate-100 text-slate-700 font-bold text-lg hover:bg-slate-200 transition-all flex items-center justify-center gap-2 border border-slate-200 sm:col-span-2 lg:col-span-1"
-            >
-              {copied ? (
-                <>Copied! <Check className="h-5 w-5 text-green-600" /></>
-              ) : (
-                <>Copy Details <Copy className="h-5 w-5" /></>
-              )}
+              <Mail className="h-6 w-6" /> Submit Inquiry (via Gmail)
             </button>
           </div>
           
-          <p className="text-center text-xs text-muted-foreground italic mt-4">
-            Pick your preferred way to send the inquiry. We are available 24/7.
+          <p className="text-center text-xs text-muted-foreground italic mt-6">
+            Clicking submit will open a pre-filled Gmail window with your inquiry details. We typically respond within 24 hours.
           </p>
         </form>
       </div>
