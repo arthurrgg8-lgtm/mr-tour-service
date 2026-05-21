@@ -2,7 +2,7 @@
 
 import services from "@/data/services.json"
 import tourDetails from "@/data/tour_details.json"
-import { Map as MapIcon, Users, Clock } from "lucide-react"
+import { Map as MapIcon, Users, Clock, Compass, Map } from "lucide-react"
 import Image from "next/image"
 import ServiceInquiryForm from "@/components/sections/ServiceInquiryForm"
 import TourModal from "@/components/ui/TourModal"
@@ -136,61 +136,90 @@ export default function ToursPage() {
             <div className="w-24 h-1.5 bg-primary mx-auto rounded-full" />
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {tourService.subServices?.map((tour, idx) => (
               <div 
                 key={idx}
                 id={getTourId(tour.name)} 
-                className="group flex flex-col bg-white rounded-[2rem] border border-slate-100 shadow-sm hover:shadow-2xl transition-all duration-500 overflow-hidden scroll-mt-32"
+                className="group relative h-[400px] rounded-[2.5rem] overflow-hidden border border-slate-100 shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer scroll-mt-32"
+                onClick={() => handleTourClick(tour.name)}
               >
-                <div 
-                  className="relative h-64 overflow-hidden cursor-pointer"
-                  onClick={() => handleTourClick(tour.name)}
-                >
-                  <Image 
-                    src={tour.image} 
-                    alt={tour.name}
-                    fill
-                    className="object-cover group-hover:scale-110 transition-transform duration-700"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                  <div className="absolute bottom-4 left-6">
-                    <div className="flex items-center gap-2 text-white/90 text-xs font-bold uppercase tracking-wider bg-primary/20 backdrop-blur-md px-3 py-1 rounded-full border border-white/20">
-                      <Clock className="h-3 w-3" />
-                      {tour.duration}
-                    </div>
-                  </div>
-                </div>
+                <Image 
+                  src={tour.image} 
+                  alt={tour.name}
+                  fill
+                  className="object-cover group-hover:scale-110 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
                 
-                <div className="p-8 flex flex-col flex-grow">
-                  <h3 className="text-xl font-bold mb-4 group-hover:text-primary transition-colors line-clamp-2 h-14">{tour.name}</h3>
-                  
-                  <div className="space-y-4 mb-8">
-                    <div className="flex items-center gap-3 text-sm text-slate-600">
-                      <div className="h-8 w-8 rounded-lg bg-slate-50 flex items-center justify-center text-primary">
-                        <Users className="h-4 w-4" />
-                      </div>
-                      <span>Small & Large Groups</span>
-                    </div>
-                    <div className="flex items-center gap-3 text-sm text-slate-600">
-                      <div className="h-8 w-8 rounded-lg bg-slate-50 flex items-center justify-center text-primary">
-                        <MapIcon className="h-4 w-4" />
-                      </div>
-                      <span>Professional Guides</span>
-                    </div>
+                <div className="absolute inset-0 p-8 flex flex-col justify-end">
+                  <div className="flex items-center gap-2 text-primary mb-2">
+                    <Compass className="h-5 w-5" />
+                    <span className="text-xs font-bold uppercase tracking-[0.2em]">Explore Destination</span>
                   </div>
-
-                  <div className="mt-auto">
-                    <button 
-                      onClick={() => handleTourClick(tour.name)}
-                      className="w-full py-4 rounded-xl border-2 border-primary text-primary font-bold hover:bg-primary hover:text-white transition-all duration-300"
-                    >
-                      View Itinerary
-                    </button>
+                  <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-primary transition-colors line-clamp-2">{tour.name}</h3>
+                  <p className="text-white/70 text-sm line-clamp-2 mb-6 opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-4 group-hover:translate-y-0">
+                    Experience the beauty and culture of {tour.name.toLowerCase()} with our curated itinerary. 
+                    Professional guides and premium transportation included.
+                  </p>
+                  <div className="flex items-center gap-4">
+                    <div className="h-10 w-10 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white border border-white/30 group-hover:bg-primary group-hover:border-primary transition-all">
+                      <Clock className="h-5 w-5" />
+                    </div>
+                    <span className="text-white font-bold text-sm uppercase tracking-widest">{tour.duration} Trip</span>
                   </div>
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Why Tour With Us */}
+      <section className="py-24 bg-slate-50">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div>
+              <h2 className="text-3xl md:text-5xl font-bold mb-8 leading-tight">Comfort & Heritage <br /> <span className="text-primary">The MR Tour Experience</span></h2>
+              <div className="space-y-8">
+                <div className="flex gap-6">
+                  <div className="h-14 w-14 rounded-2xl bg-primary/10 flex items-center justify-center text-primary shrink-0">
+                    <Users className="h-7 w-7" />
+                  </div>
+                  <div>
+                    <h4 className="text-xl font-bold mb-2">Professional Guides</h4>
+                    <p className="text-slate-600">Our tours are led by knowledgeable local guides who bring history and culture to life with fascinating stories.</p>
+                  </div>
+                </div>
+                <div className="flex gap-6">
+                  <div className="h-14 w-14 rounded-2xl bg-primary/10 flex items-center justify-center text-primary shrink-0">
+                    <MapIcon className="h-7 w-7" />
+                  </div>
+                  <div>
+                    <h4 className="text-xl font-bold mb-2">Curated Itineraries</h4>
+                    <p className="text-slate-600">We carefully design our tour routes to balance iconic landmarks with hidden gems and local experiences.</p>
+                  </div>
+                </div>
+                <div className="flex gap-6">
+                  <div className="h-14 w-14 rounded-2xl bg-primary/10 flex items-center justify-center text-primary shrink-0">
+                    <Compass className="h-7 w-7" />
+                  </div>
+                  <div>
+                    <h4 className="text-xl font-bold mb-2">Premium Comfort</h4>
+                    <p className="text-slate-600">Travel in style with our 100% company-owned fleet of luxury vehicles and hand-picked accommodations.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="relative h-[600px] rounded-[3rem] overflow-hidden shadow-2xl">
+              <Image 
+                src="/images/hero/hero-triple-tour.jpeg" 
+                alt="Tour Experience"
+                fill
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-primary/40 to-transparent" />
+            </div>
           </div>
         </div>
       </section>
