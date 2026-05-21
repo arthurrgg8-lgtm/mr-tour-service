@@ -56,15 +56,15 @@ Pickup Location: ${formData.pickupLocation}
 Drop Location: ${formData.dropLocation}`
     }
 
-    const body = `New ${formData.inquiryType} Inquiry Details:
+    const body = `*New ${formData.inquiryType} Inquiry Details*
 ----------------------------------
-Inquiry Type: ${formData.inquiryType}
-Name: ${formData.name}
-Phone: ${formData.phone}
-Email: ${formData.email}
-Nationality: ${formData.nationality}
-Number of People: ${formData.numPeople}${rentalDetails}
-Destination/Requests: ${formData.destination}
+*Inquiry Type:* ${formData.inquiryType}
+*Name:* ${formData.name}
+*Phone:* ${formData.phone}
+*Email:* ${formData.email}
+*Nationality:* ${formData.nationality}
+*Number of People:* ${formData.numPeople}${rentalDetails.replace(/\n/g, '\n')}
+*Destination/Requests:* ${formData.destination}
 ----------------------------------`
 
     if (channel === 'whatsapp') {

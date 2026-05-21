@@ -12,6 +12,13 @@ interface SubPackage {
   image: string;
 }
 
+interface SubService {
+  name: string;
+  image: string;
+  duration?: string;
+  startingPrice?: string;
+}
+
 interface Region {
   name: string;
   image: string;

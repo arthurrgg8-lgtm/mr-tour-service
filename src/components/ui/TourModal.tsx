@@ -84,6 +84,27 @@ Kind regards,
     window.location.href = buildMailtoUrl(business.contact.email, subject, body)
   }
 
+  const handleWhatsAppInquiry = () => {
+    if (!tour) return;
+
+    const body = `*Inquiry for ${tour.title}*
+
+Hello MR Tour Service Team,
+
+I am interested in booking the *"${tour.title}"* package.
+*Duration:* ${tour.duration || 'N/A'}
+*Estimate:* ${tour.startingPrice || 'N/A'}
+
+Please provide more details regarding:
+- Customizing the itinerary
+- Final pricing for my group
+- Availability for my preferred dates
+
+Looking forward to hearing from you.`
+
+    window.open(buildWhatsAppUrl(business.contact.whatsapp, body), '_blank')
+  }
+
   const handleCustomInquiry = () => {
     onClose();
     setTimeout(() => {
@@ -459,13 +480,12 @@ Kind regards,
                           >
                             <Mail className="h-6 w-6" /> Gmail Inquiry
                           </button>
-                          <a 
-                            href={buildWhatsAppUrl(business.contact.whatsapp)}
-                            target="_blank"
-                            className="flex items-center justify-center gap-3 h-14 rounded-2xl bg-[#25D366] text-white font-bold hover:bg-[#20ba5a] transition-all shadow-lg"
+                          <button 
+                            onClick={handleWhatsAppInquiry}
+                            className="flex items-center justify-center gap-3 h-14 rounded-2xl bg-[#25D366] text-white font-bold hover:bg-[#20ba5a] transition-all shadow-lg w-full"
                           >
                             <MessageCircle className="h-6 w-6" /> WhatsApp Inquiry
-                          </a>
+                          </button>
                           <button 
                             onClick={handleCustomInquiry}
                             className="flex items-center justify-center gap-3 h-14 rounded-2xl bg-primary-foreground/10 text-white font-bold border border-white/20 hover:bg-white/10 transition-all"
