@@ -1,10 +1,11 @@
 "use client"
 
 import { motion, AnimatePresence } from "framer-motion"
-import { X, Calendar, MapPin, CheckCircle2, Phone, MessageCircle, ArrowLeft, Clock, Mountain, Award, Banknote, Backpack, Tent, Info, Car, Mail } from "lucide-react"
+import { X, Calendar, MapPin, CheckCircle2, Phone, MessageCircle, ArrowLeft, Clock, Mountain, Award, Banknote, Backpack, Tent, Info, Car, Mail, FileText } from "lucide-react"
 import business from "@/data/business.json"
 import Image from "next/image"
 import Link from "next/link"
+import { scrollToId } from "@/lib/utils"
 
 interface ItineraryItem {
   day: string;
@@ -82,6 +83,13 @@ Kind regards,
 
     const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${business.contact.email}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
     window.open(gmailUrl, "_blank")
+  }
+
+  const handleCustomInquiry = () => {
+    onClose();
+    setTimeout(() => {
+      scrollToId('inquiry', 100, true);
+    }, 300);
   }
 
   // Standard Inclusions/Exclusions from PDF
@@ -457,9 +465,15 @@ Kind regards,
                           >
                             <MessageCircle className="h-6 w-6" /> WhatsApp Inquiry
                           </a>
+                          <button 
+                            onClick={handleCustomInquiry}
+                            className="flex items-center justify-center gap-3 h-14 rounded-2xl bg-primary-foreground/10 text-white font-bold border border-white/20 hover:bg-white/10 transition-all"
+                          >
+                            <FileText className="h-6 w-6" /> Detailed Inquiry
+                          </button>
                           <a 
                             href={`tel:${business.contact.phone}`}
-                            className="flex items-center justify-center gap-3 h-14 rounded-2xl bg-primary-foreground/10 text-white font-bold border border-white/20 hover:bg-white/10 transition-all"
+                            className="flex items-center justify-center gap-3 h-14 rounded-2xl bg-white/10 text-white font-bold border border-white/10 hover:bg-white/20 transition-all"
                           >
                             <Phone className="h-6 w-6" /> Call Directly
                           </a>
