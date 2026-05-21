@@ -258,17 +258,17 @@
           {
             "name": "TSUM VALLEY",
             "duration": "17 DAYS",
-            "image": "/images/trekking/manaslu-tsum-valley.jpeg"
+            "image": "/images/trekking/manaslu/tsum-valley.png"
           },
           {
             "name": "TSUM VALLEY MANASLU CIRCUIT",
             "duration": "26 DAYS",
-            "image": "/images/trekking/manaslu-tsum-valley.jpeg"
+            "image": "/images/trekking/manaslu/tsum-manaslu.png"
           },
           {
             "name": "MANASLU CIRCUIT",
             "duration": "20 DAYS",
-            "image": "/images/trekking/manaslu-tsum-valley.jpeg"
+            "image": "/images/trekking/manaslu/manaslu-circuit.png"
           }
         ]
       },
@@ -279,12 +279,12 @@
           {
             "name": "DHORPATAN TREK",
             "duration": "15 DAYS",
-            "image": "/images/trekking/dhaulagiri.jpeg"
+            "image": "/images/trekking/dhaulagiri/dhorpatan.png"
           },
           {
             "name": "DHAULAGIRI CIRCUIT",
             "duration": "19 DAYS",
-            "image": "/images/trekking/dhaulagiri.jpeg"
+            "image": "/images/trekking/dhaulagiri/dhaulagiri-circuit.png"
           }
         ]
       },
@@ -295,12 +295,12 @@
           {
             "name": "LANGTANG GOSAINKUNDA PASS",
             "duration": "18 DAYS",
-            "image": "/images/trekking/langtang.jpeg"
+            "image": "/images/trekking/langtang/gosainkunda.png"
           },
           {
             "name": "TAMANG HERITAGE TRAIL",
             "duration": "10 DAYS",
-            "image": "/images/trekking/langtang.jpeg"
+            "image": "/images/trekking/langtang/tamang-heritage.png"
           }
         ]
       },
