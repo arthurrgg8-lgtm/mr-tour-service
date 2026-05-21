@@ -1,5 +1,12 @@
+import type { Metadata } from "next"
+import business from "@/data/business.json"
 import Gallery from "@/components/sections/Gallery"
 import Image from "next/image"
+
+export const metadata: Metadata = {
+  title: "Travel Gallery",
+  description: `Visual memories of our journeys across Nepal. Browse photos of our premium fleet, satisfied clients, and breathtaking destinations managed by ${business.name}.`,
+}
 
 export default function GalleryPage() {
   return (

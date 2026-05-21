@@ -1,8 +1,14 @@
+import type { Metadata } from "next"
 import fleet from "@/data/fleet.json"
 import business from "@/data/business.json"
 import { Check, MessageCircle, Users, Luggage, Shield } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
+
+export const metadata: Metadata = {
+  title: "Our Vehicle Fleet",
+  description: `Browse the 100% self-owned vehicle fleet of ${business.name}. We offer Toyota Fortuner (Premium SUV), BYD Atto 3 (Electric), Suzuki Brezza, Toyota Hiace, and luxury tourist buses.`,
+}
 
 export default function FleetPage() {
   return (

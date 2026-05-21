@@ -1,3 +1,11 @@
+import type { Metadata } from "next"
+import business from "@/data/business.json"
+
+export const metadata: Metadata = {
+  title: "Privacy Policy",
+  description: `Read the privacy policy of ${business.name}. We are committed to protecting your personal data and ensuring a secure booking experience for all our travelers.`,
+}
+
 export default function PrivacyPolicy() {
   return (
     <div className="pt-32 pb-24 min-h-screen">

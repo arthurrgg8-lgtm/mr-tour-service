@@ -1,7 +1,14 @@
+import type { Metadata } from "next"
 import team from "@/data/team.json"
+import business from "@/data/business.json"
 import { Award, Users, ShieldCheck, Map as MapIcon, ExternalLink } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
+
+export const metadata: Metadata = {
+  title: "About Us",
+  description: `Learn about the journey and mission of ${business.name}. Discover our 100% self-owned fleet, meet our leadership team including founder Bishnu Bahadur Karki, and see our government certifications.`,
+}
 
 export default function AboutPage() {
   return (
