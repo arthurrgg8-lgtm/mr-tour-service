@@ -6,9 +6,16 @@ import { Clock, Compass } from "lucide-react"
 import TourModal from "@/components/ui/TourModal"
 import tourDetails from "@/data/tour_details.json"
 
+interface SubPackage {
+  name: string;
+  duration: string;
+  image: string;
+}
+
 interface Region {
   name: string;
   image: string;
+  subPackages?: SubPackage[];
 }
 
 interface TrekkingGridProps {
@@ -17,21 +24,23 @@ interface TrekkingGridProps {
 
 export default function TrekkingGrid({ regions }: TrekkingGridProps) {
   const [selectedTour, setSelectedTour] = useState<typeof tourDetails[0] | null>(null)
+  const [activeRegion, setActiveRegion] = useState<Region | null>(null)
 
   useEffect(() => {
     const handleHash = () => {
       const hash = decodeURIComponent(window.location.hash.substring(1).toLowerCase())
       if (hash) {
-        let detail = tourDetails.find(d => d.id.toLowerCase() === hash)
-        
-        if (!detail) {
-          if (hash === 'everest-region') {
-            detail = tourDetails.find(d => d.id === 'trek-everest')
-          } else if (hash === 'annapurna-region') {
-            detail = tourDetails.find(d => d.id === 'trek-annapurna')
-          }
+        // Try to find if it's a region first
+        const region = regions.find(r => getRegionId(r.name) === hash)
+        if (region) {
+          setActiveRegion(region)
+          setSelectedTour(null)
+          return
         }
 
+        // Try to find if it's a specific trek
+        let detail = tourDetails.find(d => d.id.toLowerCase() === hash)
+        
         if (!detail) {
           const searchHash = hash.replace(/-/g, ' ')
           detail = tourDetails.find(d => {
@@ -43,16 +52,35 @@ export default function TrekkingGrid({ regions }: TrekkingGridProps) {
 
         if (detail) {
           setSelectedTour(detail)
+          // Find which region this trek belongs to
+          const region = regions.find(r => 
+            r.subPackages?.some(sp => sp.name.toLowerCase() === detail?.title.toLowerCase())
+          )
+          if (region) setActiveRegion(region)
         }
       } else {
         setSelectedTour(null)
+        setActiveRegion(null)
       }
     }
     
     handleHash()
     window.addEventListener('hashchange', handleHash)
     return () => window.removeEventListener('hashchange', handleHash)
-  }, [])
+  }, [regions])
+
+  const handleRegionClick = (region: Region) => {
+    setActiveRegion(region)
+    setSelectedTour(null)
+    const hash = getRegionId(region.name)
+    window.history.pushState(null, "", `#${hash}`)
+    
+    // Scroll to the grid top
+    const element = document.getElementById('trekking-top')
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' })
+    }
+  }
 
   const handleTourClick = (tourName: string) => {
     const normalizedName = tourName.toLowerCase()
@@ -60,120 +88,100 @@ export default function TrekkingGrid({ regions }: TrekkingGridProps) {
     const detail = tourDetails.find(d => {
       const title = d.title.toLowerCase()
       const id = d.id.toLowerCase()
-      
-      if (id === normalizedName) return true
-      if (d.id === 'trek-everest' && (normalizedName === 'everest region' || normalizedName === 'everest')) return true
-      if (d.id === 'trek-annapurna' && (normalizedName === 'annapurna region' || normalizedName === 'annapurna')) return true
-      
-      return title === normalizedName
+      return id === normalizedName || title === normalizedName || id.includes(normalizedName)
     })
 
     if (detail) {
       setSelectedTour(detail)
-      const hash = getRegionId(tourName)
-      window.history.pushState(null, "", `#${hash}`)
+      window.history.pushState(null, "", `#${detail.id}`)
     }
   }
 
   const getRegionId = (name: string) => {
-    const n = name.toLowerCase();
-    
-    if (n.includes('circuit with tilicho')) return 'trek-annapurna-circuit';
-    if (n.includes('namun la')) return 'trek-namun-la';
-    if (n.includes('lamjung himal')) return 'trek-lamjung-himal';
-    if (n.includes('khopra ridge')) return 'trek-khopra-ridge';
-    if (n.includes('mardi himal')) return 'trek-mardi-himal';
-    if (n.includes('short trip') || (n.includes('abc') && n.includes('short'))) return 'trek-abc-short';
-    if (n.includes('nar-phu')) return 'trek-nar-phu';
-    if (n.includes('seven passes')) return 'trek-seven-passes';
-    if (n.includes('abc via ghorepani') || (n.includes('annapurna base camp') && n.includes('ghorepani'))) return 'trek-annapurna-abc';
-
-    if (n.includes('amadablam')) return 'trek-amadablam';
-    if (n.includes('ebc') || n.includes('base camp and kala pathhar')) return 'trek-ebc-kala-pathar';
-    if (n.includes('pikey peak')) return 'trek-pikey-peak';
-    if (n.includes('three passes')) return 'trek-three-passes';
-    if (n.includes('phaplu')) return 'trek-phaplu-ebc';
-
-    if (n.includes('langtang valley trek')) return 'trek-langtang-valley';
-    if (n.includes('gosainkunda')) return 'trek-gosainkunda';
-    if (n.includes('tamang heritage')) return 'trek-tamang-heritage';
-
-    if (n.includes('manaslu circuit')) return 'trek-manaslu-circuit';
-    if (n.includes('tsum valley')) return 'trek-tsum-valley';
-
-    if (n.includes('dhaulagiri circuit')) return 'trek-dhaulagiri-circuit';
-    
-    if (n === 'everest region' || n === 'everest') return 'everest-region';
-    if (n === 'annapurna region' || n === 'annapurna') return 'annapurna-region';
-    if (n === 'langtang region' || n === 'langtang') return 'langtang-region';
-    if (n === 'manaslu & tsum valley' || n === 'manaslu region' || n === 'manaslu') return 'manaslu-trek';
-    if (n === 'dhaulagiri trek' || n === 'dhaulagiri') return 'dhaulagiri-trek';
-    
-    if (n.includes('everest')) return 'everest-region';
-    if (n.includes('annapurna')) return 'annapurna-region';
-    if (n.includes('langtang')) return 'langtang-region';
-    if (n.includes('buddhist')) return 'buddhist-trekking';
-    if (n.includes('dhaulagiri')) return 'dhaulagiri-trek';
-    if (n.includes('far western')) return 'far-western';
-    if (n.includes('dolpo')) return 'dolpo-trek';
-    if (n.includes('makalu')) return 'makalu-trek';
-    if (n.includes('ght')) return 'ght-trail';
-    if (n.includes('mustang')) return 'upper-mustang';
-    if (n.includes('manaslu')) return 'manaslu-trek';
-    if (n.includes('kailash')) return 'kailash-trek';
-    if (n.includes('kanchanjunga')) return 'kanchanjunga-trek';
-    if (n.includes('rara')) return 'rara-trek';
-    
-    return n.split(' ')[0];
+    return name.toLowerCase().replace(/[^a-z0-9]/g, '-')
   }
 
   const getBackHandler = () => {
-    if (!selectedTour) return undefined;
-    
-    const annapurnaIds = ['trek-annapurna-abc', 'trek-annapurna-circuit', 'trek-khopra-ridge', 'trek-mardi-himal', 'trek-namun-la', 'trek-lamjung-himal', 'trek-nar-phu', 'trek-seven-passes', 'trek-abc-short'];
-    if (selectedTour.id.startsWith('trek-annapurna-') || annapurnaIds.includes(selectedTour.id)) {
-      return () => handleTourClick('Annapurna Region');
+    if (selectedTour && activeRegion) {
+      return () => {
+        setSelectedTour(null)
+        window.history.pushState(null, "", `#${getRegionId(activeRegion.name)}`)
+      }
     }
-    
-    const everestIds = ['trek-amadablam', 'trek-ebc-kala-pathar', 'trek-pikey-peak', 'trek-three-passes', 'trek-phaplu-ebc'];
-    if (selectedTour.id.startsWith('trek-everest-') || everestIds.includes(selectedTour.id)) {
-      return () => handleTourClick('Everest Region');
+    if (activeRegion) {
+      return () => {
+        setActiveRegion(null)
+        window.history.pushState(null, "", window.location.pathname)
+      }
     }
-
-    const langtangIds = ['trek-langtang-valley', 'trek-gosainkunda', 'trek-tamang-heritage'];
-    if (langtangIds.includes(selectedTour.id)) {
-      return () => handleTourClick('Langtang Region');
-    }
-
-    const manasluIds = ['trek-manaslu-circuit', 'trek-tsum-valley'];
-    if (manasluIds.includes(selectedTour.id)) {
-      return () => handleTourClick('Manaslu Region');
-    }
-
-    if (selectedTour.id === 'trek-dhaulagiri-circuit') {
-      return () => handleTourClick('Dhaulagiri Trek');
-    }
-    
-    if (selectedTour.id.startsWith('trek-') && 
-        selectedTour.id !== 'trek-everest' && 
-        selectedTour.id !== 'trek-annapurna') {
-      if (selectedTour.id.includes('annapurna')) return () => handleTourClick('Annapurna Region');
-      if (selectedTour.id.includes('everest')) return () => handleTourClick('Everest Region');
-      if (selectedTour.id.includes('langtang')) return () => handleTourClick('Langtang Region');
-      if (selectedTour.id.includes('manaslu')) return () => handleTourClick('Manaslu Region');
-      if (selectedTour.id.includes('dhaulagiri')) return () => handleTourClick('Dhaulagiri Trek');
-    }
-    
     return undefined;
   }
 
+  if (activeRegion && !selectedTour) {
+    return (
+      <div id="trekking-top" className="scroll-mt-32">
+        <button 
+          onClick={() => {
+            setActiveRegion(null)
+            window.history.pushState(null, "", window.location.pathname)
+          }}
+          className="flex items-center gap-2 text-primary font-bold mb-8 hover:gap-4 transition-all"
+        >
+          <Compass className="h-5 w-5 rotate-180" />
+          Back to Regions
+        </button>
+
+        <div className="mb-12">
+          <h3 className="text-3xl md:text-4xl font-bold mb-4">{activeRegion.name}</h3>
+          <p className="text-muted-foreground text-lg">Select a trekking package to view detailed itinerary.</p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {activeRegion.subPackages?.map((pkg, idx) => (
+            <div 
+              key={idx}
+              className="group bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-md hover:shadow-xl transition-all duration-300 cursor-pointer"
+              onClick={() => handleTourClick(pkg.name)}
+            >
+              <div className="relative h-64 overflow-hidden">
+                <Image 
+                  src={pkg.image} 
+                  alt={pkg.name}
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute top-4 right-4 bg-black/60 backdrop-blur-md text-white px-4 py-1 rounded-full text-xs font-bold">
+                  {pkg.duration}
+                </div>
+              </div>
+              <div className="p-6">
+                <h4 className="text-xl font-bold mb-4 group-hover:text-primary transition-colors">{pkg.name}</h4>
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-2 text-slate-500 text-sm">
+                    <Clock className="h-4 w-4" />
+                    <span>{pkg.duration}</span>
+                  </div>
+                  <span className="text-primary font-bold text-sm">View Details →</span>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    )
+  }
+
   return (
-    <>
+    <div id="trekking-top" className="scroll-mt-32">
       <TourModal 
         tour={selectedTour} 
         onClose={() => {
           setSelectedTour(null)
-          window.history.pushState(null, "", window.location.pathname + window.location.search)
+          if (activeRegion) {
+            window.history.pushState(null, "", `#${getRegionId(activeRegion.name)}`)
+          } else {
+            window.history.pushState(null, "", window.location.pathname)
+          }
         }} 
         onSelectSubPackage={handleTourClick}
         onBack={getBackHandler()}
@@ -185,7 +193,7 @@ export default function TrekkingGrid({ regions }: TrekkingGridProps) {
             key={idx}
             id={getRegionId(region.name)}
             className="group relative h-[400px] rounded-[2.5rem] overflow-hidden border border-slate-100 shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer scroll-mt-32"
-            onClick={() => handleTourClick(region.name)}
+            onClick={() => handleRegionClick(region)}
           >
             <Image 
               src={region.image} 
@@ -215,6 +223,6 @@ export default function TrekkingGrid({ regions }: TrekkingGridProps) {
           </div>
         ))}
       </div>
-    </>
+    </div>
   )
 }

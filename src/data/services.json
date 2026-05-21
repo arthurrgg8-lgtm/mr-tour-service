@@ -19,27 +19,27 @@
         "image": "/images/tours/tour-9.png"
       },
       {
-        "name": "KATHMANDU – POKHARA – CHITWAN TOUR",
+        "name": "KATHMANDU \u2013 POKHARA \u2013 CHITWAN TOUR",
         "duration": "8 DAYS",
         "image": "/images/tours/tour-10.png"
       },
       {
-        "name": "KATHMANDU – POKHARA – CHITWAN – LUMBINI TOUR",
+        "name": "KATHMANDU \u2013 POKHARA \u2013 CHITWAN \u2013 LUMBINI TOUR",
         "duration": "10 DAYS",
         "image": "/images/tours/tour-11.png"
       },
       {
-        "name": "KATHMANDU – POKHARA – GHANDRUK – CHITWAN TOUR",
+        "name": "KATHMANDU \u2013 POKHARA \u2013 GHANDRUK \u2013 CHITWAN TOUR",
         "duration": "9 DAYS",
         "image": "/images/tours/tour-12.png"
       },
       {
-        "name": "KATHMANDU – POKHARA – GHANDRUK TOUR",
+        "name": "KATHMANDU \u2013 POKHARA \u2013 GHANDRUK TOUR",
         "duration": "7 DAYS",
         "image": "/images/tours/tour-13.png"
       },
       {
-        "name": "KATHMANDU – NAGARKOT TOUR",
+        "name": "KATHMANDU \u2013 NAGARKOT TOUR",
         "duration": "5 DAYS",
         "image": "/images/tours/tour-14.png"
       },
@@ -174,17 +174,14 @@
         "image": "/images/trekking/everest.jpeg",
         "subPackages": [
           {
-            "name": "AMADABLAM BASE CAMP",
+            "name": "AMA DABLAM BASE CAMP",
             "duration": "12 DAYS",
             "image": "/images/trekking/everest/amadablam.png"
           },
           {
-            "name": "EVEREST BASE CAMP AND KALA PATHHAR",
+            "name": "EVEREST BASE CAMP AND KALA PATTHAR",
             "duration": "14 DAYS",
-            "image": "/images/trekking/everest/ebc-kala-pathar.png",
-            "startingPrice": "NPR 162,000 / $1,200",
-            "maxAltitude": "5,545m",
-            "difficulty": "Moderate-Hard"
+            "image": "/images/trekking/everest/ebc-kala-pathar.png"
           },
           {
             "name": "EVEREST PIKEY PEAK",
@@ -208,39 +205,34 @@
         "image": "/images/trekking/annapurna.jpeg",
         "subPackages": [
           {
+            "name": "ANNAPURNA BASE CAMP (SHORT TRIP)",
+            "duration": "8 DAYS",
+            "image": "/images/trekking/abc-short.png"
+          },
+          {
             "name": "ANNAPURNA CIRCUIT WITH TILICHO LAKE",
             "duration": "18 DAYS",
             "image": "/images/trekking/annapurna-circuit-tilicho.png"
           },
           {
             "name": "TREK TO ANNAPURNA WITH NAMUN LA PASS",
-            "duration": "15 DAYS",
+            "duration": "13 DAYS",
             "image": "/images/trekking/annapurna-namun-la.png"
           },
           {
-            "name": "LAMJUNG HIMAL TREK",
+            "name": "LAMJUNG HIMAL",
             "duration": "13 DAYS",
             "image": "/images/trekking/lamjung-himal.png"
           },
           {
-            "name": "KHOPRA RIDGE TREK",
-            "duration": "12 DAYS",
-            "image": "/images/trekking/khopra-ridge.png"
-          },
-          {
-            "name": "MARDI HIMAL TREK",
+            "name": "MARDI HIMAL",
             "duration": "9 DAYS",
             "image": "/images/trekking/mardi-himal.png"
           },
           {
-            "name": "ANNAPURNA BASE CAMP - SHORT TRIP",
-            "duration": "8 DAYS",
-            "image": "/images/trekking/abc-short.png"
-          },
-          {
-            "name": "ANNAPURNA CIRCUIT WITH NAR-PHU VALLEY",
-            "duration": "26 DAYS",
-            "image": "/images/trekking/annapurna-nar-phu.png"
+            "name": "KHOPRA RIDGE",
+            "duration": "12 DAYS",
+            "image": "/images/trekking/khopra-ridge.png"
           },
           {
             "name": "ANNAPURNA BASE CAMP VIA GHOREPANI",
@@ -248,9 +240,51 @@
             "image": "/images/trekking/abc-ghorepani.png"
           },
           {
-            "name": "ANNAPURNA SEVEN PASSES TREK",
+            "name": "ANNAPURNA CIRCUIT WITH NAR-PHU VALLEY",
+            "duration": "27 DAYS",
+            "image": "/images/trekking/annapurna-nar-phu.png"
+          },
+          {
+            "name": "ANNAPURNA SEVEN PASSES",
             "duration": "23 DAYS",
             "image": "/images/trekking/annapurna-seven-passes.png"
+          }
+        ]
+      },
+      {
+        "name": "MANASLU AND TSUM VALLEY REGION",
+        "image": "/images/trekking/manaslu-tsum-valley.jpeg",
+        "subPackages": [
+          {
+            "name": "TSUM VALLEY",
+            "duration": "17 DAYS",
+            "image": "/images/trekking/manaslu-tsum-valley.jpeg"
+          },
+          {
+            "name": "TSUM VALLEY MANASLU CIRCUIT",
+            "duration": "26 DAYS",
+            "image": "/images/trekking/manaslu-tsum-valley.jpeg"
+          },
+          {
+            "name": "MANASLU CIRCUIT",
+            "duration": "20 DAYS",
+            "image": "/images/trekking/manaslu-tsum-valley.jpeg"
+          }
+        ]
+      },
+      {
+        "name": "DHAULAGIRI REGION",
+        "image": "/images/trekking/dhaulagiri.jpeg",
+        "subPackages": [
+          {
+            "name": "DHORPATAN TREK",
+            "duration": "15 DAYS",
+            "image": "/images/trekking/dhaulagiri.jpeg"
+          },
+          {
+            "name": "DHAULAGIRI CIRCUIT",
+            "duration": "19 DAYS",
+            "image": "/images/trekking/dhaulagiri.jpeg"
           }
         ]
       },
@@ -259,13 +293,8 @@
         "image": "/images/trekking/langtang.jpeg",
         "subPackages": [
           {
-            "name": "LANGTANG VALLEY TREK",
-            "duration": "8 DAYS",
-            "image": "/images/trekking/langtang.jpeg"
-          },
-          {
-            "name": "GOSAINKUNDA LAKE TREK",
-            "duration": "9 DAYS",
+            "name": "LANGTANG GOSAINKUNDA PASS",
+            "duration": "18 DAYS",
             "image": "/images/trekking/langtang.jpeg"
           },
           {
@@ -276,55 +305,115 @@
         ]
       },
       {
-        "name": "BUDDHIST PILGRIMAGE TREKKING",
-        "image": "/images/trekking/buddhist-pilgrimage.jpeg"
-      },
-      {
-        "name": "DHAULAGIRI TREK",
-        "image": "/images/trekking/dhaulagiri.jpeg",
+        "name": "KANCHANJUNGA REGION",
+        "image": "/images/trekking/kanchanjunga.jpeg",
         "subPackages": [
           {
-            "name": "DHAULAGIRI CIRCUIT TREK",
+            "name": "LUMBA SUMBA PASS",
             "duration": "20 DAYS",
-            "image": "/images/trekking/dhaulagiri.jpeg"
+            "image": "/images/trekking/kanchanjunga.jpeg"
+          },
+          {
+            "name": "TREK TO KANCHENJUNGA BASE CAMP",
+            "duration": "26 DAYS",
+            "image": "/images/trekking/kanchanjunga.jpeg"
           }
         ]
       },
       {
-        "name": "TREK TO FAR WESTERN NEPAL",
-        "image": "/images/trekking/far-western-nepal.jpeg"
+        "name": "MAKALU REGION",
+        "image": "/images/trekking/makalu.jpeg",
+        "subPackages": [
+          {
+            "name": "MAKALU BASE CAMP",
+            "duration": "22 DAYS",
+            "image": "/images/trekking/makalu.jpeg"
+          },
+          {
+            "name": "SHERPANI COL HIGH PASS",
+            "duration": "26 DAYS",
+            "image": "/images/trekking/makalu.jpeg"
+          }
+        ]
       },
       {
-        "name": "TREK TO UPPER & LOWER DOLPO",
-        "image": "/images/trekking/dolpo.jpeg"
+        "name": "UPPER MUSTANG REGION",
+        "image": "/images/trekking/upper-mustang.jpeg",
+        "subPackages": [
+          {
+            "name": "UPPER MUSTANG",
+            "duration": "16 DAYS",
+            "image": "/images/trekking/upper-mustang.jpeg"
+          },
+          {
+            "name": "NAR PHU VALLEY VIA TERI-LA PASS",
+            "duration": "27 DAYS",
+            "image": "/images/trekking/upper-mustang.jpeg"
+          },
+          {
+            "name": "UPPER MUSTANG (TIJI FESTIVAL)",
+            "duration": "21 DAYS",
+            "image": "/images/trekking/upper-mustang.jpeg"
+          },
+          {
+            "name": "DAMODAR KUNDA",
+            "duration": "19 DAYS",
+            "image": "/images/trekking/upper-mustang.jpeg"
+          }
+        ]
       },
       {
-        "name": "TREK TO MAKALU",
-        "image": "/images/trekking/makalu.jpeg"
+        "name": "FAR WESTERN TREK REGION",
+        "image": "/images/trekking/far-western-nepal.jpeg",
+        "subPackages": [
+          {
+            "name": "JUMLA RARA LAKE",
+            "duration": "17 DAYS",
+            "image": "/images/trekking/rara.png"
+          },
+          {
+            "name": "API BASE CAMP",
+            "duration": "15 DAYS",
+            "image": "/images/trekking/far-western-nepal.jpeg"
+          }
+        ]
       },
       {
-        "name": "GHT TRAIL",
-        "image": "/images/trekking/ght-trail.jpeg"
+        "name": "UPPER & LOWER DOLPO REGION",
+        "image": "/images/trekking/dolpo.jpeg",
+        "subPackages": [
+          {
+            "name": "DOLPO AND MUGU (GREAT HIMALAYAN TRAIL)",
+            "duration": "33 DAYS",
+            "image": "/images/trekking/dolpo.jpeg"
+          },
+          {
+            "name": "LOWER DOLPA",
+            "duration": "27 DAYS",
+            "image": "/images/trekking/dolpo.jpeg"
+          },
+          {
+            "name": "POKHARA & DOLPO",
+            "duration": "25 DAYS",
+            "image": "/images/trekking/dolpo.jpeg"
+          },
+          {
+            "name": "DOLPO TO JOMSOM VIA GHT ROUTE",
+            "duration": "25 DAYS",
+            "image": "/images/trekking/dolpo.jpeg"
+          }
+        ]
       },
       {
-        "name": "TREK TO UPPER MUSTANG",
-        "image": "/images/trekking/upper-mustang.jpeg"
-      },
-      {
-        "name": "TREK TO MANASLU AND TSUM VALLEY",
-        "image": "/images/trekking/manaslu-tsum-valley.jpeg"
-      },
-      {
-        "name": "KAILASH MANSAROVAR",
-        "image": "/images/trekking/kailash.png"
-      },
-      {
-        "name": "KANCHANJUNGA REGION",
-        "image": "/images/trekking/kanchanjunga.jpeg"
-      },
-      {
-        "name": "RARA REGION",
-        "image": "/images/trekking/rara.png"
+        "name": "BUDDHIST PILGRIMAGE",
+        "image": "/images/trekking/buddhist-pilgrimage.jpeg",
+        "subPackages": [
+          {
+            "name": "BUDDHIST PILGRIMAGE TREKKING",
+            "duration": "19 DAYS",
+            "image": "/images/trekking/buddhist-pilgrimage.jpeg"
+          }
+        ]
       }
     ]
   },

@@ -28,7 +28,7 @@ interface TourDetail {
   title: string;
   image?: string;
   tagline: string;
-  highlights: string[];
+  highlights?: string[];
   description: string;
   duration?: string;
   startingPrice?: string;
@@ -338,21 +338,23 @@ Kind regards,
                  {/* Right Side: Essentials & Contact (5/12) */}
                  <div className="lg:col-span-5 space-y-10">
                     {/* Highlights Card */}
-                    <div className="p-8 rounded-[2rem] bg-slate-50 border border-slate-100 space-y-6 shadow-sm">
-                      <h3 className="text-xl font-bold flex items-center gap-3">
-                         <CheckCircle2 className="h-6 w-6 text-primary" /> Trip Highlights
-                      </h3>
-                      <ul className="space-y-4">
-                        {tour.highlights.map((h, i) => (
-                          <li key={i} className="flex gap-4 text-slate-700 font-medium leading-snug">
-                             <div className="h-6 w-6 rounded-full bg-primary/10 flex items-center justify-center shrink-0 mt-0.5">
-                                <span className="h-2 w-2 rounded-full bg-primary" />
-                             </div>
-                             {h}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
+                    {tour.highlights && tour.highlights.length > 0 && (
+                      <div className="p-8 rounded-[2rem] bg-slate-50 border border-slate-100 space-y-6 shadow-sm">
+                        <h3 className="text-xl font-bold flex items-center gap-3">
+                           <CheckCircle2 className="h-6 w-6 text-primary" /> Trip Highlights
+                        </h3>
+                        <ul className="space-y-4">
+                          {tour.highlights.map((h, i) => (
+                            <li key={i} className="flex gap-4 text-slate-700 font-medium leading-snug">
+                               <div className="h-6 w-6 rounded-full bg-primary/10 flex items-center justify-center shrink-0 mt-0.5">
+                                  <span className="h-2 w-2 rounded-full bg-primary" />
+                               </div>
+                               {h}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
 
                     {/* Trek/Tour Essentials Sidebar */}
                     {isTrek && (

@@ -6,9 +6,16 @@ import Image from "next/image"
 import ServiceInquiryForm from "@/components/sections/ServiceInquiryForm"
 import TrekkingGrid from "@/components/sections/TrekkingGrid"
 
+interface SubPackage {
+  name: string;
+  duration: string;
+  image: string;
+}
+
 interface Region {
   name: string;
   image: string;
+  subPackages?: SubPackage[];
 }
 
 interface Service {
@@ -22,6 +29,7 @@ interface Service {
   capacity?: string;
   startingPrice?: string;
   regions?: Region[];
+  subServices?: any[];
 }
 
 export const metadata: Metadata = {
