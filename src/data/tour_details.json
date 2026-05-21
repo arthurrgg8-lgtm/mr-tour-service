@@ -16,7 +16,7 @@
       "Buddhist norms, meditation and yoga activities",
       "Mixture lifestyle of Aryan, Tibetan & Newari culture"
     ],
-    "description": "Chisapani-Nagarkot-Dhulikhel-Namo Buddha- Kathmandu trek is one of the easier trekking trail in Nepal designed to explore nature and culture of Nepal’s countryside and the amazing mountain views. This trek is also known as Around Kathmandu Valley Trek. It is an excellent trek for those who wish to avoid a long, strenuous trek or have time only for a short and easy trek and fit for all age group and for all seasons.",
+    "description": "Chisapani-Nagarkot-Dhulikhel-Namo Buddha- Kathmandu trek is one of the easier trekking trail in Nepal designed to explore nature and culture of Nepal\u2019s countryside and the amazing mountain views. This trek is also known as Around Kathmandu Valley Trek. It is an excellent trek for those who wish to avoid a long, strenuous trek or have time only for a short and easy trek and fit for all age group and for all seasons.",
     "itinerary": [
       {
         "day": "01",
@@ -25,22 +25,22 @@
       },
       {
         "day": "02",
-        "title": "Chisopani – Nagarkot (2175m)",
+        "title": "Chisopani \u2013 Nagarkot (2175m)",
         "desc": "Today we hike towards Nagarkot. It is the famous panoramic hillside from where we can get picturesque view of sunrise and sunset."
       },
       {
         "day": "03",
-        "title": "Nagarkot – Dhulikhel (1550m)",
+        "title": "Nagarkot \u2013 Dhulikhel (1550m)",
         "desc": "Our journey continues to Dhulikhel from Nagarkot. Dhulikhel is the trade hub for the surrounding places and ancient Nepal- Tibet trade point where we can see the Newari and Nepali lifestyle."
       },
       {
         "day": "04",
-        "title": "Dhulikhel – Namo Buddha (1810m)",
+        "title": "Dhulikhel \u2013 Namo Buddha (1810m)",
         "desc": "The trail proceeds through unspoiled villages. Eventually, after 5/6 hrs treks bring you to a Tibetan Buddhist village Namobuddha with beautiful chorten and monastery."
       },
       {
         "day": "05",
-        "title": "Namo Buddha – Panauti – Kathmandu",
+        "title": "Namo Buddha \u2013 Panauti \u2013 Kathmandu",
         "desc": "Trek to legendary village Panauti and explore ancient temples. After lunch drive to historical heritage site Bhaktapur and then back to Kathmandu."
       }
     ]
@@ -453,7 +453,7 @@
   },
   {
     "id": "tour-10",
-    "title": "KATHMANDU – POKHARA – CHITWAN TOUR",
+    "title": "KATHMANDU \u2013 POKHARA \u2013 CHITWAN TOUR",
     "image": "/images/tours/tour-10.png",
     "tagline": "A classic journey covering history, lakes, mountains, and wildlife",
     "duration": "8 Days",
@@ -512,7 +512,7 @@
   },
   {
     "id": "tour-11",
-    "title": "KATHMANDU – POKHARA – CHITWAN – LUMBINI TOUR",
+    "title": "KATHMANDU \u2013 POKHARA \u2013 CHITWAN \u2013 LUMBINI TOUR",
     "image": "/images/tours/tour-11.png",
     "tagline": "An extensive trip covering Nepal's top historical, natural and sacred sights",
     "duration": "10 Days",
@@ -581,7 +581,7 @@
   },
   {
     "id": "tour-12",
-    "title": "KATHMANDU – POKHARA – GHANDRUK – CHITWAN TOUR",
+    "title": "KATHMANDU \u2013 POKHARA \u2013 GHANDRUK \u2013 CHITWAN TOUR",
     "image": "/images/tours/tour-12.png",
     "tagline": "Sightseeing, a scenic village trek, and jungle wildlife safari combined",
     "duration": "9 Days",
@@ -645,7 +645,7 @@
   },
   {
     "id": "tour-13",
-    "title": "KATHMANDU – POKHARA – GHANDRUK TOUR",
+    "title": "KATHMANDU \u2013 POKHARA \u2013 GHANDRUK TOUR",
     "image": "/images/tours/tour-13.png",
     "tagline": "Discover culture, beautiful lakes, and Gurung mountain heritage",
     "duration": "7 Days",
@@ -699,7 +699,7 @@
   },
   {
     "id": "tour-14",
-    "title": "KATHMANDU – NAGARKOT TOUR",
+    "title": "KATHMANDU \u2013 NAGARKOT TOUR",
     "image": "/images/tours/tour-14.png",
     "tagline": "A historic cities tour and a panoramic mountain resort stay",
     "duration": "5 Days",
@@ -1495,7 +1495,7 @@
       },
       {
         "day": "02",
-        "title": "Dhulikhel – Namobuddha Sightseeing Tour",
+        "title": "Dhulikhel \u2013 Namobuddha Sightseeing Tour",
         "desc": "Scenic excursion to Namobuddha. Visit Thrangu Tashi Yangtse Monastery. Explore spiritual surroundings and enjoy panoramic Himalayan scenery."
       },
       {
@@ -1522,7 +1522,7 @@
     "itinerary": [
       {
         "day": "01",
-        "title": "Drive to Ulleri (2½ hr / 2,100m) from Pokhara and trek to Ghorepani",
+        "title": "Drive to Ulleri (2\u00bd hr / 2,100m) from Pokhara and trek to Ghorepani",
         "desc": "Drive west of Pokhara to Nayapul. Trek through Burungdi River valley and climb to Ulleri. Enjoy views of Annapurna I, Huinchuli and Mt Fishtail."
       },
       {
@@ -1797,7 +1797,7 @@
       },
       {
         "day": "06",
-        "title": "Kyubara – Furju Dewrali (4385 m)",
+        "title": "Kyubara \u2013 Furju Dewrali (4385 m)",
         "desc": "Walk through the upper level of the hill where water is scarce."
       },
       {
@@ -2236,7 +2236,7 @@
       },
       {
         "day": "02",
-        "title": "Drive to Tal – 12 Hrs Drive",
+        "title": "Drive to Tal \u2013 12 Hrs Drive",
         "desc": "Drive to Besisahar and on to Tal by jeep."
       },
       {
@@ -2494,7 +2494,9 @@
         "title": "Departure Day",
         "desc": "Transfer to airport for your flight home."
       }
-    ]
+    ],
+    "maxAltitude": "5,350m",
+    "difficulty": "Strenuous"
   },
   {
     "id": "trek-lower-dolpa",
@@ -2581,7 +2583,7 @@
       },
       {
         "day": "16",
-        "title": "Phoksundo – Rest Day",
+        "title": "Phoksundo \u2013 Rest Day",
         "desc": "Explore the magnificent lake and natural sites."
       },
       {
@@ -2639,7 +2641,9 @@
         "title": "Depart Kathmandu",
         "desc": "Final transfer for your flight home."
       }
-    ]
+    ],
+    "maxAltitude": "3,611m",
+    "difficulty": "Moderate"
   },
   {
     "id": "trek-pokhara-dolpo",
@@ -2814,7 +2818,9 @@
         "title": "Departure",
         "desc": "Final farewell and airport transfer."
       }
-    ]
+    ],
+    "maxAltitude": "5,350m",
+    "difficulty": "Strenuous"
   },
   {
     "id": "trek-dolpo-jomsom-ght",
@@ -2856,7 +2862,7 @@
       },
       {
         "day": "07",
-        "title": "Phoksundo – Rest day",
+        "title": "Phoksundo \u2013 Rest day",
         "desc": "Explore Ringmo village and Tshowa monastery."
       },
       {
@@ -2949,7 +2955,9 @@
         "title": "Final departure",
         "desc": "Transfer to airport for departure flight."
       }
-    ]
+    ],
+    "maxAltitude": "5,350m",
+    "difficulty": "Strenuous"
   },
   {
     "id": "trek-lumba-sumba",
@@ -3059,7 +3067,9 @@
         "title": "Final departure",
         "desc": "Transfer to international airport."
       }
-    ]
+    ],
+    "maxAltitude": "5,200m",
+    "difficulty": "Strenuous"
   },
   {
     "id": "trek-kanchanjunga-bc",
@@ -3076,7 +3086,7 @@
       },
       {
         "day": "02",
-        "title": "Flight Kathmandu to Bhadrapur — Drive to Ilam",
+        "title": "Flight Kathmandu to Bhadrapur \u2014 Drive to Ilam",
         "desc": "Scenic flight and drive to the famous tea plantations."
       },
       {
@@ -3199,7 +3209,9 @@
         "title": "Final departure",
         "desc": "Transfer to TIA for flight home."
       }
-    ]
+    ],
+    "maxAltitude": "5,143m",
+    "difficulty": "Strenuous"
   },
   {
     "id": "trek-makalu-bc",
@@ -3319,7 +3331,9 @@
         "title": "Final departure",
         "desc": "Transfer to airport for departure flight."
       }
-    ]
+    ],
+    "maxAltitude": "4,870m",
+    "difficulty": "Moderate-Hard"
   },
   {
     "id": "trek-sherpani-col",
@@ -3459,7 +3473,9 @@
         "title": "Departures from Kathmandu",
         "desc": "Transfer to airport and wave goodbye."
       }
-    ]
+    ],
+    "maxAltitude": "6,143m",
+    "difficulty": "Very Strenuous"
   },
   {
     "id": "trek-upper-mustang",
@@ -3549,7 +3565,9 @@
         "title": "Departure",
         "desc": "Drop to airport for your flight home."
       }
-    ]
+    ],
+    "maxAltitude": "3,840m",
+    "difficulty": "Moderate"
   },
   {
     "id": "trek-amadablam",
@@ -3619,7 +3637,9 @@
         "title": "FLY TO KATHMANDU, TRANSFER TO YOUR HOTEL",
         "desc": "Return flight to the capital and transfer to your accommodation."
       }
-    ]
+    ],
+    "maxAltitude": "4,600m",
+    "difficulty": "Moderate"
   },
   {
     "id": "trek-ebc-kala-pathar",
@@ -3636,7 +3656,7 @@
       },
       {
         "day": "02",
-        "title": "Fly Kathmandu—Lukla and trek to Phakding (2,562m /8700ft)",
+        "title": "Fly Kathmandu\u2014Lukla and trek to Phakding (2,562m /8700ft)",
         "desc": "Early morning, fly to Lukla for 35 minutes. The trail starts along the side of the Dudh Koshi valley before ascending to Ghat Trail climbs gently again about an hour to final destination Phakding."
       },
       {
@@ -3647,7 +3667,7 @@
       {
         "day": "04",
         "title": "Namche Bazaar: Acclimatization and exploration day",
-        "desc": "Today will be spent resting and allowing your bodies to become acclimatized to the lofty altitude. There’s an optional 2 hour hike to Everest View Point, an uphill walk that will help speed acclimatization. Otherwise, spend the day exploring Namche Bazaar."
+        "desc": "Today will be spent resting and allowing your bodies to become acclimatized to the lofty altitude. There\u2019s an optional 2 hour hike to Everest View Point, an uphill walk that will help speed acclimatization. Otherwise, spend the day exploring Namche Bazaar."
       },
       {
         "day": "05",
@@ -3672,7 +3692,7 @@
       {
         "day": "09",
         "title": "Lobuche - Gorak Shep - Everest Base Camp (5,364 m)",
-        "desc": "On the way to our destination, we’ll approach the famed Khumbu Glacier and icefall, located on the slopes of Everest."
+        "desc": "On the way to our destination, we\u2019ll approach the famed Khumbu Glacier and icefall, located on the slopes of Everest."
       },
       {
         "day": "10",
@@ -3681,17 +3701,17 @@
       },
       {
         "day": "11",
-        "title": "Pheriche – Namche Bazaar (3,440 m)",
+        "title": "Pheriche \u2013 Namche Bazaar (3,440 m)",
         "desc": "Today a long descent leads to Phunki Thenga on the Imja Khola. The path then climbs to Sanasa beyond which it broadens for the pleasant contour walk back to Namche Bazaar."
       },
       {
         "day": "12",
-        "title": "Namche Bazaar – Lukla (2,642m)",
+        "title": "Namche Bazaar \u2013 Lukla (2,642m)",
         "desc": "From Namche, the trail descends to more comfortable altitudes, passing through the friendly farming villages, crossing the suspension bridge at Thado Koshi before rising to Ghat and Cheplung."
       },
       {
         "day": "13",
-        "title": "Lukla – Kathmandu (1,300m)",
+        "title": "Lukla \u2013 Kathmandu (1,300m)",
         "desc": "After an early breakfast, take the return flight to Kathmandu. Transfer to your hotel."
       },
       {
@@ -3699,7 +3719,9 @@
         "title": "Final Trek departure",
         "desc": "After breakfast, transfer to international airport and fly to onward destination."
       }
-    ]
+    ],
+    "maxAltitude": "5,545m",
+    "difficulty": "Moderate-Hard"
   },
   {
     "id": "trek-pikey-peak",
@@ -3722,7 +3744,7 @@
       {
         "day": "03",
         "title": "Trek from Dhap to Jhapre (2930m)",
-        "desc": "Today, you'll start the easy trek for about 5 hours to Jhapre village.The trail follows a road under construction for the ﬁrst couple of hours perched above a deep valley with nice views of Everest and Numbur Himal. We will visit local Monastery."
+        "desc": "Today, you'll start the easy trek for about 5 hours to Jhapre village.The trail follows a road under construction for the \ufb01rst couple of hours perched above a deep valley with nice views of Everest and Numbur Himal. We will visit local Monastery."
       },
       {
         "day": "04",
@@ -3749,7 +3771,9 @@
         "title": "Departure",
         "desc": "Today we will drop you to the airport and wave you goodbye."
       }
-    ]
+    ],
+    "maxAltitude": "4,065m",
+    "difficulty": "Easy-Moderate"
   },
   {
     "id": "trek-three-passes",
@@ -3806,7 +3830,7 @@
       },
       {
         "day": "10",
-        "title": "Trek to Everest Base camp(5,364) – Gorakshep(5,170m)",
+        "title": "Trek to Everest Base camp(5,364) \u2013 Gorakshep(5,170m)",
         "desc": "Today we climb through meadows and moraine stones steps to reach Gorakshep, by either climbing to Kalapathar or continue heading to Everest base camp. From Kalapathar, we get to see the entire south face of Mt. Everest and well-known peaks nearby; this also includes great sights of the skyline of the Tibet plateau."
       },
       {
@@ -3854,7 +3878,9 @@
         "title": "Departure Day",
         "desc": "Today, we drop you to the international airport to fly back to your home."
       }
-    ]
+    ],
+    "maxAltitude": "5,545m",
+    "difficulty": "Strenuous"
   },
   {
     "id": "trek-phaplu-ebc",
@@ -3862,7 +3888,7 @@
     "image": "/images/trekking/everest/phaplu-ebc.png",
     "duration": "20 Days",
     "tagline": "An exciting Trekking experience",
-    "description": "Phaplu Everest Base Camp trek is alternative trekking in the Everest region. Phaplu EBC trek is an extra adventurous and less crowded route. It also offers sufficient time to acclimatize you before reaching Lukla. This Everest Base Camp trek via Phaplu is popular for its Sherpa villages, monasteries and culture, fabulous sceneries and social life of Sherpa villages are another attraction of this region. We follow the “milk river” north through terraced hillsides and small villages to join the main Everest trail below Lukla. The route passes through Lush valleys with abundant flora and fauna, spectacular forests of blooming rhododendron in March.",
+    "description": "Phaplu Everest Base Camp trek is alternative trekking in the Everest region. Phaplu EBC trek is an extra adventurous and less crowded route. It also offers sufficient time to acclimatize you before reaching Lukla. This Everest Base Camp trek via Phaplu is popular for its Sherpa villages, monasteries and culture, fabulous sceneries and social life of Sherpa villages are another attraction of this region. We follow the \u201cmilk river\u201d north through terraced hillsides and small villages to join the main Everest trail below Lukla. The route passes through Lush valleys with abundant flora and fauna, spectacular forests of blooming rhododendron in March.",
     "itinerary": [
       {
         "day": "01",
@@ -3927,7 +3953,7 @@
       {
         "day": "13",
         "title": "Trek to Lobuche [4930m] (Altitude: 4910 m/16203 ft. Trek: 5/6 hrs)",
-        "desc": "Today, our trek will continue up the village from where we can enjoy the mountains, including Mt. Makalu. We will take a steep climb towards the foot of the Khumbu Glacier and reach at Dugla. Then, we will walk on the trail zigzags up through the boulders of the glacier’s terminal moraine. The path then climbs gently along the glacier to reach the cluster of houses at Lobuche."
+        "desc": "Today, our trek will continue up the village from where we can enjoy the mountains, including Mt. Makalu. We will take a steep climb towards the foot of the Khumbu Glacier and reach at Dugla. Then, we will walk on the trail zigzags up through the boulders of the glacier\u2019s terminal moraine. The path then climbs gently along the glacier to reach the cluster of houses at Lobuche."
       },
       {
         "day": "14",
@@ -3964,7 +3990,9 @@
         "title": "Departure transfer",
         "desc": "Today is the day of your departure carrying lots of adventurous memories of the Everest Base Camp trek. We will drop you to the airport 3 hours before your flight."
       }
-    ]
+    ],
+    "maxAltitude": "5,545m",
+    "difficulty": "Moderate-Hard"
   },
   {
     "id": "trek-western-kailash",
@@ -4089,7 +4117,9 @@
         "title": "Departure",
         "desc": "Transfer to TIA 3 hours before your flight."
       }
-    ]
+    ],
+    "maxAltitude": "5,630m",
+    "difficulty": "Strenuous"
   },
   {
     "id": "trek-jumla-rara",
@@ -4184,7 +4214,9 @@
         "title": "Departure",
         "desc": "Final transfer to the airport."
       }
-    ]
+    ],
+    "maxAltitude": "2,990m",
+    "difficulty": "Moderate"
   },
   {
     "id": "trek-api-bc",
@@ -4269,7 +4301,9 @@
         "title": "Departure",
         "desc": "Transfer to airport for safe flight."
       }
-    ]
+    ],
+    "maxAltitude": "4,250m",
+    "difficulty": "Moderate-Hard"
   },
   {
     "id": "trek-tsum-valley",
@@ -4364,7 +4398,9 @@
         "title": "Departure",
         "desc": "Transfer to TIA for your onward flight."
       }
-    ]
+    ],
+    "maxAltitude": "3,700m",
+    "difficulty": "Moderate"
   },
   {
     "id": "trek-tsum-valley-manaslu",
@@ -4491,7 +4527,7 @@
       },
       {
         "day": "24",
-        "title": "Tilije to Dharapani – Trek and drive to Beshisahar",
+        "title": "Tilije to Dharapani \u2013 Trek and drive to Beshisahar",
         "desc": "Final trek and jeep drive back towards Beshisahar."
       },
       {
@@ -4504,7 +4540,9 @@
         "title": "Departure",
         "desc": "Final transfer to airport."
       }
-    ]
+    ],
+    "maxAltitude": "5,106m",
+    "difficulty": "Strenuous"
   },
   {
     "id": "trek-manaslu-circuit",
@@ -4614,7 +4652,9 @@
         "title": "Final Departure",
         "desc": "Transfer to airport for your flight home."
       }
-    ]
+    ],
+    "maxAltitude": "5,106m",
+    "difficulty": "Strenuous"
   },
   {
     "id": "trek-dhorpatan",
@@ -4699,7 +4739,9 @@
         "title": "Departure",
         "desc": "Transfer to airport for onward destination."
       }
-    ]
+    ],
+    "maxAltitude": "4,500m",
+    "difficulty": "Moderate"
   },
   {
     "id": "trek-dhaulagiri-circuit",
@@ -4804,7 +4846,9 @@
         "title": "Kathmandu Airport",
         "desc": "Final complimentary transfer for your flight home."
       }
-    ]
+    ],
+    "maxAltitude": "5,360m",
+    "difficulty": "Very Strenuous"
   },
   {
     "id": "trek-langtang-gosainkunda",
@@ -4904,7 +4948,9 @@
         "title": "Farewell Departure",
         "desc": "Transfer to airport for your safe journey home."
       }
-    ]
+    ],
+    "maxAltitude": "4,610m",
+    "difficulty": "Moderate"
   },
   {
     "id": "trek-tamang-heritage",
@@ -4964,7 +5010,9 @@
         "title": "International Departure",
         "desc": "Transfer to airport for final departure."
       }
-    ]
+    ],
+    "maxAltitude": "3,165m",
+    "difficulty": "Easy-Moderate"
   },
   {
     "id": "trek-ganesh-himal",
@@ -5039,7 +5087,9 @@
         "title": "Farewell",
         "desc": "Transfer to airport for flight."
       }
-    ]
+    ],
+    "maxAltitude": "4,050m",
+    "difficulty": "Moderate"
   },
   {
     "id": "trek-ruby-valley",
@@ -5109,7 +5159,9 @@
         "title": "Final Departure",
         "desc": "Transfer to airport for flight."
       }
-    ]
+    ],
+    "maxAltitude": "3,842m",
+    "difficulty": "Moderate"
   },
   {
     "id": "trek-nar-phu-terila",
@@ -5254,7 +5306,9 @@
         "title": "Departure",
         "desc": "Final transfer to international airport."
       }
-    ]
+    ],
+    "maxAltitude": "5,595m",
+    "difficulty": "Strenuous"
   },
   {
     "id": "trek-mustang-tiji",
@@ -5369,7 +5423,9 @@
         "title": "Final Departure",
         "desc": "Transfer to airport 3 hours before flight."
       }
-    ]
+    ],
+    "maxAltitude": "3,840m",
+    "difficulty": "Moderate"
   },
   {
     "id": "trek-damodar-kunda",
@@ -5474,7 +5530,9 @@
         "title": "Final Departure",
         "desc": "Fly to Pokhara and return to Kathmandu."
       }
-    ]
+    ],
+    "maxAltitude": "4,890m",
+    "difficulty": "Moderate-Hard"
   },
   {
     "id": "trek-kailash-overland",
@@ -5554,7 +5612,9 @@
         "title": "Final Departure",
         "desc": "Transfer to airport for departure flight."
       }
-    ]
+    ],
+    "maxAltitude": "5,630m",
+    "difficulty": "Strenuous"
   },
   {
     "id": "trek-buddhist-pilgrimage",
@@ -5659,6 +5719,8 @@
         "title": "Transfer to International Airport",
         "desc": "Final transfer for your flight home."
       }
-    ]
+    ],
+    "maxAltitude": "3,500m",
+    "difficulty": "Moderate"
   }
 ]
