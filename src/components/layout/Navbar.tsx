@@ -7,7 +7,7 @@ import business from "@/data/business.json"
 import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { usePathname } from "next/navigation"
-import { scrollToId } from "@/lib/utils"
+import { buildWhatsAppUrl, scrollToId } from "@/lib/utils"
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
@@ -99,8 +99,9 @@ export default function Navbar() {
     }
 
     handleScrollToHash()
-    window.addEventListener('hashchange', () => handleScrollToHash())
-    return () => window.removeEventListener('hashchange', () => handleScrollToHash())
+    const handleHashChange = () => handleScrollToHash()
+    window.addEventListener("hashchange", handleHashChange)
+    return () => window.removeEventListener("hashchange", handleHashChange)
   }, [pathname])
 
   const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
@@ -222,7 +223,7 @@ export default function Navbar() {
             {business.contact.phone}
           </a>
           <Link
-            href={`https://wa.me/${business.contact.whatsapp}`}
+            href={buildWhatsAppUrl(business.contact.whatsapp)}
             target="_blank"
             className="hidden sm:flex h-9 items-center justify-center rounded-full bg-green-500 px-4 text-sm font-bold text-white hover:bg-green-600 transition-colors"
           >
@@ -326,7 +327,7 @@ export default function Navbar() {
                   {business.contact.phone}
                 </a>
                 <Link
-                  href={`https://wa.me/${business.contact.whatsapp}`}
+                  href={buildWhatsAppUrl(business.contact.whatsapp)}
                   target="_blank"
                   className="flex h-12 items-center justify-center rounded-xl bg-green-500 text-white font-bold"
                 >

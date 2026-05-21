@@ -4,6 +4,7 @@ import { useState } from "react"
 import { User, Phone, Mail, Globe, Users, Car, Calendar, MapPin, Plus, FileText, Mountain, Map as MapIcon } from "lucide-react"
 import business from "@/data/business.json"
 import fleet from "@/data/fleet.json"
+import { buildMailtoUrl } from "@/lib/utils"
 
 export default function ServiceInquiryForm() {
   const [formData, setFormData] = useState({
@@ -66,8 +67,7 @@ Number of People: ${formData.numPeople}${rentalDetails}
 Destination/Requests: ${formData.destination}
 ----------------------------------`
 
-    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${business.contact.email}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
-    window.open(gmailUrl, "_blank")
+    window.location.href = buildMailtoUrl(business.contact.email, subject, body)
   }
 
   const isRental = formData.inquiryType === "Rental"

@@ -8,6 +8,9 @@ import Link from "next/link"
 export const metadata: Metadata = {
   title: "About Us",
   description: `Learn about the journey and mission of ${business.name}. Discover our 100% self-owned fleet, meet our leadership team including founder Bishnu Bahadur Karki, and see our government certifications.`,
+  alternates: {
+    canonical: "/about",
+  },
 }
 
 interface TeamMember {

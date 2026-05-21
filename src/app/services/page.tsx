@@ -38,6 +38,9 @@ interface Service {
 export const metadata: Metadata = {
   title: "Our Services & Fleet",
   description: `Explore the premium vehicle fleet of ${business.name}. We offer car rentals, 4x4 Jeeps, luxury buses, and comprehensive tour and trekking packages across all major destinations in Nepal.`,
+  alternates: {
+    canonical: "/services",
+  },
 }
 
 const typedServices = (services as Service[]).filter(s => s.id !== 'tour-packages' && s.id !== 'trekking');

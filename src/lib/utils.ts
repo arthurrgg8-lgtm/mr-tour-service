@@ -5,6 +5,30 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
 
+export function getWhatsAppNumber(phone: string) {
+  return phone.replace(/\D/g, "")
+}
+
+export function buildWhatsAppUrl(phone: string, message?: string) {
+  const baseUrl = `https://wa.me/${getWhatsAppNumber(phone)}`
+  return message ? `${baseUrl}?text=${encodeURIComponent(message)}` : baseUrl
+}
+
+export function buildMailtoUrl(email: string, subject?: string, body?: string) {
+  const params = new URLSearchParams()
+
+  if (subject) {
+    params.set("subject", subject)
+  }
+
+  if (body) {
+    params.set("body", body)
+  }
+
+  const query = params.toString()
+  return `mailto:${email}${query ? `?${query}` : ""}`
+}
+
 export function scrollToId(id: string, offset = 100, addGlow = false) {
   const element = document.getElementById(id)
   

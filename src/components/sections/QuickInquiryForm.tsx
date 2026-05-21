@@ -3,6 +3,7 @@
 import { useState } from "react"
 import { Send } from "lucide-react"
 import business from "@/data/business.json"
+import { buildWhatsAppUrl } from "@/lib/utils"
 
 export default function QuickInquiryForm() {
   const [formData, setFormData] = useState({
@@ -16,14 +17,14 @@ export default function QuickInquiryForm() {
     e.preventDefault()
     
     // Format the message for WhatsApp
-    const text = `*New Inquiry from Website*%0A%0A` +
-      `*Name:* ${formData.name}%0A` +
-      `*Email:* ${formData.email}%0A` +
-      `*Service:* ${formData.service}%0A` +
+    const text = `*New Inquiry from Website*\n\n` +
+      `*Name:* ${formData.name}\n` +
+      `*Email:* ${formData.email}\n` +
+      `*Service:* ${formData.service}\n` +
       `*Message:* ${formData.message}`
     
     // Redirect to WhatsApp
-    const whatsappUrl = `https://wa.me/${business.contact.whatsapp}?text=${text}`
+    const whatsappUrl = buildWhatsAppUrl(business.contact.whatsapp, text)
     window.open(whatsappUrl, "_blank")
   }
 

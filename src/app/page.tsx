@@ -1,3 +1,4 @@
+import type { Metadata } from "next"
 import Hero from "@/components/sections/Hero"
 import WhyChooseSummary from "@/components/sections/WhyChooseSummary"
 import FeaturedServices from "@/components/sections/FeaturedServices"
@@ -7,6 +8,13 @@ import ScrollAnimation from "@/components/ui/ScrollAnimation"
 import Link from "next/link"
 import { Map as MapIcon, Phone, MessageCircle } from "lucide-react"
 import business from "@/data/business.json"
+import { buildWhatsAppUrl } from "@/lib/utils"
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: "/",
+  },
+}
 
 export default function Home() {
   return (
@@ -107,7 +115,7 @@ export default function Home() {
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <Link 
-              href={`https://wa.me/${business.contact.whatsapp}`}
+              href={buildWhatsAppUrl(business.contact.whatsapp)}
               className="inline-flex items-center justify-center gap-3 h-14 px-10 rounded-xl bg-white text-primary font-bold text-lg hover:bg-slate-100 transition-all shadow-xl"
             >
               <MessageCircle className="h-6 w-6" />

@@ -2,6 +2,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { Mail, MapPin, Phone, MessageCircle } from "lucide-react"
 import business from "@/data/business.json"
+import { buildWhatsAppUrl } from "@/lib/utils"
 
 export default function Footer() {
   return (
@@ -123,9 +124,7 @@ export default function Footer() {
               </li>
               <li>
                 <a 
-                  href={`https://mail.google.com/mail/?view=cm&fs=1&to=${business.contact.email}`} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
+                  href={`mailto:${business.contact.email}`}
                   className="flex items-center gap-3 group"
                   aria-label={`Send an email to ${business.contact.email}`}
                 >
@@ -137,7 +136,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link 
-                  href={`https://wa.me/${business.contact.whatsapp}`}
+                  href={buildWhatsAppUrl(business.contact.whatsapp)}
                   target="_blank"
                   className="flex items-center gap-3 group"
                   aria-label="Chat with us on WhatsApp"

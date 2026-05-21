@@ -4,6 +4,9 @@ import business from "@/data/business.json"
 export const metadata: Metadata = {
   title: "Privacy Policy",
   description: `Read the privacy policy of ${business.name}. We are committed to protecting your personal data and ensuring a secure booking experience for all our travelers.`,
+  alternates: {
+    canonical: "/privacy-policy",
+  },
 }
 
 export default function PrivacyPolicy() {

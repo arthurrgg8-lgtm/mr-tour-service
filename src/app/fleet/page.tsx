@@ -4,10 +4,14 @@ import business from "@/data/business.json"
 import { Check, MessageCircle, Users, Luggage, Shield } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
+import { buildWhatsAppUrl } from "@/lib/utils"
 
 export const metadata: Metadata = {
   title: "Our Vehicle Fleet",
   description: `Browse the 100% self-owned vehicle fleet of ${business.name}. We offer Toyota Fortuner (Premium SUV), BYD Atto 3 (Electric), Suzuki Brezza, Toyota Hiace, and luxury tourist buses.`,
+  alternates: {
+    canonical: "/fleet",
+  },
 }
 
 export default function FleetPage() {
@@ -99,7 +103,7 @@ export default function FleetPage() {
                   </div>
 
                   <Link 
-                    href={`https://wa.me/${business.contact.whatsapp}?text=I'm interested in booking the ${vehicle.name}`}
+                    href={buildWhatsAppUrl(business.contact.whatsapp, `I'm interested in booking the ${vehicle.name}`)}
                     target="_blank"
                     className="flex items-center justify-center gap-2 h-12 w-full rounded-xl bg-primary text-white font-bold hover:bg-primary/90 transition-all shadow-lg shadow-primary/20"
                   >

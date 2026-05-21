@@ -27,6 +27,9 @@ interface Service {
 export const metadata: Metadata = {
   title: "Himalayan Trekking Adventures",
   description: `Join ${business.name} for expert-led trekking adventures in Nepal. Explore Everest Base Camp, Annapurna Circuit, Langtang Valley, and remote forbidden kingdoms with our professional guides.`,
+  alternates: {
+    canonical: "/trekking",
+  },
 }
 
 const trekkingService = (services as Service[]).find(s => s.id === 'trekking')

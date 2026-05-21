@@ -4,10 +4,14 @@ import { Phone, Mail, MapPin, MessageCircle, Clock } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
 import QuickInquiryForm from "@/components/sections/QuickInquiryForm"
+import { buildWhatsAppUrl } from "@/lib/utils"
 
 export const metadata: Metadata = {
   title: "Contact Us",
   description: `Contact ${business.name} for premium vehicle rentals, tour packages, and trekking in Nepal. We are available 24/7 at our Kathmandu office and online via WhatsApp and Email.`,
+  alternates: {
+    canonical: "/contact",
+  },
 }
 
 export default function ContactPage() {
@@ -56,7 +60,7 @@ export default function ContactPage() {
                         {business.contact.phone}
                       </a>
                       <Link 
-                        href={`https://wa.me/${business.contact.whatsapp}`} 
+                        href={buildWhatsAppUrl(business.contact.whatsapp)} 
                         className="text-green-600 font-bold flex items-center gap-2 hover:underline"
                       >
                         <MessageCircle className="h-5 w-5" /> Chat on WhatsApp
@@ -73,9 +77,7 @@ export default function ContactPage() {
                     <h3 className="text-xl font-bold mb-2">Email Us</h3>
                     <p className="text-muted-foreground mb-4">For formal inquiries, group bookings, or business partnerships.</p>
                     <a 
-                      href={`https://mail.google.com/mail/?view=cm&fs=1&to=${business.contact.email}`}
-                      target="_blank"
-                      rel="noopener noreferrer" 
+                      href={`mailto:${business.contact.email}`}
                       className="text-lg font-bold hover:text-primary transition-colors break-all"
                     >
                       {business.contact.email}

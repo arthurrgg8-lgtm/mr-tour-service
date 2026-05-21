@@ -6,6 +6,9 @@ import Image from "next/image"
 export const metadata: Metadata = {
   title: "Travel Gallery",
   description: `Visual memories of our journeys across Nepal. Browse photos of our premium fleet, satisfied clients, and breathtaking destinations managed by ${business.name}.`,
+  alternates: {
+    canonical: "/gallery",
+  },
 }
 
 export default function GalleryPage() {

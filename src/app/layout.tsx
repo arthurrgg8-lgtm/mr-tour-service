@@ -6,6 +6,7 @@ import Footer from "@/components/layout/Footer"
 import WhatsAppButton from "@/components/layout/WhatsAppButton"
 import ScrollToTop from "@/components/ui/ScrollToTop"
 import business from "@/data/business.json"
+import { buildWhatsAppUrl } from "@/lib/utils"
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",
@@ -21,9 +22,6 @@ const lora = Lora({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://mrtourservice.com.np"),
-  alternates: {
-    canonical: "/",
-  },
   title: {
     default: `${business.name} | Premium Vehicle Rental & Tours in Nepal`,
     template: `%s | ${business.name}`
@@ -116,7 +114,7 @@ export default function RootLayout({
       "closes": "23:59"
     },
     "sameAs": [
-      `https://wa.me/${business.contact.whatsapp.replace('+', '')}`,
+      buildWhatsAppUrl(business.contact.whatsapp),
       business.socials.facebook !== "#" ? business.socials.facebook : undefined,
       business.socials.instagram !== "#" ? business.socials.instagram : undefined,
       business.socials.tiktok !== "#" ? business.socials.tiktok : undefined

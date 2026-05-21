@@ -5,7 +5,7 @@ import { X, Calendar, MapPin, CheckCircle2, Phone, MessageCircle, ArrowLeft, Clo
 import business from "@/data/business.json"
 import Image from "next/image"
 import Link from "next/link"
-import { scrollToId } from "@/lib/utils"
+import { buildMailtoUrl, buildWhatsAppUrl, scrollToId } from "@/lib/utils"
 
 interface ItineraryItem {
   day: string;
@@ -81,8 +81,7 @@ Kind regards,
 [My Name]
 [My Phone Number]`
 
-    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${business.contact.email}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
-    window.open(gmailUrl, "_blank")
+    window.location.href = buildMailtoUrl(business.contact.email, subject, body)
   }
 
   const handleCustomInquiry = () => {
@@ -459,7 +458,7 @@ Kind regards,
                             <Mail className="h-6 w-6" /> Gmail Inquiry
                           </button>
                           <a 
-                            href={`https://wa.me/${business.contact.whatsapp.replace('+', '')}`}
+                            href={buildWhatsAppUrl(business.contact.whatsapp)}
                             target="_blank"
                             className="flex items-center justify-center gap-3 h-14 rounded-2xl bg-[#25D366] text-white font-bold hover:bg-[#20ba5a] transition-all shadow-lg"
                           >

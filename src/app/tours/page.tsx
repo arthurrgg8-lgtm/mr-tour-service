@@ -29,6 +29,9 @@ interface Service {
 export const metadata: Metadata = {
   title: "Tour Packages in Nepal",
   description: `Experience the best of Nepal with ${business.name}. From Kathmandu city tours to luxury jungle safaris in Chitwan and pilgrimage tours to Lumbini, our curated tour packages offer something for everyone.`,
+  alternates: {
+    canonical: "/tours",
+  },
 }
 
 const tourService = (services as Service[]).find(s => s.id === 'tour-packages')
