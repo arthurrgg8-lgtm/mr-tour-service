@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   },
   description: `${business.name} is Nepal's premier travel service provider. We offer a 100% self-owned fleet of premium cars, 4x4 Jeeps, and luxury buses, alongside expert-led trekking and tour packages. Experience safe, reliable, and professional travel in Kathmandu and beyond.`,
   keywords: ["car rental Nepal", "Kathmandu vehicle hire", "Jeep rental for Mustang", "luxury tour packages Nepal", "Everest base camp trekking", "Toyota Hiace rental Nepal", "premium travel service Kathmandu", "best tour operator Nepal"],
-  authors: [{ name: "Anudit Khatri" }],
+  authors: [{ name: "LazZy" }],
   robots: {
     index: true,
     follow: true,

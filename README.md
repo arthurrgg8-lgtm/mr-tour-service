@@ -138,4 +138,4 @@ The project is fully integrated with **Cloudflare Pages** for automated CI/CD de
 
 ---
 
-Developed and maintained by Anudit Khatri.
+Developed and maintained by LazZy.
