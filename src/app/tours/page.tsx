@@ -32,6 +32,28 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/tours",
   },
+  openGraph: {
+    type: "website",
+    locale: "en_NP",
+    url: "https://mrtourservice.com.np/tours",
+    siteName: "MR Tour Service",
+    title: "MR Tour Service",
+    description: "Discover MR Tour Service curated tour packages: Kathmandu city tours, Chitwan jungle safaris, Lumbini pilgrimage tours, and customizable Nepal travel itineraries.",
+    images: [
+      {
+        url: "https://mrtourservice.com.np/logo.jpg",
+        width: 800,
+        height: 800,
+        alt: "MR Tour Service",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "MR Tour Service",
+    description: "Discover MR Tour Service curated tour packages: Kathmandu city tours, Chitwan jungle safaris, Lumbini pilgrimage tours, and customizable Nepal travel itineraries.",
+    images: ["https://mrtourservice.com.np/logo.jpg"],
+  },
 }
 
 const tourService = (services as Service[]).find(s => s.id === 'tour-packages')

@@ -4,7 +4,7 @@ import { useState, useRef } from "react"
 import { User, Phone, Mail, Globe, Users, Car, Calendar, MapPin, Plus, FileText, Mountain, Map as MapIcon, MessageCircle } from "lucide-react"
 import business from "@/data/business.json"
 import fleet from "@/data/fleet.json"
-import { buildGmailUrl, buildWhatsAppUrl } from "@/lib/utils"
+import { buildGmailUrl, buildWhatsAppUrl, sanitizeInput } from "@/lib/utils"
 
 export default function ServiceInquiryForm() {
   const formRef = useRef<HTMLFormElement>(null)
@@ -50,27 +50,41 @@ export default function ServiceInquiryForm() {
       }
     }
 
-    const subject = `${formData.inquiryType} Inquiry - ${formData.name}`
+    const s = {
+      name: sanitizeInput(formData.name),
+      email: sanitizeInput(formData.email),
+      phone: sanitizeInput(formData.phone),
+      nationality: sanitizeInput(formData.nationality),
+      numPeople: sanitizeInput(formData.numPeople),
+      destination: sanitizeInput(formData.destination || ''),
+      inquiryType: sanitizeInput(formData.inquiryType),
+      vehicleType: sanitizeInput(formData.vehicleType || ''),
+      pickupDate: sanitizeInput(formData.pickupDate || ''),
+      dropDate: sanitizeInput(formData.dropDate || ''),
+      pickupLocation: sanitizeInput(formData.pickupLocation || ''),
+      dropLocation: sanitizeInput(formData.dropLocation || ''),
+    }
+    const subject = `${s.inquiryType} Inquiry - ${s.name}`
     
     let rentalDetails = ""
-    if (formData.inquiryType === "Rental") {
+    if (s.inquiryType === "Rental") {
       rentalDetails = `
-Vehicle Type: ${formData.vehicleType}
-Pickup Date: ${formData.pickupDate}
-Drop Date: ${formData.dropDate}
-Pickup Location: ${formData.pickupLocation}
-Drop Location: ${formData.dropLocation}`
+Vehicle Type: ${s.vehicleType}
+Pickup Date: ${s.pickupDate}
+Drop Date: ${s.dropDate}
+Pickup Location: ${s.pickupLocation}
+Drop Location: ${s.dropLocation}`
     }
 
-    const body = `*New ${formData.inquiryType} Inquiry Details*
+    const body = `*New ${s.inquiryType} Inquiry Details*
 ----------------------------------
-*Inquiry Type:* ${formData.inquiryType}
-*Name:* ${formData.name}
-*Phone:* ${formData.phone}
-*Email:* ${formData.email}
-*Nationality:* ${formData.nationality}
-*Number of People:* ${formData.numPeople}${rentalDetails.replace(/\n/g, '\n')}
-*Destination/Requests:* ${formData.destination}
+*Inquiry Type:* ${s.inquiryType}
+*Name:* ${s.name}
+*Phone:* ${s.phone}
+*Email:* ${s.email}
+*Nationality:* ${s.nationality}
+*Number of People:* ${s.numPeople}${rentalDetails.replace(/\n/g, '\n')}
+*Destination/Requests:* ${s.destination}
 ----------------------------------`
 
     if (channel === 'whatsapp') {

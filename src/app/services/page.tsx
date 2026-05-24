@@ -41,6 +41,28 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/services",
   },
+  openGraph: {
+    type: "website",
+    locale: "en_NP",
+    url: "https://mrtourservice.com.np/services",
+    siteName: "MR Tour Service",
+    title: "MR Tour Service",
+    description: "Explore MR Tour Service premium travel services: luxury car rental, 4x4 SUV hire, bus rental for groups, tour packages, and trekking expeditions across Nepal.",
+    images: [
+      {
+        url: "https://mrtourservice.com.np/logo.jpg",
+        width: 800,
+        height: 800,
+        alt: "MR Tour Service",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "MR Tour Service",
+    description: "Explore MR Tour Service premium travel services: luxury car rental, 4x4 SUV hire, bus rental for groups, tour packages, and trekking expeditions across Nepal.",
+    images: ["https://mrtourservice.com.np/logo.jpg"],
+  },
 }
 
 const typedServices = (services as Service[]).filter(s => s.id !== 'tour-packages' && s.id !== 'trekking');

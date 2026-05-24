@@ -83,7 +83,7 @@ export default function Hero() {
           >
             <Image 
               src={heroImages[currentImage]} 
-              alt={`Slide ${currentImage + 1}`}
+              alt={`Scenic Nepal travel view - ${business.name} hero image ${currentImage + 1}`}
               fill
               className="object-cover"
               priority={currentImage === 0}

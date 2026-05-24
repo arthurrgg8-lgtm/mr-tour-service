@@ -9,6 +9,28 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/gallery",
   },
+  openGraph: {
+    type: "website",
+    locale: "en_NP",
+    url: "https://mrtourservice.com.np/gallery",
+    siteName: "MR Tour Service",
+    title: "MR Tour Service",
+    description: "View photo gallery from MR Tour Service tours, treks, and fleet across Nepal. See our journeys to Everest, Annapurna, Lumbini, Chitwan, and Kathmandu valley.",
+    images: [
+      {
+        url: "https://mrtourservice.com.np/logo.jpg",
+        width: 800,
+        height: 800,
+        alt: "MR Tour Service",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "MR Tour Service",
+    description: "View photo gallery from MR Tour Service tours, treks, and fleet across Nepal. See our journeys to Everest, Annapurna, Lumbini, Chitwan, and Kathmandu valley.",
+    images: ["https://mrtourservice.com.np/logo.jpg"],
+  },
 }
 
 export default function GalleryPage() {

@@ -45,6 +45,28 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/trekking",
   },
+  openGraph: {
+    type: "website",
+    locale: "en_NP",
+    url: "https://mrtourservice.com.np/trekking",
+    siteName: "MR Tour Service",
+    title: "MR Tour Service",
+    description: "Trek the Himalayas with MR Tour Service: Everest Base Camp, Annapurna Circuit, Langtang Valley, Manaslu, and more. Expert guides, safety-first approach.",
+    images: [
+      {
+        url: "https://mrtourservice.com.np/logo.jpg",
+        width: 800,
+        height: 800,
+        alt: "MR Tour Service",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "MR Tour Service",
+    description: "Trek the Himalayas with MR Tour Service: Everest Base Camp, Annapurna Circuit, Langtang Valley, Manaslu, and more. Expert guides, safety-first approach.",
+    images: ["https://mrtourservice.com.np/logo.jpg"],
+  },
 }
 
 const trekkingService = (services as Service[]).find(s => s.id === 'trekking')

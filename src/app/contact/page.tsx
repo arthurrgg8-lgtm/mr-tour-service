@@ -12,6 +12,28 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/contact",
   },
+  openGraph: {
+    type: "website",
+    locale: "en_NP",
+    url: "https://mrtourservice.com.np/contact",
+    siteName: "MR Tour Service",
+    title: "MR Tour Service",
+    description: "Get in touch with MR Tour Service for vehicle rentals, tour packages, and trekking adventures in Nepal. Available 24/7 via phone, WhatsApp, and email.",
+    images: [
+      {
+        url: "https://mrtourservice.com.np/logo.jpg",
+        width: 800,
+        height: 800,
+        alt: "MR Tour Service",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "MR Tour Service",
+    description: "Get in touch with MR Tour Service for vehicle rentals, tour packages, and trekking adventures in Nepal. Available 24/7 via phone, WhatsApp, and email.",
+    images: ["https://mrtourservice.com.np/logo.jpg"],
+  },
 }
 
 export default function ContactPage() {
@@ -118,7 +140,7 @@ export default function ContactPage() {
       <section className="container mx-auto px-4">
         <div className="h-[450px] w-full rounded-3xl overflow-hidden border shadow-lg">
           <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.148671524317!2d85.3353!3d27.7118!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x827102c6c7458d07%3A0x68a8193a22c56a7e!2sManoranjan%20Ramjham%20Travel%20and%20Tour%20Pvt.%20Ltd!5e0!3m2!1sen!2snp!4v1716000000000!5m2!1sen!2snp" 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.148671524317!2d85.3353!3d27.7118!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x827102c6c7458d07%3A0x68a8193a22c56a7e!2sM.R%20Travel%20and%20Tour!5e0!3m2!1sen!2snp!4v1716000000000!5m2!1sen!2snp" 
             width="100%" 
             height="100%" 
             style={{ border: 0 }} 

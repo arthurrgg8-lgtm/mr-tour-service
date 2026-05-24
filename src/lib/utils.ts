@@ -65,3 +65,14 @@ export function scrollToId(id: string, offset = 100, addGlow = false) {
   return false
 }
 
+
+/**
+ * Sanitizes user input by removing potentially dangerous characters
+ * to prevent injection attacks in URLs and messages.
+ */
+export function sanitizeInput(input: string): string {
+  return input
+    .replace(/[<>"'\\]/g, '') // Remove HTML tags and dangerous chars
+    .replace(/[\x00-\x08\x0B\x0C\x0E-\x1F]/g, '') // Remove control characters
+    .trim()
+}

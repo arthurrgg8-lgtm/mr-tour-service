@@ -4,6 +4,7 @@ import { useState, useRef } from "react"
 import { Send, Mail, MessageCircle } from "lucide-react"
 import business from "@/data/business.json"
 import { buildWhatsAppUrl, buildGmailUrl } from "@/lib/utils"
+import { sanitizeInput } from "@/lib/utils"
 
 export default function QuickInquiryForm() {
   const formRef = useRef<HTMLFormElement>(null)
@@ -22,12 +23,19 @@ export default function QuickInquiryForm() {
     }
     
     // Format the message
+    // Sanitize all user inputs before constructing message
+    const sanitized = {
+      name: sanitizeInput(formData.name),
+      email: sanitizeInput(formData.email),
+      service: sanitizeInput(formData.service),
+      message: sanitizeInput(formData.message),
+    }
     const text = `*New Quick Inquiry from Website*
 ----------------------------------
-*Name:* ${formData.name}
-*Email:* ${formData.email}
-*Service Required:* ${formData.service}
-*Message:* ${formData.message}
+*Name:* ${sanitized.name}
+*Email:* ${sanitized.email}
+*Service Required:* ${sanitized.service}
+*Message:* ${sanitized.message}
 ----------------------------------`
     
     if (channel === 'whatsapp') {

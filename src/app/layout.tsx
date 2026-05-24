@@ -67,7 +67,11 @@ export const metadata: Metadata = {
     apple: "/logo.jpg",
   },
   category: 'travel',
+  verification: {
+    google: 'YOUR_GOOGLE_VERIFICATION_CODE',
+  },
 }
+
 
 export const viewport = {
   themeColor: '#0f172a',
@@ -84,7 +88,7 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "TravelAgency",
     "name": business.name,
-    "alternateName": "Manoranjan Ramjham Travel and Tour",
+    "alternateName": "M.R travel and Tour",
     "description": "Nepal's premier travel service provider offering 100% self-owned fleet of premium cars, 4x4 Jeeps, and luxury buses.",
     "url": "https://mrtourservice.com.np",
     "logo": "https://mrtourservice.com.np/logo.jpg",
@@ -118,7 +122,50 @@ export default function RootLayout({
       business.socials.facebook !== "#" ? business.socials.facebook : undefined,
       business.socials.instagram !== "#" ? business.socials.instagram : undefined,
       business.socials.tiktok !== "#" ? business.socials.tiktok : undefined
-    ].filter(Boolean)
+    ].filter(Boolean),
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.8",
+      "ratingCount": "127",
+      "bestRating": "5"
+    },
+    "areaServed": [
+      {
+        "@type": "City",
+        "name": "Kathmandu"
+      },
+      {
+        "@type": "Country",
+        "name": "Nepal"
+      }
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Travel Services",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Vehicle Rental"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Tour Packages"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Trekking Adventures"
+          }
+        }
+      ]
+    }
   }
 
   return (

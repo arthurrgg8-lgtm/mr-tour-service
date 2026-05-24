@@ -11,6 +11,28 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/about",
   },
+  openGraph: {
+    type: "website",
+    locale: "en_NP",
+    url: "https://mrtourservice.com.np/about",
+    siteName: "MR Tour Service",
+    title: "MR Tour Service",
+    description: "Learn about MR Tour Service, Nepal trusted vehicle rental and tour operator. We own a premium fleet of cars, SUVs, and luxury buses serving Kathmandu and beyond.",
+    images: [
+      {
+        url: "https://mrtourservice.com.np/logo.jpg",
+        width: 800,
+        height: 800,
+        alt: "MR Tour Service",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "MR Tour Service",
+    description: "Learn about MR Tour Service, Nepal trusted vehicle rental and tour operator. We own a premium fleet of cars, SUVs, and luxury buses serving Kathmandu and beyond.",
+    images: ["https://mrtourservice.com.np/logo.jpg"],
+  },
 }
 
 interface TeamMember {

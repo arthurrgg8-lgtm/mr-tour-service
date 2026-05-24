@@ -12,6 +12,28 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/fleet",
   },
+  openGraph: {
+    type: "website",
+    locale: "en_NP",
+    url: "https://mrtourservice.com.np/fleet",
+    siteName: "MR Tour Service",
+    title: "MR Tour Service",
+    description: "Browse MR Tour Service fully owned fleet: Toyota Fortuner, BYD Atto 3 EV, Suzuki Brezza, Toyota Hiace, and luxury buses. Well-maintained vehicles with professional drivers.",
+    images: [
+      {
+        url: "https://mrtourservice.com.np/logo.jpg",
+        width: 800,
+        height: 800,
+        alt: "MR Tour Service",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "MR Tour Service",
+    description: "Browse MR Tour Service fully owned fleet: Toyota Fortuner, BYD Atto 3 EV, Suzuki Brezza, Toyota Hiace, and luxury buses. Well-maintained vehicles with professional drivers.",
+    images: ["https://mrtourservice.com.np/logo.jpg"],
+  },
 }
 
 export default function FleetPage() {

@@ -19,27 +19,27 @@
         "image": "/images/tours/tour-9.png"
       },
       {
-        "name": "KATHMANDU \u2013 POKHARA \u2013 CHITWAN TOUR",
+        "name": "KATHMANDU – POKHARA – CHITWAN TOUR",
         "duration": "8 DAYS",
         "image": "/images/tours/tour-10.png"
       },
       {
-        "name": "KATHMANDU \u2013 POKHARA \u2013 CHITWAN \u2013 LUMBINI TOUR",
+        "name": "KATHMANDU – POKHARA – CHITWAN – LUMBINI TOUR",
         "duration": "10 DAYS",
         "image": "/images/tours/tour-11.png"
       },
       {
-        "name": "KATHMANDU \u2013 POKHARA \u2013 GHANDRUK \u2013 CHITWAN TOUR",
+        "name": "KATHMANDU – POKHARA – GHANDRUK – CHITWAN TOUR",
         "duration": "9 DAYS",
         "image": "/images/tours/tour-12.png"
       },
       {
-        "name": "KATHMANDU \u2013 POKHARA \u2013 GHANDRUK TOUR",
+        "name": "KATHMANDU – POKHARA – GHANDRUK TOUR",
         "duration": "7 DAYS",
         "image": "/images/tours/tour-13.png"
       },
       {
-        "name": "KATHMANDU \u2013 NAGARKOT TOUR",
+        "name": "KATHMANDU – NAGARKOT TOUR",
         "duration": "5 DAYS",
         "image": "/images/tours/tour-14.png"
       },
@@ -252,43 +252,6 @@
         ]
       },
       {
-        "name": "MANASLU AND TSUM VALLEY REGION",
-        "image": "/images/trekking/manaslu-tsum-valley.jpeg",
-        "subPackages": [
-          {
-            "name": "TSUM VALLEY",
-            "duration": "17 DAYS",
-            "image": "/images/trekking/manaslu/tsum-valley.png"
-          },
-          {
-            "name": "TSUM VALLEY MANASLU CIRCUIT",
-            "duration": "26 DAYS",
-            "image": "/images/trekking/manaslu/tsum-manaslu.png"
-          },
-          {
-            "name": "MANASLU CIRCUIT",
-            "duration": "20 DAYS",
-            "image": "/images/trekking/manaslu/manaslu-circuit.png"
-          }
-        ]
-      },
-      {
-        "name": "DHAULAGIRI REGION",
-        "image": "/images/trekking/dhaulagiri.jpeg",
-        "subPackages": [
-          {
-            "name": "DHORPATAN TREK",
-            "duration": "15 DAYS",
-            "image": "/images/trekking/dhaulagiri/dhorpatan.png"
-          },
-          {
-            "name": "DHAULAGIRI CIRCUIT",
-            "duration": "19 DAYS",
-            "image": "/images/trekking/dhaulagiri/dhaulagiri-circuit.png"
-          }
-        ]
-      },
-      {
         "name": "LANGTANG REGION",
         "image": "/images/trekking/langtang.jpeg",
         "subPackages": [
@@ -301,6 +264,59 @@
             "name": "TAMANG HERITAGE TRAIL",
             "duration": "10 DAYS",
             "image": "/images/trekking/langtang/tamang-heritage.png"
+          }
+        ]
+      },
+      {
+        "name": "KAILASH REGION",
+        "image": "/images/trekking/everest.jpeg",
+        "subPackages": [
+          {
+            "name": "KAILASH MANSAROVAR OVERLAND TOUR",
+            "duration": "14 DAYS",
+            "image": "/images/trekking/everest/ebc-kala-pathar.png"
+          },
+          {
+            "name": "WESTERN NEPAL TO KAILASH TIBET TREK",
+            "duration": "23 DAYS",
+            "image": "/images/trekking/everest/pikey-peak.png"
+          }
+        ]
+      },
+      {
+        "name": "BUDDHIST PILGRIMAGE",
+        "image": "/images/trekking/buddhist-pilgrimage.jpeg",
+        "subPackages": [
+          {
+            "name": "BUDDHIST PILGRIMAGE TREKKING",
+            "duration": "19 DAYS",
+            "image": "/images/trekking/buddhist-pilgrimage.jpeg"
+          }
+        ]
+      },
+      {
+        "name": "UPPER MUSTANG REGION",
+        "image": "/images/trekking/upper-mustang.jpeg",
+        "subPackages": [
+          {
+            "name": "UPPER MUSTANG",
+            "duration": "16 DAYS",
+            "image": "/images/trekking/upper-mustang/upper-mustang-trek.png"
+          },
+          {
+            "name": "NAR PHU VALLEY VIA TERI-LA PASS",
+            "duration": "27 DAYS",
+            "image": "/images/trekking/upper-mustang/nar-phu-teri-la.png"
+          },
+          {
+            "name": "UPPER MUSTANG (TIJI FESTIVAL)",
+            "duration": "21 DAYS",
+            "image": "/images/trekking/upper-mustang/tiji-festival.png"
+          },
+          {
+            "name": "DAMODAR KUNDA",
+            "duration": "19 DAYS",
+            "image": "/images/trekking/upper-mustang/damodar-kunda.png"
           }
         ]
       },
@@ -337,44 +353,23 @@
         ]
       },
       {
-        "name": "UPPER MUSTANG REGION",
-        "image": "/images/trekking/upper-mustang.jpeg",
+        "name": "MANASLU AND TSUM VALLEY REGION",
+        "image": "/images/trekking/manaslu-tsum-valley.jpeg",
         "subPackages": [
           {
-            "name": "UPPER MUSTANG",
-            "duration": "16 DAYS",
-            "image": "/images/trekking/upper-mustang/upper-mustang-trek.png"
-          },
-          {
-            "name": "NAR PHU VALLEY VIA TERI-LA PASS",
-            "duration": "27 DAYS",
-            "image": "/images/trekking/upper-mustang/nar-phu-teri-la.png"
-          },
-          {
-            "name": "UPPER MUSTANG (TIJI FESTIVAL)",
-            "duration": "21 DAYS",
-            "image": "/images/trekking/upper-mustang/tiji-festival.png"
-          },
-          {
-            "name": "DAMODAR KUNDA",
-            "duration": "19 DAYS",
-            "image": "/images/trekking/upper-mustang/damodar-kunda.png"
-          }
-        ]
-      },
-      {
-        "name": "FAR WESTERN TREK REGION",
-        "image": "/images/trekking/far-western-nepal.jpeg",
-        "subPackages": [
-          {
-            "name": "JUMLA RARA LAKE",
+            "name": "TSUM VALLEY",
             "duration": "17 DAYS",
-            "image": "/images/trekking/rara.png"
+            "image": "/images/trekking/manaslu/tsum-valley.png"
           },
           {
-            "name": "API BASE CAMP",
-            "duration": "15 DAYS",
-            "image": "/images/trekking/far-western/api-base-camp.png"
+            "name": "TSUM VALLEY MANASLU CIRCUIT",
+            "duration": "26 DAYS",
+            "image": "/images/trekking/manaslu/tsum-manaslu.png"
+          },
+          {
+            "name": "MANASLU CIRCUIT",
+            "duration": "20 DAYS",
+            "image": "/images/trekking/manaslu/manaslu-circuit.png"
           }
         ]
       },
@@ -405,17 +400,6 @@
         ]
       },
       {
-        "name": "BUDDHIST PILGRIMAGE",
-        "image": "/images/trekking/buddhist-pilgrimage.jpeg",
-        "subPackages": [
-          {
-            "name": "BUDDHIST PILGRIMAGE TREKKING",
-            "duration": "19 DAYS",
-            "image": "/images/trekking/buddhist-pilgrimage.jpeg"
-          }
-        ]
-      },
-      {
         "name": "GREAT HIMALAYAN TRAIL",
         "image": "/images/trekking/dhaulagiri.jpeg",
         "subPackages": [
@@ -427,18 +411,34 @@
         ]
       },
       {
-        "name": "KAILASH REGION",
-        "image": "/images/trekking/everest.jpeg",
+        "name": "DHAULAGIRI REGION",
+        "image": "/images/trekking/dhaulagiri.jpeg",
         "subPackages": [
           {
-            "name": "KAILASH MANSAROVAR OVERLAND TOUR",
-            "duration": "14 DAYS",
-            "image": "/images/trekking/everest/ebc-kala-pathar.png"
+            "name": "DHORPATAN TREK",
+            "duration": "15 DAYS",
+            "image": "/images/trekking/dhaulagiri/dhorpatan.png"
           },
           {
-            "name": "WESTERN NEPAL TO KAILASH TIBET TREK",
-            "duration": "23 DAYS",
-            "image": "/images/trekking/everest/pikey-peak.png"
+            "name": "DHAULAGIRI CIRCUIT",
+            "duration": "19 DAYS",
+            "image": "/images/trekking/dhaulagiri/dhaulagiri-circuit.png"
+          }
+        ]
+      },
+      {
+        "name": "FAR WESTERN TREK REGION",
+        "image": "/images/trekking/far-western-nepal.jpeg",
+        "subPackages": [
+          {
+            "name": "JUMLA RARA LAKE",
+            "duration": "17 DAYS",
+            "image": "/images/trekking/rara.png"
+          },
+          {
+            "name": "API BASE CAMP",
+            "duration": "15 DAYS",
+            "image": "/images/trekking/far-western/api-base-camp.png"
           }
         ]
       }

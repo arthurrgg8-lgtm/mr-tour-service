@@ -7,6 +7,28 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/privacy-policy",
   },
+  openGraph: {
+    type: "website",
+    locale: "en_NP",
+    url: "https://mrtourservice.com.np/privacy-policy",
+    siteName: "MR Tour Service",
+    title: "MR Tour Service",
+    description: "Read the privacy policy of MR Tour Service. Learn how we collect, use, and protect your personal data when you book vehicle rentals and tours in Nepal.",
+    images: [
+      {
+        url: "https://mrtourservice.com.np/logo.jpg",
+        width: 800,
+        height: 800,
+        alt: "MR Tour Service",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "MR Tour Service",
+    description: "Read the privacy policy of MR Tour Service. Learn how we collect, use, and protect your personal data when you book vehicle rentals and tours in Nepal.",
+    images: ["https://mrtourservice.com.np/logo.jpg"],
+  },
 }
 
 export default function PrivacyPolicy() {
