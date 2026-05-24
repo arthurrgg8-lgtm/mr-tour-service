@@ -65,8 +65,8 @@ export default function TourModal({ tour, onClose, onSelectSubPackage, onBack }:
   const handleGmailInquiry = () => {
     if (!tour) return;
     
-    const subject = `Inquiry for ${tour.title} - MR Tour Service`
-    const body = `Hello MR Tour Service Team,
+    const subject = `Inquiry for ${tour.title} - M.R travel and Tour`
+    const body = `Hello M.R travel and Tour Team,
 
 I am interested in booking the "${tour.title}" package (${tour.duration}).
 
@@ -89,7 +89,7 @@ Kind regards,
 
     const body = `*Inquiry for ${tour.title}*
 
-Hello MR Tour Service Team,
+Hello M.R travel and Tour Team,
 
 I am interested in booking the *"${tour.title}"* package.
 *Duration:* ${tour.duration || 'N/A'}

@@ -63,7 +63,7 @@ export const metadata: Metadata = {
     images: ["/logo.jpg"],
   },
   icons: {
-    icon: "/logo.jpg",
+    icon: [{ url: "/favicon.svg", type: "image/svg+xml" }, { url: "/logo.jpg", sizes: "any" }],
     apple: "/logo.jpg",
   },
   category: 'travel',

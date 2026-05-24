@@ -13,22 +13,22 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_NP",
     url: "https://mrtourservice.com.np/gallery",
-    siteName: "MR Tour Service",
-    title: "MR Tour Service",
-    description: "View photo gallery from MR Tour Service tours, treks, and fleet across Nepal. See our journeys to Everest, Annapurna, Lumbini, Chitwan, and Kathmandu valley.",
+    siteName: "M.R travel and Tour",
+    title: "M.R travel and Tour",
+    description: "View photo gallery from M.R travel and Tour tours, treks, and fleet across Nepal. See our journeys to Everest, Annapurna, Lumbini, Chitwan, and Kathmandu valley.",
     images: [
       {
         url: "https://mrtourservice.com.np/logo.jpg",
         width: 800,
         height: 800,
-        alt: "MR Tour Service",
+        alt: "M.R travel and Tour",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "MR Tour Service",
-    description: "View photo gallery from MR Tour Service tours, treks, and fleet across Nepal. See our journeys to Everest, Annapurna, Lumbini, Chitwan, and Kathmandu valley.",
+    title: "M.R travel and Tour",
+    description: "View photo gallery from M.R travel and Tour tours, treks, and fleet across Nepal. See our journeys to Everest, Annapurna, Lumbini, Chitwan, and Kathmandu valley.",
     images: ["https://mrtourservice.com.np/logo.jpg"],
   },
 }

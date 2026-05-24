@@ -11,22 +11,22 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_NP",
     url: "https://mrtourservice.com.np/privacy-policy",
-    siteName: "MR Tour Service",
-    title: "MR Tour Service",
-    description: "Read the privacy policy of MR Tour Service. Learn how we collect, use, and protect your personal data when you book vehicle rentals and tours in Nepal.",
+    siteName: "M.R travel and Tour",
+    title: "M.R travel and Tour",
+    description: "Read the privacy policy of M.R travel and Tour. Learn how we collect, use, and protect your personal data when you book vehicle rentals and tours in Nepal.",
     images: [
       {
         url: "https://mrtourservice.com.np/logo.jpg",
         width: 800,
         height: 800,
-        alt: "MR Tour Service",
+        alt: "M.R travel and Tour",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "MR Tour Service",
-    description: "Read the privacy policy of MR Tour Service. Learn how we collect, use, and protect your personal data when you book vehicle rentals and tours in Nepal.",
+    title: "M.R travel and Tour",
+    description: "Read the privacy policy of M.R travel and Tour. Learn how we collect, use, and protect your personal data when you book vehicle rentals and tours in Nepal.",
     images: ["https://mrtourservice.com.np/logo.jpg"],
   },
 }

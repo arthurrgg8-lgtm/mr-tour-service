@@ -16,22 +16,22 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_NP",
     url: "https://mrtourservice.com.np/contact",
-    siteName: "MR Tour Service",
-    title: "MR Tour Service",
-    description: "Get in touch with MR Tour Service for vehicle rentals, tour packages, and trekking adventures in Nepal. Available 24/7 via phone, WhatsApp, and email.",
+    siteName: "M.R travel and Tour",
+    title: "M.R travel and Tour",
+    description: "Get in touch with M.R travel and Tour for vehicle rentals, tour packages, and trekking adventures in Nepal. Available 24/7 via phone, WhatsApp, and email.",
     images: [
       {
         url: "https://mrtourservice.com.np/logo.jpg",
         width: 800,
         height: 800,
-        alt: "MR Tour Service",
+        alt: "M.R travel and Tour",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "MR Tour Service",
-    description: "Get in touch with MR Tour Service for vehicle rentals, tour packages, and trekking adventures in Nepal. Available 24/7 via phone, WhatsApp, and email.",
+    title: "M.R travel and Tour",
+    description: "Get in touch with M.R travel and Tour for vehicle rentals, tour packages, and trekking adventures in Nepal. Available 24/7 via phone, WhatsApp, and email.",
     images: ["https://mrtourservice.com.np/logo.jpg"],
   },
 }

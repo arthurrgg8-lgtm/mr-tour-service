@@ -15,22 +15,22 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_NP",
     url: "https://mrtourservice.com.np/about",
-    siteName: "MR Tour Service",
-    title: "MR Tour Service",
-    description: "Learn about MR Tour Service, Nepal trusted vehicle rental and tour operator. We own a premium fleet of cars, SUVs, and luxury buses serving Kathmandu and beyond.",
+    siteName: "M.R travel and Tour",
+    title: "M.R travel and Tour",
+    description: "Learn about M.R travel and Tour, Nepal trusted vehicle rental and tour operator. We own a premium fleet of cars, SUVs, and luxury buses serving Kathmandu and beyond.",
     images: [
       {
         url: "https://mrtourservice.com.np/logo.jpg",
         width: 800,
         height: 800,
-        alt: "MR Tour Service",
+        alt: "M.R travel and Tour",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "MR Tour Service",
-    description: "Learn about MR Tour Service, Nepal trusted vehicle rental and tour operator. We own a premium fleet of cars, SUVs, and luxury buses serving Kathmandu and beyond.",
+    title: "M.R travel and Tour",
+    description: "Learn about M.R travel and Tour, Nepal trusted vehicle rental and tour operator. We own a premium fleet of cars, SUVs, and luxury buses serving Kathmandu and beyond.",
     images: ["https://mrtourservice.com.np/logo.jpg"],
   },
 }
@@ -59,7 +59,7 @@ export default function AboutPage() {
         </div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">About MR Tour Service</h1>
+            <h1 className="text-4xl md:text-6xl font-bold mb-6">About M.R travel and Tour</h1>
             <p className="text-xl text-slate-300 leading-relaxed">
               Started with a vision to redefine travel and transportation in Nepal, 
               we have grown from a small vehicle rental company into a full-service 
@@ -76,7 +76,7 @@ export default function AboutPage() {
             <div>
               <h2 className="text-3xl font-bold mb-6">Our Journey</h2>
               <p className="text-muted-foreground mb-6 leading-relaxed">
-                MR Tour Service was founded on the principles of reliability, safety, and 
+                M.R travel and Tour was founded on the principles of reliability, safety, and 
                 transparency. Starting with a focus on vehicle rentals, we quickly realized 
                 that travelers in Nepal needed more than just a car; they needed a partner 
                 who understood the terrain, the culture, and the importance of a seamless experience.
