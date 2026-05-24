@@ -154,7 +154,7 @@ export default function Navbar() {
             <div className="relative">
               <Image 
                 src="/logo.jpg" 
-                alt="MR TOUR SERVICE"
+                alt="M.R travel and Tour"
                 width={44}
                 height={44}
                 className="rounded-lg object-contain bg-white border border-slate-100 shadow-sm transition-transform group-hover:scale-105"
@@ -171,7 +171,7 @@ export default function Navbar() {
             </div>
             <div className="flex flex-col">
               <span className="text-lg font-black tracking-tight text-primary leading-none group-hover:text-primary/80 transition-colors">
-                MR TOUR SERVICE
+                M.R TRAVEL AND TOUR
               </span>
               <span className="text-[9px] font-bold uppercase tracking-[0.2em] text-muted-foreground">
                 FUEL YOUR FREEDOM
