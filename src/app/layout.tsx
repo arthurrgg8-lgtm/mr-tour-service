@@ -22,6 +22,13 @@ const lora = Lora({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://mrtourservice.com.np"),
+  alternates: {
+    languages: {
+      'en-NP': 'https://mrtourservice.com.np',
+      'en': 'https://mrtourservice.com.np',
+      'x-default': 'https://mrtourservice.com.np',
+    },
+  },
   title: {
     default: `${business.name} | Premium Vehicle Rental & Tours in Nepal`,
     template: `%s | ${business.name}`
