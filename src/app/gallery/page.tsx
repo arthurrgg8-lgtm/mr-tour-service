@@ -4,8 +4,8 @@ import Gallery from "@/components/sections/Gallery"
 import Image from "next/image"
 
 export const metadata: Metadata = {
-  title: "Travel Gallery",
-  description: `Visual memories of our journeys across Nepal. Browse photos of our premium fleet, satisfied clients, and breathtaking destinations managed by ${business.name}.`,
+  title: "Travel Photo Gallery",
+  description: `Visual journeys across Nepal — from Kathmandu's temples to the Everest skyline, Chitwan safaris & our premium fleet. See the adventures that await you.`,
   alternates: {
     canonical: "/gallery",
   },
@@ -14,8 +14,8 @@ export const metadata: Metadata = {
     locale: "en_NP",
     url: "https://manoranjan.com.np/gallery",
     siteName: business.name,
-    title: business.name,
-    description: `View photo gallery from ${business.name} tours, treks, and fleet across Nepal. See our journeys to Everest, Annapurna, Lumbini, Chitwan, and Kathmandu valley.`,
+    title: `${business.name} - Travel Photo Gallery`,
+    description: `Visual journeys across Nepal — from Kathmandu's temples to the Everest skyline. See the beauty, people, and adventures that await you.`,
     images: [
       {
         url: "https://manoranjan.com.np/logo.jpg",
@@ -27,15 +27,28 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: business.name,
-    description: `View photo gallery from ${business.name} tours, treks, and fleet across Nepal. See our journeys to Everest, Annapurna, Lumbini, Chitwan, and Kathmandu valley.`,
+    title: `${business.name} - Travel Photo Gallery`,
+    description: `Visual journeys across Nepal — from Kathmandu's temples to the Everest skyline. See the beauty, people, and adventures that await you.`,
     images: ["https://manoranjan.com.np/logo.jpg"],
   },
 }
 
 export default function GalleryPage() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://manoranjan.com.np" },
+      { "@type": "ListItem", "position": 2, "name": "Gallery", "item": "https://manoranjan.com.np/gallery" }
+    ]
+  }
+
   return (
     <div className="pt-20 pb-24">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* Header */}
       <section className="relative bg-slate-900 py-32 text-white overflow-hidden">
         <div className="absolute inset-0 z-0">

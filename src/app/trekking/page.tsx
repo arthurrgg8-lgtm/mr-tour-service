@@ -41,7 +41,7 @@ interface Service {
 
 export const metadata: Metadata = {
   title: "Himalayan Trekking Adventures",
-  description: `Join ${business.name} for expert-led trekking adventures in Nepal. Explore Everest Base Camp, Annapurna Circuit, Langtang Valley, and remote forbidden kingdoms with our professional guides.`,
+  description: `Conquer the Himalayas — Everest Base Camp, Annapurna Circuit, Langtang & Manaslu. Expert government-licensed guides, safety-first protocols since 2003.`,
   alternates: {
     canonical: "/trekking",
   },
@@ -50,8 +50,8 @@ export const metadata: Metadata = {
     locale: "en_NP",
     url: "https://manoranjan.com.np/trekking",
     siteName: business.name,
-    title: business.name,
-    description: `Trek the Himalayas with ${business.name}: Everest Base Camp, Annapurna Circuit, Langtang Valley, Manaslu, and more. Expert guides, safety-first approach.`,
+    title: `${business.name} - Himalayan Trekking Adventures`,
+    description: `Conquer the Himalayas — Everest Base Camp, Annapurna Circuit, Langtang Valley & Manaslu. Expert government-licensed guides, safety-first protocols, sustainable trekking.`,
     images: [
       {
         url: "https://manoranjan.com.np/logo.jpg",
@@ -63,8 +63,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: business.name,
-    description: `Trek the Himalayas with ${business.name}: Everest Base Camp, Annapurna Circuit, Langtang Valley, Manaslu, and more. Expert guides, safety-first approach.`,
+    title: `${business.name} - Himalayan Trekking Adventures`,
+    description: `Conquer the Himalayas — Everest Base Camp, Annapurna Circuit, Langtang Valley & Manaslu. Expert government-licensed guides, safety-first protocols, sustainable trekking.`,
     images: ["https://manoranjan.com.np/logo.jpg"],
   },
 }
@@ -74,8 +74,64 @@ const trekkingService = (services as Service[]).find(s => s.id === 'trekking')
 export default function TrekkingPage() {
   if (!trekkingService) return null
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://manoranjan.com.np" },
+      { "@type": "ListItem", "position": 2, "name": "Trekking", "item": "https://manoranjan.com.np/trekking" }
+    ]
+  }
+
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What trekking packages does M.R Travel and Tour offer?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We offer trekking packages to Everest Base Camp, Annapurna Circuit, Langtang Valley, Manaslu Circuit, Gokyo Lakes, Mardi Himal, Poon Hill, Upper Mustang, Kanchenjunga, Dhaulagiri Circuit, Dolpo Region, Makalu Barun, and Tsum Valley. Our treks range from easy 5-day walks to challenging 33-day expeditions."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are your trekking guides licensed and experienced?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, all our trekking guides are government-licensed, English-speaking professionals with years of high-altitude experience. They are trained in first aid, altitude sickness management, and emergency protocols."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is included in your trekking packages?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Our trekking packages include transportation from Kathmandu, accommodation (teahouses or camping), all meals during the trek, licensed guides, porters, trekking permits (where applicable), and comprehensive insurance for our field staff."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need previous trekking experience?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Not necessarily. We offer treks for all experience levels — from easy beginner-friendly treks like Poon Hill to advanced expeditions like Kanchenjunga. We recommend consulting with our team to choose the right trek for your fitness level."
+        }
+      }
+    ]
+  }
+
   return (
     <div className="pt-20 pb-24">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       {/* Header */}
       <section className="relative bg-slate-900 py-32 text-white overflow-hidden">
         <div className="absolute inset-0 z-0">

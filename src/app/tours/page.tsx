@@ -27,8 +27,8 @@ interface Service {
 }
 
 export const metadata: Metadata = {
-  title: "Tour Packages in Nepal",
-  description: `Experience the best of Nepal with ${business.name}. From Kathmandu city tours to luxury jungle safaris in Chitwan and pilgrimage tours to Lumbini, our curated tour packages offer something for everyone.`,
+  title: "Nepal Tour Packages",
+  description: `Explore Nepal's greatest experiences — Kathmandu heritage walks, Chitwan safaris, Lumbini pilgrimages & custom tours. Expert local guides, premium vehicles.`,
   alternates: {
     canonical: "/tours",
   },
@@ -37,8 +37,8 @@ export const metadata: Metadata = {
     locale: "en_NP",
     url: "https://manoranjan.com.np/tours",
     siteName: business.name,
-    title: business.name,
-    description: `Discover ${business.name} curated tour packages: Kathmandu city tours, Chitwan jungle safaris, Lumbini pilgrimage tours, and customizable Nepal travel itineraries.`,
+    title: `${business.name} - Nepal Tour Packages & Holidays`,
+    description: `Explore Nepal's greatest experiences — Kathmandu heritage walks, Chitwan jungle safaris, Lumbini pilgrimages & custom itineraries. Expert local guides, premium vehicles.`,
     images: [
       {
         url: "https://manoranjan.com.np/logo.jpg",
@@ -50,8 +50,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: business.name,
-    description: `Discover ${business.name} curated tour packages: Kathmandu city tours, Chitwan jungle safaris, Lumbini pilgrimage tours, and customizable Nepal travel itineraries.`,
+    title: `${business.name} - Nepal Tour Packages & Holidays`,
+    description: `Explore Nepal's greatest experiences — Kathmandu heritage walks, Chitwan jungle safaris, Lumbini pilgrimages & custom itineraries. Expert local guides, premium vehicles.`,
     images: ["https://manoranjan.com.np/logo.jpg"],
   },
 }
@@ -61,8 +61,64 @@ const tourService = (services as Service[]).find(s => s.id === 'tour-packages')
 export default function ToursPage() {
   if (!tourService) return null
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://manoranjan.com.np" },
+      { "@type": "ListItem", "position": 2, "name": "Tours", "item": "https://manoranjan.com.np/tours" }
+    ]
+  }
+
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What types of tour packages does M.R Travel and Tour offer?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We offer a wide range of tour packages including Kathmandu heritage tours, Chitwan jungle safaris, Lumbini pilgrimage tours, Pokhara lake city tours, Annapurna-Chitwan holidays, and multi-city itineraries combining Nepal's top destinations."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long are your Nepal tour packages?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Our tour packages range from 1-day quick tours (like One Day Kathmandu Tour) to comprehensive 16-day journeys (like Badimalika Tour). The most popular packages are 3-12 days, covering multiple destinations across Nepal."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you include transportation and accommodation in tour packages?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, all our tour packages include transportation in our 100% company-owned fleet with professional drivers. Accommodation and guided tours are included as per the specific itinerary."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can you customize a tour package for my group?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Absolutely! We specialize in creating custom itineraries based on your preferences, group size, budget, and time constraints. Contact us via WhatsApp or our inquiry form to start planning your dream trip."
+        }
+      }
+    ]
+  }
+
   return (
     <div className="pt-20 pb-24">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       {/* Header */}
       <section className="relative bg-slate-900 py-32 text-white overflow-hidden">
         <div className="absolute inset-0 z-0">

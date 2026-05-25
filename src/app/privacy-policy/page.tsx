@@ -3,7 +3,7 @@ import business from "@/data/business.json"
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
-  description: `Read the privacy policy of ${business.name}. We are committed to protecting your personal data and ensuring a secure booking experience for all our travelers.`,
+  description: `Your privacy matters at ${business.name}. We only collect what's needed, never share your data, and respect your rights. Contact us anytime to review your information.`,
   alternates: {
     canonical: "/privacy-policy",
   },
@@ -12,8 +12,8 @@ export const metadata: Metadata = {
     locale: "en_NP",
     url: "https://manoranjan.com.np/privacy-policy",
     siteName: business.name,
-    title: business.name,
-    description: `Read the privacy policy of ${business.name}. Learn how we collect, use, and protect your personal data when you book vehicle rentals and tours in Nepal.`,
+    title: `${business.name} - Privacy Policy`,
+    description: `Your privacy matters at ${business.name}. We only collect what's needed, never share your data, and respect your rights. Contact us anytime to review your information.`,
     images: [
       {
         url: "https://manoranjan.com.np/logo.jpg",
@@ -25,15 +25,28 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: business.name,
-    description: `Read the privacy policy of ${business.name}. Learn how we collect, use, and protect your personal data when you book vehicle rentals and tours in Nepal.`,
+    title: `${business.name} - Privacy Policy`,
+    description: `Your privacy matters at ${business.name}. We only collect what's needed, never share your data, and respect your rights. Contact us anytime to review your information.`,
     images: ["https://manoranjan.com.np/logo.jpg"],
   },
 }
 
 export default function PrivacyPolicy() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://manoranjan.com.np" },
+      { "@type": "ListItem", "position": 2, "name": "Privacy Policy", "item": "https://manoranjan.com.np/privacy-policy" }
+    ]
+  }
+
   return (
     <div className="pt-32 pb-24 min-h-screen">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <div className="container mx-auto px-4 max-w-4xl">
         <h1 className="text-4xl font-bold mb-8">Privacy Policy</h1>
         <div className="prose prose-slate lg:prose-lg max-w-none bg-white p-8 md:p-12 rounded-[2rem] border shadow-sm">

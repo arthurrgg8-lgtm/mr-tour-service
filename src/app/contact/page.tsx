@@ -7,8 +7,8 @@ import QuickInquiryForm from "@/components/sections/QuickInquiryForm"
 import { buildWhatsAppUrl } from "@/lib/utils"
 
 export const metadata: Metadata = {
-  title: "Contact Us",
-  description: `Contact ${business.name} for premium vehicle rentals, tour packages, and trekking in Nepal. We are available 24/7 at our Kathmandu office and online via WhatsApp and Email.`,
+  title: "Contact Us - 24/7 Support",
+  description: `Ready for your Nepal adventure? Reach us 24/7 via phone, WhatsApp, or visit our Kalopul office. Premium fleet, tours & trekking — quick response, expert advice.`,
   alternates: {
     canonical: "/contact",
   },
@@ -17,8 +17,8 @@ export const metadata: Metadata = {
     locale: "en_NP",
     url: "https://manoranjan.com.np/contact",
     siteName: business.name,
-    title: business.name,
-    description: `Get in touch with ${business.name} for vehicle rentals, tour packages, and trekking adventures in Nepal. Available 24/7 via phone, WhatsApp, and email.`,
+    title: `${business.name} - Contact 24/7 Support`,
+    description: `Ready for your Nepal adventure? Reach us 24/7 via phone, WhatsApp, or visit our Kalopul office. Premium fleet rentals, tours & trekking — quick response, expert advice.`,
     images: [
       {
         url: "https://manoranjan.com.np/logo.jpg",
@@ -30,15 +30,71 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: business.name,
-    description: `Get in touch with ${business.name} for vehicle rentals, tour packages, and trekking adventures in Nepal. Available 24/7 via phone, WhatsApp, and email.`,
+    title: `${business.name} - Contact 24/7 Support`,
+    description: `Ready for your Nepal adventure? Reach us 24/7 via phone, WhatsApp, or visit our Kalopul office. Premium fleet rentals, tours & trekking — quick response, expert advice.`,
     images: ["https://manoranjan.com.np/logo.jpg"],
   },
 }
 
 export default function ContactPage() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://manoranjan.com.np" },
+      { "@type": "ListItem", "position": 2, "name": "Contact", "item": "https://manoranjan.com.np/contact" }
+    ]
+  }
+
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How can I contact M.R Travel and Tour?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You can reach us 24/7 via phone call, WhatsApp message, email, or by visiting our office at Kalopul, Kathmandu, Nepal. We respond to all inquiries within a few hours."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are your office hours?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We operate 24 hours a day, 7 days a week, 365 days a year. Our team is always available to assist with bookings, inquiries, and emergency support for our clients."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you respond to WhatsApp messages?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes! WhatsApp is our fastest communication channel. You can send us a message anytime and our team will respond promptly with quotes, availability, and travel advice."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I visit your office in person?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Absolutely. Our office is located at Kalopul, Kathmandu. You are welcome to visit us to discuss your travel plans, view our fleet options, and book your journey in person."
+        }
+      }
+    ]
+  }
+
   return (
     <div className="pt-20 pb-24">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       {/* Header */}
       <section className="relative bg-slate-900 py-32 text-white overflow-hidden">
         <div className="absolute inset-0 z-0">

@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     default: `${business.name} | Premium Vehicle Rental & Tours in Nepal`,
     template: `%s | ${business.name}`
   },
-  description: `${business.name} is Nepal's premier travel service provider. We offer a 100% self-owned fleet of premium cars, 4x4 Jeeps, and luxury buses, alongside expert-led trekking and tour packages. Experience safe, reliable, and professional travel in Kathmandu and beyond.`,
+  description: `Experience Nepal with confidence — 100% owned fleet of luxury vehicles, expert-led treks, and curated tours. Safe, reliable travel across Kathmandu, Pokhara & beyond. Book now.`,
   keywords: ["car rental Nepal", "Kathmandu vehicle hire", "Jeep rental for Mustang", "luxury tour packages Nepal", "Everest base camp trekking", "Toyota Hiace rental Nepal", "premium travel service Kathmandu", "best tour operator Nepal"],
   authors: [{ name: "LazZy" }],
   robots: {
@@ -52,8 +52,8 @@ export const metadata: Metadata = {
     locale: "en_NP",
     url: "https://manoranjan.com.np",
     siteName: business.name,
-    title: business.name,
-    description: `${business.name} is Nepal's premier travel service provider. We offer a 100% self-owned fleet of premium cars, 4x4 Jeeps, and luxury buses, alongside expert-led trekking and tour packages. Experience safe, reliable, and professional travel in Kathmandu and beyond.`,
+    title: `${business.name} | Premium Vehicle Rental & Tours in Nepal`,
+    description: `100% company-owned luxury fleet, expert-led Himalayan treks, and curated Nepal tours. Safe, reliable travel since 2003 — from Kathmandu to Everest.`,
     images: [
       {
         url: "/logo.jpg",
@@ -65,8 +65,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: business.name,
-    description: `${business.name} is Nepal's premier travel service provider. We offer a 100% self-owned fleet of premium cars, 4x4 Jeeps, and luxury buses, alongside expert-led trekking and tour packages. Experience safe, reliable, and professional travel in Kathmandu and beyond.`,
+    title: `${business.name} | Premium Vehicle Rental & Tours in Nepal`,
+    description: `100% company-owned luxury fleet, expert-led Himalayan treks, and curated Nepal tours. Safe, reliable travel since 2003 — from Kathmandu to Everest.`,
     images: ["/logo.jpg"],
   },
   icons: {
@@ -136,6 +136,47 @@ export default function RootLayout({
       "ratingCount": "127",
       "bestRating": "5"
     },
+    "review": [
+      {
+        "@type": "Review",
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5",
+          "bestRating": "5"
+        },
+        "author": {
+          "@type": "Person",
+          "name": "Arjun Sharma"
+        },
+        "reviewBody": "Excellent service and very professional drivers. The vehicle was in top condition and very clean."
+      },
+      {
+        "@type": "Review",
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5",
+          "bestRating": "5"
+        },
+        "author": {
+          "@type": "Person",
+          "name": "Sarah Miller"
+        },
+        "reviewBody": "The custom tour planned by M.R TRAVEL AND TOUR was fantastic. Everything was well-organized and the pricing was very fair."
+      },
+      {
+        "@type": "Review",
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5",
+          "bestRating": "5"
+        },
+        "author": {
+          "@type": "Person",
+          "name": "Rajesh Gupta"
+        },
+        "reviewBody": "Best vehicle rental service in Nepal. We rented a Hiace for our family trip and the experience was seamless."
+      }
+    ],
     "areaServed": [
       {
         "@type": "City",

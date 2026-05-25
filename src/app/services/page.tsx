@@ -36,8 +36,8 @@ interface Service {
 }
 
 export const metadata: Metadata = {
-  title: "Our Services & Fleet",
-  description: `Explore the premium vehicle fleet of ${business.name}. We offer car rentals, 4x4 Jeeps, luxury buses, and comprehensive tour and trekking packages across all major destinations in Nepal.`,
+  title: "Vehicle Rental Services & Fleet",
+  description: `Rent the best vehicles in Nepal — Toyota Fortuner, BYD Atto 3 EV, Suzuki Brezza & luxury buses. 100% owned fleet with professional drivers for any journey.`,
   alternates: {
     canonical: "/services",
   },
@@ -46,8 +46,8 @@ export const metadata: Metadata = {
     locale: "en_NP",
     url: "https://manoranjan.com.np/services",
     siteName: business.name,
-    title: business.name,
-    description: `Explore ${business.name} premium travel services: luxury car rental, 4x4 SUV hire, bus rental for groups, tour packages, and trekking expeditions across Nepal.`,
+    title: `${business.name} - Vehicle Rental Services & Fleet`,
+    description: `Rent the best vehicles in Nepal — Toyota Fortuner, BYD Atto 3 EV, luxury buses & more. 100% company-owned fleet with professional drivers for any journey.`,
     images: [
       {
         url: "https://manoranjan.com.np/logo.jpg",
@@ -59,8 +59,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: business.name,
-    description: `Explore ${business.name} premium travel services: luxury car rental, 4x4 SUV hire, bus rental for groups, tour packages, and trekking expeditions across Nepal.`,
+    title: `${business.name} - Vehicle Rental Services & Fleet`,
+    description: `Rent the best vehicles in Nepal — Toyota Fortuner, BYD Atto 3 EV, luxury buses & more. 100% company-owned fleet with professional drivers for any journey.`,
     images: ["https://manoranjan.com.np/logo.jpg"],
   },
 }
@@ -76,8 +76,64 @@ const iconMap: { [key: string]: React.ComponentType<{ className?: string }> } = 
 }
 
 export default function ServicesPage() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://manoranjan.com.np" },
+      { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://manoranjan.com.np/services" }
+    ]
+  }
+
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What vehicles does M.R Travel and Tour offer for rent?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We offer a 100% owned fleet including Toyota Fortuner (6+1 seater 4x4 SUV), BYD Atto 3 EV (5+1 seater luxury electric SUV), Maruti Suzuki Brezza (5+1 seater SUV), Toyota Hiace (12+1 seater minibus), luxury tourist buses (30-40 seater), Scorpio (6+1 seater 4x4), and pickup trucks for cargo. All vehicles come with professional drivers."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you provide drivers with the rental vehicles?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, all our vehicle rentals include a professional, trained driver. Our drivers are experienced, licensed, and know Nepal's roads and routes thoroughly, ensuring a safe and comfortable journey."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I rent a vehicle for multiple days or long-distance trips?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Absolutely. We offer flexible rental periods from single-day city trips to multi-week expeditions across Nepal. Whether you need a vehicle for Pokhara, Chitwan, Lumbini, or mountain regions, we can arrange it."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What areas of Nepal do you serve?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We serve all of Nepal including Kathmandu Valley, Pokhara, Chitwan, Lumbini, Mustang, Manang, Dolpo, and all trekking trailheads. Our fleet is equipped for both city roads and challenging mountain terrain."
+        }
+      }
+    ]
+  }
+
   return (
     <div className="pt-20 pb-24">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       {/* Header */}
       <section className="relative bg-slate-900 py-32 text-white overflow-hidden">
         <div className="absolute inset-0 z-0">

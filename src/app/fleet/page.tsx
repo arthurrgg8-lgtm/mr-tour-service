@@ -7,8 +7,8 @@ import Image from "next/image"
 import { buildWhatsAppUrl } from "@/lib/utils"
 
 export const metadata: Metadata = {
-  title: "Our Vehicle Fleet",
-  description: `Browse the 100% self-owned vehicle fleet of ${business.name}. We offer Toyota Fortuner (Premium SUV), BYD Atto 3 (Electric), Suzuki Brezza, Toyota Hiace, and luxury tourist buses.`,
+  title: "Our Premium Fleet - Toyota & More",
+  description: `Your ride across Nepal — Toyota Fortuner SUVs, BYD Atto 3 EV, Toyota Hiace & luxury buses. All 100% owned, meticulously maintained, with professional drivers.`,
   alternates: {
     canonical: "/fleet",
   },
@@ -17,8 +17,8 @@ export const metadata: Metadata = {
     locale: "en_NP",
     url: "https://manoranjan.com.np/fleet",
     siteName: business.name,
-    title: business.name,
-    description: `Browse ${business.name} fully owned fleet: Toyota Fortuner, BYD Atto 3 EV, Suzuki Brezza, Toyota Hiace, and luxury buses. Well-maintained vehicles with professional drivers.`,
+    title: `${business.name} - Premium Vehicle Fleet`,
+    description: `Your ride across Nepal — Toyota Fortuner SUVs, BYD Atto 3 EV, Suzuki Brezza, Toyota Hiace & luxury tourist buses. 100% owned, meticulously maintained, professional drivers.`,
     images: [
       {
         url: "https://manoranjan.com.np/logo.jpg",
@@ -30,15 +30,52 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: business.name,
-    description: `Browse ${business.name} fully owned fleet: Toyota Fortuner, BYD Atto 3 EV, Suzuki Brezza, Toyota Hiace, and luxury buses. Well-maintained vehicles with professional drivers.`,
+    title: `${business.name} - Premium Vehicle Fleet`,
+    description: `Your ride across Nepal — Toyota Fortuner SUVs, BYD Atto 3 EV, Suzuki Brezza, Toyota Hiace & luxury tourist buses. 100% owned, meticulously maintained, professional drivers.`,
     images: ["https://manoranjan.com.np/logo.jpg"],
   },
 }
 
 export default function FleetPage() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://manoranjan.com.np" },
+      { "@type": "ListItem", "position": 2, "name": "Fleet", "item": "https://manoranjan.com.np/fleet" }
+    ]
+  }
+
+  const itemListJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "M.R Travel and Tour Vehicle Fleet",
+    "description": "Our 100% owned fleet of premium vehicles for rent in Nepal",
+    "numberOfItems": fleet.length,
+    "itemListElement": fleet.map((vehicle, index) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "item": {
+        "@type": "Vehicle",
+        "name": vehicle.name,
+        "description": vehicle.description,
+        "bodyType": vehicle.category,
+        "numberOfPassengers": parseInt(vehicle.capacity.split('-')[0].split('+')[0]),
+        "image": vehicle.image || undefined
+      }
+    }))
+  }
+
   return (
     <div className="pt-20 pb-24">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }}
+      />
       {/* Header */}
       <section className="relative bg-slate-900 py-32 text-white overflow-hidden">
         <div className="absolute inset-0 z-0">

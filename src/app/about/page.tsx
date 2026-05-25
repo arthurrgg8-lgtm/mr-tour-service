@@ -6,8 +6,8 @@ import Image from "next/image"
 import Link from "next/link"
 
 export const metadata: Metadata = {
-  title: "About Us",
-  description: `Learn about the journey and mission of ${business.name}. Discover our 100% self-owned fleet, meet our leadership team including founder Bishnu Bahadur Karki, and see our government certifications.`,
+  title: "About Us - Since 2003",
+  description: `Trusted since 2003 — 20+ years of safe, reliable travel across Nepal. 100% owned fleet, government-certified, with a team that knows every road and trail.`,
   alternates: {
     canonical: "/about",
   },
@@ -16,8 +16,8 @@ export const metadata: Metadata = {
     locale: "en_NP",
     url: "https://manoranjan.com.np/about",
     siteName: business.name,
-    title: business.name,
-    description: `Learn about ${business.name}, Nepal's trusted vehicle rental and tour operator. We own a premium fleet of cars, SUVs, and luxury buses serving Kathmandu and beyond.`,
+    title: `${business.name} - About Our Story Since 2003`,
+    description: `Trusted by travelers since 2003 — 20+ years of safe, reliable travel across Nepal. 100% company-owned fleet, government-certified, and a team that knows every road and trail.`,
     images: [
       {
         url: "https://manoranjan.com.np/logo.jpg",
@@ -29,8 +29,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: business.name,
-    description: `Learn about ${business.name}, Nepal's trusted vehicle rental and tour operator. We own a premium fleet of cars, SUVs, and luxury buses serving Kathmandu and beyond.`,
+    title: `${business.name} - About Our Story Since 2003`,
+    description: `Trusted by travelers since 2003 — 20+ years of safe, reliable travel across Nepal. 100% company-owned fleet, government-certified, and a team that knows every road and trail.`,
     images: ["https://manoranjan.com.np/logo.jpg"],
   },
 }
@@ -43,8 +43,21 @@ interface TeamMember {
 }
 
 export default function AboutPage() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://manoranjan.com.np" },
+      { "@type": "ListItem", "position": 2, "name": "About", "item": "https://manoranjan.com.np/about" }
+    ]
+  }
+
   return (
     <div className="pt-20 pb-24">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* Header */}
       <section className="relative bg-slate-900 py-32 text-white overflow-hidden">
         <div className="absolute inset-0 z-0">
