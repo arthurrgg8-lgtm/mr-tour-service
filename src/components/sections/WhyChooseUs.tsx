@@ -11,7 +11,7 @@ export default function WhyChooseUs() {
               The MR Tour Advantage
             </span>
             <h2 className="text-3xl md:text-5xl font-bold mb-6 leading-tight">
-              Why Travelers Trust <br /> <span className="text-primary">M.R travel and Tour</span>
+              Why Travelers Trust <br /> <span className="text-primary">{business.name}</span>
             </h2>
             <p className="text-lg text-muted-foreground mb-10">
               We started with a simple goal: to provide the most reliable transportation 

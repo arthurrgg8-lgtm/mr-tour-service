@@ -68,7 +68,7 @@ export const metadata: Metadata = {
   },
   category: 'travel',
   verification: {
-    google: 'YOUR_GOOGLE_VERIFICATION_CODE',
+    google: '1hq9mwly3ONgN6ckT9fUXlrK-ai0wkZZICaBoZVElxU',
   },
 }
 

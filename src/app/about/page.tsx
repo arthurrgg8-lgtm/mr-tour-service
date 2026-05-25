@@ -59,7 +59,7 @@ export default function AboutPage() {
         </div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">About M.R travel and Tour</h1>
+            <h1 className="text-4xl md:text-6xl font-bold mb-6">About {business.name}</h1>
             <p className="text-xl text-slate-300 leading-relaxed">
               Started with a vision to redefine travel and transportation in Nepal, 
               we have grown from a small vehicle rental company into a full-service 
@@ -76,7 +76,7 @@ export default function AboutPage() {
             <div>
               <h2 className="text-3xl font-bold mb-6">Our Journey</h2>
               <p className="text-muted-foreground mb-6 leading-relaxed">
-                M.R travel and Tour was founded on the principles of reliability, safety, and 
+                {business.name} was founded on the principles of reliability, safety, and 
                 transparency. Starting with a focus on vehicle rentals, we quickly realized 
                 that travelers in Nepal needed more than just a car; they needed a partner 
                 who understood the terrain, the culture, and the importance of a seamless experience.

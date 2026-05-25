@@ -96,7 +96,7 @@ export default function Navbar() {
   }, [])
 
   // Improved stable redirect logic for hash links
-  const handleHashNavigation = useCallback((retryCount = 0) => {
+  const handleHashNavigation = useCallback(function hashNav(retryCount = 0) {
     const hash = window.location.hash.substring(1)
     if (hash) {
       // Use requestAnimationFrame for smoother synchronization with browser render
@@ -104,7 +104,7 @@ export default function Navbar() {
         setTimeout(() => {
           const success = scrollToId(hash, 100, true)
           if (!success && retryCount < 10) {
-            handleHashNavigation(retryCount + 1)
+            hashNav(retryCount + 1)
           }
         }, 100 * (retryCount + 1)) // Incremental delay if not found
       })
@@ -113,8 +113,9 @@ export default function Navbar() {
 
   useEffect(() => {
     handleHashNavigation()
-    window.addEventListener("hashchange", () => handleHashNavigation())
-    return () => window.removeEventListener("hashchange", () => handleHashNavigation())
+    const onHashChange = () => handleHashNavigation()
+    window.addEventListener("hashchange", onHashChange)
+    return () => window.removeEventListener("hashchange", onHashChange)
   }, [pathname, handleHashNavigation])
 
   const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
@@ -154,7 +155,7 @@ export default function Navbar() {
             <div className="relative">
               <Image 
                 src="/logo.jpg" 
-                alt="M.R travel and Tour"
+                alt={business.name}
                 width={44}
                 height={44}
                 className="rounded-lg object-contain bg-white border border-slate-100 shadow-sm transition-transform group-hover:scale-105"
@@ -171,7 +172,7 @@ export default function Navbar() {
             </div>
             <div className="flex flex-col">
               <span className="text-lg font-black tracking-tight text-primary leading-none group-hover:text-primary/80 transition-colors">
-                M.R TRAVEL AND TOUR
+                {business.name}
               </span>
               <span className="text-[9px] font-bold uppercase tracking-[0.2em] text-muted-foreground">
                 FUEL YOUR FREEDOM

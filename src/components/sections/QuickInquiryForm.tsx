@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useRef } from "react"
-import { Send, Mail, MessageCircle } from "lucide-react"
+import { Mail, MessageCircle } from "lucide-react"
 import business from "@/data/business.json"
 import { buildWhatsAppUrl, buildGmailUrl } from "@/lib/utils"
 import { sanitizeInput } from "@/lib/utils"

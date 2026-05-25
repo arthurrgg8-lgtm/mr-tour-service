@@ -1,4 +1,5 @@
 import { ShieldCheck, Zap, Users, Trophy } from "lucide-react"
+import business from "@/data/business.json"
 
 export default function WhyChooseSummary() {
   const summaryFeatures = [
@@ -30,7 +31,7 @@ export default function WhyChooseSummary() {
         <div className="flex flex-col lg:flex-row items-center gap-12">
           <div className="lg:w-1/2">
             <span className="text-primary font-bold uppercase tracking-[0.2em] text-sm mb-4 block">Trust & Reliability</span>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">Why Choose <span className="text-primary">M.R travel and Tour</span>?</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">Why Choose <span className="text-primary">{business.name}</span>?</h2>
             <p className="text-lg text-slate-600 leading-relaxed mb-8">
               We combine local expertise with international safety standards to provide the most reliable 
               travel solutions in Nepal. Our commitment to transparent pricing and personalized service 

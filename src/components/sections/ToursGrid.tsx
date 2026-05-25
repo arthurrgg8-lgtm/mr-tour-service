@@ -42,14 +42,12 @@ export default function ToursGrid({ subServices }: ToursGridProps) {
       const hash = decodeURIComponent(window.location.hash.substring(1).toLowerCase())
       if (hash) {
         const searchHash = hash.replace(/-/g, ' ')
-        const firstWord = hash.split('-')[0]
-        
+
         const detail = tourDetails.find(d => {
           const title = d.title.toLowerCase()
           const id = d.id.toLowerCase()
           return id === hash || 
                  title.includes(searchHash) || 
-                 (firstWord.length > 3 && title.includes(firstWord)) ||
                  id.includes(hash)
         })
         if (detail) {
