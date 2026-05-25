@@ -10,13 +10,13 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_NP",
-    url: "https://mrtourservice.com.np/privacy-policy",
+    url: "https://manoranjan.com.np/privacy-policy",
     siteName: business.name,
     title: business.name,
     description: `Read the privacy policy of ${business.name}. Learn how we collect, use, and protect your personal data when you book vehicle rentals and tours in Nepal.`,
     images: [
       {
-        url: "https://mrtourservice.com.np/logo.jpg",
+        url: "https://manoranjan.com.np/logo.jpg",
         width: 800,
         height: 800,
         alt: business.name,
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: business.name,
     description: `Read the privacy policy of ${business.name}. Learn how we collect, use, and protect your personal data when you book vehicle rentals and tours in Nepal.`,
-    images: ["https://mrtourservice.com.np/logo.jpg"],
+    images: ["https://manoranjan.com.np/logo.jpg"],
   },
 }
 

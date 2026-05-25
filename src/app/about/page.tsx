@@ -14,13 +14,13 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_NP",
-    url: "https://mrtourservice.com.np/about",
+    url: "https://manoranjan.com.np/about",
     siteName: business.name,
     title: business.name,
     description: `Learn about ${business.name}, Nepal's trusted vehicle rental and tour operator. We own a premium fleet of cars, SUVs, and luxury buses serving Kathmandu and beyond.`,
     images: [
       {
-        url: "https://mrtourservice.com.np/logo.jpg",
+        url: "https://manoranjan.com.np/logo.jpg",
         width: 800,
         height: 800,
         alt: business.name,
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: business.name,
     description: `Learn about ${business.name}, Nepal's trusted vehicle rental and tour operator. We own a premium fleet of cars, SUVs, and luxury buses serving Kathmandu and beyond.`,
-    images: ["https://mrtourservice.com.np/logo.jpg"],
+    images: ["https://manoranjan.com.np/logo.jpg"],
   },
 }
 

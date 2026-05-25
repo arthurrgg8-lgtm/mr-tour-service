@@ -21,12 +21,12 @@ const lora = Lora({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://mrtourservice.com.np"),
+  metadataBase: new URL("https://manoranjan.com.np"),
   alternates: {
     languages: {
-      'en-NP': 'https://mrtourservice.com.np',
-      'en': 'https://mrtourservice.com.np',
-      'x-default': 'https://mrtourservice.com.np',
+      'en-NP': 'https://manoranjan.com.np',
+      'en': 'https://manoranjan.com.np',
+      'x-default': 'https://manoranjan.com.np',
     },
   },
   title: {
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_NP",
-    url: "https://mrtourservice.com.np",
+    url: "https://manoranjan.com.np",
     siteName: business.name,
     title: business.name,
     description: `${business.name} is Nepal's premier travel service provider. We offer a 100% self-owned fleet of premium cars, 4x4 Jeeps, and luxury buses, alongside expert-led trekking and tour packages. Experience safe, reliable, and professional travel in Kathmandu and beyond.`,
@@ -97,9 +97,9 @@ export default function RootLayout({
     "name": business.name,
     "alternateName": business.name,
     "description": "Nepal's premier travel service provider offering 100% self-owned fleet of premium cars, 4x4 Jeeps, and luxury buses.",
-    "url": "https://mrtourservice.com.np",
-    "logo": "https://mrtourservice.com.np/logo.jpg",
-    "image": "https://mrtourservice.com.np/images/hero/services-bg.jpg",
+    "url": "https://manoranjan.com.np",
+    "logo": "https://manoranjan.com.np/logo.jpg",
+    "image": "https://manoranjan.com.np/images/hero/services-bg.jpg",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Kalopul",

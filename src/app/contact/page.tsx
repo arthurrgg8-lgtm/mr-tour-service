@@ -15,13 +15,13 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_NP",
-    url: "https://mrtourservice.com.np/contact",
+    url: "https://manoranjan.com.np/contact",
     siteName: business.name,
     title: business.name,
     description: `Get in touch with ${business.name} for vehicle rentals, tour packages, and trekking adventures in Nepal. Available 24/7 via phone, WhatsApp, and email.`,
     images: [
       {
-        url: "https://mrtourservice.com.np/logo.jpg",
+        url: "https://manoranjan.com.np/logo.jpg",
         width: 800,
         height: 800,
         alt: business.name,
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: business.name,
     description: `Get in touch with ${business.name} for vehicle rentals, tour packages, and trekking adventures in Nepal. Available 24/7 via phone, WhatsApp, and email.`,
-    images: ["https://mrtourservice.com.np/logo.jpg"],
+    images: ["https://manoranjan.com.np/logo.jpg"],
   },
 }
 

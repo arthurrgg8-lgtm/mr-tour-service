@@ -15,13 +15,13 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_NP",
-    url: "https://mrtourservice.com.np/fleet",
+    url: "https://manoranjan.com.np/fleet",
     siteName: business.name,
     title: business.name,
     description: `Browse ${business.name} fully owned fleet: Toyota Fortuner, BYD Atto 3 EV, Suzuki Brezza, Toyota Hiace, and luxury buses. Well-maintained vehicles with professional drivers.`,
     images: [
       {
-        url: "https://mrtourservice.com.np/logo.jpg",
+        url: "https://manoranjan.com.np/logo.jpg",
         width: 800,
         height: 800,
         alt: business.name,
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: business.name,
     description: `Browse ${business.name} fully owned fleet: Toyota Fortuner, BYD Atto 3 EV, Suzuki Brezza, Toyota Hiace, and luxury buses. Well-maintained vehicles with professional drivers.`,
-    images: ["https://mrtourservice.com.np/logo.jpg"],
+    images: ["https://manoranjan.com.np/logo.jpg"],
   },
 }
 

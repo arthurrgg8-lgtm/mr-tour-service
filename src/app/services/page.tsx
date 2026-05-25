@@ -44,13 +44,13 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_NP",
-    url: "https://mrtourservice.com.np/services",
+    url: "https://manoranjan.com.np/services",
     siteName: business.name,
     title: business.name,
     description: `Explore ${business.name} premium travel services: luxury car rental, 4x4 SUV hire, bus rental for groups, tour packages, and trekking expeditions across Nepal.`,
     images: [
       {
-        url: "https://mrtourservice.com.np/logo.jpg",
+        url: "https://manoranjan.com.np/logo.jpg",
         width: 800,
         height: 800,
         alt: business.name,
@@ -61,7 +61,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: business.name,
     description: `Explore ${business.name} premium travel services: luxury car rental, 4x4 SUV hire, bus rental for groups, tour packages, and trekking expeditions across Nepal.`,
-    images: ["https://mrtourservice.com.np/logo.jpg"],
+    images: ["https://manoranjan.com.np/logo.jpg"],
   },
 }
 

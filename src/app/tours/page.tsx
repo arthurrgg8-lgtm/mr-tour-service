@@ -35,13 +35,13 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_NP",
-    url: "https://mrtourservice.com.np/tours",
+    url: "https://manoranjan.com.np/tours",
     siteName: business.name,
     title: business.name,
     description: `Discover ${business.name} curated tour packages: Kathmandu city tours, Chitwan jungle safaris, Lumbini pilgrimage tours, and customizable Nepal travel itineraries.`,
     images: [
       {
-        url: "https://mrtourservice.com.np/logo.jpg",
+        url: "https://manoranjan.com.np/logo.jpg",
         width: 800,
         height: 800,
         alt: business.name,
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: business.name,
     description: `Discover ${business.name} curated tour packages: Kathmandu city tours, Chitwan jungle safaris, Lumbini pilgrimage tours, and customizable Nepal travel itineraries.`,
-    images: ["https://mrtourservice.com.np/logo.jpg"],
+    images: ["https://manoranjan.com.np/logo.jpg"],
   },
 }
 
