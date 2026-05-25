@@ -453,10 +453,11 @@
     "startingPrice": "NPR 5,000 / $37",
     "recommendedFor": "City Tours & Airport Transfers",
     "images": [
-      "/images/services/car/1.jpg",
-      "/images/services/car/2.jpg",
-      "/images/services/car/3.jpg",
-      "/images/services/car/4.jpg"
+      "/images/services/car/car-1.jpeg",
+      "/images/services/car/car-2.jpeg",
+      "/images/services/car/car-3.jpeg",
+      "/images/services/car/car-4.jpeg",
+      "/images/services/car/byd-car.jpeg"
     ],
     "featured": true,
     "details": "We offer a wide range of well-maintained cars including luxury sedans and budget-friendly options. All rentals come with professional, well-trained drivers to ensure your comfort and safety.",
@@ -523,7 +524,7 @@
     "startingPrice": "NPR 8,000 / $59",
     "recommendedFor": "Tourist Groups & Pilgrimage",
     "images": [
-      "/images/services/hiace/1.jpg"
+      "/images/services/hiace/hiace-full.jpeg"
     ],
     "featured": true,
     "details": "Our Hiace fleet is the gold standard for tourist groups. Spacious seating, dual AC, and high-roof models ensure everyone travels in comfort.",
@@ -566,7 +567,9 @@
     "images": [
       "/images/services/bus/BUSSS.jpeg",
       "/images/services/bus/BUS8.jpeg",
-      "/images/services/bus/BUS1.jpeg"
+      "/images/services/bus/BUS1.jpeg",
+      "/images/services/bus/sutlej-bus-1.jpeg",
+      "/images/services/bus/sutlej-bus-2.jpeg"
     ],
     "featured": true,
     "details": "For groups of 35-41 people, our luxury tourist buses (including Sutlej models) provide maximum comfort with reclining seats, wide windows, and advanced suspension systems.",
@@ -586,9 +589,12 @@
     "startingPrice": "NPR 15,000 / $111",
     "recommendedFor": "VIP Delegations & High-End Events",
     "images": [
-      "/images/fleet/fortuner-new.jpg",
-      "/images/fleet/byd-atto3.jpg",
-      "/images/services/bus/1.jpg"
+      "/images/services/premium-fleet/premium-fleet-1.jpeg",
+      "/images/services/premium-fleet/premium-fleet-2.jpeg",
+      "/images/services/premium-fleet/premium-fleet-3.jpeg",
+      "/images/services/premium-fleet/fortuner-replace.jpeg",
+      "/images/services/bus/sutlej-bus-1.jpeg",
+      "/images/services/bus/sutlej-bus-2.jpeg"
     ],
     "featured": true,
     "details": "For those who demand the best. Our premium fleet features the latest models with superior comfort, advanced safety features, and elite styling for VIP travel.",

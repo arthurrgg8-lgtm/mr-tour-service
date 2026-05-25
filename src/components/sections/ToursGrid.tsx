@@ -4,7 +4,7 @@ import { useState, useEffect } from "react"
 import Image from "next/image"
 import { Clock, Compass } from "lucide-react"
 import TourModal from "@/components/ui/TourModal"
-import tourDetails from "@/data/tour_details.json"
+import tourDetails from "@/data/tours.json"
 
 interface SubService {
   name: string;

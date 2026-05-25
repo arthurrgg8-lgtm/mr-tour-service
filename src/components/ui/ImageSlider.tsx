@@ -33,7 +33,7 @@ export default function ImageSlider({ images, alt }: ImageSliderProps) {
   }
 
   return (
-    <div className="relative h-full w-full overflow-hidden group/slider">
+    <div className="relative h-full w-full overflow-hidden group/slider bg-slate-50">
       <AnimatePresence mode="wait">
         <motion.div
           key={current}

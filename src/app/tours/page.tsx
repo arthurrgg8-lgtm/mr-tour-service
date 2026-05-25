@@ -36,22 +36,22 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_NP",
     url: "https://mrtourservice.com.np/tours",
-    siteName: "M.R travel and Tour",
-    title: "M.R travel and Tour",
-    description: "Discover M.R travel and Tour curated tour packages: Kathmandu city tours, Chitwan jungle safaris, Lumbini pilgrimage tours, and customizable Nepal travel itineraries.",
+    siteName: business.name,
+    title: business.name,
+    description: `Discover ${business.name} curated tour packages: Kathmandu city tours, Chitwan jungle safaris, Lumbini pilgrimage tours, and customizable Nepal travel itineraries.`,
     images: [
       {
         url: "https://mrtourservice.com.np/logo.jpg",
         width: 800,
         height: 800,
-        alt: "M.R travel and Tour",
+        alt: business.name,
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "M.R travel and Tour",
-    description: "Discover M.R travel and Tour curated tour packages: Kathmandu city tours, Chitwan jungle safaris, Lumbini pilgrimage tours, and customizable Nepal travel itineraries.",
+    title: business.name,
+    description: `Discover ${business.name} curated tour packages: Kathmandu city tours, Chitwan jungle safaris, Lumbini pilgrimage tours, and customizable Nepal travel itineraries.`,
     images: ["https://mrtourservice.com.np/logo.jpg"],
   },
 }

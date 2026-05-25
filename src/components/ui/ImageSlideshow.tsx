@@ -30,7 +30,7 @@ export default function ImageSlideshow({ images, interval = 5000, priority = fal
   const prev = () => setCurrentIndex((prev) => (prev - 1 + images.length) % images.length)
 
   return (
-    <div className="relative w-full h-full overflow-hidden rounded-2xl md:rounded-3xl border border-slate-100 shadow-xl group/slideshow">
+    <div className="relative w-full h-full overflow-hidden rounded-2xl md:rounded-3xl border border-slate-100 shadow-xl group/slideshow bg-slate-50">
       <AnimatePresence mode="wait">
         <motion.div
           key={currentIndex}

@@ -15,22 +15,22 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_NP",
     url: "https://mrtourservice.com.np/about",
-    siteName: "M.R travel and Tour",
-    title: "M.R travel and Tour",
-    description: "Learn about M.R travel and Tour, Nepal trusted vehicle rental and tour operator. We own a premium fleet of cars, SUVs, and luxury buses serving Kathmandu and beyond.",
+    siteName: business.name,
+    title: business.name,
+    description: `Learn about ${business.name}, Nepal's trusted vehicle rental and tour operator. We own a premium fleet of cars, SUVs, and luxury buses serving Kathmandu and beyond.`,
     images: [
       {
         url: "https://mrtourservice.com.np/logo.jpg",
         width: 800,
         height: 800,
-        alt: "M.R travel and Tour",
+        alt: business.name,
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "M.R travel and Tour",
-    description: "Learn about M.R travel and Tour, Nepal trusted vehicle rental and tour operator. We own a premium fleet of cars, SUVs, and luxury buses serving Kathmandu and beyond.",
+    title: business.name,
+    description: `Learn about ${business.name}, Nepal's trusted vehicle rental and tour operator. We own a premium fleet of cars, SUVs, and luxury buses serving Kathmandu and beyond.`,
     images: ["https://mrtourservice.com.np/logo.jpg"],
   },
 }

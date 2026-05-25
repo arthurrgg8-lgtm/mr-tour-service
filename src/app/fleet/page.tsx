@@ -16,22 +16,22 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_NP",
     url: "https://mrtourservice.com.np/fleet",
-    siteName: "M.R travel and Tour",
-    title: "M.R travel and Tour",
-    description: "Browse M.R travel and Tour fully owned fleet: Toyota Fortuner, BYD Atto 3 EV, Suzuki Brezza, Toyota Hiace, and luxury buses. Well-maintained vehicles with professional drivers.",
+    siteName: business.name,
+    title: business.name,
+    description: `Browse ${business.name} fully owned fleet: Toyota Fortuner, BYD Atto 3 EV, Suzuki Brezza, Toyota Hiace, and luxury buses. Well-maintained vehicles with professional drivers.`,
     images: [
       {
         url: "https://mrtourservice.com.np/logo.jpg",
         width: 800,
         height: 800,
-        alt: "M.R travel and Tour",
+        alt: business.name,
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "M.R travel and Tour",
-    description: "Browse M.R travel and Tour fully owned fleet: Toyota Fortuner, BYD Atto 3 EV, Suzuki Brezza, Toyota Hiace, and luxury buses. Well-maintained vehicles with professional drivers.",
+    title: business.name,
+    description: `Browse ${business.name} fully owned fleet: Toyota Fortuner, BYD Atto 3 EV, Suzuki Brezza, Toyota Hiace, and luxury buses. Well-maintained vehicles with professional drivers.`,
     images: ["https://mrtourservice.com.np/logo.jpg"],
   },
 }

@@ -13,13 +13,13 @@ export default function Footer() {
             <Link href="/" className="flex items-center gap-4 mb-6">
               <Image 
                 src="/logo.jpg" 
-                alt="MR TOUR SERVICE"
+                alt="M.R TRAVEL AND TOUR"
                 width={64}
                 height={64}
                 className="rounded-xl object-contain bg-white border border-slate-100 shadow-sm"
               />
               <div className="flex flex-col">
-                <span className="text-xl font-bold tracking-tight text-primary leading-none">MR TOUR SERVICE</span>
+                <span className="text-xl font-bold tracking-tight text-primary leading-none">M.R TRAVEL AND TOUR</span>
                 <span className="text-[10px] font-medium uppercase tracking-widest text-muted-foreground">
                   FUEL YOUR FREEDOM
                 </span>

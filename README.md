@@ -1,4 +1,4 @@
-# MR Tour Service - Manoranjan Ramjham Travel and Tour Pvt. Ltd
+# M.R TRAVEL AND TOUR - Manoranjan Ramjham Travel and Tour Pvt. Ltd
 
 [![Next.js](https://img.shields.io/badge/Next.js-16.2.6-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
 [![React](https://img.shields.io/badge/React-19.2.4-blue?style=for-the-badge&logo=react)](https://react.dev/)

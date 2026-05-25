@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     url: "https://mrtourservice.com.np",
     siteName: business.name,
     title: business.name,
-    description: business.tagline,
+    description: `${business.name} is Nepal's premier travel service provider. We offer a 100% self-owned fleet of premium cars, 4x4 Jeeps, and luxury buses, alongside expert-led trekking and tour packages. Experience safe, reliable, and professional travel in Kathmandu and beyond.`,
     images: [
       {
         url: "/logo.jpg",
@@ -59,7 +59,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: business.name,
-    description: business.tagline,
+    description: `${business.name} is Nepal's premier travel service provider. We offer a 100% self-owned fleet of premium cars, 4x4 Jeeps, and luxury buses, alongside expert-led trekking and tour packages. Experience safe, reliable, and professional travel in Kathmandu and beyond.`,
     images: ["/logo.jpg"],
   },
   icons: {
@@ -88,7 +88,7 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "TravelAgency",
     "name": business.name,
-    "alternateName": "M.R travel and Tour",
+    "alternateName": business.name,
     "description": "Nepal's premier travel service provider offering 100% self-owned fleet of premium cars, 4x4 Jeeps, and luxury buses.",
     "url": "https://mrtourservice.com.np",
     "logo": "https://mrtourservice.com.np/logo.jpg",

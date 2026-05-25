@@ -45,22 +45,22 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_NP",
     url: "https://mrtourservice.com.np/services",
-    siteName: "M.R travel and Tour",
-    title: "M.R travel and Tour",
-    description: "Explore M.R travel and Tour premium travel services: luxury car rental, 4x4 SUV hire, bus rental for groups, tour packages, and trekking expeditions across Nepal.",
+    siteName: business.name,
+    title: business.name,
+    description: `Explore ${business.name} premium travel services: luxury car rental, 4x4 SUV hire, bus rental for groups, tour packages, and trekking expeditions across Nepal.`,
     images: [
       {
         url: "https://mrtourservice.com.np/logo.jpg",
         width: 800,
         height: 800,
-        alt: "M.R travel and Tour",
+        alt: business.name,
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "M.R travel and Tour",
-    description: "Explore M.R travel and Tour premium travel services: luxury car rental, 4x4 SUV hire, bus rental for groups, tour packages, and trekking expeditions across Nepal.",
+    title: business.name,
+    description: `Explore ${business.name} premium travel services: luxury car rental, 4x4 SUV hire, bus rental for groups, tour packages, and trekking expeditions across Nepal.`,
     images: ["https://mrtourservice.com.np/logo.jpg"],
   },
 }
