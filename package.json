@@ -32,5 +32,12 @@
     "tailwindcss": "^4",
     "typescript": "^5",
     "wrangler": "^3.114.17"
+  },
+  "overrides": {
+    "cookie": "^0.7.2",
+    "esbuild": "^0.25.0",
+    "postcss": "^8.5.10",
+    "undici": "^6.26.0",
+    "ws": "^8.21.0"
   }
 }
