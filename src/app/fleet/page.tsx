@@ -164,6 +164,7 @@ export default function FleetPage() {
                   <Link 
                     href={buildWhatsAppUrl(business.contact.whatsapp, `I'm interested in booking the ${vehicle.name}`)}
                     target="_blank"
+                    rel="noopener noreferrer"
                     className="flex items-center justify-center gap-2 h-12 w-full rounded-xl bg-primary text-white font-bold hover:bg-primary/90 transition-all shadow-lg shadow-primary/20"
                   >
                     <MessageCircle className="h-5 w-5" />

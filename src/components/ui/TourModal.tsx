@@ -102,7 +102,7 @@ Please provide more details regarding:
 
 Looking forward to hearing from you.`
 
-    window.open(buildWhatsAppUrl(business.contact.whatsapp, body), '_blank')
+    window.open(buildWhatsAppUrl(business.contact.whatsapp, body), '_blank', 'noopener,noreferrer')
   }
 
   const handleCustomInquiry = () => {

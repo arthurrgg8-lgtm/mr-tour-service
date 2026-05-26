@@ -88,9 +88,9 @@ Drop Location: ${s.dropLocation}`
 ----------------------------------`
 
     if (channel === 'whatsapp') {
-      window.open(buildWhatsAppUrl(business.contact.whatsapp, body), '_blank')
+      window.open(buildWhatsAppUrl(business.contact.whatsapp, body), '_blank', 'noopener,noreferrer')
     } else {
-      window.open(buildGmailUrl(business.contact.email, subject, body), '_blank')
+      window.open(buildGmailUrl(business.contact.email, subject, body), '_blank', 'noopener,noreferrer')
     }
   }
 

@@ -303,6 +303,7 @@ export default function Navbar() {
           <Link
             href={buildWhatsAppUrl(business.contact.whatsapp)}
             target="_blank"
+            rel="noopener noreferrer"
             className="hidden sm:flex h-10 items-center justify-center rounded-xl bg-green-500 px-5 text-xs font-black text-white hover:bg-green-600 transition-all shadow-lg shadow-green-200 hover:scale-105 active:scale-95 uppercase tracking-wider"
           >
             <MessageCircle className="mr-2 h-4 w-4" />
@@ -409,6 +410,7 @@ export default function Navbar() {
                 <Link
                   href={buildWhatsAppUrl(business.contact.whatsapp)}
                   target="_blank"
+                  rel="noopener noreferrer"
                   className="flex h-14 items-center justify-center rounded-2xl bg-green-500 text-white font-black text-lg shadow-lg shadow-green-100"
                 >
                   <MessageCircle className="mr-3 h-6 w-6" />
