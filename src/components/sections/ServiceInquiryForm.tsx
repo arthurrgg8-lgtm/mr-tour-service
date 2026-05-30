@@ -15,7 +15,7 @@ export default function ServiceInquiryForm() {
     nationality: "",
     numPeople: "",
     inquiryType: "Rental",
-    vehicleType: "Toyota Fortuner",
+    vehicleType: "SUV — 4 seater",
     pickupDate: "",
     dropDate: "",
     pickupLocation: "",
@@ -200,7 +200,13 @@ Drop Location: ${s.dropLocation}`
                     name="vehicleType" value={formData.vehicleType} onChange={handleChange}
                     className="w-full h-12 px-4 rounded-xl border bg-slate-50 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all appearance-none"
                   >
-                    {fleet.map(v => <option key={v.id} value={v.name}>{v.name}</option>)}
+                    <option value="Car — 4 seater">Car — 4 seater</option>
+                    <option value="SUV — 4 seater">SUV — 4 seater</option>
+                    <option value="Jeep — 7 seater">Jeep — 7 seater</option>
+                    <option value="Hiace — 14 seater">Hiace — 14 seater</option>
+                    <option value="Mini bus — 18-22 seater">Mini bus — 18-22 seater</option>
+                    <option value="Sutlej bus — 25-35 seater">Sutlej bus — 25-35 seater</option>
+                    <option value="Premium fleet — 7-32 seater">Premium fleet — 7-32 seater</option>
                     <option value="Other">Other / Custom</option>
                   </select>
                 </div>

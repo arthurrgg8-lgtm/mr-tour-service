@@ -18,13 +18,13 @@ const NAV_LINKS = [
 ]
 
 const VEHICLE_SERVICES = [
-  { name: "CAR RENT", href: "/services#car-rent" },
-  { name: "SUV RENT", href: "/services#suv-rent" },
-  { name: "JEEP RENT", href: "/services#jeep-rent" },
-  { name: "HIACE RENT", href: "/services#hiace-rent" },
-  { name: "MINIBUS RENT", href: "/services#minibus-rent" },
-  { name: "LARGE BUS RENT", href: "/services#bus-rent" },
-  { name: "PREMIUM FLEET", href: "/services#premium-fleet" },
+  { name: "Car", capacity: "4 seater", price: "NPR 5,000", href: "/services#car-rent" },
+  { name: "SUV", capacity: "4 seater", price: "NPR 6,000", href: "/services#suv-rent" },
+  { name: "Jeep", capacity: "7 seater", price: "NPR 7,000", href: "/services#jeep-rent" },
+  { name: "Hiace", capacity: "14 seater", price: "NPR 8,000", href: "/services#hiace-rent" },
+  { name: "Mini bus", capacity: "18-22 seater", price: "NPR 11,000", href: "/services#minibus-rent" },
+  { name: "Sutlej bus", capacity: "25-35 seater", price: "NPR 14,000", href: "/services#bus-rent" },
+  { name: "Premium fleet", capacity: "7-32 seater", price: "NPR 15,000", href: "/services#premium-fleet" },
 ]
 
 const TOUR_SERVICES = [
@@ -249,7 +249,14 @@ export default function Navbar() {
                           className="group flex items-center gap-2 px-4 py-2.5 text-[11px] font-bold text-slate-600 hover:bg-primary/5 hover:text-primary transition-all"
                         >
                           <div className="h-1 w-1 rounded-full bg-slate-300 group-hover:bg-primary group-hover:scale-150 transition-all" />
-                          {item.name}
+                          <div className="flex items-center gap-2">
+                            <span>{item.name}</span>
+                            {item.capacity && (
+                              <span className="text-[9px] font-medium text-slate-400 group-hover:text-primary/60 transition-colors uppercase tracking-tight">
+                                — {item.capacity}
+                              </span>
+                            )}
+                          </div>
                         </Link>
                       ))}
                       {dropdown.id === 'tour' && dropdown.items.length > 12 && (
@@ -367,7 +374,14 @@ export default function Navbar() {
                         className="text-sm font-bold text-slate-600 hover:text-primary py-1 flex items-center gap-2"
                       >
                          <div className="h-1.5 w-1.5 rounded-full bg-slate-200" />
-                        {item.name}
+                        <div className="flex items-center gap-2">
+                          <span>{item.name}</span>
+                          {item.capacity && (
+                            <span className="text-[10px] font-black text-primary/60 uppercase tracking-tight">
+                              — {item.capacity}
+                            </span>
+                          )}
+                        </div>
                       </Link>
                     ))}
                     {dropdown.id === 'tour' && dropdown.items.length > 10 && (

@@ -502,6 +502,7 @@
     "startingPrice": "NPR 7,000 / $52",
     "recommendedFor": "Off-road & Mountain Expeditions",
     "images": [
+      "/images/services/jeep/JEEP3.jpeg",
       "/images/services/jeep/1.jpg",
       "/images/services/jeep/2.jpg",
       "/images/services/jeep/3.jpg"
@@ -589,6 +590,7 @@
     "startingPrice": "NPR 15,000 / $111",
     "recommendedFor": "VIP Delegations & High-End Events",
     "images": [
+      "/images/services/jeep/1.jpg",
       "/images/services/premium-fleet/premium-fleet-1.jpeg",
       "/images/services/premium-fleet/premium-fleet-2.jpeg",
       "/images/services/premium-fleet/premium-fleet-3.jpeg",
