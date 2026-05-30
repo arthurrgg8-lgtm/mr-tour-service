@@ -241,7 +241,7 @@ export default function Navbar() {
                   >
                     <div className="absolute top-0 left-0 w-full h-1 bg-primary/20" />
                     <div className="max-h-[70vh] overflow-y-auto custom-scrollbar">
-                      {(dropdown.id === 'tour' ? dropdown.items.slice(0, 12) : dropdown.items).map((item) => (
+                      {(dropdown.id === 'tour' ? dropdown.items.slice(0, 12) : dropdown.items).map((item: any) => (
                         <Link
                           key={item.name}
                           href={item.href}
@@ -363,7 +363,7 @@ export default function Navbar() {
                     </Link>
                   </div>
                   <div className="grid grid-cols-1 gap-2 pl-2">
-                    {(dropdown.id === 'tour' ? dropdown.items.slice(0, 10) : dropdown.items).map((item) => (
+                    {(dropdown.id === 'tour' ? dropdown.items.slice(0, 10) : dropdown.items).map((item: any) => (
                       <Link 
                         key={item.name} 
                         href={item.href} 
