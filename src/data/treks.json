@@ -1,7 +1,7 @@
 [
   {
     "id": "trek-abc-short",
-    "title": "ANNAPURNA BASE CAMP - SHORT TRIP",
+    "title": "ANNAPURNA BASE CAMP (SHORT TRIP)",
     "image": "/images/trekking/abc-short.png",
     "tagline": "The Essential Sanctuary Experience",
     "duration": "8 Days",
@@ -17,42 +17,42 @@
       {
         "day": "01",
         "title": "Drive to Ulleri (2\u00bd hr / 2,100m) from Pokhara and trek to Ghorepani",
-        "desc": "Drive west of Pokhara to Nayapul. Trek through Burungdi River valley and climb to Ulleri. Enjoy views of Annapurna I, Huinchuli and Mt Fishtail."
+        "desc": "Our guide and porter team will come to pick you up from the hotel as per the agreed time of departure. In a comfortable \u2018four-wheel drive\u2019, you will drive west of Pokhara to Nayapul. Leave the Baglung highway and follow the Burungdi River valley on a dirt road. We will register our permits at the crossing of the Modi River at Birethanti. Modi River drains the melting snow from the Annapurna base camp. Drive past Thikedunga village from where the road climbs to the Ulleri village at 2,100 m. We will get the first view of Annapurna I, Huinchuli and Mt Fishtail. The trail from Ulleri climbs gradually through the Rhododendron forest to the ridge-top village of Ghorepani at 2,800 m. Enjoy the magnificent view of snow peaks formed on Dhaulagiri and Annapurna."
       },
       {
         "day": "02",
         "title": "Poon Hill hike (1 hr / 3,200m) | Trek to Tadapani (5 hrs / 2,500m)",
-        "desc": "Early morning hike to Poon Hill for sunrise. Trek through rhododendron forests to Tadapani and Chuile village."
+        "desc": "Ghorepani \u2013 Poon Hill is one of the popular short trek destinations in Annapurna. This detour also helps us with acclimatization. In the early morning, hike 1 hr to Poon Hill (3,200 m) for the sunrise view over the Himalayas and climb down to Ghorepani for breakfast. After breakfast, trek along the Rhododendron forest to Tadapani and further down to Chuile village. The day\u2019s walk is brilliant through the forests offering a view of snow peaks from its clearings. Lush vegetation with chirping of birds, crystal clear creek, waterfalls under the blue sky make the day outstanding."
       },
       {
         "day": "03",
         "title": "Trek to Sinuwa (7 hrs / 2,400 m)",
-        "desc": "Descend to Ghurjung River and climb to Chhomrong. Continue to Sinuwa village joining the main trail to Annapurna base camp."
+        "desc": "Enjoy the view of Annapurna South and Huinchuli from Chuile and head towards the next destination after breakfast. The trail climbs down steeply and crosses the Ghurjung River over the suspension bridge. Then climb gradually through the terrace farms and charming villages to Chhomrong. Chhomrong at 2,100 m is a beautiful village with a close view of Annapurna South, Huinchuli and Fishtail. After scrumptious lunch in this scenic village climb down on stone steps (about 3,000) to the Chhomrong River and then climb up again on the other side to the Sinuwa village. On the day we pass the permanent settlements and join the main trail to Annapurna base camp."
       },
       {
         "day": "04",
         "title": "Trek to Deurali (7 hrs / 3,300 m)",
-        "desc": "Walk through thick rhododendron forest and Modi River basin. Pass Hinku cave and cross avalanche floodplains."
+        "desc": "The walking further is mostly through the thick Rhododendron forest wedged between steep rockfaces of Annapurna South and Fishtail. We climb down to the Modi River basin and follow the river upstream. Cross the crystal-clear streams over plank bridges and enjoy the magnificent view of Fishtail while walking through the pleasant rhododendron and bamboo forests. At Hinku cave, we come above the tree line and cross the debris-filled floodplain created by avalanches."
       },
       {
         "day": "05",
         "title": "Trek to Annapurna Base camp (4 hrs / 4,200 m)",
-        "desc": "Steady climb to Machhapuchhre base camp and then to Annapurna base camp. Witness growling avalanches and glacial moraines."
+        "desc": "At this altitude, the valley widens up and more snow peaks come insight. We will gain the altitude but more gradually. The altitude may make it more difficult but the distance is shorter. So take it slow and steady with a long lunch break at Machhapuchhre (Fishtail) base camp. Climb another hour to Annapurna base camp. Walk to the end of the glacial moraine to hear the growling avalanches and observe the phenomenon of nature."
       },
       {
         "day": "06",
         "title": "Trek down to Sinuwa (7 hrs)",
-        "desc": "Observe sunrise over snow peaks in 360 degrees. Descend back to Sinuwa with different perspectives of the valley."
+        "desc": "You will have several opportunities to capture the brilliant pictures animated with daylights and moving clouds. Morning lights turn Annapurna, from pink to red and orange. Observe the sunrise view over the snow peaks in 360 degrees and start walking down to Sinuwa. Walking down is much faster and also gives different perspectives into the valley aligned with snow peaks."
       },
       {
         "day": "07",
-        "title": "Trek down to Jhinu danda (4 hrs / 1,600 m)",
-        "desc": "Trek back through Chhomrong and follow the ridge down to Jhinu Danda. Enjoy natural hot springs by the Modi River."
+        "title": "Trek down to Jhinu danda (4 hrs / 1,600 m) and enjoy the natural hot spring",
+        "desc": "We come back to the lively villages with terrace farms and schools. Trek back the same trail as we took up till Chhomrong village and then follow the ridge down to Jhinu Danda. The village gives access to the natural hot spring by the Modi River. The day\u2019s walk is just 4 hrs, giving us enough time to go an relax in the hot spring or use the extra time to walk slowly back from the base camp."
       },
       {
         "day": "08",
         "title": "Drive back to Pokhara - 3 hrs",
-        "desc": "Short trek to Syauli bazaar and drive back to Pokhara."
+        "desc": "Trek about 3 hrs in the morning to Syauli bazaar and drive back to Pokhara."
       }
     ]
   },
