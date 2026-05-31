@@ -123,7 +123,7 @@ export default function TrekkingPage() {
   }
 
   return (
-    <div className="pt-20 pb-24">
+    <div className="pt-20 pb-24 w-full overflow-x-hidden">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -170,42 +170,42 @@ export default function TrekkingPage() {
       </section>
 
       {/* Why Trek With Us */}
-      <section className="py-24 bg-slate-50">
+      <section className="py-12 sm:py-24 bg-slate-50">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-16 items-center">
             <div>
-              <h2 className="text-3xl md:text-5xl font-bold mb-8 leading-tight">Safety & Expertise <br /> <span className="text-primary">In the Mountains</span></h2>
-              <div className="space-y-8">
-                <div className="flex gap-6">
-                  <div className="h-14 w-14 rounded-2xl bg-primary/10 flex items-center justify-center text-primary shrink-0">
-                    <Users className="h-7 w-7" />
+              <h2 className="text-2xl xs:text-3xl md:text-5xl font-bold mb-6 sm:mb-8 leading-tight">Safety & Expertise <br className="hidden xs:inline" /> <span className="text-primary">In the Mountains</span></h2>
+              <div className="grid grid-cols-2 gap-4 sm:flex sm:flex-col sm:space-y-8">
+                <div className="flex gap-3 sm:gap-6">
+                  <div className="h-10 w-10 sm:h-14 sm:w-14 rounded-xl sm:rounded-2xl bg-primary/10 flex items-center justify-center text-primary shrink-0">
+                    <Users className="h-5 w-5 sm:h-7 sm:w-7" />
                   </div>
                   <div>
-                    <h4 className="text-xl font-bold mb-2">Government Licensed Guides</h4>
-                    <p className="text-slate-600">Every trek is led by a professional, English-speaking guide with years of high-altitude experience.</p>
+                    <h4 className="text-xs xs:text-sm sm:text-xl font-bold mb-1 sm:mb-2">Licensed Guides</h4>
+                    <p className="text-[10px] xs:text-xs sm:text-base text-slate-600 leading-snug sm:leading-relaxed">Every trek is led by a professional, English-speaking guide with high-altitude experience.</p>
                   </div>
                 </div>
-                <div className="flex gap-6">
-                  <div className="h-14 w-14 rounded-2xl bg-primary/10 flex items-center justify-center text-primary shrink-0">
-                    <ShieldCheck className="h-7 w-7" />
+                <div className="flex gap-3 sm:gap-6">
+                  <div className="h-10 w-10 sm:h-14 sm:w-14 rounded-xl sm:rounded-2xl bg-primary/10 flex items-center justify-center text-primary shrink-0">
+                    <ShieldCheck className="h-5 w-5 sm:h-7 sm:w-7" />
                   </div>
                   <div>
-                    <h4 className="text-xl font-bold mb-2">Comprehensive Insurance</h4>
-                    <p className="text-slate-600">We prioritize your safety with full insurance coverage for our entire field staff and emergency support.</p>
+                    <h4 className="text-xs xs:text-sm sm:text-xl font-bold mb-1 sm:mb-2">Insurance</h4>
+                    <p className="text-[10px] xs:text-xs sm:text-base text-slate-600 leading-snug sm:leading-relaxed">We prioritize your safety with full insurance coverage for our entire field staff and emergency support.</p>
                   </div>
                 </div>
-                <div className="flex gap-6">
-                  <div className="h-14 w-14 rounded-2xl bg-primary/10 flex items-center justify-center text-primary shrink-0">
-                    <Award className="h-7 w-7" />
+                <div className="flex gap-3 sm:gap-6 col-span-2 sm:col-span-1">
+                  <div className="h-10 w-10 sm:h-14 sm:w-14 rounded-xl sm:rounded-2xl bg-primary/10 flex items-center justify-center text-primary shrink-0">
+                    <Award className="h-5 w-5 sm:h-7 sm:w-7" />
                   </div>
                   <div>
-                    <h4 className="text-xl font-bold mb-2">Sustainable Tourism</h4>
-                    <p className="text-slate-600">We follow &quot;Leave No Trace&quot; principles and support local communities in every region we visit.</p>
+                    <h4 className="text-xs xs:text-sm sm:text-xl font-bold mb-1 sm:mb-2">Sustainability</h4>
+                    <p className="text-[10px] xs:text-xs sm:text-base text-slate-600 leading-snug sm:leading-relaxed">We follow &quot;Leave No Trace&quot; principles and support local communities in every region we visit.</p>
                   </div>
                 </div>
               </div>
             </div>
-            <div className="relative h-[600px] rounded-[3rem] overflow-hidden shadow-2xl">
+            <div className="relative h-[250px] xs:h-[320px] sm:h-[600px] rounded-2xl sm:rounded-[3rem] overflow-hidden shadow-2xl">
               <Image 
                 src="/images/hero/hero-nepal.jpeg" 
                 alt="Trekking Experience"
@@ -219,11 +219,11 @@ export default function TrekkingPage() {
       </section>
 
       {/* Inquiry Form */}
-      <section id="inquiry" className="py-24 bg-white border-t">
+      <section id="inquiry" className="py-12 sm:py-24 bg-white border-t">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-bold mb-4">Start Your Adventure</h2>
-            <p className="text-muted-foreground text-lg">Inquire now to get a customized trekking itinerary and quote.</p>
+          <div className="text-center mb-8 sm:mb-16">
+            <h2 className="text-2xl xs:text-3xl md:text-5xl font-bold mb-2 sm:mb-4">Start Your Adventure</h2>
+            <p className="text-xs xs:text-sm sm:text-lg text-muted-foreground">Inquire now to get a customized trekking itinerary and quote.</p>
           </div>
           <ServiceInquiryForm />
         </div>

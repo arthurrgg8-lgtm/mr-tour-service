@@ -21,10 +21,10 @@ export default function Home() {
     <>
       <Hero />
       <ScrollAnimation>
-        <WhyChooseSummary />
+        <FeaturedServices />
       </ScrollAnimation>
       <ScrollAnimation>
-        <FeaturedServices />
+        <WhyChooseSummary />
       </ScrollAnimation>
       <ScrollAnimation>
         <WhyChooseUs />
@@ -84,7 +84,7 @@ export default function Home() {
                    </div>
                 </div>
               </div>
-              <div className="lg:col-span-2 h-[450px] w-full rounded-3xl overflow-hidden border shadow-2xl relative">
+              <div className="lg:col-span-2 h-[250px] xs:h-[320px] sm:h-[450px] w-full rounded-3xl overflow-hidden border shadow-2xl relative">
                 <iframe 
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.148671524317!2d85.3353!3d27.7118!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x827102c6c7458d07%3A0x68a8193a22c56a7e!2sM.R%20Travel%20and%20Tour!5e0!3m2!1sen!2snp!4v1716000000000!5m2!1sen!2snp" 
                   width="100%" 

@@ -3,7 +3,7 @@ import business from "@/data/business.json"
 
 export default function WhyChooseUs() {
   return (
-    <section className="py-24 bg-slate-50">
+    <section className="py-24 bg-slate-50 overflow-hidden">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div>
@@ -32,31 +32,31 @@ export default function WhyChooseUs() {
           </div>
 
           <div className="relative">
-            <div className="aspect-square rounded-3xl bg-primary/10 flex items-center justify-center overflow-hidden">
+            <div className="aspect-auto sm:aspect-square py-8 sm:py-0 rounded-3xl bg-primary/10 flex items-center justify-center overflow-hidden">
                {/* Decorative elements representing fleet/growth */}
-               <div className="grid grid-cols-2 gap-4 p-8">
-                 <div className="h-40 w-40 rounded-2xl bg-white shadow-xl flex items-center justify-center p-6 text-center">
+               <div className="grid grid-cols-2 gap-4 p-4 xs:p-6 sm:p-8">
+                 <div className="h-28 w-28 xs:h-32 xs:w-32 sm:h-40 sm:w-40 rounded-xl sm:rounded-2xl bg-white shadow-xl flex items-center justify-center p-4 sm:p-6 text-center">
                     <div>
-                      <p className="text-3xl font-bold text-primary">20+</p>
-                      <p className="text-xs font-medium text-muted-foreground uppercase">Years Experience</p>
+                      <p className="text-2xl sm:text-3xl font-bold text-primary">20+</p>
+                      <p className="text-[10px] sm:text-xs font-semibold text-muted-foreground uppercase leading-tight mt-1">Years Experience</p>
                     </div>
                  </div>
-                 <div className="h-40 w-40 rounded-2xl bg-primary text-white shadow-xl flex items-center justify-center p-6 text-center mt-12">
+                 <div className="h-28 w-28 xs:h-32 xs:w-32 sm:h-40 sm:w-40 rounded-xl sm:rounded-2xl bg-primary text-white shadow-xl flex items-center justify-center p-4 sm:p-6 text-center mt-6 sm:mt-12">
                     <div>
-                      <p className="text-3xl font-bold">100%</p>
-                      <p className="text-xs font-medium opacity-80 uppercase">Owned Fleet</p>
+                      <p className="text-2xl sm:text-3xl font-bold">100%</p>
+                      <p className="text-[10px] sm:text-xs font-semibold opacity-90 uppercase leading-tight mt-1">Owned Fleet</p>
                     </div>
                  </div>
-                 <div className="h-40 w-40 rounded-2xl bg-slate-900 text-white shadow-xl flex items-center justify-center p-6 text-center -mt-12">
+                 <div className="h-28 w-28 xs:h-32 xs:w-32 sm:h-40 sm:w-40 rounded-xl sm:rounded-2xl bg-slate-900 text-white shadow-xl flex items-center justify-center p-4 sm:p-6 text-center -mt-6 sm:-mt-12">
                     <div>
-                      <p className="text-3xl font-bold">24/7</p>
-                      <p className="text-xs font-medium opacity-80 uppercase">Support</p>
+                      <p className="text-2xl sm:text-3xl font-bold">24/7</p>
+                      <p className="text-[10px] sm:text-xs font-semibold opacity-90 uppercase leading-tight mt-1">Support</p>
                     </div>
                  </div>
-                 <div className="h-40 w-40 rounded-2xl bg-white shadow-xl flex items-center justify-center p-6 text-center">
+                 <div className="h-28 w-28 xs:h-32 xs:w-32 sm:h-40 sm:w-40 rounded-xl sm:rounded-2xl bg-white shadow-xl flex items-center justify-center p-4 sm:p-6 text-center">
                     <div>
-                      <p className="text-3xl font-bold text-primary">1k+</p>
-                      <p className="text-xs font-medium text-muted-foreground uppercase">Happy Clients</p>
+                      <p className="text-2xl sm:text-3xl font-bold text-primary">1k+</p>
+                      <p className="text-[10px] sm:text-xs font-semibold text-muted-foreground uppercase leading-tight mt-1">Happy Clients</p>
                     </div>
                  </div>
                </div>

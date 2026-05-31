@@ -136,32 +136,32 @@ export default function TrekkingGrid({ regions }: TrekkingGridProps) {
           <p className="text-muted-foreground text-lg">Select a trekking package to view detailed itinerary.</p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8">
           {activeRegion.subPackages?.map((pkg, idx) => (
             <div 
               key={idx}
-              className="group bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-md hover:shadow-xl transition-all duration-300 cursor-pointer"
+              className="group bg-white rounded-xl sm:rounded-3xl overflow-hidden border border-slate-100 shadow-md hover:shadow-xl transition-all duration-300 cursor-pointer flex flex-col"
               onClick={() => handleTourClick(pkg.name)}
             >
-              <div className="relative h-64 overflow-hidden">
+              <div className="relative h-28 xs:h-36 sm:h-48 md:h-64 overflow-hidden">
                 <Image 
                   src={pkg.image} 
                   alt={pkg.name}
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
                 />
-                <div className="absolute top-4 right-4 bg-black/60 backdrop-blur-md text-white px-4 py-1 rounded-full text-xs font-bold">
+                <div className="absolute top-2 right-2 sm:top-4 sm:right-4 bg-black/60 backdrop-blur-md text-white px-2 py-0.5 sm:px-4 sm:py-1 rounded-full text-[8px] xs:text-[10px] sm:text-xs font-bold">
                   {pkg.duration}
                 </div>
               </div>
-              <div className="p-6">
-                <h4 className="text-xl font-bold mb-4 group-hover:text-primary transition-colors">{pkg.name}</h4>
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-2 text-slate-500 text-sm">
-                    <Clock className="h-4 w-4" />
+              <div className="p-3 xs:p-4 sm:p-6 flex flex-col flex-grow">
+                <h4 className="text-xs xs:text-sm sm:text-xl font-bold mb-2 sm:mb-4 group-hover:text-primary transition-colors line-clamp-2">{pkg.name}</h4>
+                <div className="flex items-center justify-between mt-auto">
+                  <div className="flex items-center gap-1 sm:gap-2 text-slate-500 text-[9px] xs:text-xs sm:text-sm">
+                    <Clock className="h-3 w-3 sm:h-4 sm:w-4" />
                     <span>{pkg.duration}</span>
                   </div>
-                  <span className="text-primary font-bold text-sm">View Details →</span>
+                  <span className="text-primary font-bold text-[9px] xs:text-xs sm:text-sm">View Details →</span>
                 </div>
               </div>
             </div>
@@ -187,12 +187,12 @@ export default function TrekkingGrid({ regions }: TrekkingGridProps) {
         onBack={getBackHandler()}
       />
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8">
         {regions.map((region, idx) => (
           <div 
             key={idx}
             id={getRegionId(region.name)}
-            className="group relative h-[400px] rounded-[2.5rem] overflow-hidden border border-slate-100 shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer scroll-mt-32"
+            className="group relative h-[220px] xs:h-[260px] sm:h-[350px] md:h-[400px] rounded-[1.25rem] sm:rounded-[2.5rem] overflow-hidden border border-slate-100 shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer scroll-mt-32"
             onClick={() => handleRegionClick(region)}
           >
             <Image 
@@ -201,23 +201,23 @@ export default function TrekkingGrid({ regions }: TrekkingGridProps) {
               fill
               className="object-cover group-hover:scale-110 transition-transform duration-700"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent" />
             
-            <div className="absolute inset-0 p-8 flex flex-col justify-end">
-              <div className="flex items-center gap-2 text-primary mb-2">
-                <Compass className="h-5 w-5" />
-                <span className="text-xs font-bold uppercase tracking-[0.2em]">Explore Region</span>
+            <div className="absolute inset-0 p-4 xs:p-6 sm:p-8 flex flex-col justify-end">
+              <div className="flex items-center gap-1 sm:gap-2 text-primary mb-1 sm:mb-2">
+                <Compass className="h-3.5 w-3.5 sm:h-5 sm:w-5" />
+                <span className="text-[8px] sm:text-xs font-bold uppercase tracking-[0.1em] sm:tracking-[0.2em]">Explore</span>
               </div>
-              <h3 className="text-2xl md:text-3xl font-bold text-white mb-4 group-hover:text-primary transition-colors">{region.name}</h3>
-              <p className="text-white/70 text-sm line-clamp-2 mb-6 opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-4 group-hover:translate-y-0">
+              <h3 className="text-sm xs:text-base sm:text-2xl font-bold text-white mb-2 sm:mb-4 group-hover:text-primary transition-colors line-clamp-2">{region.name}</h3>
+              <p className="hidden sm:block text-white/70 text-sm line-clamp-2 mb-6 opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-4 group-hover:translate-y-0">
                 Discover legendary trails and breathtaking peaks in the {region.name}. 
                 Professional guides and complete logistics included.
               </p>
-              <div className="flex items-center gap-4">
-                <div className="h-10 w-10 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white border border-white/30 group-hover:bg-primary group-hover:border-primary transition-all">
-                  <Clock className="h-5 w-5" />
+              <div className="flex items-center gap-2 sm:gap-4">
+                <div className="h-6 w-6 sm:h-10 sm:w-10 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white border border-white/30 group-hover:bg-primary group-hover:border-primary transition-all">
+                  <Clock className="h-3.5 w-3.5 sm:h-5 sm:w-5" />
                 </div>
-                <span className="text-white font-bold text-sm uppercase tracking-widest">View Packages</span>
+                <span className="text-white font-bold text-[9px] xs:text-xs sm:text-sm uppercase tracking-wide sm:tracking-widest">View Packages</span>
               </div>
             </div>
           </div>

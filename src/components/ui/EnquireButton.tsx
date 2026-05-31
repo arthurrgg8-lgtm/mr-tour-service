@@ -28,7 +28,7 @@ export default function EnquireButton({ variant = "inline", children }: EnquireB
   return (
     <button 
       onClick={scrollToForm}
-      className="inline-flex h-14 items-center justify-center rounded-2xl bg-primary px-10 text-lg font-bold text-white hover:bg-primary/90 transition-all shadow-xl shadow-primary/20"
+      className="inline-flex h-9 xs:h-11 sm:h-14 items-center justify-center rounded-xl sm:rounded-2xl bg-primary px-3 xs:px-6 sm:px-10 text-[10px] xs:text-xs sm:text-lg font-bold text-white hover:bg-primary/90 transition-all shadow-xl shadow-primary/20 w-full sm:w-auto text-center"
     >
       {children || "Enquire Now"}
     </button>

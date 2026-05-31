@@ -26,7 +26,7 @@ export default function Footer() {
               </div>
             </Link>
             <p className="text-sm text-muted-foreground mb-6">
-              {business.tagline}. Providing premium vehicle rental and tour services in Nepal for over 5 years.
+              {business.tagline}. Providing premium vehicle rental and tour services in Nepal for over 20 years.
             </p>
             <div className="flex flex-col gap-2">
               <p className="text-xs font-semibold uppercase text-muted-foreground">Registered under:</p>

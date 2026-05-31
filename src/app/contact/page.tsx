@@ -86,7 +86,7 @@ export default function ContactPage() {
   }
 
   return (
-    <div className="pt-20 pb-24">
+    <div className="pt-20 pb-24 w-full overflow-x-hidden">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -96,7 +96,7 @@ export default function ContactPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
       {/* Header */}
-      <section className="relative bg-slate-900 py-32 text-white overflow-hidden">
+      <section className="relative bg-slate-900 py-16 sm:py-32 text-white overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image 
             src="/images/hero/contact-bg.jpg" 
@@ -109,8 +109,8 @@ export default function ContactPage() {
         </div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">Contact Us</h1>
-            <p className="text-xl text-slate-300 leading-relaxed">
+            <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-4 sm:mb-6">Contact Us</h1>
+            <p className="text-base sm:text-xl text-slate-300 leading-relaxed">
               Have questions about our services or need a customized quote? 
               Our team is available 24/7 to help you plan your perfect trip to Nepal.
             </p>
@@ -118,69 +118,69 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="py-24 bg-white">
+      <section className="py-12 sm:py-24 bg-white">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-16">
             {/* Contact Info */}
             <div>
-              <h2 className="text-3xl font-bold mb-10">Get in Touch</h2>
+              <h2 className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-10">Get in Touch</h2>
               
-              <div className="space-y-12">
-                <div className="flex gap-6">
-                  <div className="h-14 w-14 shrink-0 rounded-2xl bg-primary/10 flex items-center justify-center text-primary">
-                    <Phone className="h-6 w-6" />
+              <div className="grid grid-cols-2 gap-4 sm:flex sm:flex-col sm:space-y-12">
+                <div className="flex flex-col xs:flex-row gap-2 xs:gap-6">
+                  <div className="h-9 w-9 sm:h-14 sm:w-14 shrink-0 rounded-lg sm:rounded-2xl bg-primary/10 flex items-center justify-center text-primary">
+                    <Phone className="h-4.5 w-4.5 sm:h-6 sm:w-6" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold mb-2">Call or WhatsApp</h3>
-                    <p className="text-muted-foreground mb-4">Feel free to call or message us anytime. We&apos;re on WhatsApp!</p>
-                    <div className="flex flex-col gap-2">
-                      <a href={`tel:${business.contact.phone}`} className="text-lg font-bold hover:text-primary transition-colors">
+                    <h3 className="text-sm sm:text-xl font-bold mb-0.5 sm:mb-2">Call or WhatsApp</h3>
+                    <p className="text-[10px] sm:text-sm text-slate-500 mb-1.5 sm:mb-4">Feel free to call or message us anytime. We&apos;re on WhatsApp!</p>
+                    <div className="flex flex-col gap-1 sm:gap-2">
+                      <a href={`tel:${business.contact.phone}`} className="text-xs sm:text-lg font-bold hover:text-primary transition-colors">
                         {business.contact.phone}
                       </a>
                       <Link 
                         href={buildWhatsAppUrl(business.contact.whatsapp)} 
-                        className="text-green-600 font-bold flex items-center gap-2 hover:underline"
+                        className="text-green-600 font-bold flex items-center gap-1 text-[10px] sm:text-base hover:underline"
                       >
-                        <MessageCircle className="h-5 w-5" /> Chat on WhatsApp
+                        <MessageCircle className="h-3.5 w-3.5 sm:h-5 sm:w-5" /> Chat on WhatsApp
                       </Link>
                     </div>
                   </div>
                 </div>
 
-                <div className="flex gap-6">
-                  <div className="h-14 w-14 shrink-0 rounded-2xl bg-primary/10 flex items-center justify-center text-primary">
-                    <Mail className="h-6 w-6" />
+                <div className="flex flex-col xs:flex-row gap-2 xs:gap-6">
+                  <div className="h-9 w-9 sm:h-14 sm:w-14 shrink-0 rounded-lg sm:rounded-2xl bg-primary/10 flex items-center justify-center text-primary">
+                    <Mail className="h-4.5 w-4.5 sm:h-6 sm:w-6" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold mb-2">Email Us</h3>
-                    <p className="text-muted-foreground mb-4">For formal inquiries, group bookings, or business partnerships.</p>
+                    <h3 className="text-sm sm:text-xl font-bold mb-0.5 sm:mb-2">Email Us</h3>
+                    <p className="text-[10px] sm:text-sm text-slate-500 mb-1.5 sm:mb-4">For formal inquiries, group bookings, or partnerships.</p>
                     <a 
                       href={`mailto:${business.contact.email}`}
-                      className="text-lg font-bold hover:text-primary transition-colors break-all"
+                      className="text-xs sm:text-lg font-bold hover:text-primary transition-colors break-all"
                     >
                       {business.contact.email}
                     </a>
                   </div>
                 </div>
 
-                <div className="flex gap-6">
-                  <div className="h-14 w-14 shrink-0 rounded-2xl bg-primary/10 flex items-center justify-center text-primary">
-                    <MapPin className="h-6 w-6" />
+                <div className="flex flex-col xs:flex-row gap-2 xs:gap-6">
+                  <div className="h-9 w-9 sm:h-14 sm:w-14 shrink-0 rounded-lg sm:rounded-2xl bg-primary/10 flex items-center justify-center text-primary">
+                    <MapPin className="h-4.5 w-4.5 sm:h-6 sm:w-6" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold mb-2">Our Office</h3>
-                    <p className="text-muted-foreground mb-4">Visit us at our central office in Kathmandu.</p>
-                    <p className="text-lg font-bold leading-tight">{business.contact.location}</p>
+                    <h3 className="text-sm sm:text-xl font-bold mb-0.5 sm:mb-2">Our Office</h3>
+                    <p className="text-[10px] sm:text-sm text-slate-500 mb-1.5 sm:mb-4">Visit us at our central office in Kathmandu.</p>
+                    <p className="text-xs sm:text-lg font-bold leading-tight">{business.contact.location}</p>
                   </div>
                 </div>
 
-                <div className="flex gap-6">
-                  <div className="h-14 w-14 shrink-0 rounded-2xl bg-primary/10 flex items-center justify-center text-primary">
-                    <Clock className="h-6 w-6" />
+                <div className="flex flex-col xs:flex-row gap-2 xs:gap-6">
+                  <div className="h-9 w-9 sm:h-14 sm:w-14 shrink-0 rounded-lg sm:rounded-2xl bg-primary/10 flex items-center justify-center text-primary">
+                    <Clock className="h-4.5 w-4.5 sm:h-6 sm:w-6" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold mb-2">Availability</h3>
-                    <p className="text-muted-foreground">We operate 24 hours a day, 365 days a year to support your travel needs.</p>
+                    <h3 className="text-sm sm:text-xl font-bold mb-0.5 sm:mb-2">Availability</h3>
+                    <p className="text-[10px] sm:text-sm text-slate-500 leading-relaxed">We operate 24 hours a day, 365 days a year to support your travel needs.</p>
                   </div>
                 </div>
               </div>
@@ -194,7 +194,7 @@ export default function ContactPage() {
 
       {/* Map Section */}
       <section className="container mx-auto px-4">
-        <div className="h-[450px] w-full rounded-3xl overflow-hidden border shadow-lg">
+        <div className="h-[250px] xs:h-[320px] sm:h-[450px] w-full rounded-2xl sm:rounded-3xl overflow-hidden border shadow-lg">
           <iframe 
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.148671524317!2d85.3353!3d27.7118!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x827102c6c7458d07%3A0x68a8193a22c56a7e!2sM.R%20Travel%20and%20Tour!5e0!3m2!1sen!2snp!4v1716000000000!5m2!1sen!2snp" 
             width="100%" 
@@ -205,8 +205,8 @@ export default function ContactPage() {
             referrerPolicy="no-referrer-when-downgrade"
           ></iframe>
         </div>
-        <div className="text-center mt-6">
-          <p className="text-muted-foreground">Find us at Kalopul, Kathmandu - 24/7 Service Available</p>
+        <div className="text-center mt-4 sm:mt-6">
+          <p className="text-xs sm:text-base text-muted-foreground">Find us at Kalopul, Kathmandu - 24/7 Service Available</p>
         </div>
       </section>
     </div>

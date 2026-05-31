@@ -3,7 +3,6 @@
 import { useState, useRef } from "react"
 import { User, Phone, Mail, Globe, Users, Car, Calendar, MapPin, Plus, FileText, Mountain, Map as MapIcon, MessageCircle } from "lucide-react"
 import business from "@/data/business.json"
-import fleet from "@/data/fleet.json"
 import { buildGmailUrl, buildWhatsAppUrl, sanitizeInput } from "@/lib/utils"
 
 export default function ServiceInquiryForm() {
@@ -97,38 +96,38 @@ Drop Location: ${s.dropLocation}`
   const isRental = formData.inquiryType === "Rental"
 
   return (
-    <div className="max-w-4xl mx-auto bg-white p-8 md:p-12 rounded-[2.5rem] border border-slate-200 shadow-2xl relative overflow-hidden">
+    <div className="max-w-4xl mx-auto bg-white p-4 xs:p-6 sm:p-12 rounded-2xl sm:rounded-[2.5rem] border border-slate-200 shadow-2xl relative overflow-hidden">
       {/* Background Decoration */}
       <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl -mr-32 -mt-32" />
       
       <div className="relative z-10">
-        <div className="text-center mb-10">
-          <h3 className="text-3xl font-bold mb-4">Detailed Service Inquiry</h3>
-          <p className="text-muted-foreground">Fill out the form below to get a customized quote for your travel plans.</p>
+        <div className="text-center mb-6 sm:mb-10">
+          <h3 className="text-xl xs:text-2xl sm:text-3xl font-bold mb-2 sm:mb-4">Detailed Service Inquiry</h3>
+          <p className="text-xs xs:text-sm sm:text-base text-muted-foreground">Fill out the form below to get a customized quote for your travel plans.</p>
         </div>
 
-        <form ref={formRef} className="space-y-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <form ref={formRef} className="space-y-4 sm:space-y-6">
+          <div className="grid grid-cols-2 gap-3 sm:gap-6">
             {/* Inquiry Type Selection */}
-            <div className="space-y-2 md:col-span-2">
-              <label className="text-xs font-bold uppercase tracking-widest text-muted-foreground flex items-center gap-2">
+            <div className="space-y-1.5 sm:space-y-2 col-span-2">
+              <label className="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-muted-foreground flex items-center gap-1.5 sm:gap-2">
                 <FileText className="h-3 w-3" /> Inquiry For
               </label>
-              <div className="grid grid-cols-3 gap-4">
+              <div className="grid grid-cols-3 gap-2 sm:gap-4">
                 {["Rental", "Tour", "Trek"].map((type) => (
                   <button
                     key={type}
                     type="button"
                     onClick={() => setFormData(prev => ({ ...prev, inquiryType: type }))}
-                    className={`h-12 rounded-xl border-2 font-bold transition-all flex items-center justify-center gap-2 ${
+                    className={`h-10 sm:h-12 rounded-lg sm:rounded-xl border-2 font-bold text-xs sm:text-base transition-all flex items-center justify-center gap-1 sm:gap-2 ${
                       formData.inquiryType === type 
                         ? "border-primary bg-primary/5 text-primary" 
                         : "border-slate-100 bg-slate-50 text-slate-500 hover:border-slate-200"
                     }`}
                   >
-                    {type === "Rental" && <Car className="h-4 w-4" />}
-                    {type === "Tour" && <MapIcon className="h-4 w-4" />}
-                    {type === "Trek" && <Mountain className="h-4 w-4" />}
+                    {type === "Rental" && <Car className="h-3.5 w-3.5 sm:h-4 sm:w-4" />}
+                    {type === "Tour" && <MapIcon className="h-3.5 w-3.5 sm:h-4 sm:w-4" />}
+                    {type === "Trek" && <Mountain className="h-3.5 w-3.5 sm:h-4 sm:w-4" />}
                     {type}
                   </button>
                 ))}
@@ -136,69 +135,69 @@ Drop Location: ${s.dropLocation}`
             </div>
 
             {/* Personal Details */}
-            <div className="space-y-2">
-              <label className="text-xs font-bold uppercase tracking-widest text-muted-foreground flex items-center gap-2">
+            <div className="space-y-1.5 sm:space-y-2 col-span-2 md:col-span-1">
+              <label className="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-muted-foreground flex items-center gap-1.5 sm:gap-2">
                 <User className="h-3 w-3" /> Name
               </label>
               <input 
                 type="text" name="name" required value={formData.name} onChange={handleChange}
                 placeholder="Full Name"
-                className="w-full h-12 px-4 rounded-xl border bg-slate-50 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
+                className="w-full h-10 sm:h-12 px-3 sm:px-4 rounded-lg sm:rounded-xl border bg-slate-50 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
               />
             </div>
-            <div className="space-y-2">
-              <label className="text-xs font-bold uppercase tracking-widest text-muted-foreground flex items-center gap-2">
+            <div className="space-y-1.5 sm:space-y-2 col-span-2 md:col-span-1">
+              <label className="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-muted-foreground flex items-center gap-1.5 sm:gap-2">
                 <Phone className="h-3 w-3" /> Phone Number
               </label>
               <input 
                 type="tel" name="phone" required value={formData.phone} onChange={handleChange}
                 placeholder="+977-..."
-                className="w-full h-12 px-4 rounded-xl border bg-slate-50 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
+                className="w-full h-10 sm:h-12 px-3 sm:px-4 rounded-lg sm:rounded-xl border bg-slate-50 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
               />
             </div>
-            <div className="space-y-2">
-              <label className="text-xs font-bold uppercase tracking-widest text-muted-foreground flex items-center gap-2">
+            <div className="space-y-1.5 sm:space-y-2 col-span-2 md:col-span-1">
+              <label className="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-muted-foreground flex items-center gap-1.5 sm:gap-2">
                 <Mail className="h-3 w-3" /> Email Address
               </label>
               <input 
                 type="email" name="email" required value={formData.email} onChange={handleChange}
                 placeholder="email@example.com"
-                className="w-full h-12 px-4 rounded-xl border bg-slate-50 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
+                className="w-full h-10 sm:h-12 px-3 sm:px-4 rounded-lg sm:rounded-xl border bg-slate-50 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
               />
             </div>
-            <div className="space-y-2">
-              <label className="text-xs font-bold uppercase tracking-widest text-muted-foreground flex items-center gap-2">
+            <div className="space-y-1.5 sm:space-y-2 col-span-1">
+              <label className="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-muted-foreground flex items-center gap-1.5 sm:gap-2">
                 <Globe className="h-3 w-3" /> Nationality
               </label>
               <input 
                 type="text" name="nationality" required value={formData.nationality} onChange={handleChange}
                 placeholder="Country"
-                className="w-full h-12 px-4 rounded-xl border bg-slate-50 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
+                className="w-full h-10 sm:h-12 px-3 sm:px-4 rounded-lg sm:rounded-xl border bg-slate-50 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
               />
             </div>
 
             {/* Travel Details */}
-            <div className="space-y-2">
-              <label className="text-xs font-bold uppercase tracking-widest text-muted-foreground flex items-center gap-2">
-                <Users className="h-3 w-3" /> Number of People
+            <div className="space-y-1.5 sm:space-y-2 col-span-1">
+              <label className="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-muted-foreground flex items-center gap-1.5 sm:gap-2">
+                <Users className="h-3 w-3" /> Pax
               </label>
               <input 
                 type="number" name="numPeople" required value={formData.numPeople} onChange={handleChange}
                 placeholder="0" min="1"
-                className="w-full h-12 px-4 rounded-xl border bg-slate-50 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
+                className="w-full h-10 sm:h-12 px-3 sm:px-4 rounded-lg sm:rounded-xl border bg-slate-50 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
               />
             </div>
 
             {/* Rental Specific Fields */}
             {isRental && (
               <>
-                <div className="space-y-2">
-                  <label className="text-xs font-bold uppercase tracking-widest text-muted-foreground flex items-center gap-2">
+                <div className="space-y-1.5 sm:space-y-2 col-span-2 md:col-span-1">
+                  <label className="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-muted-foreground flex items-center gap-1.5 sm:gap-2">
                     <Car className="h-3 w-3" /> Vehicle Type
                   </label>
                   <select 
                     name="vehicleType" value={formData.vehicleType} onChange={handleChange}
-                    className="w-full h-12 px-4 rounded-xl border bg-slate-50 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all appearance-none"
+                    className="w-full h-10 sm:h-12 px-3 sm:px-4 rounded-lg sm:rounded-xl border bg-slate-50 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all appearance-none"
                   >
                     <option value="Car — 4 seater">Car — 4 seater</option>
                     <option value="SUV — 4 seater">SUV — 4 seater</option>
@@ -211,81 +210,81 @@ Drop Location: ${s.dropLocation}`
                   </select>
                 </div>
 
-                <div className="space-y-2">
-                  <label className="text-xs font-bold uppercase tracking-widest text-muted-foreground flex items-center gap-2">
+                <div className="space-y-1.5 sm:space-y-2 col-span-1">
+                  <label className="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-muted-foreground flex items-center gap-1.5 sm:gap-2">
                     <Calendar className="h-3 w-3" /> Pickup Date
                   </label>
                   <input 
                     type="date" name="pickupDate" required={isRental} value={formData.pickupDate} onChange={handleChange}
-                    className="w-full h-12 px-4 rounded-xl border bg-slate-50 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
+                    className="w-full h-10 sm:h-12 px-3 sm:px-4 rounded-lg sm:rounded-xl border bg-slate-50 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
                   />
                 </div>
-                <div className="space-y-2">
-                  <label className="text-xs font-bold uppercase tracking-widest text-muted-foreground flex items-center gap-2">
+                <div className="space-y-1.5 sm:space-y-2 col-span-1">
+                  <label className="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-muted-foreground flex items-center gap-1.5 sm:gap-2">
                     <Calendar className="h-3 w-3" /> Drop Date
                   </label>
                   <input 
                     type="date" name="dropDate" required={isRental} value={formData.dropDate} onChange={handleChange}
-                    className="w-full h-12 px-4 rounded-xl border bg-slate-50 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
+                    className="w-full h-10 sm:h-12 px-3 sm:px-4 rounded-lg sm:rounded-xl border bg-slate-50 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
                   />
                 </div>
 
-                <div className="space-y-2">
-                  <label className="text-xs font-bold uppercase tracking-widest text-muted-foreground flex items-center gap-2">
+                <div className="space-y-1.5 sm:space-y-2 col-span-1">
+                  <label className="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-muted-foreground flex items-center gap-1.5 sm:gap-2">
                     <MapPin className="h-3 w-3" /> Pickup Location
                   </label>
                   <input 
                     type="text" name="pickupLocation" required={isRental} value={formData.pickupLocation} onChange={handleChange}
                     placeholder="Location"
-                    className="w-full h-12 px-4 rounded-xl border bg-slate-50 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
+                    className="w-full h-10 sm:h-12 px-3 sm:px-4 rounded-lg sm:rounded-xl border bg-slate-50 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
                   />
                 </div>
-                <div className="space-y-2">
-                  <label className="text-xs font-bold uppercase tracking-widest text-muted-foreground flex items-center gap-2">
+                <div className="space-y-1.5 sm:space-y-2 col-span-1">
+                  <label className="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-muted-foreground flex items-center gap-1.5 sm:gap-2">
                     <MapPin className="h-3 w-3" /> Drop Location
                   </label>
                   <input 
                     type="text" name="dropLocation" required={isRental} value={formData.dropLocation} onChange={handleChange}
                     placeholder="Location"
-                    className="w-full h-12 px-4 rounded-xl border bg-slate-50 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
+                    className="w-full h-10 sm:h-12 px-3 sm:px-4 rounded-lg sm:rounded-xl border bg-slate-50 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
                   />
                 </div>
               </>
             )}
           </div>
 
-          <div className="space-y-2">
-            <label className="text-xs font-bold uppercase tracking-widest text-muted-foreground flex items-center gap-2">
+          <div className="space-y-1.5 sm:space-y-2">
+            <label className="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-muted-foreground flex items-center gap-1.5 sm:gap-2">
               <Plus className="h-3 w-3" /> {isRental ? "Add Destination" : "Trek/Tour Destination & Requests"}
             </label>
             <textarea 
               name="destination" value={formData.destination} onChange={handleChange}
-              rows={3}
+              rows={2}
               placeholder={isRental ? "List specific destinations or extra requests..." : "Specify which trek or tour you are interested in, and any special requests..."}
-              className="w-full p-4 rounded-xl border bg-slate-50 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all resize-none"
+              className="w-full p-3 sm:p-4 rounded-lg sm:rounded-xl border bg-slate-50 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all resize-none"
             ></textarea>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 mt-6 sm:mt-8">
             <button 
               type="button"
               onClick={(e) => handleSubmit(e, 'gmail')}
-              className="h-20 rounded-2xl bg-slate-900 text-white font-black text-lg hover:bg-slate-800 transition-all shadow-xl flex items-center justify-center gap-3 uppercase tracking-wider group"
+              className="h-12 sm:h-16 rounded-xl sm:rounded-2xl bg-slate-900 text-white font-bold sm:font-black text-xs sm:text-lg hover:bg-slate-800 transition-all shadow-xl flex items-center justify-center gap-2 sm:gap-3 uppercase tracking-wider group"
             >
-              <Mail className="h-6 w-6 group-hover:scale-110 transition-transform" /> 
+              <Mail className="h-4 w-4 sm:h-6 sm:w-6 group-hover:scale-110 transition-transform shrink-0" /> 
               <span>Submit via Gmail</span>
             </button>
             <button 
               type="button"
               onClick={(e) => handleSubmit(e, 'whatsapp')}
-              className="h-20 rounded-2xl bg-[#25D366] text-white font-black text-lg hover:bg-[#20ba5a] transition-all shadow-xl flex items-center justify-center gap-3 uppercase tracking-wider group"
+              className="h-12 sm:h-16 rounded-xl sm:rounded-2xl bg-[#25D366] text-white font-bold sm:font-black text-xs sm:text-lg hover:bg-[#20ba5a] transition-all shadow-xl flex items-center justify-center gap-2 sm:gap-3 uppercase tracking-wider group"
             >
-              <MessageCircle className="h-6 w-6 group-hover:scale-110 transition-transform" /> 
+              <MessageCircle className="h-4 w-4 sm:h-6 sm:w-6 group-hover:scale-110 transition-transform shrink-0" /> 
               <span>Submit via WhatsApp</span>
             </button>
           </div>
           
-          <p className="text-center text-xs text-muted-foreground italic mt-6">
+          <p className="text-center text-[10px] sm:text-xs text-muted-foreground italic mt-4 sm:mt-6">
             Please fill in all required fields. We typically respond within 24 hours.
           </p>
         </form>

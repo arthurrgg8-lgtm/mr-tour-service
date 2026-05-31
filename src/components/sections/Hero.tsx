@@ -68,17 +68,17 @@ export default function Hero() {
   return (
     <section 
       ref={containerRef}
-      className="relative min-h-[90vh] flex items-center pt-16 overflow-hidden bg-slate-900"
+      className="relative min-h-[95vh] sm:min-h-screen flex items-center pt-24 pb-16 sm:py-32 overflow-hidden bg-slate-900"
     >
       {/* Background Image Slider with Overlay */}
       <div className="absolute inset-0 z-0">
         <AnimatePresence mode="wait">
           <motion.div
             key={currentImage}
-            initial={{ opacity: 0, scale: 1.1 }}
-            animate={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 1.5, ease: "easeInOut" }}
+            transition={{ duration: 1.2, ease: "easeInOut" }}
             className="absolute inset-0"
           >
             <Image 
@@ -93,17 +93,18 @@ export default function Hero() {
           </motion.div>
         </AnimatePresence>
         
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-900/50 via-slate-900/20 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-950/60 via-slate-950/20 to-transparent" />
         {/* <div className="absolute top-[-10%] right-[-10%] w-[50%] h-[50%] rounded-full bg-primary/20 blur-[120px]" /> */}
         
-        {/* Slider Indicators */}
-        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 flex gap-2">
+        {/* Slider Indicators (Sleek right-aligned layout to balance left-aligned text) */}
+        <div className="absolute bottom-8 right-4 sm:right-10 md:right-16 z-20 flex gap-2">
           {heroImages.map((_, idx) => (
             <div 
               key={idx}
-              className={`h-1 rounded-full transition-all duration-500 ${
-                idx === currentImage ? "w-8 bg-primary" : "w-2 bg-white/30"
+              className={`h-1.5 rounded-full transition-all duration-500 ${
+                idx === currentImage ? "w-8 bg-primary" : "w-2.5 bg-white/30 hover:bg-white/50 cursor-pointer"
               }`}
+              onClick={() => setCurrentImage(idx)}
             />
           ))}
         </div>
@@ -121,7 +122,7 @@ export default function Hero() {
 
           <h1 
             ref={titleRef}
-            className="text-4xl md:text-7xl font-extrabold text-white leading-[1.1] mb-6"
+            className="text-4xl md:text-7xl font-extrabold text-white leading-[1.1] mb-6 drop-shadow-md"
           >
             {business.slogan} <br />
             <span className="text-primary">with Premium Service</span>
@@ -129,7 +130,7 @@ export default function Hero() {
 
           <p 
             ref={subtitleRef}
-            className="text-lg md:text-xl text-slate-300 max-w-2xl mb-10 leading-relaxed"
+            className="text-lg md:text-xl text-slate-300 max-w-2xl mb-10 leading-relaxed drop-shadow-sm"
           >
             {business.tagline}. From luxury vehicle rentals to custom tour packages and trekking, 
             we own our fleet to ensure the highest standards of safety and comfort.
@@ -138,10 +139,16 @@ export default function Hero() {
           <div ref={ctaRef} className="flex flex-col sm:flex-row gap-4 mb-16">
             <Link 
               href="/services#inquiry-form"
-              className="group flex items-center justify-center gap-2 h-14 px-8 rounded-lg bg-primary text-white font-bold hover:bg-primary/90 transition-all shadow-lg shadow-primary/25"
+              className="group flex items-center justify-center gap-2 h-14 px-8 rounded-xl bg-primary text-white font-bold hover:bg-primary/90 transition-all shadow-lg shadow-primary/25 text-center sm:w-auto"
             >
               Enquire Now
               <MessageCircle className="h-5 w-5 group-hover:scale-110 transition-transform" />
+            </Link>
+            <Link 
+              href="/services"
+              className="group flex items-center justify-center h-14 px-8 rounded-xl bg-white/10 text-white font-bold hover:bg-white/20 transition-all border border-white/20 text-center sm:w-auto backdrop-blur-sm"
+            >
+              Our Services
             </Link>
           </div>
 
@@ -150,7 +157,7 @@ export default function Hero() {
             className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 border-t border-white/10 pt-10"
           >
             <div className="flex items-center gap-4">
-              <div className="h-12 w-12 rounded-lg bg-white/5 flex items-center justify-center border border-white/10 text-primary">
+              <div className="h-12 w-12 rounded-lg bg-white/5 flex items-center justify-center border border-white/10 text-primary shrink-0">
                 <Car className="h-6 w-6" />
               </div>
               <div>
@@ -159,7 +166,7 @@ export default function Hero() {
               </div>
             </div>
             <div className="flex items-center gap-4">
-              <div className="h-12 w-12 rounded-lg bg-white/5 flex items-center justify-center border border-white/10 text-primary">
+              <div className="h-12 w-12 rounded-lg bg-white/5 flex items-center justify-center border border-white/10 text-primary shrink-0">
                 <MapIcon className="h-6 w-6" />
               </div>
               <div>
@@ -168,7 +175,7 @@ export default function Hero() {
               </div>
             </div>
             <div className="flex items-center gap-4">
-              <div className="h-12 w-12 rounded-lg bg-white/5 flex items-center justify-center border border-white/10 text-primary">
+              <div className="h-12 w-12 rounded-lg bg-white/5 flex items-center justify-center border border-white/10 text-primary shrink-0">
                 <ShieldCheck className="h-6 w-6" />
               </div>
               <div>

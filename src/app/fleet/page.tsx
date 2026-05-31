@@ -67,7 +67,7 @@ export default function FleetPage() {
   }
 
   return (
-    <div className="pt-20 pb-24">
+    <div className="pt-20 pb-24 w-full overflow-x-hidden">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

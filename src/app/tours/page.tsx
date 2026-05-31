@@ -110,7 +110,7 @@ export default function ToursPage() {
   }
 
   return (
-    <div className="pt-20 pb-24">
+    <div className="pt-20 pb-24 w-full overflow-x-hidden">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -156,42 +156,42 @@ export default function ToursPage() {
       </section>
 
       {/* Why Tour With Us */}
-      <section className="py-24 bg-slate-50">
+      <section className="py-12 sm:py-24 bg-slate-50">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-16 items-center">
             <div>
-              <h2 className="text-3xl md:text-5xl font-bold mb-8 leading-tight">Comfort & Heritage <br /> <span className="text-primary">The MR Tour Experience</span></h2>
-              <div className="space-y-8">
-                <div className="flex gap-6">
-                  <div className="h-14 w-14 rounded-2xl bg-primary/10 flex items-center justify-center text-primary shrink-0">
-                    <Users className="h-7 w-7" />
+              <h2 className="text-2xl xs:text-3xl md:text-5xl font-bold mb-6 sm:mb-8 leading-tight">Comfort & Heritage <br className="hidden xs:inline" /> <span className="text-primary">The MR Tour Experience</span></h2>
+              <div className="grid grid-cols-2 gap-4 sm:flex sm:flex-col sm:space-y-8">
+                <div className="flex gap-3 sm:gap-6">
+                  <div className="h-10 w-10 sm:h-14 sm:w-14 rounded-xl sm:rounded-2xl bg-primary/10 flex items-center justify-center text-primary shrink-0">
+                    <Users className="h-5 w-5 sm:h-7 sm:w-7" />
                   </div>
                   <div>
-                    <h4 className="text-xl font-bold mb-2">Professional Guides</h4>
-                    <p className="text-slate-600">Our tours are led by knowledgeable local guides who bring history and culture to life with fascinating stories.</p>
+                    <h4 className="text-xs xs:text-sm sm:text-xl font-bold mb-1 sm:mb-2">Professional Guides</h4>
+                    <p className="text-[10px] xs:text-xs sm:text-base text-slate-600 leading-snug sm:leading-relaxed">Our tours are led by knowledgeable local guides who bring history and culture to life with fascinating stories.</p>
                   </div>
                 </div>
-                <div className="flex gap-6">
-                  <div className="h-14 w-14 rounded-2xl bg-primary/10 flex items-center justify-center text-primary shrink-0">
-                    <MapIcon className="h-7 w-7" />
+                <div className="flex gap-3 sm:gap-6">
+                  <div className="h-10 w-10 sm:h-14 sm:w-14 rounded-xl sm:rounded-2xl bg-primary/10 flex items-center justify-center text-primary shrink-0">
+                    <MapIcon className="h-5 w-5 sm:h-7 sm:w-7" />
                   </div>
                   <div>
-                    <h4 className="text-xl font-bold mb-2">Curated Itineraries</h4>
-                    <p className="text-slate-600">We carefully design our tour routes to balance iconic landmarks with hidden gems and local experiences.</p>
+                    <h4 className="text-xs xs:text-sm sm:text-xl font-bold mb-1 sm:mb-2">Curated Itineraries</h4>
+                    <p className="text-[10px] xs:text-xs sm:text-base text-slate-600 leading-snug sm:leading-relaxed">We carefully design our tour routes to balance iconic landmarks with hidden gems and local experiences.</p>
                   </div>
                 </div>
-                <div className="flex gap-6">
-                  <div className="h-14 w-14 rounded-2xl bg-primary/10 flex items-center justify-center text-primary shrink-0">
-                    <Compass className="h-7 w-7" />
+                <div className="flex gap-3 sm:gap-6 col-span-2 sm:col-span-1">
+                  <div className="h-10 w-10 sm:h-14 sm:w-14 rounded-xl sm:rounded-2xl bg-primary/10 flex items-center justify-center text-primary shrink-0">
+                    <Compass className="h-5 w-5 sm:h-7 sm:w-7" />
                   </div>
                   <div>
-                    <h4 className="text-xl font-bold mb-2">Premium Comfort</h4>
-                    <p className="text-slate-600">Travel in style with our 100% company-owned fleet of luxury vehicles and hand-picked accommodations.</p>
+                    <h4 className="text-xs xs:text-sm sm:text-xl font-bold mb-1 sm:mb-2">Premium Comfort</h4>
+                    <p className="text-[10px] xs:text-xs sm:text-base text-slate-600 leading-snug sm:leading-relaxed">Travel in style with our 100% company-owned fleet of luxury vehicles and hand-picked accommodations.</p>
                   </div>
                 </div>
               </div>
             </div>
-            <div className="relative h-[600px] rounded-[3rem] overflow-hidden shadow-2xl">
+            <div className="relative h-[250px] xs:h-[320px] sm:h-[600px] rounded-2xl sm:rounded-[3rem] overflow-hidden shadow-2xl">
               <Image 
                 src="/images/hero/hero-triple-tour.jpeg" 
                 alt="Tour Experience"
@@ -217,11 +217,11 @@ export default function ToursPage() {
       </section>
 
       {/* Inquiry Form */}
-      <section id="inquiry" className="py-24 bg-white">
+      <section id="inquiry" className="py-12 sm:py-24 bg-white">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-bold mb-4">Start Planning Your Trip</h2>
-            <p className="text-muted-foreground text-lg">Send us an inquiry and our experts will get back to you within 24 hours.</p>
+          <div className="text-center mb-8 sm:mb-16">
+            <h2 className="text-2xl xs:text-3xl md:text-5xl font-bold mb-2 sm:mb-4">Start Planning Your Trip</h2>
+            <p className="text-xs xs:text-sm sm:text-lg text-muted-foreground">Send us an inquiry and our experts will get back to you within 24 hours.</p>
           </div>
           <ServiceInquiryForm />
         </div>

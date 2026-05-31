@@ -53,12 +53,12 @@ export default function QuickInquiryForm() {
   }
 
   return (
-    <div className="bg-slate-50 p-10 rounded-3xl border border-slate-200 shadow-sm">
-      <h3 className="text-2xl font-bold mb-8">Quick Inquiry</h3>
-      <form ref={formRef} className="space-y-6">
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-          <div className="space-y-2">
-            <label className="text-sm font-bold uppercase tracking-widest text-muted-foreground ml-1">Your Name</label>
+    <div className="bg-slate-50 p-4 xs:p-6 sm:p-10 rounded-2xl sm:rounded-3xl border border-slate-200 shadow-sm">
+      <h3 className="text-lg xs:text-2xl font-bold mb-4 sm:mb-8">Quick Inquiry</h3>
+      <form ref={formRef} className="space-y-4 sm:space-y-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-6">
+          <div className="space-y-1.5 sm:space-y-2">
+            <label className="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-muted-foreground">Your Name</label>
             <input 
               type="text" 
               name="name"
@@ -66,11 +66,11 @@ export default function QuickInquiryForm() {
               value={formData.name}
               onChange={handleChange}
               placeholder="John Doe"
-              className="w-full h-12 px-4 rounded-xl border bg-white focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all text-slate-900"
+              className="w-full h-10 sm:h-12 px-3 sm:px-4 rounded-lg sm:rounded-xl border bg-white focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all text-xs sm:text-sm text-slate-900"
             />
           </div>
-          <div className="space-y-2">
-            <label className="text-sm font-bold uppercase tracking-widest text-muted-foreground ml-1">Email Address</label>
+          <div className="space-y-1.5 sm:space-y-2">
+            <label className="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-muted-foreground">Email Address</label>
             <input 
               type="email" 
               name="email"
@@ -78,18 +78,18 @@ export default function QuickInquiryForm() {
               value={formData.email}
               onChange={handleChange}
               placeholder="john@example.com"
-              className="w-full h-12 px-4 rounded-xl border bg-white focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all text-slate-900"
+              className="w-full h-10 sm:h-12 px-3 sm:px-4 rounded-lg sm:rounded-xl border bg-white focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all text-xs sm:text-sm text-slate-900"
             />
           </div>
         </div>
         
-        <div className="space-y-2">
-          <label className="text-sm font-bold uppercase tracking-widest text-muted-foreground ml-1">Service Required</label>
+        <div className="space-y-1.5 sm:space-y-2">
+          <label className="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-muted-foreground">Service Required</label>
           <select 
             name="service"
             value={formData.service}
             onChange={handleChange}
-            className="w-full h-12 px-4 rounded-xl border bg-white focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all appearance-none text-slate-900"
+            className="w-full h-10 sm:h-12 px-3 sm:px-4 rounded-lg sm:rounded-xl border bg-white focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all appearance-none text-xs sm:text-sm text-slate-900"
           >
             <option>Vehicle Rental</option>
             <option>Tour Package</option>
@@ -99,36 +99,36 @@ export default function QuickInquiryForm() {
           </select>
         </div>
 
-        <div className="space-y-2">
-          <label className="text-sm font-bold uppercase tracking-widest text-muted-foreground ml-1">Message</label>
+        <div className="space-y-1.5 sm:space-y-2">
+          <label className="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-muted-foreground">Message</label>
           <textarea 
             name="message"
             required
             value={formData.message}
             onChange={handleChange}
-            rows={5}
+            rows={3}
             placeholder="Tell us about your travel plans..."
-            className="w-full p-4 rounded-xl border bg-white focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all resize-none text-slate-900"
+            className="w-full p-3 sm:p-4 rounded-lg sm:rounded-xl border bg-white focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all resize-none text-xs sm:text-sm text-slate-900"
           ></textarea>
         </div>
 
-        <div className="flex flex-col sm:flex-row gap-4">
+        <div className="flex flex-col xs:flex-row gap-3">
           <button 
             type="button"
             onClick={(e) => handleSendMessage(e, 'whatsapp')}
-            className="flex-1 h-14 rounded-xl bg-[#25D366] text-white font-bold text-lg hover:bg-[#20ba5a] transition-all shadow-lg shadow-green-200/50 flex items-center justify-center gap-2"
+            className="flex-1 h-11 sm:h-14 rounded-lg sm:rounded-xl bg-[#25D366] text-white font-bold text-xs sm:text-lg hover:bg-[#20ba5a] transition-all shadow-lg shadow-green-200/50 flex items-center justify-center gap-1.5 sm:gap-2"
           >
-            WhatsApp <MessageCircle className="h-5 w-5" />
+            WhatsApp <MessageCircle className="h-4.5 w-4.5 sm:h-5 sm:w-5" />
           </button>
           <button 
             type="button"
             onClick={(e) => handleSendMessage(e, 'gmail')}
-            className="flex-1 h-14 rounded-xl bg-slate-900 text-white font-bold text-lg hover:bg-slate-800 transition-all shadow-lg flex items-center justify-center gap-2"
+            className="flex-1 h-11 sm:h-14 rounded-lg sm:rounded-xl bg-slate-900 text-white font-bold text-xs sm:text-lg hover:bg-slate-800 transition-all shadow-lg flex items-center justify-center gap-1.5 sm:gap-2"
           >
-            Gmail <Mail className="h-5 w-5" />
+            Gmail <Mail className="h-4.5 w-4.5 sm:h-5 sm:w-5" />
           </button>
         </div>
-        <p className="text-center text-xs text-muted-foreground mt-4">
+        <p className="text-center text-[10px] text-muted-foreground mt-2">
           Choose your preferred method. Please fill required fields.
         </p>
       </form>
