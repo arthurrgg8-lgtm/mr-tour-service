@@ -7,6 +7,7 @@ import WhatsAppButton from "@/components/layout/WhatsAppButton"
 import ScrollToTop from "@/components/ui/ScrollToTop"
 import business from "@/data/business.json"
 import { buildWhatsAppUrl } from "@/lib/utils"
+import Script from "next/script"
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",
@@ -227,6 +228,21 @@ export default function RootLayout({
       <body
         className={`${montserrat.variable} ${lora.variable} antialiased`}
       >
+        {/* Google tag (gtag.js) */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=AW-18048947362"
+          strategy="afterInteractive"
+        />
+        <Script id="google-tag" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'AW-18048947362');
+          `}
+        </Script>
+
         <Navbar />
         <main>{children}</main>
         <Footer />
