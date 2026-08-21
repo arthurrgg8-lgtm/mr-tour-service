@@ -112,14 +112,6 @@ export default function Hero() {
 
       <div className="container mx-auto px-4 z-10">
         <div className="max-w-4xl">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-bold uppercase tracking-wider mb-6">
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
-            </span>
-            Trusted Travel Partner in Nepal
-          </div>
-
           <h1 
             ref={titleRef}
             className="text-4xl md:text-7xl font-extrabold text-white leading-[1.1] mb-6 drop-shadow-md"
