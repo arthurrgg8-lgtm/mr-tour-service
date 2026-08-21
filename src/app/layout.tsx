@@ -8,9 +8,6 @@ import ScrollToTop from "@/components/ui/ScrollToTop"
 import business from "@/data/business.json"
 import { buildWhatsAppUrl } from "@/lib/utils"
 import Script from "next/script"
-import PaymentNotice from "@/components/PaymentNotice"
-
-const PAYMENT_NOTICE_ACTIVE = true
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",
@@ -41,11 +38,11 @@ export const metadata: Metadata = {
   keywords: ["car rental Nepal", "Kathmandu vehicle hire", "Jeep rental for Mustang", "luxury tour packages Nepal", "Everest base camp trekking", "Toyota Hiace rental Nepal", "premium travel service Kathmandu", "best tour operator Nepal"],
   authors: [{ name: "LazZy" }],
   robots: {
-    index: !PAYMENT_NOTICE_ACTIVE,
-    follow: !PAYMENT_NOTICE_ACTIVE,
+    index: true,
+    follow: true,
     googleBot: {
-      index: !PAYMENT_NOTICE_ACTIVE,
-      follow: !PAYMENT_NOTICE_ACTIVE,
+      index: true,
+      follow: true,
       'max-video-preview': -1,
       'max-image-preview': 'large',
       'max-snippet': -1,
@@ -218,16 +215,6 @@ export default function RootLayout({
         }
       ]
     }
-  }
-
-  if (PAYMENT_NOTICE_ACTIVE) {
-    return (
-      <html lang="en">
-        <body className={`${montserrat.variable} ${lora.variable} antialiased`}>
-          <PaymentNotice />
-        </body>
-      </html>
-    )
   }
 
   return (
