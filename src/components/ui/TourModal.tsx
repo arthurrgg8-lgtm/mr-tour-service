@@ -81,7 +81,7 @@ Kind regards,
 [My Name]
 [My Phone Number]`
 
-    window.open(buildGmailUrl(business.contact.email, subject, body), '_blank')
+    window.open(buildGmailUrl(business.contact.email, subject, body), '_blank', 'noopener,noreferrer')
   }
 
   const handleWhatsAppInquiry = () => {

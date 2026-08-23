@@ -40,10 +40,10 @@ export default function QuickInquiryForm() {
     
     if (channel === 'whatsapp') {
       const whatsappUrl = buildWhatsAppUrl(business.contact.whatsapp, text)
-      window.open(whatsappUrl, "_blank")
+      window.open(whatsappUrl, "_blank", "noopener,noreferrer")
     } else {
       const gmailUrl = buildGmailUrl(business.contact.email, "Quick Inquiry - Website", text)
-      window.open(gmailUrl, "_blank")
+      window.open(gmailUrl, "_blank", "noopener,noreferrer")
     }
   }
 
