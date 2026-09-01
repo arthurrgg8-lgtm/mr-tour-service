@@ -31,12 +31,10 @@ jobs:
           NPM_CONFIG_LEGACY_PEER_DEPS: true
 
       - name: Build project
-        run: npm run pages:build
-        env:
-          NPM_CONFIG_LEGACY_PEER_DEPS: true
+        run: npm run build
 
       - name: Check build output
-        run: ls -R .vercel/output/static
+        run: ls -la out
 
       - name: Deploy to Cloudflare Pages
         uses: cloudflare/pages-action@v1
@@ -44,6 +42,6 @@ jobs:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           projectName: mrtourservice
-          directory: .vercel/output/static
+          directory: out
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
 
