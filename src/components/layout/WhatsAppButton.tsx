@@ -3,6 +3,7 @@
 import { MessageCircle } from "lucide-react"
 import business from "@/data/business.json"
 import { buildWhatsAppUrl } from "@/lib/utils"
+import { trackLeadConversion } from "@/lib/gtag"
 
 export default function WhatsAppButton() {
   return (
@@ -10,6 +11,7 @@ export default function WhatsAppButton() {
       href={buildWhatsAppUrl(business.contact.whatsapp)}
       target="_blank"
       rel="noopener noreferrer"
+      onClick={() => trackLeadConversion()}
       className="fixed bottom-6 right-6 z-50 group flex h-14 w-14 items-center justify-center rounded-full bg-green-500 text-white shadow-xl hover:bg-green-600 hover:scale-110 transition-all duration-300 animate-bounce-subtle"
       aria-label="Contact on WhatsApp"
     >

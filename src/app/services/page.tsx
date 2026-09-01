@@ -36,8 +36,8 @@ interface Service {
 }
 
 export const metadata: Metadata = {
-  title: "Vehicle Rental Services & Fleet",
-  description: `Rent the best vehicles in Nepal — Toyota Fortuner, BYD Atto 3 EV, Suzuki Brezza & luxury buses. 100% owned fleet with professional drivers for any journey.`,
+  title: "Vehicle Rental & Travel Services in Nepal",
+  description: `Top-rated vehicle rental & travel services in Nepal — Toyota Fortuner 4x4, BYD EV, Toyota Hiace & luxury tourist buses. 100% company-owned fleet with verified drivers.`,
   alternates: {
     canonical: "/services",
   },
@@ -148,7 +148,7 @@ export default function ServicesPage() {
         </div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">Our Premium Fleet</h1>
+            <h1 className="text-4xl md:text-6xl font-bold mb-6">Vehicle Rental & Travel Services</h1>
             <p className="text-xl text-slate-300 leading-relaxed">
               Experience comfort and safety with our 100% owned vehicle fleet. 
               From luxury SUVs for mountain adventures to comfortable buses for group travel, 

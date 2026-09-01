@@ -40,7 +40,7 @@ interface Service {
 }
 
 export const metadata: Metadata = {
-  title: "Himalayan Trekking Adventures",
+  title: "Himalayan Trekking in Nepal - Base Camp & Circuit Treks",
   description: `Conquer the Himalayas — Everest Base Camp, Annapurna Circuit, Langtang & Manaslu. Expert government-licensed guides, safety-first protocols since 2003.`,
   alternates: {
     canonical: "/trekking",

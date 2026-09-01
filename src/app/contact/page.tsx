@@ -7,7 +7,7 @@ import QuickInquiryForm from "@/components/sections/QuickInquiryForm"
 import { buildWhatsAppUrl } from "@/lib/utils"
 
 export const metadata: Metadata = {
-  title: "Contact Us - 24/7 Support",
+  title: "Contact Us - Car Rental & Tour Booking in Kathmandu",
   description: `Ready for your Nepal adventure? Reach us 24/7 via phone, WhatsApp, or visit our Kalopul office. Premium fleet, tours & trekking — quick response, expert advice.`,
   alternates: {
     canonical: "/contact",

@@ -6,6 +6,7 @@ import business from "@/data/business.json"
 import Image from "next/image"
 import Link from "next/link"
 import { buildGmailUrl, buildWhatsAppUrl, scrollToId } from "@/lib/utils"
+import { trackLeadConversion } from "@/lib/gtag"
 
 interface ItineraryItem {
   day: string;
@@ -65,6 +66,7 @@ export default function TourModal({ tour, onClose, onSelectSubPackage, onBack }:
   const handleGmailInquiry = () => {
     if (!tour) return;
     
+    trackLeadConversion();
     const subject = `Inquiry for ${tour.title} - ${business.name}`
     const body = `Hello ${business.name} Team,
 
@@ -87,6 +89,7 @@ Kind regards,
   const handleWhatsAppInquiry = () => {
     if (!tour) return;
 
+    trackLeadConversion();
     const body = `*Inquiry for ${tour.title}*
 
 Hello ${business.name} Team,

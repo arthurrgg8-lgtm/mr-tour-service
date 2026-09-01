@@ -4,6 +4,7 @@ import { useState, useRef } from "react"
 import { User, Phone, Mail, Globe, Users, Car, Calendar, MapPin, Plus, FileText, Mountain, Map as MapIcon, MessageCircle } from "lucide-react"
 import business from "@/data/business.json"
 import { buildGmailUrl, buildWhatsAppUrl, sanitizeInput } from "@/lib/utils"
+import { trackLeadConversion } from "@/lib/gtag"
 
 export default function ServiceInquiryForm() {
   const formRef = useRef<HTMLFormElement>(null)
@@ -34,6 +35,9 @@ export default function ServiceInquiryForm() {
     if (formRef.current && !formRef.current.reportValidity()) {
       return
     }
+
+    // Track Google Ads lead conversion
+    trackLeadConversion()
 
     // Validation Logic for Rental
     if (formData.inquiryType === "Rental") {

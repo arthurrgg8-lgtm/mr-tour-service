@@ -7,8 +7,8 @@ import Image from "next/image"
 import { buildWhatsAppUrl } from "@/lib/utils"
 
 export const metadata: Metadata = {
-  title: "Our Premium Fleet - Toyota & More",
-  description: `Your ride across Nepal — Toyota Fortuner SUVs, BYD Atto 3 EV, Toyota Hiace & luxury buses. All 100% owned, meticulously maintained, with professional drivers.`,
+  title: "Car & Vehicle Rental in Nepal - Premium Fleet",
+  description: `Rent luxury vehicles in Nepal — Toyota Fortuner 4x4 SUVs, BYD EV, Toyota Hiace & luxury buses with drivers. 100% owned fleet, best rates across Kathmandu & Nepal.`,
   alternates: {
     canonical: "/fleet",
   },
@@ -90,7 +90,7 @@ export default function FleetPage() {
         </div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">Our Premium Fleet</h1>
+            <h1 className="text-4xl md:text-6xl font-bold mb-6">Car & Vehicle Rental Fleet in Nepal</h1>
             <p className="text-xl text-slate-300 leading-relaxed">
               We own 100% of our fleet, ensuring that every vehicle you book 
               meets our high standards for safety, cleanliness, and comfort. 

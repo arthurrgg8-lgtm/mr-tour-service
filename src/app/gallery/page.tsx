@@ -4,7 +4,7 @@ import Gallery from "@/components/sections/Gallery"
 import Image from "next/image"
 
 export const metadata: Metadata = {
-  title: "Travel Photo Gallery",
+  title: "Nepal Travel & Fleet Photo Gallery",
   description: `Visual journeys across Nepal — from Kathmandu's temples to the Everest skyline, Chitwan safaris & our premium fleet. See the adventures that await you.`,
   alternates: {
     canonical: "/gallery",
