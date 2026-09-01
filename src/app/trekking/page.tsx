@@ -225,7 +225,7 @@ export default function TrekkingPage() {
             <h2 className="text-2xl xs:text-3xl md:text-5xl font-bold mb-2 sm:mb-4">Start Your Adventure</h2>
             <p className="text-xs xs:text-sm sm:text-lg text-muted-foreground">Inquire now to get a customized trekking itinerary and quote.</p>
           </div>
-          <ServiceInquiryForm />
+          <ServiceInquiryForm initialType="Trek" allowedTypes={["Trek"]} />
         </div>
       </section>
     </div>

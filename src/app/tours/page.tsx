@@ -223,7 +223,7 @@ export default function ToursPage() {
             <h2 className="text-2xl xs:text-3xl md:text-5xl font-bold mb-2 sm:mb-4">Start Planning Your Trip</h2>
             <p className="text-xs xs:text-sm sm:text-lg text-muted-foreground">Send us an inquiry and our experts will get back to you within 24 hours.</p>
           </div>
-          <ServiceInquiryForm />
+          <ServiceInquiryForm initialType="Tour" allowedTypes={["Tour"]} />
         </div>
       </section>
     </div>

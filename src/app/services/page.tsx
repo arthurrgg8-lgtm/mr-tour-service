@@ -240,7 +240,7 @@ export default function ServicesPage() {
             <h2 className="text-2xl xs:text-3xl md:text-5xl font-bold mb-2 sm:mb-4">Request a Vehicle</h2>
             <p className="text-xs xs:text-sm sm:text-lg text-muted-foreground">Tell us your requirements and we will provide the best vehicle for your trip.</p>
           </div>
-          <ServiceInquiryForm />
+          <ServiceInquiryForm initialType="Rental" allowedTypes={["Rental"]} />
         </div>
       </section>
 

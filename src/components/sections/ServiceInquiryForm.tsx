@@ -6,7 +6,15 @@ import business from "@/data/business.json"
 import { buildGmailUrl, buildWhatsAppUrl, sanitizeInput } from "@/lib/utils"
 import { trackLeadConversion } from "@/lib/gtag"
 
-export default function ServiceInquiryForm() {
+interface ServiceInquiryFormProps {
+  initialType?: "Rental" | "Tour" | "Trek"
+  allowedTypes?: ("Rental" | "Tour" | "Trek")[]
+}
+
+export default function ServiceInquiryForm({
+  initialType = "Rental",
+  allowedTypes = ["Rental"],
+}: ServiceInquiryFormProps) {
   const formRef = useRef<HTMLFormElement>(null)
   const [formData, setFormData] = useState({
     name: "",
@@ -14,7 +22,7 @@ export default function ServiceInquiryForm() {
     email: "",
     nationality: "",
     numPeople: "",
-    inquiryType: "Rental",
+    inquiryType: initialType,
     vehicleType: "SUV — 4 seater",
     pickupDate: "",
     dropDate: "",
@@ -113,30 +121,32 @@ Drop Location: ${s.dropLocation}`
         <form ref={formRef} className="space-y-4 sm:space-y-6">
           <div className="grid grid-cols-2 gap-3 sm:gap-6">
             {/* Inquiry Type Selection */}
-            <div className="space-y-1.5 sm:space-y-2 col-span-2">
-              <label className="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-muted-foreground flex items-center gap-1.5 sm:gap-2">
-                <FileText className="h-3 w-3" /> Inquiry For
-              </label>
-              <div className="grid grid-cols-3 gap-2 sm:gap-4">
-                {["Rental", "Tour", "Trek"].map((type) => (
-                  <button
-                    key={type}
-                    type="button"
-                    onClick={() => setFormData(prev => ({ ...prev, inquiryType: type }))}
-                    className={`h-10 sm:h-12 rounded-lg sm:rounded-xl border-2 font-bold text-xs sm:text-base transition-all flex items-center justify-center gap-1 sm:gap-2 ${
-                      formData.inquiryType === type 
-                        ? "border-primary bg-primary/5 text-primary" 
-                        : "border-slate-100 bg-slate-50 text-slate-500 hover:border-slate-200"
-                    }`}
-                  >
-                    {type === "Rental" && <Car className="h-3.5 w-3.5 sm:h-4 sm:w-4" />}
-                    {type === "Tour" && <MapIcon className="h-3.5 w-3.5 sm:h-4 sm:w-4" />}
-                    {type === "Trek" && <Mountain className="h-3.5 w-3.5 sm:h-4 sm:w-4" />}
-                    {type}
-                  </button>
-                ))}
+            {allowedTypes.length > 1 && (
+              <div className="space-y-1.5 sm:space-y-2 col-span-2">
+                <label className="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-muted-foreground flex items-center gap-1.5 sm:gap-2">
+                  <FileText className="h-3 w-3" /> Inquiry For
+                </label>
+                <div className="grid grid-cols-3 gap-2 sm:gap-4">
+                  {allowedTypes.map((type) => (
+                    <button
+                      key={type}
+                      type="button"
+                      onClick={() => setFormData(prev => ({ ...prev, inquiryType: type }))}
+                      className={`h-10 sm:h-12 rounded-lg sm:rounded-xl border-2 font-bold text-xs sm:text-base transition-all flex items-center justify-center gap-1 sm:gap-2 ${
+                        formData.inquiryType === type 
+                          ? "border-primary bg-primary/5 text-primary" 
+                          : "border-slate-100 bg-slate-50 text-slate-500 hover:border-slate-200"
+                      }`}
+                    >
+                      {type === "Rental" && <Car className="h-3.5 w-3.5 sm:h-4 sm:w-4" />}
+                      {type === "Tour" && <MapIcon className="h-3.5 w-3.5 sm:h-4 sm:w-4" />}
+                      {type === "Trek" && <Mountain className="h-3.5 w-3.5 sm:h-4 sm:w-4" />}
+                      {type}
+                    </button>
+                  ))}
+                </div>
               </div>
-            </div>
+            )}
 
             {/* Personal Details */}
             <div className="space-y-1.5 sm:space-y-2 col-span-2 md:col-span-1">
