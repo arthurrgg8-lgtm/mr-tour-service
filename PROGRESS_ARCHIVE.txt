@@ -43,3 +43,31 @@ Date: May 19, 2026
 ------------------------------------------
 Status: PRODUCTION READY & AUTOMATED
 ------------------------------------------
+
+==========================================
+Date: September 1, 2026
+------------------------------------------
+
+1. GOOGLE ADS CONVERSION TRACKING
+- Installed global Google Tag (AW-18048947362) directly into static <head> on all pages.
+- Created centralized tracking utility `src/lib/gtag.ts` with `trackLeadConversion()`.
+- Connected conversion snippet (AW-18048947362/s7N4CPj94-scEKKptJ5D) to:
+  * Quick Inquiry Form submissions (WhatsApp & Gmail).
+  * Detailed Vehicle Service Inquiry submissions.
+  * Tour and Trek Package modal inquiries.
+  * Floating WhatsApp button clicks.
+
+2. SERVICE INQUIRY FORM REFINEMENTS
+- Restructured `ServiceInquiryForm` with `allowedTypes` and `initialType` props.
+- Vehicle Rental section (/services) now exclusively presents rental fields (pickup/drop dates, locations, vehicle selector) with Tour/Trek tabs removed.
+- Specialized forms tailored to /tours and /trekking respectively.
+
+3. CLOUDFLARE PAGES CI/CD OPTIMIZATION
+- Replaced fragile `@cloudflare/next-on-pages` (which invoked `vercel build`) with native Next.js static export (`output: 'export'`).
+- Configured GitHub Actions workflow to build with Next.js and deploy `out/` directory directly.
+- Updated `public/_headers` CSP to permit Google Ads, Google Analytics, and Google Tag Assistant (tagassistant.google.com) debugging without blocking frame connections.
+
+------------------------------------------
+Status: LIVE & VERIFIED ON CLOUDFLARE PAGES (https://manoranjan.com.np)
+------------------------------------------
+
