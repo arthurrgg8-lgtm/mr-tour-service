@@ -7,18 +7,9 @@ import ServiceInquiryForm from "@/components/sections/ServiceInquiryForm"
 import EnquireButton from "@/components/ui/EnquireButton"
 import ImageSlideshow from "@/components/ui/ImageSlideshow"
 import DestinationsGrid from "@/components/sections/DestinationsGrid"
+import { FadeIn, StaggerContainer, StaggerItem } from "@/components/ui/MotionComponents"
 
-interface SubService {
-  name: string;
-  image: string;
-  duration?: string;
-  startingPrice?: string;
-}
-
-interface Region {
-  name: string;
-  image: string;
-}
+import { safeJsonLdStringify } from "@/lib/utils"
 
 interface Service {
   id: string;
@@ -31,8 +22,7 @@ interface Service {
   capacity?: string;
   startingPrice?: string;
   recommendedFor?: string;
-  subServices?: SubService[];
-  regions?: Region[];
+  subServices?: unknown[];
 }
 
 export const metadata: Metadata = {
@@ -65,7 +55,7 @@ export const metadata: Metadata = {
   },
 }
 
-const typedServices = (services as Service[]).filter(s => s.id !== 'tour-packages' && s.id !== 'trekking');
+const typedServices = services as Service[]
 
 const iconMap: { [key: string]: React.ComponentType<{ className?: string }> } = {
   Car,
@@ -128,11 +118,11 @@ export default function ServicesPage() {
     <div className="pt-20 pb-24 w-full overflow-x-hidden">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: safeJsonLdStringify(jsonLd) }}
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: safeJsonLdStringify(faqJsonLd) }}
       />
       {/* Header */}
       <section className="relative bg-slate-900 py-32 text-white overflow-hidden">
@@ -147,26 +137,26 @@ export default function ServicesPage() {
           <div className="absolute inset-0 bg-black/40" />
         </div>
         <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">Vehicle Rental & Travel Services</h1>
+          <FadeIn direction="up" className="max-w-3xl">
+            <h1 className="text-4xl md:text-6xl font-bold mb-6">Vehicle Rental &amp; Travel Services</h1>
             <p className="text-xl text-slate-300 leading-relaxed">
               Experience comfort and safety with our 100% owned vehicle fleet. 
               From luxury SUVs for mountain adventures to comfortable buses for group travel, 
               we have the perfect ride for your journey in Nepal.
             </p>
-          </div>
+          </FadeIn>
         </div>
       </section>
 
       {/* Services List */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-2 gap-4 sm:gap-12 lg:gap-16">
+          <StaggerContainer staggerDelay={0.1} className="grid grid-cols-2 gap-4 sm:gap-12 lg:gap-16">
             {typedServices.map((service, idx) => {
               const Icon = iconMap[service.icon] || MapIcon
               
               return (
-                <div 
+                <StaggerItem 
                   key={service.id}
                   id={service.id}
                   className="group flex flex-col gap-3 sm:gap-6 p-3 xs:p-4 sm:p-8 rounded-[1.25rem] sm:rounded-[2.5rem] border border-slate-100 bg-slate-50/50 hover:bg-white hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 scroll-mt-32"
@@ -226,21 +216,23 @@ export default function ServicesPage() {
                       <EnquireButton>Book {service.title.split(" ")[0]}</EnquireButton>
                     </div>
                   </div>
-                </div>
+                </StaggerItem>
               )
             })}
-          </div>
+          </StaggerContainer>
         </div>
       </section>
 
       {/* Inquiry Form Section */}
       <section id="inquiry-form" className="py-12 sm:py-24 bg-slate-50 border-t">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-8 sm:mb-16">
+          <FadeIn direction="up" className="text-center mb-8 sm:mb-16">
             <h2 className="text-2xl xs:text-3xl md:text-5xl font-bold mb-2 sm:mb-4">Request a Vehicle</h2>
             <p className="text-xs xs:text-sm sm:text-lg text-muted-foreground">Tell us your requirements and we will provide the best vehicle for your trip.</p>
-          </div>
-          <ServiceInquiryForm initialType="Rental" allowedTypes={["Rental"]} />
+          </FadeIn>
+          <FadeIn direction="up" delay={0.2}>
+            <ServiceInquiryForm initialType="Rental" allowedTypes={["Rental"]} />
+          </FadeIn>
         </div>
       </section>
 
@@ -261,7 +253,9 @@ export default function ServicesPage() {
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/20 rounded-full blur-[120px] -mr-64 -mt-64" />
         <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-blue-500/10 rounded-full blur-[120px] -ml-64 -mb-64" />
 
-        <DestinationsGrid />
+        <FadeIn direction="up">
+          <DestinationsGrid />
+        </FadeIn>
       </section>
     </div>
   )

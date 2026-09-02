@@ -1,23 +1,18 @@
 import type { Metadata } from "next"
-import { Montserrat, Lora } from "next/font/google"
+import { Urbanist } from "next/font/google"
 import "./globals.css"
 import Navbar from "@/components/layout/Navbar"
 import Footer from "@/components/layout/Footer"
 import WhatsAppButton from "@/components/layout/WhatsAppButton"
 import ScrollToTop from "@/components/ui/ScrollToTop"
 import business from "@/data/business.json"
-import { buildWhatsAppUrl } from "@/lib/utils"
+import { buildWhatsAppUrl, safeJsonLdStringify } from "@/lib/utils"
 
-const montserrat = Montserrat({
-  variable: "--font-montserrat",
+const urbanist = Urbanist({
+  variable: "--font-urbanist",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
-})
-
-const lora = Lora({
-  variable: "--font-lora",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  display: "swap",
+  weight: ["300", "400", "500", "600", "700", "800"],
 })
 
 export const metadata: Metadata = {
@@ -219,6 +214,11 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <head>
+        {/* Security & OWASP Headers */}
+        <meta httpEquiv="X-Content-Type-Options" content="nosniff" />
+        <meta name="referrer" content="strict-origin-when-cross-origin" />
+        <meta httpEquiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()" />
+
         {/* Google tag (gtag.js) */}
         <script
           async
@@ -236,11 +236,11 @@ export default function RootLayout({
         />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          dangerouslySetInnerHTML={{ __html: safeJsonLdStringify(jsonLd) }}
         />
       </head>
       <body
-        className={`${montserrat.variable} ${lora.variable} antialiased`}
+        className={`${urbanist.variable} antialiased font-sans`}
       >
         <Navbar />
         <main>{children}</main>

@@ -5,8 +5,8 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme {
-  --font-sans: var(--font-montserrat);
-  --font-serif: var(--font-lora);
+  --font-sans: var(--font-urbanist);
+  --font-serif: var(--font-urbanist);
 
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -75,18 +75,34 @@
 }
 
 @layer base {
+  *, ::before, ::after {
+    font-family: var(--font-urbanist), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  }
+  html, body, input, button, select, textarea, p, span, h1, h2, h3, h4, h5, h6, a, div, label, li {
+    font-family: var(--font-urbanist), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  }
   html {
     scroll-behavior: smooth;
     scroll-padding-top: 80px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
   }
   * {
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground font-serif;
+    @apply bg-background text-foreground font-sans;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    line-height: 1.65;
+  }
+  p, span, li, a, label, input, button, select, textarea {
+    letter-spacing: 0.02em;
   }
   h1, h2, h3, h4, h5, h6 {
     @apply font-sans;
+    letter-spacing: 0.015em;
   }
 }
 
@@ -123,5 +139,20 @@
   .animate-section-glow {
     animation: section-glow 2.5s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: 10;
+  }
+
+  @keyframes marquee {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-50%); }
+  }
+
+  .animate-marquee {
+    display: flex;
+    width: max-content;
+    animation: marquee 30s linear infinite;
+  }
+
+  .animate-marquee:hover {
+    animation-play-state: paused;
   }
 }

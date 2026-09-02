@@ -1,0 +1,226 @@
+{
+  "car-rent": {
+    "whyRentWithUs": {
+      "headline": "Why Choose Our Car Rental Service in Nepal?",
+      "description": "Experience seamless city travel and comfortable airport transfers with our premium sedan car rental service in Nepal. Ideal for couples, business travelers, and small families seeking an agile, fuel-efficient ride for city tours and short getaways.",
+      "points": [
+        { "title": "Agile & Fuel-Efficient", "description": "Navigate the bustling streets of Kathmandu and narrow city alleys with ease and excellent mileage." },
+        { "title": "Premium Comfort", "description": "Enjoy well-maintained interiors, effective air conditioning, and a smooth ride for up to 4 passengers." },
+        { "title": "Expert City Drivers", "description": "Our professional chauffeurs know the city routes inside out, ensuring you reach your destination on time." },
+        { "title": "Hassle-Free Parking", "description": "Compact yet spacious, our sedans are perfect for exploring heritage sites with limited parking spaces." }
+      ]
+    },
+    "howItWorks": {
+      "headline": "How to Rent a Car with Us",
+      "steps": [
+        { "step": 1, "title": "Choose Your Car", "description": "Select from our fleet of well-maintained, comfortable sedans and city cars." },
+        { "step": 2, "title": "Book Online", "description": "Fill out our quick reservation form to secure your vehicle instantly." },
+        { "step": 3, "title": "Set Pickup & Drop", "description": "Specify your preferred location, whether it's the airport, your hotel, or any landmark." },
+        { "step": 4, "title": "Sit Back & Relax", "description": "Let our experienced driver take the wheel while you enjoy the journey." }
+      ]
+    },
+    "popularRoutes": {
+      "headline": "Popular Car Rental Routes",
+      "routes": [
+        { "name": "Kathmandu Valley Sightseeing", "duration": "Full Day", "highlight": "Explore Pashupatinath, Boudhanath, and Swayambhunath." },
+        { "name": "Kathmandu to Pokhara", "duration": "6-7 Hours", "highlight": "A scenic highway drive to the city of lakes." },
+        { "name": "Kathmandu to Nagarkot", "duration": "1.5 Hours", "highlight": "Perfect for a sunrise view over the Himalayas." },
+        { "name": "Bhaktapur Durbar Square", "duration": "Half Day", "highlight": "Discover the ancient Newari art and architecture." },
+        { "name": "Kathmandu to Dhulikhel", "duration": "1.5 Hours", "highlight": "A quick escape to a tranquil hilltop town." },
+        { "name": "Kathmandu to Chitwan", "duration": "5-6 Hours", "highlight": "A comfortable ride to the famous national park." }
+      ]
+    }
+  },
+  "suv-rent": {
+    "whyRentWithUs": {
+      "headline": "Why Choose Our Premium SUV Rental in Nepal?",
+      "description": "Elevate your family vacations and highway journeys with our luxury SUV rentals. Offering spacious interiors and robust performance, our SUVs like the Toyota Fortuner provide the ultimate blend of safety, style, and comfort for your Nepal road trips.",
+      "points": [
+        { "title": "Luxurious Spaciousness", "description": "Ample legroom and luggage capacity ensure a supremely comfortable journey for families and groups." },
+        { "title": "Smooth Highway Cruising", "description": "Advanced suspension systems provide a stable and relaxing ride on Nepal's major highways." },
+        { "title": "Enhanced Safety Features", "description": "Travel with peace of mind in vehicles equipped with top-tier safety technology and robust build." },
+        { "title": "Commanding Road Presence", "description": "Arrive in style with our elegant and powerful SUVs, perfect for both leisure and executive travel." }
+      ]
+    },
+    "howItWorks": {
+      "headline": "How to Rent an SUV with Us",
+      "steps": [
+        { "step": 1, "title": "Choose Your SUV", "description": "Browse our selection of premium SUVs including the popular Toyota Fortuner." },
+        { "step": 2, "title": "Book Online", "description": "Confirm your luxury ride with our straightforward booking process." },
+        { "step": 3, "title": "Set Pickup & Drop", "description": "Arrange convenient pickup and drop-off points for your itinerary." },
+        { "step": 4, "title": "Sit Back & Relax", "description": "Enjoy the plush interiors and panoramic views as our driver handles the road." }
+      ]
+    },
+    "popularRoutes": {
+      "headline": "Top SUV Rental Routes",
+      "routes": [
+        { "name": "Kathmandu-Pokhara Highway", "duration": "6-7 Hours", "highlight": "A luxurious and smooth ride along the Trishuli River." },
+        { "name": "Kathmandu to Lumbini", "duration": "8-9 Hours", "highlight": "Travel in utmost comfort to the birthplace of Lord Buddha." },
+        { "name": "Kathmandu to Bandipur", "duration": "5 Hours", "highlight": "A stylish arrival at the preserved cultural village." },
+        { "name": "Kathmandu to Chitwan", "duration": "5-6 Hours", "highlight": "Spacious travel perfect for safari luggage." },
+        { "name": "Pokhara to Palpa", "duration": "4 Hours", "highlight": "A scenic mid-hill drive with premium comfort." },
+        { "name": "Kathmandu to Gorkha", "duration": "5 Hours", "highlight": "Explore the historic palace with a robust, reliable ride." }
+      ]
+    }
+  },
+  "jeep-rent": {
+    "whyRentWithUs": {
+      "headline": "Why Choose Our 4WD Jeep Rental in Nepal?",
+      "description": "Conquer Nepal's most challenging terrains with our rugged 4WD Jeep rental service. Whether you're planning a mountain expedition to Mustang or a thrilling off-road adventure, our robust vehicles like the Scorpio and Land Cruiser are built for the extreme.",
+      "points": [
+        { "title": "Unmatched Off-Road Capability", "description": "Powerful 4x4 drivetrains designed to tackle steep inclines, mud, and unpaved mountain trails." },
+        { "title": "High Ground Clearance", "description": "Navigate rocky paths and river crossings safely without compromising the vehicle's underbelly." },
+        { "title": "Mountain Expert Drivers", "description": "Our drivers are specially trained for high-altitude, rugged terrain driving to ensure your safety." },
+        { "title": "Durable & Reliable", "description": "Regularly maintained to withstand the harsh conditions of Nepal's remote regions." }
+      ]
+    },
+    "howItWorks": {
+      "headline": "How to Rent a 4WD Jeep with Us",
+      "steps": [
+        { "step": 1, "title": "Choose Your Jeep", "description": "Select from our rugged lineup, including Scorpio and Land Cruiser models." },
+        { "step": 2, "title": "Book Online", "description": "Secure your expedition vehicle with our easy online reservation system." },
+        { "step": 3, "title": "Set Pickup & Drop", "description": "Coordinate your starting point for your off-road adventure." },
+        { "step": 4, "title": "Sit Back & Relax", "description": "Trust our expert driver to navigate the tough terrains while you enjoy the thrill." }
+      ]
+    },
+    "popularRoutes": {
+      "headline": "Ultimate Jeep Adventure Routes",
+      "routes": [
+        { "name": "Upper Mustang Expedition", "duration": "Multiple Days", "highlight": "Experience the stark, desert-like beauty of the trans-Himalaya." },
+        { "name": "Kathmandu to Manang", "duration": "Multiple Days", "highlight": "A thrilling drive through deep gorges and rugged trails." },
+        { "name": "Dolpo Region", "duration": "Multiple Days", "highlight": "Explore one of the most remote and pristine areas of Nepal." },
+        { "name": "Drive to Rara Lake", "duration": "Multiple Days", "highlight": "A challenging journey to Nepal's largest and most stunning lake." },
+        { "name": "Langtang Valley Drive", "duration": "1-2 Days", "highlight": "Access the beautiful valley via scenic, rugged mountain roads." },
+        { "name": "Pokhara to Jomsom", "duration": "8-10 Hours", "highlight": "An iconic off-road route up the Kali Gandaki gorge." }
+      ]
+    }
+  },
+  "hiace-rent": {
+    "whyRentWithUs": {
+      "headline": "Why Choose Our Toyota Hiace Rental in Nepal?",
+      "description": "Perfect for tourist groups and family pilgrimages, our Toyota Hiace vans offer a harmonious blend of space, comfort, and reliability. Accommodating 10 to 14 passengers, it's the ideal choice for group travel across Nepal's diverse landscapes.",
+      "points": [
+        { "title": "Ideal for Group Travel", "description": "Comfortably seats up to 14 passengers, making it perfect for extended families or tour groups." },
+        { "title": "Superior Air Conditioning", "description": "Dual AC systems ensure every passenger stays cool and comfortable, even on hot summer drives." },
+        { "title": "Smooth Suspension", "description": "Designed to absorb the bumps of Nepali roads, providing a pleasant journey for everyone." },
+        { "title": "Ample Luggage Space", "description": "Clever interior design allows for significant baggage capacity without compromising legroom." }
+      ]
+    },
+    "howItWorks": {
+      "headline": "How to Rent a Hiace Van with Us",
+      "steps": [
+        { "step": 1, "title": "Choose Your Hiace", "description": "Select our standard or VIP configured Toyota Hiace vans for your group." },
+        { "step": 2, "title": "Book Online", "description": "Reserve your group transport quickly and securely." },
+        { "step": 3, "title": "Set Pickup & Drop", "description": "Organize convenient logistics for your entire group." },
+        { "step": 4, "title": "Sit Back & Relax", "description": "Enjoy the camaraderie as our professional driver handles the route." }
+      ]
+    },
+    "popularRoutes": {
+      "headline": "Best Hiace Group Routes",
+      "routes": [
+        { "name": "Pashupatinath to Boudhanath", "duration": "Half Day", "highlight": "A comfortable religious and cultural day tour for groups." },
+        { "name": "Kathmandu to Lumbini", "duration": "8-9 Hours", "highlight": "The preferred choice for Buddhist pilgrimage tours." },
+        { "name": "Kathmandu to Janakpur", "duration": "9-10 Hours", "highlight": "A cultural journey to the birthplace of Goddess Sita." },
+        { "name": "Pokhara to Muktinath", "duration": "Multiple Days", "highlight": "A scenic group expedition combining highway and off-road." },
+        { "name": "Kathmandu to Gosaikunda (Dhunche)", "duration": "6-7 Hours", "highlight": "Gateway to the sacred alpine lakes for trekking groups." },
+        { "name": "Kathmandu to Pokhara", "duration": "6-7 Hours", "highlight": "The classic tourist route, perfect for group comfort." }
+      ]
+    }
+  },
+  "minibus-rent": {
+    "whyRentWithUs": {
+      "headline": "Why Choose Our Minibus Rental in Nepal?",
+      "description": "Organizing a corporate outing or a school trip? Our 18-25 seater minibuses provide a cost-effective, spacious, and safe transportation solution. Keep your mid-sized group together and enjoy a cohesive travel experience in Nepal.",
+      "points": [
+        { "title": "Cost-Effective Group Transport", "description": "An economical choice that keeps your entire team or class together without breaking the budget." },
+        { "title": "Panoramic Windows", "description": "Large windows offer excellent views of Nepal's stunning landscapes for all passengers." },
+        { "title": "Spacious Aisle & Seating", "description": "Comfortable seating arrangements with ample room to move, ensuring a relaxed journey." },
+        { "title": "Reliable for Outings", "description": "Dependable engines and expert drivers make it perfect for scheduled corporate retreats and school excursions." }
+      ]
+    },
+    "howItWorks": {
+      "headline": "How to Rent a Minibus with Us",
+      "steps": [
+        { "step": 1, "title": "Choose Your Minibus", "description": "Pick the right capacity minibus (18-25 seats) for your specific group size." },
+        { "step": 2, "title": "Book Online", "description": "Provide your itinerary details to secure the vehicle for your event." },
+        { "step": 3, "title": "Set Pickup & Drop", "description": "Arrange a central gathering point for efficient group boarding." },
+        { "step": 4, "title": "Sit Back & Relax", "description": "Focus on your group activities while we handle the driving and navigation." }
+      ]
+    },
+    "popularRoutes": {
+      "headline": "Top Minibus Destinations",
+      "routes": [
+        { "name": "Kathmandu to Pokhara", "duration": "6-7 Hours", "highlight": "Ideal for corporate team-building trips to the lakeside city." },
+        { "name": "Kathmandu to Nagarkot", "duration": "2 Hours", "highlight": "A quick getaway for school excursions or office picnics." },
+        { "name": "Kathmandu to Daman", "duration": "3 Hours", "highlight": "Enjoy panoramic Himalayan views on a mid-sized group retreat." },
+        { "name": "Pokhara to Tansen", "duration": "4 Hours", "highlight": "A cultural and historical trip perfect for educational tours." },
+        { "name": "Kathmandu to Bandipur", "duration": "5 Hours", "highlight": "A fantastic overnight destination for mid-sized groups." },
+        { "name": "Kathmandu Valley Day Tour", "duration": "Full Day", "highlight": "Comprehensive sightseeing covering major UNESCO heritage sites." }
+      ]
+    }
+  },
+  "bus-rent": {
+    "whyRentWithUs": {
+      "headline": "Why Choose Our Sutlej Bus Rental in Nepal?",
+      "description": "For large delegations, extensive tourist groups, and long-distance travel, our 35-41 seater Sutlej buses offer unparalleled capacity and comfort. Experience premium long-haul transport designed for safety and relaxation.",
+      "points": [
+        { "title": "Maximum Passenger Capacity", "description": "Comfortably accommodates up to 41 passengers, ideal for large tours and major events." },
+        { "title": "Reclining Seats & Comfort", "description": "Plush, adjustable seats ensure a restful journey on long cross-country routes." },
+        { "title": "Onboard Entertainment", "description": "Equipped with audio-visual systems to keep large groups entertained during long drives." },
+        { "title": "Heavy-Duty Safety", "description": "Built for long-distance endurance with experienced dual-driver teams for overnight journeys." }
+      ]
+    },
+    "howItWorks": {
+      "headline": "How to Rent a Tourist Bus with Us",
+      "steps": [
+        { "step": 1, "title": "Choose Your Sutlej Bus", "description": "Select our full-sized tourist bus for your large-scale transportation needs." },
+        { "step": 2, "title": "Book Online", "description": "Submit your long-haul itinerary to reserve our premier bus service." },
+        { "step": 3, "title": "Set Pickup & Drop", "description": "Coordinate logistics for large group boarding at designated locations." },
+        { "step": 4, "title": "Sit Back & Relax", "description": "Enjoy the long ride in comfort while our professional crew manages the journey." }
+      ]
+    },
+    "popularRoutes": {
+      "headline": "Major Long-Distance Bus Routes",
+      "routes": [
+        { "name": "Kathmandu to Pokhara", "duration": "7-8 Hours", "highlight": "The primary artery for large tourist group movements." },
+        { "name": "Kathmandu to Chitwan", "duration": "6-7 Hours", "highlight": "Transporting large groups to the heart of the jungle safari." },
+        { "name": "Kathmandu to Lumbini", "duration": "9-10 Hours", "highlight": "Comfortable overnight or full-day travel for large pilgrim groups." },
+        { "name": "East Nepal Tour (Ilam/Kakarbhitta)", "duration": "12+ Hours", "highlight": "Reliable long-haul transit across the country." },
+        { "name": "Cross-border India Trips", "duration": "Multiple Days", "highlight": "Seamless transportation for international group tours." },
+        { "name": "Kathmandu to Bardiya", "duration": "14+ Hours", "highlight": "Endurance travel made comfortable for western Nepal expeditions." }
+      ]
+    }
+  },
+  "premium-fleet": {
+    "whyRentWithUs": {
+      "headline": "Why Choose Our Premium VIP Fleet in Nepal?",
+      "description": "Exceed expectations with our elite VIP luxury vehicles. Designed for high-end events, diplomatic delegations, and VIP corporate retreats, our premium fleet delivers uncompromising privacy, supreme elegance, and impeccable personalized service.",
+      "points": [
+        { "title": "Unrivaled Luxury Interiors", "description": "Travel in sophisticated elegance with premium leather, advanced climate control, and whisper-quiet cabins." },
+        { "title": "Utmost Privacy & Security", "description": "Tinted windows and discrete service ensure your journey remains private and secure." },
+        { "title": "Top-Tier Professional Chauffeurs", "description": "Our elite drivers are rigorously trained in VIP etiquette, defensive driving, and discrete service." },
+        { "title": "Impeccable Reliability", "description": "Flawlessly maintained vehicles guaranteeing a smooth, prestigious arrival at any high-profile event." }
+      ]
+    },
+    "howItWorks": {
+      "headline": "How to Reserve VIP Transportation",
+      "steps": [
+        { "step": 1, "title": "Choose Your Luxury Vehicle", "description": "Select from our exclusive fleet of high-end sedans and premium SUVs." },
+        { "step": 2, "title": "Book Online", "description": "Make a secure reservation for your VIP travel requirements." },
+        { "step": 3, "title": "Set Pickup & Drop", "description": "Arrange bespoke, discrete pickup logistics tailored to your schedule." },
+        { "step": 4, "title": "Sit Back & Relax", "description": "Experience world-class chauffeured service in absolute luxury." }
+      ]
+    },
+    "popularRoutes": {
+      "headline": "Exclusive VIP Itineraries",
+      "routes": [
+        { "name": "Kathmandu Luxury City Tour", "duration": "Full Day", "highlight": "Explore the capital's heritage with seamless VIP service and comfort." },
+        { "name": "Pokhara VIP Retreat", "duration": "Multiple Days", "highlight": "A luxurious journey to and around the pristine lakeside city." },
+        { "name": "Chitwan Safari VIP", "duration": "Multiple Days", "highlight": "Travel in premium comfort to exclusive high-end jungle lodges." },
+        { "name": "Lumbini Pilgrimage VIP", "duration": "Multiple Days", "highlight": "A serene, private, and highly comfortable spiritual journey." },
+        { "name": "Executive Corporate Retreats", "duration": "Variable", "highlight": "Discrete and prestigious transportation for top-level management." },
+        { "name": "Diplomatic Airport Transfers", "duration": "Variable", "highlight": "Punctual, secure, and elegant arrivals and departures from TIA." }
+      ]
+    }
+  }
+}

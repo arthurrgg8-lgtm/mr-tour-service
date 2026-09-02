@@ -68,11 +68,41 @@ export function scrollToId(id: string, offset = 100, addGlow = false) {
 
 /**
  * Sanitizes user input by removing potentially dangerous characters
- * to prevent injection attacks in URLs and messages.
+ * and enforcing maximum length to prevent injection attacks and DoS.
  */
-export function sanitizeInput(input: string): string {
+export function sanitizeInput(input: string, maxLength = 500): string {
+  if (typeof input !== "string") return ""
   return input
-    .replace(/[<>"'\\]/g, '') // Remove HTML tags and dangerous chars
-    .replace(/[\x00-\x08\x0B\x0C\x0E-\x1F]/g, '') // Remove control characters
+    .slice(0, maxLength)
+    .replace(/[<>"'\\]/g, "") // Remove HTML tags and injection delimiters
+    .replace(/[\x00-\x08\x0B\x0C\x0E-\x1F]/g, "") // Remove control characters
     .trim()
+}
+
+/**
+ * Validates email addresses against common injection patterns.
+ */
+export function isValidEmail(email: string): boolean {
+  if (!email || email.length > 254) return false
+  const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)+$/
+  return emailRegex.test(email.trim())
+}
+
+/**
+ * Validates phone numbers (allows digits, spaces, hyphens, plus).
+ */
+export function isValidPhone(phone: string): boolean {
+  if (!phone || phone.length > 25) return false
+  return /^[+0-9\s\-()]{7,25}$/.test(phone.trim())
+}
+
+/**
+ * Safely serializes JSON for inclusion inside <script type="application/ld+json">
+ * tags, neutralizing script tag breakouts and HTML injection attacks (OWASP standard).
+ */
+export function safeJsonLdStringify(data: unknown): string {
+  return JSON.stringify(data)
+    .replace(/</g, "\\u003c")
+    .replace(/>/g, "\\u003e")
+    .replace(/&/g, "\\u0026")
 }

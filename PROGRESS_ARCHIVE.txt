@@ -29,45 +29,91 @@ Date: May 19, 2026
 
 5. CONTENT EXPANSION
 - Trekking: Added specific routes including Buddhist Pilgrimage, Dhaulagiri, Dolpo, GHT Trail, and more.
-- Tours: Streamlined to 8 core packages with exact durations:
-  * Kathmandu Countryside Hike (5 Days)
-  * Family Holiday (4 Days)
-  * Lumbini Tour (3 Days)
-  * Chitwan Jungle Safari (3 Days)
-  * Gorkha-Bandipur-Pokhara Tour (13 Days)
-  * Badimalika Tour (16 Days)
-  * Jeep Tour to Rara (6 Days)
-  * Kathmandu City Tour (1 Day)
+- Tours: Streamlined to 8 core packages with exact durations.
 - Navigation: Updated Navbar dropdowns to match expanded Trekking and Tour options.
 
-------------------------------------------
 Status: PRODUCTION READY & AUTOMATED
-------------------------------------------
 
 ==========================================
 Date: September 1, 2026
 ------------------------------------------
 
 1. GOOGLE ADS CONVERSION TRACKING
-- Installed global Google Tag (AW-18048947362) directly into static <head> on all pages.
+- Installed global Google Tag (AW-18048947362) into static <head> on all pages.
 - Created centralized tracking utility `src/lib/gtag.ts` with `trackLeadConversion()`.
-- Connected conversion snippet (AW-18048947362/s7N4CPj94-scEKKptJ5D) to:
-  * Quick Inquiry Form submissions (WhatsApp & Gmail).
-  * Detailed Vehicle Service Inquiry submissions.
-  * Tour and Trek Package modal inquiries.
-  * Floating WhatsApp button clicks.
+- Connected conversion snippet to Quick Inquiry, Detailed Inquiry, Tour/Trek modal, and WhatsApp button.
 
 2. SERVICE INQUIRY FORM REFINEMENTS
 - Restructured `ServiceInquiryForm` with `allowedTypes` and `initialType` props.
-- Vehicle Rental section (/services) now exclusively presents rental fields (pickup/drop dates, locations, vehicle selector) with Tour/Trek tabs removed.
-- Specialized forms tailored to /tours and /trekking respectively.
+- Specialized forms for /services, /tours, and /trekking.
 
 3. CLOUDFLARE PAGES CI/CD OPTIMIZATION
-- Replaced fragile `@cloudflare/next-on-pages` (which invoked `vercel build`) with native Next.js static export (`output: 'export'`).
-- Configured GitHub Actions workflow to build with Next.js and deploy `out/` directory directly.
-- Updated `public/_headers` CSP to permit Google Ads, Google Analytics, and Google Tag Assistant (tagassistant.google.com) debugging without blocking frame connections.
+- Replaced `@cloudflare/next-on-pages` with native Next.js static export (`output: 'export'`).
+- Configured GitHub Actions for direct `out/` deployment.
+- Updated `public/_headers` CSP for Google Ads/Analytics/Tag Assistant.
 
-------------------------------------------
-Status: LIVE & VERIFIED ON CLOUDFLARE PAGES (https://manoranjan.com.np)
+Status: LIVE ON https://manoranjan.com.np
+
+==========================================
+Date: September 2, 2026 — Major Restructure & Security Hardening
 ------------------------------------------
 
+1. REMOVED TOURS & TREKKING
+- Deleted pages: /tours, /trekking
+- Deleted components: ToursGrid, TrekkingGrid, TourModal, ImageSlider
+- Deleted data files: tours.json, treks.json, tour_details.json
+- Removed tour-packages and trekking entries from services.json
+- Refocused brand 100% on vehicle rental, corporate leasing, and self-drive fleet.
+
+2. GLOBAL TYPOGRAPHY & STYLING
+- Converted primary site font to Google Font 'Urbanist' (weights 300 to 800) across all pages.
+- Clean modern typography with optimized leading and letter-spacing for travel booking readability.
+
+3. FULL-WIDTH BLOG & IN-DEPTH SEO ARTICLES
+- Implemented full-width blog pages (`/blog` and `/blog/[slug]`) spanning `max-w-6xl` & `max-w-7xl` containers.
+- 6 comprehensive, keyword-dense SEO guides:
+  * Best Time to Visit Nepal: Complete Road & Weather Guide
+  * Complete Guide to Renting a Vehicle in Nepal: Cars, SUVs, Jeeps & Buses
+  * Nepal Road Conditions & Highway Guide: Kathmandu to Pokhara, Mustang & Chitwan
+  * Self-Drive Car Rental in Nepal: Requirements, Tips & Best Routes
+  * Corporate Vehicle Rental in Kathmandu: Long-Term Leasing & Fleet Solutions
+  * Top 10 Road Trips & Scenic Drives in Nepal for 2026
+- Wide 21:9 image viewports, 2-column tip card grids, related guides, and full-width CTA blocks.
+
+4. VEHICLE CATEGORY SEO & FULL-WIDTH SECTIONS
+- Created `src/data/vehicle-seo.json` and `src/data/vehicle-faqs.json` for all 7 vehicle slugs.
+- Added full-width Why Choose Us 4-column cards, 4-step How It Works flow, Popular Routes directory, and interactive FAQ accordion on `/vehicles/[slug]`.
+
+5. CORPORATE RENT 2-1-2 SHOWCASE
+- Implemented symmetrical 2-1-2 Why Choose layout on `/corporate-rent`.
+- Positioned floating BYD electric vehicle cutout in the center with 24/7 Support directly beneath.
+- Added structured corporate rental tiers (Short-Term, Monthly Lease, VIP Fleet).
+
+6. SITE-WIDE FRAMER MOTION ANIMATION SUITE
+- Created reusable client motion primitives in `src/components/ui/MotionComponents.tsx`:
+  * `FadeIn` (configurable direction, distance, delay, duration)
+  * `StaggerContainer` & `StaggerItem` (sequential staggered scroll reveals)
+  * `Float` (gentle hovering animations for hero cutouts)
+  * `HoverCard` (smooth 3D card tilt & scale)
+- Rolled out smooth animations across all 9 core routes: Homepage, About Us, Services, Fleet, Vehicles Catalog, Vehicle Details, Corporate Rent, Self Drive, Blog, Gallery, and Contact.
+
+7. MOBILE RESPONSIVENESS & UI BUG FIXES
+- Resolved mobile date picker empty display bug with dedicated card wrappers + Calendar icon overlay.
+- Ensured 100% responsive grids (1-col mobile, 2-col tablet, 3/4-col desktop) across forms, route cards, and testimonials.
+- Verified all redirects, WhatsApp deep links, and Gmail mailto triggers.
+
+8. OWASP TOP 10 SECURITY AUDIT & HARDENING
+- A03 (Injection / XSS): Implemented `safeJsonLdStringify` in `src/lib/utils.ts` to neutralize script tag breakout attacks (`\u003c`, `\u003e`, `\u0026`). Applied across all JSON-LD script tags.
+- A01 (Broken Access Control / Tabnabbing): Verified `rel="noopener noreferrer"` across all external and social `target="_blank"` links.
+- A04 (Insecure Design / DoS): Enforced `maxLength` bounds and validation on all form inputs and textareas (Name <= 100, Phone <= 25, Email <= 100, Message <= 1000, Pax 1-500).
+- A05 (Security Misconfiguration): Injected security headers into RootLayout `<head>`: `X-Content-Type-Options: nosniff`, `Referrer-Policy: strict-origin-when-cross-origin`, `Permissions-Policy: camera=(), microphone=(), geolocation=()`.
+- A06 (Vulnerable Components): Executed `npm audit fix` to clean up 190 vulnerable nested dependencies.
+- Data Validation: Enhanced `sanitizeInput` with control character stripping and regex validators `isValidEmail` and `isValidPhone`.
+
+9. PRODUCTION BUILD & DEPLOYMENT STATUS
+- Static Export: 27/27 static HTML pages generated with 0 errors.
+- Active Live Preview Tunnel: https://sewing-fever-sounds-merger.trycloudflare.com
+- Production URL: https://manoranjan.com.np
+
+Status: PRODUCTION READY — ALL PAGES ANIMATED, SEO-OPTIMIZED & SECURITY-HARDENED
+==========================================

@@ -1,12 +1,10 @@
 import type { Metadata } from "next"
 import Hero from "@/components/sections/Hero"
 import WhyChooseSummary from "@/components/sections/WhyChooseSummary"
-import FeaturedServices from "@/components/sections/FeaturedServices"
-import WhyChooseUs from "@/components/sections/WhyChooseUs"
 import Testimonials from "@/components/sections/Testimonials"
 import ScrollAnimation from "@/components/ui/ScrollAnimation"
 import Link from "next/link"
-import { Map as MapIcon, Phone, MessageCircle } from "lucide-react"
+import { Phone, MessageCircle, Map as MapIcon } from "lucide-react"
 import business from "@/data/business.json"
 import { buildWhatsAppUrl } from "@/lib/utils"
 
@@ -21,35 +19,11 @@ export default function Home() {
     <>
       <Hero />
       <ScrollAnimation>
-        <FeaturedServices />
-      </ScrollAnimation>
-      <ScrollAnimation>
         <WhyChooseSummary />
-      </ScrollAnimation>
-      <ScrollAnimation>
-        <WhyChooseUs />
       </ScrollAnimation>
       
       <ScrollAnimation>
         <Testimonials />
-      </ScrollAnimation>
-      
-      {/* Gallery Teaser Section */}
-      <ScrollAnimation>
-        <section className="py-24 bg-slate-50">
-          <div className="container mx-auto px-4 text-center">
-            <h2 className="text-3xl md:text-5xl font-bold mb-6">Our Journey in Pictures</h2>
-            <p className="text-muted-foreground text-lg mb-10 max-w-2xl mx-auto">
-              Explore our collection of travel memories, professional fleet, and happy customers across the diverse landscapes of Nepal.
-            </p>
-            <Link 
-              href="/gallery"
-              className="inline-flex h-14 items-center justify-center rounded-xl bg-primary px-10 text-lg font-bold text-white hover:bg-primary/90 transition-all shadow-xl shadow-primary/20"
-            >
-              View Full Gallery
-            </Link>
-          </div>
-        </section>
       </ScrollAnimation>
 
       {/* Map Section */}

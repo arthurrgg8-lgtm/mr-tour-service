@@ -1,24 +1,25 @@
 "use client"
 
-import { useEffect, useRef, useState } from "react"
+import { useEffect, useRef } from "react"
 import Link from "next/link"
-import { MessageCircle, Car, Map as MapIcon, ShieldCheck } from "lucide-react"
+import { Car, Map as MapIcon, ShieldCheck, Search, Calendar, CreditCard, Navigation, ChevronRight } from "lucide-react"
 import gsap from "gsap"
 import business from "@/data/business.json"
 import Image from "next/image"
-import { motion, AnimatePresence } from "framer-motion"
+import ServiceInquiryForm from "@/components/sections/ServiceInquiryForm"
 
-const heroImages = [
-  "/images/hero/hero-nepal.jpeg",
-  "/images/hero/hero-trek.jpeg",
-  "/images/hero/hero-triple-tour.jpeg",
-  "/images/hero/hero-pashupati.webp",
-  "/images/hero/hero-tibet.jpeg",
-  "/images/hero/hero-1.jpg",
-  "/images/hero/hero-2.jpg",
-  "/images/hero/hero-3.jpg",
-  "/images/hero/hero-4.jpg",
-  "/images/hero/hero-5.jpg",
+const TICKER_ITEMS = [
+  { name: "Car", href: "/vehicles/car-rent" },
+  { name: "Jeep", href: "/vehicles/jeep-rent" },
+  { name: "SUV", href: "/vehicles/suv-rent" },
+  { name: "Premium Fleet", href: "/vehicles/premium-fleet" },
+  { name: "Hiace", href: "/vehicles/hiace-rent" },
+  { name: "Sutlej Bus", href: "/vehicles/bus-rent" },
+  { name: "Mini Bus", href: "/vehicles/minibus-rent" },
+  { name: "Self Drive", href: "/self-drive" },
+  { name: "Sedan", href: "/vehicles/car-rent" },
+  { name: "4x4 Off-Road", href: "/vehicles/jeep-rent" },
+  { name: "Corporate Fleet", href: "/corporate-rent" },
 ]
 
 export default function Hero() {
@@ -27,15 +28,6 @@ export default function Hero() {
   const subtitleRef = useRef<HTMLParagraphElement>(null)
   const ctaRef = useRef<HTMLDivElement>(null)
   const statsRef = useRef<HTMLDivElement>(null)
-  
-  const [currentImage, setCurrentImage] = useState(0)
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentImage((prev) => (prev + 1) % heroImages.length)
-    }, 5000)
-    return () => clearInterval(timer)
-  }, [])
 
   useEffect(() => {
     const tl = gsap.timeline({ defaults: { ease: "power3.out" } })
@@ -68,114 +60,106 @@ export default function Hero() {
   return (
     <section 
       ref={containerRef}
-      className="relative min-h-[95vh] sm:min-h-screen flex items-center pt-24 pb-16 sm:py-32 overflow-hidden bg-slate-900"
+      className="relative min-h-[95vh] sm:min-h-screen flex flex-col justify-between pt-24 pb-0 overflow-hidden bg-slate-900"
     >
-      {/* Background Image Slider with Overlay */}
+      {/* Background Image (single, no slideshow) */}
       <div className="absolute inset-0 z-0">
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={currentImage}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 1.2, ease: "easeInOut" }}
-            className="absolute inset-0"
-          >
-            <Image 
-              src={heroImages[currentImage]} 
-              alt={`Scenic Nepal travel view - ${business.name} hero image ${currentImage + 1}`}
-              fill
-              className="object-cover"
-              priority={currentImage === 0}
-              loading={currentImage === 0 ? "eager" : "lazy"}
-              sizes="100vw"
-            />
-          </motion.div>
-        </AnimatePresence>
-        
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-950/60 via-slate-950/20 to-transparent" />
-        {/* <div className="absolute top-[-10%] right-[-10%] w-[50%] h-[50%] rounded-full bg-primary/20 blur-[120px]" /> */}
-        
-        {/* Slider Indicators (Sleek right-aligned layout to balance left-aligned text) */}
-        <div className="absolute bottom-8 right-4 sm:right-10 md:right-16 z-20 flex gap-2">
-          {heroImages.map((_, idx) => (
+        <Image 
+          src="/images/hero/hero-nepal.jpeg" 
+          alt={`Premium vehicle rental service - ${business.name}`}
+          fill
+          className="object-cover"
+          priority
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-950/80 via-slate-950/40 to-slate-950/60" />
+      </div>
+
+      <div className="container mx-auto px-4 z-10 flex-1 flex flex-col justify-center pb-8 pt-4">
+        {/* Top: Title + Inquiry Form */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
+          {/* Left: Title + Subtitle */}
+          <div className="max-w-2xl">
+            <h1 
+              ref={titleRef}
+              className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white leading-[1.1] mb-6 drop-shadow-md"
+            >
+              {business.slogan} <br />
+              <span className="text-primary">with Premium Service</span>
+            </h1>
+
+            <p 
+              ref={subtitleRef}
+              className="text-lg md:text-xl text-slate-300 max-w-xl mb-8 leading-relaxed drop-shadow-sm"
+            >
+              {business.tagline}. From luxury vehicle rentals to corporate solutions, 
+              we own our fleet to ensure the highest standards of safety and comfort.
+            </p>
+
+            {/* Quick Stats */}
             <div 
-              key={idx}
-              className={`h-1.5 rounded-full transition-all duration-500 ${
-                idx === currentImage ? "w-8 bg-primary" : "w-2.5 bg-white/30 hover:bg-white/50 cursor-pointer"
-              }`}
-              onClick={() => setCurrentImage(idx)}
-            />
-          ))}
+              ref={statsRef}
+              className="grid grid-cols-3 gap-4 border-t border-white/10 pt-5"
+            >
+              <div className="text-center">
+                <p className="text-xl font-black text-primary">20+</p>
+                <p className="text-[10px] text-slate-400 uppercase tracking-wide">Years Experience</p>
+              </div>
+              <div className="text-center">
+                <p className="text-xl font-black text-primary">100%</p>
+                <p className="text-[10px] text-slate-400 uppercase tracking-wide">Owned Fleet</p>
+              </div>
+              <div className="text-center">
+                <p className="text-xl font-black text-primary">24/7</p>
+                <p className="text-[10px] text-slate-400 uppercase tracking-wide">Support</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Right: Service Inquiry Form */}
+          <div className="hidden lg:block lg:pt-4">
+            <ServiceInquiryForm initialType="Rental" allowedTypes={["Rental"]} compact dark />
+          </div>
+        </div>
+
+        {/* Mobile: Inquiry form below */}
+        <div className="lg:hidden mt-12">
+          <ServiceInquiryForm initialType="Rental" allowedTypes={["Rental"]} compact dark />
+        </div>
+
+        {/* Steps Flow — Responsive Grid */}
+        <div ref={ctaRef} className="mt-10 border-t border-white/10 pt-8">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-8">
+            {[
+              { num: "01", title: "Find Your Perfect Ride", desc: "Browse our full fleet of well-maintained cars, SUVs, and buses for rent. Filter by type, capacity, and price." },
+              { num: "02", title: "Choose Date & Location", desc: "Select your pickup date, return date, and preferred location. Real-time availability guaranteed." },
+              { num: "03", title: "Book With Ease", desc: "Secure your rental in minutes. Transparent pricing, instant confirmation, no hidden fees." },
+              { num: "04", title: "Hit the Road", desc: "Pick up and go. Safety-checked rides with 24/7 support, anywhere you travel." },
+            ].map((step, i) => (
+              <div key={i} className="flex flex-col">
+                <div className="text-[10px] font-black text-primary mb-1.5 font-mono">{step.num}</div>
+                <h4 className="text-xs sm:text-sm font-bold text-white mb-1 leading-tight">{step.title}</h4>
+                <p className="text-[11px] text-slate-400 leading-relaxed">{step.desc}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 
-      <div className="container mx-auto px-4 z-10">
-        <div className="max-w-4xl">
-          <h1 
-            ref={titleRef}
-            className="text-4xl md:text-7xl font-extrabold text-white leading-[1.1] mb-6 drop-shadow-md"
-          >
-            {business.slogan} <br />
-            <span className="text-primary">with Premium Service</span>
-          </h1>
-
-          <p 
-            ref={subtitleRef}
-            className="text-lg md:text-xl text-slate-300 max-w-2xl mb-10 leading-relaxed drop-shadow-sm"
-          >
-            {business.tagline}. From luxury vehicle rentals to custom tour packages and trekking, 
-            we own our fleet to ensure the highest standards of safety and comfort.
-          </p>
-
-          <div ref={ctaRef} className="flex flex-col sm:flex-row gap-4 mb-16">
-            <Link 
-              href="/services#inquiry-form"
-              className="group flex items-center justify-center gap-2 h-14 px-8 rounded-xl bg-primary text-white font-bold hover:bg-primary/90 transition-all shadow-lg shadow-primary/25 text-center sm:w-auto"
-            >
-              Enquire Now
-              <MessageCircle className="h-5 w-5 group-hover:scale-110 transition-transform" />
-            </Link>
-            <Link 
-              href="/services"
-              className="group flex items-center justify-center h-14 px-8 rounded-xl bg-white/10 text-white font-bold hover:bg-white/20 transition-all border border-white/20 text-center sm:w-auto backdrop-blur-sm"
-            >
-              Our Services
-            </Link>
-          </div>
-
-          <div 
-            ref={statsRef}
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 border-t border-white/10 pt-10"
-          >
-            <div className="flex items-center gap-4">
-              <div className="h-12 w-12 rounded-lg bg-white/5 flex items-center justify-center border border-white/10 text-primary shrink-0">
-                <Car className="h-6 w-6" />
-              </div>
-              <div>
-                <p className="text-2xl font-bold text-white">Fully Owned</p>
-                <p className="text-xs text-slate-400 uppercase tracking-wide">Vehicle Fleet</p>
-              </div>
-            </div>
-            <div className="flex items-center gap-4">
-              <div className="h-12 w-12 rounded-lg bg-white/5 flex items-center justify-center border border-white/10 text-primary shrink-0">
-                <MapIcon className="h-6 w-6" />
-              </div>
-              <div>
-                <p className="text-2xl font-bold text-white">Custom Tours</p>
-                <p className="text-xs text-slate-400 uppercase tracking-wide">Across Nepal</p>
-              </div>
-            </div>
-            <div className="flex items-center gap-4">
-              <div className="h-12 w-12 rounded-lg bg-white/5 flex items-center justify-center border border-white/10 text-primary shrink-0">
-                <ShieldCheck className="h-6 w-6" />
-              </div>
-              <div>
-                <p className="text-2xl font-bold text-white">Professional</p>
-                <p className="text-xs text-slate-400 uppercase tracking-wide">Trained Drivers</p>
-              </div>
-            </div>
-          </div>
+      {/* Running Marquee Banner (Right to Left with Light Glassmorphism) */}
+      <div className="w-full bg-black/20 backdrop-blur-md border-t border-white/10 py-3.5 sm:py-4 overflow-hidden z-20 relative select-none shadow-[0_-5px_20px_rgba(0,0,0,0.2)]">
+        <div className="animate-marquee flex items-center whitespace-nowrap">
+          {[...TICKER_ITEMS, ...TICKER_ITEMS, ...TICKER_ITEMS, ...TICKER_ITEMS].map((item, idx) => (
+            <span key={idx} className="flex items-center">
+              <Link 
+                href={item.href}
+                className="text-primary hover:text-white font-black text-sm sm:text-base tracking-wider uppercase transition-colors duration-200"
+              >
+                {item.name}
+              </Link>
+              <span className="text-white/20 font-bold mx-4 sm:mx-6">–</span>
+            </span>
+          ))}
         </div>
       </div>
     </section>

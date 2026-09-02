@@ -4,7 +4,8 @@ import business from "@/data/business.json"
 import { Check, MessageCircle, Users, Luggage, Shield } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
-import { buildWhatsAppUrl } from "@/lib/utils"
+import { buildWhatsAppUrl, safeJsonLdStringify } from "@/lib/utils"
+import { FadeIn, StaggerContainer, StaggerItem } from "@/components/ui/MotionComponents"
 
 export const metadata: Metadata = {
   title: "Car & Vehicle Rental in Nepal - Premium Fleet",
@@ -70,11 +71,11 @@ export default function FleetPage() {
     <div className="pt-20 pb-24 w-full overflow-x-hidden">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: safeJsonLdStringify(jsonLd) }}
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: safeJsonLdStringify(itemListJsonLd) }}
       />
       {/* Header */}
       <section className="relative bg-slate-900 py-32 text-white overflow-hidden">
@@ -89,23 +90,23 @@ export default function FleetPage() {
           <div className="absolute inset-0 bg-gradient-to-b from-slate-900/60 to-slate-900" />
         </div>
         <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">Car & Vehicle Rental Fleet in Nepal</h1>
+          <FadeIn direction="up" className="max-w-3xl">
+            <h1 className="text-4xl md:text-6xl font-bold mb-6">Car &amp; Vehicle Rental Fleet in Nepal</h1>
             <p className="text-xl text-slate-300 leading-relaxed">
               We own 100% of our fleet, ensuring that every vehicle you book 
               meets our high standards for safety, cleanliness, and comfort. 
               All rentals include professional, trained drivers.
             </p>
-          </div>
+          </FadeIn>
         </div>
       </section>
 
       {/* Fleet Catalog */}
       <section className="py-24 bg-white">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <StaggerContainer staggerDelay={0.1} className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {fleet.map((vehicle) => (
-              <div 
+              <StaggerItem 
                 key={vehicle.id}
                 className="group flex flex-col md:flex-row bg-slate-50 rounded-3xl overflow-hidden border hover:shadow-2xl transition-all duration-500"
               >
@@ -171,40 +172,42 @@ export default function FleetPage() {
                     Book This Vehicle
                   </Link>
                 </div>
-              </div>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerContainer>
         </div>
       </section>
 
       {/* Fleet Info Banner */}
       <section className="container mx-auto px-4 mb-24">
-        <div className="bg-slate-900 rounded-3xl p-12 text-white relative overflow-hidden">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 relative z-10">
-            <div>
-              <h4 className="text-primary font-bold uppercase tracking-widest text-xs mb-4">Driver Standards</h4>
-              <p className="text-sm text-slate-300">
-                All our drivers are trained, licensed, and have extensive experience 
-                handling international tourists and navigating diverse terrains.
-              </p>
+        <FadeIn direction="up">
+          <div className="bg-slate-900 rounded-3xl p-12 text-white relative overflow-hidden">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-12 relative z-10">
+              <div>
+                <h4 className="text-primary font-bold uppercase tracking-widest text-xs mb-4">Driver Standards</h4>
+                <p className="text-sm text-slate-300">
+                  All our drivers are trained, licensed, and have extensive experience 
+                  handling international tourists and navigating diverse terrains.
+                </p>
+              </div>
+              <div>
+                <h4 className="text-primary font-bold uppercase tracking-widest text-xs mb-4">Maintenance</h4>
+                <p className="text-sm text-slate-300">
+                  Our vehicles undergo regular servicing and pre-trip inspections to 
+                  ensure maximum safety and zero breakdowns.
+                </p>
+              </div>
+              <div>
+                <h4 className="text-primary font-bold uppercase tracking-widest text-xs mb-4">Custom Rental</h4>
+                <p className="text-sm text-slate-300">
+                  Need a vehicle for a specific duration or a special event like a wedding? 
+                  We offer flexible rental periods and decorations.
+                </p>
+              </div>
             </div>
-            <div>
-              <h4 className="text-primary font-bold uppercase tracking-widest text-xs mb-4">Maintenance</h4>
-              <p className="text-sm text-slate-300">
-                Our vehicles undergo regular servicing and pre-trip inspections to 
-                ensure maximum safety and zero breakdowns.
-              </p>
-            </div>
-            <div>
-              <h4 className="text-primary font-bold uppercase tracking-widest text-xs mb-4">Custom Rental</h4>
-              <p className="text-sm text-slate-300">
-                Need a vehicle for a specific duration or a special event like a wedding? 
-                We offer flexible rental periods and decorations.
-              </p>
-            </div>
+            <div className="absolute top-0 right-0 w-64 h-64 bg-primary/10 rounded-full blur-3xl -mr-32 -mt-32" />
           </div>
-          <div className="absolute top-0 right-0 w-64 h-64 bg-primary/10 rounded-full blur-3xl -mr-32 -mt-32" />
-        </div>
+        </FadeIn>
       </section>
     </div>
   )

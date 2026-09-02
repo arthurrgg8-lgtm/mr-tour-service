@@ -2,77 +2,32 @@
 
 import Link from "next/link"
 import Image from "next/image"
-import { Phone, MessageCircle, Menu, X, ChevronDown, Sparkles } from "lucide-react"
+import { Phone, MessageCircle, Menu, X, ChevronDown } from "lucide-react"
 import business from "@/data/business.json"
 import { useState, useEffect, useMemo, useCallback } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { usePathname } from "next/navigation"
 import { buildWhatsAppUrl, scrollToId, cn } from "@/lib/utils"
 
-// Move navigation data outside component to prevent re-creation
 const NAV_LINKS = [
   { name: "HOME", href: "/" },
-  { name: "GALLERY", href: "/gallery" },
+  { name: "CORPORATE RENT", href: "/corporate-rent" },
+  { name: "SELF DRIVE", href: "/self-drive" },
   { name: "ABOUT", href: "/about" },
+  { name: "BLOG", href: "/blog" },
   { name: "CONTACT", href: "/contact" },
 ]
 
-const VEHICLE_SERVICES = [
-  { name: "Car", capacity: "4 seater", price: "NPR 5,000", href: "/services#car-rent" },
-  { name: "SUV", capacity: "4 seater", price: "NPR 6,000", href: "/services#suv-rent" },
-  { name: "Jeep", capacity: "7 seater", price: "NPR 7,000", href: "/services#jeep-rent" },
-  { name: "Hiace", capacity: "14 seater", price: "NPR 8,000", href: "/services#hiace-rent" },
-  { name: "Mini bus", capacity: "18-22 seater", price: "NPR 11,000", href: "/services#minibus-rent" },
-  { name: "Sutlej bus", capacity: "25-35 seater", price: "NPR 14,000", href: "/services#bus-rent" },
-  { name: "Premium fleet", capacity: "7-32 seater", price: "NPR 15,000", href: "/services#premium-fleet" },
+const VEHICLE_DROPDOWN = [
+  { name: "Car", capacity: "4 seater", price: "NPR 5,000", href: "/vehicles/car-rent" },
+  { name: "SUV", capacity: "4 seater", price: "NPR 6,000", href: "/vehicles/suv-rent" },
+  { name: "Jeep", capacity: "7 seater", price: "NPR 7,000", href: "/vehicles/jeep-rent" },
+  { name: "Hiace", capacity: "14 seater", price: "NPR 8,000", href: "/vehicles/hiace-rent" },
+  { name: "Mini Bus", capacity: "18-22 seater", price: "NPR 11,000", href: "/vehicles/minibus-rent" },
+  { name: "Sutlej Bus", capacity: "25-35 seater", price: "NPR 14,000", href: "/vehicles/bus-rent" },
+  { name: "Premium Fleet", capacity: "7-32 seater", price: "NPR 15,000", href: "/vehicles/premium-fleet" },
 ]
 
-const TOUR_SERVICES = [
-  { name: "KTM LOCAL TOUR (4 DAYS)", href: "/tours#tour-9" },
-  { name: "KTM-PKR-CHITWAN (8 DAYS)", href: "/tours#tour-10" },
-  { name: "KTM-PKR-CHITWAN-LUMBINI (10D)", href: "/tours#tour-11" },
-  { name: "KTM-PKR-GHANDRUK-CHITWAN (9D)", href: "/tours#tour-12" },
-  { name: "KTM-PKR-GHANDRUK (7 DAYS)", href: "/tours#tour-13" },
-  { name: "KTM-NAGARKOT TOUR (5 DAYS)", href: "/tours#tour-14" },
-  { name: "KTM-DHULIKHEL-NAMOBUDDHA (3D)", href: "/tours#tour-dhulikhel-3d" },
-  { name: "KTM COUNTRYSIDE HIKE (5D)", href: "/tours#tour-1" },
-  { name: "NEPAL UNESCO TOUR (8 DAYS)", href: "/tours#tour-27" },
-  { name: "FAMILY HOLIDAY (12 DAYS)", href: "/tours#tour-2" },
-  { name: "TOUR WITH KIDS (12 DAYS)", href: "/tours#tour-26" },
-  { name: "ANNAPURNA-CHITWAN HOLIDAYS (12D)", href: "/tours#tour-24" },
-  { name: "GORKHA-BANDIPUR-POKHARA (13D)", href: "/tours#tour-5" },
-  { name: "NEPAL CULTURAL TOUR (7 DAYS)", href: "/tours#tour-16" },
-  { name: "NEPAL SPIRITUAL TOUR (7 DAYS)", href: "/tours#tour-17" },
-  { name: "YOGA AND MEDITATION TOUR (9D)", href: "/tours#tour-15" },
-  { name: "BUDDHIST PILGRIMAGE TOUR (8D)", href: "/tours#tour-23" },
-  { name: "MUKTINATH SPIRITUAL TOUR (7D)", href: "/tours#tour-18" },
-  { name: "UPPER MUSTANG TOUR (9 DAYS)", href: "/tours#tour-25" },
-  { name: "BADIMALIKA TOUR (16 DAYS)", href: "/tours#tour-6" },
-  { name: "JEEP TOUR TO RARA (8 DAYS)", href: "/tours#tour-19" },
-  { name: "CHITWAN JUNGLE SAFARI (3 DAYS)", href: "/tours#tour-4" },
-  { name: "LUMBINI TOUR (3 DAYS)", href: "/tours#tour-3" },
-  { name: "POKHARA ADVENTURE TOUR (3D)", href: "/tours#tour-pokhara-3d" },
-  { name: "ONE DAY KTM TOUR", href: "/tours#tour-8" },
-  { name: "BUNGEE JUMPING (1 DAY)", href: "/tours#tour-22" },
-  { name: "BHOTEKOSHI RAFTING (2 DAYS)", href: "/tours#tour-20" },
-  { name: "TRISHULI RAFTING (2 DAYS)", href: "/tours#tour-21" },
-]
-
-const TREKKING_REGIONS = [
-  { name: "EVEREST REGION", href: "/trekking#everest-region" },
-  { name: "ANNAPURNA REGION", href: "/trekking#annapurna-region" },
-  { name: "LANGTANG REGION", href: "/trekking#langtang-region" },
-  { name: "KAILASH MANSAROVAR", href: "/trekking#kailash-region" },
-  { name: "BUDDHIST PILGRIMAGE TREKKING", href: "/trekking#buddhist-pilgrimage" },
-  { name: "UPPER MUSTANG", href: "/trekking#upper-mustang-region" },
-  { name: "KANCHANJUNGA", href: "/trekking#kanchanjunga-region" },
-  { name: "MAKALU", href: "/trekking#makalu-region" },
-  { name: "MANASLU & TSUM VALLEY", href: "/trekking#manaslu-and-tsum-valley-region" },
-  { name: "UPPER & LOWER DOLPO", href: "/trekking#upper---lower-dolpo-region" },
-  { name: "GHT TRAIL", href: "/trekking#great-himalayan-trail" },
-  { name: "DHAULAGIRI REGION", href: "/trekking#dhaulagiri-region" },
-  { name: "FAR WESTERN NEPAL", href: "/trekking#far-western-trek-region" },
-]
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
@@ -81,12 +36,9 @@ export default function Navbar() {
   const pathname = usePathname()
 
   const dropdowns = useMemo(() => [
-    { id: "vehicle", name: "VEHICLE", items: VEHICLE_SERVICES, baseHref: "/services" },
-    { id: "tour", name: "TOUR", items: TOUR_SERVICES, baseHref: "/tours" },
-    { id: "trekking", name: "TREKKING", items: TREKKING_REGIONS, baseHref: "/trekking" },
+    { id: "vehicle", name: "VEHICLE", items: VEHICLE_DROPDOWN, baseHref: "/vehicles" },
   ], [])
 
-  // Handle scroll state for navbar appearance
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20)
@@ -95,18 +47,16 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
-  // Improved stable redirect logic for hash links
   const handleHashNavigation = useCallback(function hashNav(retryCount = 0) {
     const hash = window.location.hash.substring(1)
     if (hash) {
-      // Use requestAnimationFrame for smoother synchronization with browser render
       requestAnimationFrame(() => {
         setTimeout(() => {
           const success = scrollToId(hash, 100, true)
           if (!success && retryCount < 10) {
             hashNav(retryCount + 1)
           }
-        }, 100 * (retryCount + 1)) // Incremental delay if not found
+        }, 100 * (retryCount + 1))
       })
     }
   }, [])
@@ -125,13 +75,10 @@ export default function Navbar() {
     if (href.includes("#")) {
       const [path, hash] = href.split("#")
       
-      // If we're already on the target page, intercept for smooth scroll
       if (pathname === path || (pathname === "/" && path === "")) {
         e.preventDefault()
         window.history.pushState(null, "", href)
         scrollToId(hash, 100, true)
-        
-        // Ensure event triggers for other listeners
         window.dispatchEvent(new HashChangeEvent('hashchange'))
       }
     }
@@ -241,7 +188,7 @@ export default function Navbar() {
                   >
                     <div className="absolute top-0 left-0 w-full h-1 bg-primary/20" />
                     <div className="max-h-[70vh] overflow-y-auto custom-scrollbar">
-                      {(dropdown.id === 'tour' ? dropdown.items.slice(0, 12) : dropdown.items).map((item: { name: string; href: string; capacity?: string; price?: string }) => (
+                      {dropdown.items.map((item: { name: string; href: string; capacity?: string; price?: string }) => (
                         <Link
                           key={item.name}
                           href={item.href}
@@ -259,15 +206,13 @@ export default function Navbar() {
                           </div>
                         </Link>
                       ))}
-                      {dropdown.id === 'tour' && dropdown.items.length > 12 && (
-                        <Link
-                          href="/tours"
-                          onClick={(e) => handleLinkClick(e, '/tours')}
-                          className="flex items-center justify-center gap-2 mx-4 mt-2 py-3 text-[11px] font-black text-primary bg-primary/5 rounded-xl hover:bg-primary/10 transition-all uppercase tracking-widest border border-primary/10"
-                        >
-                          EXPLORE ALL TOURS <Sparkles className="h-3 w-3" />
-                        </Link>
-                      )}
+                      <Link
+                        href={dropdown.baseHref}
+                        onClick={(e) => handleLinkClick(e, dropdown.baseHref)}
+                        className="flex items-center justify-center gap-2 mx-4 mt-2 py-3 text-[11px] font-black text-primary bg-primary/5 rounded-xl hover:bg-primary/10 transition-all uppercase tracking-widest border border-primary/10"
+                      >
+                        VIEW ALL
+                      </Link>
                     </div>
                   </motion.div>
                 )}
@@ -363,7 +308,7 @@ export default function Navbar() {
                     </Link>
                   </div>
                   <div className="grid grid-cols-1 gap-2 pl-2">
-                    {(dropdown.id === 'tour' ? dropdown.items.slice(0, 10) : dropdown.items).map((item: { name: string; href: string; capacity?: string; price?: string }) => (
+                    {dropdown.items.map((item: { name: string; href: string; capacity?: string; price?: string }) => (
                       <Link 
                         key={item.name} 
                         href={item.href} 
@@ -384,15 +329,13 @@ export default function Navbar() {
                         </div>
                       </Link>
                     ))}
-                    {dropdown.id === 'tour' && dropdown.items.length > 10 && (
-                      <Link 
-                        href="/tours" 
-                        onClick={() => setIsOpen(false)}
-                        className="text-xs font-black text-primary py-3 bg-primary/5 rounded-xl text-center mt-2 uppercase tracking-widest border border-primary/10"
-                      >
-                        EXPLORE ALL TOURS
-                      </Link>
-                    )}
+                    <Link 
+                      href={dropdown.baseHref} 
+                      onClick={() => setIsOpen(false)}
+                      className="text-xs font-black text-primary py-3 bg-primary/5 rounded-xl text-center mt-2 uppercase tracking-widest border border-primary/10"
+                    >
+                      VIEW ALL
+                    </Link>
                   </div>
                 </div>
               ))}
@@ -438,4 +381,3 @@ export default function Navbar() {
     </nav>
   )
 }
-

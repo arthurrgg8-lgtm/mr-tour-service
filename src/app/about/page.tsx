@@ -4,6 +4,7 @@ import business from "@/data/business.json"
 import { Award, Users, ShieldCheck, Map as MapIcon, ExternalLink } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
+import { safeJsonLdStringify } from "@/lib/utils"
 
 export const metadata: Metadata = {
   title: "About Us - Since 2003",
@@ -35,6 +36,8 @@ export const metadata: Metadata = {
   },
 }
 
+import { FadeIn, StaggerContainer, StaggerItem } from "@/components/ui/MotionComponents"
+
 interface TeamMember {
   name: string;
   role: string;
@@ -56,7 +59,7 @@ export default function AboutPage() {
     <div className="pt-20 pb-24 w-full overflow-x-hidden">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: safeJsonLdStringify(jsonLd) }}
       />
       {/* Header */}
       <section className="relative bg-slate-900 py-16 sm:py-32 text-white overflow-hidden">
@@ -71,14 +74,14 @@ export default function AboutPage() {
           <div className="absolute inset-0 bg-gradient-to-b from-slate-900/60 to-slate-900" />
         </div>
         <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-3xl">
+          <FadeIn direction="up" className="max-w-3xl">
             <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-4 sm:mb-6">About {business.name}</h1>
             <p className="text-base sm:text-xl text-slate-300 leading-relaxed">
               Started with a vision to redefine travel and transportation in Nepal, 
               we have grown from a small vehicle rental company into a full-service 
               travel provider, trusted by thousands of local and international travelers.
             </p>
-          </div>
+          </FadeIn>
         </div>
       </section>
 
@@ -86,7 +89,7 @@ export default function AboutPage() {
       <section className="py-12 sm:py-24 bg-white">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-16 items-center">
-            <div>
+            <FadeIn direction="right">
               <h2 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6">Our Journey</h2>
               <p className="text-xs sm:text-base text-muted-foreground mb-4 sm:mb-6 leading-relaxed">
                 {business.name} was founded on the principles of reliability, safety, and 
@@ -118,30 +121,30 @@ export default function AboutPage() {
                   <span className="text-[10px] sm:text-sm font-bold uppercase tracking-wider text-muted-foreground">Self-Owned Fleet</span>
                 </div>
               </div>
-            </div>
+            </FadeIn>
 
-            <div className="grid grid-cols-2 gap-3 sm:gap-6">
-              <div className="p-3 xs:p-4 sm:p-8 rounded-xl sm:rounded-2xl bg-slate-50 border flex flex-col gap-2 sm:gap-4">
+            <StaggerContainer staggerDelay={0.1} className="grid grid-cols-2 gap-3 sm:gap-6">
+              <StaggerItem className="p-3 xs:p-4 sm:p-8 rounded-xl sm:rounded-2xl bg-slate-50 border flex flex-col gap-2 sm:gap-4 hover:shadow-md transition-all">
                 <ShieldCheck className="h-6 w-6 sm:h-10 sm:w-10 text-primary shrink-0" />
                 <h3 className="font-bold text-xs xs:text-sm sm:text-xl leading-none">Safety First</h3>
                 <p className="text-[10px] xs:text-xs sm:text-sm text-muted-foreground leading-snug sm:leading-relaxed">Every vehicle undergoes safety checks and is operated by experienced drivers.</p>
-              </div>
-              <div className="p-3 xs:p-4 sm:p-8 rounded-xl sm:rounded-2xl bg-slate-50 border flex flex-col gap-2 sm:gap-4">
+              </StaggerItem>
+              <StaggerItem className="p-3 xs:p-4 sm:p-8 rounded-xl sm:rounded-2xl bg-slate-50 border flex flex-col gap-2 sm:gap-4 hover:shadow-md transition-all">
                 <Award className="h-6 w-6 sm:h-10 sm:w-10 text-primary shrink-0" />
                 <h3 className="font-bold text-xs xs:text-sm sm:text-xl leading-none">Premium Quality</h3>
                 <p className="text-[10px] xs:text-xs sm:text-sm text-muted-foreground leading-snug sm:leading-relaxed">We don&apos;t compromise on comfort. Our vehicles are clean and well-maintained.</p>
-              </div>
-              <div className="p-3 xs:p-4 sm:p-8 rounded-xl sm:rounded-2xl bg-slate-50 border flex flex-col gap-2 sm:gap-4">
+              </StaggerItem>
+              <StaggerItem className="p-3 xs:p-4 sm:p-8 rounded-xl sm:rounded-2xl bg-slate-50 border flex flex-col gap-2 sm:gap-4 hover:shadow-md transition-all">
                 <MapIcon className="h-6 w-6 sm:h-10 sm:w-10 text-primary shrink-0" />
                 <h3 className="font-bold text-xs xs:text-sm sm:text-xl leading-none">Local Expertise</h3>
                 <p className="text-[10px] xs:text-xs sm:text-sm text-muted-foreground leading-snug sm:leading-relaxed">Our team knows Nepal inside out, ensuring you get the best routes and gems.</p>
-              </div>
-              <div className="p-3 xs:p-4 sm:p-8 rounded-xl sm:rounded-2xl bg-slate-50 border flex flex-col gap-2 sm:gap-4">
+              </StaggerItem>
+              <StaggerItem className="p-3 xs:p-4 sm:p-8 rounded-xl sm:rounded-2xl bg-slate-50 border flex flex-col gap-2 sm:gap-4 hover:shadow-md transition-all">
                 <Users className="h-6 w-6 sm:h-10 sm:w-10 text-primary shrink-0" />
                 <h3 className="font-bold text-xs xs:text-sm sm:text-xl leading-none">Customer Centric</h3>
                 <p className="text-[10px] xs:text-xs sm:text-sm text-muted-foreground leading-snug sm:leading-relaxed">We focus on relationships, resulting in many repeated happy customers.</p>
-              </div>
-            </div>
+              </StaggerItem>
+            </StaggerContainer>
           </div>
         </div>
       </section>
@@ -149,17 +152,17 @@ export default function AboutPage() {
       {/* Team Section */}
       <section className="py-12 sm:py-24 bg-slate-50">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-8 sm:mb-16">
+          <FadeIn direction="up" className="text-center mb-8 sm:mb-16">
             <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold mb-2 sm:mb-4">Meet Our Leadership</h2>
             <p className="text-xs sm:text-base text-muted-foreground max-w-2xl mx-auto">
               Behind every successful journey is a dedicated team of professionals 
               committed to excellence.
             </p>
-          </div>
+          </FadeIn>
 
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-12">
+          <StaggerContainer staggerDelay={0.12} className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-12">
             {team.map((member: TeamMember, idx) => (
-              <div key={idx} className="group flex flex-col items-center text-center">
+              <StaggerItem key={idx} className="group flex flex-col items-center text-center">
                 <div className="relative">
                   {member.website ? (
                     <Link 
@@ -197,18 +200,20 @@ export default function AboutPage() {
                 </div>
                 <h3 className="text-sm sm:text-xl font-bold mb-0.5 sm:mb-1">{member.name}</h3>
                 <p className="text-primary font-bold uppercase tracking-wider text-[8px] xs:text-[10px] sm:text-xs">{member.role}</p>
-              </div>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerContainer>
         </div>
       </section>
       
       {/* Registration Proof */}
       <section className="py-12 sm:py-24 bg-white border-t">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold mb-8 sm:mb-16">Officially Registered & Recognized</h2>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-8">
-            <div className="flex flex-col gap-3 sm:gap-6 group col-span-1">
+          <FadeIn direction="up">
+            <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold mb-8 sm:mb-16">Officially Registered &amp; Recognized</h2>
+          </FadeIn>
+          <StaggerContainer staggerDelay={0.1} className="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-8">
+            <StaggerItem className="flex flex-col gap-3 sm:gap-6 group col-span-1">
               <div className="h-20 xs:h-28 sm:h-48 w-full rounded-xl sm:rounded-3xl bg-slate-50 border sm:border-2 border-slate-100 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all duration-500 shadow-sm group-hover:shadow-primary/20 shrink-0">
                 <ShieldCheck className="h-8 w-8 sm:h-20 sm:w-20" />
               </div>
@@ -216,9 +221,9 @@ export default function AboutPage() {
                 <p className="font-bold text-[10px] xs:text-xs sm:text-lg text-slate-800 leading-tight">Company Registrar</p>
                 <p className="text-[8px] xs:text-[10px] text-muted-foreground mt-0.5">Government of Nepal</p>
               </div>
-            </div>
+            </StaggerItem>
             
-            <div className="flex flex-col gap-3 sm:gap-6 group col-span-1">
+            <StaggerItem className="flex flex-col gap-3 sm:gap-6 group col-span-1">
               <div className="h-20 xs:h-28 sm:h-48 w-full rounded-xl sm:rounded-3xl bg-slate-50 border sm:border-2 border-slate-100 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all duration-500 shadow-sm group-hover:shadow-primary/20 shrink-0">
                 <MapIcon className="h-8 w-8 sm:h-20 sm:w-20" />
               </div>
@@ -226,9 +231,9 @@ export default function AboutPage() {
                 <p className="font-bold text-[10px] xs:text-xs sm:text-lg text-slate-800 leading-tight">Tourism Office KTM</p>
                 <p className="text-[8px] xs:text-[10px] text-muted-foreground mt-0.5">Ministry of Tourism</p>
               </div>
-            </div>
+            </StaggerItem>
 
-            <div className="flex flex-col gap-3 sm:gap-6 group col-span-2 md:col-span-1">
+            <StaggerItem className="flex flex-col gap-3 sm:gap-6 group col-span-2 md:col-span-1">
               <div className="h-20 xs:h-28 sm:h-48 w-full rounded-xl sm:rounded-3xl bg-slate-50 border sm:border-2 border-slate-100 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all duration-500 shadow-sm group-hover:shadow-primary/20 shrink-0">
                 <Award className="h-8 w-8 sm:h-20 sm:w-20" />
               </div>
@@ -236,8 +241,8 @@ export default function AboutPage() {
                 <p className="font-bold text-[10px] xs:text-xs sm:text-lg text-slate-800 leading-tight">Tourist Vehicle Association</p>
                 <p className="text-[8px] xs:text-[10px] text-muted-foreground mt-0.5">Member Since 2003</p>
               </div>
-            </div>
-          </div>
+            </StaggerItem>
+          </StaggerContainer>
         </div>
       </section>
     </div>

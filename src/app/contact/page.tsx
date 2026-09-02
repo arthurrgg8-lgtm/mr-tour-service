@@ -4,7 +4,8 @@ import { Phone, Mail, MapPin, MessageCircle, Clock } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
 import QuickInquiryForm from "@/components/sections/QuickInquiryForm"
-import { buildWhatsAppUrl } from "@/lib/utils"
+import { buildWhatsAppUrl, safeJsonLdStringify } from "@/lib/utils"
+import { FadeIn, StaggerContainer, StaggerItem } from "@/components/ui/MotionComponents"
 
 export const metadata: Metadata = {
   title: "Contact Us - Car Rental & Tour Booking in Kathmandu",
@@ -89,11 +90,11 @@ export default function ContactPage() {
     <div className="pt-20 pb-24 w-full overflow-x-hidden">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: safeJsonLdStringify(jsonLd) }}
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: safeJsonLdStringify(faqJsonLd) }}
       />
       {/* Header */}
       <section className="relative bg-slate-900 py-16 sm:py-32 text-white overflow-hidden">
@@ -108,13 +109,13 @@ export default function ContactPage() {
           <div className="absolute inset-0 bg-gradient-to-b from-slate-900/60 to-slate-900" />
         </div>
         <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-3xl">
+          <FadeIn direction="up" className="max-w-3xl">
             <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-4 sm:mb-6">Contact Us</h1>
             <p className="text-base sm:text-xl text-slate-300 leading-relaxed">
               Have questions about our services or need a customized quote? 
               Our team is available 24/7 to help you plan your perfect trip to Nepal.
             </p>
-          </div>
+          </FadeIn>
         </div>
       </section>
 
@@ -122,7 +123,7 @@ export default function ContactPage() {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-16">
             {/* Contact Info */}
-            <div>
+            <FadeIn direction="right">
               <h2 className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-10">Get in Touch</h2>
               
               <div className="grid grid-cols-2 gap-4 sm:flex sm:flex-col sm:space-y-12">
@@ -184,30 +185,34 @@ export default function ContactPage() {
                   </div>
                 </div>
               </div>
-            </div>
+            </FadeIn>
 
             {/* Quick Inquiry Form Component */}
-            <QuickInquiryForm />
+            <FadeIn direction="left" delay={0.1}>
+              <QuickInquiryForm />
+            </FadeIn>
           </div>
         </div>
       </section>
 
       {/* Map Section */}
       <section className="container mx-auto px-4">
-        <div className="h-[250px] xs:h-[320px] sm:h-[450px] w-full rounded-2xl sm:rounded-3xl overflow-hidden border shadow-lg">
-          <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.148671524317!2d85.3353!3d27.7118!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x827102c6c7458d07%3A0x68a8193a22c56a7e!2sM.R%20Travel%20and%20Tour!5e0!3m2!1sen!2snp!4v1716000000000!5m2!1sen!2snp" 
-            width="100%" 
-            height="100%" 
-            style={{ border: 0 }} 
-            allowFullScreen={true} 
-            loading="lazy" 
-            referrerPolicy="no-referrer-when-downgrade"
-          ></iframe>
-        </div>
-        <div className="text-center mt-4 sm:mt-6">
-          <p className="text-xs sm:text-base text-muted-foreground">Find us at Kalopul, Kathmandu - 24/7 Service Available</p>
-        </div>
+        <FadeIn direction="up">
+          <div className="h-[250px] xs:h-[320px] sm:h-[450px] w-full rounded-2xl sm:rounded-3xl overflow-hidden border shadow-lg">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.148671524317!2d85.3353!3d27.7118!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x827102c6c7458d07%3A0x68a8193a22c56a7e!2sM.R%20Travel%20and%20Tour!5e0!3m2!1sen!2snp!4v1716000000000!5m2!1sen!2snp" 
+              width="100%" 
+              height="100%" 
+              style={{ border: 0 }} 
+              allowFullScreen={true} 
+              loading="lazy" 
+              referrerPolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+          <div className="text-center mt-4 sm:mt-6">
+            <p className="text-xs sm:text-base text-muted-foreground">Find us at Kalopul, Kathmandu - 24/7 Service Available</p>
+          </div>
+        </FadeIn>
       </section>
     </div>
   )

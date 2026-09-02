@@ -14,28 +14,29 @@ const iconMap: { [key: string]: React.ComponentType<{ className?: string }> } = 
   Users
 }
 
+import { FadeIn, StaggerContainer, StaggerItem } from "@/components/ui/MotionComponents"
+
 export default function FeaturedServices() {
   const featured = services.filter(s => s.featured)
 
   return (
     <section className="py-24 bg-white">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
+        <FadeIn direction="up" className="text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-bold mb-4">Our Core Services</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-            We provide a comprehensive range of travel services tailored to your needs, 
-            with a primary focus on quality vehicle rentals and curated tours.
+            We provide a comprehensive range of vehicle rental services tailored to your needs, 
+            with a primary focus on quality vehicles and professional drivers.
           </p>
-        </div>
+        </FadeIn>
 
-        <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 xs:gap-6 md:gap-10">
+        <StaggerContainer staggerDelay={0.12} className="grid grid-cols-2 lg:grid-cols-3 gap-4 xs:gap-6 md:gap-10">
           {featured.map((service) => {
             const Icon = iconMap[service.icon]
-            // Use the first image from the service's image array as a representative image
             const representativeImage = service.images?.[0] || "/images/hero/services-bg.jpg"
 
             return (
-              <div 
+              <StaggerItem 
                 key={service.id}
                 className="group flex flex-col rounded-[1.25rem] sm:rounded-[2rem] border bg-slate-50 hover:bg-white hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 relative overflow-hidden"
               >
@@ -64,26 +65,26 @@ export default function FeaturedServices() {
                   </p>
                   <div className="mt-auto">
                     <Link 
-                      href={service.id === 'tour-packages' ? '/tours' : service.id === 'trekking' ? '/trekking' : `/services#${service.id}`} 
+                      href={`/vehicles/${service.id}`}
                       className="text-primary font-bold inline-flex items-center gap-1 sm:gap-2 hover:gap-3 transition-all text-[9px] xs:text-xs sm:text-sm uppercase tracking-wide sm:tracking-widest border-b-2 border-primary/20 hover:border-primary pb-0.5 sm:pb-1"
                     >
                       Explore Details <span aria-hidden="true">→</span>
                     </Link>
                   </div>
                 </div>
-              </div>
+              </StaggerItem>
             )
           })}
-        </div>
+        </StaggerContainer>
         
-        <div className="mt-16 text-center">
+        <FadeIn direction="up" delay={0.2} className="mt-16 text-center">
           <Link 
-            href="/services"
+            href="/vehicles"
             className="inline-flex h-12 items-center justify-center rounded-lg border-2 border-primary px-8 text-sm font-bold text-primary hover:bg-primary hover:text-white transition-colors"
           >
-            View All Services
+            View All Vehicles
           </Link>
-        </div>
+        </FadeIn>
       </div>
     </section>
   )

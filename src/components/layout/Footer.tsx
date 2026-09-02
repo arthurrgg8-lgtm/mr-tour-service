@@ -26,7 +26,7 @@ export default function Footer() {
               </div>
             </Link>
             <p className="text-sm text-muted-foreground mb-6">
-              {business.tagline}. Providing premium vehicle rental and tour services in Nepal for over 20 years.
+              {business.tagline}. Providing premium vehicle rental services in Nepal for over 20 years.
             </p>
             <div className="flex flex-col gap-2">
               <p className="text-xs font-semibold uppercase text-muted-foreground">Registered under:</p>
@@ -40,22 +40,22 @@ export default function Footer() {
             <h3 className="font-bold mb-4">Our Services</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/services" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                <Link href="/vehicles" className="text-sm text-muted-foreground hover:text-primary transition-colors">
                   Vehicle Rentals
                 </Link>
               </li>
               <li>
-                <Link href="/tours" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-                  Tour Packages
+                <Link href="/corporate-rent" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                  Corporate Rent
                 </Link>
               </li>
               <li>
-                <Link href="/trekking" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-                  Himalayan Trekking
+                <Link href="/self-drive" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                  Self Drive
                 </Link>
               </li>
               <li>
-                <Link href="/services#premium-fleet" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                <Link href="/vehicles/premium-fleet" className="text-sm text-muted-foreground hover:text-primary transition-colors">
                   Premium Fleet
                 </Link>
               </li>
@@ -76,13 +76,13 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/services" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                <Link href="/vehicles" className="text-sm text-muted-foreground hover:text-primary transition-colors">
                   Our Fleet
                 </Link>
               </li>
               <li>
-                <Link href="/gallery" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-                  Gallery
+                <Link href="/blog" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                  Blog
                 </Link>
               </li>
               <li>

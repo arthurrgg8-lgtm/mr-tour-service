@@ -1,0 +1,149 @@
+{
+  "car-rent": {
+    "title": "Car Rental FAQ",
+    "questions": [
+      {
+        "q": "What documents do I need to rent a car in Nepal?",
+        "a": "Documents are required only for self-drive rentals — a valid driving license, citizenship or passport (for foreign nationals), and a security deposit. For chauffeur-driven rentals, no documents are needed from the customer."
+      },
+      {
+        "q": "Can I rent a car without a driver?",
+        "a": "Yes, self-drive car rental is available for licensed drivers. A chauffeur-driven option is also available on request."
+      },
+      {
+        "q": "Is fuel included in the car rental price?",
+        "a": "We offer both fuel-included and fuel-excluded packages, but most of our rentals are served with fuel included for your convenience. You can choose the option that best fits your trip."
+      },
+      {
+        "q": "How do I book a car rental online?",
+        "a": "Simply select your car, choose your pick-up and drop-off dates, and confirm your booking through our website or a quick phone call."
+      }
+    ]
+  },
+  "suv-rent": {
+    "title": "SUV Rental FAQ",
+    "questions": [
+      {
+        "q": "Are your SUVs suitable for hill and mountain routes?",
+        "a": "Yes, our SUVs are well-suited for hilly terrain, off-road conditions, and long-distance travel across Nepal."
+      },
+      {
+        "q": "How many passengers can an SUV rental accommodate?",
+        "a": "Our SUVs comfortably seat 5 to 7 passengers, depending on the model."
+      },
+      {
+        "q": "Do you provide a driver with SUV rental?",
+        "a": "Yes, professional drivers are available with SUV rental, or you can opt for self-drive if licensed."
+      },
+      {
+        "q": "What is the minimum rental duration for an SUV?",
+        "a": "SUVs can be rented for a single day or for extended weekly and monthly durations based on your travel needs."
+      }
+    ]
+  },
+  "jeep-rent": {
+    "title": "Jeep Rental FAQ",
+    "questions": [
+      {
+        "q": "Are jeeps good for off-road and trekking routes?",
+        "a": "Yes, our jeeps are built for rough terrain and are ideal for off-road adventures and remote trekking access points."
+      },
+      {
+        "q": "Do jeeps come with 4-wheel drive?",
+        "a": "Most of our jeeps offer 4WD capability for better handling on difficult and uneven roads."
+      },
+      {
+        "q": "How many people can travel in a jeep rental?",
+        "a": "Our jeeps typically accommodate 4 to 6 passengers comfortably, along with luggage space."
+      },
+      {
+        "q": "Can I rent a jeep for a multi-day trip?",
+        "a": "Yes, jeep rentals are available for both short trips and multi-day adventure travel across Nepal."
+      }
+    ]
+  },
+  "hiace-rent": {
+    "title": "Hiace Rental FAQ",
+    "questions": [
+      {
+        "q": "How many passengers can a Hiace hold?",
+        "a": "Our Hiace vans comfortably seat up to 12 passengers, making them ideal for group travel."
+      },
+      {
+        "q": "Is Hiace rental suitable for airport transfers?",
+        "a": "Yes, Hiace rental is a popular choice for airport pick-up and drop-off services for groups and families."
+      },
+      {
+        "q": "Does Hiace rental come with a driver?",
+        "a": "Yes, all Hiace rentals include an experienced driver for a safe and comfortable journey."
+      },
+      {
+        "q": "Can I rent a Hiace for multi-day tours?",
+        "a": "Yes, Hiace rental is available for both single-day trips and extended multi-day tour packages."
+      }
+    ]
+  },
+  "minibus-rent": {
+    "title": "Coaster Rental FAQ",
+    "questions": [
+      {
+        "q": "How many passengers does a coaster accommodate?",
+        "a": "Our coasters seat 20 to 25 passengers, making them ideal for group tours and corporate outings."
+      },
+      {
+        "q": "Is coaster rental suitable for school or corporate trips?",
+        "a": "Yes, coaster rental is commonly used for school excursions, corporate events, and mid-sized group travel."
+      },
+      {
+        "q": "Do you provide a driver with coaster rental?",
+        "a": "Yes, an experienced driver is included with every coaster rental booking."
+      },
+      {
+        "q": "Can I book a coaster for a multi-day tour package?",
+        "a": "Yes, coaster rentals are available for both day trips and extended multi-day travel itineraries."
+      }
+    ]
+  },
+  "bus-rent": {
+    "title": "Bus Rental FAQ",
+    "questions": [
+      {
+        "q": "How many passengers can your bus rental accommodate?",
+        "a": "Our buses accommodate 30 or more passengers, ideal for weddings, large events, and long-distance group tours."
+      },
+      {
+        "q": "Is bus rental available for long-distance travel?",
+        "a": "Yes, our buses are well-maintained for comfortable long-distance journeys across Nepal's highways and hill routes."
+      },
+      {
+        "q": "Do you offer bus rental for corporate events?",
+        "a": "Yes, bus rental is a popular choice for corporate outings, conferences, and large-scale event logistics."
+      },
+      {
+        "q": "How far in advance should I book a bus rental?",
+        "a": "We recommend booking at least a few days in advance, especially during peak travel seasons, to ensure availability."
+      }
+    ]
+  },
+  "premium-fleet": {
+    "title": "Premium Rental FAQ",
+    "questions": [
+      {
+        "q": "What vehicles are included in your premium rental fleet?",
+        "a": "Our premium fleet includes luxury sedans and high-end SUVs suited for VIP travel and special occasions."
+      },
+      {
+        "q": "Is premium rental suitable for weddings and events?",
+        "a": "Yes, our premium vehicles are a popular choice for weddings, corporate executives, and special occasion transport."
+      },
+      {
+        "q": "Does premium rental include a chauffeur?",
+        "a": "Yes, all premium rentals include a professional, experienced chauffeur for a seamless experience."
+      },
+      {
+        "q": "Can I book premium rental for airport transfers?",
+        "a": "Yes, premium rental is available for airport pick-up and drop-off with priority scheduling."
+      }
+    ]
+  }
+}

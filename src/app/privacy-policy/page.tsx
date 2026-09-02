@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import business from "@/data/business.json"
+import { safeJsonLdStringify } from "@/lib/utils"
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
@@ -45,7 +46,7 @@ export default function PrivacyPolicy() {
     <div className="pt-32 pb-24 min-h-screen">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: safeJsonLdStringify(jsonLd) }}
       />
       <div className="container mx-auto px-4 max-w-4xl">
         <h1 className="text-4xl font-bold mb-8">Privacy Policy</h1>

@@ -1,64 +1,118 @@
-import { ShieldCheck, Zap, Users, Trophy } from "lucide-react"
+"use client"
+
+import Image from "next/image"
+import { Headphones, ShieldCheck, Wrench, MapPin } from "lucide-react"
 import business from "@/data/business.json"
+import { FadeIn, Float } from "@/components/ui/MotionComponents"
 
 export default function WhyChooseSummary() {
-  const summaryFeatures = [
+  const leftFeatures = [
+    {
+      icon: Headphones,
+      title: "24-hour Customer Service",
+      description:
+        "We promise impeccable service by promptly addressing your queries and requests through our dedicated 24/7 customer support team.",
+    },
     {
       icon: ShieldCheck,
-      title: "100% Owned Fleet",
-      desc: "No third-party commissions."
+      title: "100% Owned Fleet & Safety",
+      description:
+        "We operate a fully company-owned fleet with comprehensive insurance, experienced drivers, and verified government registration in Nepal.",
+    },
+  ]
+
+  const rightFeatures = [
+    {
+      icon: Wrench,
+      title: "Dedicated Fleet Maintenance",
+      description:
+        "We ensure impeccable fleet reliability with regular technical inspections before every trip for optimal safety and smooth travel.",
     },
     {
-      icon: Users,
-      title: "Licensed Guides",
-      desc: "Expert mountain professionals."
+      icon: MapPin,
+      title: "All Over Nepal Service",
+      description:
+        "Our service spans all 7 provinces and major tourist hubs across Nepal, ensuring reliable transportation for all your journeys.",
     },
-    {
-      icon: Zap,
-      title: "24/7 Support",
-      desc: "Immediate on-ground assistance."
-    },
-    {
-      icon: Trophy,
-      title: "5+ Years",
-      desc: "Trusted by 1000+ travelers."
-    }
   ]
 
   return (
-    <section className="py-16 bg-slate-50 border-b border-slate-100">
+    <section className="py-20 sm:py-24 bg-white border-b border-slate-100 overflow-hidden">
       <div className="container mx-auto px-4">
-        <div className="flex flex-col lg:flex-row items-center gap-12">
-          <div className="lg:w-1/2">
-            <span className="text-primary font-bold uppercase tracking-[0.2em] text-sm mb-4 block">Trust & Reliability</span>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">Why Choose <span className="text-primary">{business.name}</span>?</h2>
-            <p className="text-lg text-slate-600 leading-relaxed mb-8">
-              We combine local expertise with international safety standards to provide the most reliable 
-              travel solutions in Nepal. Our commitment to transparent pricing and personalized service 
-              makes us the preferred choice for thousands of adventurers.
-            </p>
-            <div className="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm italic text-slate-600">
-              <p className="font-medium">&quot;Our mission is to fuel your freedom across the Himalayas with absolute safety, premium comfort, and unmatched local insights.&quot;</p>
-              <p className="text-sm mt-3 font-bold text-primary">— Management Team</p>
-            </div>
-          </div>
-          
-          <div className="lg:w-1/2 grid grid-cols-2 gap-4 md:gap-6">
-            {summaryFeatures.map((feature, idx) => {
-              const Icon = feature.icon
+        {/* Title */}
+        <FadeIn direction="up" className="text-center mb-12 sm:mb-16">
+          <span className="text-primary font-bold uppercase tracking-widest text-xs sm:text-sm mb-3 block">
+            Trust &amp; Excellence
+          </span>
+          <h2 className="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight">
+            Why <span className="text-primary">{business.name}</span>?
+          </h2>
+          <div className="w-20 h-1.5 bg-primary mx-auto rounded-full mt-4" />
+        </FadeIn>
+
+        {/* 3-Column Feature Layout */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-6 items-center">
+          {/* Left Column (2 items) */}
+          <FadeIn direction="right" delay={0.1} className="lg:col-span-4 space-y-8 sm:space-y-10">
+            {leftFeatures.map((item, idx) => {
+              const Icon = item.icon
               return (
-                <div key={idx} className="p-6 rounded-3xl bg-white border border-slate-100 shadow-xl shadow-slate-200/50 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300">
-                  <div className="h-12 w-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary mb-4">
-                    <Icon className="h-6 w-6" />
+                <div key={idx} className="flex items-start gap-4 sm:gap-5 group">
+                  <div className="h-14 w-14 rounded-2xl bg-primary text-white flex items-center justify-center shrink-0 shadow-lg shadow-primary/20 group-hover:scale-105 transition-transform duration-300">
+                    <Icon className="h-7 w-7" />
                   </div>
-                  <h3 className="font-bold text-slate-900 mb-1">{feature.title}</h3>
-                  <p className="text-sm text-slate-500">{feature.desc}</p>
+                  <div>
+                    <h3 className="text-lg sm:text-xl font-bold text-slate-900 mb-2">
+                      {item.title}
+                    </h3>
+                    <p className="text-sm text-slate-600 leading-relaxed">
+                      {item.description}
+                    </p>
+                  </div>
                 </div>
               )
             })}
-          </div>
+          </FadeIn>
+
+          {/* Center Column (Car Cutout) */}
+          <FadeIn direction="up" delay={0.2} className="lg:col-span-4 flex items-center justify-center py-4 lg:py-0">
+            <Float duration={5} distance={10} className="w-full flex items-center justify-center">
+              <div className="relative w-full max-w-md aspect-[16/10] sm:aspect-[16/9] lg:aspect-[4/3] flex items-center justify-center">
+                <Image
+                  src="/images/fleet/why-choose-car.jpg"
+                  alt="M.R Travel and Tour Fleet"
+                  fill
+                  className="object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-500"
+                  priority
+                />
+              </div>
+            </Float>
+          </FadeIn>
+
+          {/* Right Column (2 items) */}
+          <FadeIn direction="left" delay={0.3} className="lg:col-span-4 space-y-8 sm:space-y-10">
+            {rightFeatures.map((item, idx) => {
+              const Icon = item.icon
+              return (
+                <div key={idx} className="flex items-start gap-4 sm:gap-5 group">
+                  <div className="h-14 w-14 rounded-2xl bg-primary text-white flex items-center justify-center shrink-0 shadow-lg shadow-primary/20 group-hover:scale-105 transition-transform duration-300 lg:order-last">
+                    <Icon className="h-7 w-7" />
+                  </div>
+                  <div className="lg:text-right">
+                    <h3 className="text-lg sm:text-xl font-bold text-slate-900 mb-2">
+                      {item.title}
+                    </h3>
+                    <p className="text-sm text-slate-600 leading-relaxed">
+                      {item.description}
+                    </p>
+                  </div>
+                </div>
+              )
+            })}
+          </FadeIn>
         </div>
       </div>
     </section>
   )
 }
+
