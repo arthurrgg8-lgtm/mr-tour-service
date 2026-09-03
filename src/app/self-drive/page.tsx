@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
 import business from "@/data/business.json"
-import { Car, ShieldCheck, Clock, MapPin, Phone, MessageCircle, CheckCircle2, AlertTriangle, ChevronDown, HelpCircle, Compass, Lock, Wallet, Route } from "lucide-react"
+import { Car, ShieldCheck, Clock, Phone, MessageCircle, CheckCircle2, ChevronDown, Compass, Lock, Wallet, Route } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import { buildWhatsAppUrl, safeJsonLdStringify } from "@/lib/utils"
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: `${business.name} - Self-Drive Car Rental Nepal`,
-    description: `Self-drive car rental Nepal — rent cars, SUVs, and jeeps without a driver. Complete freedom, flexible duration, and 24/7 roadside support.`,
+    description: `Self-drive car rental Nepal — rent cars, SUVs, and jeeps without a driver. Complete freedom and 24/7 roadside support.`,
     images: ["https://manoranjan.com.np/logo.jpg"],
   },
 }
@@ -104,8 +104,25 @@ const faqs = [
 ]
 
 export default function SelfDrivePage() {
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(faq => ({
+      "@type": "Question",
+      "name": faq.q,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.a
+      }
+    }))
+  }
+
   return (
     <div className="pt-20 pb-24 w-full overflow-x-hidden">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: safeJsonLdStringify(faqJsonLd) }}
+      />
       {/* Header */}
       <section className="relative bg-slate-900 py-32 text-white overflow-hidden">
         <div className="absolute inset-0 z-0">

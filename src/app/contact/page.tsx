@@ -5,7 +5,7 @@ import Link from "next/link"
 import Image from "next/image"
 import QuickInquiryForm from "@/components/sections/QuickInquiryForm"
 import { buildWhatsAppUrl, safeJsonLdStringify } from "@/lib/utils"
-import { FadeIn, StaggerContainer, StaggerItem } from "@/components/ui/MotionComponents"
+import { FadeIn } from "@/components/ui/MotionComponents"
 
 export const metadata: Metadata = {
   title: "Contact Us - Car Rental & Tour Booking in Kathmandu",

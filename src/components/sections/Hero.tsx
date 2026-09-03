@@ -2,7 +2,6 @@
 
 import { useEffect, useRef } from "react"
 import Link from "next/link"
-import { Car, Map as MapIcon, ShieldCheck, Search, Calendar, CreditCard, Navigation, ChevronRight } from "lucide-react"
 import gsap from "gsap"
 import business from "@/data/business.json"
 import Image from "next/image"

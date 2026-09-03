@@ -6,7 +6,6 @@ import Image from "next/image"
 import Link from "next/link"
 import EnquireButton from "@/components/ui/EnquireButton"
 import ImageSlideshow from "@/components/ui/ImageSlideshow"
-import { FadeIn } from "@/components/ui/MotionComponents"
 import { safeJsonLdStringify } from "@/lib/utils"
 
 interface Service {

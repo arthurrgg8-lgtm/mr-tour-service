@@ -15,7 +15,6 @@ import {
   UserCheck,
   TrendingUp,
   CreditCard,
-  Car,
   Headphones,
   ClipboardList,
   FileCheck2,
@@ -43,39 +42,6 @@ export const metadata: Metadata = {
     images: [{ url: "https://manoranjan.com.np/logo.jpg", width: 800, height: 800, alt: business.name }],
   },
 }
-
-const whyChooseCorporate = [
-  {
-    num: "01",
-    icon: UserCheck,
-    title: "Dedicated Point of Contact",
-    description: "A single dedicated account manager handles your bookings, ensuring fast communication and consistent, reliable service.",
-  },
-  {
-    num: "02",
-    icon: TrendingUp,
-    title: "Fleet Flexibility",
-    description: "Scale your vehicle fleet up or down anytime, with a wide range of options suited to your changing business needs.",
-  },
-  {
-    num: "03",
-    icon: CreditCard,
-    title: "Invoicing and Billing Support",
-    description: "Transparent monthly invoicing and dedicated billing support make corporate accounting simple and hassle-free.",
-  },
-  {
-    num: "04",
-    icon: ShieldCheck,
-    title: "Licensed, Insured Driver and Vehicle",
-    description: "Every driver is licensed and every vehicle fully insured, ensuring safe, compliant travel for your team.",
-  },
-  {
-    num: "05",
-    icon: Headphones,
-    title: "24/7 Support",
-    description: "Round-the-clock customer support keeps your corporate travel running smoothly, any time, any day.",
-  },
-]
 
 const howItWorksSteps = [
   {
