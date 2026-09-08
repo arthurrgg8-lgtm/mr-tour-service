@@ -7,7 +7,6 @@ import {
   Phone, 
   MessageCircle, 
   FileText, 
-  Building2, 
   ShieldCheck, 
   Receipt, 
   RotateCcw, 
@@ -18,17 +17,35 @@ import {
   Headphones,
   ClipboardList,
   FileCheck2,
-  Send,
-  Zap
+  Send
 } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
-import { buildWhatsAppUrl } from "@/lib/utils"
+import { buildWhatsAppUrl, safeJsonLdStringify } from "@/lib/utils"
 import { FadeIn, StaggerContainer, StaggerItem, Float } from "@/components/ui/MotionComponents"
 
+const corporateFaqs = [
+  {
+    q: "How does monthly billing and tax invoicing work for corporate accounts?",
+    a: "We provide complete VAT-compliant monthly tax invoices, consolidated billing reports, and standardized digital payment options tailored for corporate accounting.",
+  },
+  {
+    q: "Will we have a dedicated account manager?",
+    a: "Yes. Every corporate contract is assigned a dedicated account coordinator available 24/7 to manage bookings, fleet scaling, route changes, and special requests.",
+  },
+  {
+    q: "What is the minimum contract duration for corporate vehicle hire?",
+    a: "We offer flexible weekly, monthly, and multi-year lease agreements. Short-term rentals are also available for corporate conferences, summits, and executive visits.",
+  },
+  {
+    q: "Are the drivers background-checked and trained for corporate staff transport?",
+    a: "Absolutely. All corporate drivers are licensed, background-checked, and trained in defensive driving, punctuality, and professional etiquette.",
+  },
+]
+
 export const metadata: Metadata = {
-  title: "Corporate Vehicle Rental in Nepal | Business Fleet & Leases",
-  description: `Corporate vehicle rental in Nepal — daily, weekly, monthly, and annual fleet solutions with professional drivers, maintenance, and volume discounts. Request a quote.`,
+  title: `Corporate Vehicle Rental in Nepal | Business Fleet Hire | ${business.name}`,
+  description: `${business.name} offers corporate vehicle rental in Nepal with weekly, monthly, and yearly plans — reliable fleet for business travel and events.`,
   alternates: {
     canonical: "/corporate-rent",
   },
@@ -37,9 +54,15 @@ export const metadata: Metadata = {
     locale: "en_NP",
     url: "https://manoranjan.com.np/corporate-rent",
     siteName: business.name,
-    title: `${business.name} - Corporate Vehicle Rental Nepal`,
-    description: `Corporate vehicle rental in Nepal — daily, weekly, monthly, and annual fleet solutions with professional drivers and bulk discounts.`,
-    images: [{ url: "https://manoranjan.com.np/logo.jpg", width: 800, height: 800, alt: business.name }],
+    title: `Corporate Vehicle Rental in Nepal | Business Fleet Hire | ${business.name}`,
+    description: `${business.name} offers corporate vehicle rental in Nepal with weekly, monthly, and yearly plans — reliable fleet for business travel and events.`,
+    images: [{ url: "https://manoranjan.com.np/logo.jpg", width: 800, height: 800, alt: "corporate vehicle rental Nepal" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `Corporate Vehicle Rental in Nepal | Business Fleet Hire | ${business.name}`,
+    description: `${business.name} offers corporate vehicle rental in Nepal with weekly, monthly, and yearly plans — reliable fleet for business travel and events.`,
+    images: ["https://manoranjan.com.np/logo.jpg"],
   },
 }
 
@@ -101,19 +124,28 @@ const rentalPlans = [
   },
 ]
 
-const corporateClients = [
-  { name: "Chandragiri Hills", category: "Hospitality & Tourism" },
-  { name: "Kavya Himalayas", category: "Luxury Resort" },
-  { name: "Blys Nepal", category: "Corporate Partner" },
-  { name: "Pilot Pen", category: "Global Enterprise" },
-  { name: "Bichuten Group", category: "Industrial Group" },
-]
-
 export default function CorporateRentPage() {
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": corporateFaqs.map(faq => ({
+      "@type": "Question",
+      "name": faq.q,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.a
+      }
+    }))
+  }
+
   return (
-    <div className="pt-20 pb-24 w-full overflow-x-hidden">
+    <div className="w-full overflow-x-hidden">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: safeJsonLdStringify(faqJsonLd) }}
+      />
       {/* ─── 1. TOP EXECUTIVE HERO SECTION ─── */}
-      <section className="relative py-20 sm:py-28 bg-gradient-to-b from-slate-50/80 via-white to-white border-b border-slate-100 overflow-hidden">
+      <section className="relative pt-10 sm:pt-14 lg:pt-16 pb-12 sm:pb-20 bg-gradient-to-b from-slate-50/80 via-white to-white border-b border-slate-100 overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(#cbd5e1_1px,transparent_1px)] [background-size:24px_24px] opacity-40 pointer-events-none" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-primary/[0.05] rounded-full blur-3xl pointer-events-none" />
 
@@ -121,15 +153,11 @@ export default function CorporateRentPage() {
           <FadeIn direction="up" className="max-w-4xl mx-auto text-center">
             <h1 className="text-3xl sm:text-5xl md:text-6xl font-black tracking-tight text-slate-900 leading-[1.15] mb-6">
               Corporate Vehicle Rental <br />
-              <span className="text-primary">
-                &amp; Business Fleet Leases
-              </span>
+              <span className="text-primary">in Nepal</span>
             </h1>
 
             <p className="text-base sm:text-xl text-slate-600 leading-relaxed max-w-3xl mx-auto mb-8 font-medium">
-              Reliable, end-to-end transportation solutions tailored for enterprises, embassies, 
-              development agencies, and VIP delegations across Nepal. Backed by our 100% company-owned 
-              fleet, trained chauffeurs, and dedicated account managers.
+              Reliable vehicle rental for companies — weekly, monthly, and yearly plans across Nepal.
             </p>
 
             <div className="flex flex-wrap items-center justify-center gap-2.5 sm:gap-3 mb-10 max-w-3xl mx-auto">
@@ -172,7 +200,7 @@ export default function CorporateRentPage() {
         </div>
       </section>
 
-      {/* ─── 2. WHY CHOOSE MR TRAVEL AND TOUR (3-Column Showcase with BYD Car) ─── */}
+      {/* ─── 2. WHY CORPORATES CHOOSE US (3-Column Showcase with BYD Car) ─── */}
       <section className="py-20 sm:py-28 bg-white border-b border-slate-100 overflow-hidden">
         <div className="container mx-auto px-4">
           <FadeIn direction="up" className="text-center max-w-3xl mx-auto mb-16">
@@ -180,11 +208,11 @@ export default function CorporateRentPage() {
               Enterprise Excellence
             </span>
             <h2 className="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight mb-4">
-              Why Choose <span className="text-primary">M.R TRAVEL AND TOUR</span>
+              Why Corporates Choose Us
             </h2>
             <div className="w-20 h-1.5 bg-primary mx-auto rounded-full mb-4" />
             <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
-              We provide dependable corporate transportation backed by dedicated account managers, transparent billing, and 24/7 fleet readiness.
+              Dedicated support, billing transparency, and fleet flexibility for business needs.
             </p>
           </FadeIn>
 
@@ -227,7 +255,7 @@ export default function CorporateRentPage() {
                 <div className="relative w-full max-w-md aspect-[16/10] sm:aspect-[16/9] lg:aspect-[4/3] flex items-center justify-center">
                   <Image
                     src="/images/fleet/why-choose-car.jpg"
-                    alt="M.R Travel and Tour Corporate BYD Fleet"
+                    alt="corporate vehicle rental Nepal"
                     fill
                     className="object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-500"
                     priority
@@ -283,7 +311,7 @@ export default function CorporateRentPage() {
         </div>
       </section>
 
-      {/* ─── 3. HOW IT WORKS (4 Step Process) ─── */}
+      {/* ─── 3. HOW TO REQUEST A CORPORATE QUOTE (4 Step Process) ─── */}
       <section className="py-20 sm:py-28 bg-slate-50 border-b border-slate-100">
         <div className="container mx-auto px-4">
           <FadeIn direction="up" className="text-center max-w-3xl mx-auto mb-16">
@@ -291,11 +319,11 @@ export default function CorporateRentPage() {
               Simple 4-Step Process
             </span>
             <h2 className="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight mb-4">
-              How It Works
+              How to Request a Corporate Quote
             </h2>
             <div className="w-20 h-1.5 bg-primary mx-auto rounded-full mb-4" />
             <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
-              From requirement submission to fleet deployment in four seamless steps.
+              Share your requirements and get a custom quote from our team.
             </p>
           </FadeIn>
 
@@ -326,71 +354,10 @@ export default function CorporateRentPage() {
               )
             })}
           </StaggerContainer>
-
-          {/* Instant Booking Banner */}
-          <FadeIn direction="up" delay={0.2} className="max-w-4xl mx-auto mt-12">
-            <div className="p-6 sm:p-8 rounded-3xl bg-gradient-to-r from-primary/10 via-primary/5 to-transparent border border-primary/20 flex flex-col sm:flex-row items-center justify-between gap-6">
-              <div className="flex items-start gap-4">
-                <div className="h-10 w-10 rounded-xl bg-primary text-white flex items-center justify-center shrink-0 mt-0.5">
-                  <Zap className="h-5 w-5" />
-                </div>
-                <div>
-                  <h4 className="text-base sm:text-lg font-bold text-slate-900 mb-1">
-                    Prefer not to wait for a quote?
-                  </h4>
-                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                    Skip the process with instant booking — click Find Vehicle below for on-demand corporate rentals.
-                  </p>
-                </div>
-              </div>
-
-              <Link
-                href="/vehicles"
-                className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl bg-primary text-white font-black text-xs sm:text-sm hover:bg-primary/90 transition-all uppercase tracking-wider shrink-0 shadow-md shadow-primary/20"
-              >
-                <span>FIND VEHICLE</span>
-                <ArrowRight className="h-4 w-4" />
-              </Link>
-            </div>
-          </FadeIn>
         </div>
       </section>
 
-      {/* ─── 4. TRUSTED BY 100+ CORPORATE OFFICES ACROSS NEPAL ─── */}
-      <section className="py-20 sm:py-24 bg-white border-b border-slate-100">
-        <div className="container mx-auto px-4">
-          <FadeIn direction="up" className="text-center max-w-3xl mx-auto mb-12">
-            <span className="text-primary font-bold uppercase tracking-widest text-xs sm:text-sm mb-3 block">
-              Proven Track Record
-            </span>
-            <h2 className="text-2xl sm:text-4xl font-black text-slate-900 tracking-tight mb-4">
-              Trusted by 100+ Corporate Offices Across Nepal
-            </h2>
-            <div className="w-20 h-1.5 bg-primary mx-auto rounded-full" />
-          </FadeIn>
-
-          <StaggerContainer staggerDelay={0.08} className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6 max-w-5xl mx-auto">
-            {corporateClients.map((client, idx) => (
-              <StaggerItem 
-                key={idx}
-                className="p-6 rounded-2xl bg-slate-50 border border-slate-200/80 hover:bg-white hover:border-primary/30 hover:shadow-md transition-all text-center flex flex-col items-center justify-center"
-              >
-                <div className="h-10 w-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary mb-3">
-                  <Building2 className="h-5 w-5" />
-                </div>
-                <h4 className="font-bold text-slate-900 text-sm sm:text-base leading-tight mb-1">
-                  {client.name}
-                </h4>
-                <p className="text-[10px] text-slate-500 uppercase tracking-wider">
-                  {client.category}
-                </p>
-              </StaggerItem>
-            ))}
-          </StaggerContainer>
-        </div>
-      </section>
-
-      {/* ─── 5. RENTAL PLANS SECTION (No Buttons) ─── */}
+      {/* ─── 5. CORPORATE RENTAL PLANS SECTION ─── */}
       <section className="py-20 sm:py-28 bg-slate-50">
         <div className="container mx-auto px-4">
           <FadeIn direction="up" className="text-center max-w-3xl mx-auto mb-16">
@@ -398,11 +365,11 @@ export default function CorporateRentPage() {
               Structured For Your Schedule
             </span>
             <h2 className="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight mb-4">
-              Corporate Rental Plans
+              Corporate Rental Plans (Weekly / Monthly / Yearly)
             </h2>
             <div className="w-20 h-1.5 bg-primary mx-auto rounded-full mb-4" />
             <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
-              Choose from flexible short-term hire or structured long-term leases with transparent pricing and complete operational support.
+              Weekly, monthly, and yearly options tailored to your company&apos;s requirements.
             </p>
           </FadeIn>
 
@@ -445,8 +412,102 @@ export default function CorporateRentPage() {
         </div>
       </section>
 
-      {/* ─── 6. BULK / FLEET VOLUME DISCOUNT DISCLOSURE ─── */}
-      <section className="py-12 bg-slate-50">
+      {/* ─── 6. IDEAL USE CASES & FLEET OPTIONS FOR BUSINESS NEEDS ─── */}
+      <section className="py-20 sm:py-24 bg-white border-t border-slate-100">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <div className="p-8 sm:p-10 rounded-3xl bg-slate-50 border border-slate-200/80">
+              <span className="text-primary font-bold uppercase tracking-widest text-xs mb-2 block">Application Scenarios</span>
+              <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-4">Ideal Use Cases</h2>
+              <div className="w-16 h-1 bg-primary rounded-full mb-6" />
+              <p className="text-slate-600 text-sm mb-6 leading-relaxed">
+                Staff transport, client travel, event logistics, and corporate outings.
+              </p>
+              <div className="space-y-3">
+                <div className="p-4 rounded-xl bg-white border border-slate-100">
+                  <h3 className="font-bold text-slate-900 text-sm mb-1">Daily Staff Transport</h3>
+                  <p className="text-xs text-slate-600 leading-relaxed">Punctual daily employee commute shuttles across Kathmandu Valley with route tracking.</p>
+                </div>
+                <div className="p-4 rounded-xl bg-white border border-slate-100">
+                  <h3 className="font-bold text-slate-900 text-sm mb-1">Executive &amp; VIP Delegation Travel</h3>
+                  <p className="text-xs text-slate-600 leading-relaxed">Luxury Toyota Fortuner and BYD electric vehicles for visiting executives and diplomats.</p>
+                </div>
+                <div className="p-4 rounded-xl bg-white border border-slate-100">
+                  <h3 className="font-bold text-slate-900 text-sm mb-1">Events, Summits &amp; Annual Outings</h3>
+                  <p className="text-xs text-slate-600 leading-relaxed">Coaster and luxury tourist buses coordinated for team-building retreats and conferences.</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="p-8 sm:p-10 rounded-3xl bg-slate-50 border border-slate-200/80">
+              <span className="text-primary font-bold uppercase tracking-widest text-xs mb-2 block">Fleet Availability</span>
+              <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-4">Fleet Options for Business Needs</h2>
+              <div className="w-16 h-1 bg-primary rounded-full mb-6" />
+              <p className="text-slate-600 text-sm mb-6 leading-relaxed">
+                Sedans, SUVs, and vans available for every corporate travel scenario.
+              </p>
+              <div className="grid grid-cols-2 gap-3 text-xs">
+                <div className="p-3.5 rounded-xl bg-white border border-slate-100">
+                  <span className="font-bold text-slate-900 block mb-1">Executive Sedans</span>
+                  <span className="text-slate-600">City meetings &amp; airport VIP pick-ups</span>
+                </div>
+                <div className="p-3.5 rounded-xl bg-white border border-slate-100">
+                  <span className="font-bold text-slate-900 block mb-1">Premium SUVs</span>
+                  <span className="text-slate-600">Inter-city travel &amp; site inspections</span>
+                </div>
+                <div className="p-3.5 rounded-xl bg-white border border-slate-100">
+                  <span className="font-bold text-slate-900 block mb-1">Toyota Hiace Vans</span>
+                  <span className="text-slate-600">Project teams &amp; group field visits</span>
+                </div>
+                <div className="p-3.5 rounded-xl bg-white border border-slate-100">
+                  <span className="font-bold text-slate-900 block mb-1">Tourist &amp; Mini Buses</span>
+                  <span className="text-slate-600">Conferences, AGMs &amp; corporate retreats</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ─── 7. FREQUENTLY ASKED QUESTIONS ─── */}
+      <section className="py-20 sm:py-24 bg-slate-50 border-t border-slate-200/80">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <FadeIn direction="up" className="text-center mb-16">
+            <span className="text-primary font-bold uppercase tracking-widest text-xs sm:text-sm mb-3 block">
+              Corporate FAQ
+            </span>
+            <h2 className="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight mb-4">
+              Frequently Asked Questions
+            </h2>
+            <div className="w-20 h-1.5 bg-primary mx-auto rounded-full mb-4" />
+            <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
+              Billing, account management, minimum duration, and staff transport drivers.
+            </p>
+          </FadeIn>
+
+          <div className="space-y-4">
+            {corporateFaqs.map((faq, idx) => (
+              <details
+                key={idx}
+                className="group p-6 rounded-2xl bg-white border border-slate-200/80 open:border-primary/30 open:shadow-md transition-all cursor-pointer"
+              >
+                <summary className="font-bold text-base sm:text-lg text-slate-900 list-none flex items-center justify-between gap-4">
+                  <span>{faq.q}</span>
+                  <span className="h-7 w-7 rounded-full bg-primary/10 text-primary flex items-center justify-center shrink-0 group-open:rotate-180 transition-transform text-sm font-black">
+                    ↓
+                  </span>
+                </summary>
+                <p className="mt-4 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                  {faq.a}
+                </p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ─── 8. BULK / FLEET VOLUME DISCOUNT DISCLOSURE ─── */}
+      <section className="py-12 bg-white border-t border-slate-100">
         <div className="container mx-auto px-4 max-w-5xl">
           <FadeIn direction="up" className="p-8 sm:p-12 rounded-3xl bg-gradient-to-br from-slate-900 via-slate-900 to-slate-950 text-white border border-slate-800 shadow-2xl relative overflow-hidden">
             <div className="absolute top-0 right-0 w-80 h-80 bg-primary/20 rounded-full blur-3xl -mr-40 -mt-40 pointer-events-none" />
@@ -512,8 +573,8 @@ export default function CorporateRentPage() {
         </div>
       </section>
 
-      {/* ─── 7. BOTTOM CONTACT / CTA BAR ─── */}
-      <section className="py-16 sm:py-20 bg-white">
+      {/* ─── 9. BOTTOM CONTACT / CTA BAR ─── */}
+      <section className="py-16 sm:py-20 bg-white border-t border-slate-100">
         <FadeIn direction="up" className="container mx-auto px-4 max-w-4xl text-center">
           <span className="text-primary font-bold uppercase tracking-widest text-xs mb-2 block">
             Direct Corporate Desk

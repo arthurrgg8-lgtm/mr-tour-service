@@ -125,7 +125,7 @@ Pushing to the `main` branch triggers the GitHub Actions workflow in `.github/wo
 *   **Physical Office:** Kalopul, Kathmandu, Nepal
 *   **Hotline (24/7 Available):** +977-9702134274
 *   **WhatsApp Chat:** [+9779702134274](https://wa.me/9779702134274)
-*   **Official Email:** manoranjanramjhamtourandtravel@gmail.com
+*   **Official Email:** manoranjantravels2024@gmail.com
 *   **Find Us on Google Maps:** [Manoranjan Ramjham Travel and Tour Kalopul](https://www.google.com/maps/search/?api=1&query=Manoranjan+Ramjham+Travel+and+Tour+Pvt.+Ltd+Kalopul+Kathmandu)
 
 ---

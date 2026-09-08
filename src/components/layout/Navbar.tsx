@@ -8,6 +8,7 @@ import { useState, useEffect, useMemo, useCallback } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { usePathname } from "next/navigation"
 import { buildWhatsAppUrl, scrollToId, cn } from "@/lib/utils"
+import { trackLeadConversion } from "@/lib/gtag"
 
 const NAV_LINKS = [
   { name: "HOME", href: "/" },
@@ -23,7 +24,7 @@ const VEHICLE_DROPDOWN = [
   { name: "SUV", capacity: "4 seater", price: "NPR 6,000", href: "/vehicles/suv-rent" },
   { name: "Jeep", capacity: "7 seater", price: "NPR 7,000", href: "/vehicles/jeep-rent" },
   { name: "Hiace", capacity: "14 seater", price: "NPR 8,000", href: "/vehicles/hiace-rent" },
-  { name: "Mini Bus", capacity: "18-22 seater", price: "NPR 11,000", href: "/vehicles/minibus-rent" },
+  { name: "Coaster", capacity: "18-22 seater", price: "NPR 11,000", href: "/vehicles/minibus-rent" },
   { name: "Sutlej Bus", capacity: "25-35 seater", price: "NPR 14,000", href: "/vehicles/bus-rent" },
   { name: "Premium Fleet", capacity: "7-32 seater", price: "NPR 15,000", href: "/vehicles/premium-fleet" },
 ]
@@ -36,7 +37,7 @@ export default function Navbar() {
   const pathname = usePathname()
 
   const dropdowns = useMemo(() => [
-    { id: "vehicle", name: "VEHICLE", items: VEHICLE_DROPDOWN, baseHref: "/vehicles" },
+    { id: "vehicle", name: "RENT WITH DRIVER", items: VEHICLE_DROPDOWN, baseHref: "/vehicles" },
   ], [])
 
   useEffect(() => {
@@ -91,21 +92,21 @@ export default function Navbar() {
 
   return (
     <nav className={cn(
-      "sticky top-0 z-50 w-full transition-all duration-300 border-b",
+      "sticky top-0 z-50 w-full transition-all duration-300 border-b bg-background",
       isScrolled 
-        ? "bg-background/90 backdrop-blur-md shadow-[0_4px_20px_-5px_rgba(var(--primary),0.1)] py-1" 
-        : "bg-background py-3"
+        ? "backdrop-blur-md shadow-sm py-1" 
+        : "py-1.5 sm:py-2.5"
     )}>
-      <div className="container mx-auto flex h-14 items-center justify-between px-4">
+      <div className="container mx-auto flex h-11 sm:h-13 items-center justify-between px-3.5 sm:px-4">
         <div className="flex items-center gap-2">
-          <Link href="/" className="flex items-center gap-3 group">
+          <Link href="/" className="flex items-center gap-2.5 group">
             <div className="relative">
               <Image 
                 src="/logo.jpg" 
                 alt={business.name}
-                width={44}
-                height={44}
-                className="rounded-lg object-contain bg-white border border-slate-100 shadow-sm transition-transform group-hover:scale-105"
+                width={36}
+                height={36}
+                className="h-8 w-8 sm:h-10 sm:w-10 rounded-lg object-contain bg-white border border-slate-100 shadow-sm transition-transform group-hover:scale-105"
                 priority
               />
               {isScrolled && (
@@ -118,10 +119,10 @@ export default function Navbar() {
               )}
             </div>
             <div className="flex flex-col">
-              <span className="text-lg font-black tracking-tight text-primary leading-none group-hover:text-primary/80 transition-colors">
+              <span className="text-[15px] sm:text-lg font-black tracking-tight text-primary leading-none group-hover:text-primary/80 transition-colors">
                 {business.name}
               </span>
-              <span className="text-[9px] font-bold uppercase tracking-[0.2em] text-muted-foreground">
+              <span className="text-[8px] sm:text-[9px] font-bold uppercase tracking-[0.18em] text-muted-foreground mt-0.5">
                 FUEL YOUR FREEDOM
               </span>
             </div>
@@ -242,7 +243,17 @@ export default function Navbar() {
           ))}
         </div>
 
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2 sm:gap-3">
+          {/* Mobile Call Quick Action */}
+          <a
+            href={`tel:${business.contact.phone}`}
+            className="md:hidden flex items-center gap-1.5 h-8 px-2.5 rounded-lg bg-primary text-white text-xs font-bold shadow-sm active:scale-95 transition-all hover:bg-primary/90"
+            aria-label="Call Now"
+          >
+            <Phone className="h-3.5 w-3.5" />
+            <span className="text-[11px] font-black uppercase tracking-wider">Call</span>
+          </a>
+
           <a
             href={`tel:${business.contact.phone}`}
             className="hidden lg:flex items-center gap-2 text-xs font-black text-slate-700 hover:text-primary transition-colors"
@@ -256,6 +267,7 @@ export default function Navbar() {
             href={buildWhatsAppUrl(business.contact.whatsapp)}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => trackLeadConversion()}
             className="hidden sm:flex h-10 items-center justify-center rounded-xl bg-green-500 px-5 text-xs font-black text-white hover:bg-green-600 transition-all shadow-lg shadow-green-200 hover:scale-105 active:scale-95 uppercase tracking-wider"
           >
             <MessageCircle className="mr-2 h-4 w-4" />
@@ -264,12 +276,12 @@ export default function Navbar() {
           
           {/* Mobile Menu Toggle */}
           <button 
-            className="md:hidden p-2 text-slate-600 hover:text-primary transition-all focus:outline-none bg-slate-50 rounded-xl"
+            className="md:hidden p-1.5 text-slate-700 hover:text-primary transition-all focus:outline-none bg-slate-100 rounded-lg"
             onClick={() => setIsOpen(!isOpen)}
             aria-expanded={isOpen}
             aria-label="Toggle menu"
           >
-            {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
         </div>
       </div>
@@ -298,11 +310,23 @@ export default function Navbar() {
               {dropdowns.map((dropdown) => (
                 <div key={dropdown.id} className="flex flex-col gap-3">
                   <div className="flex justify-between items-center border-b border-slate-50 pb-2">
-                    <span className="text-[10px] font-black text-muted-foreground uppercase tracking-[0.2em]">{dropdown.name}</span>
                     <Link
                       href={dropdown.baseHref}
-                      onClick={() => setIsOpen(false)}
-                      className="text-[10px] font-black text-primary uppercase tracking-widest bg-primary/5 px-3 py-1 rounded-full"
+                      onClick={(e) => {
+                        handleLinkClick(e, dropdown.baseHref)
+                        setIsOpen(false)
+                      }}
+                      className="text-xs font-black text-slate-800 hover:text-primary uppercase tracking-wider flex-1 py-1"
+                    >
+                      {dropdown.name}
+                    </Link>
+                    <Link
+                      href={dropdown.baseHref}
+                      onClick={(e) => {
+                        handleLinkClick(e, dropdown.baseHref)
+                        setIsOpen(false)
+                      }}
+                      className="text-[10px] font-black text-primary uppercase tracking-widest bg-primary/5 px-3 py-1 rounded-full hover:bg-primary/10 transition-colors"
                     >
                       VIEW ALL →
                     </Link>
@@ -368,6 +392,7 @@ export default function Navbar() {
                   href={buildWhatsAppUrl(business.contact.whatsapp)}
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() => trackLeadConversion()}
                   className="flex h-14 items-center justify-center rounded-2xl bg-green-500 text-white font-black text-lg shadow-lg shadow-green-100"
                 >
                   <MessageCircle className="mr-3 h-6 w-6" />

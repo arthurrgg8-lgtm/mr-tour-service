@@ -40,14 +40,13 @@ export function buildGmailUrl(email: string, subject?: string, body?: string) {
   return `https://mail.google.com/mail/?${params.toString()}`
 }
 
-export function scrollToId(id: string, offset = 100, addGlow = false) {
+export function scrollToId(id: string, offset = 80, addGlow = false) {
   const element = document.getElementById(id)
   
   if (element) {
-    const bodyRect = document.body.getBoundingClientRect().top
-    const elementRect = element.getBoundingClientRect().top
-    const elementPosition = elementRect - bodyRect
-    const offsetPosition = elementPosition - offset
+    const scrollY = window.scrollY || window.pageYOffset || document.documentElement.scrollTop || 0
+    const elementPosition = element.getBoundingClientRect().top + scrollY
+    const offsetPosition = Math.max(0, elementPosition - offset)
 
     window.scrollTo({
       top: offsetPosition,

@@ -25,11 +25,22 @@ export const metadata: Metadata = {
     },
   },
   title: {
-    default: `${business.name} | Premium Vehicle Rental & Tours in Nepal`,
+    default: `Vehicle Rental in Nepal | Car, SUV, Jeep, Hiace, Coaster & Bus Rental | ${business.name}`,
     template: `%s | ${business.name}`
   },
-  description: `Experience Nepal with confidence — 100% owned fleet of luxury vehicles, expert-led treks, and curated tours. Safe, reliable travel across Kathmandu, Pokhara & beyond. Book now.`,
-  keywords: ["car rental Nepal", "Kathmandu vehicle hire", "Jeep rental for Mustang", "luxury tour packages Nepal", "Everest base camp trekking", "Toyota Hiace rental Nepal", "premium travel service Kathmandu", "best tour operator Nepal"],
+  description: `${business.name} offers vehicle rental across Nepal — cars, SUVs, vans, and buses with safe, well-maintained fleet and easy booking.`,
+  keywords: [
+    "vehicle rental service in Nepal",
+    "car rental Nepal",
+    "SUV rental Nepal",
+    "jeep rental Nepal",
+    "Hiace rental Nepal",
+    "coaster rental Nepal",
+    "bus rental Nepal",
+    "self drive car rental Nepal",
+    "corporate vehicle rental Nepal",
+    "Kathmandu vehicle hire"
+  ],
   authors: [{ name: "LazZy" }],
   robots: {
     index: true,
@@ -47,21 +58,21 @@ export const metadata: Metadata = {
     locale: "en_NP",
     url: "https://manoranjan.com.np",
     siteName: business.name,
-    title: `${business.name} | Premium Vehicle Rental & Tours in Nepal`,
-    description: `100% company-owned luxury fleet, expert-led Himalayan treks, and curated Nepal tours. Safe, reliable travel since 2003 — from Kathmandu to Everest.`,
+    title: `Vehicle Rental in Nepal | Car, SUV, Jeep, Hiace, Coaster & Bus Rental | ${business.name}`,
+    description: `${business.name} offers vehicle rental across Nepal — cars, SUVs, vans, and buses with safe, well-maintained fleet and easy booking.`,
     images: [
       {
         url: "/logo.jpg",
         width: 800,
         height: 800,
-        alt: business.name,
+        alt: "vehicle rental service in Nepal",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: `${business.name} | Premium Vehicle Rental & Tours in Nepal`,
-    description: `100% company-owned luxury fleet, expert-led Himalayan treks, and curated Nepal tours. Safe, reliable travel since 2003 — from Kathmandu to Everest.`,
+    title: `Vehicle Rental in Nepal | Car, SUV, Jeep, Hiace, Coaster & Bus Rental | ${business.name}`,
+    description: `${business.name} offers vehicle rental across Nepal — cars, SUVs, vans, and buses with safe, well-maintained fleet and easy booking.`,
     images: ["/logo.jpg"],
   },
   icons: {
@@ -156,7 +167,7 @@ export default function RootLayout({
           "@type": "Person",
           "name": "Sarah Miller"
         },
-        "reviewBody": "The custom tour planned by M.R TRAVEL AND TOUR was fantastic. Everything was well-organized and the pricing was very fair."
+        "reviewBody": "The rental service provided by MR Vehicle Rental was fantastic. Everything was well-organized and the pricing was very fair."
       },
       {
         "@type": "Review",
@@ -219,7 +230,14 @@ export default function RootLayout({
         <meta name="referrer" content="strict-origin-when-cross-origin" />
         <meta httpEquiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()" />
 
+        {/* Geographic / Local SEO Meta Tags */}
+        <meta name="geo.region" content="NP-BA" />
+        <meta name="geo.placename" content="Kathmandu" />
+        <meta name="geo.position" content="27.7118;85.3353" />
+        <meta name="ICBM" content="27.7118, 85.3353" />
+
         {/* Google tag (gtag.js) */}
+        {/* eslint-disable-next-line @next/next/next-script-for-ga */}
         <script
           async
           src="https://www.googletagmanager.com/gtag/js?id=AW-18048947362"

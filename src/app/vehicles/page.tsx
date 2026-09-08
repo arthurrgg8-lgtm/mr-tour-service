@@ -1,12 +1,18 @@
 import type { Metadata } from "next"
 import services from "@/data/services.json"
 import business from "@/data/business.json"
-import { Car, Map as MapIcon, Mountain, Bus, Users, ShieldCheck } from "lucide-react"
-import Image from "next/image"
-import Link from "next/link"
-import EnquireButton from "@/components/ui/EnquireButton"
 import ImageSlideshow from "@/components/ui/ImageSlideshow"
+import ServiceInquiryForm from "@/components/sections/ServiceInquiryForm"
+import VehicleCategoryCard from "./VehicleCategoryCard"
 import { safeJsonLdStringify } from "@/lib/utils"
+
+const FLEET_SHOWCASE_IMAGES = [
+  "/images/services/car/carent-4.jpeg",
+  "/images/services/suv/suv.jpeg",
+  "/images/services/jeep/JEEP3.jpeg",
+  "/images/services/hiace/hiace-full.jpeg",
+  "/images/services/bus/sutlej-bus-1.jpeg",
+]
 
 interface Service {
   id: string
@@ -23,8 +29,8 @@ interface Service {
 }
 
 export const metadata: Metadata = {
-  title: "Vehicle Rental Fleet in Nepal",
-  description: `Rent premium vehicles in Nepal — Toyota Fortuner 4x4, BYD EV, Toyota Hiace & luxury tourist buses. 100% company-owned fleet with verified drivers.`,
+  title: `Our Fleet | Cars, SUVs, Vans & Buses for Rent in Nepal`,
+  description: `Browse our full fleet of rental vehicles in Nepal — sedans, SUVs, jeeps, vans, and buses. Safe, reliable, and available for every trip.`,
   alternates: {
     canonical: "/vehicles",
   },
@@ -33,33 +39,68 @@ export const metadata: Metadata = {
     locale: "en_NP",
     url: "https://manoranjan.com.np/vehicles",
     siteName: business.name,
-    title: `${business.name} - Vehicle Rental Fleet`,
-    description: `Rent the best vehicles in Nepal — Toyota Fortuner, BYD Atto 3 EV, luxury buses & more. 100% company-owned fleet with professional drivers.`,
+    title: `Our Fleet | Cars, SUVs, Vans & Buses for Rent in Nepal`,
+    description: `Browse our full fleet of rental vehicles in Nepal — sedans, SUVs, jeeps, vans, and buses. Safe, reliable, and available for every trip.`,
     images: [
       {
         url: "https://manoranjan.com.np/logo.jpg",
         width: 800,
         height: 800,
-        alt: business.name,
+        alt: "car, SUV, and bus rental fleet Nepal",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: `${business.name} - Vehicle Rental Fleet`,
-    description: `Rent the best vehicles in Nepal — Toyota Fortuner, BYD Atto 3 EV, luxury buses & more. 100% company-owned fleet with professional drivers.`,
+    title: `Our Fleet | Cars, SUVs, Vans & Buses for Rent in Nepal`,
+    description: `Browse our full fleet of rental vehicles in Nepal — sedans, SUVs, jeeps, vans, and buses. Safe, reliable, and available for every trip.`,
     images: ["https://manoranjan.com.np/logo.jpg"],
   },
 }
 
-const iconMap: { [key: string]: React.ComponentType<{ className?: string }> } = {
-  Car,
-  Map: MapIcon,
-  Mountain,
-  Bus,
-  Users,
-  ShieldCheck,
-}
+
+const fleetFaqs = [
+  {
+    q: "What types of vehicles do you offer for rental in Nepal?",
+    a: "We offer a range of rental vehicles including cars, SUVs, Hiace, Coaster and buses for individual, family, corporate and group travel across Nepal.",
+  },
+  {
+    q: "Do you provide cars with professional drivers?",
+    a: "Yes. We provide car rental with professional drivers for airport transfers, sightseeing, business travel, family trips and long-distance journeys.",
+  },
+  {
+    q: "Can I rent a car for airport pickup and drop-off?",
+    a: "Yes. We provide airport transfer services from Kathmandu airport to your hotel, residence or other destinations, as well as airport drop-off services.",
+  },
+  {
+    q: "Can I rent a vehicle for travel outside Kathmandu?",
+    a: "Yes. Our vehicles are available for travel from Kathmandu to Pokhara, Chitwan, Lumbini, Nagarkot, Mustang and other destinations across Nepal, subject to availability.",
+  },
+  {
+    q: "Do you offer self-drive car rental in Nepal?",
+    a: "Yes, self-drive rental options are available for selected vehicles, subject to our rental terms, documentation and availability.",
+  },
+  {
+    q: "How much does car rental in Nepal cost?",
+    a: "Starting from 5000 NPR , Rental prices depend on the vehicle type, rental duration, destination, mileage and whether a driver is required or not. Contact us for the latest quotation.",
+  },
+  {
+    q: "Can I rent a vehicle for several days?",
+    a: "Yes. We provide short-term and multi-day vehicle rental options based on your travel requirements.",
+  },
+  {
+    q: "Do you provide vehicles for corporate and business travel?",
+    a: "Yes. We provide vehicle rental and transportation solutions for companies, organizations, business trips, meetings, events and corporate travel.",
+  },
+  {
+    q: "How can I book a rental vehicle?",
+    a: "You can contact Manoranjan by phone or WhatsApp with your travel date, pickup location, destination and preferred vehicle. Our team will provide availability and pricing.",
+  },
+  {
+    q: "How early should I book a vehicle?",
+    a: "We recommend booking as early as possible, especially during peak travel seasons, holidays and busy periods, to ensure your preferred vehicle is available.",
+  },
+]
 
 export default function VehiclesPage() {
   const typedServices = (services as Service[])
@@ -73,114 +114,191 @@ export default function VehiclesPage() {
     ]
   }
 
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": fleetFaqs.map(faq => ({
+      "@type": "Question",
+      "name": faq.q,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.a
+      }
+    }))
+  }
+
   return (
-    <div className="pt-20 pb-24 w-full overflow-x-hidden">
+    <div className="w-full overflow-x-hidden">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: safeJsonLdStringify(jsonLd) }}
       />
-      {/* Header */}
-      <section className="relative bg-slate-900 py-32 text-white overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <Image 
-            src="/images/fleet/fleet-bg.jpg" 
-            alt="Vehicle Fleet Background"
-            fill
-            className="object-cover"
-            priority
-          />
-          <div className="absolute inset-0 bg-black/40" />
-        </div>
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">Our Vehicle Fleet</h1>
-            <p className="text-xl text-slate-300 leading-relaxed">
-              100% company-owned fleet of premium vehicles. From compact cars for city rides 
-              to luxury buses for large groups — every vehicle comes with a professional, trained driver.
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: safeJsonLdStringify(faqJsonLd) }}
+      />
+      
+      {/* 1. Vehicle Categories (Directly at the top) */}
+      <section className="py-8 sm:py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="mb-10 text-center max-w-2xl mx-auto">
+            <span className="text-primary font-bold uppercase tracking-widest text-xs sm:text-sm block mb-2">
+              Chauffeur Driven Fleet
+            </span>
+            <h1 className="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight">
+              Vehicle Rental Fleet in Nepal
+            </h1>
+            <p className="mt-3 text-slate-600 text-sm sm:text-base">
+              Explore our range of cars, SUVs, jeeps, vans, and luxury buses available with professional drivers.
             </p>
+          </div>
+
+          <div className="grid grid-cols-1 gap-8 sm:gap-12">
+            {typedServices.map((service, idx) => (
+              <VehicleCategoryCard 
+                key={service.id} 
+                service={service} 
+                idx={idx} 
+              />
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Vehicle Categories */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 gap-16">
-            {typedServices.map((service, idx) => {
-              const Icon = iconMap[service.icon] || MapIcon
-              
-              return (
-                <div 
-                  key={service.id}
-                  id={service.id}
-                  className="group flex flex-col lg:flex-row gap-8 lg:gap-16 items-start scroll-mt-32"
-                >
-                  {/* Image Slideshow */}
-                  <div className="w-full lg:w-1/2">
-                    <div className="relative h-[250px] sm:h-[350px] lg:h-[450px] rounded-2xl sm:rounded-[2rem] overflow-hidden shadow-2xl">
-                      <ImageSlideshow 
-                        images={service.images || []} 
-                        priority={idx < 2}
-                      />
-                    </div>
-                  </div>
+      {/* 2. Showcase Slideshow & Quick Inquiry Form Section (Moved below vehicle categories) */}
+      <section id="inquiry-form" className="relative bg-slate-900 text-white py-16 sm:py-20 overflow-hidden scroll-mt-16">
+        {/* Subtle Background Glow */}
+        <div className="absolute inset-0 z-0 opacity-20 pointer-events-none">
+          <div className="absolute -top-40 -left-40 w-96 h-96 bg-primary rounded-full blur-3xl" />
+          <div className="absolute bottom-0 right-0 w-96 h-96 bg-primary/50 rounded-full blur-3xl" />
+        </div>
 
-                  {/* Content */}
-                  <div className="w-full lg:w-1/2 space-y-4 sm:space-y-6">
-                    <div className="flex items-center gap-3 sm:gap-4">
-                      <div className="h-10 w-10 sm:h-14 sm:w-14 rounded-xl sm:rounded-2xl bg-primary/10 flex items-center justify-center text-primary shrink-0">
-                        <Icon className="h-5 w-5 sm:h-7 sm:w-7" />
-                      </div>
-                      <div>
-                        <h2 className="text-xl sm:text-3xl font-bold tracking-tight">{service.title}</h2>
-                        <div className="flex flex-wrap items-center gap-2 sm:gap-3 mt-1">
-                          {service.capacity && (
-                            <span className="text-xs font-bold text-slate-500 uppercase tracking-wider">{service.capacity}</span>
-                          )}
-                          {service.recommendedFor && (
-                            <span className="text-[10px] font-bold uppercase tracking-wider text-primary bg-primary/10 px-2 py-0.5 rounded">{service.recommendedFor}</span>
-                          )}
-                        </div>
-                      </div>
-                    </div>
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-3xl mb-8">
+            <span className="text-xs sm:text-sm font-bold uppercase tracking-widest text-primary block mb-2 font-mono">
+              Rent with Driver • 100% Owned Fleet
+            </span>
+            <h2 className="text-3xl sm:text-5xl font-black mb-3 text-white tracking-tight leading-tight">
+              Explore Our Vehicle Rental Fleet in Nepal
+            </h2>
+            <p className="text-base sm:text-lg text-slate-300 leading-relaxed font-medium">
+              Browse cars, SUVs, jeeps, vans, and buses — all available for rent across Nepal with flexible booking options.
+            </p>
+          </div>
 
-                    <p className="text-slate-600 leading-relaxed text-sm sm:text-lg">
-                      {service.details || service.description}
-                    </p>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+            {/* Left Column: Image Slideshow & Fleet Details */}
+            <div className="lg:col-span-8 space-y-6">
+              <div className="relative h-[280px] xs:h-[320px] sm:h-[450px] md:h-[480px] rounded-2xl sm:rounded-[2rem] overflow-hidden shadow-2xl border border-white/10">
+                <ImageSlideshow images={FLEET_SHOWCASE_IMAGES} priority={false} />
+              </div>
 
-                    {service.startingPrice && (
-                      <div className="inline-flex items-center gap-2 p-3 sm:p-4 rounded-xl bg-slate-50 border border-slate-100">
-                        <span className="text-xs font-bold uppercase tracking-widest text-primary">Starting From</span>
-                        <span className="text-lg sm:text-xl font-bold text-slate-900">{service.startingPrice}</span>
-                      </div>
-                    )}
+              {/* Mobile-only Quick Inquiry (Right below image) */}
+              <div className="lg:hidden">
+                <ServiceInquiryForm initialType="Rental" initialVehicleType="Car" allowedTypes={["Rental"]} compact />
+              </div>
 
-                    {service.subServices && Array.isArray(service.subServices[0]) && (
-                      <div className="space-y-2">
-                        <h4 className="text-xs font-bold uppercase tracking-widest text-muted-foreground">Use Cases</h4>
-                        <div className="flex flex-wrap gap-2">
-                          {(service.subServices as unknown as string[]).map((use, i) => (
-                            <span key={i} className="text-xs font-medium text-slate-600 bg-slate-100 px-3 py-1.5 rounded-lg">
-                              {use}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
-                    )}
-
-                    <div className="pt-2 flex flex-col sm:flex-row gap-3">
-                      <Link 
-                        href={`/vehicles/${service.id}`}
-                        className="inline-flex h-14 items-center justify-center rounded-xl bg-primary/5 border border-primary/10 px-8 text-sm font-bold text-primary hover:bg-primary/10 transition-all"
-                      >
-                        View Full Details →
-                      </Link>
-                      <EnquireButton>Enquire Now</EnquireButton>
-                    </div>
-                  </div>
+              <div className="p-4 sm:p-5 rounded-2xl bg-white/[0.05] border border-white/10 backdrop-blur-sm flex flex-wrap items-center justify-between gap-3">
+                <div>
+                  <span className="text-xs font-bold uppercase tracking-widest text-primary block">Chauffeur Fleet</span>
+                  <span className="text-base sm:text-lg font-bold text-white">Cars, SUVs, Jeeps, Vans &amp; Luxury Buses</span>
                 </div>
-              )
-            })}
+                <span className="text-xs font-semibold text-primary bg-primary/10 border border-primary/20 px-3.5 py-1.5 rounded-full">
+                  Instant Confirmation
+                </span>
+              </div>
+            </div>
+
+            {/* Right Column: Desktop Sticky Quick Inquiry */}
+            <div className="hidden lg:block lg:col-span-4">
+              <div className="lg:sticky lg:top-24">
+                <ServiceInquiryForm initialType="Rental" initialVehicleType="Car" allowedTypes={["Rental"]} compact />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Our Fleet Stands Out & How to Choose the Right Vehicle */}
+      <section className="py-20 bg-slate-50 border-t border-slate-200/80">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <div className="p-8 sm:p-10 rounded-3xl bg-white border border-slate-200/80 shadow-sm">
+              <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-4">Why Our Fleet Stands Out</h2>
+              <div className="w-16 h-1 bg-primary rounded-full mb-6" />
+              <p className="text-slate-600 leading-relaxed mb-6">
+                Every vehicle is regularly maintained, safety-inspected, and ready for the road. We operate 100% company-owned vehicles to guarantee pristine cleanliness, comprehensive insurance coverage, and seasoned local chauffeurs.
+              </p>
+              <ul className="space-y-3 text-sm text-slate-700 font-medium">
+                <li className="flex items-center gap-2">✓ 100% Company-Owned Vehicles</li>
+                <li className="flex items-center gap-2">✓ Mandatory Pre-Trip Safety &amp; AC Inspection</li>
+                <li className="flex items-center gap-2">✓ Verified, Background-Checked Mountain Drivers</li>
+                <li className="flex items-center gap-2">✓ 24/7 Rapid Replacement Roadside Backup</li>
+              </ul>
+            </div>
+
+            <div className="p-8 sm:p-10 rounded-3xl bg-white border border-slate-200/80 shadow-sm">
+              <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-4">How to Choose the Right Vehicle</h2>
+              <div className="w-16 h-1 bg-primary rounded-full mb-6" />
+              <p className="text-slate-600 leading-relaxed mb-6">
+                Match your group size, route, and budget to find the perfect rental vehicle. Whether it is a compact car for Kathmandu heritage sites, a 4WD Scorpio for Upper Mustang, or a luxury Hiace for family tours, we have the ideal option.
+              </p>
+              <div className="grid grid-cols-2 gap-3 text-xs">
+                <div className="p-3 rounded-xl bg-slate-50 border border-slate-100">
+                  <span className="font-bold text-slate-900 block mb-1">1-4 Passengers:</span>
+                  <span className="text-slate-600">Sedan / SUV for city and short highway getaways</span>
+                </div>
+                <div className="p-3 rounded-xl bg-slate-50 border border-slate-100">
+                  <span className="font-bold text-slate-900 block mb-1">4-7 Passengers:</span>
+                  <span className="text-slate-600">4WD Scorpio / Land Cruiser for off-road trails</span>
+                </div>
+                <div className="p-3 rounded-xl bg-slate-50 border border-slate-100">
+                  <span className="font-bold text-slate-900 block mb-1">7-14 Passengers:</span>
+                  <span className="text-slate-600">Toyota Hiace Super GL for comfortable group tours</span>
+                </div>
+                <div className="p-3 rounded-xl bg-slate-50 border border-slate-100">
+                  <span className="font-bold text-slate-900 block mb-1">15-35+ Passengers:</span>
+                  <span className="text-slate-600">Coaster &amp; Luxury Tourist Coaches for large groups</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Frequently Asked Questions */}
+      <section className="py-20 bg-white border-t border-slate-100">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <div className="text-center mb-12">
+            <span className="text-primary font-bold uppercase tracking-widest text-xs sm:text-sm mb-3 block">
+              Fleet Questions
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-4">
+              Frequently Asked Questions
+            </h2>
+            <div className="w-20 h-1.5 bg-primary mx-auto rounded-full mb-4" />
+            <p className="text-slate-600 text-sm sm:text-base">
+              Common questions on vehicle types, pricing, and driver availability.
+            </p>
+          </div>
+
+          <div className="space-y-4">
+            {fleetFaqs.map((faq, idx) => (
+              <details
+                key={idx}
+                className="group p-6 rounded-2xl bg-slate-50 border border-slate-200/80 open:bg-white open:border-primary/30 open:shadow-md transition-all cursor-pointer"
+              >
+                <summary className="font-bold text-base sm:text-lg text-slate-900 list-none flex items-center justify-between gap-4">
+                  <span>{faq.q}</span>
+                  <span className="h-7 w-7 rounded-full bg-primary/10 text-primary flex items-center justify-center shrink-0 group-open:rotate-180 transition-transform text-sm font-black">
+                    ↓
+                  </span>
+                </summary>
+                <p className="mt-4 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                  {faq.a}
+                </p>
+              </details>
+            ))}
           </div>
         </div>
       </section>

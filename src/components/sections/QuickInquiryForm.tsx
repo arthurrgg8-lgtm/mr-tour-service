@@ -147,8 +147,6 @@ export default function QuickInquiryForm() {
                 <option value="Vehicle Rental" className="bg-white text-slate-900">Vehicle Rental</option>
                 <option value="Corporate Rent" className="bg-white text-slate-900">Corporate Rent</option>
                 <option value="Self Drive" className="bg-white text-slate-900">Self Drive</option>
-                <option value="Tour Package" className="bg-white text-slate-900">Tour Package</option>
-                <option value="Trekking" className="bg-white text-slate-900">Trekking</option>
                 <option value="Airport Transfer" className="bg-white text-slate-900">Airport Transfer</option>
                 <option value="Other" className="bg-white text-slate-900">Other</option>
               </select>

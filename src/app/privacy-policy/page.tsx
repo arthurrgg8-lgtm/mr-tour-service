@@ -43,7 +43,7 @@ export default function PrivacyPolicy() {
   }
 
   return (
-    <div className="pt-32 pb-24 min-h-screen">
+    <div className="pt-8 sm:pt-16 pb-20 min-h-screen">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: safeJsonLdStringify(jsonLd) }}
@@ -66,7 +66,7 @@ export default function PrivacyPolicy() {
 
           <p className="text-xl leading-relaxed text-slate-700 mt-6">
             By using our services, you consent to the collection and use of your information as described here, 
-            and you can contact us at <a href="mailto:manoranjanramjhamtourandtravel@gmail.com" className="text-primary font-bold hover:underline">manoranjanramjhamtourandtravel@gmail.com</a> at any time to request the access, correction, or deletion of your personal data.
+            and you can contact us at <a href={`mailto:${business.contact.email}`} className="text-primary font-bold hover:underline">{business.contact.email}</a> at any time to request the access, correction, or deletion of your personal data.
           </p>
         </div>
       </div>

@@ -81,7 +81,7 @@ export default function ServicesPage() {
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "What vehicles does M.R Travel and Tour offer for rent?",
+        "name": "What vehicles does MR Vehicle Rental offer for rent?",
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "We offer a 100% owned fleet including Toyota Fortuner (6+1 seater 4x4 SUV), BYD Atto 3 EV (5+1 seater luxury electric SUV), Maruti Suzuki Brezza (5+1 seater SUV), Toyota Hiace (12+1 seater minibus), luxury tourist buses (30-40 seater), Scorpio (6+1 seater 4x4), and pickup trucks for cargo. All vehicles come with professional drivers."
@@ -115,7 +115,7 @@ export default function ServicesPage() {
   }
 
   return (
-    <div className="pt-20 pb-24 w-full overflow-x-hidden">
+    <div className="w-full overflow-x-hidden">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: safeJsonLdStringify(jsonLd) }}
@@ -125,7 +125,7 @@ export default function ServicesPage() {
         dangerouslySetInnerHTML={{ __html: safeJsonLdStringify(faqJsonLd) }}
       />
       {/* Header */}
-      <section className="relative bg-slate-900 py-32 text-white overflow-hidden">
+      <section className="relative bg-slate-900 pt-6 sm:pt-12 lg:pt-16 pb-12 sm:pb-20 text-white overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image 
             src="/images/hero/services-bg.jpg" 

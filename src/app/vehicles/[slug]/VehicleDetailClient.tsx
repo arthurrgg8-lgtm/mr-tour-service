@@ -26,10 +26,12 @@ interface VehicleDetailProps {
     capacity?: string
     startingPrice?: string
     recommendedFor?: string
-    details: string
+    details?: string
     subServices?: unknown[]
     images: string[]
   }
+  seoH1?: string
+  seoH1Subtitle?: string
 }
 
 interface FaqItem {
@@ -42,81 +44,129 @@ interface FaqData {
   questions: FaqItem[]
 }
 
-export default function VehicleDetailClient({ slug, service }: VehicleDetailProps) {
+export default function VehicleDetailClient({ slug, service, seoH1, seoH1Subtitle }: VehicleDetailProps) {
   const [openFaq, setOpenFaq] = useState<number | null>(null)
   const faqData = (vehicleFaqs as Record<string, FaqData>)[slug]
   const seo = (vehicleSeo as Record<string, VehicleSeo>)[slug]
 
+  const displayH1 = seoH1 || service.title
+  const displaySubtitle = seoH1Subtitle || service.details
+
   return (
     <>
-      {/* Top Section: Showcase (Image & Details) + Sticky Quick Inquiry */}
-      <section className="py-16 sm:py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
-            {/* Left: Images + Info */}
-            <FadeIn direction="up" className="lg:col-span-8 space-y-8">
-              {/* Image Slideshow */}
-              <div className="relative h-[320px] sm:h-[450px] rounded-2xl sm:rounded-[2rem] overflow-hidden shadow-2xl">
+      {/* ─── 1. TOP MAIN HERO SECTION (Heading + Slideshow + Quick Inquiry) ─── */}
+      <section className="relative bg-slate-900 text-white pt-10 sm:pt-14 lg:pt-16 pb-12 sm:pb-20 overflow-hidden">
+        {/* Subtle Background Glow */}
+        <div className="absolute inset-0 z-0 opacity-20 pointer-events-none">
+          <div className="absolute -top-40 -left-40 w-96 h-96 bg-primary rounded-full blur-3xl" />
+          <div className="absolute bottom-0 right-0 w-96 h-96 bg-primary/50 rounded-full blur-3xl" />
+        </div>
+
+        <div className="container mx-auto px-4 relative z-10">
+          {/* Breadcrumb & Title */}
+          <div className="mb-6 sm:mb-8 max-w-4xl">
+            <div className="flex items-center gap-2 text-xs sm:text-sm text-slate-400 mb-3">
+              <Link href="/" className="hover:text-white transition-colors">Home</Link>
+              <span>/</span>
+              <Link href="/vehicles" className="hover:text-white transition-colors">Vehicles</Link>
+              <span>/</span>
+              <span className="text-primary font-medium">{displayH1}</span>
+            </div>
+
+            <div className="flex flex-wrap items-center gap-3 mb-2">
+              <h1 className="text-2xl sm:text-4xl md:text-5xl font-black text-white tracking-tight leading-tight">
+                {displayH1}
+              </h1>
+              {service.capacity && (
+                <span className="text-xs font-bold uppercase tracking-wider text-primary bg-primary/10 border border-primary/20 px-3 py-1 rounded-full">
+                  {service.capacity}
+                </span>
+              )}
+            </div>
+            {displaySubtitle && (
+              <p className="text-sm sm:text-base text-slate-300 max-w-3xl leading-relaxed">
+                {displaySubtitle}
+              </p>
+            )}
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+            {/* Left: Image Slideshow & Price Highlight */}
+            <div className="lg:col-span-8 space-y-6">
+              <div className="relative h-[300px] xs:h-[360px] sm:h-[480px] md:h-[520px] rounded-2xl sm:rounded-[2rem] overflow-hidden shadow-2xl border border-white/10">
                 <ImageSlideshow images={service.images} priority />
+              </div>
+
+              {/* Mobile-only Quick Inquiry (Directly under image) */}
+              <div className="lg:hidden">
+                <ServiceInquiryForm initialType="Rental" initialVehicleType={slug} allowedTypes={["Rental"]} compact />
               </div>
 
               {/* Price Bar */}
               {service.startingPrice && (
-                <div className="flex flex-wrap items-center justify-between gap-4 p-5 sm:p-6 rounded-2xl bg-slate-50 border border-slate-100">
+                <div className="flex flex-wrap items-center justify-between gap-4 p-4 sm:p-5 rounded-2xl bg-white/[0.05] border border-white/10 backdrop-blur-sm">
                   <div>
                     <span className="text-xs font-bold uppercase tracking-widest text-primary block">Starting From</span>
-                    <span className="text-2xl sm:text-3xl font-black text-slate-900">{service.startingPrice}</span>
+                    <span className="text-xl sm:text-2xl font-black text-white">{service.startingPrice}</span>
                   </div>
                   {service.recommendedFor && (
-                    <span className="text-xs sm:text-sm font-bold uppercase tracking-wider text-primary bg-primary/10 px-4 py-2 rounded-xl">
+                    <span className="text-xs font-semibold text-primary bg-primary/10 border border-primary/20 px-3.5 py-1.5 rounded-full">
                       {service.recommendedFor}
                     </span>
                   )}
                 </div>
               )}
+            </div>
 
-              {/* Description */}
-              <div>
-                <h2 className="text-2xl sm:text-3xl font-bold mb-4">About This Vehicle</h2>
-                <p className="text-slate-600 leading-relaxed text-base sm:text-lg">{service.details}</p>
+            {/* Right: Desktop Sticky Quick Inquiry */}
+            <div className="hidden lg:block lg:col-span-4">
+              <div className="lg:sticky lg:top-24">
+                <ServiceInquiryForm initialType="Rental" initialVehicleType={slug} allowedTypes={["Rental"]} compact />
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-              {/* Use Cases & Standard Inclusions */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {service.subServices && Array.isArray(service.subServices[0]) && (
-                  <div className="p-6 rounded-2xl bg-slate-50 border border-slate-100">
-                    <h3 className="text-lg font-bold mb-4 text-slate-900">Best Used For</h3>
-                    <div className="space-y-2.5">
-                      {(service.subServices as unknown as string[]).map((use, i) => (
-                        <div key={i} className="flex items-center gap-2.5 text-sm font-medium text-slate-700">
-                          <CheckCircle2 className="h-4 w-4 text-primary shrink-0" />
-                          <span>{use}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                )}
+      {/* ─── 2. ABOUT THIS VEHICLE & INCLUSIONS SECTION ─── */}
+      <section className="py-16 sm:py-20 bg-white border-b border-slate-100">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl space-y-10">
+            {/* Description */}
+            <div>
+              <span className="text-primary font-bold uppercase tracking-widest text-xs sm:text-sm mb-2 block">
+                Overview &amp; Features
+              </span>
+              <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-slate-900">About This Vehicle</h2>
+              <p className="text-slate-600 leading-relaxed text-base sm:text-lg">{service.details}</p>
+            </div>
 
-                <div className="p-6 rounded-2xl bg-primary/5 border border-primary/10">
-                  <h3 className="text-lg font-bold mb-4 text-primary">All Vehicles Include</h3>
+            {/* Use Cases & Standard Inclusions */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {service.subServices && Array.isArray(service.subServices[0]) && (
+                <div className="p-6 rounded-2xl bg-slate-50 border border-slate-100">
+                  <h3 className="text-lg font-bold mb-4 text-slate-900">Best Used For</h3>
                   <div className="space-y-2.5">
-                    {["Professional Driver", "Full Insurance", "24/7 Support", "Clean & Maintained"].map((item, i) => (
+                    {(service.subServices as unknown as string[]).map((use, i) => (
                       <div key={i} className="flex items-center gap-2.5 text-sm font-medium text-slate-700">
-                        <CheckCircle2 className="h-4 w-4 text-green-500 shrink-0" />
-                        <span>{item}</span>
+                        <CheckCircle2 className="h-4 w-4 text-primary shrink-0" />
+                        <span>{use}</span>
                       </div>
                     ))}
                   </div>
                 </div>
-              </div>
-            </FadeIn>
+              )}
 
-            {/* Right: Sticky Quick Inquiry */}
-            <div className="lg:col-span-4">
-              <div className="lg:sticky lg:top-24">
-                <FadeIn direction="left" delay={0.1}>
-                  <ServiceInquiryForm initialType="Rental" allowedTypes={["Rental"]} compact />
-                </FadeIn>
+              <div className="p-6 rounded-2xl bg-primary/5 border border-primary/10">
+                <h3 className="text-lg font-bold mb-4 text-primary">All Vehicles Include</h3>
+                <div className="space-y-2.5">
+                  {["Professional Driver", "Full Insurance", "24/7 Support", "Clean & Maintained"].map((item, i) => (
+                    <div key={i} className="flex items-center gap-2.5 text-sm font-medium text-slate-700">
+                      <CheckCircle2 className="h-4 w-4 text-green-500 shrink-0" />
+                      <span>{item}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>

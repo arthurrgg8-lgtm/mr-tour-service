@@ -46,13 +46,13 @@ export default function GalleryPage() {
   }
 
   return (
-    <div className="pt-20 pb-24 w-full overflow-x-hidden">
+    <div className="w-full overflow-x-hidden">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: safeJsonLdStringify(jsonLd) }}
       />
       {/* Header */}
-      <section className="relative bg-slate-900 py-32 text-white overflow-hidden">
+      <section className="relative bg-slate-900 pt-6 sm:pt-12 lg:pt-16 pb-12 sm:pb-20 text-white overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image 
             src="/images/hero/services-bg.jpg" 

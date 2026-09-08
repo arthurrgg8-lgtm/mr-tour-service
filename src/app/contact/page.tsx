@@ -8,8 +8,8 @@ import { buildWhatsAppUrl, safeJsonLdStringify } from "@/lib/utils"
 import { FadeIn } from "@/components/ui/MotionComponents"
 
 export const metadata: Metadata = {
-  title: "Contact Us - Car Rental & Tour Booking in Kathmandu",
-  description: `Ready for your Nepal adventure? Reach us 24/7 via phone, WhatsApp, or visit our Kalopul office. Premium fleet, tours & trekking — quick response, expert advice.`,
+  title: `Contact Us | ${business.name} — Bookings & Inquiries`,
+  description: `Contact ${business.name} for vehicle rental bookings and travel inquiries in Nepal. Phone, WhatsApp, email, and Kathmandu office location.`,
   alternates: {
     canonical: "/contact",
   },
@@ -18,21 +18,21 @@ export const metadata: Metadata = {
     locale: "en_NP",
     url: "https://manoranjan.com.np/contact",
     siteName: business.name,
-    title: `${business.name} - Contact 24/7 Support`,
-    description: `Ready for your Nepal adventure? Reach us 24/7 via phone, WhatsApp, or visit our Kalopul office. Premium fleet rentals, tours & trekking — quick response, expert advice.`,
+    title: `Contact Us | ${business.name} — Bookings & Inquiries`,
+    description: `Contact ${business.name} for vehicle rental bookings and travel inquiries in Nepal. Phone, WhatsApp, email, and Kathmandu office location.`,
     images: [
       {
         url: "https://manoranjan.com.np/logo.jpg",
         width: 800,
         height: 800,
-        alt: business.name,
+        alt: `contact ${business.name} Nepal`,
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: `${business.name} - Contact 24/7 Support`,
-    description: `Ready for your Nepal adventure? Reach us 24/7 via phone, WhatsApp, or visit our Kalopul office. Premium fleet rentals, tours & trekking — quick response, expert advice.`,
+    title: `Contact Us | ${business.name} — Bookings & Inquiries`,
+    description: `Contact ${business.name} for vehicle rental bookings and travel inquiries in Nepal. Phone, WhatsApp, email, and Kathmandu office location.`,
     images: ["https://manoranjan.com.np/logo.jpg"],
   },
 }
@@ -53,7 +53,7 @@ export default function ContactPage() {
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "How can I contact M.R Travel and Tour?",
+        "name": `How can I contact ${business.name}?`,
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "You can reach us 24/7 via phone call, WhatsApp message, email, or by visiting our office at Kalopul, Kathmandu, Nepal. We respond to all inquiries within a few hours."
@@ -87,7 +87,7 @@ export default function ContactPage() {
   }
 
   return (
-    <div className="pt-20 pb-24 w-full overflow-x-hidden">
+    <div className="w-full overflow-x-hidden">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: safeJsonLdStringify(jsonLd) }}
@@ -97,11 +97,11 @@ export default function ContactPage() {
         dangerouslySetInnerHTML={{ __html: safeJsonLdStringify(faqJsonLd) }}
       />
       {/* Header */}
-      <section className="relative bg-slate-900 py-16 sm:py-32 text-white overflow-hidden">
+      <section className="relative bg-slate-900 pt-6 sm:pt-12 lg:pt-16 pb-12 sm:pb-20 text-white overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image 
             src="/images/hero/contact-bg.jpg" 
-            alt="Contact Background"
+            alt={`contact ${business.name} Nepal`}
             fill
             className="object-cover opacity-40"
             priority
@@ -110,10 +110,9 @@ export default function ContactPage() {
         </div>
         <div className="container mx-auto px-4 relative z-10">
           <FadeIn direction="up" className="max-w-3xl">
-            <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-4 sm:mb-6">Contact Us</h1>
+            <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-4 sm:mb-6">Contact {business.name}</h1>
             <p className="text-base sm:text-xl text-slate-300 leading-relaxed">
-              Have questions about our services or need a customized quote? 
-              Our team is available 24/7 to help you plan your perfect trip to Nepal.
+              Get in touch with us for vehicle rental bookings, custom itineraries, and travel support.
             </p>
           </FadeIn>
         </div>
@@ -124,9 +123,11 @@ export default function ContactPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-16">
             {/* Contact Info */}
             <FadeIn direction="right">
-              <h2 className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-10">Get in Touch</h2>
+              <span className="text-primary font-bold uppercase tracking-widest text-xs mb-2 block">Reach Us</span>
+              <h2 className="text-2xl sm:text-3xl font-bold mb-2">Our Contact Information</h2>
+              <p className="text-xs sm:text-sm text-slate-500 mb-6 sm:mb-8">Phone, WhatsApp, email, and office location in Kathmandu.</p>
               
-              <div className="grid grid-cols-2 gap-4 sm:flex sm:flex-col sm:space-y-12">
+              <div className="grid grid-cols-2 gap-4 sm:flex sm:flex-col sm:space-y-8">
                 <div className="flex flex-col xs:flex-row gap-2 xs:gap-6">
                   <div className="h-9 w-9 sm:h-14 sm:w-14 shrink-0 rounded-lg sm:rounded-2xl bg-primary/10 flex items-center justify-center text-primary">
                     <Phone className="h-4.5 w-4.5 sm:h-6 sm:w-6" />
@@ -180,8 +181,8 @@ export default function ContactPage() {
                     <Clock className="h-4.5 w-4.5 sm:h-6 sm:w-6" />
                   </div>
                   <div>
-                    <h3 className="text-sm sm:text-xl font-bold mb-0.5 sm:mb-2">Availability</h3>
-                    <p className="text-[10px] sm:text-sm text-slate-500 leading-relaxed">We operate 24 hours a day, 365 days a year to support your travel needs.</p>
+                    <h3 className="text-sm sm:text-xl font-bold mb-0.5 sm:mb-2">Availability &amp; Quick Support</h3>
+                    <p className="text-[10px] sm:text-sm text-slate-500 leading-relaxed">Direct phone and WhatsApp support for urgent travel assistance 24/7/365.</p>
                   </div>
                 </div>
               </div>
@@ -189,6 +190,11 @@ export default function ContactPage() {
 
             {/* Quick Inquiry Form Component */}
             <FadeIn direction="left" delay={0.1}>
+              <div className="mb-4">
+                <span className="text-primary font-bold uppercase tracking-widest text-xs mb-1 block">Inquiry</span>
+                <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-1">Send Us a Message</h2>
+                <p className="text-xs sm:text-sm text-slate-500">Fill out the form below and our team will respond within a few hours.</p>
+              </div>
               <QuickInquiryForm />
             </FadeIn>
           </div>
@@ -196,8 +202,13 @@ export default function ContactPage() {
       </section>
 
       {/* Map Section */}
-      <section className="container mx-auto px-4">
+      <section className="container mx-auto px-4 pb-12">
         <FadeIn direction="up">
+          <div className="mb-4 text-center">
+            <span className="text-primary font-bold uppercase tracking-widest text-xs mb-1 block">Find Us</span>
+            <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-1">Our Location</h2>
+            <p className="text-xs sm:text-sm text-slate-500">Find our Kathmandu office on the map — walk-ins are welcome.</p>
+          </div>
           <div className="h-[250px] xs:h-[320px] sm:h-[450px] w-full rounded-2xl sm:rounded-3xl overflow-hidden border shadow-lg">
             <iframe 
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.148671524317!2d85.3353!3d27.7118!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x827102c6c7458d07%3A0x68a8193a22c56a7e!2sM.R%20Travel%20and%20Tour!5e0!3m2!1sen!2snp!4v1716000000000!5m2!1sen!2snp" 

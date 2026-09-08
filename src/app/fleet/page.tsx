@@ -50,7 +50,7 @@ export default function FleetPage() {
   const itemListJsonLd = {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    "name": "M.R Travel and Tour Vehicle Fleet",
+    "name": `${business.name} Vehicle Fleet`,
     "description": "Our 100% owned fleet of premium vehicles for rent in Nepal",
     "numberOfItems": fleet.length,
     "itemListElement": fleet.map((vehicle, index) => ({
@@ -68,7 +68,7 @@ export default function FleetPage() {
   }
 
   return (
-    <div className="pt-20 pb-24 w-full overflow-x-hidden">
+    <div className="w-full overflow-x-hidden">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: safeJsonLdStringify(jsonLd) }}
@@ -78,7 +78,7 @@ export default function FleetPage() {
         dangerouslySetInnerHTML={{ __html: safeJsonLdStringify(itemListJsonLd) }}
       />
       {/* Header */}
-      <section className="relative bg-slate-900 py-32 text-white overflow-hidden">
+      <section className="relative bg-slate-900 pt-6 sm:pt-12 lg:pt-16 pb-12 sm:pb-20 text-white overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image 
             src="/images/hero/fleet-bg.jpg" 
@@ -108,70 +108,74 @@ export default function FleetPage() {
             {fleet.map((vehicle) => (
               <StaggerItem 
                 key={vehicle.id}
-                className="group flex flex-col md:flex-row bg-slate-50 rounded-3xl overflow-hidden border hover:shadow-2xl transition-all duration-500"
+                className="h-full"
               >
-                <div className="md:w-1/2 relative bg-slate-200 aspect-[4/3] md:aspect-auto overflow-hidden">
-                   {vehicle.image ? (
-                     <Image 
-                       src={vehicle.image} 
-                       alt={vehicle.name}
-                       fill
-                       className="object-cover group-hover:scale-110 transition-transform duration-700"
-                     />
-                   ) : (
-                     <div className="absolute inset-0 flex items-center justify-center text-slate-400 font-bold text-xl uppercase tracking-widest">
-                       {vehicle.name}
-                     </div>
-                   )}
-                </div>
-                <div className="md:w-1/2 p-8 flex flex-col justify-between">
-                  <div>
-                    <div className="flex items-center justify-between mb-4">
-                      <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-[10px] font-bold uppercase tracking-widest">
-                        <Shield className="h-3 w-3" />
-                        {vehicle.category}
-                      </div>
-                    </div>
-                    <h3 className="text-2xl font-bold mb-2">{vehicle.name}</h3>
-                    <p className="text-sm text-muted-foreground mb-6 leading-relaxed">
-                      {vehicle.description}
-                    </p>
-                    
-                    <div className="flex items-center gap-6 mb-8 text-sm font-medium">
-                      <div className="flex items-center gap-2">
-                        <Users className="h-4 w-4 text-primary" />
-                        {vehicle.capacity}
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <Luggage className="h-4 w-4 text-primary" />
-                        Premium Setup
-                      </div>
-                    </div>
-
-                    <div className="space-y-3 mb-8">
-                      {vehicle.features.map((feature, idx) => (
-                        <div key={idx} className="flex items-center gap-3 text-sm">
-                          <Check className="h-4 w-4 text-green-500 shrink-0" />
-                          <span>{feature}</span>
+                <Link
+                  href={buildWhatsAppUrl(business.contact.whatsapp, `I'm interested in booking the ${vehicle.name}`)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex flex-col md:flex-row bg-slate-50 rounded-3xl overflow-hidden border hover:border-primary/40 hover:shadow-2xl transition-all duration-500 cursor-pointer block h-full"
+                >
+                  <div className="md:w-1/2 relative bg-slate-200 aspect-[4/3] md:aspect-auto overflow-hidden">
+                     {vehicle.image ? (
+                       <Image 
+                         src={vehicle.image} 
+                         alt={vehicle.name}
+                         fill
+                         className="object-cover group-hover:scale-110 transition-transform duration-700"
+                       />
+                     ) : (
+                       <div className="absolute inset-0 flex items-center justify-center text-slate-400 font-bold text-xl uppercase tracking-widest">
+                         {vehicle.name}
+                       </div>
+                     )}
+                  </div>
+                  <div className="md:w-1/2 p-8 flex flex-col justify-between">
+                    <div>
+                      <div className="flex items-center justify-between mb-4">
+                        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-[10px] font-bold uppercase tracking-widest">
+                          <Shield className="h-3 w-3" />
+                          {vehicle.category}
                         </div>
-                      ))}
+                      </div>
+                      <h3 className="text-2xl font-bold mb-2 text-slate-900 group-hover:text-primary transition-colors">{vehicle.name}</h3>
+                      <p className="text-sm text-muted-foreground mb-6 leading-relaxed">
+                        {vehicle.description}
+                      </p>
+                      
+                      <div className="flex items-center gap-6 mb-8 text-sm font-medium">
+                        <div className="flex items-center gap-2">
+                          <Users className="h-4 w-4 text-primary" />
+                          {vehicle.capacity}
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <Luggage className="h-4 w-4 text-primary" />
+                          Premium Setup
+                        </div>
+                      </div>
+
+                      <div className="space-y-3 mb-8">
+                        {vehicle.features.map((feature, idx) => (
+                          <div key={idx} className="flex items-center gap-3 text-sm">
+                            <Check className="h-4 w-4 text-green-500 shrink-0" />
+                            <span>{feature}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    <div className="mb-4 py-2 px-3 rounded-lg bg-primary/5 border border-primary/10 text-[10px] font-bold text-primary uppercase tracking-widest text-center">
+                      Contact for more details and prices
+                    </div>
+
+                    <div 
+                      className="flex items-center justify-center gap-2 h-12 w-full rounded-xl bg-primary text-white font-bold group-hover:bg-primary/90 transition-all shadow-lg shadow-primary/20"
+                    >
+                      <MessageCircle className="h-5 w-5" />
+                      Book This Vehicle
                     </div>
                   </div>
-
-                  <div className="mb-4 py-2 px-3 rounded-lg bg-primary/5 border border-primary/10 text-[10px] font-bold text-primary uppercase tracking-widest text-center">
-                    Contact for more details and prices
-                  </div>
-
-                  <Link 
-                    href={buildWhatsAppUrl(business.contact.whatsapp, `I'm interested in booking the ${vehicle.name}`)}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center justify-center gap-2 h-12 w-full rounded-xl bg-primary text-white font-bold hover:bg-primary/90 transition-all shadow-lg shadow-primary/20"
-                  >
-                    <MessageCircle className="h-5 w-5" />
-                    Book This Vehicle
-                  </Link>
-                </div>
+                </Link>
               </StaggerItem>
             ))}
           </StaggerContainer>

@@ -38,40 +38,44 @@ export default function FeaturedServices() {
             return (
               <StaggerItem 
                 key={service.id}
-                className="group flex flex-col rounded-[1.25rem] sm:rounded-[2rem] border bg-slate-50 hover:bg-white hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 relative overflow-hidden"
+                className="h-full"
               >
-                {/* Image Section */}
-                <div className="aspect-[16/10] relative overflow-hidden">
-                  <Image 
-                    src={representativeImage}
-                    alt={service.title}
-                    fill
-                    className="object-cover group-hover:scale-110 transition-transform duration-700"
-                    sizes="(max-width: 768px) 50vw, (max-width: 1200px) 50vw, 33vw"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                  
-                  {/* Icon Overlay */}
-                  <div className="absolute bottom-2 left-3 sm:bottom-4 sm:left-6 h-8 w-8 sm:h-12 sm:w-12 rounded-lg sm:rounded-xl bg-white/20 backdrop-blur-md flex items-center justify-center text-white border border-white/30 shadow-lg">
-                    <Icon className="h-4 w-4 sm:h-6 sm:w-6" />
+                <Link
+                  href={`/vehicles/${service.id}`}
+                  className="group flex flex-col rounded-[1.25rem] sm:rounded-[2rem] border bg-slate-50 hover:bg-white hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 relative overflow-hidden h-full block cursor-pointer"
+                >
+                  {/* Image Section */}
+                  <div className="aspect-[16/10] relative overflow-hidden">
+                    <Image 
+                      src={representativeImage}
+                      alt={service.title}
+                      fill
+                      className="object-cover group-hover:scale-110 transition-transform duration-700"
+                      sizes="(max-width: 768px) 50vw, (max-width: 1200px) 50vw, 33vw"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                    
+                    {/* Icon Overlay */}
+                    <div className="absolute bottom-2 left-3 sm:bottom-4 sm:left-6 h-8 w-8 sm:h-12 sm:w-12 rounded-lg sm:rounded-xl bg-white/20 backdrop-blur-md flex items-center justify-center text-white border border-white/30 shadow-lg">
+                      <Icon className="h-4 w-4 sm:h-6 sm:w-6" />
+                    </div>
                   </div>
-                </div>
 
-                {/* Content Section */}
-                <div className="p-4 xs:p-6 sm:p-8 flex flex-col flex-grow">
-                  <h3 className="text-sm xs:text-base sm:text-2xl font-bold mb-1 xs:mb-2 sm:mb-3 tracking-tight">{service.title}</h3>
-                  <p className="text-muted-foreground mb-4 sm:mb-8 leading-snug sm:leading-relaxed line-clamp-2 text-[10px] xs:text-xs sm:text-base">
-                    {service.description}
-                  </p>
-                  <div className="mt-auto">
-                    <Link 
-                      href={`/vehicles/${service.id}`}
-                      className="text-primary font-bold inline-flex items-center gap-1 sm:gap-2 hover:gap-3 transition-all text-[9px] xs:text-xs sm:text-sm uppercase tracking-wide sm:tracking-widest border-b-2 border-primary/20 hover:border-primary pb-0.5 sm:pb-1"
-                    >
-                      Explore Details <span aria-hidden="true">→</span>
-                    </Link>
+                  {/* Content Section */}
+                  <div className="p-4 xs:p-6 sm:p-8 flex flex-col flex-grow">
+                    <h3 className="text-sm xs:text-base sm:text-2xl font-bold mb-1 xs:mb-2 sm:mb-3 tracking-tight group-hover:text-primary transition-colors">{service.title}</h3>
+                    <p className="text-muted-foreground mb-4 sm:mb-8 leading-snug sm:leading-relaxed line-clamp-2 text-[10px] xs:text-xs sm:text-base">
+                      {service.description}
+                    </p>
+                    <div className="mt-auto">
+                      <div 
+                        className="text-primary font-bold inline-flex items-center gap-1 sm:gap-2 group-hover:gap-3 transition-all text-[9px] xs:text-xs sm:text-sm uppercase tracking-wide sm:tracking-widest border-b-2 border-primary/20 group-hover:border-primary pb-0.5 sm:pb-1"
+                      >
+                        Explore Details <span aria-hidden="true">→</span>
+                      </div>
+                    </div>
                   </div>
-                </div>
+                </Link>
               </StaggerItem>
             )
           })}

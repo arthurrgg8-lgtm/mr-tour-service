@@ -40,3 +40,7 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 .aider*
+.wrangler/
+*.mp4
+*.csv
+slefdrive.jpeg

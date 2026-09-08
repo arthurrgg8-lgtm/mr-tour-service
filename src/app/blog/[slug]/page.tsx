@@ -88,14 +88,14 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   }
 
   return (
-    <div className="pt-20 pb-24 w-full overflow-x-hidden bg-white">
+    <div className="w-full overflow-x-hidden bg-white">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: safeJsonLdStringify(articleJsonLd) }}
       />
 
       {/* ─── Hero Header ─── */}
-      <section className="relative bg-slate-900 py-20 sm:py-28 text-white overflow-hidden">
+      <section className="relative bg-slate-900 pt-6 sm:pt-12 lg:pt-16 pb-12 sm:pb-20 text-white overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image 
             src={post.image} 

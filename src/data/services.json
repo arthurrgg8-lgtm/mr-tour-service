@@ -8,11 +8,7 @@
     "startingPrice": "NPR 5,000 / $37",
     "recommendedFor": "City Tours & Airport Transfers",
     "images": [
-      "/images/services/car/car-1.jpeg",
-      "/images/services/car/car-2.jpeg",
-      "/images/services/car/car-3.jpeg",
-      "/images/services/car/car-4.jpeg",
-      "/images/services/car/byd-car.jpeg"
+      "/images/services/car/carent-4.jpeg"
     ],
     "featured": true,
     "details": "We offer a wide range of well-maintained cars including luxury sedans and budget-friendly options. All rentals come with professional, well-trained drivers to ensure your comfort and safety.",
@@ -32,12 +28,7 @@
     "startingPrice": "NPR 6,000 / $44",
     "recommendedFor": "Family Vacations & Highway Travel",
     "images": [
-      "/images/services/suv/1.jpg",
-      "/images/services/suv/2.jpg",
-      "/images/services/suv/3.jpg",
-      "/images/services/suv/4.jpg",
-      "/images/services/suv/5.jpg",
-      "/images/services/suv/6.jpg"
+      "/images/services/suv/suv.jpeg"
     ],
     "featured": true,
     "details": "Choose from our premium SUVs like Toyota Fortuner or Suzuki Brezza for a balanced mix of luxury and performance. Ideal for small groups looking for extra comfort.",
@@ -57,10 +48,7 @@
     "startingPrice": "NPR 7,000 / $52",
     "recommendedFor": "Off-road & Mountain Expeditions",
     "images": [
-      "/images/services/jeep/JEEP3.jpeg",
-      "/images/services/jeep/1.jpg",
-      "/images/services/jeep/2.jpg",
-      "/images/services/jeep/3.jpg"
+      "/images/services/jeep/JEEP3.jpeg"
     ],
     "featured": true,
     "details": "Our 4WD Jeeps like Scorpio and Land Cruisers are perfect for rough roads, mountain trips, and remote village explorations. Experience power and stability on any trail.",
@@ -93,14 +81,13 @@
   },
   {
     "id": "minibus-rent",
-    "title": "Mini Bus Rent",
-    "description": "Comfortable 18-25 seater mini buses for medium-sized groups and corporate outings.",
+    "title": "Coaster Rent",
+    "description": "Comfortable 18-25 seater Toyota Coaster for medium-sized groups and corporate outings.",
     "icon": "Bus",
     "capacity": "18-25 Seater",
     "startingPrice": "NPR 11,000 / $81",
     "recommendedFor": "Corporate Groups & School Trips",
     "images": [
-      "/images/services/minibus/MINIBU2.jpeg",
       "/images/services/minibus/MINIBUS.jpeg"
     ],
     "featured": true,
@@ -121,11 +108,7 @@
     "startingPrice": "NPR 14,000 / $104",
     "recommendedFor": "Large Delegations & Grand Events",
     "images": [
-      "/images/services/bus/BUSSS.jpeg",
-      "/images/services/bus/BUS8.jpeg",
-      "/images/services/bus/BUS1.jpeg",
-      "/images/services/bus/sutlej-bus-1.jpeg",
-      "/images/services/bus/sutlej-bus-2.jpeg"
+      "/images/services/bus/BUSSS.jpeg"
     ],
     "featured": true,
     "details": "For groups of 35-41 people, our luxury tourist buses (including Sutlej models) provide maximum comfort with reclining seats, wide windows, and advanced suspension systems.",
@@ -145,13 +128,7 @@
     "startingPrice": "NPR 15,000 / $111",
     "recommendedFor": "VIP Delegations & High-End Events",
     "images": [
-      "/images/services/jeep/1.jpg",
-      "/images/services/premium-fleet/premium-fleet-1.jpeg",
-      "/images/services/premium-fleet/premium-fleet-2.jpeg",
-      "/images/services/premium-fleet/premium-fleet-3.jpeg",
-      "/images/services/premium-fleet/fortuner-replace.jpeg",
-      "/images/services/bus/sutlej-bus-1.jpeg",
-      "/images/services/bus/sutlej-bus-2.jpeg"
+      "/images/services/premium-fleet/premium-fleet-1.jpeg"
     ],
     "featured": true,
     "details": "For those who demand the best. Our premium fleet features the latest models with superior comfort, advanced safety features, and elite styling for VIP travel.",

@@ -1,6 +1,5 @@
-name = "mr-tour-service"
+name = "mrtourservice"
 compatibility_date = "2024-11-01"
 compatibility_flags = ["nodejs_compat"]
+pages_build_output_dir = "out"
 
-[pages_build_output_config]
-static_export = false

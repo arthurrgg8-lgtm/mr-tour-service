@@ -15,7 +15,7 @@ export default function Testimonials() {
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
           <span className="text-primary font-bold uppercase tracking-[0.2em] text-sm mb-4 block">Testimonials</span>
-          <h2 className="text-3xl md:text-5xl font-bold mb-6">What Our Travelers Say</h2>
+          <h2 className="text-3xl md:text-5xl font-bold mb-6">What Our Customers Say</h2>
           <p className="text-slate-400 max-w-2xl mx-auto text-lg">
             Don&apos;t just take our word for it. Here is what some of our 1000+ happy clients have to say about their journey with us.
           </p>

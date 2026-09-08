@@ -5,6 +5,7 @@ import Link from "next/link"
 import gsap from "gsap"
 import business from "@/data/business.json"
 import Image from "next/image"
+import { ArrowRight } from "lucide-react"
 import ServiceInquiryForm from "@/components/sections/ServiceInquiryForm"
 
 const TICKER_ITEMS = [
@@ -14,7 +15,7 @@ const TICKER_ITEMS = [
   { name: "Premium Fleet", href: "/vehicles/premium-fleet" },
   { name: "Hiace", href: "/vehicles/hiace-rent" },
   { name: "Sutlej Bus", href: "/vehicles/bus-rent" },
-  { name: "Mini Bus", href: "/vehicles/minibus-rent" },
+  { name: "Coaster", href: "/vehicles/minibus-rent" },
   { name: "Self Drive", href: "/self-drive" },
   { name: "Sedan", href: "/vehicles/car-rent" },
   { name: "4x4 Off-Road", href: "/vehicles/jeep-rent" },
@@ -59,86 +60,91 @@ export default function Hero() {
   return (
     <section 
       ref={containerRef}
-      className="relative min-h-[95vh] sm:min-h-screen flex flex-col justify-between pt-24 pb-0 overflow-hidden bg-slate-900"
+      className="relative flex flex-col justify-between pt-8 sm:pt-12 lg:pt-16 pb-0 overflow-hidden bg-slate-900"
     >
-      {/* Background Image (single, no slideshow) */}
+      {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image 
-          src="/images/hero/hero-nepal.jpeg" 
-          alt={`Premium vehicle rental service - ${business.name}`}
+          src="/images/hero/hero-main.png" 
+          alt={`Vehicle rental in Nepal - ${business.name}`}
           fill
-          className="object-cover"
+          className="object-cover object-bottom"
           priority
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-950/80 via-slate-950/40 to-slate-950/60" />
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-950/85 via-slate-950/50 to-slate-950/70" />
       </div>
 
-      <div className="container mx-auto px-4 z-10 flex-1 flex flex-col justify-center pb-8 pt-4">
+      <div className="container mx-auto px-4 z-10 flex-1 flex flex-col justify-center pb-8 pt-3 sm:pt-6">
         {/* Top: Title + Inquiry Form */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
-          {/* Left: Title + Subtitle */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12 items-center">
+          {/* Left: Title + Stats */}
           <div className="max-w-2xl">
             <h1 
               ref={titleRef}
-              className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white leading-[1.1] mb-6 drop-shadow-md"
+              className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white leading-[1.15] mb-4 sm:mb-8 drop-shadow-md"
             >
-              {business.slogan} <br />
-              <span className="text-primary">with Premium Service</span>
+              Choose the Vehicle, <br />
+              <span className="text-primary">Travel with Ease</span>
             </h1>
-
-            <p 
-              ref={subtitleRef}
-              className="text-lg md:text-xl text-slate-300 max-w-xl mb-8 leading-relaxed drop-shadow-sm"
-            >
-              {business.tagline}. From luxury vehicle rentals to corporate solutions, 
-              we own our fleet to ensure the highest standards of safety and comfort.
-            </p>
 
             {/* Quick Stats */}
             <div 
               ref={statsRef}
-              className="grid grid-cols-3 gap-4 border-t border-white/10 pt-5"
+              className="grid grid-cols-3 gap-3 sm:gap-4 border-t border-white/15 pt-4 sm:pt-6 max-w-lg"
             >
-              <div className="text-center">
-                <p className="text-xl font-black text-primary">20+</p>
-                <p className="text-[10px] text-slate-400 uppercase tracking-wide">Years Experience</p>
+              <div className="text-center sm:text-left">
+                <p className="text-2xl sm:text-3xl font-black text-primary">20+</p>
+                <p className="text-xs text-slate-300 font-semibold uppercase tracking-wide">Years Experience</p>
               </div>
-              <div className="text-center">
-                <p className="text-xl font-black text-primary">100%</p>
-                <p className="text-[10px] text-slate-400 uppercase tracking-wide">Owned Fleet</p>
+              <div className="text-center sm:text-left">
+                <p className="text-2xl sm:text-3xl font-black text-primary">100%</p>
+                <p className="text-xs text-slate-300 font-semibold uppercase tracking-wide">Owned Fleet</p>
               </div>
-              <div className="text-center">
-                <p className="text-xl font-black text-primary">24/7</p>
-                <p className="text-[10px] text-slate-400 uppercase tracking-wide">Support</p>
+              <div className="text-center sm:text-left">
+                <p className="text-2xl sm:text-3xl font-black text-primary">24/7</p>
+                <p className="text-xs text-slate-300 font-semibold uppercase tracking-wide">Support</p>
               </div>
             </div>
           </div>
 
-          {/* Right: Service Inquiry Form */}
-          <div className="hidden lg:block lg:pt-4">
-            <ServiceInquiryForm initialType="Rental" allowedTypes={["Rental"]} compact dark />
+          {/* Right: Service Inquiry Form (Pure White Background) */}
+          <div className="hidden lg:block lg:pt-2">
+            <ServiceInquiryForm compact />
           </div>
         </div>
 
-        {/* Mobile: Inquiry form below */}
-        <div className="lg:hidden mt-12">
-          <ServiceInquiryForm initialType="Rental" allowedTypes={["Rental"]} compact dark />
+        {/* Mobile: Inquiry form below (Pure White Background) */}
+        <div className="lg:hidden mt-6">
+          <ServiceInquiryForm compact />
         </div>
 
-        {/* Steps Flow — Responsive Grid */}
-        <div ref={ctaRef} className="mt-10 border-t border-white/10 pt-8">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-8">
+        {/* Steps Flow — How Vehicle Rental Works (Enhanced Font Sizes & Lighter Card Opacity) */}
+        <div ref={ctaRef} className="mt-12 border-t border-white/15 pt-8">
+          <div className="mb-5 max-w-3xl">
+            <h2 className="text-base sm:text-xl font-black uppercase tracking-wider text-primary mb-1">How Vehicle Rental Works</h2>
+            <p className="text-xs sm:text-sm text-slate-200 leading-relaxed font-medium">Choose your vehicle, select dates and location, confirm your booking, and hit the road — all in a few simple steps.</p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 relative">
             {[
-              { num: "01", title: "Find Your Perfect Ride", desc: "Browse our full fleet of well-maintained cars, SUVs, and buses for rent. Filter by type, capacity, and price." },
-              { num: "02", title: "Choose Date & Location", desc: "Select your pickup date, return date, and preferred location. Real-time availability guaranteed." },
-              { num: "03", title: "Book With Ease", desc: "Secure your rental in minutes. Transparent pricing, instant confirmation, no hidden fees." },
-              { num: "04", title: "Hit the Road", desc: "Pick up and go. Safety-checked rides with 24/7 support, anywhere you travel." },
+              { num: "01", title: "Choose Your Vehicle", desc: "Browse our full fleet of well-maintained cars, SUVs, jeeps, and buses. Filter by type and budget." },
+              { num: "02", title: "Select Dates & Location", desc: "Specify your pickup date, drop-off time, and route anywhere in Nepal." },
+              { num: "03", title: "Confirm Your Booking", desc: "Secure your reservation instantly with clear pricing and dedicated assistance." },
+              { num: "04", title: "Hit the Road", desc: "Pick up and go. Enjoy safety-inspected vehicles and 24/7 roadside assistance." },
             ].map((step, i) => (
-              <div key={i} className="flex flex-col">
-                <div className="text-[10px] font-black text-primary mb-1.5 font-mono">{step.num}</div>
-                <h4 className="text-xs sm:text-sm font-bold text-white mb-1 leading-tight">{step.title}</h4>
-                <p className="text-[11px] text-slate-400 leading-relaxed">{step.desc}</p>
+              <div key={i} className="relative flex flex-col justify-between bg-white/[0.06] p-4 sm:p-5 rounded-2xl border border-white/10 backdrop-blur-xs hover:bg-white/[0.1] hover:border-primary/30 transition-all group">
+                <div>
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="text-xs sm:text-sm font-black text-primary font-mono">{step.num}</span>
+                    {i < 3 && (
+                      <span className="flex items-center text-primary group-hover:translate-x-1 transition-transform">
+                        <ArrowRight className="h-4 w-4" />
+                      </span>
+                    )}
+                  </div>
+                  <h4 className="text-sm sm:text-base font-bold text-white mb-1.5 leading-snug">{step.title}</h4>
+                  <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">{step.desc}</p>
+                </div>
               </div>
             ))}
           </div>

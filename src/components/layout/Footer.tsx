@@ -1,8 +1,11 @@
+"use client"
+
 import Link from "next/link"
 import Image from "next/image"
 import { Mail, MapPin, Phone, MessageCircle } from "lucide-react"
 import business from "@/data/business.json"
 import { buildWhatsAppUrl } from "@/lib/utils"
+import { trackLeadConversion } from "@/lib/gtag"
 
 export default function Footer() {
   return (
@@ -13,13 +16,13 @@ export default function Footer() {
             <Link href="/" className="flex items-center gap-4 mb-6">
               <Image 
                 src="/logo.jpg" 
-                alt="M.R TRAVEL AND TOUR"
+                alt={business.name}
                 width={64}
                 height={64}
                 className="rounded-xl object-contain bg-white border border-slate-100 shadow-sm"
               />
               <div className="flex flex-col">
-                <span className="text-xl font-bold tracking-tight text-primary leading-none">M.R TRAVEL AND TOUR</span>
+                <span className="text-xl font-bold tracking-tight text-primary leading-none">{business.name}</span>
                 <span className="text-[10px] font-medium uppercase tracking-widest text-muted-foreground">
                   FUEL YOUR FREEDOM
                 </span>
@@ -139,6 +142,7 @@ export default function Footer() {
                   href={buildWhatsAppUrl(business.contact.whatsapp)}
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() => trackLeadConversion()}
                   className="flex items-center gap-3 group"
                   aria-label="Chat with us on WhatsApp"
                 >

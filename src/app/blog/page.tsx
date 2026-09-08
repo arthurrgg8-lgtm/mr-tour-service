@@ -6,8 +6,8 @@ import { Calendar, ArrowRight, Clock } from "lucide-react"
 import blogPosts from "@/data/blog-posts.json"
 
 export const metadata: Metadata = {
-  title: "Travel Blog - Nepal Travel Tips & Guides",
-  description: `Read the latest travel tips, guides, and stories from Nepal. Expert advice on vehicle rentals, mountain roads, and travel planning.`,
+  title: `Travel & Rental Guides Nepal | ${business.name} Blog`,
+  description: `Read travel tips, vehicle rental guides, and route advice for exploring Nepal by road. Helpful guides from ${business.name}.`,
   alternates: {
     canonical: "/blog",
   },
@@ -16,29 +16,63 @@ export const metadata: Metadata = {
     locale: "en_NP",
     url: "https://manoranjan.com.np/blog",
     siteName: business.name,
-    title: `${business.name} - Travel Blog`,
-    description: `Expert travel tips, guides, and stories from Nepal. Vehicle rental advice, road conditions, and travel planning.`,
-    images: [{ url: "https://manoranjan.com.np/logo.jpg", width: 800, height: 800, alt: business.name }],
+    title: `Travel & Rental Guides Nepal | ${business.name} Blog`,
+    description: `Read travel tips, vehicle rental guides, and route advice for exploring Nepal by road. Helpful guides from ${business.name}.`,
+    images: [{ url: "https://manoranjan.com.np/logo.jpg", width: 800, height: 800, alt: "Nepal travel vehicle rental blog" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: `${business.name} - Travel Blog`,
-    description: `Expert travel tips, guides, and stories from Nepal.`,
+    title: `Travel & Rental Guides Nepal | ${business.name} Blog`,
+    description: `Read travel tips, vehicle rental guides, and route advice for exploring Nepal by road. Helpful guides from ${business.name}.`,
     images: ["https://manoranjan.com.np/logo.jpg"],
   },
 }
 
+import { safeJsonLdStringify } from "@/lib/utils"
 import { FadeIn, StaggerContainer, StaggerItem } from "@/components/ui/MotionComponents"
 
 export default function BlogPage() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://manoranjan.com.np" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://manoranjan.com.np/blog" }
+    ]
+  }
+
+  const blogListJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": `${business.name} Travel Blog`,
+    "description": "Expert travel tips, route guides, and vehicle rental advice for Nepal.",
+    "url": "https://manoranjan.com.np/blog",
+    "blogPost": blogPosts.map((post) => ({
+      "@type": "BlogPosting",
+      "headline": post.title,
+      "description": post.excerpt,
+      "url": `https://manoranjan.com.np/blog/${post.id}`,
+      "datePublished": "2026-01-01",
+      "image": `https://manoranjan.com.np${post.image}`
+    }))
+  }
+
   return (
-    <div className="pt-20 pb-24 w-full overflow-x-hidden">
+    <div className="w-full overflow-x-hidden">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: safeJsonLdStringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: safeJsonLdStringify(blogListJsonLd) }}
+      />
       {/* Header */}
-      <section className="relative bg-slate-900 py-24 sm:py-32 text-white overflow-hidden">
+      <section className="relative bg-slate-900 pt-6 sm:pt-12 lg:pt-16 pb-12 sm:pb-20 text-white overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image 
             src="/images/hero/hero-nepal.jpeg" 
-            alt="Blog Background"
+            alt="Nepal travel vehicle rental blog"
             fill
             className="object-cover opacity-35"
             priority
@@ -51,18 +85,23 @@ export default function BlogPage() {
               Nepal Travel Insights
             </span>
             <h1 className="text-3xl sm:text-5xl md:text-6xl font-black mb-4 sm:mb-6 tracking-tight">
-              Travel Blog &amp; Guides
+              Nepal Travel &amp; Vehicle Rental Guides
             </h1>
             <p className="text-base sm:text-xl text-slate-300 leading-relaxed font-medium">
-              Expert advice, road condition updates, and vehicle selection guides from local travel specialists in Nepal.
+              Expert tips, route guides, and travel advice for exploring Nepal by road.
             </p>
           </FadeIn>
         </div>
       </section>
 
-      {/* Blog Grid */}
+      {/* Latest Articles */}
       <section className="py-16 sm:py-24 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+          <FadeIn direction="up" className="mb-12">
+            <h2 className="text-2xl sm:text-4xl font-bold text-slate-900 mb-2">Latest Articles</h2>
+            <p className="text-slate-600 text-sm sm:text-base">Read our most recent travel tips, route guides, and vehicle rental advice.</p>
+          </FadeIn>
+
           <StaggerContainer staggerDelay={0.1} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {blogPosts.map((post) => (
               <StaggerItem key={post.id} className="h-full">
@@ -102,16 +141,63 @@ export default function BlogPage() {
                     </div>
                   </div>
 
-                  <div className="px-6 sm:px-7 pb-6 pt-0">
-                    <div className="pt-4 border-t border-slate-100 flex items-center justify-between text-primary font-bold text-xs uppercase tracking-wider group-hover:text-primary/80 transition-all">
-                      <span>Read Full Article</span>
-                      <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                    </div>
+                  <div className="px-6 sm:px-7 pb-6 pt-0 flex items-center text-primary font-bold text-xs sm:text-sm group-hover:translate-x-1 transition-transform">
+                    <span>Read Full Guide</span>
+                    <ArrowRight className="h-4 w-4 ml-1.5" />
                   </div>
                 </Link>
               </StaggerItem>
             ))}
           </StaggerContainer>
+        </div>
+      </section>
+
+      {/* Popular Travel Guides & Rental Tips Section */}
+      <section className="py-16 sm:py-20 bg-slate-50 border-t border-slate-200/80">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="p-8 rounded-3xl bg-white border border-slate-200/80 shadow-sm">
+              <h2 className="text-xl sm:text-2xl font-bold text-slate-900 mb-2">Popular Travel Guides</h2>
+              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4">
+                Comprehensive guides to Nepal&apos;s most popular road trip destinations.
+              </p>
+              <ul className="space-y-2.5 text-xs sm:text-sm font-medium text-slate-700">
+                <li className="flex items-center gap-2">
+                  <span className="h-2 w-2 rounded-full bg-primary" />
+                  <span>Kathmandu to Pokhara Scenic Highway Itinerary</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="h-2 w-2 rounded-full bg-primary" />
+                  <span>Upper Mustang 4WD Expedition Guide</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="h-2 w-2 rounded-full bg-primary" />
+                  <span>Chitwan National Park Safari Road Trip</span>
+                </li>
+              </ul>
+            </div>
+
+            <div className="p-8 rounded-3xl bg-white border border-slate-200/80 shadow-sm">
+              <h2 className="text-xl sm:text-2xl font-bold text-slate-900 mb-2">Rental Tips &amp; Advice</h2>
+              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4">
+                Practical tips on choosing the right vehicle, self-drive requirements, and road safety.
+              </p>
+              <ul className="space-y-2.5 text-xs sm:text-sm font-medium text-slate-700">
+                <li className="flex items-center gap-2">
+                  <span className="h-2 w-2 rounded-full bg-primary" />
+                  <span>Choosing Between Chauffeur-Driven vs Self-Drive</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="h-2 w-2 rounded-full bg-primary" />
+                  <span>Essential Documents for Driving in Nepal</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="h-2 w-2 rounded-full bg-primary" />
+                  <span>Navigating Mountain Roads &amp; Monsoon Driving Safety</span>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
       </section>
 

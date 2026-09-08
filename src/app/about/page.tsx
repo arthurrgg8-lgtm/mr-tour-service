@@ -7,8 +7,8 @@ import Link from "next/link"
 import { safeJsonLdStringify } from "@/lib/utils"
 
 export const metadata: Metadata = {
-  title: "About Us - Since 2003",
-  description: `Trusted since 2003 — 20+ years of safe, reliable travel across Nepal. 100% owned fleet, government-certified, with a team that knows every road and trail.`,
+  title: `About Us | ${business.name} — Vehicle Rental Nepal`,
+  description: `Learn about ${business.name} — our story, fleet, and commitment to safe, reliable vehicle rental and travel across Nepal.`,
   alternates: {
     canonical: "/about",
   },
@@ -17,21 +17,21 @@ export const metadata: Metadata = {
     locale: "en_NP",
     url: "https://manoranjan.com.np/about",
     siteName: business.name,
-    title: `${business.name} - About Our Story Since 2003`,
-    description: `Trusted by travelers since 2003 — 20+ years of safe, reliable travel across Nepal. 100% company-owned fleet, government-certified, and a team that knows every road and trail.`,
+    title: `About Us | ${business.name} — Vehicle Rental Nepal`,
+    description: `Learn about ${business.name} — our story, fleet, and commitment to safe, reliable vehicle rental and travel across Nepal.`,
     images: [
       {
         url: "https://manoranjan.com.np/logo.jpg",
         width: 800,
         height: 800,
-        alt: business.name,
+        alt: `about ${business.name} Nepal`,
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: `${business.name} - About Our Story Since 2003`,
-    description: `Trusted by travelers since 2003 — 20+ years of safe, reliable travel across Nepal. 100% company-owned fleet, government-certified, and a team that knows every road and trail.`,
+    title: `About Us | ${business.name} — Vehicle Rental Nepal`,
+    description: `Learn about ${business.name} — our story, fleet, and commitment to safe, reliable vehicle rental and travel across Nepal.`,
     images: ["https://manoranjan.com.np/logo.jpg"],
   },
 }
@@ -56,17 +56,17 @@ export default function AboutPage() {
   }
 
   return (
-    <div className="pt-20 pb-24 w-full overflow-x-hidden">
+    <div className="w-full overflow-x-hidden">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: safeJsonLdStringify(jsonLd) }}
       />
       {/* Header */}
-      <section className="relative bg-slate-900 py-16 sm:py-32 text-white overflow-hidden">
+      <section className="relative bg-slate-900 pt-6 sm:pt-12 lg:pt-16 pb-12 sm:pb-20 text-white overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image 
             src="/images/hero/about-bg.jpg" 
-            alt="About Background"
+            alt={`about ${business.name} Nepal`}
             fill
             className="object-cover opacity-40"
             priority
@@ -77,9 +77,7 @@ export default function AboutPage() {
           <FadeIn direction="up" className="max-w-3xl">
             <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-4 sm:mb-6">About {business.name}</h1>
             <p className="text-base sm:text-xl text-slate-300 leading-relaxed">
-              Started with a vision to redefine travel and transportation in Nepal, 
-              we have grown from a small vehicle rental company into a full-service 
-              travel provider, trusted by thousands of local and international travelers.
+              Your trusted vehicle rental and travel partner in Nepal — delivering safe, reliable journeys.
             </p>
           </FadeIn>
         </div>
@@ -90,9 +88,10 @@ export default function AboutPage() {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-16 items-center">
             <FadeIn direction="right">
-              <h2 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6">Our Journey</h2>
+              <span className="text-primary font-bold uppercase tracking-widest text-xs mb-2 block">Our Foundation</span>
+              <h2 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6">Our Story and Mission</h2>
               <p className="text-xs sm:text-base text-muted-foreground mb-4 sm:mb-6 leading-relaxed">
-                {business.name} was founded on the principles of reliability, safety, and 
+                How we started and our mission to provide dependable transport across Nepal. {business.name} was founded on the principles of reliability, safety, and 
                 transparency. Starting with a focus on vehicle rentals, we quickly realized 
                 that travelers in Nepal needed more than just a car; they needed a partner 
                 who understood the terrain, the culture, and the importance of a seamless experience.
@@ -123,28 +122,69 @@ export default function AboutPage() {
               </div>
             </FadeIn>
 
-            <StaggerContainer staggerDelay={0.1} className="grid grid-cols-2 gap-3 sm:gap-6">
-              <StaggerItem className="p-3 xs:p-4 sm:p-8 rounded-xl sm:rounded-2xl bg-slate-50 border flex flex-col gap-2 sm:gap-4 hover:shadow-md transition-all">
-                <ShieldCheck className="h-6 w-6 sm:h-10 sm:w-10 text-primary shrink-0" />
-                <h3 className="font-bold text-xs xs:text-sm sm:text-xl leading-none">Safety First</h3>
-                <p className="text-[10px] xs:text-xs sm:text-sm text-muted-foreground leading-snug sm:leading-relaxed">Every vehicle undergoes safety checks and is operated by experienced drivers.</p>
-              </StaggerItem>
-              <StaggerItem className="p-3 xs:p-4 sm:p-8 rounded-xl sm:rounded-2xl bg-slate-50 border flex flex-col gap-2 sm:gap-4 hover:shadow-md transition-all">
-                <Award className="h-6 w-6 sm:h-10 sm:w-10 text-primary shrink-0" />
-                <h3 className="font-bold text-xs xs:text-sm sm:text-xl leading-none">Premium Quality</h3>
-                <p className="text-[10px] xs:text-xs sm:text-sm text-muted-foreground leading-snug sm:leading-relaxed">We don&apos;t compromise on comfort. Our vehicles are clean and well-maintained.</p>
-              </StaggerItem>
-              <StaggerItem className="p-3 xs:p-4 sm:p-8 rounded-xl sm:rounded-2xl bg-slate-50 border flex flex-col gap-2 sm:gap-4 hover:shadow-md transition-all">
-                <MapIcon className="h-6 w-6 sm:h-10 sm:w-10 text-primary shrink-0" />
-                <h3 className="font-bold text-xs xs:text-sm sm:text-xl leading-none">Local Expertise</h3>
-                <p className="text-[10px] xs:text-xs sm:text-sm text-muted-foreground leading-snug sm:leading-relaxed">Our team knows Nepal inside out, ensuring you get the best routes and gems.</p>
-              </StaggerItem>
-              <StaggerItem className="p-3 xs:p-4 sm:p-8 rounded-xl sm:rounded-2xl bg-slate-50 border flex flex-col gap-2 sm:gap-4 hover:shadow-md transition-all">
-                <Users className="h-6 w-6 sm:h-10 sm:w-10 text-primary shrink-0" />
-                <h3 className="font-bold text-xs xs:text-sm sm:text-xl leading-none">Customer Centric</h3>
-                <p className="text-[10px] xs:text-xs sm:text-sm text-muted-foreground leading-snug sm:leading-relaxed">We focus on relationships, resulting in many repeated happy customers.</p>
-              </StaggerItem>
-            </StaggerContainer>
+            <div>
+              <div className="mb-6">
+                <h2 className="text-2xl sm:text-3xl font-bold mb-2">Why Choose {business.name}</h2>
+                <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">Well-maintained vehicles, experienced drivers, and honest pricing.</p>
+              </div>
+              <StaggerContainer staggerDelay={0.1} className="grid grid-cols-2 gap-3 sm:gap-6">
+                <StaggerItem className="p-3 xs:p-4 sm:p-8 rounded-xl sm:rounded-2xl bg-slate-50 border flex flex-col gap-2 sm:gap-4 hover:shadow-md transition-all">
+                  <ShieldCheck className="h-6 w-6 sm:h-10 sm:w-10 text-primary shrink-0" />
+                  <h3 className="font-bold text-xs xs:text-sm sm:text-xl leading-none">Safety First</h3>
+                  <p className="text-[10px] xs:text-xs sm:text-sm text-muted-foreground leading-snug sm:leading-relaxed">Every vehicle undergoes safety checks and is operated by experienced drivers.</p>
+                </StaggerItem>
+                <StaggerItem className="p-3 xs:p-4 sm:p-8 rounded-xl sm:rounded-2xl bg-slate-50 border flex flex-col gap-2 sm:gap-4 hover:shadow-md transition-all">
+                  <Award className="h-6 w-6 sm:h-10 sm:w-10 text-primary shrink-0" />
+                  <h3 className="font-bold text-xs xs:text-sm sm:text-xl leading-none">Premium Quality</h3>
+                  <p className="text-[10px] xs:text-xs sm:text-sm text-muted-foreground leading-snug sm:leading-relaxed">We don&apos;t compromise on comfort. Our vehicles are clean and well-maintained.</p>
+                </StaggerItem>
+                <StaggerItem className="p-3 xs:p-4 sm:p-8 rounded-xl sm:rounded-2xl bg-slate-50 border flex flex-col gap-2 sm:gap-4 hover:shadow-md transition-all">
+                  <MapIcon className="h-6 w-6 sm:h-10 sm:w-10 text-primary shrink-0" />
+                  <h3 className="font-bold text-xs xs:text-sm sm:text-xl leading-none">Local Expertise</h3>
+                  <p className="text-[10px] xs:text-xs sm:text-sm text-muted-foreground leading-snug sm:leading-relaxed">Our team knows Nepal inside out, ensuring you get the best routes and gems.</p>
+                </StaggerItem>
+                <StaggerItem className="p-3 xs:p-4 sm:p-8 rounded-xl sm:rounded-2xl bg-slate-50 border flex flex-col gap-2 sm:gap-4 hover:shadow-md transition-all">
+                  <Users className="h-6 w-6 sm:h-10 sm:w-10 text-primary shrink-0" />
+                  <h3 className="font-bold text-xs xs:text-sm sm:text-xl leading-none">Customer Centric</h3>
+                  <p className="text-[10px] xs:text-xs sm:text-sm text-muted-foreground leading-snug sm:leading-relaxed">We focus on relationships, resulting in many repeated happy customers.</p>
+                </StaggerItem>
+              </StaggerContainer>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Fleet & Services and Safety Commitment Section */}
+      <section className="py-12 sm:py-20 bg-slate-50 border-t border-slate-200/80">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="p-8 rounded-3xl bg-white border border-slate-200/80 shadow-sm">
+              <span className="text-primary font-bold uppercase tracking-widest text-xs mb-2 block">Catalog</span>
+              <h2 className="text-xl sm:text-2xl font-bold text-slate-900 mb-2">Our Fleet and Services</h2>
+              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4">
+                Cars, SUVs, vans, and buses for self-drive, corporate, and leisure travel across all regions of Nepal.
+              </p>
+              <ul className="space-y-2 text-xs sm:text-sm text-slate-700">
+                <li className="flex items-center gap-2">✓ Sedans and Hatchbacks for city commutes</li>
+                <li className="flex items-center gap-2">✓ 4WD Jeeps &amp; SUVs for mountain trails</li>
+                <li className="flex items-center gap-2">✓ Hiace Vans &amp; Coasters for group tours</li>
+                <li className="flex items-center gap-2">✓ Long-term corporate fleet leasing packages</li>
+              </ul>
+            </div>
+
+            <div className="p-8 rounded-3xl bg-white border border-slate-200/80 shadow-sm">
+              <span className="text-primary font-bold uppercase tracking-widest text-xs mb-2 block">Peace of Mind</span>
+              <h2 className="text-xl sm:text-2xl font-bold text-slate-900 mb-2">Our Commitment to Safety</h2>
+              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4">
+                Regular maintenance, licensed drivers, and 24/7 roadside assistance ensure total safety on every trip.
+              </p>
+              <ul className="space-y-2 text-xs sm:text-sm text-slate-700">
+                <li className="flex items-center gap-2">✓ Strict 50-point vehicle pre-trip inspections</li>
+                <li className="flex items-center gap-2">✓ Professional, verified, and background-checked drivers</li>
+                <li className="flex items-center gap-2">✓ 24/7 on-call roadside assistance throughout Nepal</li>
+                <li className="flex items-center gap-2">✓ Full insurance coverage for vehicles and passengers</li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>

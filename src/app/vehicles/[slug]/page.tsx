@@ -31,6 +31,58 @@ const iconMap: { [key: string]: React.ComponentType<{ className?: string }> } = 
   ShieldCheck,
 }
 
+const vehicleSeoMeta: Record<string, { title: string; metaDescription: string; h1: string; h1Subtitle: string; imgAlt: string }> = {
+  "car-rent": {
+    title: `Car Rental in Nepal | Rent a Car in Kathmandu | ${business.name}`,
+    metaDescription: `Rent a car in Nepal with ${business.name} — wide range, safe vehicles, and easy online booking for city and long-distance travel.`,
+    h1: "Car Rental in Nepal",
+    h1Subtitle: `Rent a car in Nepal with ${business.name} — safe, reliable vehicles for city and long-distance travel.`,
+    imgAlt: "car rental Nepal",
+  },
+  "suv-rent": {
+    title: `SUV Rental in Nepal | SUV Hire Kathmandu | ${business.name}`,
+    metaDescription: `Book an SUV rental in Nepal for hill routes, family trips, and long journeys. Spacious, safe, and available with or without a driver.`,
+    h1: "SUV Rental in Nepal",
+    h1Subtitle: "Book a spacious, powerful SUV rental in Nepal — ideal for hill routes and family travel.",
+    imgAlt: "SUV rental Nepal",
+  },
+  "jeep-rent": {
+    title: `Jeep Rental in Nepal | Off-Road Jeep Hire | ${business.name}`,
+    metaDescription: `Rent a jeep in Nepal for off-road adventures and trekking access. Reliable 4WD vehicles for tough terrain and multi-day trips.`,
+    h1: "Jeep Rental in Nepal",
+    h1Subtitle: "Rent a rugged, reliable jeep in Nepal — built for off-road adventures and trekking access.",
+    imgAlt: "jeep rental Nepal off-road",
+  },
+  "hiace-rent": {
+    title: `Hiace Rental in Nepal | Van Hire for Group Travel | ${business.name}`,
+    metaDescription: `Book a Hiace rental in Nepal for group tours, family trips, and airport transfers. Comfortable seating for up to 12 passengers.`,
+    h1: "Hiace Rental in Nepal",
+    h1Subtitle: "Book a Hiace van rental in Nepal for comfortable group travel and airport transfers.",
+    imgAlt: "Hiace van rental Nepal",
+  },
+  "minibus-rent": {
+    title: `Coaster Rental in Nepal | Group & Corporate Travel Bus | ${business.name}`,
+    metaDescription: `Rent a coaster in Nepal for corporate outings, school trips, and group tours. Comfortable seating for 20+ passengers.`,
+    h1: "Coaster Rental in Nepal",
+    h1Subtitle: "Rent a coaster in Nepal for corporate outings, school trips, and mid-sized group travel.",
+    imgAlt: "coaster rental Nepal group travel",
+  },
+  "bus-rent": {
+    title: `Bus Rental in Nepal | Large Group Bus Hire | ${business.name}`,
+    metaDescription: `Book a bus rental in Nepal for weddings, corporate events, and large group tours. Comfortable, safe travel for 30+ passengers.`,
+    h1: "Bus Rental in Nepal",
+    h1Subtitle: "Book a bus rental in Nepal for weddings, events, and large group travel across the country.",
+    imgAlt: "bus rental Nepal large group",
+  },
+  "premium-fleet": {
+    title: `Premium Car Rental in Nepal | Luxury Vehicle Hire | ${business.name}`,
+    metaDescription: `Hire a premium vehicle in Nepal for weddings, VIP travel, and corporate executives. Luxury, comfort, and professional chauffeur service.`,
+    h1: "Premium Vehicle Rental in Nepal",
+    h1Subtitle: "Hire a premium vehicle in Nepal for weddings, VIP travel, and corporate executives.",
+    imgAlt: "premium luxury car rental Nepal",
+  },
+}
+
 export async function generateStaticParams() {
   return (services as Service[]).map((s) => ({ slug: s.id }))
 }
@@ -40,18 +92,32 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const service = (services as Service[]).find(s => s.id === slug)
   if (!service) return { title: "Vehicle Not Found" }
 
+  const seo = vehicleSeoMeta[slug] || {
+    title: `${service.title} | ${business.name}`,
+    metaDescription: service.details || service.description,
+    h1: service.title,
+    h1Subtitle: service.details || service.description,
+    imgAlt: `${service.title} in Nepal`,
+  }
+
   return {
-    title: `${service.title} - ${business.name}`,
-    description: service.details || service.description,
+    title: seo.title,
+    description: seo.metaDescription,
     alternates: { canonical: `/vehicles/${slug}` },
     openGraph: {
       type: "website",
       locale: "en_NP",
       url: `https://manoranjan.com.np/vehicles/${slug}`,
       siteName: business.name,
-      title: `${service.title} - ${business.name}`,
-      description: service.details || service.description,
-      images: [{ url: "https://manoranjan.com.np/logo.jpg", width: 800, height: 800, alt: business.name }],
+      title: seo.title,
+      description: seo.metaDescription,
+      images: [{ url: "https://manoranjan.com.np/logo.jpg", width: 800, height: 800, alt: seo.imgAlt }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: seo.title,
+      description: seo.metaDescription,
+      images: ["https://manoranjan.com.np/logo.jpg"],
     },
   }
 }
@@ -61,8 +127,14 @@ export default async function VehicleCategoryPage({ params }: { params: Promise<
   const service = (services as Service[]).find(s => s.id === slug)
   if (!service) notFound()
 
-  const Icon = iconMap[service.icon] || MapIcon
   const otherServices = (services as Service[]).filter(s => s.id !== slug)
+  const seo = vehicleSeoMeta[slug] || {
+    title: `${service.title} | ${business.name}`,
+    metaDescription: service.details || service.description,
+    h1: service.title,
+    h1Subtitle: service.details || service.description,
+    imgAlt: `${service.title} in Nepal`,
+  }
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -70,7 +142,7 @@ export default async function VehicleCategoryPage({ params }: { params: Promise<
     itemListElement: [
       { "@type": "ListItem", position: 1, name: "Home", item: "https://manoranjan.com.np" },
       { "@type": "ListItem", position: 2, name: "Vehicles", item: "https://manoranjan.com.np/vehicles" },
-      { "@type": "ListItem", position: 3, name: service.title, item: `https://manoranjan.com.np/vehicles/${slug}` },
+      { "@type": "ListItem", position: 3, name: seo.h1, item: `https://manoranjan.com.np/vehicles/${slug}` },
     ]
   }
 
@@ -85,42 +157,16 @@ export default async function VehicleCategoryPage({ params }: { params: Promise<
   }
 
   return (
-    <div className="pt-20 pb-24 w-full overflow-x-hidden">
+    <div className="w-full overflow-x-hidden">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: safeJsonLdStringify(jsonLd) }} />
 
-      {/* Header */}
-      <section className="relative bg-slate-900 py-32 text-white overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          {service.images && service.images[0] && (
-            <Image src={service.images[0]} alt={service.title} fill className="object-cover" priority />
-          )}
-          <div className="absolute inset-0 bg-black/50" />
-        </div>
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="flex items-center gap-2 text-sm text-white/60 mb-4">
-            <Link href="/vehicles" className="hover:text-primary transition-colors">Vehicles</Link>
-            <span>/</span>
-            <span className="text-white">{service.title}</span>
-          </div>
-          <div className="max-w-3xl">
-            <div className="flex items-center gap-4 mb-6">
-              <div className="h-14 w-14 rounded-2xl bg-white/10 backdrop-blur-md flex items-center justify-center text-primary border border-white/10">
-                <Icon className="h-7 w-7" />
-              </div>
-              <div>
-                <h1 className="text-4xl md:text-6xl font-bold">{service.title}</h1>
-                {service.capacity && (
-                  <span className="text-sm font-bold text-white/60 uppercase tracking-wider">{service.capacity}</span>
-                )}
-              </div>
-            </div>
-            <p className="text-xl text-slate-300 leading-relaxed">{service.details}</p>
-          </div>
-        </div>
-      </section>
-
-      {/* Vehicle Details + Compact Inquiry */}
-      <VehicleDetailClient slug={slug} service={serviceData} />
+      {/* Vehicle Details + Top Hero Showcase & Compact Inquiry */}
+      <VehicleDetailClient 
+        slug={slug} 
+        service={serviceData} 
+        seoH1={seo.h1} 
+        seoH1Subtitle={seo.h1Subtitle} 
+      />
 
       {/* Other Vehicles */}
       {otherServices.length > 0 && (() => {

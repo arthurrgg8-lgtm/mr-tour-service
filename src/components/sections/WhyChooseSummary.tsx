@@ -2,7 +2,6 @@
 
 import Image from "next/image"
 import { Headphones, ShieldCheck, Wrench, MapPin } from "lucide-react"
-import business from "@/data/business.json"
 import { FadeIn, Float } from "@/components/ui/MotionComponents"
 
 export default function WhyChooseSummary() {
@@ -45,9 +44,12 @@ export default function WhyChooseSummary() {
             Trust &amp; Excellence
           </span>
           <h2 className="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight">
-            Why <span className="text-primary">{business.name}</span>?
+            Why Choose Us for <span className="text-primary">Vehicle Rental in Nepal</span>
           </h2>
-          <div className="w-20 h-1.5 bg-primary mx-auto rounded-full mt-4" />
+          <div className="w-20 h-1.5 bg-primary mx-auto rounded-full mt-4 mb-4" />
+          <p className="text-slate-600 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
+            Wide vehicle range, safety-checked fleet, easy booking, and nationwide coverage make us Nepal&apos;s trusted rental choice.
+          </p>
         </FadeIn>
 
         {/* 3-Column Feature Layout */}
@@ -80,7 +82,7 @@ export default function WhyChooseSummary() {
               <div className="relative w-full max-w-md aspect-[16/10] sm:aspect-[16/9] lg:aspect-[4/3] flex items-center justify-center">
                 <Image
                   src="/images/fleet/why-choose-car.jpg"
-                  alt="M.R Travel and Tour Fleet"
+                  alt="MR Vehicle Rental Fleet"
                   fill
                   className="object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-500"
                   priority
