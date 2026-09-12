@@ -5,6 +5,7 @@ import Navbar from "@/components/layout/Navbar"
 import Footer from "@/components/layout/Footer"
 import WhatsAppButton from "@/components/layout/WhatsAppButton"
 import ScrollToTop from "@/components/ui/ScrollToTop"
+import GoogleAdsTracker from "@/components/ui/GoogleAdsTracker"
 import business from "@/data/business.json"
 import { buildWhatsAppUrl, safeJsonLdStringify } from "@/lib/utils"
 
@@ -249,6 +250,24 @@ export default function RootLayout({
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
               gtag('config', 'AW-18048947362');
+              gtag('config', 'AW-18048947362/s8ybCJ645vQcEKKptJ5D', {
+                'phone_conversion_number': '${business.contact.phone}'
+              });
+              function gtag_report_conversion(url) {
+                var callback = function () {
+                  if (typeof(url) != 'undefined' && url) {
+                    window.location = url;
+                  }
+                };
+                gtag('event', 'conversion', {
+                  'send_to': 'AW-18048947362/huzaCJi45vQcEKKptJ5D',
+                  'value': 1.0,
+                  'currency': 'USD',
+                  'event_callback': callback
+                });
+                return false;
+              }
+              window.gtag_report_conversion = gtag_report_conversion;
             `,
           }}
         />
@@ -260,6 +279,7 @@ export default function RootLayout({
       <body
         className={`${urbanist.variable} antialiased font-sans`}
       >
+        <GoogleAdsTracker />
         <Navbar />
         <main>{children}</main>
         <Footer />

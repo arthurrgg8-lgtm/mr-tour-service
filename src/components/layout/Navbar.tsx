@@ -8,7 +8,7 @@ import { useState, useEffect, useMemo, useCallback } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { usePathname } from "next/navigation"
 import { buildWhatsAppUrl, scrollToId, cn } from "@/lib/utils"
-import { trackLeadConversion } from "@/lib/gtag"
+import { trackLeadConversion, trackCallConversion } from "@/lib/gtag"
 
 const NAV_LINKS = [
   { name: "HOME", href: "/" },
@@ -247,6 +247,7 @@ export default function Navbar() {
           {/* Mobile Call Quick Action */}
           <a
             href={`tel:${business.contact.phone}`}
+            onClick={() => trackCallConversion()}
             className="md:hidden flex items-center gap-1.5 h-8 px-2.5 rounded-lg bg-primary text-white text-xs font-bold shadow-sm active:scale-95 transition-all hover:bg-primary/90"
             aria-label="Call Now"
           >
@@ -256,6 +257,7 @@ export default function Navbar() {
 
           <a
             href={`tel:${business.contact.phone}`}
+            onClick={() => trackCallConversion()}
             className="hidden lg:flex items-center gap-2 text-xs font-black text-slate-700 hover:text-primary transition-colors"
           >
             <div className="h-8 w-8 rounded-full bg-primary/10 flex items-center justify-center text-primary">
@@ -381,6 +383,7 @@ export default function Navbar() {
               <div className="flex flex-col gap-4 pt-4">
                 <a
                   href={`tel:${business.contact.phone}`}
+                  onClick={() => trackCallConversion()}
                   className="flex items-center gap-4 p-4 rounded-2xl bg-slate-50 text-slate-900 font-black"
                 >
                   <div className="h-10 w-10 rounded-full bg-white flex items-center justify-center shadow-sm text-primary">

@@ -5,7 +5,7 @@ import Image from "next/image"
 import { Mail, MapPin, Phone, MessageCircle } from "lucide-react"
 import business from "@/data/business.json"
 import { buildWhatsAppUrl } from "@/lib/utils"
-import { trackLeadConversion } from "@/lib/gtag"
+import { trackLeadConversion, trackCallConversion } from "@/lib/gtag"
 
 export default function Footer() {
   return (
@@ -116,6 +116,7 @@ export default function Footer() {
               <li>
                 <a 
                   href={`tel:${business.contact.phone}`} 
+                  onClick={() => trackCallConversion()}
                   className="flex items-center gap-3 group"
                   aria-label={`Call us at ${business.contact.phone}`}
                 >
