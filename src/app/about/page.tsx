@@ -200,7 +200,7 @@ export default function AboutPage() {
             </p>
           </FadeIn>
 
-          <StaggerContainer staggerDelay={0.12} className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-12">
+          <StaggerContainer staggerDelay={0.12} className="grid grid-cols-1 sm:grid-cols-3 max-w-5xl mx-auto gap-6 sm:gap-12">
             {team.map((member: TeamMember, idx) => (
               <StaggerItem key={idx} className="group flex flex-col items-center text-center">
                 <div className="relative">

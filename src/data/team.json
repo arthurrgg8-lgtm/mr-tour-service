@@ -6,18 +6,8 @@
   },
   {
     "name": "Pritak Karki",
-    "role": "Managing Director",
-    "image": "/images/team/md.jpeg"
-  },
-  {
-    "name": "Ram Khatri",
-    "role": "Tour and Trekking Operator",
-    "image": "/images/team/ram-khatri.jpg"
-  },
-  {
-    "name": "Anish Khadka",
     "role": "Manager",
-    "image": "/images/team/manager.jpeg"
+    "image": "/images/team/md.jpeg"
   },
   {
     "name": "LazZy",
