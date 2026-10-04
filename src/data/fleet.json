@@ -1,7 +1,7 @@
 [
   {
     "id": "premium-suv",
-    "name": "Toyota Fortuner",
+    "name": "Toyota Fortuner / 4WD SUV",
     "description": "The ultimate luxury SUV for a powerful and comfortable journey across any terrain in Nepal.",
     "capacity": "7 Passengers",
     "features": [
@@ -10,7 +10,7 @@
       "Professional Driver",
       "Spacious Boot Space"
     ],
-    "image": "/images/services/premium-fleet/premium-fleet-1.jpeg",
+    "image": "/images/fleet/toyota-mountain-suv.jpg",
     "category": "Premium SUV",
     "startingPrice": "NPR 8,000 / $59",
     "recommendedFor": "Mountain Expeditions & VIP Travel"
@@ -26,7 +26,7 @@
       "Advanced Safety",
       "Ultra-Quiet Cabin"
     ],
-    "image": "/images/fleet/byd-atto3.jpg",
+    "image": "/images/fleet/byd-showroom.jpg",
     "category": "Electric Premium",
     "startingPrice": "NPR 7,000 / $52",
     "recommendedFor": "Eco-Friendly City & Highway Tours"
@@ -58,7 +58,7 @@
       "Dual AC",
       "Well-Trained Driver"
     ],
-    "image": "/images/fleet/hiace-fleet.jpg",
+    "image": "/images/fleet/hiace-fleet-tourist.jpg",
     "category": "Group Travel",
     "startingPrice": "NPR 8,000 / $59",
     "recommendedFor": "Tourist Groups & Pilgrimage Tours"

@@ -28,6 +28,8 @@
     "startingPrice": "NPR 6,000 / $44",
     "recommendedFor": "Family Vacations & Highway Travel",
     "images": [
+      "/images/fleet/toyota-mountain-suv.jpg",
+      "/images/fleet/byd-showroom.jpg",
       "/images/services/suv/suv.jpeg"
     ],
     "featured": true,
@@ -68,6 +70,8 @@
     "startingPrice": "NPR 8,000 / $59",
     "recommendedFor": "Tourist Groups & Pilgrimage",
     "images": [
+      "/images/fleet/hiace-fleet-tourist.jpg",
+      "/images/fleet/hiace-interior.jpg",
       "/images/services/hiace/hiace-full.jpeg"
     ],
     "featured": true,

@@ -270,7 +270,9 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               content?: string
               paragraphs?: string[]
               tips?: string[]
-              subsections?: { heading: string; content: string }[]
+              image?: string
+              imageAlt?: string
+              subsections?: { heading: string; content: string; image?: string; imageAlt?: string }[]
             }
 
             return (
@@ -285,6 +287,17 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                   </p>
                 )}
 
+                {sec.image && (
+                  <div className="relative w-full aspect-[16/9] sm:aspect-[21/9] rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl border border-slate-100 my-6">
+                    <Image
+                      src={sec.image}
+                      alt={sec.imageAlt || sec.heading}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                )}
+
                 {sec.paragraphs && sec.paragraphs.length > 0 && (
                   <div className="space-y-4">
                     {sec.paragraphs.map((p, pIdx) => (
@@ -297,15 +310,27 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
                 {/* Subsections (H3) */}
                 {sec.subsections && sec.subsections.length > 0 && (
-                  <div className="grid grid-cols-1 gap-6 pt-2">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2">
                     {sec.subsections.map((sub, sIdx) => (
-                      <div key={sIdx} className="p-6 sm:p-7 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-2.5">
-                        <h3 className="text-lg sm:text-xl font-bold text-slate-900">
-                          {sub.heading}
-                        </h3>
-                        <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
-                          {renderFormattedText(sub.content)}
-                        </p>
+                      <div key={sIdx} className="p-6 sm:p-7 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-3 flex flex-col justify-between">
+                        <div>
+                          <h3 className="text-lg sm:text-xl font-bold text-slate-900 mb-2">
+                            {sub.heading}
+                          </h3>
+                          <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
+                            {renderFormattedText(sub.content)}
+                          </p>
+                        </div>
+                        {sub.image && (
+                          <div className="relative w-full aspect-[16/10] rounded-xl overflow-hidden shadow-md border border-slate-200/80 mt-3">
+                            <Image
+                              src={sub.image}
+                              alt={sub.imageAlt || sub.heading}
+                              fill
+                              className="object-cover"
+                            />
+                          </div>
+                        )}
                       </div>
                     ))}
                   </div>

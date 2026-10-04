@@ -106,7 +106,9 @@
           "The **SUV rental price in Nepal** depends on factors such as the vehicle model, rental duration, distance, destination, fuel, driver requirements, and other travel conditions.",
           "If you are unsure whether you need a standard car or an SUV like BYD, MG, VIGO, or Brezza, consider the number of passengers, luggage, route, and comfort requirements before making your decision.",
           "M.R Vehicle Rental provides SUV rental options for different types of travel requirements. View our [SUV Rental in Nepal](/vehicles/suv-rent) options."
-        ]
+        ],
+        "image": "/images/fleet/toyota-mountain-suv.jpg",
+        "imageAlt": "Toyota 4WD SUV on scenic Himalayan mountain route in Nepal"
       },
       {
         "heading": "Is Car Rental in Nepal Cheaper for Longer Trips?",
@@ -157,11 +159,15 @@
           },
           {
             "heading": "SUV \u2014 More Space and Comfort",
-            "content": "An SUV can be a good option when you want more interior space and comfort than a standard car. It can be particularly useful for family trips, small groups, longer journeys, and travelers carrying more luggage. [Explore SUV Rental in Nepal](/vehicles/suv-rent)."
+            "content": "An SUV can be a good option when you want more interior space and comfort than a standard car. It can be particularly useful for family trips, small groups, longer journeys, and travelers carrying more luggage. [Explore SUV Rental in Nepal](/vehicles/suv-rent).",
+            "image": "/images/fleet/byd-showroom.jpg",
+            "imageAlt": "BYD Electric SUV available for rental in Nepal"
           },
           {
             "heading": "Hiace \u2014 Suitable for Medium-Sized Groups",
-            "content": "A Toyota Hiace can be a practical option for groups that are larger than a typical car or SUV capacity. It provides additional passenger space and can be useful for family tours, corporate travel, group sightseeing, and intercity travel. The exact seating capacity and available configuration should be confirmed based on the vehicle you are booking. [Explore Hiace Rental in Nepal](/vehicles/hiace-rent)."
+            "content": "A Toyota Hiace can be a practical option for groups that are larger than a typical car or SUV capacity. It provides additional passenger space and can be useful for family tours, corporate travel, group sightseeing, and intercity travel. The exact seating capacity and available configuration should be confirmed based on the vehicle you are booking. [Explore Hiace Rental in Nepal](/vehicles/hiace-rent).",
+            "image": "/images/fleet/hiace-interior.jpg",
+            "imageAlt": "Luxury interior of Toyota HiAce rental van with comfortable reclining seats and dual AC"
           },
           {
             "heading": "Coaster \u2014 Suitable for Larger Groups",
