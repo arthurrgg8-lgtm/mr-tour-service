@@ -2,7 +2,8 @@ import type { Metadata } from "next"
 import { notFound } from "next/navigation"
 import Image from "next/image"
 import Link from "next/link"
-import { Calendar, Clock, ArrowLeft, ArrowRight, CheckCircle2, User, MessageCircle, Sparkles } from "lucide-react"
+import React from "react"
+import { Calendar, Clock, ArrowLeft, ArrowRight, CheckCircle2, User, MessageCircle, Sparkles, HelpCircle } from "lucide-react"
 import blogPosts from "@/data/blog-posts.json"
 import business from "@/data/business.json"
 import { buildWhatsAppUrl, safeJsonLdStringify } from "@/lib/utils"
@@ -52,6 +53,83 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
   }
 }
 
+/**
+ * Helper to parse markdown links [label](url), **bold**, and **[bold link](url)**
+ */
+function renderFormattedText(text: string): React.ReactNode {
+  if (!text) return null
+  const regex = /(\*\*\[[^\]]+\]\([^)]+\)\*\*|\[[^\]]+\]\([^)]+\)|\*\*[^*]+\*\*)/g
+  const parts = text.split(regex)
+
+  return parts.map((part, index) => {
+    if (part.startsWith("**[") && part.endsWith(")**")) {
+      const m = part.match(/^\*\*\[(.*?)\]\((.*?)\)\*\*$/)
+      if (m) {
+        const [, label, url] = m
+        const isExternal = url.startsWith("http")
+        if (isExternal) {
+          return (
+            <a
+              key={index}
+              href={url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary font-bold hover:underline"
+            >
+              {label}
+            </a>
+          )
+        }
+        return (
+          <Link
+            key={index}
+            href={url}
+            className="text-primary font-bold hover:underline"
+          >
+            {label}
+          </Link>
+        )
+      }
+    } else if (part.startsWith("[") && part.endsWith(")")) {
+      const m = part.match(/^\[(.*?)\]\((.*?)\)$/)
+      if (m) {
+        const [, label, url] = m
+        const isExternal = url.startsWith("http")
+        if (isExternal) {
+          return (
+            <a
+              key={index}
+              href={url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary font-bold hover:underline"
+            >
+              {label}
+            </a>
+          )
+        }
+        return (
+          <Link
+            key={index}
+            href={url}
+            className="text-primary font-bold hover:underline"
+          >
+            {label}
+          </Link>
+        )
+      }
+    } else if (part.startsWith("**") && part.endsWith("**") && part.length >= 4) {
+      const boldText = part.slice(2, -2)
+      return (
+        <strong key={index} className="font-bold text-slate-900">
+          {boldText}
+        </strong>
+      )
+    }
+    return part
+  })
+}
+
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
   const { slug } = await params
   const post = blogPosts.find((p) => p.id === slug)
@@ -62,7 +140,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
   const otherPosts = blogPosts.filter((p) => p.id !== slug).slice(0, 3)
 
-  const articleJsonLd = {
+  const articleJsonLd: Record<string, unknown> = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     "headline": post.title,
@@ -80,12 +158,27 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         "url": "https://manoranjan.com.np/logo.jpg",
       },
     },
-    "datePublished": "2026-01-01",
+    "datePublished": "2026-10-04",
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": `https://manoranjan.com.np/blog/${post.id}`,
     },
   }
+
+  const postFaqs = (post as unknown as { faqs?: { question: string; answer: string }[] }).faqs
+
+  const faqJsonLd = postFaqs && postFaqs.length > 0 ? {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": postFaqs.map((faq) => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer,
+      },
+    })),
+  } : null
 
   return (
     <div className="w-full overflow-x-hidden bg-white">
@@ -93,6 +186,12 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: safeJsonLdStringify(articleJsonLd) }}
       />
+      {faqJsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: safeJsonLdStringify(faqJsonLd) }}
+        />
+      )}
 
       {/* ─── Hero Header ─── */}
       <section className="relative bg-slate-900 pt-6 sm:pt-12 lg:pt-16 pb-12 sm:pb-20 text-white overflow-hidden">
@@ -148,7 +247,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         {/* Intro Lead */}
         <div className="p-6 sm:p-10 rounded-2xl sm:rounded-3xl bg-slate-50 border border-slate-200/80 mb-12 shadow-xs">
           <p className="text-base sm:text-xl text-slate-700 leading-relaxed font-medium">
-            {post.intro}
+            {renderFormattedText(post.intro)}
           </p>
         </div>
 
@@ -165,34 +264,106 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
         {/* Sections */}
         <div className="space-y-16">
-          {post.sections.map((section, idx) => (
-            <div key={idx} className="space-y-6">
-              <h2 className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight leading-tight">
-                {section.heading}
-              </h2>
-              <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
-                {section.content}
-              </p>
+          {post.sections.map((section, idx) => {
+            const sec = section as unknown as {
+              heading: string
+              content?: string
+              paragraphs?: string[]
+              tips?: string[]
+              subsections?: { heading: string; content: string }[]
+            }
 
-              {section.tips && section.tips.length > 0 && (
-                <div className="p-6 sm:p-8 rounded-2xl sm:rounded-3xl bg-primary/[0.04] border border-primary/15 space-y-3 mt-6">
-                  <div className="flex items-center gap-2 text-primary font-bold text-xs sm:text-sm uppercase tracking-wider mb-2">
-                    <Sparkles className="h-4 w-4" />
-                    <span>Expert Insights &amp; Road Tips</span>
+            return (
+              <div key={idx} className="space-y-6">
+                <h2 className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight leading-tight">
+                  {sec.heading}
+                </h2>
+
+                {sec.content && (
+                  <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
+                    {renderFormattedText(sec.content)}
+                  </p>
+                )}
+
+                {sec.paragraphs && sec.paragraphs.length > 0 && (
+                  <div className="space-y-4">
+                    {sec.paragraphs.map((p, pIdx) => (
+                      <p key={pIdx} className="text-base sm:text-lg text-slate-600 leading-relaxed">
+                        {renderFormattedText(p)}
+                      </p>
+                    ))}
                   </div>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                    {section.tips.map((tip, tipIdx) => (
-                      <div key={tipIdx} className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700 bg-white/60 p-3 rounded-xl border border-primary/10">
-                        <CheckCircle2 className="h-4 w-4 text-primary shrink-0 mt-0.5" />
-                        <span className="leading-relaxed">{tip}</span>
+                )}
+
+                {/* Subsections (H3) */}
+                {sec.subsections && sec.subsections.length > 0 && (
+                  <div className="grid grid-cols-1 gap-6 pt-2">
+                    {sec.subsections.map((sub, sIdx) => (
+                      <div key={sIdx} className="p-6 sm:p-7 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-2.5">
+                        <h3 className="text-lg sm:text-xl font-bold text-slate-900">
+                          {sub.heading}
+                        </h3>
+                        <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
+                          {renderFormattedText(sub.content)}
+                        </p>
                       </div>
                     ))}
                   </div>
-                </div>
-              )}
-            </div>
-          ))}
+                )}
+
+                {/* Tips & Bullet Points */}
+                {sec.tips && sec.tips.length > 0 && (
+                  <div className="p-6 sm:p-8 rounded-2xl sm:rounded-3xl bg-primary/[0.04] border border-primary/15 space-y-3 mt-6">
+                    <div className="flex items-center gap-2 text-primary font-bold text-xs sm:text-sm uppercase tracking-wider mb-2">
+                      <Sparkles className="h-4 w-4" />
+                      <span>Key Highlights &amp; Insights</span>
+                    </div>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                      {sec.tips.map((tip, tipIdx) => (
+                        <div key={tipIdx} className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700 bg-white/60 p-3 rounded-xl border border-primary/10">
+                          <CheckCircle2 className="h-4 w-4 text-primary shrink-0 mt-0.5" />
+                          <span className="leading-relaxed">{renderFormattedText(tip)}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
+            )
+          })}
         </div>
+
+        {/* FAQs Section */}
+        {postFaqs && postFaqs.length > 0 && (
+          <div className="mt-20 pt-16 border-t border-slate-200">
+            <div className="flex items-center gap-3 mb-8">
+              <div className="h-10 w-10 rounded-2xl bg-primary/10 flex items-center justify-center text-primary">
+                <HelpCircle className="h-6 w-6" />
+              </div>
+              <div>
+                <span className="text-primary font-bold uppercase tracking-widest text-xs block">
+                  Quick Answers
+                </span>
+                <h2 className="text-2xl sm:text-3xl font-black text-slate-900">
+                  Frequently Asked Questions
+                </h2>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {postFaqs.map((faq, fIdx) => (
+                <div key={fIdx} className="p-6 sm:p-7 rounded-2xl sm:rounded-3xl bg-slate-50 border border-slate-200/80 space-y-3">
+                  <h3 className="font-bold text-base sm:text-lg text-slate-900">
+                    {faq.question}
+                  </h3>
+                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
+                    {faq.answer}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
 
         {/* Conclusion / Action Box - Full Width */}
         <div className="mt-16 p-8 sm:p-14 rounded-3xl bg-slate-900 text-white shadow-2xl relative overflow-hidden">
@@ -206,7 +377,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               Plan Your Nepal Journey with M.R Travel &amp; Tour
             </h3>
             <p className="text-sm sm:text-base text-slate-300 leading-relaxed mb-8 font-medium">
-              {post.conclusion}
+              {renderFormattedText(post.conclusion)}
             </p>
 
             <div className="flex flex-wrap items-center justify-center gap-4">
@@ -215,6 +386,14 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-primary text-white font-black text-xs sm:text-sm hover:bg-primary/90 transition-all uppercase tracking-wider shadow-xl shadow-primary/25"
               >
                 <span>Browse Fleet</span>
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-white text-slate-900 font-black text-xs sm:text-sm hover:bg-slate-100 transition-all uppercase tracking-wider shadow-lg"
+              >
+                <span>Get a Rental Quote</span>
                 <ArrowRight className="h-4 w-4" />
               </Link>
 
