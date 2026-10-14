@@ -47,7 +47,7 @@ export default function SelfDriveShowcase() {
                 <span className="text-base sm:text-lg font-bold text-white">Cars &amp; SUVs Available for Self-Drive</span>
               </div>
               <span className="text-xs font-semibold text-primary bg-primary/10 border border-primary/20 px-3.5 py-1.5 rounded-full">
-                Instant Confirmation
+                Starting from 30 Days
               </span>
             </div>
           </div>

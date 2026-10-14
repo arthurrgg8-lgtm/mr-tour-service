@@ -102,7 +102,7 @@ export default function VehicleCategoryCard({ service, idx }: VehicleCategoryCar
             </div>
           )}
 
-          {service.subServices && Array.isArray(service.subServices[0]) && (
+          {service.subServices && Array.isArray(service.subServices) && service.subServices.length > 0 && (
             <div className="space-y-1.5 pt-1">
               <h4 className="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-slate-400">Popular Use Cases</h4>
               <div className="flex flex-wrap gap-1.5 sm:gap-2">

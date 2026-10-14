@@ -151,8 +151,8 @@ export default function ServiceInquiryForm({
       }
     }
 
-    if (activeMode === "Self Drive" && (!formData.numDays || parseInt(formData.numDays) < 1)) {
-      alert("Please specify the required number of days.")
+    if (activeMode === "Self Drive" && (!formData.numDays || parseInt(formData.numDays) < 30)) {
+      alert("Self-drive vehicle rental is available starting from 30 days minimum.")
       return
     }
 
@@ -279,8 +279,8 @@ export default function ServiceInquiryForm({
 
                   <div className="relative">
                     <input 
-                      type="number" name="numDays" required min="1" max="90" value={formData.numDays} onChange={handleChange}
-                      placeholder="Required Days"
+                      type="number" name="numDays" required min="30" max="365" value={formData.numDays} onChange={handleChange}
+                      placeholder="Starting from 30 Days"
                       className={`w-full h-9 pl-3 pr-2 rounded-lg border text-xs focus:outline-none focus:ring-1 transition-all ${inputCls}`}
                     />
                   </div>
@@ -560,11 +560,11 @@ export default function ServiceInquiryForm({
 
               <div className="space-y-1.5 sm:space-y-2 col-span-2 md:col-span-1">
                 <label className="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-muted-foreground flex items-center gap-1">
-                  <Clock className="h-3 w-3 text-primary" /> Required No. of Days
+                  <Clock className="h-3 w-3 text-primary" /> Required No. of Days (Min. 30 Days)
                 </label>
                 <input 
-                  type="number" name="numDays" required min="1" max="90" value={formData.numDays} onChange={handleChange}
-                  placeholder="e.g. 3 Days"
+                  type="number" name="numDays" required min="30" max="365" value={formData.numDays} onChange={handleChange}
+                  placeholder="Starting from 30 Days"
                   className="w-full h-10 sm:h-12 px-3 sm:px-4 rounded-lg sm:rounded-xl border bg-slate-50 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
                 />
               </div>

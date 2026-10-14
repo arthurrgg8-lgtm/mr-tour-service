@@ -70,8 +70,8 @@ const reasons = [
   },
   {
     icon: Clock,
-    title: "Flexible Rental Duration",
-    description: "From a single day to a full month, choose a rental period that fits your travel plan.",
+    title: "Flexible Rental Duration (Min. 30 Days)",
+    description: "Self-drive rentals are available starting from 30 days minimum with flexible monthly lease extensions.",
   },
 ]
 

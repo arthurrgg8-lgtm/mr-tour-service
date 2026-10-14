@@ -143,7 +143,7 @@ export default function VehicleDetailClient({ slug, service, seoH1, seoH1Subtitl
 
             {/* Use Cases & Standard Inclusions */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {service.subServices && Array.isArray(service.subServices[0]) && (
+              {service.subServices && Array.isArray(service.subServices) && service.subServices.length > 0 && (
                 <div className="p-6 rounded-2xl bg-slate-50 border border-slate-100">
                   <h3 className="text-lg font-bold mb-4 text-slate-900">Best Used For</h3>
                   <div className="space-y-2.5">
