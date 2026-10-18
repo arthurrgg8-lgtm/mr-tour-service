@@ -6,7 +6,7 @@ import { Calendar, ArrowRight, Clock } from "lucide-react"
 import blogPosts from "@/data/blog-posts.json"
 
 export const metadata: Metadata = {
-  title: `Travel & Rental Guides Nepal | ${business.name} Blog`,
+  title: "Nepal Travel & Vehicle Rental Guides",
   description: `Read travel tips, vehicle rental guides, and route advice for exploring Nepal by road. Helpful guides from ${business.name}.`,
   alternates: {
     canonical: "/blog",
@@ -16,13 +16,13 @@ export const metadata: Metadata = {
     locale: "en_NP",
     url: "https://manoranjan.com.np/blog",
     siteName: business.name,
-    title: `Travel & Rental Guides Nepal | ${business.name} Blog`,
+    title: `Nepal Travel & Vehicle Rental Guides | ${business.name}`,
     description: `Read travel tips, vehicle rental guides, and route advice for exploring Nepal by road. Helpful guides from ${business.name}.`,
     images: [{ url: "https://manoranjan.com.np/logo.jpg", width: 800, height: 800, alt: "Nepal travel vehicle rental blog" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: `Travel & Rental Guides Nepal | ${business.name} Blog`,
+    title: `Nepal Travel & Vehicle Rental Guides | ${business.name}`,
     description: `Read travel tips, vehicle rental guides, and route advice for exploring Nepal by road. Helpful guides from ${business.name}.`,
     images: ["https://manoranjan.com.np/logo.jpg"],
   },

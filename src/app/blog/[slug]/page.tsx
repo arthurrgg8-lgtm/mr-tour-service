@@ -29,7 +29,7 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
   }
 
   return {
-    title: `${post.title} | ${business.name}`,
+    title: post.title,
     description: post.excerpt,
     keywords: post.keywords,
     alternates: {
@@ -158,11 +158,22 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         "url": "https://manoranjan.com.np/logo.jpg",
       },
     },
-    "datePublished": "2026-10-04",
+    "datePublished": post.id === "best-vehicles-for-trekking-transportation-in-nepal" ? "2026-10-18" : "2026-10-04",
+    "dateModified": "2026-10-18",
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": `https://manoranjan.com.np/blog/${post.id}`,
     },
+  }
+
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://manoranjan.com.np" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://manoranjan.com.np/blog" },
+      { "@type": "ListItem", "position": 3, "name": post.title, "item": `https://manoranjan.com.np/blog/${post.id}` },
+    ],
   }
 
   const postFaqs = (post as unknown as { faqs?: { question: string; answer: string }[] }).faqs
@@ -182,6 +193,10 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
   return (
     <div className="w-full overflow-x-hidden bg-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: safeJsonLdStringify(breadcrumbJsonLd) }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: safeJsonLdStringify(articleJsonLd) }}
