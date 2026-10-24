@@ -1,5 +1,6 @@
 "use client"
 
+import { useRouter } from "next/navigation"
 import { MessageCircle } from "lucide-react"
 import { scrollToId } from "@/lib/utils"
 
@@ -16,6 +17,8 @@ export default function EnquireButton({
   className = "",
   targetId = "inquiry-form",
 }: EnquireButtonProps) {
+  const router = useRouter()
+
   const scrollToForm = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.stopPropagation()
     const scrolled = scrollToId(targetId, 80, true)
@@ -24,7 +27,7 @@ export default function EnquireButton({
       if (el) {
         el.scrollIntoView({ behavior: "smooth", block: "start" })
       } else {
-        window.location.href = `/#${targetId}`
+        router.push(`/#${targetId}`)
       }
     }
   }

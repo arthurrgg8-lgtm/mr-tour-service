@@ -1,6 +1,6 @@
 # M.R TRAVEL AND TOUR - Manoranjan Ramjham Travel and Tour Pvt. Ltd
 
-[![Next.js](https://img.shields.io/badge/Next.js-16.2.6-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
+[![Next.js](https://img.shields.io/badge/Next.js-16.4.3-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
 [![React](https://img.shields.io/badge/React-19.2.4-blue?style=for-the-badge&logo=react)](https://react.dev/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4.0-38B2AC?style=for-the-badge&logo=tailwind-css)](https://tailwindcss.com/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org/)
@@ -25,7 +25,7 @@ Optimized with native Next.js static exports (`output: 'export'`) deployed direc
 
 ## 🛠️ Tech Stack & Architecture
 
-*   **Framework:** Next.js 16.2.6 (Static Export: `output: 'export'`)
+*   **Framework:** Next.js 16.4.3 (Static Export: `output: 'export'`)
 *   **Library:** React 19.2.4
 *   **Styling:** Tailwind CSS 4.0 & PostCSS
 *   **Animations:** Framer Motion (v12) & GSAP (v3)
