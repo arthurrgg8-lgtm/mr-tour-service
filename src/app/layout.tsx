@@ -100,10 +100,11 @@ export default function RootLayout({
 }>) {
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "TravelAgency",
+    "@type": ["TravelAgency", "AutoRental"],
+    "@id": "https://manoranjan.com.np/#organization",
     "name": business.name,
-    "alternateName": business.name,
-    "description": "Nepal's premier travel service provider offering 100% self-owned fleet of premium cars, 4x4 Jeeps, and luxury buses.",
+    "alternateName": ["Manoranjan Vehicle Rental", "M.R Travel & Tour"],
+    "description": "Nepal's premier travel and wedding vehicle rental service provider offering a 100% self-owned fleet of sedans, SUVs, 4x4 Jeeps, Toyota Hiace vans, Coaster minibuses, and luxury tourist buses.",
     "url": "https://manoranjan.com.np",
     "logo": "https://manoranjan.com.np/logo.jpg",
     "image": "https://manoranjan.com.np/images/hero/services-bg.jpg",
@@ -185,38 +186,49 @@ export default function RootLayout({
       }
     ],
     "areaServed": [
-      {
-        "@type": "City",
-        "name": "Kathmandu"
-      },
-      {
-        "@type": "Country",
-        "name": "Nepal"
-      }
+      { "@type": "City", "name": "Kathmandu" },
+      { "@type": "City", "name": "Lalitpur" },
+      { "@type": "City", "name": "Bhaktapur" },
+      { "@type": "City", "name": "Pokhara" },
+      { "@type": "City", "name": "Chitwan" },
+      { "@type": "City", "name": "Dhulikhel" },
+      { "@type": "City", "name": "Nagarkot" },
+      { "@type": "Country", "name": "Nepal" }
     ],
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
-      "name": "Travel Services",
+      "name": "Vehicle Rental & Travel Services in Nepal",
       "itemListElement": [
         {
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
-            "name": "Vehicle Rental"
+            "name": "Chauffeur-Driven Vehicle Rental (Cars, SUVs, Jeeps, Hiace, Coasters & Buses)",
+            "url": "https://manoranjan.com.np/vehicles"
           }
         },
         {
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
-            "name": "Tour Packages"
+            "name": "Wedding Vehicle Rental in Kathmandu",
+            "url": "https://manoranjan.com.np/blog/wedding-vehicle-rental-kathmandu"
           }
         },
         {
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
-            "name": "Trekking Adventures"
+            "name": "Self-Drive Car Rental in Nepal (30-Day Minimum Lease)",
+            "url": "https://manoranjan.com.np/self-drive"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Corporate Vehicle Rental & B2B Fleet Leasing",
+            "url": "https://manoranjan.com.np/corporate-rent"
           }
         }
       ]

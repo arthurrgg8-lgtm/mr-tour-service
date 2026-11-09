@@ -142,19 +142,29 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
   const otherPosts = blogPosts.filter((p) => p.id !== slug).slice(0, 3)
 
+  const seoHeadline = (post as unknown as { seoTitle?: string }).seoTitle || post.title
+
   const articleJsonLd: Record<string, unknown> = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "headline": post.title,
+    "@id": `https://manoranjan.com.np/blog/${post.id}#article`,
+    "headline": seoHeadline,
+    "alternativeHeadline": post.title,
     "description": post.excerpt,
     "image": `https://manoranjan.com.np${post.image}`,
+    "inLanguage": "en-NP",
+    "articleSection": post.category,
+    "keywords": Array.isArray(post.keywords) ? post.keywords.join(", ") : undefined,
     "author": {
       "@type": "Organization",
       "name": post.author,
+      "url": "https://manoranjan.com.np",
     },
     "publisher": {
       "@type": "Organization",
+      "@id": "https://manoranjan.com.np/#organization",
       "name": business.name,
+      "url": "https://manoranjan.com.np",
       "logo": {
         "@type": "ImageObject",
         "url": "https://manoranjan.com.np/logo.jpg",
@@ -166,6 +176,40 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       "@type": "WebPage",
       "@id": `https://manoranjan.com.np/blog/${post.id}`,
     },
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": [".article-lead", ".faq-answer"],
+    },
+    "contentLocation": [
+      { "@type": "City", "name": "Kathmandu" },
+      { "@type": "City", "name": "Lalitpur" },
+      { "@type": "City", "name": "Bhaktapur" },
+      { "@type": "Country", "name": "Nepal" },
+    ],
+    "spatialCoverage": {
+      "@type": "Place",
+      "name": "Kathmandu Valley & Nepal",
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 27.7118,
+        "longitude": 85.3353,
+      },
+    },
+    "about": {
+      "@type": "Service",
+      "name": post.title,
+      "provider": {
+        "@id": "https://manoranjan.com.np/#organization",
+      },
+      "areaServed": ["Kathmandu", "Lalitpur", "Bhaktapur", "Dhulikhel", "Nagarkot", "Pokhara", "Chitwan", "Nepal"],
+    },
+    "mentions": [
+      { "@type": "Service", "name": "Car Rental in Kathmandu", "url": "https://manoranjan.com.np/vehicles/car-rent" },
+      { "@type": "Service", "name": "SUV Rental in Kathmandu", "url": "https://manoranjan.com.np/vehicles/suv-rent" },
+      { "@type": "Service", "name": "Toyota Hiace Rental in Kathmandu", "url": "https://manoranjan.com.np/vehicles/hiace-rent" },
+      { "@type": "Service", "name": "Mini Bus / Coaster Rental in Kathmandu", "url": "https://manoranjan.com.np/vehicles/minibus-rent" },
+      { "@type": "Service", "name": "Tourist Bus Rental in Kathmandu", "url": "https://manoranjan.com.np/vehicles/bus-rent" },
+    ],
   }
 
   const breadcrumbJsonLd = {
@@ -272,7 +316,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20 max-w-6xl">
         {/* Intro Lead */}
         <div className="p-6 sm:p-10 rounded-2xl sm:rounded-3xl bg-slate-50 border border-slate-200/80 mb-12 shadow-xs">
-          <p className="text-base sm:text-xl text-slate-700 leading-relaxed font-medium">
+          <p className="article-lead text-base sm:text-xl text-slate-700 leading-relaxed font-medium">
             {renderFormattedText(post.intro)}
           </p>
         </div>
@@ -407,7 +451,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                   <h3 className="font-bold text-base sm:text-lg text-slate-900">
                     {faq.question}
                   </h3>
-                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
+                  <p className="faq-answer text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
                     {faq.answer}
                   </p>
                 </div>
