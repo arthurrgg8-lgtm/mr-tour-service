@@ -28,8 +28,10 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
     }
   }
 
+  const seoTitle = (post as unknown as { seoTitle?: string }).seoTitle || post.title
+
   return {
-    title: post.title,
+    title: seoTitle,
     description: post.excerpt,
     keywords: post.keywords,
     alternates: {
@@ -40,13 +42,13 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
       locale: "en_NP",
       url: `https://manoranjan.com.np/blog/${post.id}`,
       siteName: business.name,
-      title: post.title,
+      title: seoTitle,
       description: post.excerpt,
       images: [{ url: post.image, width: 1200, height: 630, alt: post.title }],
     },
     twitter: {
       card: "summary_large_image",
-      title: post.title,
+      title: seoTitle,
       description: post.excerpt,
       images: [post.image],
     },
@@ -158,8 +160,8 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         "url": "https://manoranjan.com.np/logo.jpg",
       },
     },
-    "datePublished": post.id === "best-vehicles-for-trekking-transportation-in-nepal" ? "2026-10-18" : "2026-10-04",
-    "dateModified": "2026-10-18",
+    "datePublished": post.id === "wedding-vehicle-rental-kathmandu" ? "2026-11-09" : post.id === "best-vehicles-for-trekking-transportation-in-nepal" ? "2026-10-18" : "2026-10-04",
+    "dateModified": "2026-11-09",
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": `https://manoranjan.com.np/blog/${post.id}`,
@@ -242,7 +244,16 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           </div>
 
           <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white leading-[1.2] tracking-tight mb-6">
-            {post.title}
+            {(post as unknown as { titleLink?: string }).titleLink ? (
+              <Link
+                href={(post as unknown as { titleLink: string }).titleLink}
+                className="hover:text-primary transition-colors underline decoration-primary/40 underline-offset-8"
+              >
+                {post.title}
+              </Link>
+            ) : (
+              post.title
+            )}
           </h1>
 
           <div className="flex items-center gap-3 pt-4 border-t border-white/10 text-xs text-slate-300">
