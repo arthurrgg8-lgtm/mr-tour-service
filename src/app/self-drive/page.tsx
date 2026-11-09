@@ -77,22 +77,22 @@ const reasons = [
 
 const selfDrivePricing = [
   {
-    tier: "Daily Self-Drive",
-    rate: "From NPR 4,500 / day",
-    desc: "Perfect for quick weekend trips, city errands, and day tours.",
-    features: ["150 km daily allowance", "24/7 Roadside assistance", "Standard insurance coverage", "Full-to-full fuel policy"],
+    tier: "30-Day Standard Lease",
+    rate: "Starting from 30 Days",
+    desc: "Ideal for monthly stays, extended road trips, and personal city commuting across Nepal.",
+    features: ["Minimum 30-day rental period", "24/7 Roadside assistance", "Standard insurance coverage", "Routine scheduled servicing"],
   },
   {
-    tier: "Weekly Self-Drive",
-    rate: "From NPR 28,000 / week",
-    desc: "Ideal for road trips to Pokhara, Chitwan, or hill retreats.",
-    features: ["Unlimited km in valley", "Discounted weekly pricing", "Free extra driver registration", "24/7 Priority support"],
+    tier: "Quarterly Flex Lease (3+ Months)",
+    rate: "Discounted Monthly Rate",
+    desc: "Perfect for project consultants, expatriates, and seasonal Nepal stays.",
+    features: ["Priority vehicle selection", "Free extra driver registration", "Complimentary monthly maintenance", "24/7 Priority roadside backup"],
   },
   {
-    tier: "Monthly Flex Lease",
+    tier: "Long-Term Annual Lease",
     rate: "Custom Quotation",
-    desc: "Designed for expatriates, consultants, and extended Nepal stays.",
-    features: ["Complimentary monthly maintenance", "Doorstep replacement vehicle", "Dedicated account manager", "Comprehensive zero-depreciation cover"],
+    desc: "Designed for diplomats, long-term residents, and extended executive assignments.",
+    features: ["Maximum long-term rate savings", "Doorstep replacement vehicle", "Dedicated account manager", "Comprehensive zero-depreciation cover"],
   },
 ]
 
@@ -135,6 +135,10 @@ const whereYouCanDrive = [
 
 const faqs = [
   {
+    q: "What is the minimum rental duration for self-drive in Nepal?",
+    a: "Self-drive car and SUV rentals require a minimum booking duration of 30 days. For shorter trips (daily or weekly), we offer our chauffeur-driven vehicle rental service.",
+  },
+  {
     q: "What documents do I need for self-drive car rental?",
     a: "You'll need a valid driving license, citizenship or passport (for foreign nationals), and a security deposit. These documents are required only for self-drive bookings, not chauffeur-driven rentals.",
   },
@@ -144,11 +148,11 @@ const faqs = [
   },
   {
     q: "Is fuel included in self-drive rental?",
-    a: "We offer both fuel-included and fuel-excluded packages for self-drive, though most customers choose the fuel-included option for convenience.",
+    a: "Self-drive monthly leases are provided on a fuel-excluded (full-to-full) basis so you only pay for the fuel you use, while routine vehicle maintenance is included.",
   },
   {
     q: "Is there a mileage limit on self-drive rentals?",
-    a: "Self-drive rentals come with a standard daily mileage limit; additional charges apply if you exceed it. Contact us for exact limits based on your rental duration.",
+    a: "Self-drive leases include a generous monthly mileage allowance; additional charges apply only if you exceed the agreed limit. Contact us for exact terms based on your vehicle and route.",
   },
   {
     q: "What happens if the vehicle breaks down or is involved in an accident?",
@@ -246,9 +250,9 @@ export default function SelfDrivePage() {
         <div className="container mx-auto px-4">
           <FadeIn direction="up" className="text-center mb-16">
             <span className="text-primary font-bold uppercase tracking-widest text-sm mb-4 block">Transparent Rates</span>
-            <h2 className="text-3xl md:text-5xl font-bold mb-4 text-slate-900">Self Drive Rental Pricing</h2>
+            <h2 className="text-3xl md:text-5xl font-bold mb-4 text-slate-900">Self Drive Rental Plans (Min. 30 Days)</h2>
             <div className="w-24 h-1.5 bg-primary mx-auto rounded-full mb-4" />
-            <p className="text-slate-600 max-w-2xl mx-auto text-base">Flexible daily, weekly, and monthly rates for every travel plan.</p>
+            <p className="text-slate-600 max-w-2xl mx-auto text-base">Flexible monthly, quarterly, and long-term self-drive lease plans starting from 30 days minimum.</p>
           </FadeIn>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
